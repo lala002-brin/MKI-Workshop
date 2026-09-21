@@ -1,13 +1,14 @@
 # Recommended Readings
 
 
-## Overview
+## Purpose
 
-This section provides recommended scientific references to support participants in understanding ionic liquid battery systems, computational materials science, and multiscale simulation approaches.
+This section provides a curated collection of scientific resources supporting the Computational Materials Sciences Workshop.
 
-The recommended readings are organized according to the scientific workflow used in this workshop.
+The recommended materials guide participants from fundamental battery concepts to advanced computational approaches for ionic liquid electrolyte simulation.
 
-The learning sequence follows:
+
+The learning pathway follows:
 
 
 ```
@@ -15,349 +16,11 @@ Battery Materials
 
 ↓
 
-Computational Methods
+Electrolyte Chemistry
 
 ↓
 
-Molecular Simulation
-
-↓
-
-AI-Accelerated Materials Discovery
-```
-
-
----
-
-# 1. Ionic Liquid Electrolytes
-
-
-## Recommended Topics
-
-Participants should understand:
-
-
-- Ionic liquid structure
-- Cation and anion characteristics
-- Physical and chemical properties
-- Electrochemical applications
-
-
-Important concepts:
-
-
-```
-Cation
-
-+
-
-Anion
-
-↓
-
-Ionic Liquid Structure
-
-↓
-
-Electrolyte Function
-```
-
-
-Key properties:
-
-- Low volatility
-- Thermal stability
-- Electrochemical stability
-- Ionic conductivity
-
-
-Purpose:
-
-To understand why ionic liquids are considered promising electrolyte materials for advanced battery systems.
-
-
----
-
-# 2. Lithium-Ion Battery Electrolytes
-
-
-## Recommended Topics
-
-
-Participants should study:
-
-
-- Role of electrolyte in lithium batteries
-- Lithium ion coordination
-- Solvation structure
-- Ion migration mechanism
-- Transport properties
-
-
-Important relationship:
-
-
-```
-Electrolyte Structure
-
-↓
-
-Ion Interaction
-
-↓
-
-Ion Mobility
-
-↓
-
-Battery Performance
-```
-
-
-Purpose:
-
-To understand how molecular-level electrolyte behavior influences battery performance.
-
-
----
-
-# 3. Density Functional Theory (DFT)
-
-
-## Recommended Topics
-
-
-Participants should review:
-
-
-- Quantum mechanical description of materials
-- Electron density concept
-- Kohn-Sham DFT
-- Exchange-correlation functional
-- Geometry optimization
-- Electronic properties
-
-
-Main concept:
-
-
-```
-Electronic Structure
-
-↓
-
-Atomic Interaction
-
-↓
-
-Material Properties
-```
-
-
-Related workshop module:
-
-
-```
-03_QUANTUM_SIMULATION/
-```
-
-
----
-
-# 4. Molecular Dynamics Simulation
-
-
-## Recommended Topics
-
-
-Participants should understand:
-
-
-- Newtonian atomic motion
-- Force calculation
-- Molecular trajectory
-- Simulation ensemble
-- Transport analysis
-
-
-Important analysis methods:
-
-
-- Mean Square Displacement (MSD)
-- Radial Distribution Function (RDF)
-- Diffusion coefficient
-
-
-Main concept:
-
-
-```
-Atomic Movement
-
-↓
-
-Trajectory
-
-↓
-
-Transport Behavior
-```
-
-
-Related workshop module:
-
-
-```
-04_ATOMISTIC_SIMULATION/
-```
-
-
----
-
-# 5. Density Functional Tight Binding (DFTB)
-
-
-## Recommended Topics
-
-
-Participants should study:
-
-
-- Relationship between DFT and DFTB
-- Tight binding approximation
-- Computational efficiency
-- Large-scale atomistic simulation
-
-
-Purpose:
-
-To understand how quantum-based simulation can be extended to larger systems.
-
-
-Workshop method:
-
-
-```
-DC-DFTB-MD
-```
-
-
----
-
-# 6. Machine Learning Potential
-
-
-## Recommended Topics
-
-
-Participants should understand:
-
-
-- Machine learning representation of atomic systems
-- Energy prediction
-- Force prediction
-- Training dataset
-- Model validation
-
-
-General workflow:
-
-
-```
-DFT Calculation
-
-↓
-
-Training Dataset
-
-↓
-
-Machine Learning Model
-
-↓
-
-Accelerated Simulation
-```
-
-
-Related workshop module:
-
-
-```
-05_AI_ACCELERATION/
-```
-
-
----
-
-# 7. Multiscale Computational Materials Science
-
-
-## Recommended Topics
-
-
-Participants should understand:
-
-
-- Electronic scale
-- Atomic scale
-- Molecular scale
-- Material scale
-
-
-Core concept:
-
-
-```
-Quantum Calculation
-
-↓
-
-Atomic Simulation
-
-↓
-
-Material Prediction
-```
-
-
-Purpose:
-
-To understand how multiple computational methods are combined to solve complex materials problems.
-
-
----
-
-# Suggested Reading Sequence
-
-
-## Stage 1
-
-Understand battery materials:
-
-
-```
-Ionic Liquid Electrolyte
-
-↓
-
-Lithium Ion Transport
-
-↓
-
-Electrolyte Design Principle
-```
-
-
----
-
-## Stage 2
-
-Understand computational methods:
-
-
-```
-DFT Concept
+Quantum Simulation
 
 ↓
 
@@ -365,83 +28,436 @@ Molecular Dynamics
 
 ↓
 
-Machine Learning Potential
+Machine Learning for Materials Science
 
 ↓
 
-Multiscale Modeling
+Research Application
 ```
 
 
 ---
 
-## Stage 3
+# 1. Battery Materials and Electrolyte Fundamentals
 
-Perform computational workflow:
+
+## Objective
+
+Understand the fundamental role of electrolytes in lithium-ion battery systems before performing computational simulations.
+
+
+## Recommended Topics
+
+Participants should review:
+
+- Lithium-ion battery working principles
+- Electrode-electrolyte interaction
+- Role of electrolyte in ion transport
+- Safety and stability requirements
+
+
+## Suggested Resources
+
+
+### Book
+
+**Lithium-Ion Batteries: Fundamentals and Applications**
+
+Recommended topics:
+
+- Battery components
+- Electrolyte chemistry
+- Electrochemical processes
+
+
+## Online Resource
+
+Battery University
+
+https://batteryuniversity.com/
+
+
+Learning focus:
+
+- Battery fundamentals
+- Charge-discharge mechanism
+- Electrolyte function
+
+
+
+---
+
+# 2. Ionic Liquid Electrolytes
+
+
+## Objective
+
+Understand the molecular characteristics of ionic liquids and their role as advanced battery electrolytes.
+
+
+## Recommended Topics
+
+- Ionic liquid structure
+- Cation and anion design
+- Li-ion coordination
+- Solvation structure
+- Ionic conductivity
+
+
+## Recommended Search Topics
 
 
 ```
-System Preparation
+Ionic liquid electrolytes for lithium batteries review
+
+LiTFSI ionic liquid electrolyte molecular dynamics
+
+Lithium ion transport mechanism in ionic liquids
+```
+
+
+## Recommended Databases
+
+
+### Google Scholar
+
+https://scholar.google.com/
+
+
+### ScienceDirect
+
+https://www.sciencedirect.com/
+
+
+### ACS Publications
+
+https://pubs.acs.org/
+
+
+Learning focus:
+
+
+```
+Molecular Structure
 
 ↓
 
-Quantum Calculation
+Ion Interaction
 
 ↓
 
-Atomistic Simulation
+Transport Behavior
+```
+
+
+---
+
+# 3. Density Functional Theory (DFT)
+
+
+## Objective
+
+Understand the quantum mechanical foundation used to calculate atomic interaction and electronic properties.
+
+
+## Recommended Topics
+
+- Electron density
+- Kohn-Sham equations
+- Exchange-correlation functional
+- Geometry optimization
+- Electronic structure analysis
+
+
+## Software Reference
+
+
+### Quantum ESPRESSO Documentation
+
+https://www.quantum-espresso.org/
+
+
+Learning focus:
+
+- Input structure
+- SCF calculation
+- Relaxation calculation
+- Electronic properties
+
+
+## Additional Learning Resource
+
+
+DFT Education Project
+
+https://dft.uci.edu/
+
+
+Learning focus:
+
+- DFT fundamentals
+- Computational theory background
+
+
+
+---
+
+# 4. Molecular Dynamics Simulation
+
+
+## Objective
+
+Understand how atomic movement and ion transport are studied computationally.
+
+
+## Recommended Topics
+
+- Classical molecular dynamics
+- Atomic trajectory
+- Ensemble selection
+- Diffusion analysis
+- Structural analysis
+
+
+## Important Analysis Concepts
+
+
+### Mean Square Displacement (MSD)
+
+Used for:
+
+- Ion mobility
+- Diffusion coefficient calculation
+
+
+### Radial Distribution Function (RDF)
+
+Used for:
+
+- Coordination analysis
+- Solvation structure
+
+
+## Recommended Software Resources
+
+
+### Atomic Simulation Environment (ASE)
+
+https://wiki.fysik.dtu.dk/ase/
+
+
+Learning focus:
+
+- Atomic structure handling
+- Simulation workflow
+
+
+### OVITO
+
+https://www.ovito.org/
+
+
+Learning focus:
+
+- Trajectory visualization
+- Molecular dynamics analysis
+
+
+
+---
+
+# 5. Density Functional Tight Binding (DFTB)
+
+
+## Objective
+
+Understand efficient quantum-based methods for larger atomistic simulations.
+
+
+## Recommended Topics
+
+- DFT approximation
+- Tight binding approach
+- Large-scale molecular simulation
+- DFTB molecular dynamics
+
+
+## Software Reference
+
+
+### DFTB+
+
+https://dftbplus.org/
+
+
+Learning focus:
+
+- DFTB calculation
+- Molecular dynamics workflow
+- Large system simulation
+
+
+
+---
+
+# 6. Machine Learning Potential
+
+
+## Objective
+
+Understand how artificial intelligence accelerates computational materials simulation.
+
+
+## Recommended Topics
+
+- Machine learning representation
+- Atomic environment
+- Energy prediction
+- Force prediction
+- Model validation
+
+
+## Software Reference
+
+
+### MACE
+
+https://github.com/ACEsuit/mace
+
+
+Learning focus:
+
+- Machine learning potential
+- Dataset preparation
+- Accelerated molecular dynamics
+
+
+
+---
+
+# 7. Multiscale Computational Materials Science
+
+
+## Objective
+
+Understand how different computational methods are integrated to solve complex materials problems.
+
+
+Core concept:
+
+
+```
+DFT
+
+↓
+
+Atomic Simulation
 
 ↓
 
 AI Acceleration
+
+↓
+
+Materials Discovery
+```
+
+
+Recommended topics:
+
+- Multiscale modeling
+- Data transfer between methods
+- Accuracy versus computational efficiency
+
+
+
+---
+
+# Recommended Learning Sequence
+
+
+## Before Workshop
+
+
+Participants should understand:
+
+
+```
+Battery Fundamentals
+
+↓
+
+Ionic Liquid Electrolytes
 ```
 
 
 ---
 
-# Reference Categories
+## During Workshop
 
 
-## Battery Materials
-
-Topics:
-
-- Lithium-ion batteries
-- Ionic liquid electrolytes
-- Electrolyte optimization
+Participants will learn:
 
 
-## Computational Chemistry
+```
+DFT Calculation
 
-Topics:
+↓
 
-- Density Functional Theory
-- Electronic structure calculation
-- Quantum simulation
+DC-DFTB-MD Simulation
 
+↓
 
-## Molecular Simulation
+Transport Analysis
 
-Topics:
+↓
 
-- Molecular dynamics
-- Ion diffusion
-- Transport analysis
-
-
-## Artificial Intelligence for Materials Science
-
-Topics:
-
-- Machine learning potential
-- Materials discovery
-- Accelerated simulation
+MACE Acceleration
+```
 
 
 ---
 
-# Purpose of This Section
+## After Workshop
 
-These readings provide the scientific foundation required before performing computational simulations.
 
-Participants should use these references as supporting materials throughout the workshop.
+Participants can continue with:
+
+- Advanced battery simulation
+- Computational materials discovery
+- AI-driven materials design
+
+
+
+---
+
+# Key References
+
+
+## Computational Materials Science
+
+Topics:
+
+- Density Functional Theory
+- Molecular Dynamics
+- Machine Learning for Materials Science
+
+
+## Battery Research
+
+Topics:
+
+- Ionic liquid electrolyte reviews
+- Lithium transport studies
+- Computational electrolyte design papers
+
+
+
+---
+
+# Final Note
+
+
+The resources provided in this section are intended as a scientific foundation for participants.
+
+They support the transition from fundamental battery concepts toward advanced computational workflows used in modern materials discovery.
