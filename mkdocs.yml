@@ -1,10 +1,169 @@
-site_name: MKI Ionic Liquid Battery Workshop
+site_name: Computational Materials Science Workshop
+site_description: Integrating First-Principles Calculation, High Performance Computing, and Artificial Intelligence for Materials Discovery
+
+site_author: 
+  BRIN - ITB - Masyarakat Komputasi Indonesia
+
+
+repo_name: MKI-Workshop
+repo_url: https://github.com/lala002-brin/MKI-Workshop
+
 
 theme:
+
   name: material
+
+  features:
+
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+
+    - search.highlight
+
+    - content.code.copy
+
+
+  palette:
+
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+
+
+markdown_extensions:
+
+  - admonition
+  - attr_list
+  - md_in_html
+
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
+
+plugins:
+
+  - search
+
 
 
 nav:
 
+
   - Home:
       - Overview: index.md
+
+
+
+  - 00 Start Here:
+
+      - Workshop Introduction:
+          start-here/workshop-guide.md
+
+      - Computational Workflow:
+          start-here/workflow.md
+
+
+
+  - 01 Computational Materials Science:
+
+      - Introduction:
+          foundation/index.md
+
+      - Materials Informatics:
+          foundation/materials-informatics.md
+
+
+
+  - 02 First-Principles Calculation:
+
+
+      - Quantum ESPRESSO:
+
+          - Overview:
+              quantum-simulation/index.md
+
+          - Geometry Optimization:
+              quantum-simulation/geometry.md
+
+          - Electronic Structure Analysis:
+              quantum-simulation/charge.md
+
+
+
+  - 03 Accelerated Materials Simulation:
+
+
+      - DFTB+ Workflow:
+          atomistic-simulation/index.md
+
+
+      - Structure Optimization:
+          atomistic-simulation/optimization.md
+
+
+
+  - 04 Machine Learning Potential:
+
+
+      - AI for Materials Simulation:
+          ai-acceleration/index.md
+
+
+      - MACE Workflow:
+          ai-acceleration/mace.md
+
+
+
+  - 05 High Performance Computing:
+
+
+      - HPC Environment:
+          hpc-environment/index.md
+
+
+      - Job Submission:
+          hpc-environment/job-submission.md
+
+
+
+  - 06 Hands-on Project:
+
+
+      - Project Guide:
+          final-project/index.md
+
+
+
+  - References:
+
+      - Software:
+          references/software.md
+
+      - Learning Resources:
+          references/resources.md
+
+
+
+extra:
+
+  social:
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/lala002-brin/MKI-Workshop
+
+
+copyright:
+  Copyright © 2026 BRIN - ITB - MKI
