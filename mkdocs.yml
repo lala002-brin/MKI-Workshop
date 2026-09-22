@@ -15,14 +15,14 @@ theme:
 
   features:
 
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
+  - navigation.sections
+  - navigation.expand
+  - navigation.top
+  - navigation.instant
 
-    - search.highlight
+  - content.code.copy
 
-    - content.code.copy
-
+  - toc.follow
 
   palette:
 
@@ -41,17 +41,25 @@ theme:
 
 markdown_extensions:
 
+  - pymdownx.arithmatex:
+      generic: true
+
+  - pymdownx.superfences
+
   - admonition
+
   - attr_list
+
   - md_in_html
 
   - pymdownx.details
-  - pymdownx.superfences
 
   - pymdownx.tabbed:
       alternate_style: true
 
-
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
 
@@ -89,18 +97,48 @@ nav:
 
   - 02 First-Principles Calculation:
 
+      - Overview:
+          quantum-simulation/index.md
 
-      - Quantum ESPRESSO:
+
+      - Setup:
+
+          - Installation:
+              quantum-simulation/setup/installation.md
+
+          - HPC Environment:
+              quantum-simulation/setup/hpc.md
+
+          - Pseudopotential:
+              quantum-simulation/setup/pseudopotential.md
+
+      - Theory:
 
           - Overview:
-              quantum-simulation/index.md
+              quantum-simulation/theory/index.md
+
+          - Problem Statement:
+              quantum-simulation/theory/problem-statement.md
+
+          - Hartree-Fock:
+              quantum-simulation/theory/hartree-fock.md
+
+          - DFT Overview:
+              quantum-simulation/theory/dft-overview.md
+
+          - Wannier Basis:
+              quantum-simulation/theory/wannier.md
+
+      - Hands-on:
+
+          - SCF Calculation:
+              quantum-simulation/hands-on/scf.md
 
           - Geometry Optimization:
-              quantum-simulation/geometry.md
+              quantum-simulation/hands-on/relaxation.md
 
-          - Electronic Structure Analysis:
-              quantum-simulation/charge.md
-
+          - Band Structure:
+              quantum-simulation/hands-on/band-structure.md
 
 
   - 03 Accelerated Materials Simulation:
@@ -167,3 +205,9 @@ extra:
 
 copyright:
   Copyright © 2026 BRIN - ITB - MKI
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
