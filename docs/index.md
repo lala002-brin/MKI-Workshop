@@ -1,19 +1,35 @@
-# MKI Ionic Liquid Battery Workshop
+site_name: MKI Ionic Liquid Battery Workshop
+
+theme:
+  name: material
+
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
 
 
-## Computational Materials Science
+nav:
+
+  - Home:
+      - Overview: index.md
 
 
-Welcome to the MKI Ionic Liquid Battery Workshop.
+  - Foundation:
+      - Introduction: foundation/introduction.md
 
 
-This website provides tutorials and computational workflows for:
-
-- Ionic liquid electrolyte simulation
-- Quantum ESPRESSO calculation
-- Molecular dynamics simulation
-- AI accelerated materials discovery
+  - System Design:
+      - Overview: system-design/overview.md
 
 
-## Scientific Workflow
+  - Quantum Simulation:
+      - Overview: quantum-simulation/overview.md
 
+
+  - Atomistic Simulation:
+      - Overview: atomistic-simulation/overview.md
+
+
+  - AI Acceleration:
+      - Overview: ai-acceleration/overview.md
