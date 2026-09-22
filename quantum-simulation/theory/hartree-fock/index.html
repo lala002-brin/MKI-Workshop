@@ -13,24 +13,28 @@
       
       
       
+        <link rel="prev" href="../problem-statement/">
+      
+      
+        <link rel="next" href="../wannier/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Molecular building - Computational Materials Science Workshop</title>
+        <title>Hartree-Fock - Computational Materials Science Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#hartree-fock-theory" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -107,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Molecular building
+              Hartree-Fock
             
           </span>
         </div>
@@ -223,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -307,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -396,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start-here/workshop-guide/" class="md-nav__link">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
         
   
   
@@ -424,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start-here/workflow/" class="md-nav__link">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
         
   
   
@@ -513,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundation/" class="md-nav__link">
+      <a href="../../../foundation/" class="md-nav__link">
         
   
   
@@ -541,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundation/materials-informatics.md" class="md-nav__link">
+      <a href="../../../foundation/materials-informatics.md" class="md-nav__link">
         
   
   
@@ -573,8 +582,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -585,13 +596,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -612,7 +621,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -630,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -709,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/setup/installation/" class="md-nav__link">
+      <a href="../../setup/installation/" class="md-nav__link">
         
   
   
@@ -737,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/setup/hpc/" class="md-nav__link">
+      <a href="../../setup/hpc/" class="md-nav__link">
         
   
   
@@ -765,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/setup/pseudopotential/" class="md-nav__link">
+      <a href="../../setup/pseudopotential/" class="md-nav__link">
         
   
   
@@ -798,6 +807,8 @@
                 
   
   
+    
+  
   
   
     
@@ -807,13 +818,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -834,7 +843,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -852,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/theory/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -880,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+      <a href="../problem-statement/" class="md-nav__link">
         
   
   
@@ -905,10 +914,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -924,6 +960,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-particle-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent Particle Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electron-electron-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electron-Electron Interaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electron-Electron Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-electron-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Electron interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fermionic-nature-of-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fermionic nature of electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hartree-product-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hartree Product Limitation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antisymmetric-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antisymmetric Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slater-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slater Determinant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-field-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mean-Field Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-hartree-fock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Hartree-Fock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -936,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/theory/dft-overview.md" class="md-nav__link">
+      <a href="../dft-overview.md" class="md-nav__link">
         
   
   
@@ -964,7 +1147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/theory/wannier/" class="md-nav__link">
+      <a href="../wannier/" class="md-nav__link">
         
   
   
@@ -1051,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/hands-on/scf.md" class="md-nav__link">
+      <a href="../../hands-on/scf.md" class="md-nav__link">
         
   
   
@@ -1079,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/hands-on/relaxation.md" class="md-nav__link">
+      <a href="../../hands-on/relaxation.md" class="md-nav__link">
         
   
   
@@ -1107,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quantum-simulation/hands-on/band-structure.md" class="md-nav__link">
+      <a href="../../hands-on/band-structure.md" class="md-nav__link">
         
   
   
@@ -1204,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../atomistic-simulation/" class="md-nav__link">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
         
   
   
@@ -1232,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../atomistic-simulation/optimization.md" class="md-nav__link">
+      <a href="../../../atomistic-simulation/optimization.md" class="md-nav__link">
         
   
   
@@ -1321,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai-acceleration/" class="md-nav__link">
+      <a href="../../../ai-acceleration/" class="md-nav__link">
         
   
   
@@ -1349,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai-acceleration/mace/" class="md-nav__link">
+      <a href="../../../ai-acceleration/mace/" class="md-nav__link">
         
   
   
@@ -1438,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hpc-environment/" class="md-nav__link">
+      <a href="../../../hpc-environment/" class="md-nav__link">
         
   
   
@@ -1466,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hpc-environment/job-submission.md" class="md-nav__link">
+      <a href="../../../hpc-environment/job-submission.md" class="md-nav__link">
         
   
   
@@ -1555,7 +1738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../final-project/" class="md-nav__link">
+      <a href="../../../final-project/" class="md-nav__link">
         
   
   
@@ -1644,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references/software.md" class="md-nav__link">
+      <a href="../../../references/software.md" class="md-nav__link">
         
   
   
@@ -1672,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references/resources.md" class="md-nav__link">
+      <a href="../../../references/resources.md" class="md-nav__link">
         
   
   
@@ -1717,6 +1900,143 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independent-particle-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent Particle Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electron-electron-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electron-Electron Interaction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electron-Electron Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-electron-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Electron interaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fermionic-nature-of-electrons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fermionic nature of electrons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hartree-product-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hartree Product Limitation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antisymmetric-wave-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antisymmetric Wave Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slater-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slater Determinant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-field-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mean-Field Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-hartree-fock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Hartree-Fock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1736,9 +2056,118 @@
   
 
 
-  <h1>Molecular building</h1>
-
-
+<h1 id="hartree-fock-theory">Hartree-Fock Theory</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Hartree-Fock theory is one of the earliest approaches developed to solve the electronic structure problem of many-electron systems.</p>
+<p>The main challenge in quantum mechanical calculations is that electrons interact with each other through Coulomb forces. Therefore, solving the exact many-electron Schrödinger equation becomes computationally difficult.</p>
+<p>Hartree-Fock introduces an approximation where each electron moves independently inside an average potential created by all other electrons.</p>
+<p>This approach is known as the <strong>mean-field approximation</strong>.</p>
+<hr />
+<h2 id="independent-particle-approximation">Independent Particle Approximation</h2>
+<p>For a system containing non-interacting electrons, the total wave function can be represented as a product of individual electron wave functions.</p>
+<p>For a two-electron system:</p>
+<div class="arithmatex">\[
+\Psi(r_1,r_2)=\phi_1(r_1)\phi_2(r_2)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\phi_1(r_1)\)</span> represents the state of electron 1</li>
+<li><span class="arithmatex">\(\phi_2(r_2)\)</span> represents the state of electron 2</li>
+</ul>
+<p>However, real electrons are not independent particles because they interact through electrostatic repulsion.</p>
+<hr />
+<h2 id="electron-electron-interaction">Electron-Electron Interaction</h2>
+<p>When electrons form a single quantum system, two important problems appear:</p>
+<h3 id="1-electron-interaction">1. Electron interaction</h3>
+<p>The Coulomb interaction between electrons cannot be ignored.</p>
+<h3 id="2-fermionic-nature-of-electrons">2. Fermionic nature of electrons</h3>
+<p>Electrons are fermions and must obey the Pauli exclusion principle.</p>
+<p>The wave function must be antisymmetric when two electrons are exchanged:</p>
+<div class="arithmatex">\[
+\Psi(r_1,r_2)=-\Psi(r_2,r_1)
+\]</div>
+<p>A simple product wave function does not satisfy this requirement.</p>
+<hr />
+<h2 id="hartree-product-limitation">Hartree Product Limitation</h2>
+<p>The Hartree product is written as:</p>
+<div class="arithmatex">\[
+\Psi_{HP}(r_1,r_2,...,r_N)
+=
+\phi_1(r_1)\phi_2(r_2)...\phi_N(r_N)
+\]</div>
+<p>Although this expression describes multiple electrons, it does not satisfy the antisymmetry requirement of fermions.</p>
+<hr />
+<h2 id="antisymmetric-wave-function">Antisymmetric Wave Function</h2>
+<p>To overcome this limitation, Hartree-Fock introduces spin orbitals:</p>
+<div class="arithmatex">\[
+\chi(r)
+\]</div>
+<p>For a two-electron system, the wave function becomes:</p>
+<div class="arithmatex">\[
+\Psi(r_1,r_2)
+=
+\frac{1}{\sqrt{2}}
+[
+\chi_1(r_1)\chi_2(r_2)
+-
+\chi_1(r_2)\chi_2(r_1)
+]
+\]</div>
+<p>This equation ensures that exchanging two electrons changes the sign of the wave function.</p>
+<hr />
+<h2 id="slater-determinant">Slater Determinant</h2>
+<p>The antisymmetric wave function can be generalized using the Slater determinant.</p>
+<p>For two electrons:</p>
+<div class="arithmatex">\[
+\Psi(r_1,r_2)
+=
+\frac{1}{\sqrt{2}}
+\begin{vmatrix}
+\chi_1(r_1)&amp;\chi_2(r_1)\\
+\chi_1(r_2)&amp;\chi_2(r_2)
+\end{vmatrix}
+\]</div>
+<p>For a system containing <span class="arithmatex">\(N\)</span> electrons:</p>
+<div class="arithmatex">\[
+\Psi=
+\frac{1}{\sqrt{N!}}
+\begin{vmatrix}
+\chi_1(r_1)&amp;\chi_2(r_1)&amp;...&amp;\chi_N(r_1)\\
+\chi_1(r_2)&amp;\chi_2(r_2)&amp;...&amp;\chi_N(r_2)\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+\chi_1(r_N)&amp;\chi_2(r_N)&amp;...&amp;\chi_N(r_N)
+\end{vmatrix}
+\]</div>
+<p>The Slater determinant automatically satisfies the antisymmetry condition required for electrons.</p>
+<hr />
+<h2 id="mean-field-interpretation">Mean-Field Interpretation</h2>
+<p>The Hartree-Fock approximation treats electrons as independent particles moving under an average potential.</p>
+<p>The interaction between electrons is separated into:</p>
+<ul>
+<li>Coulomb interaction</li>
+<li>Exchange interaction</li>
+</ul>
+<p>This approximation significantly reduces computational complexity compared with solving the exact many-body Schrödinger equation.</p>
+<hr />
+<h2 id="limitations-of-hartree-fock">Limitations of Hartree-Fock</h2>
+<p>Although Hartree-Fock provides an important foundation for electronic structure theory, it has several limitations:</p>
+<ul>
+<li>
+<p>Electron correlation effects are not fully described.</p>
+</li>
+<li>
+<p>Computational cost increases rapidly with system size.</p>
+</li>
+<li>
+<p>Large material systems require more efficient approaches.</p>
+</li>
+</ul>
+<p>Because of these limitations, Density Functional Theory (DFT) became one of the most widely used methods in computational materials science.</p>
+<hr />
+<h2 id="next-step">Next Step</h2>
+<p>Continue to:</p>
+<p><strong>Density Functional Theory Overview</strong></p>
+<p>to learn how DFT transforms the many-body problem into an electron density problem.</p>
 
 
 
@@ -1814,10 +2243,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
