@@ -59,20 +59,23 @@ A typical convergence workflow follows these steps:
 
 ```text
 Select initial parameters
-            |
-            ↓
+          |
+          ↓
 Perform SCF calculation
-            |
-            ↓
+          |
+          ↓
 Increase computational parameters
-            |
-            ↓
+          |
+          ↓
 Compare total energy and properties
-            |
-            ↓
+          |
+          ↓
 Select converged parameters
----
+```
 
+The final parameters are selected when increasing computational accuracy no longer produces significant changes in the calculated properties.
+
+---
 # 1. Plane-Wave Cutoff Energy Convergence
 
 ## Kinetic Energy Cutoff (`ecutwfc`)
