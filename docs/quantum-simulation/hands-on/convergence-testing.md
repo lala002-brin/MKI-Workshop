@@ -56,118 +56,147 @@ In Quantum ESPRESSO, this parameter is defined as:
 
 ```text
 ecutwfc = value
-Typical convergence workflow:| Calculation | ecutwfc |
-| ----------- | ------- |
-| Test 1      | 30 Ry   |
-| Test 2      | 40 Ry   |
-| Test 3      | 50 Ry   |
-| Test 4      | 60 Ry   |
+```
+
+Example convergence workflow:
+
+| Calculation | ecutwfc |
+|---|---|
+| Test 1 | 30 Ry |
+| Test 2 | 40 Ry |
+| Test 3 | 50 Ry |
+| Test 4 | 60 Ry |
+
 The total energy is compared until the change becomes sufficiently small.
-2. Charge Density Cutoff (ecutrho)
+
+---
+
+# 2. Charge Density Cutoff (`ecutrho`)
 
 The charge density requires a higher cutoff compared with wave functions.
 
 In Quantum ESPRESSO:
+
+```text
 ecutrho = value
-The relationship between ecutrho and ecutwfc depends on the pseudopotential type.
+```
+
+The relationship between `ecutrho` and `ecutwfc` depends on the pseudopotential type.
 
 Typical values:
 
-Norm-conserving pseudopotential:
-ecutrho ≈ 4 × ecutwfc
-Ultrasoft pseudopotential:
-ecutrho ≈ 8–12 × ecutwfc
+| Pseudopotential | Recommended relationship |
+|---|---|
+| Norm-conserving | `ecutrho ≈ 4 × ecutwfc` |
+| Ultrasoft | `ecutrho ≈ 8–12 × ecutwfc` |
 
 The appropriate value should follow the recommendation of the selected pseudopotential.
 
-3. k-point Convergence
+---
+
+# 3. k-point Convergence
 
 Periodic systems require sampling of the Brillouin zone using k-points.
 
 The density of k-points affects:
 
-Total energy
-Electronic structure
-Band properties
+- Total energy
+- Electronic structure
+- Band properties
 
 A denser k-point mesh increases accuracy but also increases computational cost.
 
 Example:
 
-Low density:
-
-4 × 4 × 4
-
-Medium density:
-
-6 × 6 × 6
-
-High density:
-
-8 × 8 × 8
+| Density | k-point mesh |
+|---|---|
+| Low | 4 × 4 × 4 |
+| Medium | 6 × 6 × 6 |
+| High | 8 × 8 × 8 |
 
 The optimal mesh is selected when increasing k-points no longer significantly changes the calculated properties.
 
-4. Convergence Criteria
+---
+
+# 4. Convergence Criteria
 
 A calculation is considered converged when the change in the target property becomes smaller than a predefined tolerance.
 
-Common convergence parameters:
-
-Energy convergence
+## Energy Convergence
 
 The difference in total energy between calculations:
 
-$$ \Delta E = E_{n} - E_{n-1} $$
+\[
+\Delta E = E_n - E_{n-1}
+\]
 
 should approach zero.
 
-Force convergence
+## Force Convergence
 
 For structural optimization:
 
-$$ |F| < F_{threshold} $$
+\[
+|F| < F_{threshold}
+\]
 
 is required.
 
-Stress convergence
+## Stress Convergence
 
-Important for lattice optimization calculations.
+Stress convergence is important for lattice optimization calculations.
 
-Practical Workflow
+---
+
+# Practical Workflow
 
 A typical convergence testing workflow:
 
-Step 1: Select initial parameters
+## Step 1: Select Initial Parameters
 
 Choose reasonable starting values:
 
+```text
 ecutwfc = 40 Ry
 
 k-point = 4 × 4 × 4
-Step 2: Perform calculations
+```
+
+---
+
+## Step 2: Perform Calculations
 
 Increase parameters systematically:
 
+```text
 40 Ry → 50 Ry → 60 Ry
+```
 
 and:
 
+```text
 4 × 4 × 4 → 6 × 6 × 6 → 8 × 8 × 8
-Step 3: Analyze results
+```
+
+---
+
+## Step 3: Analyze Results
 
 Compare:
 
-Total energy
-Energy difference
-Computational time
+- Total energy
+- Energy difference
+- Computational time
 
 Select parameters where the result becomes stable.
 
-Quantum ESPRESSO Example
+---
+
+# Quantum ESPRESSO Example
 
 Example SCF input:
 
+```text
 &SYSTEM
 
 ecutwfc = 50
@@ -179,56 +208,70 @@ ecutrho = 400
 K_POINTS automatic
 
 6 6 6 0 0 0
+```
 
 This calculation uses:
 
-50 Ry wave-function cutoff
-400 Ry charge density cutoff
-6×6×6 k-point mesh
-Convergence Testing on HPC
+- 50 Ry wave-function cutoff
+- 400 Ry charge density cutoff
+- 6 × 6 × 6 k-point mesh
+
+---
+
+# Convergence Testing on HPC
 
 Convergence calculations are highly suitable for HPC environments because multiple parameter tests can be performed independently.
 
 Parallel workflow:
 
+```text
 ecutwfc = 30 Ry
         |
-        ├── SCF calculation
+        └── SCF calculation
 
 ecutwfc = 40 Ry
         |
-        ├── SCF calculation
+        └── SCF calculation
 
 ecutwfc = 50 Ry
         |
         └── SCF calculation
+```
 
 Each calculation can be submitted as a separate HPC job.
 
-Hands-on Exercise
+---
 
-Perform convergence testing for a silicon crystal:
+# Hands-on Exercise
 
-Tasks:
+Perform convergence testing for a silicon crystal.
 
-Test different ecutwfc values.
-Test different k-point meshes.
-Plot total energy versus computational parameters.
-Determine the optimal parameters.
+## Tasks
 
-Expected output:
+1. Test different `ecutwfc` values.
+2. Test different k-point meshes.
+3. Plot total energy versus computational parameters.
+4. Determine the optimal parameters.
 
-Converged cutoff energy
-Converged k-point mesh
-Recommended parameters for future calculations
-Summary
+## Expected Output
+
+The exercise should produce:
+
+- Converged cutoff energy
+- Converged k-point mesh
+- Recommended parameters for future calculations
+
+---
+
+# Summary
 
 Convergence testing is an essential step before performing accurate DFT calculations.
 
 The main parameters that require testing are:
 
-Parameter	Purpose
-ecutwfc	Controls wave-function basis size
-ecutrho	Controls charge density representation
-k-points	Controls Brillouin zone sampling
-Convergence threshold	Controls calculation accuracy
+| Parameter | Purpose |
+|---|---|
+| `ecutwfc` | Controls wave-function basis size |
+| `ecutrho` | Controls charge density representation |
+| k-points | Controls Brillouin zone sampling |
+| Convergence threshold | Controls calculation accuracy |
