@@ -13,28 +13,28 @@
       
       
       
-        <link rel="prev" href="../ai-acceleration/mace/">
+        <link rel="prev" href="../density-of-states/">
       
       
-        <link rel="next" href="../final-project/">
+        <link rel="next" href="../../../atomistic-simulation/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>HPC Environment - Computational Materials Science Workshop</title>
+        <title>DFT+U - Computational Materials Science Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dftu-calculation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -111,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HPC Environment
+              DFT+U
             
           </span>
         </div>
@@ -227,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -311,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -400,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../start-here/workshop-guide/" class="md-nav__link">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
         
   
   
@@ -428,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../start-here/workflow/" class="md-nav__link">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
         
   
   
@@ -517,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundation/" class="md-nav__link">
+      <a href="../../../foundation/" class="md-nav__link">
         
   
   
@@ -545,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundation/materials-informatics.md" class="md-nav__link">
+      <a href="../../../foundation/materials-informatics.md" class="md-nav__link">
         
   
   
@@ -577,8 +582,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -589,13 +596,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -616,7 +621,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -634,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -713,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/setup/installation/" class="md-nav__link">
+      <a href="../../setup/installation/" class="md-nav__link">
         
   
   
@@ -741,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/setup/hpc/" class="md-nav__link">
+      <a href="../../setup/hpc/" class="md-nav__link">
         
   
   
@@ -769,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/setup/pseudopotential/" class="md-nav__link">
+      <a href="../../setup/pseudopotential/" class="md-nav__link">
         
   
   
@@ -856,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/" class="md-nav__link">
+      <a href="../../theory/" class="md-nav__link">
         
   
   
@@ -884,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+      <a href="../../theory/problem-statement/" class="md-nav__link">
         
   
   
@@ -912,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+      <a href="../../theory/hartree-fock/" class="md-nav__link">
         
   
   
@@ -940,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+      <a href="../../theory/dft-overview/" class="md-nav__link">
         
   
   
@@ -968,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+      <a href="../../theory/kohn-sham/" class="md-nav__link">
         
   
   
@@ -996,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/wannier/" class="md-nav__link">
+      <a href="../../theory/wannier/" class="md-nav__link">
         
   
   
@@ -1024,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+      <a href="../../theory/computational-complexity/" class="md-nav__link">
         
   
   
@@ -1057,6 +1062,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1066,13 +1073,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -1093,7 +1098,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1111,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1139,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/scf/" class="md-nav__link">
+      <a href="../scf/" class="md-nav__link">
         
   
   
@@ -1167,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/01_QE_SCF_Test/" class="md-nav__link">
+      <a href="../01_QE_SCF_Test/" class="md-nav__link">
         
   
   
@@ -1195,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/convergence-testing/" class="md-nav__link">
+      <a href="../convergence-testing/" class="md-nav__link">
         
   
   
@@ -1223,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/relaxation/" class="md-nav__link">
+      <a href="../relaxation/" class="md-nav__link">
         
   
   
@@ -1251,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/band-structure/" class="md-nav__link">
+      <a href="../band-structure/" class="md-nav__link">
         
   
   
@@ -1279,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/density-of-states/" class="md-nav__link">
+      <a href="../density-of-states/" class="md-nav__link">
         
   
   
@@ -1304,10 +1309,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/dft-u/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT+U
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1323,6 +1355,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1335,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/spin-orbit-coupling.md" class="md-nav__link">
+      <a href="../spin-orbit-coupling.md" class="md-nav__link">
         
   
   
@@ -1363,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/phonon.md" class="md-nav__link">
+      <a href="../phonon.md" class="md-nav__link">
         
   
   
@@ -1391,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/wannier.md" class="md-nav__link">
+      <a href="../wannier.md" class="md-nav__link">
         
   
   
@@ -1419,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/molecular-dynamics.md" class="md-nav__link">
+      <a href="../molecular-dynamics.md" class="md-nav__link">
         
   
   
@@ -1447,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quantum-simulation/hands-on/post-processing.md" class="md-nav__link">
+      <a href="../post-processing.md" class="md-nav__link">
         
   
   
@@ -1544,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../atomistic-simulation/" class="md-nav__link">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
         
   
   
@@ -1572,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../atomistic-simulation/optimization.md" class="md-nav__link">
+      <a href="../../../atomistic-simulation/optimization.md" class="md-nav__link">
         
   
   
@@ -1661,7 +1724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-acceleration/" class="md-nav__link">
+      <a href="../../../ai-acceleration/" class="md-nav__link">
         
   
   
@@ -1689,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-acceleration/mace/" class="md-nav__link">
+      <a href="../../../ai-acceleration/mace/" class="md-nav__link">
         
   
   
@@ -1721,8 +1784,6 @@
       
   
   
-    
-  
   
   
     
@@ -1735,11 +1796,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -1760,7 +1823,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1775,17 +1838,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../hpc-environment/" class="md-nav__link">
         
   
   
@@ -1801,7 +1857,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1814,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="job-submission.md" class="md-nav__link">
+      <a href="../../../hpc-environment/job-submission.md" class="md-nav__link">
         
   
   
@@ -1903,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../final-project/" class="md-nav__link">
+      <a href="../../../final-project/" class="md-nav__link">
         
   
   
@@ -1992,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/software.md" class="md-nav__link">
+      <a href="../../../references/software.md" class="md-nav__link">
         
   
   
@@ -2020,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../references/resources.md" class="md-nav__link">
+      <a href="../../../references/resources.md" class="md-nav__link">
         
   
   
@@ -2065,6 +2120,27 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2084,9 +2160,231 @@
   
 
 
-  <h1>HPC Environment</h1>
+<h1 id="dftu-calculation">DFT+U Calculation</h1>
+<h2 id="overview">Overview</h2>
+<p>Density Functional Theory (DFT) provides accurate predictions for many materials. However, standard DFT using local or semi-local exchange-correlation functionals may underestimate the electronic properties of systems containing localized electrons.</p>
+<p>This limitation commonly appears in materials containing:</p>
+<ul>
+<li>Transition metals</li>
+<li>Rare-earth elements</li>
+<li>Strongly correlated electrons</li>
+</ul>
+<p>The DFT+U method introduces an additional Hubbard correction term to improve the description of localized electrons.</p>
+<p>The general workflow is:</p>
+<div class="highlight"><pre><span></span><code>SCF Calculation
 
+        ↓
 
+Geometry Optimization
+
+        ↓
+
+DFT+U Calculation
+
+        ↓
+
+Electronic Property Analysis
+</code></pre></div>
+<hr />
+<h1 id="why-dftu-is-needed">Why DFT+U is Needed</h1>
+<p>Standard DFT often suffers from self-interaction errors that cause:</p>
+<ul>
+<li>Incorrect band gap prediction</li>
+<li>Delocalization of localized electrons</li>
+<li>Incorrect magnetic properties</li>
+</ul>
+<p>DFT+U improves the treatment of localized orbitals by adding an on-site correction.</p>
+<p>Common systems requiring DFT+U:</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Localized Orbitals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transition metal oxide</td>
+<td>d orbitals</td>
+</tr>
+<tr>
+<td>Rare-earth compounds</td>
+<td>f orbitals</td>
+</tr>
+<tr>
+<td>Magnetic materials</td>
+<td>d and f electrons</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="hubbard-correction-in-quantum-espresso">Hubbard Correction in Quantum ESPRESSO</h1>
+<p>In Quantum ESPRESSO, the Hubbard parameter is defined in the <code>SYSTEM</code> section.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>&amp;SYSTEM
+
+lda_plus_u = .true.
+
+Hubbard_U(1) = 4.0
+
+/
+</code></pre></div>
+<p>The value of <code>Hubbard_U</code> depends on:</p>
+<ul>
+<li>Material system</li>
+<li>Atomic species</li>
+<li>Research objective</li>
+</ul>
+<hr />
+<h1 id="choosing-hubbard-u-value">Choosing Hubbard U Value</h1>
+<p>The Hubbard U parameter strongly affects calculated properties.</p>
+<p>Example test:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Hubbard U</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2 eV</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4 eV</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6 eV</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8 eV</td>
+</tr>
+</tbody>
+</table>
+<p>The selected value should reproduce experimental or reference computational results.</p>
+<p>Properties commonly evaluated:</p>
+<ul>
+<li>Band gap</li>
+<li>Magnetic moment</li>
+<li>Structural parameters</li>
+<li>Formation energy</li>
+</ul>
+<hr />
+<h1 id="example-quantum-espresso-input">Example Quantum ESPRESSO Input</h1>
+<p>Example calculation for transition metal oxide:</p>
+<div class="highlight"><pre><span></span><code>&amp;CONTROL
+
+calculation = 'scf'
+
+prefix = 'material'
+
+/
+
+&amp;SYSTEM
+
+ecutwfc = 60
+
+ecutrho = 480
+
+lda_plus_u = .true.
+
+Hubbard_U(1) = 4.0
+
+/
+
+&amp;ELECTRONS
+
+conv_thr = 1.0d-8
+
+/
+</code></pre></div>
+<hr />
+<h1 id="dftu-workflow-on-hpc">DFT+U Workflow on HPC</h1>
+<p>A typical workflow:</p>
+<div class="highlight"><pre><span></span><code>Optimized Structure
+
+        ↓
+
+Standard DFT Calculation
+
+        ↓
+
+Select Hubbard U Value
+
+        ↓
+
+DFT+U Calculation
+
+        ↓
+
+Compare Electronic Properties
+</code></pre></div>
+<p>Multiple Hubbard U values can be calculated independently on HPC.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>U = 2 eV
+    |
+    └── SCF calculation
+
+U = 4 eV
+    |
+    └── SCF calculation
+
+U = 6 eV
+    |
+    └── SCF calculation
+</code></pre></div>
+<hr />
+<h1 id="result-analysis">Result Analysis</h1>
+<p>DFT+U results are commonly analyzed using:</p>
+<h2 id="band-structure">Band Structure</h2>
+<p>To evaluate:</p>
+<ul>
+<li>Band gap correction</li>
+<li>Electronic state changes</li>
+</ul>
+<h2 id="density-of-states">Density of States</h2>
+<p>To evaluate:</p>
+<ul>
+<li>Orbital contribution</li>
+<li>Localization of electronic states</li>
+</ul>
+<h2 id="magnetic-properties">Magnetic Properties</h2>
+<p>To evaluate:</p>
+<ul>
+<li>Magnetic moments</li>
+<li>Spin polarization</li>
+</ul>
+<hr />
+<h1 id="hands-on-exercise">Hands-on Exercise</h1>
+<p>Perform DFT+U calculation for a transition metal oxide.</p>
+<p>Tasks:</p>
+<ol>
+<li>Perform standard DFT calculation.</li>
+<li>Select several Hubbard U values.</li>
+<li>Run DFT+U calculations.</li>
+<li>Compare band structure and DOS results.</li>
+<li>Determine the effect of Hubbard correction.</li>
+</ol>
+<p>Expected output:</p>
+<ul>
+<li>Optimized Hubbard U value</li>
+<li>Modified electronic structure</li>
+<li>Comparison between DFT and DFT+U results</li>
+</ul>
+<hr />
+<h1 id="summary">Summary</h1>
+<p>DFT+U improves the description of materials containing localized electrons.</p>
+<p>The method adds a Hubbard correction to standard DFT calculations and is commonly used for:</p>
+<ul>
+<li>Transition metal compounds</li>
+<li>Magnetic materials</li>
+<li>Strongly correlated systems</li>
+</ul>
+<p>The selected Hubbard U value should be carefully tested to obtain reliable computational results.</p>
 
 
 
@@ -2162,10 +2460,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
