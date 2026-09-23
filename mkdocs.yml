@@ -222,15 +222,14 @@ nav:
       - Job Submission:
           hpc-environment/job-submission.md
 
-
-
   - 06 Hands-on Project:
-
-
-      - Project Guide:
-          final-project/index.md
-
-
+      - Overview: hands-on-project/index.md
+      - Research Cases:
+          - Graphene Electronic Structure: hands-on-project/research-cases/graphene/index.md
+          - Silicon Semiconductor: hands-on-project/research-cases/silicon/index.md
+          - Battery Material Simulation: hands-on-project/research-cases/battery-material/index.md
+          - Surface Catalysis: hands-on-project/research-cases/surface-catalysis/index.md
+          - Molecular Dynamics Simulation: hands-on-project/research-cases/molecular-dynamics/index.md
 
   - References:
 
