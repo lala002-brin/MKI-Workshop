@@ -8,16 +8,16 @@ This section provides practical tutorials for performing first-principles calcul
 
     ## SCF Calculation
 
-    Perform self-consistent field calculations to obtain ground-state energy and electron density.
+    Perform self-consistent field calculations to obtain ground-state energy, electron density, and convergence information.
 
     [:octicons-arrow-right-24: Start](scf.md)
 
 
 -   :material-notebook:
 
-    ## Quantum ESPRESSO Notebook
+    ## Quantum ESPRESSO SCF Calculation on HPC
 
-    Interactive Jupyter Notebook for running Quantum ESPRESSO SCF calculations.
+    Interactive Jupyter Notebook demonstrating Quantum ESPRESSO SCF calculations using HPC resources.
 
     [:octicons-arrow-right-24: Open Notebook](01_QE_SCF_Test.ipynb)
 
@@ -26,7 +26,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     ## Convergence Testing
 
-    Study the effect of cutoff energy and k-point sampling on calculation accuracy.
+    Study the effect of cutoff energy and k-point sampling to achieve reliable computational parameters.
 
     [:octicons-arrow-right-24: Start](convergence-testing.md)
 
@@ -35,7 +35,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     ## Geometry Optimization
 
-    Optimize atomic positions and lattice parameters using relaxation calculations.
+    Optimize atomic positions and lattice parameters to obtain stable crystal structures.
 
     [:octicons-arrow-right-24: Start](relaxation.md)
 
@@ -44,7 +44,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     ## Band Structure
 
-    Calculate electronic band structures to understand material properties.
+    Calculate electronic band structures and analyze the dispersion relation of electronic states.
 
     [:octicons-arrow-right-24: Start](band-structure.md)
 
@@ -53,9 +53,62 @@ This section provides practical tutorials for performing first-principles calcul
 
     ## Density of States
 
-    Analyze electronic states and orbital contributions.
+    Analyze electronic states distribution and orbital contributions in materials.
 
     [:octicons-arrow-right-24: Start](density-of-states.md)
 
+
+-   :material-atom:
+
+    ## DFT+U
+
+    Apply Hubbard correction for systems containing strongly correlated electrons.
+
+    [:octicons-arrow-right-24: Start](dft-u.md)
+
+
+-   :material-magnet:
+
+    ## Spin-Orbit Coupling
+
+    Include relativistic effects for accurate electronic structure calculations.
+
+    [:octicons-arrow-right-24: Start](spin-orbit-coupling.md)
+
+
+-   :material-wave:
+
+    ## Phonon Calculation
+
+    Calculate vibrational properties and lattice dynamics of materials.
+
+    [:octicons-arrow-right-24: Start](phonon.md)
+
+
+-   :material-orbit:
+
+    ## Wannier Function
+
+    Construct localized orbitals for advanced electronic structure analysis.
+
+    [:octicons-arrow-right-24: Start](wannier.md)
+
+
+-   :material-fire:
+
+    ## Molecular Dynamics
+
+    Perform atomistic simulations to study temperature-dependent material behavior.
+
+    [:octicons-arrow-right-24: Start](molecular-dynamics.md)
+
+
+-   :material-database:
+
+    ## Post Processing
+
+    Analyze and visualize Quantum ESPRESSO calculation results.
+
+    [:octicons-arrow-right-24: Start](post-processing.md)
 
 </div>
