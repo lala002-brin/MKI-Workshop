@@ -73,7 +73,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     Include relativistic effects for accurate electronic structure calculations.
 
-    [:octicons-arrow-right-24: Start](spin-orbit-coupling.md)
+    [:octicons-arrow-right-24: Start](spin-orbit-coupling)
 
 
 -   :material-wave:
