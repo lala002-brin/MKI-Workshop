@@ -1,114 +1,132 @@
-# Hands-on
+# Hands-on Quantum Simulation
 
-This section provides practical tutorials for performing first-principles calculations using Quantum ESPRESSO on HPC systems.
+This section provides practical tutorials for performing first-principles calculations using Quantum ESPRESSO.
+
+The workflow follows a typical computational materials science pipeline:
+
+```text
+Structure Preparation
+        ↓
+SCF Calculation
+        ↓
+Convergence Testing
+        ↓
+Geometry Optimization
+        ↓
+Electronic Structure Analysis
+        ↓
+Advanced Properties Calculation
+```
+
+---
 
 <div class="grid cards" markdown>
 
--   :material-calculator:
+- :material-calculator-variant:
 
     ## SCF Calculation
 
-    Perform self-consistent field calculations to obtain ground-state energy, electron density, and convergence information.
+    Perform self-consistent field calculations using Quantum ESPRESSO and understand the basic DFT workflow.
 
-    [:octicons-arrow-right-24: Start](scf.md)
-
-
--   :material-notebook:
-
-    ## Quantum ESPRESSO SCF Calculation on HPC
-
-    Interactive Jupyter Notebook demonstrating Quantum ESPRESSO SCF calculations using HPC resources.
-
-    [:octicons-arrow-right-24: Open Notebook](01_QE_SCF_Test.ipynb)
+    [:octicons-arrow-right-24: Start](scf/)
 
 
--   :material-tune:
+- :material-notebook-outline:
+
+    ## Quantum ESPRESSO SCF Notebook
+
+    Interactive notebook for performing Quantum ESPRESSO SCF calculations on HPC environments.
+
+    [:octicons-arrow-right-24: Start](01_QE_SCF_Test/)
+
+
+- :material-chart-line-variant:
 
     ## Convergence Testing
 
-    Study the effect of cutoff energy and k-point sampling to achieve reliable computational parameters.
+    Determine reliable computational parameters including cutoff energy and k-point sampling.
 
-    [:octicons-arrow-right-24: Start](convergence-testing.md)
+    [:octicons-arrow-right-24: Start](convergence-testing/)
 
 
--   :material-cube-outline:
+- :material-vector-polyline:
 
     ## Geometry Optimization
 
-    Optimize atomic positions and lattice parameters to obtain stable crystal structures.
+    Optimize atomic positions and crystal structures through relaxation calculations.
 
-    [:octicons-arrow-right-24: Start](relaxation.md)
+    [:octicons-arrow-right-24: Start](relaxation/)
 
 
--   :material-chart-line:
+- :material-chart-line:
 
     ## Band Structure
 
     Calculate electronic band structures and analyze the dispersion relation of electronic states.
 
-    [:octicons-arrow-right-24: Start](band-structure.md)
+    [:octicons-arrow-right-24: Start](band-structure/)
 
 
--   :material-chart-bar:
+- :material-chart-bar:
 
     ## Density of States
 
-    Analyze electronic states distribution and orbital contributions in materials.
+    Analyze electronic state distribution and orbital contributions in materials.
 
-    [:octicons-arrow-right-24: Start](density-of-states.md)
+    [:octicons-arrow-right-24: Start](density-of-states/)
 
 
--   :material-atom:
+- :material-atom:
 
     ## DFT+U
 
     Apply Hubbard correction for systems containing strongly correlated electrons.
 
-    [:octicons-arrow-right-24: Start](dft-u.md)
+    [:octicons-arrow-right-24: Start](dft-u/)
 
 
--   :material-magnet:
+- :material-magnet:
 
     ## Spin-Orbit Coupling
 
     Include relativistic effects for accurate electronic structure calculations.
 
-    [:octicons-arrow-right-24: Start](spin-orbit-coupling)
+    [:octicons-arrow-right-24: Start](spin-orbit-coupling/)
 
 
--   :material-wave:
+- :material-wave:
 
     ## Phonon Calculation
 
     Calculate vibrational properties and lattice dynamics of materials.
 
-    [:octicons-arrow-right-24: Start](phonon)
+    [:octicons-arrow-right-24: Start](phonon/)
 
 
--   :material-orbit:
+- :material-orbit:
 
     ## Wannier Function
 
     Construct localized orbitals for advanced electronic structure analysis.
 
-    [:octicons-arrow-right-24: Start](wannier)
+    [:octicons-arrow-right-24: Start](wannier/)
 
 
--   :material-fire:
+- :material-fire:
 
     ## Molecular Dynamics
 
     Perform atomistic simulations to study temperature-dependent material behavior.
 
-    [:octicons-arrow-right-24: Start](molecular-dynamics)
+    [:octicons-arrow-right-24: Start](molecular-dynamics/)
 
 
--   :material-database:
+- :material-database:
 
     ## Post Processing
 
     Analyze and visualize Quantum ESPRESSO calculation results.
 
-    [:octicons-arrow-right-24: Start](post-processing)
+    [:octicons-arrow-right-24: Start](post-processing/)
 
 </div>
