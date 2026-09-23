@@ -126,6 +126,9 @@ nav:
           - DFT Overview:
               quantum-simulation/theory/dft-overview.md
 
+          - Kohn-Sham Equations:
+              quantum-simulation/theory/kohn-sham.md          
+
           - Wannier Basis:
               quantum-simulation/theory/wannier.md
           
