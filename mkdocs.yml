@@ -12,7 +12,9 @@ repo_url: https://github.com/lala002-brin/MKI-Workshop
 theme:
 
   name: material
-
+  
+  custom_dir: docs/overrides
+ 
   features:
 
   - navigation.sections
@@ -69,33 +71,27 @@ plugins:
 
 nav:
 
-
-  - Home:
+  - 🏠 Home:
       - Overview: index.md
 
 
-
-  - 00 Start Here:
-
+  - 🚀 Start Here:
       - Workshop Introduction:
           start-here/workshop-guide.md
-
       - Computational Workflow:
           start-here/workflow.md
 
 
 
-  - 01 Computational Materials Science:
-
-      - Introduction:
+  - 🧱 Foundation:
+      - Computational Materials Science:
           foundation/index.md
-
       - Materials Informatics:
           foundation/materials-informatics.md
 
 
 
-  - 02 First-Principles Calculation:
+  - ⚛ First-Principles Calculation:
 
       - Overview:
           quantum-simulation/index.md
@@ -112,133 +108,128 @@ nav:
           - Pseudopotential:
               quantum-simulation/setup/pseudopotential.md
 
+
+
       - Theory:
-
-          - Overview:
-              quantum-simulation/theory/index.md
-
-          - Problem Statement:
-              quantum-simulation/theory/problem-statement.md
-
-          - Hartree-Fock:
-              quantum-simulation/theory/hartree-fock.md
 
           - DFT Overview:
               quantum-simulation/theory/dft-overview.md
 
           - Kohn-Sham Equations:
-              quantum-simulation/theory/kohn-sham.md          
+              quantum-simulation/theory/kohn-sham.md
+
+          - Hartree-Fock:
+              quantum-simulation/theory/hartree-fock.md
 
           - Wannier Basis:
               quantum-simulation/theory/wannier.md
-          
+
           - Computational Complexity:
               quantum-simulation/theory/computational-complexity.md
 
-      - Hands-on:
+
+
+      - Hands-on Tutorial:
 
           - Overview:
-
               quantum-simulation/hands-on/index.md
 
           - SCF Calculation:
-
               quantum-simulation/hands-on/scf.md
 
-          - Notebook:
-
-              quantum-simulation/hands-on/01_QE_SCF_Test.ipynb
-
           - Convergence Testing:
-
               quantum-simulation/hands-on/convergence-testing.md
 
           - Geometry Optimization:
-
               quantum-simulation/hands-on/relaxation.md
 
           - Band Structure:
-
               quantum-simulation/hands-on/band-structure.md
 
           - Density of States:
-
               quantum-simulation/hands-on/density-of-states.md
 
           - DFT+U:
-
               quantum-simulation/hands-on/dft-u.md
 
-          - Spin-Orbit Coupling:
-
+          - Spin Orbit Coupling:
               quantum-simulation/hands-on/spin-orbit-coupling.md
 
-          - Phonon Calculation:
-
+          - Phonon:
               quantum-simulation/hands-on/phonon.md
 
           - Wannier Function:
-
               quantum-simulation/hands-on/wannier.md
 
           - Molecular Dynamics:
-
               quantum-simulation/hands-on/molecular-dynamics.md
 
-          - Post Processing:
-
-              quantum-simulation/hands-on/post-processing.md
 
 
-  - 03 Accelerated Materials Simulation:
-
+  - 🚀 Accelerated Materials Simulation:
 
       - DFTB+ Workflow:
           atomistic-simulation/index.md
-
 
       - Structure Optimization:
           atomistic-simulation/optimization.md
 
 
 
-  - 04 Machine Learning Potential:
+  - 🤖 Machine Learning Potential:
+
       - AI for Materials Simulation:
           ai-acceleration/index.md
-
 
       - MACE Workflow:
           ai-acceleration/mace.md
 
 
 
-  - 05 High Performance Computing:
-
+  - 💻 High Performance Computing:
 
       - HPC Environment:
           hpc-environment/index.md
 
-
       - Job Submission:
           hpc-environment/job-submission.md
 
-  - 06 Hands-on Project:
-      - Overview: hands-on-project/index.md
-      - Research Cases:
-          - Graphene Electronic Structure: hands-on-project/research-cases/graphene/index.md
-          - Silicon Semiconductor: hands-on-project/research-cases/silicon/index.md
-          - Battery Material Simulation: hands-on-project/research-cases/battery-material/index.md
-          - Surface Catalysis: hands-on-project/research-cases/surface-catalysis/index.md
-          - Molecular Dynamics Simulation: hands-on-project/research-cases/molecular-dynamics/index.md
 
-  - References:
+
+  - 🧪 Hands-on Research Cases:
+
+      - Overview:
+          hands-on-project/index.md
+
+
+      - Graphene Electronic Structure:
+          hands-on-project/research-cases/graphene/index.md
+
+
+      - Silicon Semiconductor:
+          hands-on-project/research-cases/silicon/index.md
+
+
+      - Battery Material Simulation:
+          hands-on-project/research-cases/battery-material/index.md
+
+
+      - Surface Catalysis:
+          hands-on-project/research-cases/surface-catalysis/index.md
+
+
+      - Molecular Dynamics:
+          hands-on-project/research-cases/molecular-dynamics/index.md
+
+
+
+  - 📚 References:
 
       - Software:
           references/software.md
 
       - Learning Resources:
           references/resources.md
-
 
 
 extra:

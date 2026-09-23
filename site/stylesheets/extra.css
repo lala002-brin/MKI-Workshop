@@ -2287,3 +2287,1783 @@ grid-template-columns:1fr;
     max-width:700px;
 
 }
+/* =====================================================
+   HANDS-ON PROJECT LANDING
+   ===================================================== */
+
+
+.lab-hero {
+
+    text-align:center;
+
+    padding:5rem 2rem;
+
+    margin-bottom:4rem;
+
+}
+
+
+
+.lab-hero h1 {
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    letter-spacing:-0.03em;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+.lab-hero p {
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+
+
+.lab-tags {
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:0.8rem;
+
+    margin-top:2rem;
+
+}
+
+
+
+.lab-tags span {
+
+    padding:0.45rem 1rem;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:0.9rem;
+
+    font-weight:700;
+
+}
+
+
+
+/* Research Cases */
+
+
+.research-case {
+
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    gap:2.5rem;
+
+    padding:3rem 0;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+.case-number {
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    color:#2563eb;
+
+    line-height:1;
+
+}
+
+
+
+.case-content h2 {
+
+    margin-top:0;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+}
+
+
+
+.case-content p {
+
+    max-width:750px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+.method {
+
+    margin-top:1rem;
+
+    font-weight:700;
+
+    color:#2563eb!important;
+
+}
+
+
+
+.case-content a {
+
+    display:inline-block;
+
+    margin-top:1.2rem;
+
+    font-weight:800;
+
+}
+
+
+
+/* Workflow */
+
+
+.workflow {
+
+    text-align:center;
+
+    margin:4rem auto;
+
+    padding:2rem;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    line-height:2.5;
+
+    background:#f8fafc;
+
+    border-radius:24px;
+
+}
+
+
+
+@media(max-width:800px){
+
+    .research-case {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .case-number {
+
+        font-size:3rem;
+
+    }
+
+
+    .lab-hero h1 {
+
+        font-size:2.2rem;
+
+    }
+
+}
+/* =====================================================
+   HANDS-ON PROJECT LANDING PAGE
+   ===================================================== */
+
+
+/* HERO */
+
+.lab-hero {
+
+    text-align:center;
+
+    padding:5rem 2rem 4rem;
+
+    margin-bottom:3rem;
+
+}
+
+
+
+.hero-label {
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    color:#2563eb;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+.lab-hero h1 {
+
+    font-size:3.2rem;
+
+    line-height:1.15;
+
+    font-weight:900;
+
+    letter-spacing:-0.04em;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+.hero-description {
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+
+/* TAGS */
+
+
+.lab-tags {
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:.8rem;
+
+    margin-top:2rem;
+
+}
+
+
+
+.lab-tags span {
+
+    padding:.55rem 1.2rem;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    border:1px solid #dbeafe;
+
+}
+
+
+
+
+
+/* SECTION TITLE */
+
+
+.md-typeset h1 {
+
+    font-weight:900;
+
+}
+
+
+.md-typeset h2 {
+
+    font-weight:800;
+
+}
+
+
+
+
+/* CASE SHOWCASE */
+
+
+.case-showcase {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+
+
+.case-feature {
+
+    display:grid;
+
+    grid-template-columns:100px 1fr;
+
+    gap:2rem;
+
+    padding:2.5rem;
+
+    border-radius:24px;
+
+    border:1px solid #e2e8f0;
+
+    background:#ffffff;
+
+    transition:.25s ease;
+
+}
+
+
+
+.case-feature:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 15px 40px rgba(15,23,42,.12);
+
+}
+
+
+
+.case-index {
+
+    font-size:3.5rem;
+
+    font-weight:900;
+
+    color:#2563eb;
+
+    line-height:1;
+
+}
+
+
+
+.case-category {
+
+    font-size:.8rem;
+
+    letter-spacing:.12em;
+
+    font-weight:800;
+
+    color:#64748b!important;
+
+}
+
+
+
+.case-content h2 {
+
+    margin-top:.3rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.case-content p {
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+.case-tools {
+
+    margin-top:1rem;
+
+    padding:.8rem 1rem;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+
+
+.case-button {
+
+    display:inline-block;
+
+    margin-top:1.5rem;
+
+    font-weight:800;
+
+}
+/* =====================================================
+   WORKFLOW SECTION
+   ===================================================== */
+
+
+.workflow-container {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.5rem;
+
+    margin:3rem 0;
+
+}
+
+
+
+.workflow-item {
+
+    padding:2rem;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    text-align:center;
+
+    transition:.25s ease;
+
+}
+
+
+
+.workflow-item:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 12px 30px rgba(15,23,42,.1);
+
+}
+
+
+
+.workflow-number {
+
+    width:45px;
+
+    height:45px;
+
+    margin:0 auto 1rem;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:900;
+
+}
+
+
+
+.workflow-item h3 {
+
+    margin-top:.5rem;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.workflow-item p {
+
+    color:#64748b;
+
+    line-height:1.7;
+
+}
+
+
+
+
+/* =====================================================
+   JOURNEY BOX
+   ===================================================== */
+
+
+.journey-box {
+
+    margin:4rem 0;
+
+    padding:3rem;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+
+.journey-box h2 {
+
+    color:white;
+
+    font-size:2rem;
+
+}
+
+
+
+.journey-box p {
+
+    max-width:700px;
+
+    margin:1rem auto 2rem;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+
+
+.journey-flow {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+    font-weight:800;
+
+}
+
+
+
+.journey-flow span {
+
+    padding:.8rem 1.2rem;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+
+
+/* =====================================================
+   RESOURCE SECTION
+   ===================================================== */
+
+
+.resource-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.5rem;
+
+    margin:3rem 0;
+
+}
+
+
+
+.resource-card {
+
+    padding:1.8rem;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    transition:.25s ease;
+
+}
+
+
+
+.resource-card:hover {
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 10px 25px rgba(15,23,42,.1);
+
+}
+
+
+
+.resource-card h3 {
+
+    margin-top:0;
+
+    color:#2563eb;
+
+}
+
+
+
+.resource-card p {
+
+    color:#64748b;
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+/* =====================================================
+   FINAL CALL TO ACTION
+   ===================================================== */
+
+
+.final-banner {
+
+    margin:5rem 0 2rem;
+
+    padding:4rem 2rem;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:#eff6ff;
+
+}
+
+
+
+.final-banner h2 {
+
+    font-size:2.2rem;
+
+}
+
+
+
+.final-banner p {
+
+    color:#475569;
+
+    font-size:1.1rem;
+
+}
+
+
+
+.final-banner a {
+
+    display:inline-block;
+
+    margin-top:1.5rem;
+
+    padding:.9rem 1.8rem;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:white!important;
+
+    font-weight:800;
+
+}
+
+
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+
+@media(max-width:1000px){
+
+
+.workflow-container {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.resource-grid {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.lab-hero h1 {
+
+font-size:2.2rem;
+
+}
+
+
+
+.case-feature {
+
+grid-template-columns:1fr;
+
+padding:1.8rem;
+
+}
+
+
+
+.case-index {
+
+font-size:2.5rem;
+
+}
+
+
+
+.workflow-container {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.resource-grid {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.journey-flow {
+
+flex-direction:column;
+
+}
+
+
+}
+/* =====================================================
+   HANDS-ON PROJECT POLISH
+   ===================================================== */
+
+
+/* Smooth appearance */
+
+.case-feature,
+.workflow-item,
+.resource-card {
+
+    animation: fadeUp .5s ease both;
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   PREMIUM SECTION DIVIDER
+   ===================================================== */
+
+
+.md-typeset hr {
+
+    margin:4rem 0;
+
+    border-color:#e2e8f0;
+
+}
+
+
+
+
+/* =====================================================
+   CASE BUTTON STYLE
+   ===================================================== */
+
+
+.case-button {
+
+    padding:.7rem 1.4rem;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:white!important;
+
+    transition:.25s ease;
+
+}
+
+
+
+.case-button:hover {
+
+    background:#1d4ed8;
+
+    transform:translateX(4px);
+
+}
+
+
+
+
+
+/* =====================================================
+   CASE METHOD BADGE
+   ===================================================== */
+
+
+.case-tools {
+
+    display:inline-block;
+
+    font-size:.9rem;
+
+}
+
+
+
+
+
+/* =====================================================
+   HERO VISUAL EMPHASIS
+   ===================================================== */
+
+
+.lab-hero {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.lab-hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    filter:blur(80px);
+
+    opacity:.5;
+
+    top:-100px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:-1;
+
+}
+
+
+
+
+/* =====================================================
+   RESEARCH CASE HOVER DETAILS
+   ===================================================== */
+
+
+.case-feature {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.case-feature::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    right:-40px;
+
+    bottom:-40px;
+
+    z-index:0;
+
+}
+
+
+
+.case-content {
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+
+
+/* =====================================================
+   WORKFLOW IMPROVEMENT
+   ===================================================== */
+
+
+.workflow-item h3 {
+
+    color:#2563eb;
+
+}
+
+
+
+.workflow-item {
+
+    min-height:230px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+
+
+/* =====================================================
+   RESOURCE CARD IMPROVEMENT
+   ===================================================== */
+
+
+.resource-card {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+.resource-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:#2563eb;
+
+}
+
+
+
+
+
+/* =====================================================
+   DARK MODE SUPPORT
+   ===================================================== */
+
+
+[data-md-color-scheme="slate"] .case-feature,
+[data-md-color-scheme="slate"] .resource-card,
+[data-md-color-scheme="slate"] .workflow-item {
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+}
+
+
+
+[data-md-color-scheme="slate"] .case-content p,
+[data-md-color-scheme="slate"] .resource-card p,
+[data-md-color-scheme="slate"] .workflow-item p {
+
+    color:#cbd5e1;
+
+}
+
+
+
+[data-md-color-scheme="slate"] .journey-box {
+
+    background:#020617;
+
+}
+/* =====================================================
+   PREMIUM BOTTOM SECTION
+   ===================================================== */
+
+
+/* Workflow premium */
+
+
+.workflow-container {
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:0;
+
+    margin:4rem 0;
+
+}
+
+
+
+.workflow-item {
+
+    position:relative;
+
+    min-height:260px;
+
+    padding:2.5rem 2rem;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:0;
+
+}
+
+
+
+.workflow-item:first-child {
+
+    border-radius:24px 0 0 24px;
+
+}
+
+
+
+.workflow-item:last-child {
+
+    border-radius:0 24px 24px 0;
+
+}
+
+
+
+.workflow-item:not(:last-child)::after {
+
+    content:"→";
+
+    position:absolute;
+
+    right:-18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:900;
+
+    z-index:2;
+
+}
+
+
+
+.workflow-number {
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:18px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:1.2rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+
+
+/* Journey section */
+
+
+.journey-box {
+
+    position:relative;
+
+    padding:5rem 3rem;
+
+    border-radius:35px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #0f172a,
+
+    #1e3a8a
+
+    );
+
+    overflow:hidden;
+
+}
+
+
+
+.journey-box::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:#38bdf8;
+
+    opacity:.15;
+
+    filter:blur(100px);
+
+    top:-150px;
+
+    right:-100px;
+
+}
+
+
+
+.journey-box h2 {
+
+    position:relative;
+
+    color:white;
+
+    font-size:2.5rem;
+
+}
+
+
+
+.journey-box p {
+
+    position:relative;
+
+}
+
+
+
+.journey-flow {
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+    margin-top:2rem;
+
+}
+
+
+
+.journey-flow span {
+
+    padding:1rem 1.5rem;
+
+    background:rgba(255,255,255,.1);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:16px;
+
+    color:white;
+
+}
+
+
+
+
+
+/* Resources premium */
+
+
+.resource-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+
+.resource-card {
+
+    padding:2.5rem 2rem;
+
+    border-radius:24px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    transition:.3s ease;
+
+}
+
+
+
+.resource-card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 20px 45px rgba(15,23,42,.12);
+
+}
+
+
+
+.resource-card h3 {
+
+    font-size:1.3rem;
+
+}
+
+
+
+/* Final CTA */
+
+
+.final-banner {
+
+    position:relative;
+
+    margin-top:5rem;
+
+    padding:5rem 3rem;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #2563eb,
+
+    #1e40af
+
+    );
+
+    overflow:hidden;
+
+}
+
+
+
+.final-banner::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.08;
+
+    top:-100px;
+
+    left:-100px;
+
+}
+
+
+
+.final-banner h2 {
+
+    position:relative;
+
+    color:white;
+
+    font-size:2.8rem;
+
+}
+
+
+
+.final-banner p {
+
+    position:relative;
+
+    color:#dbeafe;
+
+}
+
+
+
+.final-banner a {
+
+    position:relative;
+
+    display:inline-block;
+
+    margin-top:1.5rem;
+
+    padding:1rem 2rem;
+
+    background:white;
+
+    color:#2563eb!important;
+
+    border-radius:999px;
+
+    font-weight:900;
+
+}
+
+
+
+@media(max-width:900px){
+
+.workflow-container,
+
+.resource-grid {
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.workflow-item:first-child,
+
+.workflow-item:last-child {
+
+border-radius:24px;
+
+}
+
+
+
+.workflow-item:not(:last-child)::after {
+
+display:none;
+
+}
+
+}
+/* =====================================================
+   RESOURCE PREMIUM FIX
+   ===================================================== */
+
+
+.resource-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+    max-width:900px;
+
+    margin:3rem auto;
+
+}
+
+
+
+.resource-card {
+
+    min-height:180px;
+
+    padding:2.5rem;
+
+    border-radius:28px;
+
+    background:
+
+    linear-gradient(
+    145deg,
+    #ffffff,
+    #f8fafc
+    );
+
+    border:1px solid #e5e7eb;
+
+}
+
+
+
+.resource-card h3 {
+
+    font-size:1.5rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.resource-card p {
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+}
+
+
+
+@media(max-width:800px){
+
+.resource-grid {
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   WORKFLOW TIMELINE
+   ===================================================== */
+
+
+.workflow-container {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+    position:relative;
+
+    margin:4rem 0;
+
+}
+
+
+
+.workflow-container::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:55px;
+
+    left:10%;
+
+    right:10%;
+
+    height:2px;
+
+    background:#dbeafe;
+
+}
+
+
+
+.workflow-item {
+
+    position:relative;
+
+    text-align:center;
+
+    background:white;
+
+    border:none;
+
+    padding:1rem;
+
+}
+
+
+
+.workflow-number {
+
+    position:relative;
+
+    z-index:2;
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:900;
+
+}
+
+
+
+.workflow-item h3 {
+
+    margin-top:1.5rem;
+
+    font-size:1.3rem;
+
+}
+
+
+
+.workflow-item p {
+
+    color:#64748b;
+
+}
+
+
+
+@media(max-width:900px){
+
+.workflow-container {
+
+grid-template-columns:1fr;
+
+}
+
+
+.workflow-container::before {
+
+display:none;
+
+}
+
+}
+.resource-card::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    right:-20px;
+
+    bottom:-20px;
+
+    opacity:.6;
+
+}
+
+
+
+.resource-card {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
