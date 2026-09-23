@@ -64,7 +64,7 @@ markdown_extensions:
 plugins:
 
   - search
-
+  - mkdocs-jupyter
 
 
 nav:
@@ -133,6 +133,8 @@ nav:
 
           - SCF Calculation:
               quantum-simulation/hands-on/scf.md
+          - Notebook:
+              quantum-simulation/hands-on/01_QE_SCF_Test.ipynb
 
           - Geometry Optimization:
               quantum-simulation/hands-on/relaxation.md
