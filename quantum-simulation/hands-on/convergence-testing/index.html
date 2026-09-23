@@ -1303,111 +1303,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#effect-of-ecutwfc-on-calculation-accuracy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Effect of ecutwfc on Calculation Accuracy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-choose-initial-cutoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Choose Initial Cutoff
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-increase-cutoff-systematically" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Increase Cutoff Systematically
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-determine-converged-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Determine Converged Value
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-quantum-espresso-input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Quantum ESPRESSO Input
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-considerations-on-hpc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practical Considerations on HPC
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ---
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2311,111 +2206,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#effect-of-ecutwfc-on-calculation-accuracy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Effect of ecutwfc on Calculation Accuracy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-choose-initial-cutoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Choose Initial Cutoff
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-increase-cutoff-systematically" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Increase Cutoff Systematically
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-determine-converged-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Determine Converged Value
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-quantum-espresso-input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Quantum ESPRESSO Input
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-considerations-on-hpc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practical Considerations on HPC
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ---
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2499,32 +2289,27 @@
 <h2 id="general-convergence-workflow">General Convergence Workflow</h2>
 <p>A typical convergence workflow follows these steps:</p>
 <div class="highlight"><pre><span></span><code>Select initial parameters
-            |
-            ↓
+          |
+          ↓
 Perform SCF calculation
-            |
-            ↓
+          |
+          ↓
 Increase computational parameters
-            |
-            ↓
+          |
+          ↓
 Compare total energy and properties
-            |
-            ↓
+          |
+          ↓
 Select converged parameters
----
-
-# 1. Plane-Wave Cutoff Energy Convergence
-
-## Kinetic Energy Cutoff (`ecutwfc`)
-
-Quantum ESPRESSO represents electronic wave functions using a plane-wave basis set.
-
-The accuracy of this representation depends on the kinetic energy cutoff value (`ecutwfc`). This parameter determines the maximum kinetic energy of plane waves included in the basis set.
-
-In Quantum ESPRESSO, the parameter is defined in the `SYSTEM` section of the input file:
-
-```text
-&amp;SYSTEM
+</code></pre></div>
+<p>The final parameters are selected when increasing computational accuracy no longer produces significant changes in the calculated properties.</p>
+<hr />
+<h1 id="1-plane-wave-cutoff-energy-convergence">1. Plane-Wave Cutoff Energy Convergence</h1>
+<h2 id="kinetic-energy-cutoff-ecutwfc">Kinetic Energy Cutoff (<code>ecutwfc</code>)</h2>
+<p>Quantum ESPRESSO represents electronic wave functions using a plane-wave basis set.</p>
+<p>The accuracy of this representation depends on the kinetic energy cutoff value (<code>ecutwfc</code>). This parameter determines the maximum kinetic energy of plane waves included in the basis set.</p>
+<p>In Quantum ESPRESSO, the parameter is defined in the <code>SYSTEM</code> section of the input file:</p>
+<div class="highlight"><pre><span></span><code>&amp;SYSTEM
 
 ecutwfc = value
 
