@@ -1,5 +1,21 @@
-# Convergence Testing
+<div class="module-header">
 
+<h1>
+Convergence Testing
+</h1>
+
+<p>
+Determine reliable computational parameters for accurate and efficient first-principles calculations using Quantum ESPRESSO.
+</p>
+
+<span class="module-tag">
+FOUNDATION
+</span>
+
+</div>
+
+
+---
 ## Overview
 
 In first-principles calculations, the accuracy and reliability of the simulation depend strongly on the computational parameters used during the calculation.

@@ -1,0 +1,315 @@
+.md-typeset h1 {
+
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+}
+
+
+.md-typeset h2 {
+
+    margin-top: 2.5em;
+
+}
+
+
+.md-typeset p {
+
+    line-height: 1.8;
+
+}
+
+
+.md-typeset .admonition {
+
+    border-radius: 8px;
+
+}
+
+
+.md-typeset blockquote {
+
+    border-left: 4px solid var(--md-primary-fg-color);
+
+    padding-left: 1rem;
+
+}
+/* Hands-on Cards */
+
+.md-typeset .grid.cards > ul > li {
+
+    border-radius: 18px;
+
+    padding: 1.2rem;
+
+    transition: all 0.3s ease;
+
+    border-top: 6px solid #2563eb;
+
+}
+
+
+.md-typeset .grid.cards > ul > li:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+}
+
+
+/* Warna setiap card */
+
+.md-typeset .grid.cards > ul > li:nth-child(1) {
+    background: #eff6ff;
+    border-top-color: #2563eb;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(2) {
+    background: #faf5ff;
+    border-top-color: #9333ea;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(3) {
+    background: #f0fdf4;
+    border-top-color: #16a34a;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(4) {
+    background: #fff7ed;
+    border-top-color: #ea580c;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(5) {
+    background: #ecfeff;
+    border-top-color: #0891b2;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(6) {
+    background: #fdf2f8;
+    border-top-color: #db2777;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(7) {
+    background: #f5f3ff;
+    border-top-color: #7c3aed;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(8) {
+    background: #fef2f2;
+    border-top-color: #dc2626;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(9) {
+    background: #ecfdf5;
+    border-top-color: #059669;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(10) {
+    background: #f0f9ff;
+    border-top-color: #0284c7;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(11) {
+    background: #fefce8;
+    border-top-color: #ca8a04;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(12) {
+    background: #f8fafc;
+    border-top-color: #475569;
+}
+/* =================================
+   All Hands-on Color Cards
+   ================================= */
+
+
+/* 1. SCF Calculation */
+.grid.cards > ul > li:nth-child(1) {
+    border-top: 5px solid #2563eb;
+    background: linear-gradient(145deg, #eff6ff, #ffffff);
+}
+
+
+/* 2. Notebook */
+.grid.cards > ul > li:nth-child(2) {
+    border-top: 5px solid #9333ea;
+    background: linear-gradient(145deg, #faf5ff, #ffffff);
+}
+
+
+/* 3. Convergence Testing */
+.grid.cards > ul > li:nth-child(3) {
+    border-top: 5px solid #16a34a;
+    background: linear-gradient(145deg, #f0fdf4, #ffffff);
+}
+
+
+/* 4. Geometry Optimization */
+.grid.cards > ul > li:nth-child(4) {
+    border-top: 5px solid #ea580c;
+    background: linear-gradient(145deg, #fff7ed, #ffffff);
+}
+
+
+/* 5. Band Structure */
+.grid.cards > ul > li:nth-child(5) {
+    border-top: 5px solid #0891b2;
+    background: linear-gradient(145deg, #ecfeff, #ffffff);
+}
+
+
+/* 6. Density of States */
+.grid.cards > ul > li:nth-child(6) {
+    border-top: 5px solid #db2777;
+    background: linear-gradient(145deg, #fdf2f8, #ffffff);
+}
+
+
+/* 7. DFT+U */
+.grid.cards > ul > li:nth-child(7) {
+    border-top: 5px solid #7c3aed;
+    background: linear-gradient(145deg, #f5f3ff, #ffffff);
+}
+
+
+/* 8. Spin Orbit Coupling */
+.grid.cards > ul > li:nth-child(8) {
+    border-top: 5px solid #dc2626;
+    background: linear-gradient(145deg, #fef2f2, #ffffff);
+}
+
+
+/* 9. Phonon Calculation */
+.grid.cards > ul > li:nth-child(9) {
+    border-top: 5px solid #059669;
+    background: linear-gradient(145deg, #ecfdf5, #ffffff);
+}
+
+
+/* 10. Wannier Function */
+.grid.cards > ul > li:nth-child(10) {
+    border-top: 5px solid #0284c7;
+    background: linear-gradient(145deg, #f0f9ff, #ffffff);
+}
+
+
+/* 11. Molecular Dynamics */
+.grid.cards > ul > li:nth-child(11) {
+    border-top: 5px solid #ca8a04;
+    background: linear-gradient(145deg, #fefce8, #ffffff);
+}
+
+
+/* 12. Post Processing */
+.grid.cards > ul > li:nth-child(12) {
+    border-top: 5px solid #475569;
+    background: linear-gradient(145deg, #f8fafc, #ffffff);
+}}
+/* =================================
+   Hands-on Colorful Cards
+   ================================= */
+
+.md-typeset .grid.cards > ul > li {
+
+    border-radius: 18px;
+
+    padding: 1.2rem;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.md-typeset .grid.cards > ul > li:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+}
+
+
+/* Card colors */
+
+.md-typeset .grid.cards > ul > li:nth-child(1) {
+    background: #eff6ff;
+    border-top: 6px solid #2563eb;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(2) {
+    background: #faf5ff;
+    border-top: 6px solid #9333ea;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(3) {
+    background: #f0fdf4;
+    border-top: 6px solid #16a34a;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(4) {
+    background: #fff7ed;
+    border-top: 6px solid #ea580c;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(5) {
+    background: #ecfeff;
+    border-top: 6px solid #0891b2;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(6) {
+    background: #fdf2f8;
+    border-top: 6px solid #db2777;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(7) {
+    background: #f5f3ff;
+    border-top: 6px solid #7c3aed;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(8) {
+    background: #fef2f2;
+    border-top: 6px solid #dc2626;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(9) {
+    background: #ecfdf5;
+    border-top: 6px solid #059669;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(10) {
+    background: #f0f9ff;
+    border-top: 6px solid #0284c7;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(11) {
+    background: #fefce8;
+    border-top: 6px solid #ca8a04;
+}
+
+
+.md-typeset .grid.cards > ul > li:nth-child(12) {
+    background: #f8fafc;
+    border-top: 6px solid #475569;
+}

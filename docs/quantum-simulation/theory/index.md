@@ -34,7 +34,7 @@ This section introduces the theoretical foundation of first-principles calculati
 
     Introduction to Density Functional Theory and electron density formulation.
 
-    [:material-arrow-right: DFT Overview](dft.md)
+    [:material-arrow-right: DFT Overview](dft-overview.md)
 
 
 
