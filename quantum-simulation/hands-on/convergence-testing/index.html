@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convergence-testing" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -1206,8 +1206,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1249,8 +1247,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1297,6 +1293,899 @@
     <span class="md-ellipsis">
       
         General Convergence Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-plane-wave-cutoff-energy-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plane-Wave Cutoff Energy Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Plane-Wave Cutoff Energy Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinetic-energy-cutoff-ecutwfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kinetic Energy Cutoff (ecutwfc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-ecutwfc-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of ecutwfc on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-choose-initial-cutoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Choose Initial Cutoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-increase-cutoff-systematically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Increase Cutoff Systematically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-determine-converged-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Determine Converged Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-charge-density-cutoff-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Charge Density Cutoff Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Charge Density Cutoff Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#charge-density-cutoff-ecutrho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charge Density Cutoff (ecutrho)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-ecutwfc-and-ecutrho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Between ecutwfc and ecutrho
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-ecutrho-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of ecutrho on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecutrho-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ecutrho Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-k-point-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. k-point Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. k-point Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brillouin-zone-sampling-and-k-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brillouin Zone Sampling and k-points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-mesh-in-quantum-espresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k-point Mesh in Quantum ESPRESSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-k-point-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of k-point Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k-point Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-convergence-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Convergence Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-k-point-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing k-point Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing k-point Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insulators-and-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insulators and Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Workflow on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-smearing-parameters-for-metallic-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Smearing Parameters for Metallic Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Smearing Parameters for Metallic Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-smearing-is-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Smearing is Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-parameters-in-quantum-espresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Parameters in Quantum ESPRESSO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-smearing-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Smearing Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Smearing Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methfessel-paxton-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methfessel-Paxton Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marzari-vanderbilt-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marzari-Vanderbilt Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-smearing-width-degauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Smearing Width (degauss)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Workflow on HPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-convergence-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Convergence Criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Convergence Criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-energy-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total Energy Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electronic-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electronic Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronic Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scf-convergence-threshold-conv_thr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCF Convergence Threshold (conv_thr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Force Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-optimization-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Optimization Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stress-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stress Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lattice-parameter-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lattice Parameter Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-convergence-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Convergence Decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-complete-convergence-testing-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Complete Convergence Testing Workflow on HPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Complete Convergence Testing Workflow on HPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare-initial-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Prepare Initial Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-define-convergence-test-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Define Convergence Test Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-multiple-hpc-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Create Multiple HPC Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-submit-calculations-using-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Submit Calculations Using SLURM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-analyze-calculation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Analyze Calculation Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-determine-optimal-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Determine Optimal Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-convergence-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Convergence Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-python-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Python Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-hpc-convergence-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for HPC Convergence Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
       
     </span>
   </a>
@@ -2153,8 +3042,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2206,6 +3093,899 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-plane-wave-cutoff-energy-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plane-Wave Cutoff Energy Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Plane-Wave Cutoff Energy Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinetic-energy-cutoff-ecutwfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kinetic Energy Cutoff (ecutwfc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-ecutwfc-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of ecutwfc on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-choose-initial-cutoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Choose Initial Cutoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-increase-cutoff-systematically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Increase Cutoff Systematically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-determine-converged-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Determine Converged Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-charge-density-cutoff-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Charge Density Cutoff Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Charge Density Cutoff Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#charge-density-cutoff-ecutrho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charge Density Cutoff (ecutrho)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-ecutwfc-and-ecutrho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Between ecutwfc and ecutrho
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-ecutrho-on-calculation-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of ecutrho on Calculation Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecutrho-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ecutrho Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-k-point-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. k-point Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. k-point Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brillouin-zone-sampling-and-k-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brillouin Zone Sampling and k-points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-mesh-in-quantum-espresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k-point Mesh in Quantum ESPRESSO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-of-k-point-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effect of k-point Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k-point Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-convergence-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Convergence Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-k-point-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing k-point Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing k-point Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insulators-and-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insulators and Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Workflow on HPC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-smearing-parameters-for-metallic-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Smearing Parameters for Metallic Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Smearing Parameters for Metallic Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-smearing-is-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Smearing is Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-parameters-in-quantum-espresso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Parameters in Quantum ESPRESSO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-smearing-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Smearing Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Smearing Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaussian-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methfessel-paxton-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methfessel-Paxton Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marzari-vanderbilt-smearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marzari-Vanderbilt Smearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-smearing-width-degauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Smearing Width (degauss)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-convergence-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Convergence Test
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-quantum-espresso-input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Quantum ESPRESSO Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smearing-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smearing Workflow on HPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-convergence-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Convergence Criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Convergence Criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-energy-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total Energy Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electronic-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electronic Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronic Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scf-convergence-threshold-conv_thr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCF Convergence Threshold (conv_thr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Force Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-optimization-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Optimization Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stress-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress Convergence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stress Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lattice-parameter-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lattice Parameter Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-convergence-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Convergence Decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-considerations-on-hpc_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations on HPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-complete-convergence-testing-workflow-on-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Complete Convergence Testing Workflow on HPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Complete Convergence Testing Workflow on HPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare-initial-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Prepare Initial Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-define-convergence-test-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Define Convergence Test Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-multiple-hpc-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Create Multiple HPC Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-submit-calculations-using-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Submit Calculations Using SLURM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-analyze-calculation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Analyze Calculation Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-determine-optimal-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Determine Optimal Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-convergence-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Convergence Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-python-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Python Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-hpc-convergence-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for HPC Convergence Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2226,7 +4006,23 @@
   
 
 
-<h1 id="convergence-testing">Convergence Testing</h1>
+<div class="module-header">
+
+<h1>
+Convergence Testing
+</h1>
+
+<p>
+Determine reliable computational parameters for accurate and efficient first-principles calculations using Quantum ESPRESSO.
+</p>
+
+<span class="module-tag">
+FOUNDATION
+</span>
+
+</div>
+
+<hr />
 <h2 id="overview">Overview</h2>
 <p>In first-principles calculations, the accuracy and reliability of the simulation depend strongly on the computational parameters used during the calculation.</p>
 <p>Quantum ESPRESSO uses several numerical parameters that control the accuracy and computational cost of a calculation. These parameters determine how accurately the electronic structure of a material is represented.</p>

@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scf-calculation" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -1150,8 +1150,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1193,8 +1191,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2153,8 +2149,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2226,7 +2220,23 @@
   
 
 
-<h1 id="scf-calculation">SCF Calculation</h1>
+<div class="module-header">
+
+<h1>
+SCF Calculation
+</h1>
+
+<p>
+Self-Consistent Field (SCF) calculation using Quantum ESPRESSO for first-principles simulation workflow.
+</p>
+
+<span class="module-tag">
+FOUNDATION
+</span>
+
+</div>
+
+<hr />
 <h2 id="introduction">Introduction</h2>
 <p>This hands-on session demonstrates a Self-Consistent Field (SCF) calculation using Quantum ESPRESSO.</p>
 <p>Participants will learn:</p>
@@ -2236,19 +2246,35 @@
 <li>Analyze total energy</li>
 <li>Check convergence</li>
 </ul>
+<hr />
 <h2 id="computational-workflow">Computational Workflow</h2>
-<ol>
-<li>Prepare atomic structure</li>
-<li>Define pseudopotential</li>
-<li>Run SCF calculation</li>
-<li>Analyze output energy</li>
-</ol>
+<p>The SCF calculation follows these main steps:</p>
+<div class="highlight"><pre><span></span><code>Prepare atomic structure
+
+        ↓
+
+Define pseudopotential
+
+        ↓
+
+Run SCF calculation
+
+        ↓
+
+Analyze output energy
+
+        ↓
+
+Check convergence
+</code></pre></div>
+<hr />
 <h2 id="quantum-espresso-notebook">Quantum ESPRESSO Notebook</h2>
 <p>The complete notebook is available here:</p>
-<p><a href="../01_QE_SCF_Test/">Open QE SCF Notebook</a></p>
+<p><a href="../01_QE_SCF_Test/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04m3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></svg></span> Open QE SCF Notebook</a></p>
+<hr />
 <h2 id="hands-on-notebook">Hands-on Notebook</h2>
 <p>Run Quantum ESPRESSO SCF calculation on HPC.</p>
-<p><a href="http://localhost:8888/lab/tree/01_QE_SCF_Test.ipynb">📓 Launch Jupyter Notebook</a></p>
+<p><a href="http://localhost:8888/lab/tree/01_QE_SCF_Test.ipynb"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"/></svg></span> Launch Jupyter Notebook</a></p>
 
 
 
