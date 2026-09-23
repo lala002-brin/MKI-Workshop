@@ -4431,3 +4431,454 @@ display:none;
     0 8px 25px rgba(15,23,42,.08);
 
 }
+/* =====================================================
+   SIDEBAR ROADMAP STYLE
+   ===================================================== */
+
+
+/* Sidebar overall */
+
+.md-sidebar {
+
+    font-size:0.85rem;
+
+}
+
+
+/* Section headers */
+
+.md-nav__title {
+
+    font-size:.72rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    color:#2563eb;
+
+    text-transform:uppercase;
+
+    margin-top:1.5rem;
+
+}
+
+
+
+/* Main navigation links */
+
+.md-nav__link {
+
+    border-radius:8px;
+
+    padding:.35rem .6rem;
+
+    margin:.15rem 0;
+
+    transition:.2s ease;
+
+}
+
+
+
+/* Hover */
+
+.md-nav__link:hover {
+
+    background:#eff6ff;
+
+    transform:translateX(4px);
+
+}
+
+
+
+/* Active page */
+
+.md-nav__link--active {
+
+    background:#dbeafe;
+
+    color:#1d4ed8!important;
+
+    font-weight:800;
+
+}
+
+
+
+/* Nested menu */
+
+.md-nav .md-nav {
+
+    border-left:1px solid #dbeafe;
+
+    margin-left:.7rem;
+
+    padding-left:.5rem;
+
+}
+
+
+
+/* Module spacing */
+
+.md-nav__item--nested {
+
+    margin-bottom:.8rem;
+
+}
+/* =====================================================
+   SIDEBAR WORKSHOP PROGRESS
+   ===================================================== */
+
+
+
+
+
+[data-md-color-scheme="slate"] .md-sidebar--primary::after {
+
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+    color:#cbd5e1;
+
+}
+/* Compact navigation */
+
+.md-nav__item--nested > .md-nav__link {
+
+    font-weight:800;
+
+    font-size:.82rem;
+
+    color:#334155;
+
+}
+
+
+.md-nav__item--nested {
+
+    margin-bottom:.4rem;
+
+}
+
+
+/* submenu lebih kecil */
+
+.md-nav .md-nav .md-nav__link {
+
+    font-size:.8rem;
+
+}
+
+
+/* reduce vertical spacing */
+
+.md-nav__link {
+
+    padding:.25rem .5rem;
+
+}
+/* =====================================================
+   COMPACT SIDEBAR IMPROVEMENT
+   ===================================================== */
+
+
+/* ukuran keseluruhan sidebar */
+
+.md-sidebar {
+
+    font-size:0.82rem;
+
+}
+
+
+/* jarak antar menu */
+
+.md-nav__item {
+
+    margin:0;
+
+}
+
+
+
+/* link utama */
+
+.md-nav__link {
+
+    padding:.22rem .55rem;
+
+    line-height:1.35;
+
+}
+
+
+
+/* judul kategori besar */
+
+.md-nav__item--nested > .md-nav__link {
+
+    font-weight:800;
+
+    font-size:.84rem;
+
+    color:#334155;
+
+    margin-top:.6rem;
+
+}
+
+
+
+/* submenu */
+
+.md-nav .md-nav .md-nav__link {
+
+    font-size:.8rem;
+
+    color:#475569;
+
+}
+
+
+
+/* garis kecil submenu */
+
+.md-nav .md-nav {
+
+    border-left:1px solid #e2e8f0;
+
+    margin-left:.65rem;
+
+    padding-left:.35rem;
+
+}
+
+
+
+/* active page */
+
+.md-nav__link--active {
+
+    background:#dbeafe;
+
+    color:#1d4ed8!important;
+
+    font-weight:800;
+
+}
+
+
+
+/* hover */
+
+.md-nav__link:hover {
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+}
+/* =====================================================
+   MODULE HEADER BADGE
+   ===================================================== */
+
+
+.module-header {
+
+    padding:1.8rem 2rem;
+
+    margin:1rem 0 3rem;
+
+    border-radius:24px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #eff6ff,
+    #ffffff
+    );
+
+    border:1px solid #dbeafe;
+
+}
+
+
+
+.module-label {
+
+    font-size:.75rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    color:#2563eb;
+
+    text-transform:uppercase;
+
+    margin-bottom:.8rem;
+
+}
+
+
+
+.module-header h2 {
+
+    margin:.2rem 0 1.2rem;
+
+    font-size:1.8rem;
+
+}
+
+
+
+.module-info {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.8rem;
+
+}
+
+
+
+.module-info span {
+
+    padding:.45rem 1rem;
+
+    border-radius:999px;
+
+    background:white;
+
+    border:1px solid #dbeafe;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    color:#475569;
+
+}
+
+
+
+.module-info strong {
+
+    color:#2563eb;
+
+}
+/* =====================================================
+   PROFESSIONAL FOOTER
+   ===================================================== */
+
+
+.md-footer {
+
+    background:#0f172a;
+
+}
+
+
+
+.md-footer-meta {
+
+    background:#020617;
+
+}
+
+
+
+.md-footer-copyright {
+
+    font-size:.85rem;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+
+}
+
+
+
+.md-footer-meta .md-social {
+
+    margin-top:.5rem;
+
+}
+
+
+
+.md-footer-social {
+
+    margin-top:1rem;
+
+}
+
+
+
+/* Footer links */
+
+.md-footer a {
+
+    color:#93c5fd;
+
+}
+
+
+
+.md-footer a:hover {
+
+    color:white;
+
+}
+/* =====================================================
+   SIDEBAR LOGO BRANDING
+   ===================================================== */
+
+
+.md-header__button.md-logo img {
+
+    height:45px;
+
+    width:auto;
+
+}
+
+
+
+.md-nav__title {
+
+    display:flex;
+
+    align-items:center;
+
+}
+/* BRIN sidebar branding */
+
+.md-sidebar--primary .md-sidebar__scrollwrap::before {
+
+    content:"";
+
+    display:block;
+
+    height:45px;
+
+    margin:0.5rem 1rem 1rem;
+
+    background-image:url("../assets/images/brin-logo.svg");
+
+    background-repeat:no-repeat;
+
+    background-size:contain;
+
+    background-position:left center;
+
+}

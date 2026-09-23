@@ -223,7 +223,17 @@ nav:
       - Molecular Dynamics:
           hands-on-project/research-cases/molecular-dynamics/index.md
 
+  - 🤖 AI Help Center:
 
+      - Overview:
+          resources/ai-help/index.md
+      - AI Chat Assistant:
+          resources/ai-help/chat.md
+      
+      - 💻 Linux Command Assistant:
+           resources/ai-help/linux-command.md
+      - ⚛ Quantum ESPRESSO Assistant:
+          resources/ai-help/quantum-espresso.md
 
   - 📚 References:
 
@@ -267,6 +277,8 @@ copyright: >
 
 extra_css:
   - stylesheets/extra.css
+  - assets/stylesheets/chat.css
 
 extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - assets/javascripts/chat.js
