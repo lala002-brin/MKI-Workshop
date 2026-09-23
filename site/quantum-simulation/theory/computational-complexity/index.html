@@ -1061,65 +1061,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#theoretical-scaling-of-dft-calculations" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theoretical Scaling of DFT Calculations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-atoms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of Atoms
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-k-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of k-points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-plane-waves" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of Plane Waves
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subspace-diagonalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Subspace Diagonalization
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        Overview
       
     </span>
   </a>
@@ -1905,65 +1850,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#theoretical-scaling-of-dft-calculations" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theoretical Scaling of DFT Calculations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-atoms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of Atoms
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-k-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of k-points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-of-plane-waves" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Number of Plane Waves
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subspace-diagonalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Subspace Diagonalization
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        Overview
       
     </span>
   </a>
@@ -1991,67 +1881,183 @@
 
 
 <h1 id="computational-complexity">Computational Complexity</h1>
-<h2 id="theoretical-scaling-of-dft-calculations">Theoretical Scaling of DFT Calculations</h2>
-<p>The computational cost of Density Functional Theory (DFT) calculations depends on several parameters, including the number of atoms, k-points, plane waves, and electronic bands.</p>
-<h2 id="number-of-atoms">Number of Atoms</h2>
-<p>The computational time increases approximately as:</p>
+<h2 id="overview">Overview</h2>
+<p>Density Functional Theory (DFT) is a powerful first-principles method widely used to study the electronic structure and properties of materials. However, the computational cost of DFT calculations increases rapidly with increasing system size and calculation accuracy requirements.</p>
+<p>In practical simulations, the computational workload is mainly influenced by:</p>
+<ul>
+<li>Number of atoms in the system</li>
+<li>Number of k-points for Brillouin zone sampling</li>
+<li>Number of plane waves used as basis functions</li>
+<li>Number of electronic bands</li>
+<li>Diagonalization method</li>
+</ul>
+<p>Understanding computational complexity helps researchers select appropriate calculation parameters and HPC resources before performing large-scale Quantum ESPRESSO simulations.</p>
+<hr />
+<h1 id="computational-scaling-in-dft-calculations">Computational Scaling in DFT Calculations</h1>
+<h2 id="1-scaling-with-number-of-atoms">1. Scaling with Number of Atoms</h2>
+<p>The number of atoms is one of the main factors controlling the computational cost of DFT calculations.</p>
+<p>For conventional plane-wave DFT calculations, the computational time approximately follows:</p>
 <div class="arithmatex">\[
 O(N^3)
 \]</div>
 <p>where <strong>N</strong> represents the number of atoms in the system.</p>
-<p>Larger systems require significantly higher computational resources because the electronic structure problem becomes more complex.</p>
+<p>The cubic scaling originates from solving the Kohn-Sham equations, particularly during matrix construction and diagonalization procedures. As the number of atoms increases, the number of electrons and electronic states also increases, leading to larger Hamiltonian matrices.</p>
+<p>Examples of systems with increasing computational requirements:</p>
+<ul>
+<li>Small molecules: tens of atoms</li>
+<li>Bulk materials: tens to hundreds of atoms</li>
+<li>Surface, interface, and defect systems: hundreds to thousands of atoms</li>
+</ul>
+<p>Large systems require HPC resources to reduce computational time.</p>
 <hr />
-<h2 id="number-of-k-points">Number of k-points</h2>
-<p>The computational cost is proportional to the number of inequivalent k-points:</p>
+<h2 id="2-scaling-with-number-of-k-points">2. Scaling with Number of k-points</h2>
+<p>Periodic materials require sampling of the Brillouin zone using k-points.</p>
+<p>The computational cost increases approximately linearly with the number of inequivalent k-points:</p>
 <div class="arithmatex">\[
 O(N_k)
 \]</div>
-<p>A denser k-point mesh improves accuracy but increases computational cost.</p>
+<p>where <span class="arithmatex">\(N_k\)</span> represents the number of k-points.</p>
+<p>Increasing the k-point density improves the accuracy of electronic structure calculations, including:</p>
+<ul>
+<li>Total energy</li>
+<li>Density of states</li>
+<li>Band structure</li>
+<li>Metallic system calculations</li>
+</ul>
+<p>However, each k-point requires an independent electronic structure calculation, resulting in increased computational demand.</p>
+<p>Example:</p>
+<p>Low k-point density:
+4 × 4 × 4</p>
+<p>High k-point density:
+12 × 12 × 12</p>
+<p>A higher k-point mesh provides better accuracy but requires more computational resources.</p>
 <hr />
-<h2 id="number-of-plane-waves">Number of Plane Waves</h2>
+<h2 id="3-scaling-with-number-of-plane-waves">3. Scaling with Number of Plane Waves</h2>
+<p>Quantum ESPRESSO uses plane waves as basis functions to represent electronic wave functions.</p>
 <p>The number of plane waves depends on the kinetic energy cutoff:</p>
 <div class="arithmatex">\[
 N_{PW} \propto E_{cut}^{3/2}
 \]</div>
-<p>The FFT operations scale approximately as:</p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(N_{PW}\)</span> is the number of plane waves.</li>
+<li><span class="arithmatex">\(E_{cut}\)</span> is the kinetic energy cutoff.</li>
+</ul>
+<p>A higher cutoff energy improves the accuracy of calculations because more basis functions are included. However, it also increases:</p>
+<ul>
+<li>Memory requirements</li>
+<li>FFT operations</li>
+<li>Computational time</li>
+</ul>
+<p>The FFT calculation scales approximately as:</p>
 <div class="arithmatex">\[
 O(N \log N)
 \]</div>
+<p>where N represents the number of plane waves.</p>
+<p>In Quantum ESPRESSO, this parameter is controlled by:
+ecutwfc</p>
+<p>Increasing <code>ecutwfc</code> requires more computational resources.</p>
 <hr />
-<h2 id="subspace-diagonalization">Subspace Diagonalization</h2>
-<p>The diagonalization step scales approximately as:</p>
+<h2 id="4-scaling-with-number-of-electronic-bands">4. Scaling with Number of Electronic Bands</h2>
+<p>The number of electronic bands determines the size of the electronic state space that must be calculated.</p>
+<p>The computational cost associated with subspace diagonalization scales approximately as:</p>
 <div class="arithmatex">\[
 O(N^3)
 \]</div>
-<p>with respect to the number of electronic bands.</p>
+<p>where N represents the number of electronic bands.</p>
+<p>The required number of bands increases for:</p>
+<ul>
+<li>Larger atomic systems</li>
+<li>Systems containing more electrons</li>
+<li>Metallic materials</li>
+<li>Calculations requiring unoccupied states</li>
+</ul>
+<p>Calculations such as:</p>
+<ul>
+<li>Band structure</li>
+<li>Density of states</li>
+<li>Optical properties</li>
+<li>Excited-state calculations</li>
+</ul>
+<p>usually require more electronic bands compared with standard SCF calculations.</p>
 <hr />
-<h2 id="summary">Summary</h2>
+<h2 id="5-subspace-diagonalization">5. Subspace Diagonalization</h2>
+<p>Subspace diagonalization is one of the most computationally intensive steps in DFT calculations.</p>
+<p>The diagonalization process involves solving eigenvalue problems of the Kohn-Sham Hamiltonian.</p>
+<p>The computational scaling is approximately:</p>
+<div class="arithmatex">\[
+O(N^3)
+\]</div>
+<p>with respect to the number of electronic states.</p>
+<p>Different diagonalization algorithms provide different balances between speed and stability.</p>
+<p>Faster algorithms can reduce computational time but may require more careful convergence testing. More robust algorithms may provide better numerical stability but require additional computational resources.</p>
+<hr />
+<h1 id="parallelization-in-hpc">Parallelization in HPC</h1>
+<p>Because DFT calculations involve many independent operations, Quantum ESPRESSO can distribute computational tasks across multiple processors.</p>
+<p>Parallelization can be performed over:</p>
+<ul>
+<li>k-points</li>
+<li>Plane waves</li>
+<li>Electronic bands</li>
+<li>FFT calculations</li>
+</ul>
+<p>The efficiency of parallelization depends on the size and complexity of the system.</p>
+<p>Small calculations may not benefit significantly from using many processors because communication overhead becomes dominant.</p>
+<p>Large-scale calculations can achieve significant acceleration using HPC clusters.</p>
+<hr />
+<h1 id="computational-scaling-summary">Computational Scaling Summary</h1>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
+<th>Computational Effect</th>
 <th>Scaling</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Number of atoms</td>
+<td>Increases Hamiltonian size and electronic states</td>
 <td>O(N³)</td>
 </tr>
 <tr>
 <td>Number of k-points</td>
+<td>Increases Brillouin zone sampling workload</td>
 <td>O(Nk)</td>
 </tr>
 <tr>
 <td>Number of plane waves</td>
+<td>Increases basis size and FFT workload</td>
 <td>O(N log N)</td>
 </tr>
 <tr>
-<td>Subspace diagonalization</td>
+<td>Number of electronic bands</td>
+<td>Increases diagonalization workload</td>
 <td>O(N³)</td>
 </tr>
 </tbody>
 </table>
+<hr />
+<h1 id="why-hpc-is-required-for-dft-calculations">Why HPC is Required for DFT Calculations</h1>
+<p>The computational complexity of DFT explains why high-performance computing systems are essential for modern materials simulations.</p>
+<p>Large-scale calculations involving:</p>
+<ul>
+<li>Defect materials</li>
+<li>Surface reactions</li>
+<li>Catalytic systems</li>
+<li>Battery materials</li>
+<li>Complex molecular systems</li>
+</ul>
+<p>require substantial computational resources.</p>
+<p>HPC provides:</p>
+<ul>
+<li>Large numbers of CPU cores</li>
+<li>High memory capacity</li>
+<li>Parallel computing capability</li>
+<li>High-performance storage</li>
+</ul>
+<p>Efficient selection of computational parameters is important to balance accuracy and computational cost.</p>
+<p>Quantum ESPRESSO combined with HPC resources enables researchers to perform simulations of complex materials systems that are difficult to solve using conventional computers.</p>
 
 
 
