@@ -1,18 +1,8 @@
-<div class="landing-hero">
+<div class="lab-hero">
 
-
-<div class="logo-container">
-
-<img src="assets/images/mki-logo.jpeg" class="partner-logo">
-
-<img src="assets/images/brin-logo.svg" class="partner-logo">
-
-</div>
-
-
-<p class="hero-brand">
+<div class="hero-label">
 MKI × BRIN
-</p>
+</div>
 
 
 <h1>
@@ -20,154 +10,303 @@ Computational Materials Science Workshop
 </h1>
 
 
-<h2>
-First-Principles, HPC & AI for Materials Discovery
-</h2>
-
-
 <p class="hero-description">
 
-A collaborative workshop exploring computational materials science
-through quantum simulation, high-performance computing,
-and artificial intelligence.
+First-Principles Calculation, High Performance Computing,
+and Artificial Intelligence for Materials Discovery.
 
 </p>
 
 
-<a class="hero-button" href="workshop-introduction/">
+<div class="lab-tags">
 
-Explore Workshop
+<span>DFT</span>
+<span>HPC</span>
+<span>DC-DFTB-MD</span>
+<span>MACE</span>
 
+</div>
+
+
+</div>
+
+
+
+## Explore Computational Materials Discovery
+
+
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<h3>
+⚛ First-Principles Calculation
+</h3>
+
+
+<p>
+Learn density functional theory and electronic structure
+calculations using Quantum ESPRESSO.
+</p>
+
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+🚀 Accelerated Simulation
+</h3>
+
+
+<p>
+Explore efficient atomistic simulations using
+DFTB-based approaches.
+</p>
+
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+🤖 AI Materials Discovery
+</h3>
+
+
+<p>
+Understand machine learning potential approaches
+for accelerating materials simulations.
+</p>
+
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+💻 High Performance Computing
+</h3>
+
+
+<p>
+Execute scientific workflows using HPC resources
+for large-scale calculations.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+---
+
+
+## Workshop Learning Path
+
+
+<div class="journey-box">
+
+
+<h2>
+From Theory to Research Application
+</h2>
+
+
+<p>
+The workshop guides participants through a complete
+computational materials workflow.
+</p>
+
+
+<div class="journey-flow">
+
+
+<span>
+Foundation
+</span>
+
+
+<span>
+DFT Simulation
+</span>
+
+
+<span>
+HPC Computing
+</span>
+
+
+<span>
+AI Acceleration
+</span>
+
+
+<span>
+Research Cases
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+---
+
+
+## Research Applications
+
+
+<div class="case-showcase">
+
+
+<div class="case-feature">
+
+
+<div class="case-index">
+01
+</div>
+
+
+<div class="case-content">
+
+
+<h2>
+Graphene Electronic Structure
+</h2>
+
+
+<p>
+Explore electronic properties through
+density of states and band structure calculations.
+</p>
+
+
+<div class="case-tools">
+
+Quantum ESPRESSO · DFT · Band Structure
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="case-feature">
+
+
+<div class="case-index">
+02
+</div>
+
+
+<div class="case-content">
+
+
+<h2>
+Battery Material Simulation
+</h2>
+
+
+<p>
+Study computational approaches for understanding
+materials used in energy storage systems.
+</p>
+
+
+<div class="case-tools">
+
+DFT · Structure Optimization · HPC
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="case-feature">
+
+
+<div class="case-index">
+03
+</div>
+
+
+<div class="case-content">
+
+
+<h2>
+Surface Catalysis
+</h2>
+
+
+<p>
+Investigate reaction mechanisms and catalytic
+materials using computational modeling.
+</p>
+
+
+<div class="case-tools">
+
+Surface Reaction · Simulation · Analysis
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+---
+
+
+## Begin Your Computational Journey
+
+
+<div class="final-banner">
+
+
+<h2>
+Start Exploring Materials Discovery
+</h2>
+
+
+<p>
+Follow the learning path and build your computational
+research skills step by step.
+</p>
+
+
+<a href="start-here/workshop-guide/">
+Open Workshop Guide →
 </a>
 
 
 </div>
-<section class="about-section">
-
-
-<div class="about-content">
-
-
-<div class="about-text">
-
-<h2>
-About The Workshop
-</h2>
-
-
-<p>
-
-The Computational Materials Science Workshop is a collaborative initiative
-between Masyarakat Komputasi Indonesia (MKI) and BRIN to introduce
-computational approaches for modern materials research.
-
-</p>
-
-
-<p>
-
-The program integrates first-principles calculation,
-high-performance computing, and artificial intelligence
-to support materials discovery and scientific innovation.
-
-</p>
-
-</div>
-
-
-<div class="about-image">
-
-<img src="assets/images/HPC-mahameru.png">
-
-</div>
-
-
-</div>
-
-
-</section>
-
-<section class="focus-section">
-
-
-<h2>
-Research Focus
-</h2>
-
-
-<div class="focus-list">
-
-
-<div class="focus-item">
-
-<div class="focus-number">
-01
-</div>
-
-<div>
-
-<h3>
-Quantum Simulation
-</h3>
-
-<p>
-First-principles calculation and electronic structure analysis
-using computational materials science approaches.
-</p>
-
-</div>
-
-</div>
-
-
-
-<div class="focus-item">
-
-<div class="focus-number">
-02
-</div>
-
-<div>
-
-<h3>
-High Performance Computing
-</h3>
-
-<p>
-Utilization of HPC infrastructure to support advanced
-materials simulation and scientific computation.
-</p>
-
-</div>
-
-</div>
-
-
-
-<div class="focus-item">
-
-<div class="focus-number">
-03
-</div>
-
-<div>
-
-<h3>
-AI Materials Discovery
-</h3>
-
-<p>
-Application of artificial intelligence and data-driven methods
-for accelerating materials research.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-</section>
-

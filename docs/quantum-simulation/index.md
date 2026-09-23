@@ -1,3 +1,35 @@
+<div class="module-header">
+
+<div class="module-label">
+⚛ First-Principles Calculation
+</div>
+
+
+<h2>
+Quantum ESPRESSO Workflow
+</h2>
+
+
+<div class="module-info">
+
+<span>
+<strong>Level:</strong> Beginner
+</span>
+
+
+<span>
+<strong>Tools:</strong> Quantum ESPRESSO
+</span>
+
+
+<span>
+<strong>Focus:</strong> DFT Simulation
+</span>
+
+
+</div>
+
+</div>
 <div class="grid cards" markdown>
 
 

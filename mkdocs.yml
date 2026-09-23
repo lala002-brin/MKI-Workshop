@@ -11,8 +11,10 @@ repo_url: https://github.com/lala002-brin/MKI-Workshop
 
 theme:
 
+  theme:
+
   name: material
-  
+
   custom_dir: docs/overrides
  
   features:
@@ -240,8 +242,28 @@ extra:
       link: https://github.com/lala002-brin/MKI-Workshop
 
 
-copyright:
-  Copyright © 2026 BRIN - ITB - MKI
+  workshop_progress:
+
+    title: "Workshop Roadmap"
+
+    modules:
+
+      - "01 Foundation"
+
+      - "02 Quantum Simulation"
+
+      - "03 Accelerated Simulation"
+
+      - "04 AI Materials"
+
+      - "05 HPC Computing"
+
+      - "06 Research Cases"
+
+copyright: >
+  MKI × BRIN Computational Materials Science Workshop
+  <br>
+  Developed for scientific computing education
 
 extra_css:
   - stylesheets/extra.css
