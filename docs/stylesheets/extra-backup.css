@@ -1,315 +1,1939 @@
-.md-typeset h1 {
+/* =====================================================
+   MKI WORKSHOP DOCUMENTATION THEME
+   PART 1: GLOBAL STYLE
+   ===================================================== */
 
-    font-weight: 700;
-    letter-spacing: -0.02em;
+
+/* Main page */
+
+.md-content {
+
+    max-width: 1100px;
 
 }
 
 
-.md-typeset h2 {
 
-    margin-top: 2.5em;
+/* Smooth reading experience */
 
-}
+.md-typeset {
 
-
-.md-typeset p {
+    font-size: 0.95rem;
 
     line-height: 1.8;
 
 }
 
 
-.md-typeset .admonition {
+
+/* Paragraph */
+
+.md-typeset p {
+
+    line-height: 1.85;
+
+}
+
+
+
+/* Heading 1 */
+
+.md-typeset h1 {
+
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+
+}
+
+
+
+/* Heading 2 */
+
+.md-typeset h2 {
+
+    font-weight: 750;
+
+    margin-top: 2.5rem;
+
+}
+
+
+
+/* Heading 3 */
+
+.md-typeset h3 {
+
+    font-weight: 700;
+
+}
+
+
+
+/* Links */
+
+.md-typeset a {
+
+    transition: all 0.2s ease;
+
+}
+
+
+
+/* Code block */
+
+.md-typeset code {
+
+    border-radius: 6px;
+
+}
+/* =====================================================
+   PART 2: PROFESSIONAL CARD SYSTEM
+   ===================================================== */
+
+
+/* Card layout */
+
+.md-typeset .grid.cards > ul {
+
+    gap: 1.5rem;
+
+}
+
+
+/* Card base */
+
+.md-typeset .grid.cards > ul > li {
+
+    border-radius: 20px;
+
+    padding: 1.6rem;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+
+    border: 1px solid rgba(0,0,0,0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+
+/* Hover animation */
+
+.md-typeset .grid.cards > ul > li:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Card title */
+
+.md-typeset .grid.cards h2 {
+
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    margin-top: 0.6rem;
+
+}
+
+
+
+/* Card text */
+
+.md-typeset .grid.cards p {
+
+    line-height: 1.75;
+
+    font-size: 0.92rem;
+
+}
+
+
+
+/* Card icon */
+
+.md-typeset .grid.cards .twemoji {
+
+    width: 1.8rem;
+
+    height: 1.8rem;
+
+}
+
+
+
+/* Start button */
+
+.md-typeset .grid.cards a {
+
+    font-weight: 700;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.3rem;
+
+    margin-top: 0.5rem;
+
+}
+/* =====================================================
+   PART 3: PREMIUM CARD COLOR SYSTEM
+   ===================================================== */
+
+
+/* Blue */
+
+.md-typeset .grid.cards > ul > li:nth-child(1) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+    border-top: 5px solid #2563eb;
+
+}
+
+
+/* Purple */
+
+.md-typeset .grid.cards > ul > li:nth-child(2) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #faf5ff,
+        #ffffff
+    );
+
+    border-top: 5px solid #9333ea;
+
+}
+
+
+/* Green */
+
+.md-typeset .grid.cards > ul > li:nth-child(3) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #f0fdf4,
+        #ffffff
+    );
+
+    border-top: 5px solid #16a34a;
+
+}
+
+
+/* Orange */
+
+.md-typeset .grid.cards > ul > li:nth-child(4) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff7ed,
+        #ffffff
+    );
+
+    border-top: 5px solid #ea580c;
+
+}
+
+
+/* Cyan */
+
+.md-typeset .grid.cards > ul > li:nth-child(5) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #ecfeff,
+        #ffffff
+    );
+
+    border-top: 5px solid #0891b2;
+
+}
+
+
+/* Pink */
+
+.md-typeset .grid.cards > ul > li:nth-child(6) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #fdf2f8,
+        #ffffff
+    );
+
+    border-top: 5px solid #db2777;
+
+}
+
+
+/* Purple Dark */
+
+.md-typeset .grid.cards > ul > li:nth-child(7) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #f5f3ff,
+        #ffffff
+    );
+
+    border-top: 5px solid #7c3aed;
+
+}
+
+
+/* Red */
+
+.md-typeset .grid.cards > ul > li:nth-child(8) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #fef2f2,
+        #ffffff
+    );
+
+    border-top: 5px solid #dc2626;
+
+}
+
+
+/* Emerald */
+
+.md-typeset .grid.cards > ul > li:nth-child(9) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #ecfdf5,
+        #ffffff
+    );
+
+    border-top: 5px solid #059669;
+
+}
+
+
+/* Sky */
+
+.md-typeset .grid.cards > ul > li:nth-child(10) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #f0f9ff,
+        #ffffff
+    );
+
+    border-top: 5px solid #0284c7;
+
+}
+
+
+/* Yellow */
+
+.md-typeset .grid.cards > ul > li:nth-child(11) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #fefce8,
+        #ffffff
+    );
+
+    border-top: 5px solid #ca8a04;
+
+}
+
+
+/* Slate */
+
+.md-typeset .grid.cards > ul > li:nth-child(12) {
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #ffffff
+    );
+
+    border-top: 5px solid #475569;
+
+}
+/* =====================================================
+   PART 4: CARD CTA BUTTON STYLE
+   ===================================================== */
+
+
+/* Start button */
+
+.md-typeset .grid.cards a {
+
+    background: rgba(37, 99, 235, 0.08);
+
+    border-radius: 10px;
+
+    padding: 0.45rem 0.85rem;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    margin-top: 0.8rem;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+/* Hover button */
+
+.md-typeset .grid.cards a:hover {
+
+    background:
+        var(--md-primary-fg-color);
+
+    color:
+        white;
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* Arrow icon */
+
+.md-typeset .grid.cards a svg {
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.md-typeset .grid.cards a:hover svg {
+
+    transform:
+        translateX(3px);
+
+}
+/* =====================================================
+   PART 5: CARD CATEGORY BADGE
+   ===================================================== */
+
+
+/* Badge container */
+
+.md-typeset .grid.cards > ul > li::after {
+
+    content: "MODULE";
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    padding: 0.25rem 0.55rem;
+
+    border-radius: 999px;
+
+    background:
+
+        rgba(37,99,235,0.12);
+
+    color:
+
+        #2563eb;
+
+}
+
+
+/* Different badge colors */
+
+.md-typeset .grid.cards > ul > li:nth-child(-n+4)::after {
+
+    content: "THEORY";
+
+    background:
+
+        rgba(147,51,234,0.12);
+
+    color:
+
+        #9333ea;
+
+}
+
+
+
+.md-typeset .grid.cards > ul > li:nth-child(n+5)::after {
+
+    content: "HANDS-ON";
+
+    background:
+
+        rgba(5,150,105,0.12);
+
+    color:
+
+        #059669;
+
+}
+/* =====================================================
+   PART 6: HERO SECTION
+   ===================================================== */
+
+
+.hero {
+
+    padding: 3.5rem 2rem;
+
+    margin-bottom: 2.5rem;
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #faf5ff
+    );
+
+    border:
+
+    1px solid rgba(0,0,0,0.08);
+
+    box-shadow:
+
+    0 12px 35px rgba(0,0,0,0.08);
+
+}
+
+
+
+.hero h1 {
+
+    font-size: 2.8rem;
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+
+.hero h2 {
+
+    font-size: 1.5rem;
+
+    margin-top: 0;
+
+    color:
+
+    var(--md-primary-fg-color);
+
+}
+
+
+
+.hero p {
+
+    max-width: 700px;
+
+    margin:
+
+    1rem auto;
+
+    font-size: 1.05rem;
+
+}
+
+
+
+.hero-buttons {
+
+    display:
+
+    flex;
+
+    justify-content:
+
+    center;
+
+    gap:
+
+    1rem;
+
+    margin-top:
+
+    1.8rem;
+
+}
+
+
+
+.hero-buttons a {
+
+    padding:
+
+    0.7rem 1.2rem;
+
+    border-radius:
+
+    12px;
+
+    background:
+
+    var(--md-primary-fg-color);
+
+    color:
+
+    white;
+
+    font-weight:
+
+    700;
+
+}
+
+
+
+.hero-buttons a:hover {
+
+    transform:
+
+    translateY(-3px);
+
+}
+/* =====================================================
+   PART 8: WORKFLOW BOX
+   ===================================================== */
+
+
+.workflow-box {
+
+    padding: 1.5rem;
+
+    border-radius: 18px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+
+    border:
+
+    1px solid rgba(0,0,0,0.08);
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+.workflow-box pre {
+
+    background: transparent;
+
+}
+/* =====================================================
+   CATEGORY BADGE
+   ===================================================== */
+
+
+.module-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+
+.beginner-title::after {
+
+    content: "BEGINNER";
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+}
+
+
+
+.intermediate-title::after {
+
+    content: "INTERMEDIATE";
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+}
+
+
+
+.advanced-title::after {
+
+    content: "ADVANCED";
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+}
+
+
+
+.analysis-title::after {
+
+    content: "ANALYSIS";
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background: #fef3c7;
+
+    color: #b45309;
+
+}
+/* =====================================================
+   CARD META INFORMATION
+   ===================================================== */
+
+
+.card-meta {
+
+    display: flex;
+
+    gap: 0.6rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 0.8rem;
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+.card-meta span {
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    padding: 0.25rem 0.6rem;
+
+    border-radius: 999px;
+
+    background: rgba(37,99,235,0.1);
+
+    color: #2563eb;
+
+}
+/* =====================================================
+   PART 10: SECTION SPACING
+   ===================================================== */
+
+
+.module-title {
+
+    margin-top: 3.5rem;
+
+    margin-bottom: 1.8rem;
+
+}
+
+
+/* First section after hero */
+
+.hero + .module-title {
+
+    margin-top: 2rem;
+
+}
+
+
+/* Space between card groups */
+
+.grid.cards {
+
+    margin-bottom: 2.5rem;
+
+}
+/* =====================================================
+   PART 11: CARD HEADER REFINEMENT
+   ===================================================== */
+
+
+/* Icon spacing */
+
+.md-typeset .grid.cards > ul > li > p:first-child {
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+
+/* Icon size */
+
+.md-typeset .grid.cards .twemoji {
+
+    width: 2rem;
+
+    height: 2rem;
+
+}
+
+
+
+/* Card title */
+
+.md-typeset .grid.cards h2 {
+
+    font-size: 1.15rem;
+
+    line-height: 1.35;
+
+    margin-top: 0.4rem;
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+
+/* Description */
+
+.md-typeset .grid.cards p {
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Keep button at bottom visually */
+
+.md-typeset .grid.cards a {
+
+    margin-top: 1rem;
+
+}
+/* =====================================================
+   PART 12: PREMIUM HERO SECTION
+   ===================================================== */
+
+
+.hero {
+
+    padding: 4rem 2.5rem;
+
+    margin-bottom: 3rem;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eff6ff 0%,
+        #faf5ff 50%,
+        #ecfeff 100%
+    );
+
+    border:
+
+    1px solid rgba(0,0,0,0.08);
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,0.08);
+
+}
+
+
+/* Main title */
+
+.hero h1 {
+
+    font-size: 3rem;
+
+    font-weight: 850;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+/* Subtitle */
+
+.hero h2 {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    margin-top: 0;
+
+    color:
+
+    var(--md-primary-fg-color);
+
+}
+
+
+
+/* Description */
+
+.hero p {
+
+    max-width: 750px;
+
+    margin:
+
+    1.2rem auto;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* Buttons */
+
+.hero-buttons {
+
+    display:
+
+    flex;
+
+    justify-content:
+
+    center;
+
+    gap:
+
+    1rem;
+
+    margin-top:
+
+    2rem;
+
+}
+
+
+
+.hero-buttons a {
+
+    padding:
+
+    0.8rem 1.4rem;
+
+    border-radius:
+
+    14px;
+
+    font-weight:
+
+    750;
+
+    background:
+
+    var(--md-primary-fg-color);
+
+    color:
+
+    white;
+
+    transition:
+
+    all 0.25s ease;
+
+}
+
+
+
+.hero-buttons a:hover {
+
+    transform:
+
+    translateY(-4px);
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,0.15);
+
+}
+/* =====================================================
+   PART 13: SIDEBAR REFINEMENT
+   ===================================================== */
+
+
+/* Sidebar section title */
+
+.md-nav__title {
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+}
+
+
+
+/* Navigation items */
+
+.md-nav__link {
 
     border-radius: 8px;
 
-}
-
-
-.md-typeset blockquote {
-
-    border-left: 4px solid var(--md-primary-fg-color);
-
-    padding-left: 1rem;
-
-}
-/* Hands-on Cards */
-
-.md-typeset .grid.cards > ul > li {
-
-    border-radius: 18px;
-
-    padding: 1.2rem;
-
-    transition: all 0.3s ease;
-
-    border-top: 6px solid #2563eb;
+    transition: all 0.2s ease;
 
 }
 
 
-.md-typeset .grid.cards > ul > li:hover {
 
-    transform: translateY(-8px);
+/* Hover */
 
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+.md-nav__link:hover {
+
+    background:
+
+    rgba(37,99,235,0.08);
 
 }
 
 
-/* Warna setiap card */
 
-.md-typeset .grid.cards > ul > li:nth-child(1) {
-    background: #eff6ff;
-    border-top-color: #2563eb;
+/* Active page */
+
+.md-nav__link--active {
+
+    font-weight: 750;
+
+    background:
+
+    rgba(37,99,235,0.12);
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(2) {
-    background: #faf5ff;
-    border-top-color: #9333ea;
+
+/* Space between navigation groups */
+
+.md-nav__item {
+
+    margin-bottom: 0.15rem;
+
+}
+/* =====================================================
+   PART 14: LEARNING PATH
+   ===================================================== */
+
+
+.learning-path {
+
+    margin: 3rem 0;
+
+    padding: 2rem;
+
+    border-radius: 24px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+
+    border:
+
+    1px solid rgba(0,0,0,0.08);
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(3) {
-    background: #f0fdf4;
-    border-top-color: #16a34a;
+.learning-path h2 {
+
+    text-align: center;
+
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(4) {
-    background: #fff7ed;
-    border-top-color: #ea580c;
+
+.path-item {
+
+    display: flex;
+
+    gap: 1.2rem;
+
+    align-items: flex-start;
+
+    margin-bottom: 1.5rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(5) {
-    background: #ecfeff;
-    border-top-color: #0891b2;
+
+.path-item strong {
+
+    min-width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 800;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(6) {
-    background: #fdf2f8;
-    border-top-color: #db2777;
+
+.path-item h3 {
+
+    margin: 0;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(7) {
-    background: #f5f3ff;
-    border-top-color: #7c3aed;
+
+.path-item p {
+
+    margin-top: 0.3rem;
+
+}
+/* =====================================================
+   MODULE PAGE HEADER
+   ===================================================== */
+
+
+.module-header {
+
+    padding: 2.5rem;
+
+    margin-bottom: 2.5rem;
+
+    border-radius: 24px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #faf5ff
+    );
+
+    border:
+
+    1px solid rgba(0,0,0,0.08);
+
+    box-shadow:
+
+    0 12px 35px rgba(0,0,0,0.08);
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(8) {
-    background: #fef2f2;
-    border-top-color: #dc2626;
+.module-header h1 {
+
+    margin-bottom: 0.6rem;
+
+    font-weight: 850;
+
+    letter-spacing: -0.03em;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(9) {
-    background: #ecfdf5;
-    border-top-color: #059669;
+.module-header p {
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 1rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(10) {
-    background: #f0f9ff;
-    border-top-color: #0284c7;
+
+/* Module category tag */
+
+.module-tag {
+
+    display: inline-block;
+
+    padding: 0.35rem 0.8rem;
+
+    border-radius: 999px;
+
+    background:
+
+    #dbeafe;
+
+    color:
+
+    #1d4ed8;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(11) {
-    background: #fefce8;
-    border-top-color: #ca8a04;
+
+/* Notebook button */
+
+.md-typeset a {
+
+    transition: all 0.25s ease;
+
+}
+.landing-header {
+
+    text-align: center;
+
+    padding: 3rem 1rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(12) {
+.brand-text {
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    color: #2563eb;
+
+}
+
+
+.landing-header h1 {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+
+.landing-header h2 {
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+}
+/* =====================================================
+   WORKSHOP HIGHLIGHTS
+   ===================================================== */
+
+
+.highlight-section {
+
+    margin: 3rem 0;
+
+}
+
+
+.highlight-section h2 {
+
+    text-align: center;
+
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+
+}
+
+
+
+.highlight-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+
+}
+
+
+
+.highlight-card {
+
+    padding: 1.5rem;
+
+    border-radius: 20px;
+
     background: #f8fafc;
-    border-top-color: #475569;
-}
-/* =================================
-   All Hands-on Color Cards
-   ================================= */
 
-
-/* 1. SCF Calculation */
-.grid.cards > ul > li:nth-child(1) {
-    border-top: 5px solid #2563eb;
-    background: linear-gradient(145deg, #eff6ff, #ffffff);
-}
-
-
-/* 2. Notebook */
-.grid.cards > ul > li:nth-child(2) {
-    border-top: 5px solid #9333ea;
-    background: linear-gradient(145deg, #faf5ff, #ffffff);
-}
-
-
-/* 3. Convergence Testing */
-.grid.cards > ul > li:nth-child(3) {
-    border-top: 5px solid #16a34a;
-    background: linear-gradient(145deg, #f0fdf4, #ffffff);
-}
-
-
-/* 4. Geometry Optimization */
-.grid.cards > ul > li:nth-child(4) {
-    border-top: 5px solid #ea580c;
-    background: linear-gradient(145deg, #fff7ed, #ffffff);
-}
-
-
-/* 5. Band Structure */
-.grid.cards > ul > li:nth-child(5) {
-    border-top: 5px solid #0891b2;
-    background: linear-gradient(145deg, #ecfeff, #ffffff);
-}
-
-
-/* 6. Density of States */
-.grid.cards > ul > li:nth-child(6) {
-    border-top: 5px solid #db2777;
-    background: linear-gradient(145deg, #fdf2f8, #ffffff);
-}
-
-
-/* 7. DFT+U */
-.grid.cards > ul > li:nth-child(7) {
-    border-top: 5px solid #7c3aed;
-    background: linear-gradient(145deg, #f5f3ff, #ffffff);
-}
-
-
-/* 8. Spin Orbit Coupling */
-.grid.cards > ul > li:nth-child(8) {
-    border-top: 5px solid #dc2626;
-    background: linear-gradient(145deg, #fef2f2, #ffffff);
-}
-
-
-/* 9. Phonon Calculation */
-.grid.cards > ul > li:nth-child(9) {
-    border-top: 5px solid #059669;
-    background: linear-gradient(145deg, #ecfdf5, #ffffff);
-}
-
-
-/* 10. Wannier Function */
-.grid.cards > ul > li:nth-child(10) {
-    border-top: 5px solid #0284c7;
-    background: linear-gradient(145deg, #f0f9ff, #ffffff);
-}
-
-
-/* 11. Molecular Dynamics */
-.grid.cards > ul > li:nth-child(11) {
-    border-top: 5px solid #ca8a04;
-    background: linear-gradient(145deg, #fefce8, #ffffff);
-}
-
-
-/* 12. Post Processing */
-.grid.cards > ul > li:nth-child(12) {
-    border-top: 5px solid #475569;
-    background: linear-gradient(145deg, #f8fafc, #ffffff);
-}}
-/* =================================
-   Hands-on Colorful Cards
-   ================================= */
-
-.md-typeset .grid.cards > ul > li {
-
-    border-radius: 18px;
-
-    padding: 1.2rem;
-
-    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
 
 }
 
 
-.md-typeset .grid.cards > ul > li:hover {
 
-    transform: translateY(-8px);
+.highlight-card h3 {
 
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    margin-top: 0;
+
+    font-size: 1.2rem;
 
 }
 
 
-/* Card colors */
 
-.md-typeset .grid.cards > ul > li:nth-child(1) {
-    background: #eff6ff;
-    border-top: 6px solid #2563eb;
+.highlight-card p {
+
+    line-height: 1.7;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(2) {
-    background: #faf5ff;
-    border-top: 6px solid #9333ea;
+
+@media screen and (max-width: 900px) {
+
+    .highlight-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =====================================================
+   ORGANIZATION SECTION
+   ===================================================== */
+
+
+.organization-section {
+
+    margin: 4rem 0;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(3) {
-    background: #f0fdf4;
-    border-top: 6px solid #16a34a;
+.organization-section h2 {
+
+    text-align:center;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(4) {
-    background: #fff7ed;
-    border-top: 6px solid #ea580c;
+
+.organization-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(5) {
-    background: #ecfeff;
-    border-top: 6px solid #0891b2;
+
+.organization-card {
+
+    padding:1.5rem;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(6) {
-    background: #fdf2f8;
-    border-top: 6px solid #db2777;
+
+.organization-card h3 {
+
+    margin-top:0;
+
+    font-size:1.15rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(7) {
-    background: #f5f3ff;
-    border-top: 6px solid #7c3aed;
+
+.organization-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(8) {
-    background: #fef2f2;
-    border-top: 6px solid #dc2626;
+
+@media(max-width:900px){
+
+.organization-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.logo-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    margin-bottom:0.8rem;
+
+}
+.partner-logo {
+
+    height:55px;
+
+    max-width:180px;
+
+    width:auto;
+
+    object-fit:contain;
+
+}
+.logo-container img:first-child {
+
+    max-width:140px;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(9) {
-    background: #ecfdf5;
-    border-top: 6px solid #059669;
+.logo-container img:last-child {
+
+    max-width:160px;
+
+}
+/* =====================================================
+   HERO CTA BUTTON
+   ===================================================== */
+
+
+.hero-button {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:1.5rem;
+
+    padding:0.85rem 2rem;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white !important;
+
+    font-weight:800;
+
+    font-size:1rem;
+
+    text-decoration:none;
+
+    box-shadow:
+
+    0 8px 20px rgba(37,99,235,0.25);
+
+    transition:
+
+    all 0.25s ease;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(10) {
-    background: #f0f9ff;
-    border-top: 6px solid #0284c7;
+.hero-button:hover {
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 28px rgba(37,99,235,0.35);
+
+}
+/* =====================================================
+   WORKSHOP HIGHLIGHTS
+   ===================================================== */
+
+
+.highlight-section {
+
+    margin:4rem 0;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(11) {
-    background: #fefce8;
-    border-top: 6px solid #ca8a04;
+.highlight-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
 }
 
 
-.md-typeset .grid.cards > ul > li:nth-child(12) {
-    background: #f8fafc;
-    border-top: 6px solid #475569;
+
+.highlight-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+
+.highlight-card {
+
+    padding:1.8rem;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    transition:transform .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+
+.highlight-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.highlight-card h3 {
+
+    margin-top:0;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.highlight-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+
+
+@media(max-width:900px){
+
+.highlight-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   WORKSHOP JOURNEY
+   ===================================================== */
+
+
+.journey-section {
+
+    margin:4rem 0;
+
+}
+
+
+.journey-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.journey-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+.journey-card {
+
+    padding:1.5rem;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.journey-number {
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:#2563eb;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.journey-card h3 {
+
+    font-size:1.1rem;
+
+}
+
+
+
+.journey-card p {
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+
+
+
+@media(max-width:1000px){
+
+.journey-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.journey-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   WHAT WILL YOU LEARN
+   ===================================================== */
+
+
+.learning-section {
+
+    margin:4rem 0;
+
+}
+
+
+.learning-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.learning-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+.learning-item {
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    padding:1.2rem;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.learning-item span {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+}
+
+
+
+.learning-item p {
+
+    margin:0;
+
+    line-height:1.6;
+
+}
+
+
+
+@media(max-width:800px){
+
+.learning-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.research-section {
+
+    margin:4rem 0;
+
+}
+
+
+.research-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+.research-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+.research-card {
+
+    padding:2rem;
+
+    border-radius:24px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+.research-card h3 {
+
+    margin-top:0;
+
+}
+
+
+.research-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
 }

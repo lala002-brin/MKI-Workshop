@@ -1,280 +1,173 @@
-# Computational Materials Science Workshop
+<div class="landing-hero">
 
 
-## First-Principles, HPC & AI for Materials Discovery
+<div class="logo-container">
+
+<img src="assets/images/mki-logo.jpeg" class="partner-logo">
+
+<img src="assets/images/brin-logo.svg" class="partner-logo">
+
+</div>
 
 
-Welcome to the **Computational Materials Science Workshop**.
-
-This workshop provides a comprehensive introduction to modern computational approaches for materials discovery by integrating:
-
-- First-Principles Calculation
-- Density Functional Theory (DFT)
-- High Performance Computing (HPC)
-- Accelerated Materials Simulation
-- Artificial Intelligence for Materials Discovery
+<p class="hero-brand">
+MKI × BRIN
+</p>
 
 
-[Start Workshop](start-here/workshop-guide.md){ .md-button .md-button--primary }
-
-[Computational Workflow](start-here/workflow.md){ .md-button }
-
-
-
----
-
-# Workshop Overview
+<h1>
+Computational Materials Science Workshop
+</h1>
 
 
-Computational Materials Science combines theoretical modeling, numerical simulation, and advanced computing technologies to understand, predict, and design new materials with targeted properties.
+<h2>
+First-Principles, HPC & AI for Materials Discovery
+</h2>
 
 
-Through this workshop, participants will explore the complete computational workflow starting from material structure preparation, electronic structure calculation, atomistic simulation, and AI-assisted materials modeling.
+<p class="hero-description">
+
+A collaborative workshop exploring computational materials science
+through quantum simulation, high-performance computing,
+and artificial intelligence.
+
+</p>
+
+
+<a class="hero-button" href="workshop-introduction/">
+
+Explore Workshop
+
+</a>
+
+
+</div>
+<section class="about-section">
+
+
+<div class="about-content">
+
+
+<div class="about-text">
+
+<h2>
+About The Workshop
+</h2>
+
+
+<p>
+
+The Computational Materials Science Workshop is a collaborative initiative
+between Masyarakat Komputasi Indonesia (MKI) and BRIN to introduce
+computational approaches for modern materials research.
+
+</p>
+
+
+<p>
+
+The program integrates first-principles calculation,
+high-performance computing, and artificial intelligence
+to support materials discovery and scientific innovation.
+
+</p>
+
+</div>
+
+
+<div class="about-image">
+
+<img src="assets/images/HPC-mahameru.png">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<section class="focus-section">
+
+
+<h2>
+Research Focus
+</h2>
+
+
+<div class="focus-list">
+
+
+<div class="focus-item">
+
+<div class="focus-number">
+01
+</div>
+
+<div>
+
+<h3>
+Quantum Simulation
+</h3>
+
+<p>
+First-principles calculation and electronic structure analysis
+using computational materials science approaches.
+</p>
+
+</div>
+
+</div>
 
 
 
----
+<div class="focus-item">
 
-# Why Computational Materials Science?
+<div class="focus-number">
+02
+</div>
 
+<div>
 
-Traditional materials discovery requires extensive experimental exploration.
-
-Computational approaches provide powerful tools to:
-
-- Predict material properties before experiments
-- Understand atomic-scale mechanisms
-- Accelerate materials discovery
-- Reduce computational and experimental costs
-- Support data-driven materials research
-
-
-
----
-
-# Scientific Workflow
-
-Material Design
-    ↓
-Crystal and Molecular Structure Building
-    ↓
-First-Principles Calculation
-    ↓
-Electronic Structure Analysis
-    ↓
-Accelerated Atomistic Simulation
-    ↓
-Machine Learning Potential
-    ↓
+<h3>
 High Performance Computing
-    ↓
-Materials Discovery
+</h3>
 
+<p>
+Utilization of HPC infrastructure to support advanced
+materials simulation and scientific computation.
+</p>
 
+</div>
 
----
+</div>
 
-# Workshop Learning Pathway
 
 
+<div class="focus-item">
 
-## 01 Computational Materials Science
+<div class="focus-number">
+03
+</div>
 
+<div>
 
-Introduction to the fundamental concepts of computational materials research:
+<h3>
+AI Materials Discovery
+</h3>
 
-- Materials modeling principles
-- Structure-property relationships
-- Computational approaches in materials science
-- Materials discovery workflow
+<p>
+Application of artificial intelligence and data-driven methods
+for accelerating materials research.
+</p>
 
+</div>
 
+</div>
 
----
 
+</div>
 
-## 02 First-Principles Calculation
 
+</section>
 
-Learning electronic structure calculations using quantum mechanical approaches.
-
-
-Topics include:
-
-- Density Functional Theory (DFT)
-- Kohn-Sham equation
-- Exchange-correlation functional
-- Pseudopotential
-- Geometry optimization
-- Electronic properties analysis
-
-
-Main computational tool:
-
-**Quantum ESPRESSO**
-
-
-
----
-
-
-## 03 Accelerated Materials Simulation
-
-
-Introduction to efficient simulation methods for larger material systems.
-
-
-Topics include:
-
-- Density Functional Tight Binding (DFTB+)
-- Accelerated electronic structure calculation
-- Large-scale molecular simulation
-- Structure optimization workflow
-
-
-
----
-
-
-## 04 Machine Learning for Materials Discovery
-
-
-Application of artificial intelligence approaches in computational materials science.
-
-
-Topics include:
-
-- Machine Learning Potential
-- Atomic environment representation
-- Training dataset preparation
-- AI accelerated molecular simulation
-
-
-Example workflow:
-
-**MACE Machine Learning Potential**
-
-
-
----
-
-
-## 05 High Performance Computing Environment
-
-
-Understanding computational infrastructure for large-scale simulation.
-
-
-Topics include:
-
-- Linux computational environment
-- HPC architecture
-- Parallel computation
-- Job submission workflow
-- Simulation data management
-
-
-
----
-
-
-# Software Environment
-
-
-The workshop introduces several computational tools:
-
-
-| Software | Application |
-|---|---|
-| Quantum ESPRESSO | First-Principles and DFT Calculation |
-| DFTB+ | Accelerated Atomistic Simulation |
-| MACE | Machine Learning Potential |
-| HPC Cluster | Large Scale Computational Simulation |
-| Python Tools | Data Processing and Analysis |
-
-
-
----
-
-# Expected Learning Outcomes
-
-
-After completing this workshop, participants will be able to:
-
-
-- Explain the fundamentals of computational materials science
-- Understand first-principles calculation workflows
-- Perform basic Quantum ESPRESSO simulations
-- Understand accelerated simulation approaches using DFTB+
-- Apply machine learning concepts for materials modeling
-- Utilize HPC environments for computational research
-
-
-
----
-
-# Target Participants
-
-
-This workshop is intended for:
-
-
-- Researchers
-- University lecturers
-- Graduate students
-- Undergraduate students with computational interests
-- Materials science and engineering professionals
-
-
-Participants are expected to have basic knowledge of:
-
-- Physics
-- Chemistry
-- Materials science
-- Engineering
-- Scientific computing
-
-
-
----
-
-# Workshop Case Study
-
-
-During the hands-on session, participants will apply computational workflows to investigate material systems through:
-
-
-**Structure Design → Simulation → Analysis → Materials Discovery**
-
-
-The case study integrates:
-
-- Atomic structure preparation
-- First-principles calculation
-- Computational simulation
-- AI-assisted materials modeling
-
-
-
----
-
-# Organized By
-
-
-**Badan Riset dan Inovasi Nasional (BRIN)**  
-
-**Institut Teknologi Bandung (ITB)**  
-
-**Masyarakat Komputasi Indonesia (MKI)**
-
-
-
----
-
-# Begin Your Computational Materials Journey
-
-
-Start from:
-
-
-➡️ **00 Start Here → Workshop Guide**

@@ -1293,3 +1293,997 @@
     transition: all 0.25s ease;
 
 }
+.landing-header {
+
+    text-align: center;
+
+    padding: 3rem 1rem;
+
+}
+
+
+.brand-text {
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    color: #2563eb;
+
+}
+
+
+.landing-header h1 {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+
+.landing-header h2 {
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+}
+/* =====================================================
+   WORKSHOP HIGHLIGHTS
+   ===================================================== */
+
+
+.highlight-section {
+
+    margin: 3rem 0;
+
+}
+
+
+.highlight-section h2 {
+
+    text-align: center;
+
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+
+}
+
+
+
+.highlight-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+
+}
+
+
+
+.highlight-card {
+
+    padding: 1.5rem;
+
+    border-radius: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+}
+
+
+
+.highlight-card h3 {
+
+    margin-top: 0;
+
+    font-size: 1.2rem;
+
+}
+
+
+
+.highlight-card p {
+
+    line-height: 1.7;
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+    .highlight-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =====================================================
+   ORGANIZATION SECTION
+   ===================================================== */
+
+
+.organization-section {
+
+    margin: 4rem 0;
+
+}
+
+
+.organization-section h2 {
+
+    text-align:center;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.organization-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+
+.organization-card {
+
+    padding:1.5rem;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.organization-card h3 {
+
+    margin-top:0;
+
+    font-size:1.15rem;
+
+}
+
+
+
+.organization-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+
+
+@media(max-width:900px){
+
+.organization-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.logo-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    margin-bottom:0.8rem;
+
+}
+.partner-logo {
+
+    height:55px;
+
+    max-width:180px;
+
+    width:auto;
+
+    object-fit:contain;
+
+}
+.logo-container img:first-child {
+
+    max-width:140px;
+
+}
+
+
+.logo-container img:last-child {
+
+    max-width:160px;
+
+}
+/* =====================================================
+   HERO CTA BUTTON
+   ===================================================== */
+
+
+.hero-button {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:1.5rem;
+
+    padding:0.85rem 2rem;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white !important;
+
+    font-weight:800;
+
+    font-size:1rem;
+
+    text-decoration:none;
+
+    box-shadow:
+
+    0 8px 20px rgba(37,99,235,0.25);
+
+    transition:
+
+    all 0.25s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 28px rgba(37,99,235,0.35);
+
+}
+/* =====================================================
+   WORKSHOP HIGHLIGHTS
+   ===================================================== */
+
+
+.highlight-section {
+
+    margin:4rem 0;
+
+}
+
+
+.highlight-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.highlight-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+
+.highlight-card {
+
+    padding:1.8rem;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    transition:transform .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+
+.highlight-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.highlight-card h3 {
+
+    margin-top:0;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.highlight-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+
+
+@media(max-width:900px){
+
+.highlight-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   WORKSHOP JOURNEY
+   ===================================================== */
+
+
+.journey-section {
+
+    margin:4rem 0;
+
+}
+
+
+.journey-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.journey-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+.journey-card {
+
+    padding:1.5rem;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.journey-number {
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:#2563eb;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.journey-card h3 {
+
+    font-size:1.1rem;
+
+}
+
+
+
+.journey-card p {
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+
+
+
+@media(max-width:1000px){
+
+.journey-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.journey-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   WHAT WILL YOU LEARN
+   ===================================================== */
+
+
+.learning-section {
+
+    margin:4rem 0;
+
+}
+
+
+.learning-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.learning-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+.learning-item {
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    padding:1.2rem;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.learning-item span {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+}
+
+
+
+.learning-item p {
+
+    margin:0;
+
+    line-height:1.6;
+
+}
+
+
+
+@media(max-width:800px){
+
+.learning-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.research-section {
+
+    margin:4rem 0;
+
+}
+
+
+.research-section h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:2rem;
+
+}
+
+
+.research-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+.research-card {
+
+    padding:2rem;
+
+    border-radius:24px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+.research-card h3 {
+
+    margin-top:0;
+
+}
+
+
+.research-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+.landing-hero {
+
+    text-align:center;
+
+    padding:4rem 2rem;
+
+}
+
+
+.logo-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+.partner-logo {
+
+    height:55px;
+
+    width:auto;
+
+}
+
+
+.hero-brand {
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    color:#2563eb;
+
+}
+
+
+.landing-hero h1 {
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    margin-bottom:1rem;
+
+}
+
+
+.landing-hero h2 {
+
+    font-size:1.5rem;
+
+    font-weight:600;
+
+}
+
+
+.hero-description {
+
+    max-width:700px;
+
+    margin:1.5rem auto;
+
+    line-height:1.8;
+
+}
+
+
+.hero-button {
+
+    display:inline-block;
+
+    margin-top:1rem;
+
+    padding:.8rem 2rem;
+
+    background:#2563eb;
+
+    color:white!important;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+}
+.about-section {
+
+    margin:5rem auto;
+
+    padding:0 1rem;
+
+}
+
+
+.about-content {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:3rem;
+
+    align-items:center;
+
+}
+
+
+.about-text h2 {
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.about-text p {
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+.about-image img {
+
+    width:100%;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+
+
+@media(max-width:900px){
+
+.about-content{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.about-image img {
+
+    width:100%;
+
+    max-width:450px;
+
+    border-radius:20px;
+
+    display:block;
+
+    margin:auto;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+.about-text h2 {
+
+    font-size:1.8rem;
+
+}
+.about-text p {
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+/* =====================================================
+   ABOUT SECTION
+   ===================================================== */
+
+
+.about-section {
+
+    margin:5rem auto;
+
+}
+
+
+.about-content {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+
+
+.about-text h2 {
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+.about-text p {
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+
+
+.about-image img {
+
+    width:100%;
+
+    max-width:450px;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+}
+
+
+
+@media(max-width:900px){
+
+.about-content{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   RESEARCH FOCUS
+   ===================================================== */
+
+
+.focus-section {
+
+    margin:5rem 0;
+
+}
+
+
+.focus-section h2 {
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:3rem;
+
+}
+
+
+
+.focus-list {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+
+
+.focus-item {
+
+    display:grid;
+
+    grid-template-columns:80px 1fr;
+
+    gap:2rem;
+
+    align-items:start;
+
+    padding-bottom:2rem;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+.focus-number {
+
+    font-size:2.5rem;
+
+    font-weight:900;
+
+    color:#2563eb;
+
+}
+
+
+
+.focus-item h3 {
+
+    margin-top:0;
+
+    font-size:1.5rem;
+
+}
+
+
+
+.focus-item p {
+
+    color:#475569;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+}
