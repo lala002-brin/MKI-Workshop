@@ -82,7 +82,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     Calculate vibrational properties and lattice dynamics of materials.
 
-    [:octicons-arrow-right-24: Start](phonon.md)
+    [:octicons-arrow-right-24: Start](phonon)
 
 
 -   :material-orbit:
@@ -91,7 +91,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     Construct localized orbitals for advanced electronic structure analysis.
 
-    [:octicons-arrow-right-24: Start](wannier.md)
+    [:octicons-arrow-right-24: Start](wannier)
 
 
 -   :material-fire:
@@ -100,7 +100,7 @@ This section provides practical tutorials for performing first-principles calcul
 
     Perform atomistic simulations to study temperature-dependent material behavior.
 
-    [:octicons-arrow-right-24: Start](molecular-dynamics.md)
+    [:octicons-arrow-right-24: Start](molecular-dynamics)
 
 
 -   :material-database:
@@ -109,6 +109,6 @@ This section provides practical tutorials for performing first-principles calcul
 
     Analyze and visualize Quantum ESPRESSO calculation results.
 
-    [:octicons-arrow-right-24: Start](post-processing.md)
+    [:octicons-arrow-right-24: Start](post-processing)
 
 </div>
