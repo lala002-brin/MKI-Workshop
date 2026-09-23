@@ -13,26 +13,28 @@
       
       
       
+        <link rel="prev" href="../relaxation/">
       
-        <link rel="next" href="start-here/workshop-guide/">
+      
+        <link rel="next" href="../density-of-states/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Overview - Computational Materials Science Workshop</title>
+        <title>Band Structure - Computational Materials Science Workshop</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#computational-materials-science-workshop" class="md-skip">
+        <a href="#band-structure-calculation" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Band Structure
             
           </span>
         </div>
@@ -230,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -257,8 +259,6 @@
       
   
   
-    
-  
   
   
     
@@ -271,11 +271,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -296,7 +298,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -311,37 +313,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -357,37 +332,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#first-principles-hpc-ai-for-materials-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        First-Principles, HPC &amp; AI for Materials Discovery
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -461,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="start-here/workshop-guide/" class="md-nav__link">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
         
   
   
@@ -489,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="start-here/workflow/" class="md-nav__link">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
         
   
   
@@ -578,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="foundation/" class="md-nav__link">
+      <a href="../../../foundation/" class="md-nav__link">
         
   
   
@@ -606,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="foundation/materials-informatics.md" class="md-nav__link">
+      <a href="../../../foundation/materials-informatics.md" class="md-nav__link">
         
   
   
@@ -638,8 +582,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -650,13 +596,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -677,7 +621,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -695,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -774,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/setup/installation/" class="md-nav__link">
+      <a href="../../setup/installation/" class="md-nav__link">
         
   
   
@@ -802,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/setup/hpc/" class="md-nav__link">
+      <a href="../../setup/hpc/" class="md-nav__link">
         
   
   
@@ -830,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/setup/pseudopotential/" class="md-nav__link">
+      <a href="../../setup/pseudopotential/" class="md-nav__link">
         
   
   
@@ -917,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/" class="md-nav__link">
+      <a href="../../theory/" class="md-nav__link">
         
   
   
@@ -945,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/problem-statement/" class="md-nav__link">
+      <a href="../../theory/problem-statement/" class="md-nav__link">
         
   
   
@@ -973,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+      <a href="../../theory/hartree-fock/" class="md-nav__link">
         
   
   
@@ -1001,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/dft-overview/" class="md-nav__link">
+      <a href="../../theory/dft-overview/" class="md-nav__link">
         
   
   
@@ -1029,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+      <a href="../../theory/kohn-sham/" class="md-nav__link">
         
   
   
@@ -1057,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/wannier/" class="md-nav__link">
+      <a href="../../theory/wannier/" class="md-nav__link">
         
   
   
@@ -1085,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+      <a href="../../theory/computational-complexity/" class="md-nav__link">
         
   
   
@@ -1118,6 +1062,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1127,13 +1073,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -1154,7 +1098,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1172,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1200,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/scf/" class="md-nav__link">
+      <a href="../scf/" class="md-nav__link">
         
   
   
@@ -1228,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/01_QE_SCF_Test/" class="md-nav__link">
+      <a href="../01_QE_SCF_Test/" class="md-nav__link">
         
   
   
@@ -1256,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/convergence-testing/" class="md-nav__link">
+      <a href="../convergence-testing/" class="md-nav__link">
         
   
   
@@ -1284,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/relaxation/" class="md-nav__link">
+      <a href="../relaxation/" class="md-nav__link">
         
   
   
@@ -1309,10 +1253,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/band-structure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1328,6 +1299,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1340,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/density-of-states/" class="md-nav__link">
+      <a href="../density-of-states/" class="md-nav__link">
         
   
   
@@ -1368,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/dft-u.md" class="md-nav__link">
+      <a href="../dft-u.md" class="md-nav__link">
         
   
   
@@ -1396,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/spin-orbit-coupling.md" class="md-nav__link">
+      <a href="../spin-orbit-coupling.md" class="md-nav__link">
         
   
   
@@ -1424,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/phonon.md" class="md-nav__link">
+      <a href="../phonon.md" class="md-nav__link">
         
   
   
@@ -1452,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/wannier.md" class="md-nav__link">
+      <a href="../wannier.md" class="md-nav__link">
         
   
   
@@ -1480,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/molecular-dynamics.md" class="md-nav__link">
+      <a href="../molecular-dynamics.md" class="md-nav__link">
         
   
   
@@ -1508,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quantum-simulation/hands-on/post-processing.md" class="md-nav__link">
+      <a href="../post-processing.md" class="md-nav__link">
         
   
   
@@ -1605,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="atomistic-simulation/" class="md-nav__link">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
         
   
   
@@ -1633,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="atomistic-simulation/optimization.md" class="md-nav__link">
+      <a href="../../../atomistic-simulation/optimization.md" class="md-nav__link">
         
   
   
@@ -1722,7 +1724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ai-acceleration/" class="md-nav__link">
+      <a href="../../../ai-acceleration/" class="md-nav__link">
         
   
   
@@ -1750,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ai-acceleration/mace/" class="md-nav__link">
+      <a href="../../../ai-acceleration/mace/" class="md-nav__link">
         
   
   
@@ -1839,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="hpc-environment/" class="md-nav__link">
+      <a href="../../../hpc-environment/" class="md-nav__link">
         
   
   
@@ -1867,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="hpc-environment/job-submission.md" class="md-nav__link">
+      <a href="../../../hpc-environment/job-submission.md" class="md-nav__link">
         
   
   
@@ -1956,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="final-project/" class="md-nav__link">
+      <a href="../../../final-project/" class="md-nav__link">
         
   
   
@@ -2045,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="references/software.md" class="md-nav__link">
+      <a href="../../../references/software.md" class="md-nav__link">
         
   
   
@@ -2073,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="references/resources.md" class="md-nav__link">
+      <a href="../../../references/resources.md" class="md-nav__link">
         
   
   
@@ -2128,10 +2130,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#first-principles-hpc-ai-for-materials-discovery" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        First-Principles, HPC &amp; AI for Materials Discovery
+        Overview
       
     </span>
   </a>
@@ -2158,190 +2160,273 @@
   
 
 
-<h1 id="computational-materials-science-workshop">Computational Materials Science Workshop</h1>
-<h2 id="first-principles-hpc-ai-for-materials-discovery">First-Principles, HPC &amp; AI for Materials Discovery</h2>
-<p>Welcome to the <strong>Computational Materials Science Workshop</strong>.</p>
-<p>This workshop provides a comprehensive introduction to modern computational approaches for materials discovery by integrating:</p>
+<h1 id="band-structure-calculation">Band Structure Calculation</h1>
+<h2 id="overview">Overview</h2>
+<p>Band structure calculation is used to analyze the electronic properties of materials by showing the relationship between electron energy levels and crystal momentum.</p>
+<p>The band structure provides important information about:</p>
 <ul>
-<li>First-Principles Calculation</li>
-<li>Density Functional Theory (DFT)</li>
-<li>High Performance Computing (HPC)</li>
-<li>Accelerated Materials Simulation</li>
-<li>Artificial Intelligence for Materials Discovery</li>
+<li>Metallic or insulating behavior</li>
+<li>Band gap</li>
+<li>Valence band and conduction band characteristics</li>
+<li>Electronic dispersion</li>
 </ul>
-<p><a class="md-button md-button--primary" href="start-here/workshop-guide/">Start Workshop</a></p>
-<p><a class="md-button" href="start-here/workflow/">Computational Workflow</a></p>
+<p>In Quantum ESPRESSO, band structure calculations are performed after obtaining a converged and optimized crystal structure.</p>
+<p>The general workflow is:</p>
+<div class="highlight"><pre><span></span><code>SCF Calculation
+
+        ↓
+
+NSCF Calculation
+
+        ↓
+
+Band Calculation
+
+        ↓
+
+Band Structure Plot
+</code></pre></div>
 <hr />
-<h1 id="workshop-overview">Workshop Overview</h1>
-<p>Computational Materials Science combines theoretical modeling, numerical simulation, and advanced computing technologies to understand, predict, and design new materials with targeted properties.</p>
-<p>Through this workshop, participants will explore the complete computational workflow starting from material structure preparation, electronic structure calculation, atomistic simulation, and AI-assisted materials modeling.</p>
-<hr />
-<h1 id="why-computational-materials-science">Why Computational Materials Science?</h1>
-<p>Traditional materials discovery requires extensive experimental exploration.</p>
-<p>Computational approaches provide powerful tools to:</p>
+<h1 id="from-relaxed-structure-to-band-calculation">From Relaxed Structure to Band Calculation</h1>
+<p>Before calculating the band structure, the system should have:</p>
 <ul>
-<li>Predict material properties before experiments</li>
-<li>Understand atomic-scale mechanisms</li>
-<li>Accelerate materials discovery</li>
-<li>Reduce computational and experimental costs</li>
-<li>Support data-driven materials research</li>
+<li>Optimized atomic positions</li>
+<li>Converged computational parameters</li>
+<li>Suitable k-point sampling</li>
 </ul>
+<p>The recommended workflow is:</p>
+<div class="highlight"><pre><span></span><code>Initial Structure
+
+        ↓
+
+Geometry Optimization
+
+        ↓
+
+SCF Calculation
+
+        ↓
+
+NSCF Calculation
+
+        ↓
+
+Band Structure Calculation
+</code></pre></div>
+<p>The optimized structure from the relaxation step is used as the input for electronic structure analysis.</p>
 <hr />
-<h1 id="scientific-workflow">Scientific Workflow</h1>
-<p>Material Design
-    ↓
-Crystal and Molecular Structure Building
-    ↓
-First-Principles Calculation
-    ↓
-Electronic Structure Analysis
-    ↓
-Accelerated Atomistic Simulation
-    ↓
-Machine Learning Potential
-    ↓
-High Performance Computing
-    ↓
-Materials Discovery</p>
-<hr />
-<h1 id="workshop-learning-pathway">Workshop Learning Pathway</h1>
-<h2 id="01-computational-materials-science">01 Computational Materials Science</h2>
-<p>Introduction to the fundamental concepts of computational materials research:</p>
-<ul>
-<li>Materials modeling principles</li>
-<li>Structure-property relationships</li>
-<li>Computational approaches in materials science</li>
-<li>Materials discovery workflow</li>
-</ul>
-<hr />
-<h2 id="02-first-principles-calculation">02 First-Principles Calculation</h2>
-<p>Learning electronic structure calculations using quantum mechanical approaches.</p>
-<p>Topics include:</p>
-<ul>
-<li>Density Functional Theory (DFT)</li>
-<li>Kohn-Sham equation</li>
-<li>Exchange-correlation functional</li>
-<li>Pseudopotential</li>
-<li>Geometry optimization</li>
-<li>Electronic properties analysis</li>
-</ul>
-<p>Main computational tool:</p>
-<p><strong>Quantum ESPRESSO</strong></p>
-<hr />
-<h2 id="03-accelerated-materials-simulation">03 Accelerated Materials Simulation</h2>
-<p>Introduction to efficient simulation methods for larger material systems.</p>
-<p>Topics include:</p>
-<ul>
-<li>Density Functional Tight Binding (DFTB+)</li>
-<li>Accelerated electronic structure calculation</li>
-<li>Large-scale molecular simulation</li>
-<li>Structure optimization workflow</li>
-</ul>
-<hr />
-<h2 id="04-machine-learning-for-materials-discovery">04 Machine Learning for Materials Discovery</h2>
-<p>Application of artificial intelligence approaches in computational materials science.</p>
-<p>Topics include:</p>
-<ul>
-<li>Machine Learning Potential</li>
-<li>Atomic environment representation</li>
-<li>Training dataset preparation</li>
-<li>AI accelerated molecular simulation</li>
-</ul>
-<p>Example workflow:</p>
-<p><strong>MACE Machine Learning Potential</strong></p>
-<hr />
-<h2 id="05-high-performance-computing-environment">05 High Performance Computing Environment</h2>
-<p>Understanding computational infrastructure for large-scale simulation.</p>
-<p>Topics include:</p>
-<ul>
-<li>Linux computational environment</li>
-<li>HPC architecture</li>
-<li>Parallel computation</li>
-<li>Job submission workflow</li>
-<li>Simulation data management</li>
-</ul>
-<hr />
-<h1 id="software-environment">Software Environment</h1>
-<p>The workshop introduces several computational tools:</p>
+<h1 id="electronic-band-concept">Electronic Band Concept</h1>
+<p>In crystalline materials, electrons occupy energy states that form electronic bands.</p>
+<p>The two important regions are:</p>
 <table>
 <thead>
 <tr>
-<th>Software</th>
-<th>Application</th>
+<th>Feature</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Quantum ESPRESSO</td>
-<td>First-Principles and DFT Calculation</td>
+<td>Valence Band</td>
+<td>Highest occupied electronic states</td>
 </tr>
 <tr>
-<td>DFTB+</td>
-<td>Accelerated Atomistic Simulation</td>
+<td>Conduction Band</td>
+<td>Lowest unoccupied electronic states</td>
 </tr>
 <tr>
-<td>MACE</td>
-<td>Machine Learning Potential</td>
+<td>Band Gap</td>
+<td>Energy difference between valence and conduction bands</td>
 </tr>
 <tr>
-<td>HPC Cluster</td>
-<td>Large Scale Computational Simulation</td>
+<td>Fermi Level</td>
+<td>Energy level separating occupied and unoccupied states</td>
+</tr>
+</tbody>
+</table>
+<p>Based on the band structure, materials can be classified as:</p>
+<table>
+<thead>
+<tr>
+<th>Material Type</th>
+<th>Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metal</td>
+<td>Bands cross the Fermi level</td>
 </tr>
 <tr>
-<td>Python Tools</td>
-<td>Data Processing and Analysis</td>
+<td>Semiconductor</td>
+<td>Small band gap exists</td>
+</tr>
+<tr>
+<td>Insulator</td>
+<td>Large band gap exists</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h1 id="expected-learning-outcomes">Expected Learning Outcomes</h1>
-<p>After completing this workshop, participants will be able to:</p>
+<h1 id="k-point-path-in-brillouin-zone">k-point Path in Brillouin Zone</h1>
+<p>Band structure calculations require a special k-point path connecting high-symmetry points in the Brillouin zone.</p>
+<p>Example path:</p>
+<div class="highlight"><pre><span></span><code>Γ → X → W → K → Γ
+</code></pre></div>
+<p>Unlike SCF calculations that use uniform k-point meshes, band calculations use specific paths.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>K_POINTS crystal_b
+
+5
+
+0.000 0.000 0.000 20 ! Gamma
+
+0.500 0.000 0.500 20 ! X
+
+0.500 0.250 0.750 20 ! W
+
+0.375 0.375 0.750 20 ! K
+
+0.000 0.000 0.000 20 ! Gamma
+</code></pre></div>
+<hr />
+<h1 id="quantum-espresso-band-workflow">Quantum ESPRESSO Band Workflow</h1>
+<h2 id="step-1-scf-calculation">Step 1: SCF Calculation</h2>
+<p>The SCF calculation determines the ground-state electron density.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>calculation = 'scf'
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>charge density
+wave functions
+total energy
+</code></pre></div>
+<hr />
+<h2 id="step-2-nscf-calculation">Step 2: NSCF Calculation</h2>
+<p>The NSCF calculation calculates electronic states along the required k-point path.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>calculation = 'nscf'
+</code></pre></div>
+<p>The NSCF calculation uses:</p>
 <ul>
-<li>Explain the fundamentals of computational materials science</li>
-<li>Understand first-principles calculation workflows</li>
-<li>Perform basic Quantum ESPRESSO simulations</li>
-<li>Understand accelerated simulation approaches using DFTB+</li>
-<li>Apply machine learning concepts for materials modeling</li>
-<li>Utilize HPC environments for computational research</li>
+<li>Optimized structure</li>
+<li>Converged cutoff parameters</li>
+<li>Dense k-point path</li>
 </ul>
 <hr />
-<h1 id="target-participants">Target Participants</h1>
-<p>This workshop is intended for:</p>
+<h2 id="step-3-band-calculation">Step 3: Band Calculation</h2>
+<p>The band calculation extracts eigenvalues along the k-point path.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>calculation = 'bands'
+</code></pre></div>
+<hr />
+<h1 id="example-quantum-espresso-input">Example Quantum ESPRESSO Input</h1>
+<h2 id="nscf-input">NSCF Input</h2>
+<div class="highlight"><pre><span></span><code>&amp;CONTROL
+
+calculation = 'nscf'
+
+prefix = 'material'
+
+/
+
+&amp;SYSTEM
+
+ecutwfc = 60
+
+ecutrho = 480
+
+nbnd = 20
+
+/
+
+&amp;ELECTRONS
+
+conv_thr = 1.0d-8
+
+/
+</code></pre></div>
+<hr />
+<h2 id="band-input">Band Input</h2>
+<div class="highlight"><pre><span></span><code>&amp;CONTROL
+
+calculation = 'bands'
+
+prefix = 'material'
+
+/
+
+&amp;SYSTEM
+
+nbnd = 20
+
+/
+</code></pre></div>
+<hr />
+<h1 id="band-structure-calculation-on-hpc">Band Structure Calculation on HPC</h1>
+<p>Band calculations are suitable for HPC because electronic states can require significant computational resources.</p>
+<p>Example SLURM submission:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=band</span>
+
+<span class="c1">#SBATCH --nodes=1</span>
+
+<span class="c1">#SBATCH --ntasks=32</span>
+
+<span class="c1">#SBATCH --time=02:00:00</span>
+
+
+module<span class="w"> </span>load<span class="w"> </span>quantum-espresso
+
+pw.x<span class="w"> </span>&lt;<span class="w"> </span>bands.in<span class="w"> </span>&gt;<span class="w"> </span>bands.out
+</code></pre></div>
+<p>Submit:</p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>band.slurm
+</code></pre></div>
+<hr />
+<h1 id="band-structure-visualization">Band Structure Visualization</h1>
+<p>The output from Quantum ESPRESSO must be processed before visualization.</p>
+<p>Common tools:</p>
 <ul>
-<li>Researchers</li>
-<li>University lecturers</li>
-<li>Graduate students</li>
-<li>Undergraduate students with computational interests</li>
-<li>Materials science and engineering professionals</li>
+<li><code>bands.x</code></li>
+<li><code>plotband.x</code></li>
+<li>Python visualization tools</li>
+<li>XCrySDen</li>
 </ul>
-<p>Participants are expected to have basic knowledge of:</p>
+<p>The final plot shows:</p>
 <ul>
-<li>Physics</li>
-<li>Chemistry</li>
-<li>Materials science</li>
-<li>Engineering</li>
-<li>Scientific computing</li>
+<li>Energy axis</li>
+<li>High-symmetry k-points</li>
+<li>Band dispersion</li>
 </ul>
 <hr />
-<h1 id="workshop-case-study">Workshop Case Study</h1>
-<p>During the hands-on session, participants will apply computational workflows to investigate material systems through:</p>
-<p><strong>Structure Design → Simulation → Analysis → Materials Discovery</strong></p>
-<p>The case study integrates:</p>
+<h1 id="hands-on-exercise">Hands-on Exercise</h1>
+<p>Calculate the electronic band structure of a silicon crystal.</p>
+<h2 id="tasks">Tasks</h2>
+<ol>
+<li>Use the optimized structure from geometry optimization.</li>
+<li>Perform SCF calculation.</li>
+<li>Generate NSCF calculation along high-symmetry paths.</li>
+<li>Run band calculation.</li>
+<li>Visualize the band structure.</li>
+</ol>
+<p>Expected output:</p>
 <ul>
-<li>Atomic structure preparation</li>
-<li>First-principles calculation</li>
-<li>Computational simulation</li>
-<li>AI-assisted materials modeling</li>
+<li>Band structure plot</li>
+<li>Identification of band gap</li>
+<li>Electronic behavior classification</li>
 </ul>
 <hr />
-<h1 id="organized-by">Organized By</h1>
-<p><strong>Badan Riset dan Inovasi Nasional (BRIN)</strong>  </p>
-<p><strong>Institut Teknologi Bandung (ITB)</strong>  </p>
-<p><strong>Masyarakat Komputasi Indonesia (MKI)</strong></p>
-<hr />
-<h1 id="begin-your-computational-materials-journey">Begin Your Computational Materials Journey</h1>
-<p>Start from:</p>
-<p>➡️ <strong>00 Start Here → Workshop Guide</strong></p>
+<h1 id="summary">Summary</h1>
+<p>Band structure calculation provides insight into the electronic properties of materials.</p>
+<p>The workflow requires:</p>
+<ul>
+<li>Converged computational parameters</li>
+<li>Optimized crystal structure</li>
+<li>Appropriate k-point path</li>
+</ul>
+<p>The calculated band structure can be used to analyze electronic properties before further studies such as density of states, transport, and optical calculations.</p>
 
 
 
@@ -2417,10 +2502,10 @@ Materials Discovery</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
