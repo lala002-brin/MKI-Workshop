@@ -137,16 +137,57 @@ nav:
 
       - Hands-on:
 
+          - Overview:
+
+              quantum-simulation/hands-on/index.md
+
           - SCF Calculation:
+
               quantum-simulation/hands-on/scf.md
+
           - Notebook:
+
               quantum-simulation/hands-on/01_QE_SCF_Test.ipynb
 
+          - Convergence Testing:
+
+              quantum-simulation/hands-on/convergence-testing.md
+
           - Geometry Optimization:
+
               quantum-simulation/hands-on/relaxation.md
 
           - Band Structure:
+
               quantum-simulation/hands-on/band-structure.md
+
+          - Density of States:
+
+              quantum-simulation/hands-on/density-of-states.md
+
+          - DFT+U:
+
+              quantum-simulation/hands-on/dft-u.md
+
+          - Spin-Orbit Coupling:
+
+              quantum-simulation/hands-on/spin-orbit-coupling.md
+
+          - Phonon Calculation:
+
+              quantum-simulation/hands-on/phonon.md
+
+          - Wannier Function:
+
+              quantum-simulation/hands-on/wannier.md
+
+          - Molecular Dynamics:
+
+              quantum-simulation/hands-on/molecular-dynamics.md
+
+          - Post Processing:
+
+              quantum-simulation/hands-on/post-processing.md
 
 
   - 03 Accelerated Materials Simulation:
@@ -162,8 +203,6 @@ nav:
 
 
   - 04 Machine Learning Potential:
-
-
       - AI for Materials Simulation:
           ai-acceleration/index.md
 
