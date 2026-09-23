@@ -2199,119 +2199,225 @@ N_{PW} \propto E_{cut}^{3/2}
 \]</div>
 <p>Higher cutoff energy provides a more complete basis set but requires more computational resources.</p>
 <p>In Quantum ESPRESSO, this parameter is defined as:</p>
-<p>```text
-ecutwfc = value
-Typical convergence workflow:| Calculation | ecutwfc |
-| ----------- | ------- |
-| Test 1      | 30 Ry   |
-| Test 2      | 40 Ry   |
-| Test 3      | 50 Ry   |
-| Test 4      | 60 Ry   |
-The total energy is compared until the change becomes sufficiently small.
-2. Charge Density Cutoff (ecutrho)</p>
+<div class="highlight"><pre><span></span><code>ecutwfc = value
+</code></pre></div>
+<p>Example convergence workflow:</p>
+<table>
+<thead>
+<tr>
+<th>Calculation</th>
+<th>ecutwfc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test 1</td>
+<td>30 Ry</td>
+</tr>
+<tr>
+<td>Test 2</td>
+<td>40 Ry</td>
+</tr>
+<tr>
+<td>Test 3</td>
+<td>50 Ry</td>
+</tr>
+<tr>
+<td>Test 4</td>
+<td>60 Ry</td>
+</tr>
+</tbody>
+</table>
+<p>The total energy is compared until the change becomes sufficiently small.</p>
+<hr />
+<h1 id="2-charge-density-cutoff-ecutrho">2. Charge Density Cutoff (<code>ecutrho</code>)</h1>
 <p>The charge density requires a higher cutoff compared with wave functions.</p>
-<p>In Quantum ESPRESSO:
-ecutrho = value
-The relationship between ecutrho and ecutwfc depends on the pseudopotential type.</p>
+<p>In Quantum ESPRESSO:</p>
+<div class="highlight"><pre><span></span><code>ecutrho = value
+</code></pre></div>
+<p>The relationship between <code>ecutrho</code> and <code>ecutwfc</code> depends on the pseudopotential type.</p>
 <p>Typical values:</p>
-<p>Norm-conserving pseudopotential:
-ecutrho ≈ 4 × ecutwfc
-Ultrasoft pseudopotential:
-ecutrho ≈ 8–12 × ecutwfc</p>
+<table>
+<thead>
+<tr>
+<th>Pseudopotential</th>
+<th>Recommended relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Norm-conserving</td>
+<td><code>ecutrho ≈ 4 × ecutwfc</code></td>
+</tr>
+<tr>
+<td>Ultrasoft</td>
+<td><code>ecutrho ≈ 8–12 × ecutwfc</code></td>
+</tr>
+</tbody>
+</table>
 <p>The appropriate value should follow the recommendation of the selected pseudopotential.</p>
-<ol>
-<li>k-point Convergence</li>
-</ol>
+<hr />
+<h1 id="3-k-point-convergence">3. k-point Convergence</h1>
 <p>Periodic systems require sampling of the Brillouin zone using k-points.</p>
 <p>The density of k-points affects:</p>
-<p>Total energy
-Electronic structure
-Band properties</p>
+<ul>
+<li>Total energy</li>
+<li>Electronic structure</li>
+<li>Band properties</li>
+</ul>
 <p>A denser k-point mesh increases accuracy but also increases computational cost.</p>
 <p>Example:</p>
-<p>Low density:</p>
-<p>4 × 4 × 4</p>
-<p>Medium density:</p>
-<p>6 × 6 × 6</p>
-<p>High density:</p>
-<p>8 × 8 × 8</p>
+<table>
+<thead>
+<tr>
+<th>Density</th>
+<th>k-point mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td>4 × 4 × 4</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>6 × 6 × 6</td>
+</tr>
+<tr>
+<td>High</td>
+<td>8 × 8 × 8</td>
+</tr>
+</tbody>
+</table>
 <p>The optimal mesh is selected when increasing k-points no longer significantly changes the calculated properties.</p>
-<ol>
-<li>Convergence Criteria</li>
-</ol>
+<hr />
+<h1 id="4-convergence-criteria">4. Convergence Criteria</h1>
 <p>A calculation is considered converged when the change in the target property becomes smaller than a predefined tolerance.</p>
-<p>Common convergence parameters:</p>
-<p>Energy convergence</p>
+<h2 id="energy-convergence">Energy Convergence</h2>
 <p>The difference in total energy between calculations:</p>
-<div class="arithmatex">\[ \Delta E = E_{n} - E_{n-1} \]</div>
+<div class="arithmatex">\[
+\Delta E = E_n - E_{n-1}
+\]</div>
 <p>should approach zero.</p>
-<p>Force convergence</p>
+<h2 id="force-convergence">Force Convergence</h2>
 <p>For structural optimization:</p>
-<div class="arithmatex">\[ |F| &lt; F_{threshold} \]</div>
+<div class="arithmatex">\[
+|F| &lt; F_{threshold}
+\]</div>
 <p>is required.</p>
-<p>Stress convergence</p>
-<p>Important for lattice optimization calculations.</p>
-<p>Practical Workflow</p>
+<h2 id="stress-convergence">Stress Convergence</h2>
+<p>Stress convergence is important for lattice optimization calculations.</p>
+<hr />
+<h1 id="practical-workflow">Practical Workflow</h1>
 <p>A typical convergence testing workflow:</p>
-<p>Step 1: Select initial parameters</p>
+<h2 id="step-1-select-initial-parameters">Step 1: Select Initial Parameters</h2>
 <p>Choose reasonable starting values:</p>
-<p>ecutwfc = 40 Ry</p>
-<p>k-point = 4 × 4 × 4
-Step 2: Perform calculations</p>
+<div class="highlight"><pre><span></span><code>ecutwfc = 40 Ry
+
+k-point = 4 × 4 × 4
+</code></pre></div>
+<hr />
+<h2 id="step-2-perform-calculations">Step 2: Perform Calculations</h2>
 <p>Increase parameters systematically:</p>
-<p>40 Ry → 50 Ry → 60 Ry</p>
+<div class="highlight"><pre><span></span><code>40 Ry → 50 Ry → 60 Ry
+</code></pre></div>
 <p>and:</p>
-<p>4 × 4 × 4 → 6 × 6 × 6 → 8 × 8 × 8
-Step 3: Analyze results</p>
+<div class="highlight"><pre><span></span><code>4 × 4 × 4 → 6 × 6 × 6 → 8 × 8 × 8
+</code></pre></div>
+<hr />
+<h2 id="step-3-analyze-results">Step 3: Analyze Results</h2>
 <p>Compare:</p>
-<p>Total energy
-Energy difference
-Computational time</p>
+<ul>
+<li>Total energy</li>
+<li>Energy difference</li>
+<li>Computational time</li>
+</ul>
 <p>Select parameters where the result becomes stable.</p>
-<p>Quantum ESPRESSO Example</p>
+<hr />
+<h1 id="quantum-espresso-example">Quantum ESPRESSO Example</h1>
 <p>Example SCF input:</p>
-<p>&amp;SYSTEM</p>
-<p>ecutwfc = 50</p>
-<p>ecutrho = 400</p>
-<p>/</p>
-<p>K_POINTS automatic</p>
-<p>6 6 6 0 0 0</p>
+<div class="highlight"><pre><span></span><code>&amp;SYSTEM
+
+ecutwfc = 50
+
+ecutrho = 400
+
+/
+
+K_POINTS automatic
+
+6 6 6 0 0 0
+</code></pre></div>
 <p>This calculation uses:</p>
-<p>50 Ry wave-function cutoff
-400 Ry charge density cutoff
-6×6×6 k-point mesh
-Convergence Testing on HPC</p>
+<ul>
+<li>50 Ry wave-function cutoff</li>
+<li>400 Ry charge density cutoff</li>
+<li>6 × 6 × 6 k-point mesh</li>
+</ul>
+<hr />
+<h1 id="convergence-testing-on-hpc">Convergence Testing on HPC</h1>
 <p>Convergence calculations are highly suitable for HPC environments because multiple parameter tests can be performed independently.</p>
 <p>Parallel workflow:</p>
-<p>ecutwfc = 30 Ry
+<div class="highlight"><pre><span></span><code>ecutwfc = 30 Ry
         |
-        ├── SCF calculation</p>
-<p>ecutwfc = 40 Ry
+        └── SCF calculation
+
+ecutwfc = 40 Ry
         |
-        ├── SCF calculation</p>
-<p>ecutwfc = 50 Ry
+        └── SCF calculation
+
+ecutwfc = 50 Ry
         |
-        └── SCF calculation</p>
+        └── SCF calculation
+</code></pre></div>
 <p>Each calculation can be submitted as a separate HPC job.</p>
-<p>Hands-on Exercise</p>
-<p>Perform convergence testing for a silicon crystal:</p>
-<p>Tasks:</p>
-<p>Test different ecutwfc values.
-Test different k-point meshes.
-Plot total energy versus computational parameters.
-Determine the optimal parameters.</p>
-<p>Expected output:</p>
-<p>Converged cutoff energy
-Converged k-point mesh
-Recommended parameters for future calculations
-Summary</p>
+<hr />
+<h1 id="hands-on-exercise">Hands-on Exercise</h1>
+<p>Perform convergence testing for a silicon crystal.</p>
+<h2 id="tasks">Tasks</h2>
+<ol>
+<li>Test different <code>ecutwfc</code> values.</li>
+<li>Test different k-point meshes.</li>
+<li>Plot total energy versus computational parameters.</li>
+<li>Determine the optimal parameters.</li>
+</ol>
+<h2 id="expected-output">Expected Output</h2>
+<p>The exercise should produce:</p>
+<ul>
+<li>Converged cutoff energy</li>
+<li>Converged k-point mesh</li>
+<li>Recommended parameters for future calculations</li>
+</ul>
+<hr />
+<h1 id="summary">Summary</h1>
 <p>Convergence testing is an essential step before performing accurate DFT calculations.</p>
 <p>The main parameters that require testing are:</p>
-<p>Parameter   Purpose
-ecutwfc Controls wave-function basis size
-ecutrho Controls charge density representation
-k-points    Controls Brillouin zone sampling
-Convergence threshold   Controls calculation accuracy</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ecutwfc</code></td>
+<td>Controls wave-function basis size</td>
+</tr>
+<tr>
+<td><code>ecutrho</code></td>
+<td>Controls charge density representation</td>
+</tr>
+<tr>
+<td>k-points</td>
+<td>Controls Brillouin zone sampling</td>
+</tr>
+<tr>
+<td>Convergence threshold</td>
+<td>Controls calculation accuracy</td>
+</tr>
+</tbody>
+</table>
 
 
 
