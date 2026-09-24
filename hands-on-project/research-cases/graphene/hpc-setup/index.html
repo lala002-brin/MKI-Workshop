@@ -23,7 +23,7 @@
     
     
       
-        <title>Hpc section - Computational Materials Science Workshop</title>
+        <title>🚀 HPC Environment Setup - Computational Materials Science Workshop</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hpc-execution-workflow" class="md-skip">
+        <a href="#hpc-environment-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hpc section
+              🚀 HPC Environment Setup
             
           </span>
         </div>
@@ -1813,9 +1813,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -1829,7 +1844,51 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2261,6 +2320,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2269,10 +2330,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-execution-workflow" class="md-nav__link">
+  <a href="#load-quantum-espresso-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HPC Execution Workflow
+        Load Quantum ESPRESSO Environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
       
     </span>
   </a>
@@ -2299,18 +2393,48 @@
   
 
 
-  <h1>Hpc section</h1>
+<h1 id="hpc-environment-setup">🚀 HPC Environment Setup</h1>
+<p>Before running the graphene calculation, prepare the
+Quantum ESPRESSO environment on the HPC cluster.</p>
+<h2 id="load-quantum-espresso-environment">Load Quantum ESPRESSO Environment</h2>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
 
-<h2 id="hpc-execution-workflow">HPC Execution Workflow</h2>
-<p>The electronic structure calculation is performed on an
-HPC cluster using Slurm job submission.</p>
-<p>Before running the calculation, load the Quantum
-ESPRESSO environment:</p>
-<p>```bash
-module purge</p>
-<p>module load gcc/12.2.0</p>
-<p>module load openmpi4/4.1.4</p>
-<p>module load materials/qe/7.2-openmpi</p>
+module<span class="w"> </span>load<span class="w"> </span>gcc/12.2.0
+
+module<span class="w"> </span>load<span class="w"> </span>openmpi4/4.1.4
+
+module<span class="w"> </span>load<span class="w"> </span>materials/qe/7.2-openmpi
+</code></pre></div>
+<h2 id="check-environment">Check Environment</h2>
+<p>Verify that Quantum ESPRESSO is available:</p>
+<div class="highlight"><pre><span></span><code>pw.x<span class="w"> </span>-version
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Quantum ESPRESSO version 7.2
+</code></pre></div>
+<h2 id="calculation-workflow">Calculation Workflow</h2>
+<p>After the environment is ready, continue with:</p>
+<div class="highlight"><pre><span></span><code>HPC Setup
+
+      ↓
+
+SCF Calculation
+
+      ↓
+
+NSCF Calculation
+
+      ↓
+
+DOS Calculation
+
+      ↓
+
+Band Structure
+</code></pre></div>
+<h2 id="next-step">Next Step</h2>
+<p>Continue to:</p>
+<p>➡️ SCF Calculation</p>
 
 
 
@@ -2393,6 +2517,8 @@ module purge</p>
       <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
       
         <script src="../../../../assets/javascripts/chat.js"></script>
       
