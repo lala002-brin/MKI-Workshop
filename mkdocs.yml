@@ -48,8 +48,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-  - pymdownx.superfences
-
   - admonition
 
   - attr_list
@@ -64,12 +62,16 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
 
 plugins:
-
   - search
-  - mkdocs-jupyter
-
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
 
 nav:
 
@@ -205,8 +207,8 @@ nav:
 
 
       - Graphene Electronic Structure:
-          hands-on-project/research-cases/graphene/index.md
-
+          - Overview:
+              hands-on-project/research-cases/graphene/index.md
 
       - Silicon Semiconductor:
           hands-on-project/research-cases/silicon/index.md
@@ -281,4 +283,5 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
   - assets/javascripts/chat.js

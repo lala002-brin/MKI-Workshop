@@ -1,0 +1,3961 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Integrating First-Principles Calculation, High Performance Computing, and Artificial Intelligence for Materials Discovery">
+      
+      
+        <meta name="author" content="BRIN - ITB - Masyarakat Komputasi Indonesia">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>🧪 Electronic Structure of Graphene - Computational Materials Science Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/chat.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#electronic-structure-of-graphene" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computational Materials Science Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧪 Electronic Structure of Graphene
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="Computational Materials Science Workshop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Computational Materials Science Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../start-here/workshop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../start-here/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧱 Foundation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧱 Foundation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Materials Science
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../foundation/materials-informatics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛ First-Principles Calculation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛ First-Principles Calculation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/setup/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/setup/hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/setup/pseudopotential/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pseudopotential
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kohn-Sham Equations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/theory/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier Basis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCF Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/convergence-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convergence Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/relaxation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geometry Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/band-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Band Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/density-of-states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Density of States
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/dft-u/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT+U
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/spin-orbit-coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spin Orbit Coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/phonon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phonon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../quantum-simulation/hands-on/molecular-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Accelerated Materials Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 Accelerated Materials Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../atomistic-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFTB+ Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../atomistic-simulation/optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Machine Learning Potential
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Machine Learning Potential
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai-acceleration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI for Materials Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai-acceleration/mace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MACE Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 High Performance Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 High Performance Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hpc-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hpc-environment/job-submission.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Job Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Hands-on Research Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧪 Hands-on Research Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Electronic Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../silicon/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Silicon Semiconductor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../battery-material/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery Material Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surface-catalysis/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Catalysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../molecular-dynamics/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Help Center
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI Help Center
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/ai-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/ai-help/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Chat Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/ai-help/linux-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Linux Command Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/ai-help/quantum-espresso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛ Quantum ESPRESSO Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 References
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 References
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/software.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/resources.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Requirement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCF Calculation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SCF Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scf-input-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCF Input File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-scf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running SCF Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking Convergence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-total-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking Total Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scf-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCF Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nscf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NSCF Calculation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NSCF Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-nscf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose of NSCF Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nscf-input-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NSCF Input File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-nscf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running NSCF Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-nscf-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring NSCF Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nscf-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NSCF Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-of-states-dos-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density of States (DOS) Calculation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density of States (DOS) Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-dos-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose of DOS Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-input-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS Input File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-dos-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running DOS Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizing DOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#band-structure-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Structure Calculation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Band Structure Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-symmetry-k-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Symmetry k-Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-calculation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Calculation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-input-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Input File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-band-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Band Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Post Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-band-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generated Band Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-and-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization and Data Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpc-execution-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPC Execution Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HPC Execution Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#band-structure-visualization-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Structure Visualization Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-example-band-structure-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Example: Band Structure Plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-symmetry-point-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Symmetry Point Labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results and Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results and Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electronic-structure-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electronic Structure Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-of-states-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density of States Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-structure-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Band Structure Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirac-point-in-graphene" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dirac Point in Graphene
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="electronic-structure-of-graphene">🧪 Electronic Structure of Graphene</h1>
+<p><img alt="Graphene Structure" src="../../../assets/images/research-cases/graphene.jpeg" /></p>
+<div class="grid cards">
+<ul>
+<li>
+<p>⚛ <strong>Material</strong></p>
+<hr />
+<p>Graphene</p>
+</li>
+<li>
+<p>💻 <strong>Method</strong></p>
+<hr />
+<p>Density Functional Theory (DFT)</p>
+</li>
+<li>
+<p>🧮 <strong>Software</strong></p>
+<hr />
+<p>Quantum ESPRESSO</p>
+</li>
+<li>
+<p>📊 <strong>Analysis</strong></p>
+<hr />
+<p>DOS and Band Structure</p>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="case-navigation">Case Navigation</h2>
+<p>Follow the workflow:</p>
+<div class="highlight"><pre><span></span><code>01  System Preparation
+
+        ↓
+
+02  SCF Calculation
+
+        ↓
+
+03  NSCF Calculation
+
+        ↓
+
+04  DOS Analysis
+
+        ↓
+
+05  Band Structure
+
+        ↓
+
+06  Visualization
+
+        ↓
+
+07  Results Interpretation
+</code></pre></div>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Graphene is a two-dimensional material composed of a
+single layer of carbon atoms arranged in a hexagonal
+lattice structure.</p>
+<p>This research case demonstrates the workflow of
+first-principles electronic structure calculations using
+Quantum ESPRESSO.</p>
+<p>Graphene is selected as a benchmark material because of
+its simple crystal structure and well-known electronic
+properties. Through this case study, participants will
+learn how computational methods are applied to
+investigate the electronic behavior of materials.</p>
+<hr />
+<h2 id="research-objective">Research Objective</h2>
+<p>The objective of this case study is to investigate the
+electronic properties of graphene using Density
+Functional Theory (DFT).</p>
+<p>Participants will perform a complete electronic
+structure workflow, including:</p>
+<ul>
+<li>
+<p>Self-Consistent Field (SCF) calculation to obtain
+  converged electronic density</p>
+</li>
+<li>
+<p>Non-Self-Consistent Field (NSCF) calculation to obtain
+  electronic states</p>
+</li>
+<li>
+<p>Density of States (DOS) calculation to analyze the
+  distribution of electronic states</p>
+</li>
+<li>
+<p>Band structure calculation to investigate electronic
+  dispersion along high-symmetry k-points</p>
+</li>
+</ul>
+<hr />
+<h2 id="computational-workflow">Computational Workflow</h2>
+<p>The graphene electronic structure workflow:</p>
+<div class="highlight"><pre><span></span><code>Graphene Structure
+
+        ↓
+
+SCF Calculation
+
+        ↓
+
+NSCF Calculation
+
+        ↓
+
+DOS Calculation
+
+        ↓
+
+Band Structure Calculation
+
+        ↓
+
+Electronic Analysis
+</code></pre></div>
+<hr />
+<h2 id="system-preparation">System Preparation</h2>
+<p>Before performing electronic structure calculations,
+the simulation environment and required input files
+must be prepared.</p>
+<p>This section describes the graphene system,
+calculation software, and file organization used
+throughout this case study.</p>
+<hr />
+<h2 id="material-system">Material System</h2>
+<p>The material investigated in this case is a single-layer
+graphene system.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material</td>
+<td>Graphene</td>
+</tr>
+<tr>
+<td>Element</td>
+<td>Carbon (C)</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Hexagonal lattice</td>
+</tr>
+<tr>
+<td>Dimensionality</td>
+<td>Two-dimensional material</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Density Functional Theory (DFT)</td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Quantum ESPRESSO</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="computational-method">Computational Method</h2>
+<p>The electronic properties of graphene are calculated
+using Density Functional Theory (DFT).</p>
+<p>The Kohn-Sham equations are solved within the
+framework of DFT to obtain the electronic density
+and eigenvalues of the system.</p>
+<p>The calculation workflow uses:</p>
+<div class="highlight"><pre><span></span><code>Quantum ESPRESSO
+
+        ↓
+
+Plane-Wave Basis Set
+
+        ↓
+
+Pseudopotential Approximation
+
+        ↓
+
+Electronic Structure Calculation
+</code></pre></div>
+<hr />
+<h2 id="required-files">Required Files</h2>
+<p>The graphene calculation requires several input files
+for different calculation stages.</p>
+<p>The recommended project structure:</p>
+<div class="highlight"><pre><span></span><code>graphene/
+
+├── input/
+
+│   ├── graphene_scf.in
+
+│   ├── graphene_nscf.in
+
+│   ├── graphene_dos.in
+
+│   ├── graphene_bands.in
+
+│   └── graphene_bands_pp.in
+
+
+├── pseudo/
+
+│   └── C.UPF
+
+
+├── output/
+
+│   ├── graphene_scf.out
+
+│   ├── graphene_nscf.out
+
+│   └── graphene_bands.out
+
+
+└── analysis/
+
+    ├── graphene_analysis.ipynb
+    └── graphene_analysis.py
+</code></pre></div>
+<hr />
+<h2 id="software-requirement">Software Requirement</h2>
+<p>The following software packages are required:</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantum ESPRESSO</td>
+<td>First-principles calculation</td>
+</tr>
+<tr>
+<td>pw.x</td>
+<td>SCF, NSCF, and band calculation</td>
+</tr>
+<tr>
+<td>dos.x</td>
+<td>Density of States calculation</td>
+</tr>
+<tr>
+<td>bands.x</td>
+<td>Band structure post-processing</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Data analysis and visualization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="simulation-files">Simulation Files</h2>
+<p>To reproduce this calculation,
+participants can download the required
+Quantum ESPRESSO input files.</p>
+<h3 id="input-files">Input Files</h3>
+<div class="grid cards">
+<ul>
+<li>
+<p>📥 <strong>SCF Input File</strong></p>
+<hr />
+<p>Prepare initial electronic density calculation.</p>
+<p><a href="../../../../assets/files/graphene/graphene_scf.in">Download graphene_scf.in</a></p>
+</li>
+<li>
+<p>📥 <strong>NSCF Input File</strong></p>
+<hr />
+<p>Calculate electronic states using dense k-points.</p>
+<p><a href="../../../../assets/files/graphene/graphene_nscf.in">Download graphene_nscf.in</a></p>
+</li>
+<li>
+<p>📥 <strong>DOS Input File</strong></p>
+<hr />
+<p>Generate density of states.</p>
+<p><a href="../../../../assets/files/graphene/graphene_dos.in">Download graphene_dos.in</a></p>
+</li>
+<li>
+<p>📥 <strong>Band Structure Input File</strong></p>
+<hr />
+<p>Calculate electronic bands.</p>
+<p><a href="../../../../assets/files/graphene/graphene_bands.in">Download graphene_bands.in</a></p>
+</li>
+</ul>
+</div>
+<hr />
+<h2 id="scf-calculation">SCF Calculation</h2>
+<h3 id="overview">Overview</h3>
+<p>The Self-Consistent Field (SCF) calculation is the
+first computational step in the graphene electronic
+structure workflow.</p>
+<p>The purpose of SCF calculation is to obtain a
+self-consistent charge density and converged
+Kohn-Sham electronic states.</p>
+<p>The resulting charge density will be used as the
+initial condition for further calculations, including
+NSCF, DOS, and band structure calculations.</p>
+<hr />
+<h3 id="scf-input-file">SCF Input File</h3>
+<p>The SCF calculation is controlled by the input file:</p>
+<div class="highlight"><pre><span></span><code>graphene_scf.in
+</code></pre></div>
+<p>The input file contains several important sections:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONTROL</td>
+<td>Defines calculation settings and output directory</td>
+</tr>
+<tr>
+<td>SYSTEM</td>
+<td>Defines graphene atomic structure and calculation parameters</td>
+</tr>
+<tr>
+<td>ELECTRONS</td>
+<td>Controls electronic convergence parameters</td>
+</tr>
+<tr>
+<td>ATOMIC_SPECIES</td>
+<td>Defines carbon atomic information</td>
+</tr>
+<tr>
+<td>ATOMIC_POSITIONS</td>
+<td>Defines atomic coordinates</td>
+</tr>
+<tr>
+<td>K_POINTS</td>
+<td>Defines sampling points in reciprocal space</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="running-scf-calculation">Running SCF Calculation</h3>
+<p>The calculation is performed using the <code>pw.x</code>
+program from Quantum ESPRESSO.</p>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>pw.x<span class="w"> </span>-in<span class="w"> </span>graphene_scf.in<span class="w"> </span>&gt;<span class="w"> </span>graphene_scf.out
+</code></pre></div>
+<p>The calculation output is stored in:</p>
+<div class="highlight"><pre><span></span><code>graphene_scf.out
+</code></pre></div>
+<hr />
+<h3 id="monitoring-calculation">Monitoring Calculation</h3>
+<p>During the calculation, the output file can be
+monitored using:</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-50<span class="w"> </span>graphene_scf.out
+</code></pre></div>
+<p>This command displays the latest lines of the output
+file and helps monitor the convergence process.</p>
+<hr />
+<h3 id="checking-convergence">Checking Convergence</h3>
+<p>A successful SCF calculation should reach
+electronic convergence.</p>
+<p>Check convergence status:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"convergence"</span><span class="w"> </span>graphene_scf.out
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>convergence has been achieved
+</code></pre></div>
+<hr />
+<h3 id="checking-total-energy">Checking Total Energy</h3>
+<p>The final total energy can be extracted using:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"!"</span><span class="w"> </span>graphene_scf.out
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code>!    total energy              =   -114.523 Ry
+</code></pre></div>
+<hr />
+<h3 id="scf-result">SCF Result</h3>
+<p>After successful completion, the SCF calculation
+provides:</p>
+<p>✓ Converged charge density</p>
+<p>✓ Total energy of the system</p>
+<p>✓ Kohn-Sham orbitals</p>
+<p>✓ Electronic information for NSCF calculation</p>
+<hr />
+<h2 id="nscf-calculation">NSCF Calculation</h2>
+<h3 id="overview_1">Overview</h3>
+<p>The Non-Self-Consistent Field (NSCF) calculation is
+performed after the SCF calculation has reached
+convergence.</p>
+<p>Unlike SCF calculation, the NSCF calculation does not
+update the charge density. Instead, it uses the
+converged charge density from SCF to calculate
+electronic states on a denser k-point grid.</p>
+<hr />
+<h3 id="purpose-of-nscf-calculation">Purpose of NSCF Calculation</h3>
+<p>The main objectives of NSCF calculation are:</p>
+<ul>
+<li>
+<p>Obtain electronic eigenvalues at additional
+  k-points</p>
+</li>
+<li>
+<p>Prepare electronic information required for
+  Density of States (DOS) calculation</p>
+</li>
+<li>
+<p>Provide accurate electronic states for further
+  band analysis</p>
+</li>
+</ul>
+<hr />
+<h3 id="nscf-input-file">NSCF Input File</h3>
+<p>The NSCF calculation uses:</p>
+<div class="highlight"><pre><span></span><code>graphene_nscf.in
+</code></pre></div>
+<p>Compared with SCF calculation, the main difference
+is usually the k-point sampling.</p>
+<p>A denser k-point grid is used to obtain better
+resolution of electronic states.</p>
+<hr />
+<h3 id="running-nscf-calculation">Running NSCF Calculation</h3>
+<p>The calculation is performed using <code>pw.x</code>:</p>
+<div class="highlight"><pre><span></span><code>pw.x<span class="w"> </span>-in<span class="w"> </span>graphene_nscf.in<span class="w"> </span>&gt;<span class="w"> </span>graphene_nscf.out
+</code></pre></div>
+<p>The output file:</p>
+<div class="highlight"><pre><span></span><code>graphene_nscf.out
+</code></pre></div>
+<hr />
+<h3 id="monitoring-nscf-calculation">Monitoring NSCF Calculation</h3>
+<p>Monitor the calculation progress:</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-50<span class="w"> </span>graphene_nscf.out
+</code></pre></div>
+<p>Check the calculation status:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"JOB DONE"</span><span class="w"> </span>graphene_nscf.out
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>JOB DONE.
+</code></pre></div>
+<hr />
+<h3 id="nscf-result">NSCF Result</h3>
+<p>After successful completion, the NSCF calculation
+provides:</p>
+<p>✓ Electronic eigenvalues</p>
+<p>✓ Wavefunction information</p>
+<p>✓ Dense k-point electronic states</p>
+<p>✓ Data required for DOS and band structure analysis</p>
+<hr />
+<h2 id="density-of-states-dos-calculation">Density of States (DOS) Calculation</h2>
+<h3 id="overview_2">Overview</h3>
+<p>Density of States (DOS) describes the number of
+available electronic states at different energy
+levels.</p>
+<p>DOS analysis provides information about the electronic
+structure of a material, including the distribution
+of occupied and unoccupied states around the Fermi
+level.</p>
+<p>In graphene, DOS analysis helps understand the
+characteristic electronic behavior originating from
+its carbon-based hexagonal lattice.</p>
+<hr />
+<h3 id="purpose-of-dos-calculation">Purpose of DOS Calculation</h3>
+<p>The DOS calculation is performed to:</p>
+<ul>
+<li>
+<p>Analyze the distribution of electronic states</p>
+</li>
+<li>
+<p>Identify electronic states near the Fermi level</p>
+</li>
+<li>
+<p>Understand the relationship between energy levels
+  and available states</p>
+</li>
+<li>
+<p>Support interpretation of graphene electronic
+  properties</p>
+</li>
+</ul>
+<hr />
+<h3 id="dos-workflow">DOS Workflow</h3>
+<p>The DOS calculation uses the electronic information
+obtained from the NSCF calculation.</p>
+<div class="highlight"><pre><span></span><code>SCF Calculation
+
+        ↓
+
+NSCF Calculation
+
+        ↓
+
+DOS Calculation
+
+        ↓
+
+DOS Visualization
+</code></pre></div>
+<hr />
+<h3 id="dos-input-file">DOS Input File</h3>
+<p>The DOS calculation uses:</p>
+<div class="highlight"><pre><span></span><code>graphene_dos.in
+</code></pre></div>
+<p>The input file defines parameters for generating
+the density of states from previously calculated
+electronic states.</p>
+<hr />
+<h3 id="running-dos-calculation">Running DOS Calculation</h3>
+<p>The DOS calculation is performed using the
+<code>dos.x</code> post-processing tool.</p>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>dos.x<span class="w"> </span>-in<span class="w"> </span>graphene_dos.in<span class="w"> </span>&gt;<span class="w"> </span>graphene_dos.out
+</code></pre></div>
+<p>The output file:</p>
+<div class="highlight"><pre><span></span><code>graphene_dos.out
+</code></pre></div>
+<hr />
+<h3 id="dos-output">DOS Output</h3>
+<p>After successful calculation, DOS data are generated:</p>
+<div class="highlight"><pre><span></span><code>graphene_dos.dat
+</code></pre></div>
+<p>The generated data contain:</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy</td>
+<td>Electronic energy level</td>
+</tr>
+<tr>
+<td>DOS</td>
+<td>Density of electronic states</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="visualizing-dos">Visualizing DOS</h3>
+<p>The DOS data can be visualized using Python,
+Gnuplot, or other scientific visualization tools.</p>
+<p>Example workflow:</p>
+<div class="highlight"><pre><span></span><code>DOS Data
+
+        ↓
+
+Read Data
+
+        ↓
+
+Plot DOS Curve
+
+        ↓
+
+Analyze Electronic States
+</code></pre></div>
+<hr />
+<h3 id="expected-result">Expected Result</h3>
+<p>The DOS plot provides information about:</p>
+<p>✓ Distribution of electronic states</p>
+<p>✓ Electronic states near the Fermi level</p>
+<p>✓ General electronic characteristics of graphene</p>
+<p>The DOS result will be combined with the band
+structure calculation to obtain a complete picture
+of graphene electronic properties.</p>
+<hr />
+<h2 id="band-structure-calculation">Band Structure Calculation</h2>
+<h3 id="overview_3">Overview</h3>
+<p>Band structure calculation describes the relationship
+between electron energy and crystal momentum along
+specific paths in the Brillouin zone.</p>
+<p>For graphene, the band structure is particularly
+important because it reveals the characteristic
+electronic dispersion around the Dirac point.</p>
+<p>The calculation is performed along high-symmetry
+k-points in the Brillouin zone.</p>
+<hr />
+<h3 id="high-symmetry-k-path">High-Symmetry k-Path</h3>
+<p>The graphene band structure is calculated along the
+following high-symmetry path:</p>
+<div class="highlight"><pre><span></span><code>Γ  →  K  →  M  →  Γ
+</code></pre></div>
+<p>These points represent important locations in the
+reciprocal space of the graphene crystal lattice.</p>
+<hr />
+<h3 id="band-calculation-workflow">Band Calculation Workflow</h3>
+<p>The band structure calculation consists of two steps:</p>
+<div class="highlight"><pre><span></span><code>NSCF Electronic States
+
+        ↓
+
+Band Calculation
+
+        ↓
+
+Band Post Processing
+
+        ↓
+
+Band Visualization
+</code></pre></div>
+<hr />
+<h3 id="band-input-file">Band Input File</h3>
+<p>The first calculation uses:</p>
+<div class="highlight"><pre><span></span><code>graphene_bands.in
+</code></pre></div>
+<p>This input file defines the k-point path required
+for calculating electronic bands along high-symmetry
+directions.</p>
+<hr />
+<h3 id="running-band-calculation">Running Band Calculation</h3>
+<p>The band calculation is performed using <code>pw.x</code>:</p>
+<div class="highlight"><pre><span></span><code>pw.x<span class="w"> </span>-in<span class="w"> </span>graphene_bands.in<span class="w"> </span>&gt;<span class="w"> </span>graphene_bands.out
+</code></pre></div>
+<p>The output file:</p>
+<div class="highlight"><pre><span></span><code>graphene_bands.out
+</code></pre></div>
+<hr />
+<h3 id="band-post-processing">Band Post Processing</h3>
+<p>After the band calculation, the electronic bands
+must be collected and prepared for visualization.</p>
+<p>The post-processing step uses:</p>
+<div class="highlight"><pre><span></span><code>graphene_bands_pp.in
+</code></pre></div>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>bands.x<span class="w"> </span>-in<span class="w"> </span>graphene_bands_pp.in<span class="w"> </span>&gt;<span class="w"> </span>graphene_bands_pp.out
+</code></pre></div>
+<hr />
+<h3 id="generated-band-data">Generated Band Data</h3>
+<p>The post-processing step produces band data that
+can be used for plotting.</p>
+<p>Typical output:</p>
+<div class="highlight"><pre><span></span><code>graphene_bands.dat.gnu
+</code></pre></div>
+<p>The data contain:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k-point</td>
+<td>Position along reciprocal space path</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>Electronic eigenvalue</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="visualization-and-data-analysis">Visualization and Data Analysis</h2>
+<hr />
+<h2 id="hpc-execution-workflow">HPC Execution Workflow</h2>
+<p>The electronic structure calculation is performed on an
+HPC cluster using Slurm job submission.</p>
+<p>Before running the calculation, load the Quantum
+ESPRESSO environment:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+
+module<span class="w"> </span>load<span class="w"> </span>gcc/12.2.0
+
+module<span class="w"> </span>load<span class="w"> </span>openmpi4/4.1.4
+
+module<span class="w"> </span>load<span class="w"> </span>materials/qe/7.2-openmpi
+
+
+<span class="c1">### Overview</span>
+
+
+The<span class="w"> </span>output<span class="w"> </span>files<span class="w"> </span>generated<span class="w"> </span>from<span class="w"> </span>Quantum<span class="w"> </span>ESPRESSO
+contain<span class="w"> </span>numerical<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>the<span class="w"> </span>electronic
+structure<span class="w"> </span>of<span class="w"> </span>graphene.
+
+
+To<span class="w"> </span>interpret<span class="w"> </span>the<span class="w"> </span>simulation<span class="w"> </span>results,<span class="w"> </span>the<span class="w"> </span>calculated
+data<span class="w"> </span>are<span class="w"> </span>processed<span class="w"> </span>and<span class="w"> </span>visualized<span class="w"> </span>using<span class="w"> </span>Python.
+
+
+The<span class="w"> </span>visualization<span class="w"> </span>step<span class="w"> </span>converts<span class="w"> </span>numerical<span class="w"> </span>output<span class="w"> </span>into
+scientific<span class="w"> </span>plots,<span class="w"> </span>including<span class="w"> </span>DOS<span class="w"> </span>and<span class="w"> </span>band<span class="w"> </span>structure
+graphs.
+
+
+
+---
+
+
+<span class="c1">### Python Environment</span>
+
+
+The<span class="w"> </span>analysis<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>performed<span class="w"> </span>using<span class="w"> </span>a<span class="w"> </span>Python
+environment<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>packages:
+
+
+<span class="p">|</span><span class="w"> </span>Package<span class="w"> </span><span class="p">|</span><span class="w"> </span>Function<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span>---<span class="p">|</span>---<span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>NumPy<span class="w"> </span><span class="p">|</span><span class="w"> </span>Numerical<span class="w"> </span>data<span class="w"> </span>processing<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Matplotlib<span class="w"> </span><span class="p">|</span><span class="w"> </span>Scientific<span class="w"> </span>visualization<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Jupyter<span class="w"> </span>Notebook<span class="w"> </span><span class="p">|</span><span class="w"> </span>Interactive<span class="w"> </span>analysis<span class="w"> </span>environment<span class="w"> </span><span class="p">|</span>
+
+
+
+Install<span class="w"> </span>required<span class="w"> </span>packages:
+
+
+<span class="sb">```</span>bash
+pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>jupyter
+</code></pre></div>
+<hr />
+<h3 id="band-structure-visualization-workflow">Band Structure Visualization Workflow</h3>
+<p>The plotting process follows:</p>
+<div class="highlight"><pre><span></span><code>Read Band Data
+
+        ↓
+
+Extract k-points
+
+        ↓
+
+Reshape Band Energies
+
+        ↓
+
+Define High-Symmetry Points
+
+        ↓
+
+Generate Band Plot
+</code></pre></div>
+<hr />
+<h3 id="python-example-band-structure-plot">Python Example: Band Structure Plot</h3>
+<p>Create a notebook:</p>
+<div class="highlight"><pre><span></span><code>graphene_analysis.ipynb
+</code></pre></div>
+<p>Import required libraries:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</code></pre></div>
+<p>Load band structure data:</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+    <span class="s1">'../output/graphene_bands.dat.gnu'</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Extract k-point and energy information:</p>
+<div class="highlight"><pre><span></span><code><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">bands</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Plot electronic bands:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bands</span><span class="p">)):</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">k</span><span class="p">,</span>
+        <span class="n">bands</span><span class="p">[</span><span class="n">band</span><span class="p">,:],</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="high-symmetry-point-labels">High-Symmetry Point Labels</h3>
+<p>The graphene band structure is plotted along:</p>
+<div class="highlight"><pre><span></span><code>Γ → K → M → Γ
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.6667</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5774</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">'Γ'</span><span class="p">,</span>
+        <span class="s1">'K'</span><span class="p">,</span>
+        <span class="s1">'M'</span><span class="p">,</span>
+        <span class="s1">'Γ'</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="results-and-discussion">Results and Discussion</h2>
+<h3 id="electronic-structure-analysis">Electronic Structure Analysis</h3>
+<p>The final stage of this case study is to interpret
+the electronic structure results obtained from
+Quantum ESPRESSO calculations.</p>
+<p>The DOS and band structure plots provide information
+about the electronic states and energy dispersion
+of graphene.</p>
+<hr />
+<h3 id="density-of-states-analysis">Density of States Analysis</h3>
+<p>The DOS plot represents the number of available
+electronic states at different energy levels.</p>
+<p>Important aspects to analyze:</p>
+<ul>
+<li>
+<p>Distribution of electronic states around the
+  Fermi level</p>
+</li>
+<li>
+<p>Difference between occupied and unoccupied states</p>
+</li>
+<li>
+<p>Contribution of electronic states near the
+  energy region of interest</p>
+</li>
+</ul>
+<p>For graphene, the DOS behavior reflects the
+characteristic electronic structure originating from
+the carbon hexagonal lattice.</p>
+<hr />
+<h3 id="band-structure-analysis">Band Structure Analysis</h3>
+<p>The band structure plot shows the relationship
+between electron energy and crystal momentum.</p>
+<p>The main features to observe are:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valence Band</td>
+<td>Electronic states below the Fermi level</td>
+</tr>
+<tr>
+<td>Conduction Band</td>
+<td>Electronic states above the Fermi level</td>
+</tr>
+<tr>
+<td>Band Crossing</td>
+<td>Interaction between valence and conduction bands</td>
+</tr>
+<tr>
+<td>High Symmetry Points</td>
+<td>Important locations in reciprocal space</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="dirac-point-in-graphene">Dirac Point in Graphene</h3>
+<p>One of the most important characteristics of
+graphene is the presence of the Dirac point.</p>
+<p>The Dirac point occurs at the K point in the
+Brillouin zone, where the valence band and conduction
+band meet.</p>
+<p>This behavior results in the unique electronic
+properties of graphene.</p>
+<div class="highlight"><pre><span></span><code>Conduction Band
+
+        \
+
+         \
+
+          ●  Dirac Point
+
+         /
+
+        /
+
+Valence Band
+</code></pre></div>
+<hr />
+<h3 id="summary">Summary</h3>
+<p>Through this case study, participants have completed
+a complete first-principles workflow for graphene:</p>
+<p>✓ Prepared graphene simulation system</p>
+<p>✓ Performed SCF calculation</p>
+<p>✓ Performed NSCF calculation</p>
+<p>✓ Generated DOS data</p>
+<p>✓ Calculated band structure</p>
+<p>✓ Visualized and interpreted electronic properties</p>
+<p>This workflow represents a typical computational
+materials science approach for investigating
+electronic properties of two-dimensional materials.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MKI × BRIN Computational Materials Science Workshop <br> Developed for scientific computing education
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lala002-brin/MKI-Workshop" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/chat.js"></script>
+      
+    
+  </body>
+</html>
