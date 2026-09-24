@@ -65,8 +65,23 @@ E --> F
 
 ---
 
+## Pseudopotential
 
-# ⚙️ Calculation Steps
+
+This case uses carbon pseudopotential provided in the HPC environment.
+
+
+```text
+C.pbe-n-kjpaw_psl.1.0.0.UPF
+```
+---
+
+The pseudopotential file is automatically available
+through the HPC environment and does not require
+manual upload.
+
+
+## ⚙️ Calculation Steps
 
 
 ## 1. SCF Calculation
@@ -197,9 +212,24 @@ output/graphene_bands.dat.gnu
 
 
 ---
+<div class="compact-table" markdown>
+## ▶ Execution Summary
 
 
-# 📓 Python Analysis
+Run the calculations in the following order:
+
+
+| Step | Command | Output |
+|---|---|---|
+| SCF | `bash scripts/submit_qe.sh graphene_scf` | `graphene_scf.out` |
+| NSCF | `bash scripts/submit_qe.sh graphene_nscf` | `graphene_nscf.out` |
+| DOS | `bash scripts/submit_post.sh graphene_dos dos.x` | `graphene_dos.dat` |
+| Band Structure | `bash scripts/submit_qe.sh graphene_bands` | `graphene_bands.dat.gnu` |
+
+
+---
+
+## 📓 Python Analysis
 
 
 The simulation results are visualized using Python
@@ -213,20 +243,22 @@ Open the analysis notebook:
 
 
 ---
-# 📂 Simulation Files
+## 📂 Simulation Files
 
 
-Download the input files required for the graphene calculation workflow.
+Download the required files for the graphene electronic structure workflow.
 
 
-| File | Type | Purpose | Download |
+| File | Category | Description | Download |
 |---|---|---|---|
-| `graphene_scf.in` | SCF Input | Electronic density calculation | [:material-download: Download](input/graphene_scf.in) |
-| `graphene_nscf.in` | NSCF Input | Electronic states calculation | [:material-download: Download](input/graphene_nscf.in) |
-| `graphene_dos.in` | DOS Input | Density of states calculation | [:material-download: Download](input/graphene_dos.in) |
-| `graphene_bands.in` | Band Input | Band structure calculation | [:material-download: Download](input/graphene_bands.in) |
-| `graphene_bands_pp.in` | Post Processing | Band visualization preparation | [:material-download: Download](input/graphene_bands_pp.in) |
-| `graphene_analysis.ipynb` | Notebook | Python visualization and analysis | [:material-download: Download](analysis/graphene_analysis.ipynb) |
+| `graphene_scf.in` | Input File | SCF calculation input for electronic density convergence | [Download](input/graphene_scf.in) |
+| `graphene_nscf.in` | Input File | NSCF calculation input for electronic state generation | [Download](input/graphene_nscf.in) |
+| `graphene_dos.in` | Input File | Input file for Density of States calculation | [Download](input/graphene_dos.in) |
+| `graphene_bands.in` | Input File | Input file for band structure calculation | [Download](input/graphene_bands.in) |
+| `graphene_bands_pp.in` | Input File | Post-processing input for band analysis | [Download](input/graphene_bands_pp.in) |
+| `submit_qe.sh` | HPC Script | Slurm script for Quantum ESPRESSO submission | [Download](scripts/submit_qe.sh) |
+| `submit_post.sh` | HPC Script | Slurm script for post-processing calculation | [Download](scripts/submit_post.sh) |
+| `graphene_analysis.ipynb` | Analysis | Python notebook for visualization and data analysis | [Download](analysis/graphene_analysis.ipynb) |
 
 ---
 

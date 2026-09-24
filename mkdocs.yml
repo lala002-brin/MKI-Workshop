@@ -210,9 +210,8 @@ nav:
           - Overview:
               hands-on-project/research-cases/graphene/index.md
 
-      - Silicon Semiconductor:
-          hands-on-project/research-cases/silicon/index.md
-
+      - Graphene/Ionic Liquid Interface:
+          hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
 
       - Battery Material Simulation:
           hands-on-project/research-cases/battery-material/index.md
