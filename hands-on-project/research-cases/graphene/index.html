@@ -2400,7 +2400,7 @@ D --&gt; F[Python Visualization]
 
 E --&gt; F</code></pre>
 <hr />
-<h1 id="calculation-steps">⚙️ Calculation Steps</h1>
+<h2 id="calculation-steps">⚙️ Calculation Steps</h2>
 <h2 id="1-scf-calculation">1. SCF Calculation</h2>
 <p>The SCF calculation is performed to obtain the
 converged electronic density of graphene.</p>
@@ -2455,59 +2455,106 @@ the high-symmetry path:</p>
 <div class="highlight"><pre><span></span><code>output/graphene_bands.dat.gnu
 </code></pre></div>
 <hr />
-<h1 id="python-analysis">📓 Python Analysis</h1>
+<div class="compact-table">
+<h2 id="execution-summary">▶ Execution Summary</h2>
+<p>Run the calculations in the following order:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Command</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCF</td>
+<td><code>bash scripts/submit_qe.sh graphene_scf</code></td>
+<td><code>graphene_scf.out</code></td>
+</tr>
+<tr>
+<td>NSCF</td>
+<td><code>bash scripts/submit_qe.sh graphene_nscf</code></td>
+<td><code>graphene_nscf.out</code></td>
+</tr>
+<tr>
+<td>DOS</td>
+<td><code>bash scripts/submit_post.sh graphene_dos dos.x</code></td>
+<td><code>graphene_dos.dat</code></td>
+</tr>
+<tr>
+<td>Band Structure</td>
+<td><code>bash scripts/submit_qe.sh graphene_bands</code></td>
+<td><code>graphene_bands.dat.gnu</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="python-analysis">📓 Python Analysis</h2>
 <p>The simulation results are visualized using Python
 to analyze Density of States (DOS) and band structure.</p>
 <p>Open the analysis notebook:</p>
 <p><a href="analysis/graphene_analysis/">📓 Graphene Analysis Notebook</a></p>
 <hr />
-<h1 id="simulation-files">📂 Simulation Files</h1>
-<p>Download the input files required for the graphene calculation workflow.</p>
+<h2 id="simulation-files">📂 Simulation Files</h2>
+<p>Download the required files for the graphene electronic structure workflow.</p>
 <table>
 <thead>
 <tr>
 <th>File</th>
-<th>Type</th>
-<th>Purpose</th>
+<th>Category</th>
+<th>Description</th>
 <th>Download</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>graphene_scf.in</code></td>
-<td>SCF Input</td>
-<td>Electronic density calculation</td>
-<td><a href="input/graphene_scf.in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Input File</td>
+<td>SCF calculation input for electronic density convergence</td>
+<td><a href="input/graphene_scf.in">Download</a></td>
 </tr>
 <tr>
 <td><code>graphene_nscf.in</code></td>
-<td>NSCF Input</td>
-<td>Electronic states calculation</td>
-<td><a href="input/graphene_nscf.in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Input File</td>
+<td>NSCF calculation input for electronic state generation</td>
+<td><a href="input/graphene_nscf.in">Download</a></td>
 </tr>
 <tr>
 <td><code>graphene_dos.in</code></td>
-<td>DOS Input</td>
-<td>Density of states calculation</td>
-<td><a href="input/graphene_dos.in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Input File</td>
+<td>Input file for Density of States calculation</td>
+<td><a href="input/graphene_dos.in">Download</a></td>
 </tr>
 <tr>
 <td><code>graphene_bands.in</code></td>
-<td>Band Input</td>
-<td>Band structure calculation</td>
-<td><a href="input/graphene_bands.in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Input File</td>
+<td>Input file for band structure calculation</td>
+<td><a href="input/graphene_bands.in">Download</a></td>
 </tr>
 <tr>
 <td><code>graphene_bands_pp.in</code></td>
-<td>Post Processing</td>
-<td>Band visualization preparation</td>
-<td><a href="input/graphene_bands_pp.in"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Input File</td>
+<td>Post-processing input for band analysis</td>
+<td><a href="input/graphene_bands_pp.in">Download</a></td>
+</tr>
+<tr>
+<td><code>submit_qe.sh</code></td>
+<td>HPC Script</td>
+<td>Slurm script for Quantum ESPRESSO submission</td>
+<td><a href="scripts/submit_qe.sh">Download</a></td>
+</tr>
+<tr>
+<td><code>submit_post.sh</code></td>
+<td>HPC Script</td>
+<td>Slurm script for post-processing calculation</td>
+<td><a href="scripts/submit_post.sh">Download</a></td>
 </tr>
 <tr>
 <td><code>graphene_analysis.ipynb</code></td>
-<td>Notebook</td>
-<td>Python visualization and analysis</td>
-<td><a href="analysis/graphene_analysis/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg></span> Download</a></td>
+<td>Analysis</td>
+<td>Python notebook for visualization and data analysis</td>
+<td><a href="analysis/graphene_analysis/">Download</a></td>
 </tr>
 </tbody>
 </table>
@@ -2515,6 +2562,7 @@ to analyze Density of States (DOS) and band structure.</p>
 <h2 id="next-step">Next Step</h2>
 <p>Continue with Python analysis:</p>
 <p><a href="analysis/graphene_analysis/">📓 Open Graphene Analysis Notebook</a></p>
+</div>
 
 
 
