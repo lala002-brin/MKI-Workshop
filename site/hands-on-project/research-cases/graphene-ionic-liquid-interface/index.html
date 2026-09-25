@@ -1965,6 +1965,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#research-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Research Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2074,6 +2085,28 @@
     <span class="md-ellipsis">
       
         🖥️ Computational Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Quick Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
       
     </span>
   </a>
@@ -2530,6 +2563,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#research-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Research Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2646,6 +2690,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Quick Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#analysis-notebook" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2708,6 +2774,14 @@ while ionic liquid is introduced as an electrolyte environment.
 The system is constructed and analyzed using Quantum ESPRESSO,
 PACKMOL, and LAMMPS.</p>
 </div>
+<p><img alt="Graphene Ionic Liquid Interface" src="images/interface_overview.png" /></p>
+<p align="center">
+<em>
+Atomic-scale representation of graphene electrode and ionic liquid
+electrolyte interface used in molecular simulation.
+</em>
+</p>
+
 <div class="grid cards">
 <ul>
 <li>
@@ -2736,6 +2810,15 @@ Ion Distribution</p>
 </li>
 </ul>
 </div>
+<h2 id="research-question">🔬 Research Question</h2>
+<p>This simulation investigates how ionic liquid species organize and
+interact near a graphene electrode surface.</p>
+<p>The main questions explored are:</p>
+<ul>
+<li>How are ions distributed near the graphene surface?</li>
+<li>How do electrolyte molecules interact with the electrode?</li>
+<li>How does the interface structure evolve during molecular dynamics?</li>
+</ul>
 <h2 id="learning-objectives">🎯 Learning Objectives</h2>
 <p>After completing this case, participants will be able to:</p>
 <div class="grid cards">
@@ -2975,6 +3058,62 @@ the electrode-electrolyte interface.</p>
 <tr>
 <td>Python</td>
 <td>Data processing and visualization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quick-access">📥 Quick Access</h2>
+<p>Download the main simulation resources:</p>
+<p><a class="md-button md-button--primary" href="qe/scf.in">
+Download QE Files
+</a></p>
+<p><a class="md-button md-button--primary" href="lammps/in.lammps">
+Download LAMMPS Files
+</a></p>
+<p><a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Analysis Notebook
+</a></p>
+<h2 id="expected-results">📈 Expected Results</h2>
+<p>After completing this workflow, participants will obtain
+simulation data that describes the behavior of the graphene-electrolyte
+interface.</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Description</th>
+<th>Analysis Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized graphene structure</td>
+<td>Stable electrode surface after relaxation</td>
+<td>Quantum ESPRESSO</td>
+</tr>
+<tr>
+<td>Interface configuration</td>
+<td>Initial graphene and ionic liquid arrangement</td>
+<td>PACKMOL</td>
+</tr>
+<tr>
+<td>MD trajectory</td>
+<td>Atomic movement during simulation</td>
+<td>LAMMPS</td>
+</tr>
+<tr>
+<td>Density profile</td>
+<td>Distribution of ions near graphene surface</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>RDF curve</td>
+<td>Interaction between graphene and electrolyte species</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>Diffusion behavior</td>
+<td>Ion mobility information</td>
+<td>Python</td>
 </tr>
 </tbody>
 </table>

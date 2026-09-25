@@ -12,6 +12,14 @@
     PACKMOL, and LAMMPS.
 
 
+![Graphene Ionic Liquid Interface](images/interface_overview.png)
+<p align="center">
+<em>
+Atomic-scale representation of graphene electrode and ionic liquid
+electrolyte interface used in molecular simulation.
+</em>
+</p>
+
 <div class="grid cards" markdown>
 
 
@@ -45,6 +53,19 @@
 
 </div>
 
+## 🔬 Research Question
+
+
+This simulation investigates how ionic liquid species organize and
+interact near a graphene electrode surface.
+
+
+The main questions explored are:
+
+
+- How are ions distributed near the graphene surface?
+- How do electrolyte molecules interact with the electrode?
+- How does the interface structure evolve during molecular dynamics?
 
 ## 🎯 Learning Objectives
 
@@ -294,6 +315,42 @@ the electrode-electrolyte interface.
 | OVITO | Atomic visualization |
 | Python | Data processing and visualization |
 
+## 📥 Quick Access
+
+
+Download the main simulation resources:
+
+
+<a class="md-button md-button--primary" href="qe/scf.in">
+Download QE Files
+</a>
+
+
+<a class="md-button md-button--primary" href="lammps/in.lammps">
+Download LAMMPS Files
+</a>
+
+
+<a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Analysis Notebook
+</a>
+
+## 📈 Expected Results
+
+
+After completing this workflow, participants will obtain
+simulation data that describes the behavior of the graphene-electrolyte
+interface.
+
+
+| Result | Description | Analysis Tool |
+|---|---|---|
+| Optimized graphene structure | Stable electrode surface after relaxation | Quantum ESPRESSO |
+| Interface configuration | Initial graphene and ionic liquid arrangement | PACKMOL |
+| MD trajectory | Atomic movement during simulation | LAMMPS |
+| Density profile | Distribution of ions near graphene surface | Python |
+| RDF curve | Interaction between graphene and electrolyte species | Python |
+| Diffusion behavior | Ion mobility information | Python |
 
 ## 📓 Analysis Notebook
 
