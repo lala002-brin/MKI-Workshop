@@ -2072,10 +2072,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-graphene-electrode-preparation" class="md-nav__link">
+  <a href="#stage-01-graphene-electrode-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1. Graphene Electrode Preparation
+        🔹 Stage 01 — Graphene Electrode Preparation
       
     </span>
   </a>
@@ -2083,10 +2083,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-ionic-liquid-interface-construction" class="md-nav__link">
+  <a href="#stage-02-ionic-liquid-interface-construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2. Ionic Liquid Interface Construction
+        🔹 Stage 02 — Ionic Liquid Interface Construction
       
     </span>
   </a>
@@ -2094,10 +2094,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-molecular-dynamics-simulation" class="md-nav__link">
+  <a href="#stage-03-molecular-dynamics-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3. Molecular Dynamics Simulation
+        🔹 Stage 03 — Molecular Dynamics Simulation
       
     </span>
   </a>
@@ -2105,10 +2105,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-interface-analysis" class="md-nav__link">
+  <a href="#stage-04-interface-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4. Interface Analysis
+        🔹 Stage 04 — Interface Analysis
       
     </span>
   </a>
@@ -2172,6 +2172,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="📂 Simulation Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2667,10 +2684,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-graphene-electrode-preparation" class="md-nav__link">
+  <a href="#stage-01-graphene-electrode-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1. Graphene Electrode Preparation
+        🔹 Stage 01 — Graphene Electrode Preparation
       
     </span>
   </a>
@@ -2678,10 +2695,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-ionic-liquid-interface-construction" class="md-nav__link">
+  <a href="#stage-02-ionic-liquid-interface-construction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2. Ionic Liquid Interface Construction
+        🔹 Stage 02 — Ionic Liquid Interface Construction
       
     </span>
   </a>
@@ -2689,10 +2706,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-molecular-dynamics-simulation" class="md-nav__link">
+  <a href="#stage-03-molecular-dynamics-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3. Molecular Dynamics Simulation
+        🔹 Stage 03 — Molecular Dynamics Simulation
       
     </span>
   </a>
@@ -2700,10 +2717,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-interface-analysis" class="md-nav__link">
+  <a href="#stage-04-interface-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4. Interface Analysis
+        🔹 Stage 04 — Interface Analysis
       
     </span>
   </a>
@@ -2768,6 +2785,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="📂 Simulation Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2810,18 +2844,13 @@ structure study into an electrode-electrolyte interface system.</p>
 <p>Graphene is used as a model electrode surface, while ionic liquid
 is introduced as an electrolyte environment.</p>
 </div>
-<div class="hero-image">
-
-![Graphene Ionic Liquid Interface](images/interface_overview.png)
-
+<p><img alt="Graphene Ionic Liquid Interface" src="images/interface_overview.png" /></p>
 <p align="center">
 <em>
 Atomic-scale representation of graphene electrode and ionic liquid
 electrolyte interface used in molecular simulation.
 </em>
 </p>
-
-</div>
 
 <div class="grid cards">
 <ul>
@@ -2951,28 +2980,42 @@ is reused as the electrode foundation before introducing the ionic
 liquid electrolyte.</p>
 <p><span class="section-label">SIMULATION DESIGN</span></p>
 <h2 id="simulation-workflow">🚀 Simulation Workflow</h2>
-<p>The simulation workflow connects material preparation,
-interface construction, molecular dynamics simulation,
-and data analysis into a complete computational pipeline.</p>
+<p>The simulation workflow connects material preparation,</p>
+<p>interface construction, molecular dynamics simulation,</p>
+<p>and data analysis into a complete computational pipeline.</p>
 <pre class="mermaid"><code>flowchart LR
 
-A["01&lt;br&gt;Graphene Surface&lt;br&gt;Preparation"]
+A["01&lt;br&gt;GRAPHENE&lt;br&gt;Surface Preparation"]
 
---&gt;
+B["02&lt;br&gt;QUANTUM ESPRESSO&lt;br&gt;Geometry Optimization"]
 
-B["02&lt;br&gt;Quantum ESPRESSO&lt;br&gt;Optimization"]
-
---&gt;
-
-C["03&lt;br&gt;Ionic Liquid&lt;br&gt;Interface Construction"]
-
---&gt;
+C["03&lt;br&gt;PACKMOL&lt;br&gt;Interface Construction"]
 
 D["04&lt;br&gt;LAMMPS&lt;br&gt;Molecular Dynamics"]
 
---&gt;
+E["05&lt;br&gt;PYTHON&lt;br&gt;Interface Analysis"]
 
-E["05&lt;br&gt;Interface&lt;br&gt;Analysis"]
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef graphene fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A graphene;
+class B qe;
+class C qe;
+class D md;
+class E analysis;
 </code></pre>
 <table>
 <thead>
@@ -3012,142 +3055,171 @@ E["05&lt;br&gt;Interface&lt;br&gt;Analysis"]
 </table>
 <p><span class="section-label">COMPUTATIONAL METHOD</span></p>
 <h2 id="simulation-procedure">⚙️ Simulation Procedure</h2>
-<p>The simulation is performed through four main stages, starting from
-graphene electrode preparation to interface property analysis.</p>
-<h3 id="step-1-graphene-electrode-preparation">Step 1. Graphene Electrode Preparation</h3>
-<p>The graphene structure from the previous electronic structure case is
-used as the initial electrode model.</p>
-<p>Quantum ESPRESSO is applied to optimize the graphene geometry and obtain
-a stable surface structure before introducing the electrolyte.</p>
-<p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Graphene Structure
-
-↓
-
-Quantum ESPRESSO Relaxation
-
-↓
-
-Optimized Graphene Surface
+<p>The complete simulation workflow consists of four computational
+stages, starting from electrode preparation to interface property
+analysis.</p>
+<hr />
+<h3 id="stage-01-graphene-electrode-preparation">🔹 Stage 01 — Graphene Electrode Preparation</h3>
+<p><span class="section-label">OBJECTIVE</span></p>
+<p>Prepare a stable graphene surface model as the electrode foundation.</p>
+<p><span class="section-label">INPUT</span></p>
+<div class="highlight"><pre><span></span><code>Graphene atomic structure
+Quantum ESPRESSO parameters
+Pseudopotential file
 </code></pre></div>
-<p>Output:</p>
-<div class="highlight"><pre><span></span><code>optimized_graphene.xyz
+<p><span class="section-label">PROCESS</span></p>
+<div class="highlight"><pre><span></span><code>Initial graphene structure
+
+        ↓
+
+Quantum ESPRESSO relaxation
+
+        ↓
+
+Optimized graphene surface
+</code></pre></div>
+<p><span class="section-label">OUTPUT</span></p>
+<div class="highlight"><pre><span></span><code>optimized_graphene structure
 </code></pre></div>
 <hr />
-<h3 id="step-2-ionic-liquid-interface-construction">Step 2. Ionic Liquid Interface Construction</h3>
-<p>After obtaining the optimized graphene surface, ionic liquid molecules
-are introduced to construct the electrode-electrolyte interface.</p>
-<p>PACKMOL is used to generate the initial atomic arrangement of the
-electrolyte above the graphene surface.</p>
-<p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Graphene Surface
+<h3 id="stage-02-ionic-liquid-interface-construction">🔹 Stage 02 — Ionic Liquid Interface Construction</h3>
+<p><span class="section-label">OBJECTIVE</span></p>
+<p>Generate an initial electrode-electrolyte interface configuration.</p>
+<p><span class="section-label">INPUT</span></p>
+<div class="highlight"><pre><span></span><code>Optimized graphene surface
 
 +
 
-Ionic Liquid Molecules
-
-↓
-
-PACKMOL
-
-↓
-
-Interface Configuration
+Ionic liquid molecules
 </code></pre></div>
-<p>Output:</p>
+<p><span class="section-label">PROCESS</span></p>
+<div class="highlight"><pre><span></span><code>Graphene surface
+
+        +
+
+Ionic liquid molecules
+
+        ↓
+
+PACKMOL structure generation
+
+        ↓
+
+Interface configuration
+</code></pre></div>
+<p><span class="section-label">OUTPUT</span></p>
 <div class="highlight"><pre><span></span><code>interface.xyz
 </code></pre></div>
 <hr />
-<h3 id="step-3-molecular-dynamics-simulation">Step 3. Molecular Dynamics Simulation</h3>
-<p>The generated interface configuration is simulated using LAMMPS to
-observe the atomic movement and structural evolution of the system.</p>
-<p>The simulation consists of:</p>
-<div class="highlight"><pre><span></span><code>Energy Minimization
+<h3 id="stage-03-molecular-dynamics-simulation">🔹 Stage 03 — Molecular Dynamics Simulation</h3>
+<p><span class="section-label">OBJECTIVE</span></p>
+<p>Observe atomic movement and structural evolution
+of the graphene-electrolyte interface.</p>
+<p><span class="section-label">INPUT</span></p>
+<div class="highlight"><pre><span></span><code>Interface structure
 
-↓
+LAMMPS parameter files
+</code></pre></div>
+<p><span class="section-label">PROCESS</span></p>
+<div class="highlight"><pre><span></span><code>Energy minimization
+
+        ↓
 
 Equilibration
 
-↓
+        ↓
 
-Production Molecular Dynamics
+Production molecular dynamics
 </code></pre></div>
-<p>Output:</p>
+<p><span class="section-label">OUTPUT</span></p>
 <div class="highlight"><pre><span></span><code>trajectory.lammpstrj
 </code></pre></div>
 <hr />
-<h3 id="step-4-interface-analysis">Step 4. Interface Analysis</h3>
-<p>The molecular dynamics trajectory is analyzed to understand the
-interaction between graphene and ionic liquid species.</p>
-<p>The analysis focuses on:</p>
+<h3 id="stage-04-interface-analysis">🔹 Stage 04 — Interface Analysis</h3>
+<p><span class="section-label">OBJECTIVE</span></p>
+<p>Extract structural and dynamic properties
+from molecular dynamics results.</p>
+<p><span class="section-label">ANALYSIS</span></p>
 <table>
 <thead>
 <tr>
-<th>Analysis</th>
-<th>Purpose</th>
+<th>Property</th>
+<th>Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Density Profile</td>
-<td>Determine ion distribution near graphene surface</td>
+<td>Ion distribution</td>
+<td>Density profile</td>
 </tr>
 <tr>
+<td>Molecular interaction</td>
 <td>RDF</td>
-<td>Evaluate atomic interactions between species</td>
 </tr>
 <tr>
-<td>Coordination Number</td>
-<td>Describe local ion environment</td>
+<td>Local coordination</td>
+<td>Coordination number</td>
 </tr>
 <tr>
-<td>Diffusion Analysis</td>
-<td>Measure ion mobility behavior</td>
+<td>Ion mobility</td>
+<td>MSD / Diffusion coefficient</td>
 </tr>
 </tbody>
 </table>
+<p><span class="section-label">OUTPUT</span></p>
+<div class="highlight"><pre><span></span><code>Interface structural properties
+</code></pre></div>
 <hr />
 <p><span class="section-label">EXPECTED RESULTS</span></p>
 <h2 id="simulation-outputs">📊 Simulation Outputs</h2>
-<p>The simulation provides several properties to understand
-the electrode-electrolyte interface.</p>
-<table>
-<thead>
-<tr>
-<th>Output</th>
-<th>Description</th>
-<th>Tool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Interface Structure</td>
-<td>Atomic arrangement of graphene and electrolyte</td>
-<td>OVITO</td>
-</tr>
-<tr>
-<td>Density Profile</td>
-<td>Ion distribution near surface</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>RDF</td>
-<td>Atomic interaction analysis</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>Diffusion</td>
-<td>Ion transport behavior</td>
-<td>Python</td>
-</tr>
-<tr>
-<td>Electronic Structure</td>
-<td>Graphene properties</td>
-<td>Quantum ESPRESSO</td>
-</tr>
-</tbody>
-</table>
-<p><span class="section-label">SOFTWARE ENVIRONMENT</span></p>
+<p>The simulation produces structural, dynamic, and interfacial
+properties to understand the behavior of the graphene-electrolyte
+interface at the atomic scale.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Structural Information</strong></p>
+<p>Atomic configuration of graphene
+and ionic liquid interface.</p>
+<p><strong>Generated from</strong></p>
+<ul>
+<li>PACKMOL</li>
+<li>LAMMPS trajectory</li>
+<li>OVITO visualization</li>
+</ul>
+</li>
+<li>
+<p><strong>🌊 Ion Distribution</strong></p>
+<p>Spatial arrangement of ions
+near graphene surface.</p>
+<p><strong>Analysis</strong></p>
+<ul>
+<li>Density profile</li>
+<li>Concentration distribution</li>
+</ul>
+</li>
+<li>
+<p><strong>🔗 Molecular Interaction</strong></p>
+<p>Interaction between graphene
+and electrolyte species.</p>
+<p><strong>Analysis</strong></p>
+<ul>
+<li>Radial Distribution Function (RDF)</li>
+<li>Coordination Number</li>
+</ul>
+</li>
+<li>
+<p><strong>⚡ Ion Transport</strong></p>
+<p>Dynamic behavior of ionic species
+during molecular dynamics.</p>
+<p><strong>Analysis</strong></p>
+<ul>
+<li>Mean Square Displacement (MSD)</li>
+<li>Diffusion coefficient</li>
+</ul>
+</li>
+</ul>
+</div>
 <h2 id="computational-tools">🖥️ Computational Tools</h2>
 <table>
 <thead>
@@ -3267,78 +3339,146 @@ using Python.</p>
 <p><a href="analysis/interface_analysis/">Interface Analysis Notebook</a></p>
 <p><span class="section-label">RESOURCES</span></p>
 <h2 id="simulation-files">📂 Simulation Files</h2>
-<p>Download the required files for the graphene/ionic liquid
-interface workflow.</p>
+<p>The repository contains all input files required to reproduce
+the graphene/ionic liquid interface simulation workflow.</p>
+<div class="highlight"><pre><span></span><code>graphene-ionic-liquid-interface/
+
+├── qe/
+│   ├── graphene_surface.in
+│   │   Graphene geometry optimization input
+│   │
+│   ├── scf.in
+│   │   Electronic structure calculation
+│   │
+│   └── pseudo/
+│       Quantum ESPRESSO pseudopotential files
+│
+├── packmol/
+│   ├── packmol.inp
+│   │   Interface construction parameters
+│   │
+│   └── interface.xyz
+│       Initial graphene-electrolyte structure
+│
+├── lammps/
+│   ├── data.interface
+│   │   Atomic configuration for MD
+│   │
+│   └── in.lammps
+│       Molecular dynamics input
+│
+├── scripts/
+│   ├── submit_qe.sh
+│   │   HPC submission script for QE
+│   │
+│   └── submit_lammps.sh
+│       HPC submission script for LAMMPS
+│
+└── analysis/
+    └── interface_analysis.ipynb
+        Python-based interface analysis
+</code></pre></div>
+<h3 id="download-resources">Download Resources</h3>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Quantum ESPRESSO</strong></p>
+<p>Graphene optimization<br />
+and electronic calculation files.</p>
+<p><a class="md-button md-button--primary" href="qe/scf.in">
+Download QE Input
+</a></p>
+</li>
+<li>
+<p><strong>PACKMOL</strong></p>
+<p>Interface construction<br />
+configuration files.</p>
+<p><a class="md-button md-button--primary" href="packmol/packmol.inp">
+Download PACKMOL
+</a></p>
+</li>
+<li>
+<p><strong>LAMMPS</strong></p>
+<p>Molecular dynamics<br />
+simulation files.</p>
+<p><a class="md-button md-button--primary" href="lammps/in.lammps">
+Download LAMMPS
+</a></p>
+</li>
+<li>
+<p><strong>Analysis Notebook</strong></p>
+<p>Python workflow for<br />
+interface analysis.</p>
+<p><a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Notebook
+</a></p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">PREVIOUS CASE CONNECTION</span></p>
+<h2 id="connection-with-graphene-electronic-structure-case">🔗 Connection with Graphene Electronic Structure Case</h2>
+<p>This case extends the previous graphene electronic structure
+simulation by transforming an isolated graphene model into a
+realistic electrode-electrolyte interface system.</p>
+<p>The computational progression follows:</p>
+<pre class="mermaid"><code>flowchart TD
+
+A["Previous Case&lt;br&gt;&lt;br&gt;Graphene Electronic Structure"]
+
+B["Quantum ESPRESSO&lt;br&gt;&lt;br&gt;Electronic Properties"]
+
+C["Graphene Electrode Model&lt;br&gt;&lt;br&gt;Surface Structure"]
+
+D["Graphene + Ionic Liquid&lt;br&gt;&lt;br&gt;Interface Construction"]
+
+E["Battery Interface Simulation&lt;br&gt;&lt;br&gt;MD and Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef previous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef interface fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef final fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A previous;
+class B qe;
+class C previous;
+class D interface;
+class E final;
+</code></pre>
+<p>The relationship between both cases can be summarized as:</p>
 <table>
 <thead>
 <tr>
-<th>File</th>
-<th>Type</th>
-<th>Purpose</th>
+<th>Previous Graphene Case</th>
+<th>Graphene/Ionic Liquid Interface Case</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>graphene_surface.in</code></td>
-<td>QE Input</td>
-<td>Graphene geometry optimization</td>
+<td>Study graphene electronic properties</td>
+<td>Study electrode-electrolyte interactions</td>
 </tr>
 <tr>
-<td><code>scf.in</code></td>
-<td>QE Input</td>
-<td>Electronic structure calculation</td>
+<td>Single material system</td>
+<td>Multicomponent interface system</td>
 </tr>
 <tr>
-<td><code>pseudo/</code></td>
-<td>QE Resource</td>
-<td>Pseudopotential files</td>
+<td>Quantum ESPRESSO calculation</td>
+<td>QE + PACKMOL + LAMMPS workflow</td>
 </tr>
 <tr>
-<td><code>packmol.inp</code></td>
-<td>PACKMOL Input</td>
-<td>Ionic liquid packing</td>
-</tr>
-<tr>
-<td><code>interface.xyz</code></td>
-<td>Structure</td>
-<td>Initial electrode-electrolyte model</td>
-</tr>
-<tr>
-<td><code>data.interface</code></td>
-<td>LAMMPS Data</td>
-<td>Atomic configuration</td>
-</tr>
-<tr>
-<td><code>in.lammps</code></td>
-<td>LAMMPS Input</td>
-<td>Molecular dynamics simulation</td>
-</tr>
-<tr>
-<td><code>interface_analysis.ipynb</code></td>
-<td>Python Notebook</td>
-<td>Interface analysis</td>
+<td>Atomic structure analysis</td>
+<td>Interface dynamics and ion behavior</td>
 </tr>
 </tbody>
 </table>
-<p><span class="section-label">PREVIOUS CASE CONNECTION</span></p>
-<h2 id="connection-with-graphene-electronic-structure-case">🔗 Connection with Graphene Electronic Structure Case</h2>
-<p>This case extends the previous graphene simulation by transforming
-the optimized graphene structure into a realistic electrode-electrolyte
-interface model.</p>
-<div class="highlight"><pre><span></span><code>Graphene Electronic Structure
-
-Quantum ESPRESSO
-
-↓
-
-Graphene/Ionic Liquid Interface
-
-Quantum ESPRESSO
-+
-PACKMOL
-+
-LAMMPS
-</code></pre></div>
 
 
 

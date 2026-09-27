@@ -1,19 +1,32 @@
+<span class="section-label">COMPUTATIONAL MATERIALS CASE STUDY</span>
+
 # 🔋 Graphene/Ionic Liquid Interface Simulation
 
 
-<span class="section-label">CASE OVERVIEW</span>
+<div class="hero-description">
 
+Atomic-scale simulation of an electrode-electrolyte interface
+using graphene as a model electrode surface and ionic liquid
+as the battery electrolyte environment.
+
+</div>
+
+<span class="section-label">CASE OVERVIEW</span>
 
 !!! abstract "Case Overview"
 
-    This hands-on case extends the previous graphene electronic
-    structure study into an electrode-electrolyte interface system.
+    This hands-on case extends graphene electronic structure
+    simulation into a battery electrode-electrolyte interface model.
 
-    Graphene is used as a model electrode surface, while ionic liquid
-    is introduced as an electrolyte environment.
+    Graphene is used as a conductive electrode surface, while
+    ionic liquid represents the electrolyte environment.
 
+    The workflow combines Quantum ESPRESSO, PACKMOL, LAMMPS,
+    and Python-based analysis.
 
-![Graphene Ionic Liquid Interface](images/interface_overview.png)
+<div class="hero-image">
+
+<img src="images/interface_overview.png" width="900">
 
 <p align="center">
 <em>
@@ -22,38 +35,64 @@ electrolyte interface used in molecular simulation.
 </em>
 </p>
 
+</div>
+
 <div class="grid cards" markdown>
 
-- **Material**
 
-    Graphene Electrode  
-    +  
-    Ionic Liquid Electrolyte
+- **🧱 Material System**
 
+    **Graphene Electrode**
 
-- **Method**
+    Model conductive surface
+    for battery electrode interface.
 
-    Density Functional Theory  
-    +  
-    Molecular Dynamics
+    **Electrolyte**
 
-
-- **Software**
-
-    Quantum ESPRESSO  
-    PACKMOL  
-    LAMMPS
+    Ionic liquid environment
+    surrounding the electrode.
 
 
-- **Analysis**
+- **🧮 Computational Method**
 
-    RDF  
-    Density Profile  
-    Ion Distribution
+    **DFT**
+
+    Quantum ESPRESSO is used
+    for graphene structure optimization.
+
+    **MD**
+
+    LAMMPS is used to study
+    interface evolution.
+
+
+- **💻 Simulation Tools**
+
+    **Quantum ESPRESSO**
+
+    Electronic structure calculation
+
+    **PACKMOL**
+
+    Interface construction
+
+    **LAMMPS**
+
+    Molecular dynamics
+
+
+- **📈 Analysis**
+
+    **Structural**
+
+    RDF and density profile
+
+    **Dynamic**
+
+    Ion distribution and diffusion
 
 
 </div>
-
 <span class="section-label">SCIENTIFIC MOTIVATION</span>
 
 ## 🔬 Research Question
@@ -100,39 +139,42 @@ where ionic liquid molecules interact with a graphene electrode surface.
 The model consists of three main regions:
 
 
-```text
-        Ionic Liquid Electrolyte Layer
+```mermaid
+flowchart TB
 
-          Li+     Cation     Anion
+A["Ionic Liquid Electrolyte<br><br>Li+ ions<br>Cations<br>Anions"]
 
+B["Electrode-Electrolyte Interface<br><br>Ion organization<br>Surface interaction"]
 
-======================================
+C["Graphene Electrode<br><br>Carbon atomic layers"]
 
-            Interface Region
-
-      Ion arrangement and interaction
-
-
-======================================
-
-            Graphene Electrode
-
-          Carbon atom layers
+D["Vacuum Region<br><br>Surface boundary condition"]
 
 
-======================================
+A --> B
+B --> C
+C --> D
 
-              Vacuum Layer
+
+classDef electrolyte fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef interface fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef electrode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef vacuum fill:#eeeeee,stroke:#616161,stroke-width:2px;
+
+
+class A electrolyte;
+class B interface;
+class C electrode;
+class D vacuum;
+
 ```
 
-
-| Region | Description |
+| Region | Role in Simulation |
 |---|---|
-| Ionic Liquid Layer | Electrolyte molecules surrounding the electrode |
-| Interface Region | Area where ion-electrode interactions occur |
-| Graphene Electrode | Conductive surface model for battery electrode |
-| Vacuum Layer | Space used for surface simulation boundary |
-
+| Ionic Liquid Layer | Represents electrolyte environment containing mobile ionic species |
+| Interface Region | Captures ion arrangement and electrode-electrolyte interactions |
+| Graphene Electrode | Represents conductive battery electrode surface |
+| Vacuum Region | Provides surface boundary condition for atomic simulation |
 
 The graphene structure from the previous electronic structure case
 is reused as the electrode foundation before introducing the ionic
@@ -425,16 +467,58 @@ interface at the atomic scale.
 </div>
 
 
+<span class="section-label">SOFTWARE ENVIRONMENT</span>
+
 ## 🖥️ Computational Tools
 
 
-| Software | Main Role |
+The workflow combines electronic structure calculation,
+interface construction, molecular dynamics simulation,
+and post-processing analysis using several computational tools.
+
+
+```mermaid
+flowchart LR
+
+A["Quantum ESPRESSO<br><br>DFT Calculation"]
+
+B["PACKMOL<br><br>Interface Construction"]
+
+C["LAMMPS<br><br>Molecular Dynamics"]
+
+D["OVITO<br><br>Atomic Visualization"]
+
+E["Python<br><br>Data Analysis"]
+
+
+A --> B
+B --> C
+C --> D
+C --> E
+
+
+classDef dft fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A dft;
+class B structure;
+class C md;
+class D analysis;
+class E analysis;
+
+```
+
+
+| Software | Function in Workflow |
 |---|---|
-| Quantum ESPRESSO | Graphene optimization and electronic calculation |
-| PACKMOL | Interface structure generation |
-| LAMMPS | Molecular dynamics simulation |
-| OVITO | Atomic visualization |
-| Python | Data processing and visualization |
+| Quantum ESPRESSO | Optimizes graphene structure and calculates electronic properties |
+| PACKMOL | Generates initial graphene-electrolyte interface configuration |
+| LAMMPS | Performs molecular dynamics simulation of interface evolution |
+| OVITO | Visualizes atomic structures and simulation trajectories |
+| Python | Calculates RDF, density profile, and transport properties |
 
 <div class="grid cards" markdown>
 
@@ -468,24 +552,62 @@ interface at the atomic scale.
     </a>
 
 </div>
+<span class="section-label">EXPECTED OUTCOMES</span>
+
 ## 📈 Expected Results
 
 
-After completing this workflow, participants will obtain
-simulation data that describes the behavior of the graphene-electrolyte
-interface.
+After completing the workflow, participants will obtain
+simulation data describing the structural and dynamic behavior
+of the graphene-electrolyte interface.
 
 
-| Result | Description | Analysis Tool |
+```mermaid
+flowchart LR
+
+A["Optimized Graphene<br><br>QE"]
+
+B["Interface Configuration<br><br>PACKMOL"]
+
+C["MD Trajectory<br><br>LAMMPS"]
+
+D["Structural Analysis<br><br>Python"]
+
+E["Interface Properties<br><br>Scientific Interpretation"]
+
+
+A --> B
+B --> C
+C --> D
+D --> E
+
+
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A qe;
+class B structure;
+class C md;
+class D analysis;
+class E analysis;
+
+```
+
+
+The main simulation outputs include:
+
+
+| Output | Description | Analysis Method |
 |---|---|---|
-| Optimized graphene structure | Stable electrode surface after relaxation | Quantum ESPRESSO |
+| Optimized graphene structure | Stable electrode surface configuration | Quantum ESPRESSO |
 | Interface configuration | Initial graphene and ionic liquid arrangement | PACKMOL |
 | MD trajectory | Atomic movement during simulation | LAMMPS |
-| Density profile | Distribution of ions near graphene surface | Python |
-| RDF curve | Interaction between graphene and electrolyte species | Python |
-| Diffusion behavior | Ion mobility information | Python |
-
-<span class="section-label">DATA ANALYSIS</span>
+| Density profile | Spatial distribution of ions near surface | Python |
+| RDF curve | Interaction between atomic species | Python |
+| Diffusion behavior | Ion mobility information | MSD analysis |
 
 ## 📓 Analysis Notebook
 
@@ -559,43 +681,81 @@ graphene-ionic-liquid-interface/
 ### Download Resources
 
 
+<span class="section-label">RESOURCE ACCESS</span>
+
+## 📥 Quick Access
+
+
+The following resources provide the essential files required
+to reproduce the graphene/ionic liquid interface workflow.
+
+
 <div class="grid cards" markdown>
 
 
-- **Quantum ESPRESSO**
+- **⚛️ Quantum ESPRESSO**
 
-    Graphene optimization  
-    and electronic calculation files.
+    Graphene surface optimization
+    and electronic structure calculation.
 
-    <a class="md-button md-button--primary" href="qe/scf.in">
+    Files:
+
+    - `graphene_surface.in`
+    - `scf.in`
+
+    <br>
+
+    <a class="md-button md-button--primary" href="qe/graphene_surface.in">
     Download QE Input
     </a>
 
 
-- **PACKMOL**
+- **🧩 PACKMOL**
 
-    Interface construction  
-    configuration files.
+    Initial electrode-electrolyte
+    interface construction.
+
+    Files:
+
+    - `packmol.inp`
+    - `interface.xyz`
+
+    <br>
 
     <a class="md-button md-button--primary" href="packmol/packmol.inp">
     Download PACKMOL
     </a>
 
 
-- **LAMMPS**
+- **🌊 LAMMPS**
 
-    Molecular dynamics  
-    simulation files.
+    Molecular dynamics simulation
+    of interface evolution.
+
+    Files:
+
+    - `data.interface`
+    - `in.lammps`
+
+    <br>
 
     <a class="md-button md-button--primary" href="lammps/in.lammps">
     Download LAMMPS
     </a>
 
 
-- **Analysis Notebook**
+- **📊 Analysis Notebook**
 
-    Python workflow for  
-    interface analysis.
+    Python workflow for analysing
+    interface properties.
+
+    Includes:
+
+    - RDF
+    - Density profile
+    - Ion distribution
+
+    <br>
 
     <a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
     Download Notebook
@@ -603,6 +763,7 @@ graphene-ionic-liquid-interface/
 
 
 </div>
+
 <span class="section-label">PREVIOUS CASE CONNECTION</span>
 
 ## 🔗 Connection with Graphene Electronic Structure Case
