@@ -4956,3 +4956,17 @@ display:none;
 .md-typeset code {
     font-size: 0.85rem;
 }
+/* Section label for scientific documentation */
+
+.section-label {
+    display: block;
+    margin-top: 2.5rem;
+    margin-bottom: 0.4rem;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #1976d2;
+}
