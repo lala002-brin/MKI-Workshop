@@ -1,3 +1,8 @@
+/*
+
+.section-label {
+...
+}
 /* =====================================================
    MKI WORKSHOP DOCUMENTATION THEME
    PART 1: GLOBAL STYLE
@@ -5163,5 +5168,121 @@ hr {
     flex-wrap: wrap;
     gap: 0.4rem;
 }
+
+}
+@media screen and (max-width: 768px) {
+
+    .md-typeset {
+        overflow-x: hidden;
+    }
+
+
+    .md-typeset h1 {
+        font-size: 1.8rem;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+
+    .hero-description {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+
+    .hero-image img,
+    .system-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+
+    .md-main {
+        overflow-x: hidden;
+    }
+
+
+    .md-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .md-typeset {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+
+    .hero-description,
+    .hero-image,
+    .system-image,
+    .badge-container {
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
+    .md-typeset h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.9rem;
+    }
+
+}
+*/
+@media screen and (max-width: 76.1875em) {
+
+    .md-sidebar {
+        position: fixed;
+    }
+
+    .md-main {
+        width: 100%;
+    }
+
+    .md-content {
+        width: 100%;
+    }
+
+    .md-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .md-typeset {
+        max-width: 100%;
+    }
+
+}
+@media screen and (max-width: 76.1875em) {
+
+    .md-sidebar--primary {
+        display: none;
+    }
+
+    .md-sidebar--secondary {
+        display: none;
+    }
+
+    .md-content {
+        width: 100%;
+    }
+
+    .md-main__inner {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
 }

@@ -22,10 +22,8 @@ theme:
   - navigation.sections
   - navigation.expand
   - navigation.top
-  - navigation.instant
-
   - content.code.copy
-
+  - navigation.instant
   - toc.follow
 
   palette:
