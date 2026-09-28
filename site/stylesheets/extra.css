@@ -5083,10 +5083,13 @@ hr {
 
 
 .grid.cards li {
-    min-height: 230px;
+    min-height: auto;
 }
 
 
 .grid.cards strong {
     color: var(--md-primary-fg-color);
+}
+.grid.cards ul li {
+    margin-bottom: 0.3rem;
 }

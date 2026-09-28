@@ -444,8 +444,7 @@ Extract structural and dynamic properties
 from molecular dynamics results.
 
 
-### Analysis Parameters
-
+**Analysis Parameters**
 
 | Property | Method |
 |---|---|
@@ -455,7 +454,7 @@ from molecular dynamics results.
 | Ion transport | MSD and diffusion coefficient |
 
 
-### Output
+**Output**
 
 ```text
 Interface structural properties
