@@ -2,6 +2,14 @@
 
 # 🔋 Graphene/Ionic Liquid Interface Simulation
 
+<div class="badge-container">
+
+<span class="badge">DFT</span>
+<span class="badge">MOLECULAR DYNAMICS</span>
+<span class="badge">QUANTUM ESPRESSO</span>
+<span class="badge">LAMMPS</span>
+
+</div>
 
 <div class="hero-description">
 
