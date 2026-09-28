@@ -5097,3 +5097,42 @@ hr {
     font-size: 0.85rem;
     line-height: 1.5;
 }
+.badge-container {
+    margin: 1rem 0 1.5rem;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 0.35rem 0.8rem;
+
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+
+    border-radius: 20px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    background: #e3f2fd;
+    color: #1565c0;
+}
+.md-typeset hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    opacity: 0.35;
+}
+.hero-image img,
+.system-image img {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.md-typeset h2 {
+    margin-top: 3rem;
+}
+
+.md-typeset h3 {
+    margin-top: 2rem;
+}
