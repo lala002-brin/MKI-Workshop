@@ -664,25 +664,98 @@ The main simulation outputs include:
 | RDF curve | Interaction between atomic species | Python |
 | Diffusion behavior | Ion mobility information | MSD analysis |
 
+<span class="section-label">DATA ANALYSIS WORKFLOW</span>
+
 ## 📓 Analysis Notebook
 
 
 The simulation trajectory and interface properties are analyzed
-using Python.
+using Python-based post-processing tools.
 
 
-The notebook includes:
+The analysis workflow converts atomic trajectory data into
+structural and dynamic information of the graphene-electrolyte
+interface.
 
 
-- Trajectory visualization
-- Density profile calculation
-- Radial Distribution Function (RDF)
-- Interface structure analysis
+```mermaid
+flowchart LR
+
+A["LAMMPS Trajectory<br><br>Atomic movement data"]
+
+B["Python Processing<br><br>Data extraction"]
+
+C["Structural Analysis<br><br>RDF and Density Profile"]
+
+D["Dynamic Analysis<br><br>Diffusion and MSD"]
+
+E["Scientific Interpretation<br><br>Interface behavior"]
+
+
+A --> B
+B --> C
+B --> D
+C --> E
+D --> E
+
+
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef python fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+classDef analysis fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+
+
+class A md;
+class B python;
+class C analysis;
+class D analysis;
+class E analysis;
+
+```
+
+
+**The notebook contains**
+
+<div class="grid cards" markdown>
+
+
+- **🎞 Trajectory Visualization**
+
+    Visualize atomic movement
+    during molecular dynamics.
+
+    Tool:
+
+    `OVITO`
+
+
+- **📊 Density Profile**
+
+    Analyze spatial distribution
+    of ionic species near
+    graphene surface.
+
+
+- **🔗 Radial Distribution Function**
+
+    Evaluate atomic interaction
+    between graphene and electrolyte
+    components.
+
+
+- **⚡ Diffusion Analysis**
+
+    Calculate ion mobility behavior
+    using molecular dynamics trajectory.
+
+
+</div>
 
 
 Download:
 
-[Interface Analysis Notebook](analysis/interface_analysis.ipynb)
+<a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Analysis Notebook
+</a>
 
 <span class="section-label">RESOURCES</span>
 
@@ -738,11 +811,13 @@ graphene-ionic-liquid-interface/
 
 <span class="section-label">RESOURCE ACCESS</span>
 
+<span class="section-label">RESOURCE ACCESS</span>
+
 ## 📥 Quick Access
 
 
 The following resources provide the essential files required
-to reproduce the graphene/ionic liquid interface workflow.
+to reproduce the graphene/ionic liquid interface simulation workflow.
 
 
 <div class="grid cards" markdown>
@@ -761,14 +836,14 @@ to reproduce the graphene/ionic liquid interface workflow.
     <br>
 
     <a class="md-button md-button--primary" href="qe/graphene_surface.in">
-    Download QE Input
+    QE Input
     </a>
 
 
 - **🧩 PACKMOL**
 
-    Initial electrode-electrolyte
-    interface construction.
+    Construction of the initial
+    graphene-electrolyte interface.
 
     Files:
 
@@ -778,7 +853,7 @@ to reproduce the graphene/ionic liquid interface workflow.
     <br>
 
     <a class="md-button md-button--primary" href="packmol/packmol.inp">
-    Download PACKMOL
+    PACKMOL Input
     </a>
 
 
@@ -795,31 +870,32 @@ to reproduce the graphene/ionic liquid interface workflow.
     <br>
 
     <a class="md-button md-button--primary" href="lammps/in.lammps">
-    Download LAMMPS
+    LAMMPS Input
     </a>
 
 
 - **📊 Analysis Notebook**
 
-    Python workflow for analysing
+    Python workflow for extracting
     interface properties.
 
     Includes:
 
     - RDF
     - Density profile
-    - Ion distribution
+    - Diffusion analysis
 
     <br>
 
     <a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
-    Download Notebook
+    Notebook
     </a>
 
 
 </div>
-
 <span class="section-label">PREVIOUS CASE CONNECTION</span>
+
+<span class="section-label">CASE EXTENSION</span>
 
 ## 🔗 Connection with Graphene Electronic Structure Case
 
@@ -829,21 +905,21 @@ simulation by transforming an isolated graphene model into a
 realistic electrode-electrolyte interface system.
 
 
-The computational progression follows:
+The computational progression is:
 
 
 ```mermaid
 flowchart TD
 
-A["Previous Case<br><br>Graphene Electronic Structure"]
+A["Graphene Electronic Structure Case"]
 
 B["Quantum ESPRESSO<br><br>Electronic Properties"]
 
-C["Graphene Electrode Model<br><br>Surface Structure"]
+C["Graphene Electrode Model"]
 
-D["Graphene + Ionic Liquid<br><br>Interface Construction"]
+D["Graphene + Ionic Liquid<br><br>Interface System"]
 
-E["Battery Interface Simulation<br><br>MD and Analysis"]
+E["Molecular Dynamics<br><br>Interface Analysis"]
 
 
 A --> B
@@ -855,24 +931,21 @@ D --> E
 classDef previous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
 classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
 classDef interface fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-classDef final fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
 
 
 class A previous;
 class B qe;
 class C previous;
 class D interface;
-class E final;
+class E analysis;
 
 ```
 
 
-The relationship between both cases can be summarized as:
-
-
 | Previous Graphene Case | Graphene/Ionic Liquid Interface Case |
 |---|---|
-| Study graphene electronic properties | Study electrode-electrolyte interactions |
-| Single material system | Multicomponent interface system |
+| Electronic structure study | Electrode-electrolyte interaction study |
+| Single graphene system | Graphene and ionic liquid interface |
 | Quantum ESPRESSO calculation | QE + PACKMOL + LAMMPS workflow |
-| Atomic structure analysis | Interface dynamics and ion behavior |
+| Material properties | Structural and dynamic interface properties |
