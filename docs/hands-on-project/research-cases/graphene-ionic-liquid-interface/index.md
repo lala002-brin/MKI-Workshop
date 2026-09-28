@@ -482,56 +482,44 @@ interface at atomic scale.
 
 - **🧱 Interface Structure**
 
-    **Output**
+    Atomic configuration of graphene
+    and ionic liquid interface.
 
-    Atomic configuration of
-    graphene and ionic liquid system.
+    **Tools**
 
-    **Source**
-
-    - PACKMOL
-    - LAMMPS trajectory
-    - OVITO visualization
-
+    PACKMOL  
+    LAMMPS  
+    OVITO
 
 - **🌊 Ion Distribution**
-
-    **Output**
 
     Spatial arrangement of ionic
     species near graphene surface.
 
     **Analysis**
 
-    - Density profile
-    - Concentration distribution
-
+    Density profile  
+    Concentration distribution
 
 - **🔗 Molecular Interaction**
-
-    **Output**
 
     Interaction between graphene
     and electrolyte species.
 
     **Analysis**
 
-    - Radial Distribution Function
-    - Coordination number
-
+    RDF  
+    Coordination number
 
 - **⚡ Ion Transport**
-
-    **Output**
 
     Dynamic movement of ions
     during molecular simulation.
 
     **Analysis**
 
-    - Mean Square Displacement
-    - Diffusion coefficient
-
+    MSD  
+    Diffusion coefficient
 
 </div>
 
