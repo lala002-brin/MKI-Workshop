@@ -5093,3 +5093,7 @@ hr {
 .grid.cards ul li {
     margin-bottom: 0.3rem;
 }
+.md-typeset pre code {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
