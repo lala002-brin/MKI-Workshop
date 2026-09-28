@@ -1,3 +1,5 @@
+o## Input
+### Input
 <span class="section-label">COMPUTATIONAL MATERIALS CASE STUDY</span>
 
 # 🔋 Graphene/Ionic Liquid Interface Simulation
@@ -26,16 +28,18 @@ as the battery electrolyte environment.
 
 <div class="hero-image">
 
-<img src="images/interface_overview.png" width="900">
+<img src="images/interface_overview.png">
 
 <p align="center">
 <em>
-Atomic-scale representation of graphene electrode and ionic liquid
-electrolyte interface used in molecular simulation.
+Atomic-scale visualization of graphene electrode and ionic liquid
+electrolyte interface model.
 </em>
 </p>
 
 </div>
+
+---
 
 <div class="grid cards" markdown>
 
@@ -135,6 +139,18 @@ The participants will learn how to:
 The simulated system represents an electrode-electrolyte interface,
 where ionic liquid molecules interact with a graphene electrode surface.
 
+<div class="system-image">
+
+<img src="images/system_model.png" width="900">
+
+<p align="center">
+<em>
+Schematic representation of graphene electrode and ionic liquid
+interface system used in molecular dynamics simulation.
+</em>
+</p>
+
+</div>
 
 The model consists of three main regions:
 
@@ -169,18 +185,62 @@ class D vacuum;
 
 ```
 
-| Region | Role in Simulation |
-|---|---|
-| Ionic Liquid Layer | Represents electrolyte environment containing mobile ionic species |
-| Interface Region | Captures ion arrangement and electrode-electrolyte interactions |
-| Graphene Electrode | Represents conductive battery electrode surface |
-| Vacuum Region | Provides surface boundary condition for atomic simulation |
+| Component | Physical Role | Simulation Purpose |
+|---|---|---|
+| Ionic Liquid Electrolyte | Mobile ionic environment containing Li⁺, cations, and anions | Represents electrolyte behavior near electrode surface |
+| Electrode-Electrolyte Interface | Interaction zone between graphene and ionic species | Determines ion organization and surface interaction |
+| Graphene Electrode | Conductive carbon-based electrode model | Provides active surface for electrolyte interaction |
+| Vacuum Region | Empty space above surface model | Maintains surface boundary condition in simulation |
 
 The graphene structure from the previous electronic structure case
 is reused as the electrode foundation before introducing the ionic
 liquid electrolyte.
 
 <span class="section-label">SIMULATION DESIGN</span>
+
+<span class="section-label">RESEARCH PIPELINE</span>
+
+## 🧭 Research Pipeline Overview
+
+
+The research pipeline illustrates the transformation from a
+material model into a complete simulation-based understanding
+of the graphene-electrolyte interface.
+
+```mermaid
+flowchart LR
+
+A["Graphene + Ionic Liquid<br><br>Interface Model"]
+
+B["Quantum ESPRESSO<br><br>Graphene Optimization"]
+
+C["PACKMOL<br><br>Interface Construction"]
+
+D["LAMMPS<br><br>Molecular Dynamics"]
+
+E["Python Analysis<br><br>RDF, Density, Diffusion"]
+
+
+A --> B
+B --> C
+C --> D
+D --> E
+
+
+classDef material fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef dft fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A material;
+class B dft;
+class C structure;
+class D md;
+class E analysis;
+
+```
 
 ## 🚀 Simulation Workflow
 
@@ -239,50 +299,51 @@ class E analysis;
 
 <span class="section-label">COMPUTATIONAL METHOD</span>
 
+<span class="section-label">SIMULATION PROTOCOL</span>
+
 ## ⚙️ Simulation Procedure
 
 
-The complete simulation workflow consists of four computational
-stages, starting from electrode preparation to interface property
-analysis.
+The simulation is performed through four computational stages,
+starting from graphene preparation to interface property analysis.
 
 
 ---
 
-### 🔹 Stage 01 — Graphene Electrode Preparation
+### Stage 01 — Graphene Electrode Preparation
 
-
-<span class="section-label">OBJECTIVE</span>
+**Purpose**
 
 Prepare a stable graphene surface model as the electrode foundation.
 
 
-<span class="section-label">INPUT</span>
-
-```text
-Graphene atomic structure
-Quantum ESPRESSO parameters
-Pseudopotential file
-```
-
-
-<span class="section-label">PROCESS</span>
+**Input**
 
 ```text
 Initial graphene structure
 
-        ↓
+Quantum ESPRESSO input files
 
-Quantum ESPRESSO relaxation
-
-        ↓
-
-Optimized graphene surface
+Pseudopotential data
 ```
 
 
-<span class="section-label">OUTPUT</span>
+**Computational Process**
 
+```text
+Graphene structure
+
+        ↓
+
+Geometry relaxation
+
+        ↓
+
+Optimized graphene electrode
+```
+
+
+**Output**
 ```text
 optimized_graphene structure
 ```
@@ -290,16 +351,14 @@ optimized_graphene structure
 
 ---
 
-### 🔹 Stage 02 — Ionic Liquid Interface Construction
+### Stage 02 — Ionic Liquid Interface Construction
 
 
-<span class="section-label">OBJECTIVE</span>
+**Purpose**
+Generate the initial electrode-electrolyte interface configuration.
 
-Generate an initial electrode-electrolyte interface configuration.
 
-
-<span class="section-label">INPUT</span>
-
+**Input**
 ```text
 Optimized graphene surface
 
@@ -309,14 +368,13 @@ Ionic liquid molecules
 ```
 
 
-<span class="section-label">PROCESS</span>
-
+**Computational Process**
 ```text
 Graphene surface
 
         +
 
-Ionic liquid molecules
+Ionic liquid components
 
         ↓
 
@@ -328,7 +386,7 @@ Interface configuration
 ```
 
 
-<span class="section-label">OUTPUT</span>
+**Output**
 
 ```text
 interface.xyz
@@ -337,25 +395,25 @@ interface.xyz
 
 ---
 
-### 🔹 Stage 03 — Molecular Dynamics Simulation
+### Stage 03 — Molecular Dynamics Simulation
 
 
-<span class="section-label">OBJECTIVE</span>
+**Purpose**
 
 Observe atomic movement and structural evolution
 of the graphene-electrolyte interface.
 
 
-<span class="section-label">INPUT</span>
+**Input**
 
 ```text
 Interface structure
 
-LAMMPS parameter files
+LAMMPS input parameters
 ```
 
 
-<span class="section-label">PROCESS</span>
+**Computational Process**
 
 ```text
 Energy minimization
@@ -370,7 +428,7 @@ Production molecular dynamics
 ```
 
 
-<span class="section-label">OUTPUT</span>
+**Output**
 
 ```text
 trajectory.lammpstrj
@@ -379,52 +437,59 @@ trajectory.lammpstrj
 
 ---
 
-### 🔹 Stage 04 — Interface Analysis
+### Stage 04 — Interface Analysis
 
 
-<span class="section-label">OBJECTIVE</span>
+**Purpose**
 
 Extract structural and dynamic properties
 from molecular dynamics results.
 
 
-<span class="section-label">ANALYSIS</span>
+### Analysis Parameters
+
 
 | Property | Method |
 |---|---|
 | Ion distribution | Density profile |
-| Molecular interaction | RDF |
-| Local coordination | Coordination number |
-| Ion mobility | MSD / Diffusion coefficient |
+| Atomic interaction | RDF |
+| Local environment | Coordination number |
+| Ion transport | MSD and diffusion coefficient |
 
 
-<span class="section-label">OUTPUT</span>
+### Output
 
 ```text
 Interface structural properties
+
++
+
+Ion transport information
 ```
 
 ---
 
-<span class="section-label">EXPECTED RESULTS</span>
+<span class="section-label">RESULTS AND ANALYSIS</span>
 
 ## 📊 Simulation Outputs
 
 
-The simulation produces structural, dynamic, and interfacial
-properties to understand the behavior of the graphene-electrolyte
-interface at the atomic scale.
+The molecular dynamics simulation generates structural and dynamic
+properties that describe the behavior of the graphene-electrolyte
+interface at atomic scale.
 
 
 <div class="grid cards" markdown>
 
 
-- **🧱 Structural Information**
+- **🧱 Interface Structure**
 
-    Atomic configuration of graphene
-    and ionic liquid interface.
+    **Output**
 
-    **Generated from**
+    Atomic configuration of
+    graphene and ionic liquid system.
+
+    **Source**
 
     - PACKMOL
     - LAMMPS trajectory
@@ -433,8 +498,10 @@ interface at the atomic scale.
 
 - **🌊 Ion Distribution**
 
-    Spatial arrangement of ions
-    near graphene surface.
+    **Output**
+
+    Spatial arrangement of ionic
+    species near graphene surface.
 
     **Analysis**
 
@@ -444,28 +511,31 @@ interface at the atomic scale.
 
 - **🔗 Molecular Interaction**
 
+    **Output**
+
     Interaction between graphene
     and electrolyte species.
 
     **Analysis**
 
-    - Radial Distribution Function (RDF)
-    - Coordination Number
+    - Radial Distribution Function
+    - Coordination number
 
 
 - **⚡ Ion Transport**
 
-    Dynamic behavior of ionic species
-    during molecular dynamics.
+    **Output**
+
+    Dynamic movement of ions
+    during molecular simulation.
 
     **Analysis**
 
-    - Mean Square Displacement (MSD)
+    - Mean Square Displacement
     - Diffusion coefficient
 
 
 </div>
-
 
 <span class="section-label">SOFTWARE ENVIRONMENT</span>
 

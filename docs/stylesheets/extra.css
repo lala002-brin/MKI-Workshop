@@ -5021,3 +5021,72 @@ display:none;
 .grid.cards p {
     line-height: 1.6;
 }
+.system-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.system-image img {
+    border-radius: 12px;
+}
+.hero-image {
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+
+.hero-image img {
+    width: 100%;
+    max-width: 950px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+
+.hero-image em {
+    display: block;
+
+    margin-top: 0.8rem;
+
+    font-size: 0.85rem;
+
+    opacity: 0.8;
+}
+hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.mermaid {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+.section-label {
+    margin-bottom: 0.8rem;
+}
+.md-typeset table {
+    margin-top: 1rem;
+}
+.md-typeset h3 {
+    margin-top: 2rem;
+    font-weight: 700;
+}
+.grid.cards {
+    margin-top: 1.5rem;
+}
+
+
+.grid.cards li {
+    min-height: 230px;
+}
+
+
+.grid.cards strong {
+    color: var(--md-primary-fg-color);
+}
