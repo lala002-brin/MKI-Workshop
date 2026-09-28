@@ -5058,3 +5058,35 @@ hr {
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
+.mermaid {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+.section-label {
+    margin-bottom: 0.8rem;
+}
+.md-typeset table {
+    margin-top: 1rem;
+}
+.md-typeset h3 {
+    margin-top: 2rem;
+    font-weight: 700;
+}
+.grid.cards {
+    margin-top: 1.5rem;
+}
+
+
+.grid.cards li {
+    min-height: 230px;
+}
+
+
+.grid.cards strong {
+    color: var(--md-primary-fg-color);
+}

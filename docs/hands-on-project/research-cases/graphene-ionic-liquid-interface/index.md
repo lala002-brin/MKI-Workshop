@@ -1,5 +1,3 @@
-o## Input
-### Input
 <span class="section-label">COMPUTATIONAL MATERIALS CASE STUDY</span>
 
 # 🔋 Graphene/Ionic Liquid Interface Simulation
