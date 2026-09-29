@@ -170,12 +170,47 @@ nav:
 
   - 🚀 Accelerated Materials Simulation:
 
-      - DFTB+ Workflow:
+      - Overview:
           atomistic-simulation/index.md
 
-      - Structure Optimization:
-          atomistic-simulation/optimization.md
+      - Molecular Building:
+          atomistic-simulation/molecular-building.md
 
+      - Packmol System Generation:
+          atomistic-simulation/packmol.md
+
+      - Molecular Dynamics Fundamentals:
+          atomistic-simulation/md.md
+
+
+  - ⚛ DC-DFTB-MD Workflow:
+
+      - Overview:
+          atomistic-simulation/dc-dftb-md.md
+
+      - Input Preparation:
+          atomistic-simulation/dc-dftb-input.md
+
+      - HPC Execution:
+          atomistic-simulation/dc-dftb-hpc.md
+
+      - Trajectory Output:
+          atomistic-simulation/dc-dftb-trajectory.md
+
+
+  - 📊 Transport Analysis:
+
+      - Overview:
+          atomistic-simulation/transport-analysis.md
+
+      - Mean Square Displacement (MSD):
+          atomistic-simulation/msd.md
+
+      - Diffusion Coefficient:
+          atomistic-simulation/diffusion-coefficient.md
+
+      - Radial Distribution Function (RDF):
+          atomistic-simulation/rdf.md
 
 
   - 🤖 Machine Learning Potential:

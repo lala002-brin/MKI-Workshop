@@ -23,7 +23,7 @@
     
     
       
-        <title>Md - Computational Materials Science Workshop</title>
+        <title>Molecular Dynamics Fundamentals - Computational Materials Science Workshop</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#molecular-dynamics-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Md
+              Molecular Dynamics Fundamentals
             
           </span>
         </div>
@@ -2374,6 +2379,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-dynamics-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Dynamics Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2393,9 +2430,138 @@
   
 
 
-  <h1>Md</h1>
-
-
+<h1 id="molecular-dynamics-fundamentals">Molecular Dynamics Fundamentals</h1>
+<h2 id="overview">Overview</h2>
+<p>Molecular Dynamics (MD) is a computational method used to study the movement and interaction of atoms over time.</p>
+<p>In MD simulation, atomic positions evolve according to Newton's equations of motion.</p>
+<p>The simulation generates atomic trajectories that can be analyzed to understand structural, thermodynamic, and transport properties.</p>
+<h2 id="molecular-dynamics-concept">Molecular Dynamics Concept</h2>
+<p>The basic workflow of molecular dynamics consists of:</p>
+<p>```mermaid
+flowchart LR</p>
+<p>A[Initial Structure]
+--&gt;B[Force Calculation]
+--&gt;C[Time Integration]
+--&gt;D[Trajectory Generation]
+--&gt;E[Property Analysis]</p>
+<hr />
+<p>Components of Molecular Dynamics Simulation
+1. Atomic Structure
+The simulation starts from an initial atomic configuration.
+Examples:
+- Crystal structure
+- Molecular system
+- Liquid electrolyte
+- Solid-liquid interface
+2. Interaction Model
+Atomic forces determine how atoms move during simulation.
+Different approaches include:
+- Classical force field
+- Density Functional Tight Binding (DFTB)
+- Machine learning potential
+3. Time Integration
+The position and velocity of atoms are updated at every timestep.
+Common integration methods:
+- Verlet algorithm
+- Velocity Verlet algorithm
+Molecular Dynamics Ensembles
+The ensemble defines which physical quantities remain constant during simulation.
+In practical molecular dynamics workflows, different ensembles are used at different simulation stages.
+A common approach is:
+- NVT for temperature equilibration
+- NPT for density and pressure equilibration
+- Production MD for collecting trajectory data
+NVE Ensemble
+Constant Number, Volume, and Energy
+NVE simulation keeps:
+- Number of atoms (N)
+- Volume (V)
+- Total energy (E)
+constant.
+Applications:
+- Energy conservation studies
+- Short production simulations
+NVT Ensemble
+Constant Number, Volume, and Temperature
+NVT simulation controls temperature using a thermostat.
+Common thermostats:
+- Nosé-Hoover thermostat
+- Langevin thermostat
+Applications:
+- Temperature equilibration
+- Battery electrolyte simulation
+NPT Ensemble
+Constant Number, Pressure, and Temperature
+NPT simulation controls pressure and temperature.
+Applications:
+- Density equilibration
+- Liquid system preparation
+- Interface relaxation
+Typical MD Workflow
+flowchart TD</p>
+<p>A[Structure Preparation]
+--&gt;B[Energy Minimization]</p>
+<p>B
+--&gt;C[NVT Equilibration]</p>
+<p>C
+--&gt;D[NPT Equilibration]</p>
+<p>D
+--&gt;E[Production MD]</p>
+<p>E
+--&gt;F[Trajectory Analysis]</p>
+<p>Production Molecular Dynamics
+After equilibration, production MD is performed to collect trajectory data.
+The trajectory contains information about:
+- Atomic positions
+- Atomic velocities
+- Energy evolution
+- Structural changes
+The generated trajectory is used for further analysis such as:
+- Diffusion coefficient calculation
+- Radial Distribution Function (RDF)
+- Mean Square Displacement (MSD)
+Software Examples
+Different software packages can perform molecular dynamics simulations.</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DFTB+</td>
+<td>Quantum-based molecular dynamics</td>
+</tr>
+<tr>
+<td>DC-DFTB-MD</td>
+<td>Large-scale atomistic simulation</td>
+</tr>
+<tr>
+<td>LAMMPS</td>
+<td>Classical and advanced molecular dynamics</td>
+</tr>
+<tr>
+<td>GROMACS</td>
+<td>Molecular and biomolecular simulation</td>
+</tr>
+</tbody>
+</table>
+<p>Connection to Research Cases
+The molecular dynamics workflow can be applied to different materials systems:
+- Ionic liquid electrolyte
+- Battery interfaces
+- Surface reactions
+- Liquid-solid interactions
+Summary
+Molecular Dynamics provides a framework to understand atomic movement and material behavior.
+The general workflow consists of:
+flowchart LR</p>
+<p>A[System Preparation]
+--&gt;B[Molecular Dynamics]
+--&gt;C[Trajectory Analysis]
+--&gt;D[Scientific Interpretation]</p>
 
 
 
@@ -2472,7 +2638,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "content.code.copy", "navigation.instant", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

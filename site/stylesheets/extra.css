@@ -1,3 +1,8 @@
+/*
+
+.section-label {
+...
+}
 /* =====================================================
    MKI WORKSHOP DOCUMENTATION THEME
    PART 1: GLOBAL STYLE
@@ -5136,32 +5141,199 @@ hr {
 .md-typeset h3 {
     margin-top: 2rem;
 }
-@media screen and (max-width: 768px) {
+/* =========================
+   FINAL MOBILE LAYOUT
+   ========================= */
 
-    .hero-description {
-        font-size: 0.95rem;
+@media screen and (max-width: 76.1875em) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+
+    .md-grid {
+        max-width: 100%;
+    }
+
+
+    .md-main__inner {
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+
+    .md-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .md-sidebar--secondary {
+        display: none;
+    }
+
+
+    .hero-image img,
+    .system-image img {
+        max-width: 100%;
+        height: auto;
     }
 
 
     .md-typeset h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.2;
-        word-break: normal;
-    }
-
-
-    .badge {
-        font-size: 0.65rem;
-        padding: 0.3rem 0.6rem;
     }
 
 }
-@media screen and (max-width: 768px) {
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
 
-.badge-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+@media screen and (max-width: 76.1875em) {
+
+    .md-content {
+        width: 100%;
+    }
+
+    .md-main__inner {
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .md-sidebar--secondary {
+        display: none;
+    }
+
 }
+@media screen and (max-width: 76.1875em) {
+
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .md-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .md-grid {
+        max-width: 100% !important;
+    }
+
+    .md-main__inner {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .md-content {
+        width: 100% !important;
+        margin-left: 0 !important;
+        transform: none !important;
+    }
+
+    .md-content__inner {
+        margin-left: 0 !important;
+    }
+
+}
+/* ===========================
+   MOBILE FINAL OVERRIDE
+   =========================== */
+
+@media screen and (max-width: 76.1875em) {
+
+    .md-content {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+
+    .md-container {
+        width: 100% !important;
+    }
+
+
+    .md-main__inner {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+
+    .md-grid {
+        max-width: 100% !important;
+    }
+
+}
+/* FINAL MOBILE RESET */
+
+@media screen and (max-width: 76.1875em) {
+
+    .md-header {
+        left: 0 !important;
+    }
+
+    .md-container {
+        left: 0 !important;
+        transform: none !important;
+    }
+
+    .md-main {
+        left: 0 !important;
+        transform: none !important;
+    }
+
+    .md-main__inner {
+        position: static !important;
+        transform: none !important;
+    }
+
+    .md-content {
+        position: static !important;
+        transform: none !important;
+    }
+
+}
+    .md-content {
+        position: static !important;
+        transform: none !important;
+    }
+
+}
+@media screen and (max-width: 76.1875em) {
+
+    .md-container {
+        width: 100%;
+    }
+
+    .md-main__inner {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    .md-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .md-typeset {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 76.1875em) {
+
+    .md-sidebar--primary {
+        position: fixed;
+        width: 0;
+    }
 
 }
