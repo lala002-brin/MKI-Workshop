@@ -181,7 +181,6 @@ class C system;
 | TFSI- Anion | Counter ion species | Controls ionic interaction and coordination |
 | EMIM+ Cation | Ionic liquid component | Provides electrolyte environment |
 | Liquid Electrolyte System | Bulk simulation environment | Represents battery electrolyte behavior |
----
 
 <span class="section-label">SIMULATION DESIGN</span>
 
@@ -276,6 +275,7 @@ class D hpc;
 class E md;
 class F analysis;
 ```
+
 | Stage | Main Activity | Output |
 |---|---|---|
 | 01 | Prepare LiTFSI and EMIM-TFSI molecular structures | Molecular models |
@@ -284,11 +284,6 @@ class F analysis;
 | 04 | Execute simulation using HPC resources | Simulation results |
 | 05 | Store atomic movement data | Trajectory files |
 | 06 | Calculate transport properties | Diffusion and structural information |
-
-<span class="section-label">COMPUTATIONAL METHOD</span>
-
-
-<span class="section-label">SIMULATION PROTOCOL</span>
 
 <span class="section-label">COMPUTATIONAL METHOD</span>
 
@@ -564,6 +559,7 @@ The analysis results provide insight into:
 - Ion coordination behavior
 - Electrolyte structural organization
 - Transport mechanisms
+
 <span class="section-label">RESULTS AND ANALYSIS</span>
 
 
@@ -807,22 +803,22 @@ litfsi-emim-tfsi-electrolyte-transport/
 │   │   Electrolyte system generation input
 │   │
 │   └── electrolyte_system.xyz
-│       Initial electrolyte configuration
+│       Generated electrolyte configuration
 │
 ├── dcdftbmd/
-│   ├── input files
-│   │   DC-DFTB-MD simulation parameters
+│   ├── input.in
+│   │   DC-DFTB-MD simulation control parameters
 │   │
-│   └── parameter files
+│   └── parameter.dat
 │       Chemical interaction parameters
 │
 ├── hpc/
-│   └── submit_job.sh
+│   └── run_dcdftbmd.slurm
 │       HPC simulation submission script
 │
 ├── trajectory/
-│   └── trajectory files
-│       Atomic movement data during simulation
+│   └── md_trajectory.xyz
+│       Molecular dynamics trajectory output
 │
 └── analysis/
     ├── msd_analysis.py
@@ -831,6 +827,51 @@ litfsi-emim-tfsi-electrolyte-transport/
         Transport property analysis scripts
 ```
 
+<div class="grid cards" markdown>
+
+
+- **🧱 Structures**
+
+    Contains initial molecular structures.
+
+    Includes:
+
+    - LiTFSI
+    - EMIM-TFSI
+
+
+- **📦 PACKMOL**
+
+    Generates the initial electrolyte box.
+
+    Includes:
+
+    - Packing input
+    - Generated structure
+
+
+- **⚛️ DC-DFTB-MD**
+
+    Contains simulation input files.
+
+    Includes:
+
+    - Control parameters
+    - Interaction parameters
+
+
+- **📊 Analysis**
+
+    Contains trajectory analysis tools.
+
+    Includes:
+
+    - MSD calculation
+    - RDF analysis
+    - Diffusion calculation
+
+
+</div>
 <span class="section-label">RESOURCE ACCESS</span>
 
 
