@@ -16,7 +16,7 @@
         <link rel="prev" href="../quantum-simulation/hands-on/molecular-dynamics/">
       
       
-        <link rel="next" href="../ai-acceleration/">
+        <link rel="next" href="molecular-building/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>DFTB+ Workflow - Computational Materials Science Workshop</title>
+        <title>Overview - Computational Materials Science Workshop</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#atomistic-simulation" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DFTB+ Workflow
+              Overview
             
           </span>
         </div>
@@ -1445,6 +1445,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1453,7 +1455,7 @@
   <span class="md-ellipsis">
     
   
-    DFTB+ Workflow
+    Overview
   
 
     
@@ -1471,7 +1473,7 @@
   <span class="md-ellipsis">
     
   
-    DFTB+ Workflow
+    Overview
   
 
     
@@ -1486,6 +1488,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1517,26 +1521,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flowchart-lr-asystem-preparation-bmolecular-dynamics-ctrajectory-generation-dscientific-analysis" class="md-nav__link">
+  <a href="#module-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        flowchart LR A[System Preparation] --&gt;B[Molecular Dynamics] --&gt;C[Trajectory Generation] --&gt;D[Scientific Analysis]
+        Module Structure
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module Contents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Module Contents">
+    <nav class="md-nav" aria-label="Module Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1562,10 +1555,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-molecular-dynamics-workflow" class="md-nav__link">
+  <a href="#3-dc-dftb-md-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Molecular Dynamics Workflow
+        3. DC-DFTB-MD Workflow
       
     </span>
   </a>
@@ -1573,10 +1566,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-trajectory-analysis" class="md-nav__link">
+  <a href="#4-transport-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Trajectory Analysis
+        4. Transport Analysis
       
     </span>
   </a>
@@ -1585,6 +1578,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Outcomes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1604,14 +1619,70 @@
   
   
     <li class="md-nav__item">
-      <a href="optimization.md" class="md-nav__link">
+      <a href="molecular-building/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Structure Optimization
+    Molecular Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="packmol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packmol System Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular Dynamics Fundamentals
   
 
     
@@ -1664,7 +1735,7 @@
   <span class="md-ellipsis">
     
   
-    🤖 Machine Learning Potential
+    ⚛ DC-DFTB-MD Workflow
   
 
     
@@ -1677,6 +1748,352 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛ DC-DFTB-MD Workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dc-dftb-md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dc-dftb-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dc-dftb-hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dc-dftb-trajectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trajectory Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Transport Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Transport Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="transport-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="msd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mean Square Displacement (MSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diffusion-coefficient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diffusion Coefficient
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radial Distribution Function (RDF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Machine Learning Potential
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1771,10 +2188,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -1792,8 +2209,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1888,10 +2305,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -1909,8 +2326,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1967,10 +2384,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
             
   
   
@@ -1988,8 +2405,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2054,10 +2471,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
             
   
   
@@ -2075,8 +2492,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2235,10 +2652,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -2256,8 +2673,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2408,10 +2825,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -2429,8 +2846,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2520,6 +2937,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2550,26 +2969,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flowchart-lr-asystem-preparation-bmolecular-dynamics-ctrajectory-generation-dscientific-analysis" class="md-nav__link">
+  <a href="#module-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        flowchart LR A[System Preparation] --&gt;B[Molecular Dynamics] --&gt;C[Trajectory Generation] --&gt;D[Scientific Analysis]
+        Module Structure
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module Contents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Module Contents">
+    <nav class="md-nav" aria-label="Module Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2595,10 +3003,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-molecular-dynamics-workflow" class="md-nav__link">
+  <a href="#3-dc-dftb-md-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Molecular Dynamics Workflow
+        3. DC-DFTB-MD Workflow
       
     </span>
   </a>
@@ -2606,10 +3014,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-trajectory-analysis" class="md-nav__link">
+  <a href="#4-transport-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Trajectory Analysis
+        4. Transport Analysis
       
     </span>
   </a>
@@ -2618,6 +3026,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Outcomes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2641,8 +3071,7 @@
   
 
 
-  <h1>DFTB+ Workflow</h1>
-
+<h1 id="atomistic-simulation">Atomistic Simulation</h1>
 <div class="module-header">
 
 <div class="module-label">
@@ -2651,7 +3080,7 @@
 
 
 <h2>
-From Atomic Structures to Molecular Dynamics
+From Atomic Structures to Material Properties
 </h2>
 
 
@@ -2663,7 +3092,7 @@ From Atomic Structures to Molecular Dynamics
 
 
 <span>
-<strong>Methods:</strong> Molecular Dynamics
+<strong>Methods:</strong> Molecular Dynamics, DC-DFTB-MD
 </span>
 
 
@@ -2676,62 +3105,115 @@ From Atomic Structures to Molecular Dynamics
 </div>
 
 <h2 id="overview">Overview</h2>
-<p>Atomistic simulation describes materials by modeling the behavior and interaction of atoms at the atomic scale.</p>
-<p>This module introduces how atomic structures are prepared, simulated, and analyzed to understand material properties and dynamics.</p>
+<p>Atomistic simulation describes materials by modeling atomic structures and their interactions at the atomic scale.</p>
+<p>This module introduces the complete workflow from initial structure preparation to molecular dynamics simulation and transport property analysis.</p>
+<p>The workflow is designed for studying complex materials systems such as:</p>
+<ul>
+<li>Ionic liquid electrolytes</li>
+<li>Battery interfaces</li>
+<li>Solid-liquid systems</li>
+<li>Surface interaction systems</li>
+</ul>
 <h2 id="learning-workflow">Learning Workflow</h2>
-<h2 id="flowchart-lr-asystem-preparation-bmolecular-dynamics-ctrajectory-generation-dscientific-analysis"><pre class="mermaid"><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 A[System Preparation]
---&gt;B[Molecular Dynamics]
---&gt;C[Trajectory Generation]
---&gt;D[Scientific Analysis]</code></pre></h2>
-<h2 id="module-contents">Module Contents</h2>
+--&gt;B[Structure Generation]
+
+B
+--&gt;C[Molecular Dynamics]
+
+C
+--&gt;D[Trajectory Generation]
+
+D
+--&gt;E[Transport Analysis]
+
+E
+--&gt;F[Material Properties]</code></pre>
+<h2 id="module-structure">Module Structure</h2>
+<p>The module consists of several connected stages.</p>
 <h3 id="1-system-preparation">1. System Preparation</h3>
-<p>Learn how to build atomic models before starting molecular dynamics simulation.</p>
+<p>The first stage focuses on preparing physically meaningful atomic structures.</p>
 <p>Topics:</p>
 <ul>
-<li>Molecular structure preparation</li>
-<li>Crystal and molecular system construction</li>
-<li>Simulation box generation</li>
-<li>Interface model preparation</li>
-<li>Initial structure validation</li>
+<li>Molecular building</li>
+<li>Interface construction</li>
+<li>Simulation box preparation</li>
+<li>Structure validation</li>
 </ul>
 <h3 id="2-molecular-dynamics-fundamentals">2. Molecular Dynamics Fundamentals</h3>
-<p>Learn how atoms evolve over time under different simulation conditions.</p>
+<p>This stage introduces the principles of atomic movement simulation.</p>
 <p>Topics:</p>
 <ul>
-<li>Basic concept of molecular dynamics</li>
-<li>Force field and atomic interactions</li>
-<li>Time integration algorithm</li>
-<li>Temperature and pressure control</li>
+<li>Newton's equations of motion</li>
+<li>Force calculation</li>
+<li>Time integration</li>
 <li>
-<p>Ensemble selection:</p>
-</li>
-<li>
-<p>NVE (constant energy)</p>
-</li>
-<li>NVT (constant temperature)</li>
-<li>NPT (constant pressure)</li>
+<p>MD ensembles:</p>
+<ul>
+<li>NVE</li>
+<li>NVT</li>
+<li>NPT</li>
 </ul>
-<h3 id="3-molecular-dynamics-workflow">3. Molecular Dynamics Workflow</h3>
-<p>Understand the complete workflow from input preparation to trajectory generation.</p>
+</li>
+</ul>
+<h3 id="3-dc-dftb-md-workflow">3. DC-DFTB-MD Workflow</h3>
+<p>This stage covers quantum-based molecular dynamics simulation.</p>
 <p>Topics:</p>
 <ul>
-<li>Input file preparation</li>
-<li>Energy minimization</li>
-<li>Equilibration stage</li>
-<li>Production simulation</li>
+<li>Input preparation</li>
 <li>HPC execution</li>
+<li>Trajectory generation</li>
 </ul>
-<h3 id="4-trajectory-analysis">4. Trajectory Analysis</h3>
-<p>Analyze molecular dynamics results to extract physical properties.</p>
+<h3 id="4-transport-analysis">4. Transport Analysis</h3>
+<p>The final stage extracts material properties from trajectory data.</p>
 <p>Topics:</p>
 <ul>
 <li>Mean Square Displacement (MSD)</li>
 <li>Diffusion coefficient</li>
 <li>Radial Distribution Function (RDF)</li>
-<li>Structural evolution</li>
-<li>Transport properoties</li>
+</ul>
+<h2 id="software-stack">Software Stack</h2>
+<p>The workflow combines several computational tools:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Packmol</td>
+<td>Molecular structure generation</td>
+</tr>
+<tr>
+<td>DFTB+</td>
+<td>Quantum-based atomistic simulation</td>
+</tr>
+<tr>
+<td>DC-DFTB-MD</td>
+<td>Large-scale molecular dynamics</td>
+</tr>
+<tr>
+<td>OVITO</td>
+<td>Trajectory visualization</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Data analysis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>After completing this module, participants will be able to:</p>
+<ul>
+<li>Prepare atomic-scale simulation systems</li>
+<li>Understand molecular dynamics workflows</li>
+<li>Perform DC-DFTB-MD simulations</li>
+<li>Analyze molecular dynamics trajectory data</li>
+<li>Extract transport properties from molecular simulations</li>
 </ul>
 
 

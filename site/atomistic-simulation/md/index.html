@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../packmol/">
+      
+      
+        <link rel="next" href="../dc-dftb-md/">
       
       
         
@@ -1378,8 +1382,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1390,13 +1396,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1417,7 +1421,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1442,7 +1446,7 @@
   <span class="md-ellipsis">
     
   
-    DFTB+ Workflow
+    Overview
   
 
     
@@ -1463,14 +1467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimization.md" class="md-nav__link">
+      <a href="../molecular-building/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Structure Optimization
+    Molecular Building
   
 
     
@@ -1479,6 +1483,337 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packmol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packmol System Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular Dynamics Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular Dynamics Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-dynamics-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Dynamics Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components-of-molecular-dynamics-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of Molecular Dynamics Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components of Molecular Dynamics Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atomic-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Atomic Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-interaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Interaction Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-time-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Time Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-dynamics-ensembles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Dynamics Ensembles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Molecular Dynamics Ensembles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nve-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVE Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NVE Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-volume-and-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Volume, and Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvt-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVT Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NVT Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-volume-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Volume, and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npt-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NPT Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NPT Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-pressure-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Pressure, and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-md-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical MD Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-molecular-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Molecular Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-research-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to Research Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1523,7 +1858,7 @@
   <span class="md-ellipsis">
     
   
-    🤖 Machine Learning Potential
+    ⚛ DC-DFTB-MD Workflow
   
 
     
@@ -1536,6 +1871,352 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛ DC-DFTB-MD Workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dc-dftb-md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dc-dftb-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dc-dftb-hpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Execution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dc-dftb-trajectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trajectory Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Transport Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📊 Transport Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transport-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mean Square Displacement (MSD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diffusion-coefficient/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diffusion Coefficient
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radial Distribution Function (RDF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Machine Learning Potential
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1630,10 +2311,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -1651,8 +2332,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1747,10 +2428,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -1768,8 +2449,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1826,10 +2507,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
             
   
   
@@ -1847,8 +2528,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1913,10 +2594,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
             
   
   
@@ -1934,8 +2615,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2094,10 +2775,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
             
   
   
@@ -2115,8 +2796,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2267,10 +2948,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
             
   
   
@@ -2288,8 +2969,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2410,6 +3091,212 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#components-of-molecular-dynamics-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of Molecular Dynamics Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components of Molecular Dynamics Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atomic-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Atomic Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-interaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Interaction Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-time-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Time Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-dynamics-ensembles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Molecular Dynamics Ensembles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Molecular Dynamics Ensembles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nve-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVE Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NVE Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-volume-and-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Volume, and Energy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvt-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVT Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NVT Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-volume-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Volume, and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npt-ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NPT Ensemble
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NPT Ensemble">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-number-pressure-and-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constant Number, Pressure, and Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-md-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical MD Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-molecular-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Molecular Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-research-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to Research Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2437,91 +3324,119 @@
 <p>The simulation generates atomic trajectories that can be analyzed to understand structural, thermodynamic, and transport properties.</p>
 <h2 id="molecular-dynamics-concept">Molecular Dynamics Concept</h2>
 <p>The basic workflow of molecular dynamics consists of:</p>
-<p>```mermaid
-flowchart LR</p>
-<p>A[Initial Structure]
+<pre class="mermaid"><code>flowchart LR
+
+A[Initial Structure]
 --&gt;B[Force Calculation]
 --&gt;C[Time Integration]
 --&gt;D[Trajectory Generation]
---&gt;E[Property Analysis]</p>
-<hr />
-<p>Components of Molecular Dynamics Simulation
-1. Atomic Structure
-The simulation starts from an initial atomic configuration.
-Examples:
-- Crystal structure
-- Molecular system
-- Liquid electrolyte
-- Solid-liquid interface
-2. Interaction Model
-Atomic forces determine how atoms move during simulation.
-Different approaches include:
-- Classical force field
-- Density Functional Tight Binding (DFTB)
-- Machine learning potential
-3. Time Integration
-The position and velocity of atoms are updated at every timestep.
-Common integration methods:
-- Verlet algorithm
-- Velocity Verlet algorithm
-Molecular Dynamics Ensembles
-The ensemble defines which physical quantities remain constant during simulation.
-In practical molecular dynamics workflows, different ensembles are used at different simulation stages.
-A common approach is:
-- NVT for temperature equilibration
-- NPT for density and pressure equilibration
-- Production MD for collecting trajectory data
-NVE Ensemble
-Constant Number, Volume, and Energy
-NVE simulation keeps:
-- Number of atoms (N)
-- Volume (V)
-- Total energy (E)
-constant.
-Applications:
-- Energy conservation studies
-- Short production simulations
-NVT Ensemble
-Constant Number, Volume, and Temperature
-NVT simulation controls temperature using a thermostat.
-Common thermostats:
-- Nosé-Hoover thermostat
-- Langevin thermostat
-Applications:
-- Temperature equilibration
-- Battery electrolyte simulation
-NPT Ensemble
-Constant Number, Pressure, and Temperature
-NPT simulation controls pressure and temperature.
-Applications:
-- Density equilibration
-- Liquid system preparation
-- Interface relaxation
-Typical MD Workflow
-flowchart TD</p>
-<p>A[Structure Preparation]
---&gt;B[Energy Minimization]</p>
-<p>B
---&gt;C[NVT Equilibration]</p>
-<p>C
---&gt;D[NPT Equilibration]</p>
-<p>D
---&gt;E[Production MD]</p>
-<p>E
---&gt;F[Trajectory Analysis]</p>
-<p>Production Molecular Dynamics
-After equilibration, production MD is performed to collect trajectory data.
-The trajectory contains information about:
-- Atomic positions
-- Atomic velocities
-- Energy evolution
-- Structural changes
-The generated trajectory is used for further analysis such as:
-- Diffusion coefficient calculation
-- Radial Distribution Function (RDF)
-- Mean Square Displacement (MSD)
-Software Examples
-Different software packages can perform molecular dynamics simulations.</p>
+--&gt;E[Property Analysis]
+</code></pre>
+<h2 id="components-of-molecular-dynamics-simulation">Components of Molecular Dynamics Simulation</h2>
+<h3 id="1-atomic-structure">1. Atomic Structure</h3>
+<p>The simulation starts from an initial atomic configuration.</p>
+<p>Examples:</p>
+<ul>
+<li>Crystal structure</li>
+<li>Molecular system</li>
+<li>Liquid electrolyte</li>
+<li>Solid-liquid interface</li>
+</ul>
+<h3 id="2-interaction-model">2. Interaction Model</h3>
+<p>Atomic forces determine how atoms move during simulation.</p>
+<p>Different approaches include:</p>
+<ul>
+<li>Classical force field</li>
+<li>Density Functional Tight Binding (DFTB)</li>
+<li>Machine learning potential</li>
+</ul>
+<h3 id="3-time-integration">3. Time Integration</h3>
+<p>The position and velocity of atoms are updated at every timestep.</p>
+<p>Common integration methods:</p>
+<ul>
+<li>Verlet algorithm</li>
+<li>Velocity Verlet algorithm</li>
+</ul>
+<h2 id="molecular-dynamics-ensembles">Molecular Dynamics Ensembles</h2>
+<p>The ensemble defines which physical quantities remain constant during simulation.</p>
+<p>In practical molecular dynamics workflows, different ensembles are used at different simulation stages.</p>
+<p>A common approach is:</p>
+<ul>
+<li>NVT for temperature equilibration</li>
+<li>NPT for density and pressure equilibration</li>
+<li>Production MD for collecting trajectory data</li>
+</ul>
+<h3 id="nve-ensemble">NVE Ensemble</h3>
+<h4 id="constant-number-volume-and-energy">Constant Number, Volume, and Energy</h4>
+<p>NVE simulation keeps:</p>
+<ul>
+<li>Number of atoms (N)</li>
+<li>Volume (V)</li>
+<li>Total energy (E)</li>
+</ul>
+<p>constant.</p>
+<p>Applications:</p>
+<ul>
+<li>Energy conservation studies</li>
+<li>Short production simulations</li>
+</ul>
+<h3 id="nvt-ensemble">NVT Ensemble</h3>
+<h4 id="constant-number-volume-and-temperature">Constant Number, Volume, and Temperature</h4>
+<p>NVT simulation controls temperature using a thermostat.</p>
+<p>Common thermostats:</p>
+<ul>
+<li>Nosé-Hoover thermostat</li>
+<li>Langevin thermostat</li>
+</ul>
+<p>Applications:</p>
+<ul>
+<li>Temperature equilibration</li>
+<li>Battery electrolyte simulation</li>
+</ul>
+<h3 id="npt-ensemble">NPT Ensemble</h3>
+<h4 id="constant-number-pressure-and-temperature">Constant Number, Pressure, and Temperature</h4>
+<p>NPT simulation controls pressure and temperature.</p>
+<p>Applications:</p>
+<ul>
+<li>Density equilibration</li>
+<li>Liquid system preparation</li>
+<li>Interface relaxation</li>
+</ul>
+<h2 id="typical-md-workflow">Typical MD Workflow</h2>
+<pre class="mermaid"><code>flowchart TD
+
+A[Structure Preparation]
+--&gt;B[Energy Minimization]
+
+B
+--&gt;C[NVT Equilibration]
+
+C
+--&gt;D[NPT Equilibration]
+
+D
+--&gt;E[Production MD]
+
+E
+--&gt;F[Trajectory Analysis]
+</code></pre>
+<h2 id="production-molecular-dynamics">Production Molecular Dynamics</h2>
+<p>After equilibration, production MD is performed to collect trajectory data.</p>
+<p>The trajectory contains information about:</p>
+<ul>
+<li>Atomic positions</li>
+<li>Atomic velocities</li>
+<li>Energy evolution</li>
+<li>Structural changes</li>
+</ul>
+<p>The generated trajectory is used for further analysis such as:</p>
+<ul>
+<li>Diffusion coefficient calculation</li>
+<li>Radial Distribution Function (RDF)</li>
+<li>Mean Square Displacement (MSD)</li>
+</ul>
+<h2 id="software-examples">Software Examples</h2>
+<p>Different software packages can perform molecular dynamics simulations.</p>
 <table>
 <thead>
 <tr>
@@ -2548,20 +3463,29 @@ Different software packages can perform molecular dynamics simulations.</p>
 </tr>
 </tbody>
 </table>
-<p>Connection to Research Cases
-The molecular dynamics workflow can be applied to different materials systems:
-- Ionic liquid electrolyte
-- Battery interfaces
-- Surface reactions
-- Liquid-solid interactions
-Summary
-Molecular Dynamics provides a framework to understand atomic movement and material behavior.
-The general workflow consists of:
-flowchart LR</p>
-<p>A[System Preparation]
---&gt;B[Molecular Dynamics]
---&gt;C[Trajectory Analysis]
---&gt;D[Scientific Interpretation]</p>
+<h2 id="connection-to-research-cases">Connection to Research Cases</h2>
+<p>The molecular dynamics workflow can be applied to different materials systems.</p>
+<p>Examples:</p>
+<ul>
+<li>Ionic liquid electrolyte</li>
+<li>Battery interfaces</li>
+<li>Surface reactions</li>
+<li>Liquid-solid interactions</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>Molecular Dynamics provides a framework to understand atomic movement and material behavior.</p>
+<p>The general workflow consists of:</p>
+<pre class="mermaid"><code>flowchart LR
+
+A[System Preparation]
+--&gt;B[Equilibration]
+
+B
+--&gt;C[Production MD]
+
+C
+--&gt;D[Trajectory Analysis]
+</code></pre>
 
 
 
