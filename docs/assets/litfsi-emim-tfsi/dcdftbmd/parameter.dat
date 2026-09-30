@@ -1,0 +1,26 @@
+# DC-DFTB-MD Chemical Parameters
+
+# Electronic interaction parameters
+
+Hamiltonian = DFTB
+
+Parameter_Set = mio
+
+# Atomic interaction
+
+Elements:
+Li
+C
+H
+N
+O
+F
+S
+
+# Repulsive potential
+
+Repulsive_Correction = enabled
+
+# Periodic system
+
+Periodic_Boundary_Condition = yes

@@ -1,254 +1,73 @@
-# Workshop Guide
+<span class="section-label">
+WORKSHOP GUIDE
+</span>
 
 
 <div class="lab-hero">
 
+
 <div class="hero-label">
-COMPUTATIONAL MATERIALS SCIENCE WORKSHOP
+MKI × BRIN
 </div>
 
 
 <h1>
-First-Principles, HPC & AI for Materials Discovery
+Your Journey Into
+Computational Materials Science
 </h1>
 
 
 <p class="hero-description">
-A practical computational journey integrating quantum simulation,
-high-performance computing, and artificial intelligence approaches
-for modern materials research.
+
+A structured learning pathway that guides
+participants from computational fundamentals
+to hands-on materials research applications.
+
 </p>
 
 
 <div class="lab-tags">
 
-<span>Quantum ESPRESSO</span>
-<span>HPC</span>
-<span>DC-DFTB-MD</span>
-<span>MACE</span>
-
-</div>
-
-</div>
-
-
-
-## About This Workshop
-
-
-The Computational Materials Science Workshop introduces participants
-to modern computational approaches for understanding, predicting,
-and designing advanced materials.
-
-
-The program combines fundamental concepts, practical simulations,
-and research-oriented case studies covering first-principles
-calculation, accelerated simulation, artificial intelligence,
-and high-performance computing.
-
-
-
-<div class="resource-grid">
-
-
-<div class="resource-card">
-
-<h3>⚛ First-Principles</h3>
-
-<p>
-Understand density functional theory and perform quantum-based
-materials calculations using Quantum ESPRESSO.
-</p>
-
-</div>
-
-
-<div class="resource-card">
-
-<h3>💻 High Performance Computing</h3>
-
-<p>
-Learn how computational resources are utilized to accelerate
-large-scale materials simulations.
-</p>
-
-</div>
-
-
-<div class="resource-card">
-
-<h3>🚀 Accelerated Simulation</h3>
-
-<p>
-Explore DC-DFTB-MD approaches for efficient atomistic simulation.
-</p>
-
-</div>
-
-
-<div class="resource-card">
-
-<h3>🤖 AI Materials Discovery</h3>
-
-<p>
-Apply machine learning potential approaches using MACE
-for materials modeling.
-</p>
+<span>Learn</span>
+<span>Simulate</span>
+<span>Analyze</span>
+<span>Discover</span>
 
 </div>
 
 
 </div>
-
-
-
----
-
-
-## Learning Journey
-
-
-<div class="journey-box">
+<span class="section-label">
+WORKSHOP OVERVIEW
+</span>
 
 
 <h2>
-From Atomic Structure to Materials Discovery
+A Complete Computational Learning Experience
 </h2>
 
 
 <p>
-The workshop follows a progressive computational workflow,
-starting from fundamental theory and leading toward
-advanced AI-assisted materials simulation.
+
+This workshop combines scientific concepts,
+computational methods, and practical workflows
+for materials discovery.
+
 </p>
-
-
-<div class="journey-flow">
-
-<span>Atomic Structure</span>
-
-<span>DFT Calculation</span>
-
-<span>HPC Simulation</span>
-
-<span>AI Acceleration</span>
-
-<span>Scientific Insight</span>
-
-
-</div>
-
-
-</div>
-
-
-
----
-
-
-## Computational Workflow
-
-
-<div class="workflow-container">
-
-
-<div class="workflow-item">
-
-<div class="workflow-number">
-01
-</div>
-
-<h3>
-Prepare Structure
-</h3>
-
-<p>
-Build and prepare atomic structures
-for computational simulation.
-</p>
-
-</div>
-
-
-
-<div class="workflow-item">
-
-<div class="workflow-number">
-02
-</div>
-
-<h3>
-Quantum Simulation
-</h3>
-
-<p>
-Perform first-principles calculations
-using DFT approaches.
-</p>
-
-</div>
-
-
-
-<div class="workflow-item">
-
-<div class="workflow-number">
-03
-</div>
-
-<h3>
-Accelerated Simulation
-</h3>
-
-<p>
-Apply DC-DFTB-MD and AI methods
-for efficient simulation.
-</p>
-
-</div>
-
-
-
-<div class="workflow-item">
-
-<div class="workflow-number">
-04
-</div>
-
-<h3>
-Analyze Results
-</h3>
-
-<p>
-Interpret computational outputs
-for scientific understanding.
-</p>
-
-</div>
-
-
-</div>
-
-
-
----
-
-
-## Software Ecosystem
-
-
 <div class="resource-grid">
 
 
 <div class="resource-card">
 
 <h3>
-Quantum ESPRESSO
+01
+<br>
+Understand
 </h3>
 
 <p>
-First-principles electronic structure
-calculation based on density functional theory.
+Learn fundamental concepts in computational
+materials science.
 </p>
 
 </div>
@@ -257,12 +76,14 @@ calculation based on density functional theory.
 <div class="resource-card">
 
 <h3>
-DFTB+
+02
+<br>
+Practice
 </h3>
 
 <p>
-Efficient atomistic simulation for
-large-scale materials systems.
+Execute simulation workflows using
+scientific computing tools.
 </p>
 
 </div>
@@ -271,72 +92,244 @@ large-scale materials systems.
 <div class="resource-card">
 
 <h3>
-MACE
+03
+<br>
+Apply
 </h3>
 
 <p>
-Machine learning potential framework
-for accelerated materials simulation.
+Explore research cases using
+computational approaches.
 </p>
 
 </div>
+
+
+</div>
+<span class="section-label">
+LEARNING JOURNEY
+</span>
+
+
+<h2>
+From Fundamentals to Research Applications
+</h2>
+
+
+<p>
+
+The workshop follows a structured pathway
+connecting theory, simulation, computing,
+and research applications.
+
+</p>
+
+```mermaid
+flowchart LR
+
+A[Foundation]
+
+B[Quantum Simulation]
+
+C[Atomistic Simulation]
+
+D[AI Materials]
+
+E[HPC Computing]
+
+F[Research Cases]
+
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+```
+<span class="section-label">
+WORKSHOP STRUCTURE
+</span>
+
+
+<h2>
+Learning Through Theory and Practice
+</h2>
+<div class="journey-box">
+
+
+<div class="journey-flow">
+
+<span>
+Theory
+</span>
+
+
+<span>
+Tutorial
+</span>
+
+
+<span>
+Hands-on
+</span>
+
+
+<span>
+Discussion
+</span>
+
+
+<span>
+Research Cases
+</span>
+
+
+</div>
+
+
+</div>
+<span class="section-label">
+BEFORE STARTING
+</span>
+
+
+<h2>
+Prepare Your Computational Environment
+</h2>
+
+
+<p>
+
+Participants will prepare the required
+computational environment before running
+simulation workflows.
+
+</p>
+<div class="resource-grid">
 
 
 <div class="resource-card">
 
 <h3>
-HPC Environment
+💻 HPC Access
 </h3>
 
 <p>
-Computational infrastructure for
-large-scale scientific workloads.
+Account setup, terminal access,
+and remote connection.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+⚙ Software Environment
+</h3>
+
+<p>
+Required simulation tools
+and computational packages.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+📂 Workshop Files
+</h3>
+
+<p>
+Input files, examples,
+and supporting materials.
 </p>
 
 </div>
 
 
 </div>
+<span class="section-label">
+LEARNING SUPPORT
+</span>
+
+
+<h2>
+Resources During the Workshop
+</h2>
+
+
+<p>
+
+Use additional resources to support
+your computational learning process.
+
+</p>
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<h3>
+🤖 AI Help Center
+</h3>
+
+<p>
+Get assistance for Linux,
+simulation tools, and workflows.
+</p>
+
+<a href="../resources/ai-help/">
+Open Assistant →
+</a>
+
+</div>
 
 
 
----
+<div class="resource-card">
+
+<h3>
+📚 Documentation
+</h3>
+
+<p>
+Access software guides,
+references, and examples.
+</p>
+
+<a href="../references/">
+Explore Resources →
+</a>
+
+</div>
 
 
-## Workshop Objectives
+</div>
+<div class="final-banner">
 
 
-This workshop aims to provide participants with practical skills
-to understand and apply computational materials science workflows.
+<h2>
+Ready to Start Computational Research?
+</h2>
 
 
-Participants will learn how to:
+<p>
+
+Follow the learning path and begin exploring
+materials simulation workflows.
+
+</p>
 
 
-- Understand the relationship between materials structure and computational modeling.
-- Prepare input files for scientific simulation.
-- Perform first-principles calculations.
-- Utilize HPC resources for computational research.
-- Apply AI-based approaches for materials discovery.
+<a href="../quantum-simulation/">
+Start Learning →
+</a>
 
 
+</div>
 
-## Expected Outcomes
-
-
-After completing this workshop, participants will be able to:
-
-
-✓ Explain the computational materials discovery workflow.
-
-
-✓ Perform basic DFT calculations using Quantum ESPRESSO.
-
-
-✓ Understand accelerated simulation approaches.
-
-
-✓ Apply machine learning potential concepts.
-
-
-✓ Analyze computational results from research cases.

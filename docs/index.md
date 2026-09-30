@@ -1,4 +1,10 @@
+<span class="section-label">
+COMPUTATIONAL MATERIALS WORKSHOP
+</span>
+
+
 <div class="lab-hero">
+
 
 <div class="hero-label">
 MKI × BRIN
@@ -6,14 +12,17 @@ MKI × BRIN
 
 
 <h1>
-Computational Materials Science Workshop
+Integrating First-Principles,
+HPC & AI for Materials Discovery
 </h1>
 
 
 <p class="hero-description">
 
-First-Principles Calculation, High Performance Computing,
-and Artificial Intelligence for Materials Discovery.
+A computational materials science platform
+combining quantum simulation, high-performance
+computing, and artificial intelligence approaches
+for accelerating materials research.
 
 </p>
 
@@ -21,16 +30,19 @@ and Artificial Intelligence for Materials Discovery.
 <div class="lab-tags">
 
 <span>DFT</span>
-<span>HPC</span>
+
+<span>Quantum ESPRESSO</span>
+
 <span>DC-DFTB-MD</span>
+
+<span>HPC</span>
+
 <span>MACE</span>
 
 </div>
 
 
 </div>
-
-
 
 ## Explore Computational Materials Discovery
 
@@ -41,53 +53,37 @@ and Artificial Intelligence for Materials Discovery.
 <div class="resource-card">
 
 <h3>
-⚛ First-Principles Calculation
+⚛ First-Principles Simulation
 </h3>
 
 
 <p>
-Learn density functional theory and electronic structure
-calculations using Quantum ESPRESSO.
+
+Explore density functional theory approaches
+for understanding electronic structures,
+energy landscapes, and material properties.
+
 </p>
 
 
 </div>
-
-
 
 <div class="resource-card">
 
 <h3>
-🚀 Accelerated Simulation
+🧩 Materials System Design
 </h3>
 
 
 <p>
-Explore efficient atomistic simulations using
-DFTB-based approaches.
+
+Learn molecular and interface construction methods
+for preparing realistic computational models.
+
 </p>
 
 
 </div>
-
-
-
-<div class="resource-card">
-
-<h3>
-🤖 AI Materials Discovery
-</h3>
-
-
-<p>
-Understand machine learning potential approaches
-for accelerating materials simulations.
-</p>
-
-
-</div>
-
-
 
 <div class="resource-card">
 
@@ -97,20 +93,33 @@ for accelerating materials simulations.
 
 
 <p>
-Execute scientific workflows using HPC resources
-for large-scale calculations.
+
+Execute large-scale computational workflows
+using parallel computing environments.
+
 </p>
 
 
 </div>
 
+<div class="resource-card">
+
+<h3>
+🤖 AI-Accelerated Discovery
+</h3>
+
+<p>
+
+Understand machine learning potential approaches
+for accelerating atomistic simulations.
+
+</p>
 
 </div>
 
 
-
+</div>
 ---
-
 
 ## Workshop Learning Path
 
@@ -119,13 +128,16 @@ for large-scale calculations.
 
 
 <h2>
-From Theory to Research Application
+From Fundamental Concepts to Materials Discovery
 </h2>
 
 
 <p>
-The workshop guides participants through a complete
-computational materials workflow.
+
+The workshop provides a structured learning pathway
+from fundamental computational concepts to advanced
+research applications in materials discovery.
+
 </p>
 
 
@@ -133,26 +145,37 @@ computational materials workflow.
 
 
 <span>
+01<br>
 Foundation
 </span>
 
 
 <span>
-DFT Simulation
+02<br>
+Quantum Simulation
 </span>
 
 
 <span>
-HPC Computing
+03<br>
+System Design
 </span>
 
 
 <span>
-AI Acceleration
+04<br>
+HPC Environment
 </span>
 
 
 <span>
+05<br>
+AI Materials
+</span>
+
+
+<span>
+06<br>
 Research Cases
 </span>
 
@@ -161,12 +184,152 @@ Research Cases
 
 
 </div>
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<h3>
+01. Foundation
+</h3>
+
+<p>
+Introduction to computational materials science,
+density functional theory, molecular dynamics,
+and machine learning concepts.
+</p>
+
+</div>
 
 
 
----
+<div class="resource-card">
+
+<h3>
+02. Quantum Simulation
+</h3>
+
+<p>
+Learn first-principles calculations using
+Quantum ESPRESSO, including SCF, relaxation,
+DOS, and electronic structure analysis.
+</p>
+
+</div>
 
 
+
+<div class="resource-card">
+
+<h3>
+03. System Design
+</h3>
+
+<p>
+Build realistic computational models through
+molecular construction, interfaces, and
+electrolyte system preparation.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+04. HPC Environment
+</h3>
+
+<p>
+Execute computational workflows using
+parallel computing and job scheduling systems.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+05. AI Materials
+</h3>
+
+<p>
+Explore machine learning potential approaches
+for accelerating atomistic simulations.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+06. Research Cases
+</h3>
+
+<p>
+Apply computational workflows to real material
+systems through hands-on simulation projects.
+</p>
+
+</div>
+
+
+</div>
+
+## Workshop Highlights
+
+
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<h3>
+6 Learning Modules
+</h3>
+
+<p>
+From computational fundamentals
+to advanced research applications.
+</p>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>
+5 Computational Technologies
+</h3>
+
+<p>
+DFT, HPC, DC-DFTB-MD,
+and AI-based simulation approaches.
+</p>
+
+</div>
+
+
+<div class="resource-card">
+
+<h3>
+Hands-on Research Cases
+</h3>
+
+<p>
+Apply computational workflows
+to realistic material systems.
+</p>
+
+</div>
+
+
+</div>
 ## Research Applications
 
 
@@ -190,14 +353,18 @@ Graphene Electronic Structure
 
 
 <p>
-Explore electronic properties through
-density of states and band structure calculations.
+
+Explore electronic properties of graphene using
+first-principles calculations, including electronic
+structure analysis, density of states, and band
+structure calculations.
+
 </p>
 
 
 <div class="case-tools">
 
-Quantum ESPRESSO · DFT · Band Structure
+Quantum ESPRESSO · DFT · DOS · Band Structure
 
 </div>
 
@@ -221,19 +388,22 @@ Quantum ESPRESSO · DFT · Band Structure
 
 
 <h2>
-Battery Material Simulation
+Graphene Ionic Liquid Interface
 </h2>
 
 
 <p>
-Study computational approaches for understanding
-materials used in energy storage systems.
+
+Investigate molecular interfaces by combining
+surface modeling, molecular construction,
+and atomistic simulation approaches.
+
 </p>
 
 
 <div class="case-tools">
 
-DFT · Structure Optimization · HPC
+Graphene Surface · Packmol · Interface Modeling · HPC
 
 </div>
 
@@ -257,19 +427,22 @@ DFT · Structure Optimization · HPC
 
 
 <h2>
-Surface Catalysis
+LiTFSI-EMIM TFSI Electrolyte Transport
 </h2>
 
 
 <p>
-Investigate reaction mechanisms and catalytic
-materials using computational modeling.
+
+Study ionic liquid electrolyte behavior through
+DC-DFTB-MD simulation and analyze transport
+properties from molecular dynamics trajectories.
+
 </p>
 
 
 <div class="case-tools">
 
-Surface Reaction · Simulation · Analysis
+DC-DFTB-MD · HPC · MSD · RDF · Diffusion
 
 </div>
 
@@ -281,11 +454,7 @@ Surface Reaction · Simulation · Analysis
 
 
 </div>
-
-
-
 ---
-
 
 ## Begin Your Computational Journey
 
@@ -294,19 +463,37 @@ Surface Reaction · Simulation · Analysis
 
 
 <h2>
-Start Exploring Materials Discovery
+From Simulation Fundamentals to Research Applications
 </h2>
 
 
 <p>
-Follow the learning path and build your computational
-research skills step by step.
+
+Follow the structured learning pathway and explore
+computational workflows for materials discovery.
+
 </p>
 
 
-<a href="start-here/workshop-guide/">
-Open Workshop Guide →
+<div class="final-actions">
+
+
+<a href="start-here/workshop-guide/" class="hero-button">
+
+Start Workshop Guide →
+
+</a>
+
+
+<a href="hands-on-project/" class="hero-button secondary">
+
+Explore Research Cases →
+
 </a>
 
 
 </div>
+
+
+</div>
+

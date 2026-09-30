@@ -1,35 +1,30 @@
-site_name: MKI Computational Materials Science Workshop
+site_name: Computational Materials Science Workshop
+site_description: Integrating First-Principles Calculation, High Performance Computing, and Artificial Intelligence for Materials Discovery
 
-site_description: >
-  Integrating First-Principles Simulation,
-  High Performance Computing,
-  and Artificial Intelligence for Materials Discovery
-
-site_author: >
+site_author: 
   BRIN - ITB - Masyarakat Komputasi Indonesia
 
 
 repo_name: MKI-Workshop
-
 repo_url: https://github.com/lala002-brin/MKI-Workshop
 
 
 theme:
+
+  theme:
+
   name: material
 
   custom_dir: docs/overrides
-
+ 
   features:
 
-    - navigation.sections
-    - navigation.indexes
-    - navigation.top
-    - navigation.instant
-    - navigation.tracking
-    - toc.follow
-    - content.code.copy
-    - content.tabs.link
-
+  - navigation.sections
+  - navigation.expand
+  - navigation.top
+  - content.code.copy
+  - navigation.instant
+  - toc.follow
 
   palette:
 
@@ -43,7 +38,13 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Light mode
+
+
+
 markdown_extensions:
+
+  - pymdownx.arithmatex:
+      generic: true
 
   - admonition
 
@@ -53,61 +54,52 @@ markdown_extensions:
 
   - pymdownx.details
 
-  - pymdownx.arithmatex:
-      generic: true
-
   - pymdownx.tabbed:
       alternate_style: true
 
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
   - pymdownx.superfences:
       custom_fences:
-
         - name: mermaid
           class: mermaid
 
-        - name: yaml
-          class: yaml
 plugins:
-
   - search
-
   - mkdocs-jupyter:
       execute: false
       include_source: true
+
 nav:
 
   - 🏠 Home:
-      - Overview:
-          index.md
+      - Overview: index.md
 
 
   - 🚀 Start Here:
-
-      - Workshop Guide:
+      - Workshop Introduction:
           start-here/workshop-guide.md
-
       - Computational Workflow:
           start-here/workflow.md
 
 
-  - 🧱 Foundation:
 
+  - 🧱 Foundation:
       - Computational Materials Science:
           foundation/index.md
-
       - Materials Informatics:
           foundation/materials-informatics.md
-  - ⚛ First-Principles Simulation:
+
+
+
+  - ⚛ First-Principles Calculation:
 
       - Overview:
           quantum-simulation/index.md
 
 
-      - Setup Environment:
+      - Setup:
 
           - Installation:
               quantum-simulation/setup/installation.md
@@ -117,6 +109,7 @@ nav:
 
           - Pseudopotential:
               quantum-simulation/setup/pseudopotential.md
+
 
 
       - Theory:
@@ -130,8 +123,12 @@ nav:
           - Hartree-Fock:
               quantum-simulation/theory/hartree-fock.md
 
+          - Wannier Basis:
+              quantum-simulation/theory/wannier.md
+
           - Computational Complexity:
               quantum-simulation/theory/computational-complexity.md
+
 
 
       - Hands-on Tutorial:
@@ -148,37 +145,27 @@ nav:
           - Geometry Optimization:
               quantum-simulation/hands-on/relaxation.md
 
-          - Electronic Structure Analysis:
-              quantum-simulation/hands-on/density-of-states.md
-
           - Band Structure:
               quantum-simulation/hands-on/band-structure.md
 
-          - Advanced Topics:
-              - DFT+U:
-                  quantum-simulation/hands-on/dft-u.md
+          - Density of States:
+              quantum-simulation/hands-on/density-of-states.md
 
-              - Spin Orbit Coupling:
-                  quantum-simulation/hands-on/spin-orbit-coupling.md
+          - DFT+U:
+              quantum-simulation/hands-on/dft-u.md
 
-              - Phonon:
-                  quantum-simulation/hands-on/phonon.md
+          - Spin Orbit Coupling:
+              quantum-simulation/hands-on/spin-orbit-coupling.md
 
-              - Wannier Function:
-                  quantum-simulation/hands-on/wannier.md
-  - 🧩 System Design:
+          - Phonon:
+              quantum-simulation/hands-on/phonon.md
 
-      - Overview:
-          system-design/index.md
+          - Wannier Function:
+              quantum-simulation/hands-on/wannier.md
 
-      - Molecular Building:
-          atomistic-simulation/molecular-building.md
+          - Molecular Dynamics:
+              quantum-simulation/hands-on/molecular-dynamics.md
 
-      - Packmol System Generation:
-          atomistic-simulation/packmol.md
-
-      - Interface Construction:
-          system-design/graphite-interface.md
 
 
   - 🚀 Accelerated Materials Simulation:
@@ -186,29 +173,29 @@ nav:
       - Overview:
           atomistic-simulation/index.md
 
+      - Molecular Building:
+          atomistic-simulation/molecular-building.md
+
+      - Packmol System Generation:
+          atomistic-simulation/packmol.md
+
       - Molecular Dynamics Fundamentals:
           atomistic-simulation/md.md
 
-      - DC-DFTB-MD Workflow:
 
-          - Overview:
-              atomistic-simulation/dc-dftb-md.md
-
-          - Input Preparation:
-              atomistic-simulation/dc-dftb-input.md
-
-          - HPC Execution:
-              atomistic-simulation/dc-dftb-hpc.md
-
-          - Trajectory Output:
-              atomistic-simulation/dc-dftb-trajectory.md
-  - 💻 HPC Environment:
+  - ⚛ DC-DFTB-MD Workflow:
 
       - Overview:
-          hpc-environment/index.md
+          atomistic-simulation/dc-dftb-md.md
 
-      - Job Submission:
-          hpc-environment/job-submission.md
+      - Input Preparation:
+          atomistic-simulation/dc-dftb-input.md
+
+      - HPC Execution:
+          atomistic-simulation/dc-dftb-hpc.md
+
+      - Trajectory Output:
+          atomistic-simulation/dc-dftb-trajectory.md
 
 
   - 📊 Transport Analysis:
@@ -226,13 +213,26 @@ nav:
           atomistic-simulation/rdf.md
 
 
-  - 🤖 AI Materials:
+  - 🤖 Machine Learning Potential:
 
       - AI for Materials Simulation:
           ai-acceleration/index.md
 
       - MACE Workflow:
           ai-acceleration/mace.md
+
+
+
+  - 💻 High Performance Computing:
+
+      - HPC Environment:
+          hpc-environment/index.md
+
+      - Job Submission:
+          hpc-environment/job-submission.md
+
+
+
   - 🧪 Hands-on Research Cases:
 
       - Overview:
@@ -240,33 +240,37 @@ nav:
 
 
       - Graphene Electronic Structure:
-          hands-on-project/research-cases/graphene/index.md
+          - Overview:
+              hands-on-project/research-cases/graphene/index.md
 
 
       - Graphene Ionic Liquid Interface:
-          hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
+          - Overview:
+              hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
 
 
-      - LiTFSI-EMIM TFSI Electrolyte Transport:
-          hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
+      - LiTFSI-EMIM TFSI Ionic Liquid Electrolyte Transport:
+          - Overview:
+              hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
+
+      - Surface Catalysis:
+          hands-on-project/research-cases/surface-catalysis/index.md
 
 
+      - Molecular Dynamics:
+          hands-on-project/research-cases/molecular-dynamics/index.md
 
   - 🤖 AI Help Center:
 
       - Overview:
           resources/ai-help/index.md
-
       - AI Chat Assistant:
           resources/ai-help/chat.md
-
-      - Linux Command Assistant:
-          resources/ai-help/linux-command.md
-
-      - Quantum ESPRESSO Assistant:
+      
+      - 💻 Linux Command Assistant:
+           resources/ai-help/linux-command.md
+      - ⚛ Quantum ESPRESSO Assistant:
           resources/ai-help/quantum-espresso.md
-
-
 
   - 📚 References:
 
@@ -275,6 +279,7 @@ nav:
 
       - Learning Resources:
           references/resources.md
+
 
 extra:
 
@@ -292,33 +297,26 @@ extra:
 
       - "01 Foundation"
 
-      - "02 First-Principles Simulation"
+      - "02 Quantum Simulation"
 
-      - "03 System Design"
+      - "03 Accelerated Simulation"
 
-      - "04 Accelerated Atomistic Simulation"
+      - "04 AI Materials"
 
-      - "05 HPC Environment"
+      - "05 HPC Computing"
 
-      - "06 AI Materials"
-
-      - "07 Research Cases"
-
+      - "06 Research Cases"
 
 copyright: >
   MKI × BRIN Computational Materials Science Workshop
   <br>
   Developed for scientific computing education
 
-
 extra_css:
-
   - stylesheets/extra.css
   - assets/stylesheets/chat.css
 
-
 extra_javascript:
-
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/mermaid/dist/mermaid.min.js
   - assets/javascripts/chat.js
