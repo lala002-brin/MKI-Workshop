@@ -97,26 +97,110 @@ and transport properties using DC-DFTB-MD.
 
 
 </div>
+
+<span class="section-label">SCIENTIFIC BACKGROUND</span>
+
+
+## 🔋 Ionic Liquid Electrolyte System
+
+
+Lithium-based electrolytes play an important role in energy storage
+systems, especially lithium-ion batteries. The electrolyte provides
+a medium for lithium ion transport between electrodes during battery
+operation.
+
+
+Ionic liquids have attracted attention as alternative electrolyte
+materials because they exhibit low volatility, high thermal stability,
+and tunable ionic properties.
+
+
+In this case study, a LiTFSI salt dissolved in an EMIM-TFSI ionic
+liquid environment is investigated using DC-DFTB-MD simulation.
+The simulation focuses on understanding lithium ion movement,
+ionic coordination, and transport behavior at the atomic scale.
+
 <span class="section-label">SCIENTIFIC MOTIVATION</span>
 
-
-## 🔬 Research Question
-
-
-This simulation investigates how lithium ions and ionic liquid
-components organize and move at the atomic scale.
+<span class="section-label">RESEARCH QUESTIONS</span>
 
 
-The main questions explored are:
+## ❓ Research Questions
 
 
-- How does lithium ion transport occur inside the ionic liquid electrolyte?
-- How do Li+, EMIM+, and TFSI- species interact during molecular dynamics simulation?
-- How does the electrolyte structure influence ion mobility and transport properties?
+This case study addresses the following questions:
 
+
+1. How do lithium ions move within the EMIM-TFSI ionic liquid environment?
+
+2. How do lithium ions interact with surrounding TFSI anions and
+   ionic liquid components?
+
+3. How can molecular dynamics simulation reveal transport properties
+   such as diffusion behavior?
+
+<span class="section-label">COMPUTATIONAL APPROACH</span>
+
+
+## ⚛️ Why DC-DFTB-MD?
+
+
+Molecular dynamics simulations require an appropriate computational
+method to describe atomic interactions. Classical molecular dynamics
+is efficient for large systems, but it uses predefined interaction
+parameters.
+
+
+DC-DFTB-MD provides a quantum-based approach that can describe
+electronic interactions while maintaining computational efficiency
+for larger atomistic systems.
+
+
+For the LiTFSI-EMIM TFSI electrolyte system, DC-DFTB-MD is used to
+investigate:
+
+- Lithium ion movement
+- Ion coordination behavior
+- Molecular interaction within electrolyte environment
+- Structural evolution during simulation
+
+
+The method provides a connection between atomic-scale simulation
+and measurable electrolyte transport properties.
+
+<span class="section-label">SIMULATION OBJECTIVES</span>
+
+
+## 🎯 Simulation Objectives
+
+
+The main objectives of this simulation case are:
+
+
+### 1. Analyze Lithium Ion Mobility
+
+Evaluate lithium ion movement through the ionic liquid electrolyte
+environment using trajectory analysis.
+
+
+### 2. Understand Ion Coordination
+
+Investigate interactions between Li+ ions and surrounding TFSI-
+anions through structural analysis.
+
+
+### 3. Calculate Transport Properties
+
+Extract diffusion-related properties from molecular dynamics
+trajectory data.
+
+
+### 4. Evaluate Electrolyte Structure
+
+Understand the relationship between molecular organization and
+ion transport behavior.
 
 <span class="section-label">LEARNING GOALS</span>
-
 
 ## 🎯 Learning Objectives
 
@@ -877,9 +961,16 @@ litfsi-emim-tfsi-electrolyte-transport/
 
 ## 📥 Quick Access
 
+---
 
-The following resources provide the essential files required
-to reproduce the LiTFSI-EMIM TFSI electrolyte simulation workflow.
+<span class="section-label">DOWNLOAD RESOURCES</span>
+
+
+## 📥 Download Simulation Files
+
+
+The following files are provided for each stage of the
+LiTFSI-EMIM TFSI ionic liquid electrolyte simulation workflow.
 
 
 <div class="grid cards" markdown>
@@ -887,44 +978,52 @@ to reproduce the LiTFSI-EMIM TFSI electrolyte simulation workflow.
 
 - **🧩 Molecular Structures**
 
-    Initial LiTFSI and EMIM-TFSI
-    molecular components.
+    Initial molecular structures used for electrolyte preparation.
 
-    **Includes**
+    Download:
 
-    - LiTFSI structure
-    - EMIM-TFSI structure
-
-
-- **📦 PACKMOL**
-
-    Electrolyte system construction.
-
-    **Includes**
-
-    - packmol input
-    - generated electrolyte box
+    - [LiTFSI.xyz](../../../resources/litfsi-emim-tfsi-electrolyte-transport/structures/LiTFSI.xyz)
+    - [EMIM-TFSI.xyz](../../../resources/litfsi-emim-tfsi-electrolyte-transport/structures/EMIM-TFSI.xyz)
 
 
-- **⚛️ DC-DFTB-MD**
+- **📦 PACKMOL Setup**
 
-    Quantum molecular dynamics simulation.
+    Files for generating the electrolyte configuration.
 
-    **Includes**
+    Download:
 
-    - simulation input
-    - parameter files
+    - [packmol.inp](../../../resources/litfsi-emim-tfsi-electrolyte-transport/packmol/packmol.inp)
+    - [electrolyte_system.xyz](../../../resources/litfsi-emim-tfsi-electrolyte-transport/packmol/electrolyte_system.xyz)
+
+
+- **⚛️ DC-DFTB-MD Input**
+
+    Simulation input and interaction parameters.
+
+    Download:
+
+    - [input.in](../../../resources/litfsi-emim-tfsi-electrolyte-transport/dcdftbmd/input.in)
+    - [parameter.dat](../../../resources/litfsi-emim-tfsi-electrolyte-transport/dcdftbmd/parameter.dat)
+
+
+- **💻 HPC Execution**
+
+    Job submission script for HPC simulation.
+
+    Download:
+
+    - [run_dcdftbmd.slurm](../../../resources/litfsi-emim-tfsi-electrolyte-transport/hpc/run_dcdftbmd.slurm)
 
 
 - **📊 Analysis Scripts**
 
-    Transport property calculation.
+    Transport property analysis tools.
 
-    **Includes**
+    Download:
 
-    - MSD analysis
-    - RDF calculation
-    - Diffusion coefficient
+    - [msd_analysis.py](../../../resources/litfsi-emim-tfsi-electrolyte-transport/analysis/msd_analysis.py)
+    - [rdf_analysis.py](../../../resources/litfsi-emim-tfsi-electrolyte-transport/analysis/rdf_analysis.py)
+    - [diffusion_analysis.py](../../../resources/litfsi-emim-tfsi-electrolyte-transport/analysis/diffusion_analysis.py)
 
 
 </div>

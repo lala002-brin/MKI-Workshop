@@ -1,0 +1,27 @@
+# DC-DFTB-MD Simulation Input
+
+# System
+structure = ../packmol/electrolyte_system.xyz
+
+# Simulation condition
+ensemble = NVT
+
+temperature = 300 K
+
+timestep = 1.0 fs
+
+steps = 10000
+
+
+# Simulation stages
+
+minimization = yes
+
+equilibration = NVT
+
+production = MD
+
+
+# Output
+
+trajectory = ../trajectory/md_trajectory.xyz

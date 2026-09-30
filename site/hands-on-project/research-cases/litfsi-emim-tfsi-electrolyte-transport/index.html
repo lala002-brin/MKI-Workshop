@@ -3451,11 +3451,6 @@ class C system;</code></pre>
 <td>Bulk simulation environment</td>
 <td>Represents battery electrolyte behavior</td>
 </tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <p><span class="section-label">SIMULATION DESIGN</span></p>
@@ -3502,7 +3497,7 @@ class F analysis;</code></pre>
 <p>The simulation workflow connects molecular preparation,<br />
 quantum-based molecular dynamics simulation, and transport<br />
 property analysis into a complete computational pipeline.</p>
-<p><pre class="mermaid"><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 A["01&lt;br&gt;MOLECULAR STRUCTURE&lt;br&gt;Preparation"]
 
@@ -3536,16 +3531,47 @@ class C md;
 class D hpc;
 class E md;
 class F analysis;</code></pre>
-| Stage | Main Activity | Output |
-|---|---|---|
-| 01 | Prepare LiTFSI and EMIM-TFSI molecular structures | Molecular models |
-| 02 | Generate electrolyte configuration using PACKMOL | Initial electrolyte system |
-| 03 | Perform DC-DFTB-MD simulation | Atomic trajectory |
-| 04 | Execute simulation using HPC resources | Simulation results |
-| 05 | Store atomic movement data | Trajectory files |
-| 06 | Calculate transport properties | Diffusion and structural information |</p>
-<p><span class="section-label">COMPUTATIONAL METHOD</span></p>
-<p><span class="section-label">SIMULATION PROTOCOL</span></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Main Activity</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Prepare LiTFSI and EMIM-TFSI molecular structures</td>
+<td>Molecular models</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Generate electrolyte configuration using PACKMOL</td>
+<td>Initial electrolyte system</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Perform DC-DFTB-MD simulation</td>
+<td>Atomic trajectory</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Execute simulation using HPC resources</td>
+<td>Simulation results</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Store atomic movement data</td>
+<td>Trajectory files</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Calculate transport properties</td>
+<td>Diffusion and structural information</td>
+</tr>
+</tbody>
+</table>
 <p><span class="section-label">COMPUTATIONAL METHOD</span></p>
 <p><span class="section-label">SIMULATION PROTOCOL</span></p>
 <h2 id="dc-dftb-md-simulation-procedure">⚙️ DC-DFTB-MD Simulation Procedure</h2>
@@ -3775,9 +3801,9 @@ Electrolyte structural information
 <li>Lithium ion mobility</li>
 <li>Ion coordination behavior</li>
 <li>Electrolyte structural organization</li>
-<li>Transport mechanisms
-<span class="section-label">RESULTS AND ANALYSIS</span></li>
+<li>Transport mechanisms</li>
 </ul>
+<p><span class="section-label">RESULTS AND ANALYSIS</span></p>
 <h2 id="simulation-outputs">📊 Simulation Outputs</h2>
 <p>The DC-DFTB-MD simulation generates structural and dynamic
 information that describes the behavior of LiTFSI-EMIM TFSI
@@ -4037,22 +4063,22 @@ the LiTFSI-EMIM TFSI ionic liquid electrolyte simulation workflow.</p>
 │   │   Electrolyte system generation input
 │   │
 │   └── electrolyte_system.xyz
-│       Initial electrolyte configuration
+│       Generated electrolyte configuration
 │
 ├── dcdftbmd/
-│   ├── input files
-│   │   DC-DFTB-MD simulation parameters
+│   ├── input.in
+│   │   DC-DFTB-MD simulation control parameters
 │   │
-│   └── parameter files
+│   └── parameter.dat
 │       Chemical interaction parameters
 │
 ├── hpc/
-│   └── submit_job.sh
+│   └── run_dcdftbmd.slurm
 │       HPC simulation submission script
 │
 ├── trajectory/
-│   └── trajectory files
-│       Atomic movement data during simulation
+│   └── md_trajectory.xyz
+│       Molecular dynamics trajectory output
 │
 └── analysis/
     ├── msd_analysis.py
@@ -4060,6 +4086,47 @@ the LiTFSI-EMIM TFSI ionic liquid electrolyte simulation workflow.</p>
     └── diffusion_analysis.py
         Transport property analysis scripts
 </code></pre></div>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Structures</strong></p>
+<p>Contains initial molecular structures.</p>
+<p>Includes:</p>
+<ul>
+<li>LiTFSI</li>
+<li>EMIM-TFSI</li>
+</ul>
+</li>
+<li>
+<p><strong>📦 PACKMOL</strong></p>
+<p>Generates the initial electrolyte box.</p>
+<p>Includes:</p>
+<ul>
+<li>Packing input</li>
+<li>Generated structure</li>
+</ul>
+</li>
+<li>
+<p><strong>⚛️ DC-DFTB-MD</strong></p>
+<p>Contains simulation input files.</p>
+<p>Includes:</p>
+<ul>
+<li>Control parameters</li>
+<li>Interaction parameters</li>
+</ul>
+</li>
+<li>
+<p><strong>📊 Analysis</strong></p>
+<p>Contains trajectory analysis tools.</p>
+<p>Includes:</p>
+<ul>
+<li>MSD calculation</li>
+<li>RDF analysis</li>
+<li>Diffusion calculation</li>
+</ul>
+</li>
+</ul>
+</div>
 <p><span class="section-label">RESOURCE ACCESS</span></p>
 <h2 id="quick-access">📥 Quick Access</h2>
 <p>The following resources provide the essential files required
