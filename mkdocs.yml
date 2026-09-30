@@ -1,9 +1,8 @@
 site_name: MKI Computational Materials Science Workshop
 
 site_description: >
-  Integrating First-Principles Simulation,
-  High Performance Computing,
-  and Artificial Intelligence for Materials Discovery
+  Integrating First-Principles, HPC & AI for Materials Discovery
+  Computational materials science workshop by MKI and BRIN.
 
 site_author: >
   BRIN - ITB - Masyarakat Komputasi Indonesia
@@ -13,23 +12,29 @@ repo_name: MKI-Workshop
 
 repo_url: https://github.com/lala002-brin/MKI-Workshop
 
-
 theme:
+
+  logo: assets/images/logo.png
+
+  favicon: assets/images/favicon.png
   name: material
 
   custom_dir: docs/overrides
 
+theme:
+  name: material
   features:
-
+    - navigation.tabs
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
     - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.instant
     - navigation.tracking
     - toc.follow
-    - content.code.copy
     - content.tabs.link
-
 
   palette:
 

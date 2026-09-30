@@ -43,93 +43,131 @@ Explore Workflow
 
 
 </div>
----
-
 <span class="section-label">
-WORKSHOP OVERVIEW
+WHY THIS WORKSHOP
 </span>
 
 
 <h2>
-Building the Future of Materials Discovery
+Building the Future of Computational Materials Discovery
 </h2>
 
 
 <p>
 
-This workshop introduces computational approaches
-that combine first-principles methods, atomistic
-simulation, high-performance computing, and
-artificial intelligence for materials research.
+This workshop introduces an integrated computational
+workflow combining first-principles calculations,
+atomistic simulation, artificial intelligence,
+and high-performance computing for advanced materials research.
 
 </p>
-<div class="resource-grid">
 
 
-<div class="resource-card">
+<div class="feature-grid">
+
+
+<div class="feature-card">
+
+
+<div class="feature-icon">
+⚛
+</div>
+
 
 <h3>
-01
-<br>
-Quantum Simulation
+First-Principles Simulation
 </h3>
+
 
 <p>
 
-Understand electronic structures
-through first-principles calculations
-using Density Functional Theory.
+Explore electronic structures and material properties
+using density functional theory and Quantum ESPRESSO.
 
 </p>
+
 
 </div>
 
 
 
-<div class="resource-card">
+<div class="feature-card">
+
+
+<div class="feature-icon">
+🧬
+</div>
+
 
 <h3>
-02
-<br>
 Atomistic Modeling
 </h3>
 
+
 <p>
 
-Explore molecular systems and
-atomic-scale behavior through
-advanced simulation workflows.
+Investigate atomic interactions and molecular behavior
+through molecular dynamics simulation approaches.
 
 </p>
+
 
 </div>
 
 
 
-<div class="resource-card">
+<div class="feature-card">
+
+
+<div class="feature-icon">
+🤖
+</div>
+
 
 <h3>
-03
-<br>
-AI & HPC Acceleration
+AI Materials Discovery
 </h3>
+
 
 <p>
 
-Accelerate materials discovery
-using machine learning approaches
-and high-performance computing.
+Accelerate materials research using machine learning
+potential and data-driven computational methods.
 
 </p>
 
+
+</div>
+
+
+
+<div class="feature-card">
+
+
+<div class="feature-icon">
+💻
+</div>
+
+
+<h3>
+High Performance Computing
+</h3>
+
+
+<p>
+
+Perform large-scale simulations using parallel computing
+and HPC infrastructure.
+
+</p>
+
+
 </div>
 
 
 </div>
----
-
 <span class="section-label">
-COMPUTATIONAL ECOSYSTEM
+COMPUTATIONAL WORKFLOW
 </span>
 
 
@@ -140,108 +178,185 @@ From Atomic Structure to Materials Discovery
 
 <p>
 
-Computational materials research integrates
-multiple scientific approaches into a connected
-discovery pipeline.
+A connected computational pathway that transforms
+atomic-scale information into scientific insights
+through simulation, artificial intelligence,
+and high-performance computing.
 
 </p>
-```mermaid
-flowchart LR
-
-A[Atomic Structure]
-
-B[First-Principles]
-
-C[Atomistic Simulation]
-
-D[AI Acceleration]
-
-E[High Performance Computing]
-
-F[Materials Discovery]
 
 
-A --> B
-B --> C
-C --> D
-D --> E
-E --> F
-```
----
 
-<span class="section-label">
-LEARNING ROADMAP
+<div class="workflow-path">
+
+
+<div class="workflow-step">
+
+<span>
+01
 </span>
 
-
-<h2>
-A Structured Pathway From Fundamentals to Research
-</h2>
-
+<h3>
+Atomic Structure
+</h3>
 
 <p>
-
-Follow the workshop pathway from basic concepts
-to practical computational research applications.
-
+Crystal structures,
+interfaces, and molecular systems.
 </p>
-<div class="journey-box">
+
+</div>
 
 
-<div class="journey-flow">
 
-<span>
-01 Foundation
-</span>
+<div class="workflow-arrow">
+→
+</div>
 
 
-<span>
-02 Quantum Simulation
-</span>
 
+<div class="workflow-step">
 
 <span>
-03 Atomistic Simulation
+02
 </span>
 
+<h3>
+First-Principles
+</h3>
+
+<p>
+Quantum calculations
+and electronic properties.
+</p>
+
+</div>
+
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+
+<div class="workflow-step">
 
 <span>
-04 AI Materials
+03
 </span>
 
+<h3>
+Atomistic Simulation
+</h3>
+
+<p>
+Molecular dynamics
+and atomic interactions.
+</p>
+
+</div>
+
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+
+<div class="workflow-step">
 
 <span>
-05 HPC Computing
+04
 </span>
 
+<h3>
+AI Acceleration
+</h3>
+
+<p>
+Machine learning
+for faster discovery.
+</p>
+
+</div>
+
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+
+<div class="workflow-step">
 
 <span>
-06 Research Cases
+05
 </span>
 
+<h3>
+HPC Computing
+</h3>
+
+<p>
+Large-scale parallel
+simulation.
+</p>
+
+</div>
+
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+
+<div class="workflow-step">
+
+<span>
+06
+</span>
+
+<h3>
+Materials Discovery
+</h3>
+
+<p>
+New materials insights
+and prediction.
+</p>
 
 </div>
 
 
 </div>
----
-
+<p class="workflow-scroll-note">
+Scroll horizontally to explore the complete computational pathway →
+</p>
 <span class="section-label">
 RESEARCH APPLICATIONS
 </span>
 
 
 <h2>
-Applying Computational Methods to Real Materials Systems
+Applying Computational Workflow to Real Materials Systems
 </h2>
 
 
 <p>
 
-The workshop applies computational workflows
-to representative materials research problems.
+The computational workflow is applied to different
+materials systems to investigate electronic properties,
+interfaces, and transport behavior.
 
 </p>
+
+
+
 <div class="case-showcase">
 
 
@@ -252,29 +367,29 @@ to representative materials research problems.
 </div>
 
 
-<div class="case-info">
+<div class="case-content">
 
 <h3>
 Graphene Electronic Structure
 </h3>
 
+
 <p>
-
-Electronic properties investigation
-using first-principles calculations.
-
+Investigate electronic properties of graphene
+through first-principles calculations.
 </p>
 
 
 <div class="case-tools">
 
-DFT · Quantum ESPRESSO · DOS
+DFT · Quantum ESPRESSO · DOS · Band Structure
 
 </div>
 
 </div>
 
 </div>
+
 
 
 
@@ -285,29 +400,30 @@ DFT · Quantum ESPRESSO · DOS
 </div>
 
 
-<div class="case-info">
+<div class="case-content">
 
 <h3>
 Graphene Ionic Liquid Interface
 </h3>
 
+
 <p>
-
-Atomic interaction analysis using
-molecular simulation approaches.
-
+Study molecular interactions and interface
+behavior using atomistic modeling approaches.
 </p>
 
 
 <div class="case-tools">
 
-PACKMOL · MD Simulation
+PACKMOL · Molecular Dynamics · Interface Modeling
 
 </div>
 
 </div>
 
 </div>
+
+
 
 
 
@@ -318,23 +434,22 @@ PACKMOL · MD Simulation
 </div>
 
 
-<div class="case-info">
+<div class="case-content">
 
 <h3>
-LiTFSI Electrolyte Transport
+LiTFSI-EMIM TFSI Electrolyte Transport
 </h3>
 
+
 <p>
-
-Study ionic transport mechanisms
-and structural properties.
-
+Analyze ionic transport mechanisms and
+structural properties in electrolyte systems.
 </p>
 
 
 <div class="case-tools">
 
-DC-DFTB-MD · RDF · Diffusion
+DC-DFTB-MD · MSD · RDF · Diffusion
 
 </div>
 
@@ -344,28 +459,399 @@ DC-DFTB-MD · RDF · Diffusion
 
 
 </div>
----
-
-<div class="final-banner">
+<span class="section-label">
+RESEARCH CONNECTION
+</span>
 
 
 <h2>
-Start Your Computational Research Journey
+Connecting Simulation to Scientific Questions
 </h2>
 
 
 <p>
 
-Explore the modules, follow the workflow,
-and experience computational materials discovery.
+Each computational approach is designed to answer
+specific research questions, from electronic behavior
+to atomic interactions and transport mechanisms.
 
 </p>
 
 
-<a href="start-here/workshop-guide/">
-Begin Workshop →
-</a>
+
+<div class="connection-grid">
+
+
+<div class="connection-card">
+
+
+<div class="connection-number">
+01
+</div>
+
+
+<h3>
+Electronic Properties
+</h3>
+
+
+<p>
+
+How do atomic structures determine
+electronic characteristics and material behavior?
+
+</p>
+
+
+<div class="connection-method">
+
+DFT · DOS · Band Structure
+
+</div>
 
 
 </div>
 
+
+
+<div class="connection-card">
+
+
+<div class="connection-number">
+02
+</div>
+
+
+<h3>
+Atomic Interactions
+</h3>
+
+
+<p>
+
+How do molecules and interfaces evolve
+during atomistic simulations?
+
+</p>
+
+
+<div class="connection-method">
+
+MD · PACKMOL · Interface Modeling
+
+</div>
+
+
+</div>
+
+
+
+<div class="connection-card">
+
+
+<div class="connection-number">
+03
+</div>
+
+
+<h3>
+Transport Mechanisms
+</h3>
+
+
+<p>
+
+How do ions move and interact inside
+complex electrolyte environments?
+
+</p>
+
+
+<div class="connection-method">
+
+MSD · RDF · Diffusion Analysis
+
+</div>
+
+
+</div>
+
+
+</div>
+<span class="section-label">
+LEARNING ROADMAP
+</span>
+
+
+<h2>
+A Structured Pathway for Computational Materials Science
+</h2>
+
+
+<p>
+
+Follow the learning sequence from fundamental concepts
+to advanced computational approaches for materials discovery.
+
+</p>
+<div class="roadmap">
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+01
+</div>
+
+<h3>
+Foundation
+</h3>
+
+<p>
+Introduction to materials informatics,
+computational concepts, and research workflow.
+</p>
+
+</div>
+
+
+<div class="roadmap-arrow">
+↓
+</div>
+
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+02
+</div>
+
+<h3>
+First-Principles Simulation
+</h3>
+
+<p>
+Electronic structure calculations,
+density functional theory, and Quantum ESPRESSO workflow.
+</p>
+
+</div>
+
+
+
+<div class="roadmap-arrow">
+↓
+</div>
+
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+03
+</div>
+
+<h3>
+Atomistic Simulation
+</h3>
+
+<p>
+Molecular dynamics,
+interface modeling, and atomic-scale interactions.
+</p>
+
+</div>
+<div class="roadmap-arrow">
+↓
+</div>
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+04
+</div>
+
+<h3>
+AI Acceleration
+</h3>
+
+<p>
+Machine learning potential
+and data-driven materials discovery.
+</p>
+
+</div>
+
+
+
+<div class="roadmap-arrow">
+↓
+</div>
+
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+05
+</div>
+
+<h3>
+HPC Environment
+</h3>
+
+<p>
+High-performance computing,
+parallel simulation, and workflow automation.
+</p>
+
+</div>
+
+
+
+<div class="roadmap-arrow">
+↓
+</div>
+
+
+
+<div class="roadmap-step">
+
+<div class="roadmap-number">
+06
+</div>
+
+<h3>
+Materials Discovery
+</h3>
+
+<p>
+Advanced materials prediction
+through integrated computational approaches.
+</p>
+
+</div>
+
+
+</div>
+<span class="section-label">
+CONTRIBUTOR
+</span>
+
+
+<h2>
+Workshop Development Team
+</h2>
+
+
+<p>
+
+Developed for computational materials science education
+and research workflow training.
+
+</p>
+
+
+
+<div class="contributor-card">
+
+
+<div class="contributor-avatar">
+
+L
+
+</div>
+
+
+
+<h3>
+Team MKI X BRIN
+</h3>
+
+
+<p class="contributor-role">
+
+Computational Materials Science Researcher
+
+</p>
+
+
+<p>
+
+Research focus:
+
+First-Principles Simulation,
+Atomistic Modeling,
+AI-Accelerated Materials Discovery,
+and High Performance Computing.
+
+</p>
+
+
+</div>
+<span class="section-label">
+WORKSHOP RESOURCES
+</span>
+
+
+<h2>
+Access Materials and Computational Resources
+</h2>
+
+
+<p>
+
+Explore documentation, simulation files,
+and learning materials developed for this workshop.
+
+</p>
+
+
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<h3>
+Documentation
+</h3>
+
+<p>
+Complete workshop guide and computational workflow.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+Simulation Files
+</h3>
+
+<p>
+Input files, structures, and computational examples.
+</p>
+
+</div>
+
+
+
+<div class="resource-card">
+
+<h3>
+Research Examples
+</h3>
+
+<p>
+Graphene, ionic liquid interface,
+and electrolyte transport cases.
+</p>
+
+</div>
+
+
+</div>
