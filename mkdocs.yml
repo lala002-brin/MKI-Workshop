@@ -13,27 +13,20 @@ repo_name: MKI-Workshop
 repo_url: https://github.com/lala002-brin/MKI-Workshop
 
 theme:
-
-  logo: assets/images/logo.png
-
-  favicon: assets/images/favicon.png
   name: material
 
-  custom_dir: docs/overrides
+  logo: assets/images/mki-logo.jpeg
 
-theme:
-  name: material
+  favicon: assets/images/mki-logo.jpeg
+
   features:
     - navigation.tabs
     - navigation.expand
-    - content.code.copy
-    - content.code.annotate
     - navigation.sections
-    - navigation.indexes
     - navigation.top
     - navigation.instant
     - navigation.tracking
-    - toc.follow
+    - content.code.copy
     - content.tabs.link
 
   palette:
@@ -320,7 +313,7 @@ extra_css:
 
   - stylesheets/extra.css
   - assets/stylesheets/chat.css
-
+  - stylesheets/home.css
 
 extra_javascript:
 
