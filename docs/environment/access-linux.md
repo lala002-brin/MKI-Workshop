@@ -1,447 +1,393 @@
-# Access & Linux
+<div class="access-linux">
 
-<div class="environment-hero environment-hero-compact">
+<div class="access-hero">
 
-<div class="environment-eyebrow">
-HPC ACCESS & LINUX
+<div class="access-kicker">
+GETTING STARTED
 </div>
 
 <h1>
 Access & Linux
 </h1>
 
-<p class="environment-description">
-Panduan singkat untuk terhubung ke HPC, memahami ruang kerja,
-dan mengenali struktur dasar Linux sebelum menjalankan perhitungan.
+<p>
+Mulai bekerja pada HPC melalui koneksi SSH, navigasi filesystem,
+dan command Linux dasar yang diperlukan untuk workflow komputasi.
 </p>
 
-<div class="environment-tags">
-<span>CONNECT</span>
-<span>WORKSPACE</span>
-<span>FILES</span>
-<span>TERMINAL</span>
+</div>
+
+
+<div class="access-flow">
+
+<div class="access-flow-item active">
+<span>01</span>
+<strong>Connect</strong>
+<small>SSH to HPC</small>
+</div>
+
+<div class="access-flow-line"></div>
+
+<div class="access-flow-item">
+<span>02</span>
+<strong>Navigate</strong>
+<small>Move directories</small>
+</div>
+
+<div class="access-flow-line"></div>
+
+<div class="access-flow-item">
+<span>03</span>
+<strong>Manage</strong>
+<small>Work with files</small>
+</div>
+
+<div class="access-flow-line"></div>
+
+<div class="access-flow-item">
+<span>04</span>
+<strong>Work</strong>
+<small>Prepare your project</small>
 </div>
 
 </div>
 
----
 
-## From Login to Your Project
+<div class="access-grid">
 
-<p class="section-description">
-Workflow dasar dimulai dari koneksi ke cluster, masuk ke ruang kerja,
-lalu berpindah ke direktori project yang akan digunakan.
-</p>
 
-<div class="execution-pipeline">
+<div class="access-panel">
+
+<div class="access-panel-head">
 
 <div>
 <span>01</span>
-<p>Connect</p>
+<h2>Connect to HPC</h2>
 </div>
 
-<div>→</div>
+<span class="access-badge">
+SSH
+</span>
+
+</div>
+
+<p>
+Gunakan SSH untuk membuka terminal pada login node HPC.
+</p>
+
+<div class="access-command">
+
+<span>CONNECT</span>
+
+<pre><code>ssh username@hostname</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>EXAMPLE</span>
+
+<pre><code>ssh user@hpc.example.ac.id</code></pre>
+
+</div>
+
+<div class="access-note">
+Gunakan username dan hostname yang diberikan oleh administrator
+HPC. Jangan membagikan password atau credential.
+</div>
+
+</div>
+
+
+<div class="access-panel">
+
+<div class="access-panel-head">
 
 <div>
 <span>02</span>
-<p>Locate</p>
+<h2>Navigate</h2>
 </div>
 
-<div>→</div>
+<span class="access-badge">
+FILESYSTEM
+</span>
+
+</div>
+
+<p>
+Kenali lokasi Anda sebelum membuat atau menjalankan file.
+</p>
+
+<div class="access-command">
+
+<span>WHERE AM I?</span>
+
+<pre><code>pwd</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>LIST FILES</span>
+
+<pre><code>ls -lh</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>CHANGE DIRECTORY</span>
+
+<pre><code>cd project/</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>GO HOME</span>
+
+<pre><code>cd ~</code></pre>
+
+</div>
+
+</div>
+
+
+<div class="access-panel">
+
+<div class="access-panel-head">
 
 <div>
 <span>03</span>
-<p>Navigate</p>
+<h2>Manage Files</h2>
 </div>
 
-<div>→</div>
+<span class="access-badge">
+LINUX
+</span>
+
+</div>
+
+<p>
+Gunakan command dasar untuk menyiapkan struktur calculation.
+</p>
+
+<div class="access-command">
+
+<span>CREATE DIRECTORY</span>
+
+<pre><code>mkdir -p input output scripts</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>COPY</span>
+
+<pre><code>cp input.in backup.in</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>MOVE / RENAME</span>
+
+<pre><code>mv old.in new.in</code></pre>
+
+</div>
+
+<div class="access-command">
+
+<span>REMOVE</span>
+
+<pre><code>rm file.out</code></pre>
+
+</div>
+
+</div>
+
+
+<div class="access-panel">
+
+<div class="access-panel-head">
 
 <div>
 <span>04</span>
-<p>Work</p>
+<h2>Prepare Your Workspace</h2>
 </div>
 
+<span class="access-badge">
+PROJECT
+</span>
+
 </div>
 
----
-
-## 01 · Connect to HPC
-
-<p class="section-description">
-HPC umumnya menyediakan akses melalui SSH. Gunakan terminal
-untuk membuat koneksi ke login node yang diberikan oleh administrator cluster.
+<p>
+Gunakan struktur sederhana agar input, script, output,
+dan analisis tetap terorganisasi.
 </p>
 
-### Connect
+<div class="access-tree">
 
-```bash
-ssh username@hpc.example.edu
-```
+<code>project/</code>
 
-Ganti:
+<div>├── input/</div>
+<div>├── scripts/</div>
+<div>├── output/</div>
+<div>└── analysis/</div>
 
-```text
-username
-```
+</div>
 
-dengan username HPC Anda.
+<div class="access-command">
 
-Contoh:
+<span>START</span>
 
-```bash
-ssh alice@hpc.example.edu
-```
-
-> Hostname, username, dan metode autentikasi mengikuti konfigurasi
-> cluster yang digunakan.
-
-### Setelah Login
-
-Periksa identitas akun:
-
-```bash
-whoami
-```
-
-Periksa lokasi saat ini:
-
-```bash
+<pre><code>cd project/
 pwd
-```
-
----
-
-## 02 · Kenali Ruang Kerja
-
-<p class="section-description">
-Sistem HPC biasanya menyediakan beberapa lokasi penyimpanan
-dengan fungsi yang berbeda. Nama dan kebijakan setiap lokasi
-bergantung pada cluster.
-</p>
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Lokasi</th>
-<th>Fungsi Umum</th>
-<th>Contoh Isi</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Home</td>
-<td>Menyimpan file konfigurasi dan file pribadi</td>
-<td><code>~/</code></td>
-</tr>
-
-<tr>
-<td>Project</td>
-<td>Menyimpan file penelitian dan project</td>
-<td><code>/project/...</code></td>
-</tr>
-
-<tr>
-<td>Scratch</td>
-<td>Ruang kerja sementara untuk perhitungan</td>
-<td><code>/scratch/...</code></td>
-</tr>
-
-</tbody>
-
-</table>
+ls -lh</code></pre>
 
 </div>
 
-> **Penting:** Tidak semua cluster menggunakan struktur storage
-> yang sama. Ikuti dokumentasi dan kebijakan cluster Anda.
+</div>
 
-### Home Directory
-
-Masuk ke home:
-
-```bash
-cd ~
-```
-
-Periksa isinya:
-
-```bash
-ls -lh
-```
-
----
-
-## 03 · Pahami Direktori dan Path
-
-<p class="section-description">
-Linux menggunakan struktur direktori bertingkat. Path menunjukkan
-lokasi sebuah file atau direktori di dalam filesystem.
-</p>
-
-### Absolute Path
-
-Absolute path dimulai dari root filesystem:
-
-```text
-/home/alice/project/input/calculation.in
-```
-
-### Relative Path
-
-Relative path menggunakan lokasi saat ini sebagai titik awal:
-
-```text
-input/calculation.in
-```
-
-Misalnya posisi Anda berada di:
-
-```text
-/home/alice/project/
-```
-
-Maka:
-
-```text
-input/calculation.in
-```
-
-merujuk ke:
-
-```text
-/home/alice/project/input/calculation.in
-```
-
----
-
-## 04 · Navigasi Dasar
-
-<p class="section-description">
-Gunakan beberapa perintah dasar berikut untuk berpindah
-dan memeriksa lokasi kerja.
-</p>
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Perintah</th>
-<th>Fungsi</th>
-<th>Contoh</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td><code>pwd</code></td>
-<td>Menampilkan lokasi saat ini</td>
-<td><code>pwd</code></td>
-</tr>
-
-<tr>
-<td><code>ls</code></td>
-<td>Menampilkan isi direktori</td>
-<td><code>ls</code></td>
-</tr>
-
-<tr>
-<td><code>ls -lh</code></td>
-<td>Menampilkan file dan ukuran</td>
-<td><code>ls -lh</code></td>
-</tr>
-
-<tr>
-<td><code>cd project/</code></td>
-<td>Masuk ke direktori</td>
-<td><code>cd project/</code></td>
-</tr>
-
-<tr>
-<td><code>cd ..</code></td>
-<td>Kembali satu tingkat</td>
-<td><code>cd ..</code></td>
-</tr>
-
-<tr>
-<td><code>cd ~</code></td>
-<td>Kembali ke home directory</td>
-<td><code>cd ~</code></td>
-</tr>
-
-</tbody>
-
-</table>
 
 </div>
 
-### Contoh
 
-```bash
-pwd
-ls -lh
-cd project/
-ls -lh
-```
+<div class="access-reference">
 
-Setelah berada di project:
+<div class="access-reference-head">
 
-```bash
-cd input/
-ls -lh
-```
+<div>
 
----
-
-## 05 · Memahami Struktur Project
-
-<p class="section-description">
-Project komputasi sebaiknya memiliki struktur yang jelas agar
-input, script, output, dan analisis mudah ditemukan.
-</p>
-
-```text
-project/
-├── input/
-│   ├── calculation.in
-│   └── structure.xyz
-│
-├── scripts/
-│   └── run.slurm
-│
-├── output/
-│
-└── analysis/
-```
-
-Periksa struktur dasar:
-
-```bash
-ls -lh
-```
-
-Periksa input:
-
-```bash
-ls -lh input/
-```
-
-Periksa script:
-
-```bash
-ls -lh scripts/
-```
-
----
-
-## 06 · File dan Direktori
-
-<p class="section-description">
-Sebelum menjalankan kalkulasi, pastikan Anda dapat membedakan
-file input, script, output, dan direktori kerja.
-</p>
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Item</th>
-<th>Contoh</th>
-<th>Peran</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Input</td>
-<td><code>calculation.in</code></td>
-<td>Parameter dan konfigurasi perhitungan</td>
-</tr>
-
-<tr>
-<td>Structure</td>
-<td><code>structure.xyz</code></td>
-<td>Data struktur atom</td>
-</tr>
-
-<tr>
-<td>Script</td>
-<td><code>run.slurm</code></td>
-<td>Instruksi untuk scheduler</td>
-</tr>
-
-<tr>
-<td>Output</td>
-<td><code>calculation.out</code></td>
-<td>Hasil dan log perhitungan</td>
-</tr>
-
-<tr>
-<td>Analysis</td>
-<td><code>analysis/</code></td>
-<td>File untuk analisis hasil</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
----
-
-## 07 · First Login Checklist
-
-<div class="checklist">
-
-<div>Koneksi SSH berhasil</div>
-
-<div>Username sudah terverifikasi</div>
-
-<div>Home directory sudah ditemukan</div>
-
-<div>Project directory sudah ditemukan</div>
-
-<div>Struktur project sudah dipahami</div>
-
-<div>Input file sudah ditemukan</div>
-
-<div>Script directory sudah ditemukan</div>
-
-</div>
-
----
-
-## What Comes Next?
-
-<p class="section-description">
-Setelah memahami akses, filesystem, dan navigasi dasar,
-gunakan Command Line sebagai referensi perintah sehari-hari.
-</p>
-
-<div class="environment-banner">
+<span>QUICK REFERENCE</span>
 
 <h2>
-Ready for the Terminal
+Essential Linux Commands
+</h2>
+
+</div>
+
+<p>
+Gunakan halaman Command Line untuk referensi yang lebih lengkap.
+</p>
+
+</div>
+
+
+<div class="access-table">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Command</th>
+<th>Function</th>
+<th>Example</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>pwd</code></td>
+<td>Melihat lokasi saat ini</td>
+<td><code>pwd</code></td>
+</tr>
+
+<tr>
+<td><code>ls</code></td>
+<td>Melihat isi directory</td>
+<td><code>ls -lh</code></td>
+</tr>
+
+<tr>
+<td><code>cd</code></td>
+<td>Berpindah directory</td>
+<td><code>cd project/</code></td>
+</tr>
+
+<tr>
+<td><code>mkdir</code></td>
+<td>Membuat directory</td>
+<td><code>mkdir output</code></td>
+</tr>
+
+<tr>
+<td><code>cp</code></td>
+<td>Menyalin file</td>
+<td><code>cp a.in b.in</code></td>
+</tr>
+
+<tr>
+<td><code>mv</code></td>
+<td>Memindahkan atau mengganti nama</td>
+<td><code>mv old.in new.in</code></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="access-safety">
+
+<div>
+
+<span>SAFE WORKFLOW</span>
+
+<h2>
+Check before you change
 </h2>
 
 <p>
-Anda sudah siap berpindah dari dasar akses Linux
-ke command yang digunakan dalam workflow HPC.
+Biasakan menjalankan <code>pwd</code> dan <code>ls</code> sebelum
+mengubah atau menghapus file. Pastikan lokasi dan nama file sudah benar.
 </p>
+
+</div>
+
+<pre><code>pwd
+ls -lh</code></pre>
+
+</div>
+
+
+<div class="access-next">
+
+<div>
+
+<span>NEXT STEP</span>
+
+<h2>
+Ready for the terminal?
+</h2>
+
+<p>
+Pelajari command yang lebih lengkap sebelum menyiapkan
+software dan menjalankan calculation.
+</p>
+
+</div>
+
+<div class="access-actions">
 
 <a href="../command-line/">
 Command Line →
 </a>
+
+<a href="../software-environment/">
+Software Environment →
+</a>
+
+</div>
+
+</div>
 
 </div>

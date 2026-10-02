@@ -1,421 +1,381 @@
-# Software Environment
+<div class="software-environment">
 
-<div class="environment-hero environment-hero-compact">
+<div class="software-hero">
 
-<div class="environment-eyebrow">
-HPC SOFTWARE ENVIRONMENT
+<div class="software-kicker">
+COMPUTATIONAL ENVIRONMENT
 </div>
 
-<h1>
-Software Environment
-</h1>
+<h1>Software Environment</h1>
 
-<p class="environment-description">
-Siapkan dan periksa software yang diperlukan sebelum menjalankan
-perhitungan pada sistem HPC.
+<p>
+Siapkan compiler, library, dan aplikasi komputasi yang diperlukan
+sebelum menjalankan calculation pada HPC.
 </p>
 
-<div class="environment-tags">
-<span>CHECK</span>
-<span>LOAD</span>
-<span>VERIFY</span>
-<span>RUN</span>
 </div>
 
-</div>
 
----
+<div class="software-flow">
 
-## Alur Singkat
-
-<p class="section-description">
-Sebelum mengirim job, pastikan software yang diperlukan tersedia,
-environment sudah dimuat, dan executable dapat ditemukan.
-</p>
-
-<div class="execution-pipeline">
-
-<div>
+<div class="software-flow-item active">
 <span>01</span>
-<p>Cek</p>
+<strong>Understand</strong>
+<small>Environment</small>
 </div>
 
-<div>→</div>
+<div class="software-flow-line"></div>
 
-<div>
+<div class="software-flow-item">
 <span>02</span>
-<p>Load</p>
+<strong>Load</strong>
+<small>Software</small>
 </div>
 
-<div>→</div>
+<div class="software-flow-line"></div>
 
-<div>
+<div class="software-flow-item">
 <span>03</span>
-<p>Verifikasi</p>
+<strong>Check</strong>
+<small>Installation</small>
 </div>
 
-<div>→</div>
+<div class="software-flow-line"></div>
 
-<div>
+<div class="software-flow-item">
 <span>04</span>
-<p>Run</p>
+<strong>Run</strong>
+<small>Calculation</small>
 </div>
 
 </div>
 
----
 
-## 01 · Cek Software
+<div class="software-overview">
 
-<p class="section-description">
-HPC biasanya menyediakan berbagai aplikasi melalui module system.
-Mulai dengan melihat software yang tersedia pada cluster.
-</p>
+<div class="software-overview-main">
 
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Perintah</th>
-<th>Fungsi</th>
-<th>Contoh</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td><code>module avail</code></td>
-<td>Melihat software yang tersedia</td>
-<td><code>module avail</code></td>
-</tr>
-
-<tr>
-<td><code>module avail quantum-espresso</code></td>
-<td>Mencari module Quantum ESPRESSO</td>
-<td><code>module avail quantum-espresso</code></td>
-</tr>
-
-<tr>
-<td><code>module list</code></td>
-<td>Melihat module yang sedang aktif</td>
-<td><code>module list</code></td>
-</tr>
-
-<tr>
-<td><code>which pw.x</code></td>
-<td>Memeriksa lokasi executable</td>
-<td><code>which pw.x</code></td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
----
-
-## 02 · Load Environment
-
-<p class="section-description">
-Setelah menemukan software yang diperlukan, muat module tersebut
-ke dalam environment terminal.
-</p>
-
-### Quantum ESPRESSO
-
-```bash
-module load quantum-espresso
-```
-
-Periksa module yang aktif:
-
-```bash
-module list
-```
-
-Periksa executable:
-
-```bash
-which pw.x
-```
-
-### LAMMPS
-
-```bash
-module load lammps
-```
-
-Periksa executable:
-
-```bash
-which lmp
-```
-
-> Nama module dan executable mengikuti konfigurasi HPC yang digunakan.
-
----
-
-## 03 · Verifikasi
-
-<p class="section-description">
-Environment yang berhasil dimuat belum cukup. Pastikan executable
-dapat dijalankan sebelum mengirim job.
-</p>
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Pemeriksaan</th>
-<th>Perintah</th>
-<th>Tujuan</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Module aktif</td>
-<td><code>module list</code></td>
-<td>Memastikan module sudah dimuat</td>
-</tr>
-
-<tr>
-<td>Executable</td>
-<td><code>which pw.x</code></td>
-<td>Memastikan program tersedia</td>
-</tr>
-
-<tr>
-<td>Executable LAMMPS</td>
-<td><code>which lmp</code></td>
-<td>Memastikan LAMMPS tersedia</td>
-</tr>
-
-<tr>
-<td>Compiler</td>
-<td><code>which gcc</code></td>
-<td>Melihat compiler yang digunakan</td>
-</tr>
-
-<tr>
-<td>MPI</td>
-<td><code>which mpirun</code></td>
-<td>Memeriksa MPI yang tersedia</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
----
-
-## 04 · Contoh Quantum ESPRESSO
-
-<p class="section-description">
-Untuk workflow Quantum ESPRESSO, environment perlu siap sebelum
-menjalankan tahap SCF, NSCF, DOS, atau Band Structure.
-</p>
-
-### Siapkan Environment
-
-```bash
-module load quantum-espresso
-```
-
-### Verifikasi
-
-```bash
-module list
-```
-
-```bash
-which pw.x
-```
-
-### Periksa Input
-
-```bash
-ls -lh input/
-```
-
-Contoh struktur:
-
-```text
-graphene/
-├── input/
-│   └── graphene_scf.in
-│
-├── scripts/
-│   └── run_scf.slurm
-│
-├── output/
-│
-└── analysis/
-```
-
-### Jalankan melalui SLURM
-
-```bash
-sbatch scripts/run_scf.slurm
-```
-
-Setelah job dikirim, lanjutkan ke:
-
-```bash
-squeue -u $USER
-```
-
----
-
-## 05 · Contoh LAMMPS
-
-<p class="section-description">
-Workflow LAMMPS mengikuti prinsip yang sama. Siapkan module,
-periksa executable, lalu gunakan script SLURM untuk menjalankan simulasi.
-</p>
-
-### Siapkan Environment
-
-```bash
-module load lammps
-```
-
-### Verifikasi
-
-```bash
-module list
-```
-
-```bash
-which lmp
-```
-
-### Periksa Input
-
-```bash
-ls -lh input/
-```
-
-### Jalankan Job
-
-```bash
-sbatch scripts/run.slurm
-```
-
-Pantau:
-
-```bash
-squeue -u $USER
-```
-
----
-
-## 06 · Jika Software Tidak Ditemukan
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Masalah</th>
-<th>Pemeriksaan</th>
-<th>Perintah</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Module tidak ditemukan</td>
-<td>Cari software yang tersedia</td>
-<td><code>module avail</code></td>
-</tr>
-
-<tr>
-<td>Executable tidak ditemukan</td>
-<td>Periksa module aktif</td>
-<td><code>module list</code></td>
-</tr>
-
-<tr>
-<td><code>pw.x</code> tidak ditemukan</td>
-<td>Periksa environment QE</td>
-<td><code>which pw.x</code></td>
-</tr>
-
-<tr>
-<td><code>lmp</code> tidak ditemukan</td>
-<td>Periksa environment LAMMPS</td>
-<td><code>which lmp</code></td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-Gunakan urutan sederhana:
-
-```text
-module avail
-      ↓
-module load SOFTWARE
-      ↓
-module list
-      ↓
-which EXECUTABLE
-```
-
-Jika executable sudah ditemukan, environment siap digunakan.
-
----
-
-## Environment Checklist
-
-<div class="checklist">
-
-<div>Software yang diperlukan sudah tersedia</div>
-
-<div>Module yang benar sudah dimuat</div>
-
-<div>Environment sudah diperiksa</div>
-
-<div>Executable sudah ditemukan</div>
-
-<div>Input file sudah tersedia</div>
-
-<div>Script SLURM sudah tersedia</div>
-
-<div>Job siap dikirim</div>
-
-</div>
-
----
-
-<div class="environment-banner">
+<span class="software-label">
+CORE CONCEPT
+</span>
 
 <h2>
-Environment Ready
+Environment menentukan software yang tersedia
 </h2>
 
 <p>
-Setelah software dan executable terverifikasi, lanjutkan ke
-Running Calculations untuk menyiapkan dan menjalankan job HPC.
+HPC biasanya menyediakan software melalui environment module.
+Anda dapat memilih versi compiler, library, dan aplikasi sesuai
+kebutuhan calculation.
 </p>
+
+</div>
+
+<div class="software-overview-code">
+
+<span>CHECK MODULE</span>
+
+<pre><code>module avail</code></pre>
+
+</div>
+
+</div>
+
+
+<div class="software-grid">
+
+
+<div class="software-card">
+
+<div class="software-card-top">
+
+<span class="software-number">01</span>
+
+<div>
+
+<h2>Melihat Software</h2>
+
+<p>
+Cari aplikasi dan versi yang tersedia pada cluster.
+</p>
+
+</div>
+
+</div>
+
+<div class="software-command">
+
+<span>LIST AVAILABLE SOFTWARE</span>
+
+<pre><code>module avail</code></pre>
+
+</div>
+
+<div class="software-command">
+
+<span>SEARCH</span>
+
+<pre><code>module avail 2&gt;&amp;1 | grep -i quantum</code></pre>
+
+</div>
+
+</div>
+
+
+<div class="software-card">
+
+<div class="software-card-top">
+
+<span class="software-number">02</span>
+
+<div>
+
+<h2>Memuat Software</h2>
+
+<p>
+Aktifkan software yang diperlukan sebelum menjalankan program.
+</p>
+
+</div>
+
+</div>
+
+<div class="software-command">
+
+<span>LOAD</span>
+
+<pre><code>module load software</code></pre>
+
+</div>
+
+<div class="software-command">
+
+<span>EXAMPLE</span>
+
+<pre><code>module load quantum-espresso</code></pre>
+
+</div>
+
+<div class="software-note">
+Nama module berbeda pada setiap cluster. Gunakan nama yang
+ditampilkan oleh <code>module avail</code>.
+</div>
+
+</div>
+
+
+<div class="software-card">
+
+<div class="software-card-top">
+
+<span class="software-number">03</span>
+
+<div>
+
+<h2>Memeriksa Environment</h2>
+
+<p>
+Pastikan software sudah aktif dan executable dapat ditemukan.
+</p>
+
+</div>
+
+</div>
+
+<div class="software-command">
+
+<span>LOADED MODULES</span>
+
+<pre><code>module list</code></pre>
+
+</div>
+
+<div class="software-command">
+
+<span>CHECK EXECUTABLE</span>
+
+<pre><code>which pw.x</code></pre>
+
+</div>
+
+</div>
+
+
+<div class="software-card">
+
+<div class="software-card-top">
+
+<span class="software-number">04</span>
+
+<div>
+
+<h2>Mengganti Versi</h2>
+
+<p>
+Gunakan versi yang sesuai dengan calculation dan script.
+</p>
+
+</div>
+
+</div>
+
+<div class="software-command">
+
+<span>UNLOAD</span>
+
+<pre><code>module unload software</code></pre>
+
+</div>
+
+<div class="software-command">
+
+<span>LOAD VERSION</span>
+
+<pre><code>module load software/version</code></pre>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="software-reference">
+
+<div class="software-reference-head">
+
+<div>
+
+<span>COMMON TOOLS</span>
+
+<h2>Software dalam Workflow</h2>
+
+</div>
+
+<p>
+Contoh peran software dalam workflow komputasi.
+</p>
+
+</div>
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>Software</th>
+<th>Peran</th>
+<th>Digunakan pada</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Quantum ESPRESSO</strong></td>
+<td>Perhitungan struktur elektronik dan optimasi</td>
+<td>First-principles</td>
+</tr>
+
+<tr>
+<td><strong>LAMMPS</strong></td>
+<td>Molecular dynamics</td>
+<td>Atomistic simulation</td>
+</tr>
+
+<tr>
+<td><strong>Python</strong></td>
+<td>Analisis dan post-processing</td>
+<td>Data analysis</td>
+</tr>
+
+<tr>
+<td><strong>MPI</strong></td>
+<td>Komunikasi proses paralel</td>
+<td>Parallel computing</td>
+</tr>
+
+<tr>
+<td><strong>Compiler</strong></td>
+<td>Membangun atau menjalankan aplikasi yang membutuhkan compiler</td>
+<td>Software environment</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="software-check">
+
+<div>
+
+<span>ENVIRONMENT CHECK</span>
+
+<h2>Periksa sebelum submit job</h2>
+
+<p>
+Jalankan pemeriksaan sederhana untuk memastikan environment
+sesuai dengan calculation yang akan dijalankan.
+</p>
+
+</div>
+
+<pre><code>module list
+which executable
+executable --version</code></pre>
+
+</div>
+
+
+<div class="software-warning">
+
+<strong>Perhatian</strong>
+
+<span>
+Jangan langsung menggunakan nama module dari cluster lain.
+Setiap HPC dapat memiliki struktur module, versi software,
+compiler, dan dependency yang berbeda.
+</span>
+
+</div>
+
+
+<div class="software-next">
+
+<div>
+
+<span>NEXT STEP</span>
+
+<h2>
+Environment siap. Jalankan calculation.
+</h2>
+
+<p>
+Setelah software dan environment terverifikasi,
+lanjutkan ke Running Calculations untuk menyiapkan dan
+mengirim job ke scheduler.
+</p>
+
+</div>
+
+<div class="software-actions">
 
 <a href="../running-calculations/">
 Running Calculations →
 </a>
+
+<a href="../script-library/">
+Script Library →
+</a>
+
+</div>
+
+</div>
 
 </div>
