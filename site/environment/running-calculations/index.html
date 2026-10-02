@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#running-calculations" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -691,26 +686,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Running Calculations
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -728,36 +703,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#from-input-to-result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From Input to Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2153,27 +2098,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#from-input-to-result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From Input to Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2241,154 +2165,423 @@
   
 
 
-<h1 id="running-calculations">Running Calculations</h1>
-<div class="environment-hero environment-hero-compact">
+<div class="running-page">
 
-<div class="environment-eyebrow">
-HPC JOB MANAGEMENT
+<div class="running-hero">
+
+<div class="running-kicker">
+HPC JOB WORKFLOW
 </div>
 
-<h1>
-Run Your Calculation
-</h1>
+<h1>Running Calculations</h1>
 
-<p class="environment-description">
-A practical workflow for taking a prepared computational model,
-submitting it to the HPC scheduler, monitoring the job, and
-verifying the resulting calculation.
+<p>
+Jalankan calculation dari input siap pakai hingga hasil terverifikasi.
 </p>
 
-<div class="environment-tags">
-<span>PREPARE</span>
-<span>EDIT</span>
-<span>SUBMIT</span>
-<span>MONITOR</span>
-<span>VERIFY</span>
+</div>
+
+
+<div class="running-flow">
+
+<div class="running-flow-item active">
+<span>01</span>
+<strong>Prepare</strong>
+<small>Check files</small>
+</div>
+
+<div class="running-flow-arrow">→</div>
+
+<div class="running-flow-item">
+<span>02</span>
+<strong>Submit</strong>
+<small>Send job</small>
+</div>
+
+<div class="running-flow-arrow">→</div>
+
+<div class="running-flow-item">
+<span>03</span>
+<strong>Monitor</strong>
+<small>Track job</small>
+</div>
+
+<div class="running-flow-arrow">→</div>
+
+<div class="running-flow-item">
+<span>04</span>
+<strong>Verify</strong>
+<small>Check result</small>
 </div>
 
 </div>
 
-<hr />
-<h2 id="from-input-to-result">From Input to Result</h2>
-<p class="section-description">
-The same basic workflow applies across the computational tools used
-in this workshop. Prepare the input, customize the job configuration,
-submit the calculation, monitor its progress, and verify the result.
-</p>
 
-<div class="execution-pipeline">
+<div class="running-grid">
+
+
+<div class="running-panel">
+
+<div class="running-panel-head">
 
 <div>
 <span>01</span>
-<p>Prepare</p>
+<h2>Before You Submit</h2>
 </div>
 
-<div>→</div>
+<span class="running-badge">
+CHECK
+</span>
+
+</div>
+
+<p class="running-muted">
+Pastikan komponen utama calculation sudah siap sebelum submission.
+</p>
+
+<div class="running-checks">
+
+<div>
+<span>✓</span>
+<strong>Input</strong>
+<small>File input tersedia</small>
+</div>
+
+<div>
+<span>✓</span>
+<strong>Script</strong>
+<small>Job script tersedia</small>
+</div>
+
+<div>
+<span>✓</span>
+<strong>Software</strong>
+<small>Environment tersedia</small>
+</div>
+
+<div>
+<span>✓</span>
+<strong>Resource</strong>
+<small>CPU, GPU, time sesuai</small>
+</div>
+
+</div>
+
+<div class="running-command">
+
+<span>CHECK PROJECT</span>
+
+<pre><code>cd project/
+ls -lh
+ls -lh input/
+ls -lh scripts/</code></pre>
+
+</div>
+
+<a class="running-link" href="../script-library/">
+Need a Script? Open Script Library →
+</a>
+
+</div>
+
+
+<div class="running-panel">
+
+<div class="running-panel-head">
 
 <div>
 <span>02</span>
-<p>Edit</p>
+<h2>Submit & Monitor</h2>
 </div>
 
-<div>→</div>
+<span class="running-badge">
+SLURM
+</span>
+
+</div>
+
+<p class="running-muted">
+Kirim job ke scheduler dan gunakan JOB ID untuk memantau proses.
+</p>
+
+<div class="running-command">
+
+<span>SUBMIT</span>
+
+<pre><code>sbatch scripts/run.slurm</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>QUEUE</span>
+
+<pre><code>squeue -u $USER</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>DETAIL</span>
+
+<pre><code>scontrol show job JOBID</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>HISTORY</span>
+
+<pre><code>sacct -j JOBID</code></pre>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="running-status">
+
+<div class="running-status-title">
+JOB STATUS
+</div>
+
+<div class="running-status-list">
+
+<div>
+<strong>PD</strong>
+<span>Pending</span>
+<small>Menunggu resource</small>
+</div>
+
+<div>
+<strong>R</strong>
+<span>Running</span>
+<small>Job sedang berjalan</small>
+</div>
+
+<div>
+<strong>CG</strong>
+<span>Completing</span>
+<small>Proses akhir</small>
+</div>
+
+<div>
+<strong>CD</strong>
+<span>Completed</span>
+<small>Job selesai</small>
+</div>
+
+<div>
+<strong>F</strong>
+<span>Failed</span>
+<small>Job gagal</small>
+</div>
+
+<div>
+<strong>CA</strong>
+<span>Cancelled</span>
+<small>Job dibatalkan</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="running-grid">
+
+
+<div class="running-panel">
+
+<div class="running-panel-head">
 
 <div>
 <span>03</span>
-<p>Submit</p>
+<h2>Read & Verify</h2>
 </div>
 
-<div>→</div>
+<span class="running-badge">
+OUTPUT
+</span>
+
+</div>
+
+<p class="running-muted">
+Periksa output aplikasi sebelum melanjutkan ke analisis.
+</p>
+
+<div class="running-command">
+
+<span>LIST OUTPUT</span>
+
+<pre><code>ls -lh output/</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>LAST OUTPUT</span>
+
+<pre><code>tail -n 50 output/calculation.out</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>LIVE OUTPUT</span>
+
+<pre><code>tail -f output/calculation.out</code></pre>
+
+</div>
+
+<div class="running-command">
+
+<span>FIND ERROR</span>
+
+<pre><code>grep -i "error" output/calculation.out</code></pre>
+
+</div>
+
+<div class="running-verify">
+
+<div>
+<span>✓</span>
+Output tersedia
+</div>
+
+<div>
+<span>✓</span>
+Tidak ada error kritis
+</div>
+
+<div>
+<span>✓</span>
+Pesan penyelesaian tersedia
+</div>
+
+<div>
+<span>✓</span>
+Hasil sesuai kebutuhan
+</div>
+
+</div>
+
+</div>
+
+
+<div class="running-panel">
+
+<div class="running-panel-head">
 
 <div>
 <span>04</span>
-<p>Monitor</p>
+<h2>Troubleshooting</h2>
 </div>
 
-<div>→</div>
+<span class="running-badge">
+DIAGNOSE
+</span>
+
+</div>
+
+<div class="running-problems">
 
 <div>
-<span>05</span>
-<p>Verify</p>
+<strong>Job Pending</strong>
+<p>
+Periksa partition, resource request, dan antrean scheduler.
+</p>
+</div>
+
+<div>
+<strong>Job Failed</strong>
+<p>
+Periksa status job, output, input, path, dan software.
+</p>
+</div>
+
+<div>
+<strong>Resource Problem</strong>
+<p>
+Periksa CPU, GPU, memory, node, dan wall time.
+</p>
 </div>
 
 </div>
 
-<hr />
-<h1 id="01-quick-start">01 · Quick Start</h1>
-<p class="section-description">
-Already have an input file and a SLURM script?
-Use these commands to move directly from your project to the HPC queue.
+<div class="running-command">
+
+<span>DIAGNOSTIC</span>
+
+<pre><code>squeue -u $USER
+scontrol show job JOBID
+sacct -j JOBID
+tail -n 50 output/calculation.out
+grep -i "error" output/calculation.out</code></pre>
+
+</div>
+
+<div class="running-cancel">
+
+<strong>Cancel a job</strong>
+
+<code>scancel JOBID</code>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="running-quick">
+
+<div class="running-quick-head">
+
+<div>
+<span>QUICK REFERENCE</span>
+<h2>Essential Commands</h2>
+</div>
+
+<p>
+Perintah utama untuk workflow harian.
 </p>
 
-<div class="quickstart">
+</div>
 
-<div class="quickstart-step">
-
-<span>01</span>
+<div class="running-command-table">
 
 <div>
-<strong>Enter the project</strong>
-
-<code>cd project/</code>
-</div>
-
-</div>
-
-<div class="quickstart-step">
-
-<span>02</span>
-
-<div>
-<strong>Check the files</strong>
-
-<code>ls -lh</code>
-</div>
-
-</div>
-
-<div class="quickstart-step">
-
-<span>03</span>
-
-<div>
-<strong>Submit the job</strong>
-
+<span>SUBMIT</span>
 <code>sbatch scripts/run.slurm</code>
 </div>
 
-</div>
-
-<div class="quickstart-step">
-
-<span>04</span>
-
 <div>
-<strong>Check the queue</strong>
-
+<span>QUEUE</span>
 <code>squeue -u $USER</code>
 </div>
 
+<div>
+<span>DETAIL</span>
+<code>scontrol show job JOBID</code>
 </div>
-
-<div class="quickstart-step">
-
-<span>05</span>
 
 <div>
-<strong>Monitor output</strong>
-
-<code>tail -f output/calculation.out</code>
+<span>HISTORY</span>
+<code>sacct -j JOBID</code>
 </div>
-
-</div>
-
-<div class="quickstart-step">
-
-<span>06</span>
 
 <div>
-<strong>Verify the result</strong>
+<span>OUTPUT</span>
+<code>tail -n 50 output/calculation.out</code>
+</div>
 
+<div>
+<span>ERROR</span>
 <code>grep -i "error" output/calculation.out</code>
 </div>
 
@@ -2396,498 +2589,37 @@ Use these commands to move directly from your project to the HPC queue.
 
 </div>
 
-<blockquote>
-<p><strong>Already have a job script?</strong> Start with <code>sbatch</code> and keep the
-returned JOB ID for monitoring.</p>
-</blockquote>
-<hr />
-<h1 id="02-prepare-your-job">02 · Prepare Your Job</h1>
-<p class="section-description">
-Keep the calculation organized before submitting it to the scheduler.
-Separate inputs, scripts, outputs, and analysis files.
-</p>
 
-<div class="highlight"><pre><span></span><code>project/
-├── input/
-│   └── calculation.in
-│
-├── scripts/
-│   └── run.slurm
-│
-├── output/
-│
-└── analysis/
-</code></pre></div>
-<p>Check the project:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh
-</code></pre></div>
-<p>Check the input files:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>input/
-</code></pre></div>
-<p>Check the job scripts:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>scripts/
-</code></pre></div>
-<p>Check the output directory:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-ld<span class="w"> </span>output/
-</code></pre></div>
-<p>Before submission:</p>
-<div class="checklist">
-
-<div>● Input file exists</div>
-
-<div>● Job script exists</div>
-
-<div>● Output directory exists</div>
-
-<div>● Required software is available</div>
-
-<div>● Resource request matches the calculation</div>
-
-</div>
-
-<hr />
-<h1 id="03-edit-the-job-script">03 · Edit the Job Script</h1>
-<p class="section-description">
-The SLURM script controls how the calculation enters the HPC system.
-Edit the example directly in the browser. Your changes remain local
-to the current browser session and do not modify the original page.
-</p>
-
-<div class="hpc-editor"
-     data-filename="run.slurm"
-     data-language="SLURM / Bash">
-
-<textarea>
-#!/bin/bash
-
-#SBATCH --job-name=calculation
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load software
-
-application \
-    -in input/calculation.in \
-    > output/calculation.out
-</textarea>
-
-</div>
-
-<h2 id="what-usually-changes">What Usually Changes?</h2>
-<p>For a new calculation, users commonly review:</p>
-<div class="highlight"><pre><span></span><code>Job name
-Partition
-Number of nodes
-Number of tasks
-Wall time
-Input filename
-Output filename
-</code></pre></div>
-<p>For example:</p>
-<div class="highlight"><pre><span></span><code>#SBATCH --job-name=graphene_scf
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-</code></pre></div>
-<p>Do not change resource or partition settings without considering
-the requirements and policies of the target HPC system.</p>
-<hr />
-<h1 id="04-edit-the-simulation-input">04 · Edit the Simulation Input</h1>
-<p class="section-description">
-The simulation input defines the scientific parameters of the
-calculation. Edit the example directly when adapting it to a new
-calculation.
-</p>
-
-<h2 id="quantum-espresso">Quantum ESPRESSO</h2>
-<div class="hpc-editor"
-     data-filename="graphene_scf.in"
-     data-language="Quantum ESPRESSO">
-
-<textarea>
-&CONTROL
-    calculation = 'scf'
-    prefix = 'graphene'
-    pseudo_dir = './pseudo/'
-    outdir = './tmp/'
-/
-
-&SYSTEM
-    ibrav = 4
-    celldm(1) = 4.65
-    nat = 2
-    ntyp = 1
-    ecutwfc = 40
-    ecutrho = 320
-/
-
-&ELECTRONS
-    conv_thr = 1.0d-8
-    mixing_beta = 0.7
-/
-
-ATOMIC_SPECIES
-C 12.011 C.pbe-n-kjpaw_psl.1.0.0.UPF
-
-ATOMIC_POSITIONS crystal
-C 0.000000 0.000000 0.000000
-C 0.333333 0.666667 0.000000
-
-K_POINTS automatic
-12 12 1 0 0 0
-</textarea>
-
-</div>
-
-<h2 id="lammps">LAMMPS</h2>
-<div class="hpc-editor"
-     data-filename="in.lammps"
-     data-language="LAMMPS">
-
-<textarea>
-# Graphene molecular dynamics example
-
-units           metal
-dimension       3
-boundary        p p p
-atom_style      atomic
-
-read_data       input/graphene.data
-
-pair_style      airebo 3.0
-pair_coeff      * * CH.airebo C
-
-neighbor        2.0 bin
-neigh_modify    delay 0 every 1 check yes
-
-timestep        0.001
-
-thermo          100
-thermo_style    custom step temp pe ke etotal
-
-velocity        all create 300.0 12345 mom yes rot no
-
-fix             1 all nvt temp 300.0 300.0 0.1
-
-dump            1 all atom 1000 output/graphene.lammpstrj
-
-run             10000
-</textarea>
-
-</div>
-
-<blockquote>
-<p><strong>Editing principle:</strong> change only the parameters required for your
-calculation. Keep the original example available so that you can
-restore it when necessary.</p>
-</blockquote>
-<hr />
-<h1 id="05-submit-monitor">05 · Submit &amp; Monitor</h1>
-<p class="section-description">
-After checking the input and job script, submit the calculation
-to SLURM and monitor the returned JOB ID.
-</p>
-
-<h2 id="submit-the-job">Submit the Job</h2>
-<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>scripts/run.slurm
-</code></pre></div>
-<p>A successful submission may return:</p>
-<div class="highlight"><pre><span></span><code>Submitted batch job 38142
-</code></pre></div>
-<p>Record:</p>
-<div class="highlight"><pre><span></span><code>38142
-</code></pre></div>
-<p>as the JOB ID.</p>
-<h2 id="check-the-queue">Check the Queue</h2>
-<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
-</code></pre></div>
-<p>Common job states include:</p>
-<div class="highlight"><pre><span></span><code>PD
-</code></pre></div>
-<p>Pending.</p>
-<div class="highlight"><pre><span></span><code>R
-</code></pre></div>
-<p>Running.</p>
-<div class="highlight"><pre><span></span><code>CG
-</code></pre></div>
-<p>Completing.</p>
-<div class="highlight"><pre><span></span><code>CD
-</code></pre></div>
-<p>Completed.</p>
-<h2 id="inspect-a-specific-job">Inspect a Specific Job</h2>
-<p>Replace <code>JOBID</code> with the ID returned by <code>sbatch</code>:</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>JOBID
-</code></pre></div>
-<h2 id="monitor-the-output">Monitor the Output</h2>
-<p>Follow the application output:</p>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Show the latest lines:</p>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Stop live monitoring with:</p>
-<div class="highlight"><pre><span></span><code>Ctrl + C
-</code></pre></div>
-<hr />
-<h1 id="06-verify-the-result">06 · Verify the Result</h1>
-<p class="section-description">
-A completed scheduler state does not automatically guarantee
-a successful scientific calculation. Inspect the application
-output before beginning analysis.
-</p>
-
-<h2 id="inspect-output-files">Inspect Output Files</h2>
-<p>List the generated files:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>output/
-</code></pre></div>
-<p>Inspect the final output:</p>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Search for errors:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error"</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Search for warnings:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"warning"</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<h2 id="quantum-espresso_1">Quantum ESPRESSO</h2>
-<p>Quantum ESPRESSO calculations commonly report successful completion
-with:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"JOB DONE"</span><span class="w"> </span>output/graphene_scf.out
-</code></pre></div>
-<p>If the expected completion message does not appear, inspect the
-output file for the cause.</p>
-<h2 id="verify-before-analysis">Verify Before Analysis</h2>
-<p>Use this sequence:</p>
-<div class="highlight"><pre><span></span><code>JOB
- ↓
-SCHEDULER COMPLETED
- ↓
-OUTPUT EXISTS
- ↓
-EXPECTED COMPLETION MESSAGE
- ↓
-NO CRITICAL ERROR
- ↓
-READY FOR ANALYSIS
-</code></pre></div>
-<hr />
-<h1 id="07-troubleshooting">07 · Troubleshooting</h1>
-<div class="troubleshooting-grid">
+<div class="running-complete">
 
 <div>
 
-<h3>
-Job stays pending
-</h3>
+<span>CALCULATION COMPLETE?</span>
+
+<h2>Verify first. Analyze next.</h2>
 
 <p>
-Check the job state, requested resources, partition,
-and current queue conditions.
+Setelah output terverifikasi, lanjutkan ke research case
+yang sesuai dengan calculation Anda.
 </p>
 
 </div>
 
-<div>
+<div class="running-actions">
 
-<h3>
-Command not found
-</h3>
-
-<p>
-Check the software environment and verify that the
-required executable is available.
-</p>
-
-</div>
-
-<div>
-
-<h3>
-Job fails immediately
-</h3>
-
-<p>
-Inspect the SLURM output, application output,
-input path, and software configuration.
-</p>
-
-</div>
-
-<div>
-
-<h3>
-Calculation stops unexpectedly
-</h3>
-
-<p>
-Check wall time, memory, resource allocation,
-and application error messages.
-</p>
-
-</div>
-
-</div>
-
-<h2 id="useful-commands">Useful Commands</h2>
-<p>Check your jobs:</p>
-<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
-</code></pre></div>
-<p>Inspect a job:</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>JOBID
-</code></pre></div>
-<p>Inspect output:</p>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Search for errors:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error"</span><span class="w"> </span>output/calculation.out
-</code></pre></div>
-<p>Cancel a job:</p>
-<div class="highlight"><pre><span></span><code>scancel<span class="w"> </span>JOBID
-</code></pre></div>
-<hr />
-<h1 id="application-recipes">Application Recipes</h1>
-<p class="section-description">
-The application changes from one research workflow to another,
-but the HPC lifecycle remains consistent.
-</p>
-
-<div class="environment-cards">
-
-<div class="environment-card">
-
-<div class="environment-card-label">
-DFT
-</div>
-
-<h2>
-Quantum ESPRESSO
-</h2>
-
-<p>
-Edit the input, configure the SLURM script, submit the calculation,
-and verify the electronic structure output.
-</p>
-
-<a href="../../hands-on-project/research-cases/graphene/">
-Graphene Research Case →
+<a href="../script-library/">
+Script Library
 </a>
-
-</div>
-
-<div class="environment-card">
-
-<div class="environment-card-label">
-MOLECULAR DYNAMICS
-</div>
-
-<h2>
-LAMMPS
-</h2>
-
-<p>
-Edit the molecular dynamics input, submit the workload,
-and inspect the resulting trajectory.
-</p>
-
-<a href="../../hands-on-project/research-cases/graphene-ionic-liquid-interface/">
-Interface Research Case →
-</a>
-
-</div>
-
-<div class="environment-card">
-
-<div class="environment-card-label">
-ATOMISTIC SIMULATION
-</div>
-
-<h2>
-DC-DFTB-MD
-</h2>
-
-<p>
-Prepare the input and job configuration, run the simulation,
-and generate trajectory data for analysis.
-</p>
-
-<a href="../../hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/">
-Electrolyte Research Case →
-</a>
-
-</div>
-
-<div class="environment-card">
-
-<div class="environment-card-label">
-MACHINE LEARNING
-</div>
-
-<h2>
-MACE
-</h2>
-
-<p>
-Prepare the Python workflow, configure the computational resources,
-and run the machine learning workflow on the HPC system.
-</p>
 
 <a href="../../hands-on-project/">
-Explore Computational Workflows →
+Research Cases
 </a>
 
 </div>
 
 </div>
 
-<hr />
-<h1 id="hpc-job-checklist">HPC Job Checklist</h1>
-<div class="checklist">
-
-<div>● Input prepared</div>
-
-<div>● Input reviewed</div>
-
-<div>● SLURM script customized</div>
-
-<div>● Software environment verified</div>
-
-<div>● Resources reviewed</div>
-
-<div>● Job submitted</div>
-
-<div>● JOB ID recorded</div>
-
-<div>● Queue monitored</div>
-
-<div>● Output inspected</div>
-
-<div>● Calculation verified</div>
-
 </div>
-
-<hr />
-<div class="environment-banner">
-
-<h2>
-Ready for Analysis
-</h2>
-
-<p>
-Once the calculation has completed successfully, move to the
-appropriate research case and follow its analysis workflow.
-</p>
-
-<a href="../../hands-on-project/">
-Explore Research Cases →
-</a>
-
-</div>
-<p>```</p>
 
 
 
