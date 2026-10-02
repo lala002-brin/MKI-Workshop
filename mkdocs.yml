@@ -187,4 +187,5 @@ extra_javascript:
   - javascripts/features-reveal.js 
   - javascripts/workflow-flow.js  
   - javascripts/research-reveal.js
+  - javascripts/file-preview.js
   - javascripts/scroll-reveal.js
