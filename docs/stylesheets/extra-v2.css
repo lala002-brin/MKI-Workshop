@@ -8371,3 +8371,195 @@ grid-template-columns:1fr;
     }
 
 }
+/* =========================================
+   QUANTUM SIMULATION · FINAL POLISH
+   ========================================= */
+
+.module-header {
+    max-width: 850px;
+    margin: 1.25rem auto 1.75rem;
+    text-align: center;
+}
+
+.module-label {
+    margin-bottom: .7rem;
+    padding: .35rem .75rem;
+    font-size: .72rem;
+}
+
+.module-header h2 {
+    max-width: 760px;
+    margin: 0 auto .75rem;
+
+    font-size: clamp(1.8rem, 3vw, 2.45rem);
+    line-height: 1.12;
+}
+
+.module-description {
+    max-width: 680px;
+    margin: 0 auto 1rem;
+
+    color: #64748b;
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+.module-info {
+    gap: .4rem .55rem;
+}
+
+.module-info span {
+    padding: .28rem .6rem;
+    font-size: .75rem;
+}
+/* =========================================
+   QUANTUM MODULE CARDS
+   ========================================= */
+
+.md-typeset .grid.cards {
+    max-width: 900px;
+    margin: 1.5rem auto 2.5rem;
+    gap: .85rem;
+}
+
+.md-typeset .grid.cards > ul > li {
+    padding: 1.15rem 1.2rem;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 14px rgba(15, 23, 42, .035);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+    transform: translateY(-2px);
+}
+
+.md-typeset .grid.cards > ul > li p {
+    line-height: 1.55;
+}
+
+.md-typeset .grid.cards > ul > li hr {
+    margin: .8rem 0;
+}
+/* =========================================
+   QUANTUM SIMULATION · TOC
+   ========================================= */
+
+.md-sidebar--secondary {
+    width: 10.5rem;
+}
+
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+    padding-left: .5rem;
+}
+
+.md-nav--secondary {
+    font-size: .72rem;
+}
+
+.md-nav--secondary .md-nav__title {
+    font-size: .78rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.md-nav--secondary .md-nav__link {
+    padding: .35rem .45rem;
+    line-height: 1.4;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+    color: #2563eb;
+}
+/* =========================================
+   QUANTUM SECTION SPACING
+   ========================================= */
+
+.md-typeset h2 {
+    margin-top: 2.8rem;
+    margin-bottom: .8rem;
+}
+
+.md-typeset h2 + .section-intro {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.section-intro {
+    max-width: 680px;
+    margin: 0 auto 1.5rem;
+
+    font-size: .88rem;
+    line-height: 1.6;
+}
+/* =========================================
+   WORKFLOW · COMPACT
+   ========================================= */
+
+.workflow-steps {
+    max-width: 950px;
+    margin: 1.5rem auto 2.5rem;
+    gap: .7rem;
+}
+
+.workflow-step {
+    padding: 1rem .9rem;
+    border-radius: 12px;
+}
+
+.workflow-step span {
+    width: 28px;
+    height: 28px;
+    margin-bottom: .65rem;
+}
+
+.workflow-step h3 {
+    margin-bottom: .35rem;
+    font-size: .86rem;
+}
+
+.workflow-step p {
+    font-size: .72rem;
+    line-height: 1.5;
+}
+@media screen and (max-width: 900px) {
+
+    .md-sidebar--secondary {
+        display: none;
+    }
+
+    .module-header {
+        margin-top: 1rem;
+    }
+
+    .md-typeset .grid.cards {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .module-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .module-description {
+        font-size: .84rem;
+    }
+
+    .module-info {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .md-typeset .grid.cards {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+
+}

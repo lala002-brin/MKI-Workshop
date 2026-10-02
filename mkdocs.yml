@@ -79,6 +79,7 @@ plugins:
       execute: false
       include_source: true
 nav:
+
   - Home: index.md
 
   - Start Here:
@@ -92,8 +93,27 @@ nav:
       - Running Calculations: environment/running-calculations.md
 
   - Simulation:
-      - Quantum Simulation: quantum-simulation/index.md
-      - Atomistic Simulation: atomistic-simulation/index.md
+
+      - Quantum Simulation:
+          - Overview: quantum-simulation/index.md
+
+          - Theory:
+              - Theory Overview: quantum-simulation/theory/index.md
+              - Problem Statement: quantum-simulation/theory/problem-statement.md
+              - Hartree-Fock: quantum-simulation/theory/hartree-fock.md
+              - DFT Overview: quantum-simulation/theory/dft-overview.md
+              - Kohn-Sham Equation: quantum-simulation/theory/kohn-sham.md
+              - Computational Complexity: quantum-simulation/theory/computational-complexity.md
+              - Wannier: quantum-simulation/theory/wannier.md
+
+          - Setup:
+              - Installation: quantum-simulation/setup/installation.md
+
+          - Hands-on:
+              - SCF Calculation: quantum-simulation/hands-on/scf.md
+
+      - Atomistic Simulation:
+          - Overview: atomistic-simulation/index.md
 
   - AI:
       - AI Acceleration: ai/index.md
