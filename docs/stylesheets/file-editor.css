@@ -1,260 +1,696 @@
+(() => {
+
+  function initHPCEditors() {
+
+    document.querySelectorAll(".hpc-editor").forEach((container) => {
+
+      /* Jangan inisialisasi dua kali */
+      if (container.dataset.hpcInitialized === "true") {
+        return;
+      }
+
+      const textarea = container.querySelector("textarea");
+
+      if (!textarea) {
+        return;
+      }
+
+      container.dataset.hpcInitialized = "true";
+
+      const original = textarea.value.trim();
+
+      const filename =
+        container.dataset.filename || "file.txt";
+
+      const language =
+        container.dataset.language || "TEXT";
+
+
+      /* =====================================================
+         HEADER
+         ===================================================== */
+
+      const header = document.createElement("div");
+
+      header.className = "hpc-editor-header";
+
+
+      const fileInfo = document.createElement("div");
+
+      fileInfo.className = "hpc-editor-file";
+
+      fileInfo.innerHTML = `
+        <span class="hpc-editor-file-icon">▤</span>
+
+        <div>
+          <strong>${filename}</strong>
+          <small>${language}</small>
+        </div>
+      `;
+
+
+      /* =====================================================
+         ACTION BUTTONS
+         ===================================================== */
+
+      const actions = document.createElement("div");
+
+      actions.className = "hpc-editor-actions";
+
+
+      const resetButton = document.createElement("button");
+
+      resetButton.type = "button";
+      resetButton.className = "hpc-editor-button";
+      resetButton.textContent = "Reset";
+
+
+      const copyButton = document.createElement("button");
+
+      copyButton.type = "button";
+      copyButton.className = "hpc-editor-button";
+      copyButton.textContent = "Copy";
+
+
+      const downloadButton = document.createElement("button");
+
+      downloadButton.type = "button";
+      downloadButton.className =
+        "hpc-editor-button hpc-editor-button-primary";
+
+      downloadButton.textContent = "Download";
+
+
+      actions.appendChild(resetButton);
+      actions.appendChild(copyButton);
+      actions.appendChild(downloadButton);
+
+
+      header.appendChild(fileInfo);
+      header.appendChild(actions);
+
+
+      /* =====================================================
+         EDITOR BODY
+         ===================================================== */
+
+      const body = document.createElement("div");
+
+      body.className = "hpc-editor-body";
+
+
+      const lineNumbers = document.createElement("div");
+
+      lineNumbers.className = "hpc-editor-lines";
+
+
+      const editorArea = document.createElement("div");
+
+      editorArea.className = "hpc-editor-area";
+
+
+      const editor = document.createElement("textarea");
+
+      editor.className = "hpc-editor-textarea";
+
+      editor.spellcheck = false;
+
+      editor.wrap = "off";
+
+      editor.value = original;
+
+
+      editorArea.appendChild(editor);
+
+      body.appendChild(lineNumbers);
+
+      body.appendChild(editorArea);
+
+
+      /* =====================================================
+         FOOTER
+         ===================================================== */
+
+      const footer = document.createElement("div");
+
+      footer.className = "hpc-editor-footer";
+
+
+      const status = document.createElement("span");
+
+      status.className = "hpc-editor-status";
+
+      status.textContent = "● Local edit";
+
+
+      const counter = document.createElement("span");
+
+      counter.className = "hpc-editor-counter";
+
+
+      footer.appendChild(status);
+
+      footer.appendChild(counter);
+
+
+      /* =====================================================
+         BUILD EDITOR
+         ===================================================== */
+
+      container.innerHTML = "";
+
+      container.appendChild(header);
+
+      container.appendChild(body);
+
+      container.appendChild(footer);
+
+
+      /* =====================================================
+         UPDATE LINE NUMBERS
+         ===================================================== */
+
+      function updateEditor() {
+
+        const value = editor.value;
+
+        const lines = value.split("\n");
+
+        lineNumbers.innerHTML = "";
+
+        lines.forEach((_, index) => {
+
+          const line = document.createElement("span");
+
+          line.textContent = index + 1;
+
+          lineNumbers.appendChild(line);
+
+        });
+
+
+        counter.textContent =
+          `${lines.length} lines · ${value.length} characters`;
+      }
+
+
+      /* =====================================================
+         SCROLL SYNCHRONIZATION
+         ===================================================== */
+
+      function syncScroll() {
+
+        lineNumbers.scrollTop =
+          editor.scrollTop;
+      }
+
+
+      /* =====================================================
+         EDIT
+         ===================================================== */
+
+      editor.addEventListener("input", () => {
+
+        updateEditor();
+
+        status.textContent =
+          "● Modified locally";
+
+        status.classList.add("modified");
+
+      });
+
+
+      editor.addEventListener("scroll", syncScroll);
+
+
+      /* =====================================================
+         TAB SUPPORT
+         ===================================================== */
+
+      editor.addEventListener("keydown", (event) => {
+
+        if (event.key !== "Tab") {
+          return;
+        }
+
+        event.preventDefault();
+
+
+        const start =
+          editor.selectionStart;
+
+        const end =
+          editor.selectionEnd;
+
+
+        editor.value =
+          editor.value.substring(0, start) +
+          "    " +
+          editor.value.substring(end);
+
+
+        editor.selectionStart =
+          editor.selectionEnd =
+          start + 4;
+
+
+        updateEditor();
+
+      });
+
+
+      /* =====================================================
+         COPY
+         ===================================================== */
+
+      copyButton.addEventListener("click", async () => {
+
+        try {
+
+          await navigator.clipboard.writeText(
+            editor.value
+          );
+
+        } catch {
+
+          editor.select();
+
+          document.execCommand("copy");
+
+        }
+
+
+        copyButton.textContent = "Copied";
+
+        setTimeout(() => {
+
+          copyButton.textContent = "Copy";
+
+        }, 1500);
+
+      });
+
+
+      /* =====================================================
+         RESET
+         ===================================================== */
+
+      resetButton.addEventListener("click", () => {
+
+        const confirmed = confirm(
+          "Reset this file to the original example?"
+        );
+
+        if (!confirmed) {
+          return;
+        }
+
+
+        editor.value = original;
+
+        status.textContent =
+          "● Local edit";
+
+        status.classList.remove("modified");
+
+
+        updateEditor();
+
+        syncScroll();
+
+      });
+
+
+      /* =====================================================
+         DOWNLOAD
+         ===================================================== */
+
+      downloadButton.addEventListener("click", () => {
+
+        const blob = new Blob(
+          [editor.value],
+          {
+            type: "text/plain;charset=utf-8"
+          }
+        );
+
+
+        const url =
+          URL.createObjectURL(blob);
+
+
+        const link =
+          document.createElement("a");
+
+
+        link.href = url;
+
+        link.download = filename;
+
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+
+        URL.revokeObjectURL(url);
+
+      });
+
+
+      /* =====================================================
+         INITIALIZE
+         ===================================================== */
+
+      updateEditor();
+
+    });
+
+  }
+
+
+  /* =========================================================
+     NORMAL PAGE LOAD
+     ========================================================= */
+
+  if (document.readyState === "loading") {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      initHPCEditors
+    );
+
+  } else {
+
+    initHPCEditors();
+
+  }
+
+
+  /* =========================================================
+     MKDOCS MATERIAL INSTANT NAVIGATION
+     ========================================================= */
+
+  if (
+    typeof document$ !== "undefined" &&
+    document$ &&
+    typeof document$.subscribe === "function"
+  ) {
+
+    document$.subscribe(() => {
+
+      initHPCEditors();
+
+    });
+
+  }
+
+})();
 /* =========================================================
-   HPC INLINE FILE EDITOR
+   HPC INLINE EDITOR
+   Final UI
    ========================================================= */
 
 .hpc-editor {
   width: 100%;
-  margin: 28px 0 36px;
-  border: 1px solid #dce3ef;
+  margin: 1.5rem 0 2rem;
+  border: 1px solid #dbe3ef;
   border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 8px 30px rgba(20, 45, 90, 0.08);
 }
 
-/* Header */
 
-.hpc-editor-header {
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.hpc-editor .hpc-editor-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 14px 16px;
+  gap: 1rem;
+  min-height: 64px;
+  padding: 12px 16px;
   background: #f7f9fc;
-  border-bottom: 1px solid #e1e6ef;
+  border-bottom: 1px solid #e1e7f0;
 }
 
-.hpc-editor-file {
+.hpc-editor .hpc-editor-file {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   min-width: 0;
 }
 
-.hpc-editor-file-icon {
-  width: 34px;
-  height: 34px;
+.hpc-editor .hpc-editor-file-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
   border-radius: 9px;
   background: #eaf0ff;
-  color: #2864e8;
+  color: #2864d7;
   font-size: 16px;
-  font-weight: 700;
 }
 
-.hpc-editor-file strong {
+.hpc-editor .hpc-editor-file strong {
   display: block;
-  color: #1d3159;
-  font-size: 14px;
+  color: #183568;
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1.3;
 }
 
-.hpc-editor-file small {
+.hpc-editor .hpc-editor-file small {
   display: block;
   margin-top: 2px;
-  color: #7b8aa5;
-  font-size: 11px;
+  color: #8492a8;
+  font-size: 12px;
+  line-height: 1.2;
 }
 
-/* Actions */
 
-.hpc-editor-actions {
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.hpc-editor .hpc-editor-actions {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
-.hpc-editor-button {
-  border: 1px solid #d8dfeb;
-  background: #ffffff;
-  color: #405473;
+.hpc-editor .hpc-editor-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 1px solid #d8e0ec;
   border-radius: 8px;
-  padding: 8px 13px;
+  background: #ffffff;
+  color: #40516d;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 600;
+  line-height: 1;
   cursor: pointer;
   transition:
     background 0.15s ease,
     border-color 0.15s ease,
+    color 0.15s ease,
     transform 0.15s ease;
 }
 
-.hpc-editor-button:hover {
-  background: #f0f4fa;
-  border-color: #c7d2e3;
+.hpc-editor .hpc-editor-button:hover {
+  background: #f0f5ff;
+  border-color: #b9cbed;
+  color: #245bc5;
 }
 
-.hpc-editor-button:active {
+.hpc-editor .hpc-editor-button:active {
   transform: translateY(1px);
 }
 
-.hpc-editor-button-primary {
-  background: #2864e8;
-  color: #ffffff;
-  border-color: #2864e8;
-}
-
-.hpc-editor-button-primary:hover {
-  background: #1e55cc;
-  border-color: #1e55cc;
+.hpc-editor .hpc-editor-button-primary {
+  border-color: #2864d7;
+  background: #2864d7;
   color: #ffffff;
 }
 
-/* Editor body */
+.hpc-editor .hpc-editor-button-primary:hover {
+  border-color: #1f55bd;
+  background: #1f55bd;
+  color: #ffffff;
+}
 
-.hpc-editor-body {
+
+/* =========================================================
+   EDITOR BODY
+   ========================================================= */
+
+.hpc-editor .hpc-editor-body {
   display: flex;
   width: 100%;
   min-height: 420px;
-  max-height: 650px;
   background: #fbfcfe;
 }
 
-/* Line numbers */
 
-.hpc-editor-lines {
+/* =========================================================
+   LINE NUMBERS
+   ========================================================= */
+
+.hpc-editor .hpc-editor-lines {
+  width: 56px;
   flex: 0 0 56px;
-  padding: 18px 12px 18px 0;
+  padding: 18px 10px 18px 0;
   overflow: hidden;
-  text-align: right;
-  user-select: none;
-  background: #f3f6fa;
-  border-right: 1px solid #e1e6ef;
-  color: #9aa8bc;
+  border-right: 1px solid #e3e8f1;
+  background: #f4f6fa;
+  color: #9aa7bb;
   font-family:
     "SFMono-Regular",
     Consolas,
     "Liberation Mono",
+    Menlo,
     monospace;
   font-size: 13px;
-  line-height: 1.75;
+  line-height: 1.65;
+  text-align: right;
+  user-select: none;
 }
 
-.hpc-editor-lines span {
+.hpc-editor .hpc-editor-lines span {
   display: block;
-  height: 22.75px;
+  height: 21.5px;
 }
 
-/* Text area */
 
-.hpc-editor-area {
+/* =========================================================
+   EDITOR AREA
+   ========================================================= */
+
+.hpc-editor .hpc-editor-area {
+  position: relative;
   flex: 1;
   min-width: 0;
   overflow: hidden;
 }
 
-.hpc-editor-textarea {
+.hpc-editor .hpc-editor-textarea {
   display: block;
   width: 100%;
-  height: 100%;
+  min-width: 100%;
   min-height: 420px;
-  max-height: 650px;
+  height: 420px;
   margin: 0;
   padding: 18px 20px;
-  resize: none;
-  overflow: auto;
   border: 0;
   outline: 0;
+  resize: vertical;
+  overflow: auto;
   background: #fbfcfe;
-  color: #263b5c;
+  color: #263957;
   font-family:
     "SFMono-Regular",
-    "Cascadia Code",
-    "Roboto Mono",
     Consolas,
     "Liberation Mono",
+    Menlo,
     monospace;
   font-size: 13px;
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
   white-space: pre;
   tab-size: 4;
+  box-sizing: border-box;
 }
 
-.hpc-editor-textarea:focus {
+.hpc-editor .hpc-editor-textarea:focus {
   background: #ffffff;
 }
 
-/* Scrollbar */
 
-.hpc-editor-textarea::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-.hpc-editor-textarea::-webkit-scrollbar-track {
-  background: #f1f4f8;
-}
-
-.hpc-editor-textarea::-webkit-scrollbar-thumb {
-  background: #c8d1df;
-  border-radius: 10px;
-}
-
-.hpc-editor-textarea::-webkit-scrollbar-thumb:hover {
-  background: #aeb9ca;
-}
-
-/* Footer */
-
-.hpc-editor-footer {
+.hpc-editor .hpc-editor-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 15px;
+  min-height: 42px;
+  padding: 8px 16px;
+  border-top: 1px solid #e1e7f0;
   background: #f7f9fc;
-  border-top: 1px solid #e1e6ef;
-  color: #8492a8;
-  font-size: 11px;
+  color: #687993;
+  font-size: 12px;
 }
 
-.hpc-editor-status {
-  color: #27a866;
-  font-weight: 600;
+.hpc-editor .hpc-editor-status {
+  color: #52647e;
+  font-weight: 500;
 }
 
-.hpc-editor-status.modified {
-  color: #d28a18;
+.hpc-editor .hpc-editor-status.modified {
+  color: #2864d7;
 }
 
-.hpc-editor-counter {
+.hpc-editor .hpc-editor-counter {
+  color: #8794a8;
   font-family:
     "SFMono-Regular",
     Consolas,
+    "Liberation Mono",
+    Menlo,
     monospace;
+  font-size: 11px;
 }
 
-/* Mobile */
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
 
-  .hpc-editor-header {
+  .hpc-editor .hpc-editor-header {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .hpc-editor-actions {
+  .hpc-editor .hpc-editor-actions {
     width: 100%;
   }
 
-  .hpc-editor-button {
+  .hpc-editor .hpc-editor-button {
     flex: 1;
   }
 
-  .hpc-editor-body {
+  .hpc-editor .hpc-editor-body {
     min-height: 360px;
   }
 
-  .hpc-editor-textarea {
+  .hpc-editor .hpc-editor-textarea {
     min-height: 360px;
-    padding: 15px;
+    height: 360px;
+    padding: 14px;
     font-size: 12px;
   }
 
-  .hpc-editor-lines {
-    flex-basis: 46px;
-    padding-right: 9px;
+  .hpc-editor .hpc-editor-lines {
+    width: 44px;
+    flex-basis: 44px;
+    padding-right: 8px;
     font-size: 11px;
   }
 
