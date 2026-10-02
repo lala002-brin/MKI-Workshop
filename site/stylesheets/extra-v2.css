@@ -7072,3 +7072,528 @@ grid-template-columns:1fr;
     padding: 1.5rem;
     margin: 1.5rem auto;
 }
+/* =========================================
+   NAVBAR FINAL
+   ========================================= */
+
+.md-header {
+    min-height: 58px;
+}
+
+.md-header__inner {
+    min-height: 58px;
+    padding: 0 1rem;
+}
+
+.md-header__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0.45rem;
+}
+
+.md-header__button.md-logo img {
+    width: 34px;
+    height: 34px;
+}
+
+
+/* Main navigation */
+
+.md-tabs {
+    min-height: 42px;
+}
+
+.md-tabs__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    min-height: 42px;
+}
+
+.md-tabs__item {
+    height: 42px;
+}
+
+.md-tabs__link {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.md-tabs__link--active {
+    font-weight: 700;
+}
+
+
+/* Search */
+
+.md-search {
+    margin-left: auto;
+}
+
+.md-search__form {
+    height: 38px;
+}
+
+.md-search__input {
+    height: 38px;
+    border-radius: 10px;
+}
+
+
+/* Header spacing */
+
+.md-header__option {
+    margin-left: 0.25rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .md-tabs__link {
+        padding: 0 0.55rem;
+        font-size: 0.78rem;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .md-tabs__link {
+        padding: 0 0.4rem;
+        font-size: 0.75rem;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+    .md-tabs {
+        display: none;
+    }
+
+    .md-header {
+        min-height: 54px;
+    }
+
+    .md-header__inner {
+        min-height: 54px;
+    }
+
+    .md-header__title {
+        font-size: 0.88rem;
+    }
+
+}
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.md-header {
+    min-height: 58px;
+}
+
+.md-header__inner {
+    min-height: 58px;
+    padding: 0 1rem;
+}
+
+.md-header__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+
+/* Main navigation */
+
+.md-tabs {
+    height: 46px;
+    min-height: 46px;
+    overflow: visible;
+}
+
+.md-tabs__list {
+    height: 46px;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    margin: 0 auto;
+}
+
+.md-tabs__item {
+    height: 46px;
+}
+
+.md-tabs__link {
+    height: 46px;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.md-tabs__link--active {
+    font-weight: 700;
+}
+
+
+/* Search */
+
+.md-search__form {
+    height: 38px;
+}
+
+.md-search__input {
+    height: 38px;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .md-tabs__link {
+        padding: 0 0.55rem;
+        font-size: 0.78rem;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .md-tabs__link {
+        padding: 0 0.4rem;
+        font-size: 0.75rem;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+    .md-tabs {
+        display: none;
+    }
+
+}
+/* =========================================
+   PREMIUM WORKSHOP NAVIGATION
+   ========================================= */
+
+/* ---------- HEADER ---------- */
+
+.md-header {
+    height: 64px;
+    min-height: 64px;
+    box-shadow: none;
+}
+
+.md-header__inner {
+    height: 64px;
+    min-height: 64px;
+    padding: 0 1.25rem;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0.4rem 0.65rem 0.4rem 0;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    width: 36px;
+    height: 36px;
+}
+
+
+/* ---------- SITE TITLE ---------- */
+
+.md-header__title {
+    margin-left: 0.15rem;
+    font-size: 0.94rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.md-header__topic {
+    font-weight: 700;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.md-search {
+    margin-right: 0.6rem;
+}
+
+.md-search__form {
+    height: 38px;
+    border-radius: 12px;
+}
+
+.md-search__input {
+    height: 38px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+}
+
+
+/* ---------- TOP NAVIGATION ---------- */
+
+.md-tabs {
+    height: 48px;
+    min-height: 48px;
+    background: linear-gradient(
+        90deg,
+        #173f96 0%,
+        #2054c7 50%,
+        #2863e5 100%
+    );
+    box-shadow: none;
+}
+
+.md-tabs__list {
+    height: 48px;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.15rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.md-tabs__item {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ---------- NAV LINKS ---------- */
+
+.md-tabs__link {
+    position: relative;
+
+    height: 48px;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 0.9rem;
+    margin: 0;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0.88;
+
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* subtle underline */
+
+.md-tabs__link::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    transform: translateX(-50%);
+
+    transition: width 0.22s ease;
+}
+
+
+/* hover */
+
+.md-tabs__link:hover {
+    opacity: 1;
+}
+
+.md-tabs__link:hover::after {
+    width: 18px;
+}
+
+
+/* active */
+
+.md-tabs__link--active {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.md-tabs__link--active::after {
+    width: 22px;
+}
+
+
+/* ---------- HEADER SEPARATION ---------- */
+
+.md-header + .md-tabs {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media screen and (max-width: 1100px) {
+
+    .md-tabs__link {
+        padding: 0 0.65rem;
+        font-size: 0.76rem;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .md-tabs__link {
+        padding: 0 0.5rem;
+        font-size: 0.73rem;
+    }
+
+    .md-header__title {
+        font-size: 0.88rem;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+    .md-tabs {
+        display: none;
+    }
+
+    .md-header {
+        height: 58px;
+        min-height: 58px;
+    }
+
+    .md-header__inner {
+        height: 58px;
+        min-height: 58px;
+    }
+
+    .md-header__title {
+        font-size: 0.86rem;
+    }
+
+}
+/* =========================================
+   PREMIUM NAV DROPDOWN
+   ========================================= */
+
+.md-tabs__item {
+    position: relative;
+}
+
+
+/* Dropdown container */
+
+.md-tabs__item > .md-tabs__link {
+    position: relative;
+}
+
+
+/* Dropdown menu */
+
+.md-tabs__item--active
+.md-tabs__item {
+    position: relative;
+}
+
+
+/* Material navigation dropdown */
+
+.md-tabs__item .md-tabs__item {
+    height: auto;
+}
+
+
+/* Dropdown panel */
+
+.md-tabs__item > .md-tabs__link + .md-tabs__item {
+    display: none;
+}
+
+
+/* =========================================
+   NAVIGATION DEPTH
+   ========================================= */
+
+.md-tabs__item--active > .md-tabs__link {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CLEAN NAVIGATION SPACING
+   ========================================= */
+
+.md-tabs__item {
+    margin: 0 0.05rem;
+}
+
+.md-tabs__link {
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+   ========================================= */
+
+@media screen and (min-width: 761px) {
+
+    .md-tabs__item {
+        position: relative;
+    }
+
+}

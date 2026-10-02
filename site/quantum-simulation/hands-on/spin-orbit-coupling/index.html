@@ -31,9 +31,6 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
-      
       
 
 
@@ -66,14 +63,7 @@
   </head>
   
   
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -94,7 +84,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
       
@@ -121,32 +113,6 @@
         </div>
       </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
-      </label>
-    
-  
-</form>
-      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -208,14 +174,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -225,18 +185,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
   
   
-  🏠 Home
+    
+  
+  Home
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -252,7 +211,7 @@
           
   
   
-  🚀 Start Here
+  Start Here
 
         </a>
       </li>
@@ -272,7 +231,27 @@
           
   
   
-  🧱 Foundation
+  Foundation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../environment/linux.md" class="md-tabs__link">
+          
+  
+  
+  Computational Environment
 
         </a>
       </li>
@@ -292,7 +271,7 @@
           
   
   
-  ⚛ Quantum Simulation
+  Simulation
 
         </a>
       </li>
@@ -308,11 +287,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../atomistic-simulation/" class="md-tabs__link">
+        <a href="../../../ai/index.md" class="md-tabs__link">
           
   
   
-  🔬 Atomistic Simulation
+  AI
 
         </a>
       </li>
@@ -328,71 +307,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../hpc-environment/" class="md-tabs__link">
+        <a href="../../../research/index.md" class="md-tabs__link">
           
   
   
-  💻 HPC Environment
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../ai-acceleration/" class="md-tabs__link">
-          
-  
-  
-  🤖 AI Acceleration
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../hands-on-project/" class="md-tabs__link">
-          
-  
-  
-  🧪 Research Application
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../resources/ai-help/" class="md-tabs__link">
-          
-  
-  
-  📚 Resources
+  Research
 
         </a>
       </li>
@@ -403,7 +322,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -450,60 +375,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    🏠 Home
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    🏠 Home
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
         
@@ -512,7 +383,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Home
   
 
     
@@ -521,14 +392,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -565,7 +428,7 @@
   <span class="md-ellipsis">
     
   
-    🚀 Start Here
+    Start Here
   
 
     
@@ -581,7 +444,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    🚀 Start Here
+    Start Here
   
 
           </label>
@@ -682,7 +545,7 @@
   <span class="md-ellipsis">
     
   
-    🧱 Foundation
+    Foundation
   
 
     
@@ -698,7 +561,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    🧱 Foundation
+    Foundation
   
 
           </label>
@@ -718,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Scientific Foundation
   
 
     
@@ -739,42 +602,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundation/dft/" class="md-nav__link">
+      <a href="../../../foundation/computational.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Density Functional Theory
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../foundation/materials-informatics.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Material Fundamentals
+    Computational Foundation
   
 
     
@@ -827,7 +662,7 @@
   <span class="md-ellipsis">
     
   
-    ⚛ Quantum Simulation
+    Computational Environment
   
 
     
@@ -843,7 +678,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    ⚛ Quantum Simulation
+    Computational Environment
   
 
           </label>
@@ -856,14 +691,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../environment/linux.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Linux Fundamentals
   
 
     
@@ -884,14 +719,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../theory/dft-overview/" class="md-nav__link">
+      <a href="../../../environment/command-line.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Theory
+    Command Line
   
 
     
@@ -912,14 +747,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../environment/software-environment.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Hands-on Calculation
+    Software Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/running-calculations.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Calculations
   
 
     
@@ -972,7 +835,7 @@
   <span class="md-ellipsis">
     
   
-    🔬 Atomistic Simulation
+    Simulation
   
 
     
@@ -988,11 +851,39 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    🔬 Atomistic Simulation
+    Simulation
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1008,63 +899,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../atomistic-simulation/md/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Molecular Dynamics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../atomistic-simulation/transport-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Transport Analysis
+    Atomistic Simulation
   
 
     
@@ -1117,7 +952,7 @@
   <span class="md-ellipsis">
     
   
-    💻 HPC Environment
+    AI
   
 
     
@@ -1133,7 +968,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    💻 HPC Environment
+    AI
   
 
           </label>
@@ -1146,42 +981,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hpc-environment/" class="md-nav__link">
+      <a href="../../../ai/index.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hpc-environment/job-submission.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Job Submission
+    AI Acceleration
   
 
     
@@ -1234,7 +1041,7 @@
   <span class="md-ellipsis">
     
   
-    🤖 AI Acceleration
+    Research
   
 
     
@@ -1250,7 +1057,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    🤖 AI Acceleration
+    Research
   
 
           </label>
@@ -1263,248 +1070,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai-acceleration/" class="md-nav__link">
+      <a href="../../../research/index.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ai-acceleration/mace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MACE Workflow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    🧪 Research Application
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    🧪 Research Application
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hands-on-project/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Hands-on Cases
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    📚 Resources
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    📚 Resources
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../resources/ai-help/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AI Help
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../references/resources.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    References
+    Research Application
   
 
     
@@ -1918,7 +1491,7 @@ MKI × ITB × BRIN
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>

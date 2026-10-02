@@ -22,7 +22,6 @@ theme:
 
   features:
     - navigation.tabs
-    - navigation.expand
     - navigation.sections
     - navigation.top
     - navigation.instant
@@ -30,7 +29,8 @@ theme:
     - content.code.copy
     - content.tabs.link
     - navigation.tabs.sticky
-  
+    - navigation.path  
+
 palette:
 
     - scheme: default

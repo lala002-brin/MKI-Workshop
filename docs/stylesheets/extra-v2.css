@@ -7597,3 +7597,429 @@ grid-template-columns:1fr;
     }
 
 }
+/* =========================================
+   MKI WORKSHOP
+   PREMIUM NAVIGATION
+   ========================================= */
+
+/* Header */
+
+.md-header {
+    height: 64px;
+    min-height: 64px;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
+}
+
+.md-header__inner {
+    height: 64px;
+    min-height: 64px;
+    padding: 0 1.25rem;
+}
+
+
+/* Logo */
+
+.md-header__button.md-logo {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 0.7rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+
+/* Workshop title */
+
+.md-header__title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.md-header__topic {
+    font-weight: 700;
+}
+
+
+/* Search */
+
+.md-search {
+    margin-left: auto;
+}
+
+.md-search__form {
+    height: 38px;
+    border-radius: 11px;
+}
+
+.md-search__input {
+    height: 38px;
+    border-radius: 11px;
+    font-size: 0.78rem;
+}
+
+
+/* =========================================
+   TOP NAV
+   ========================================= */
+
+.md-tabs {
+    height: 48px;
+    min-height: 48px;
+    background: linear-gradient(
+        90deg,
+        #173f96,
+        #2054c7,
+        #2863e5
+    );
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.md-tabs__list {
+    height: 48px;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.15rem;
+
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.md-tabs__item {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Navigation links */
+
+.md-tabs__link {
+    position: relative;
+
+    height: 48px;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 0.85rem;
+    margin: 0;
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0.82;
+
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.md-tabs__link:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Active */
+
+.md-tabs__link--active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+
+/* Active indicator */
+
+.md-tabs__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 6px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    transform: translateX(-50%);
+
+    transition: width 0.2s ease;
+}
+
+.md-tabs__link--active::after {
+    width: 22px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .md-tabs__link {
+        padding: 0 0.65rem;
+        font-size: 0.76rem;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .md-tabs__link {
+        padding: 0 0.45rem;
+        font-size: 0.73rem;
+    }
+
+    .md-header__title {
+        font-size: 0.86rem;
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+    .md-tabs {
+        display: none;
+    }
+
+    .md-header {
+        height: 58px;
+        min-height: 58px;
+    }
+
+    .md-header__inner {
+        height: 58px;
+        min-height: 58px;
+    }
+
+    .md-header__title {
+        font-size: 0.85rem;
+    }
+
+}
+/* =========================================
+   PREMIUM SIDEBAR
+   ========================================= */
+
+.md-sidebar {
+    padding-top: 1rem;
+}
+
+.md-sidebar__scrollwrap {
+    scrollbar-width: thin;
+}
+
+
+/* Section titles */
+
+.md-nav__item--section > .md-nav__link {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
+
+/* Normal links */
+
+.md-nav__link {
+    margin: 0.12rem 0;
+    padding: 0.42rem 0.7rem;
+
+    border-radius: 7px;
+
+    font-size: 0.8rem;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+
+/* Hover */
+
+.md-nav__link:hover {
+    background: rgba(37, 99, 235, 0.06);
+}
+
+
+/* Active page */
+
+.md-nav__link--active {
+    font-weight: 700;
+    background: rgba(37, 99, 235, 0.09);
+}
+
+
+/* Active indicator */
+
+.md-nav__link--active::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 3px;
+    height: 16px;
+
+    margin-right: 0.5rem;
+
+    border-radius: 999px;
+
+    background: #2563eb;
+
+    vertical-align: middle;
+}
+
+
+/* Nested navigation */
+
+.md-nav .md-nav .md-nav__link {
+    padding-left: 1.45rem;
+    font-size: 0.77rem;
+}
+
+
+/* Reduce vertical spacing */
+
+.md-nav__list {
+    gap: 0.05rem;
+}
+/* =========================================
+   PREMIUM WORKSHOP FOOTER
+   ========================================= */
+
+.custom-footer {
+    margin-top: 4rem;
+    padding: 3rem 2rem 2rem;
+
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 3rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #102a63 0%,
+            #173f96 55%,
+            #2054c7 100%
+        );
+
+    color: #ffffff;
+
+    border-radius: 20px 20px 0 0;
+}
+
+
+/* Brand */
+
+.footer-brand h3,
+.footer-links h3,
+.footer-partners h3 {
+    margin: 0 0 .8rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.footer-brand p {
+    max-width: 420px;
+
+    margin: 0;
+
+    font-size: .85rem;
+    line-height: 1.6;
+
+    opacity: .78;
+}
+
+
+/* Links */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-links a {
+    margin: .2rem 0;
+
+    color: #ffffff;
+
+    font-size: .82rem;
+    text-decoration: none;
+
+    opacity: .72;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+
+/* Partners */
+
+.footer-partners p {
+    margin: 0;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+
+/* Bottom spacing */
+
+.custom-footer::after {
+    content: "";
+}
+
+
+/* =========================================
+   FOOTER RESPONSIVE
+   ========================================= */
+
+@media screen and (max-width: 800px) {
+
+    .custom-footer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        padding: 2rem 1.5rem;
+    }
+
+}
