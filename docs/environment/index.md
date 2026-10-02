@@ -1,658 +1,537 @@
-# Computational Environment
+# Running Calculations
 
-<div class="environment-hero">
+<div class="environment-hero environment-hero-compact">
 
 <div class="environment-eyebrow">
-MKI × BRIN COMPUTATIONAL MATERIALS LAB
+HPC JOB WORKFLOW
 </div>
 
 <h1>
-Run Scientific Computing<br>
-on High Performance Computing
+Running Calculations
 </h1>
 
 <p class="environment-description">
-A practical guide to connecting, preparing, configuring,
-submitting, monitoring, and managing computational
-materials science calculations on HPC systems.
+Panduan praktis untuk mengubah input yang sudah siap menjadi
+perhitungan HPC yang berjalan, terpantau, dan terverifikasi.
 </p>
 
 <div class="environment-tags">
-
-<span>HPC</span>
-<span>LINUX</span>
-<span>SLURM</span>
-<span>MPI</span>
-<span>SCIENTIFIC SOFTWARE</span>
-
+<span>PREPARE</span>
+<span>SUBMIT</span>
+<span>MONITOR</span>
+<span>VERIFY</span>
 </div>
 
 </div>
-
 
 ---
 
-## The Computational Environment
+## Job Lifecycle
 
 <p class="section-description">
-Computational materials simulations require more than a scientific
-method and an input file. This section provides the operational
-workflow required to move a calculation from your local computer
-to an HPC system and retrieve the resulting data.
+Setiap perhitungan HPC mengikuti siklus dasar yang sama.
+Detail aplikasi dapat berbeda, tetapi proses pengelolaan job tetap serupa.
 </p>
-
-
-<div class="environment-flow">
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-01
-</div>
-
-<h3>
-Connect
-</h3>
-
-<p>
-Access the HPC system using SSH and understand
-the basic structure of the computing environment.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-02
-</div>
-
-<h3>
-Prepare
-</h3>
-
-<p>
-Organize input files, directories, structures,
-scripts, and calculation data.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-03
-</div>
-
-<h3>
-Configure
-</h3>
-
-<p>
-Load scientific software, compilers, libraries,
-Python environments, and computational tools.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-04
-</div>
-
-<h3>
-Submit
-</h3>
-
-<p>
-Create a job script and submit the calculation
-to the HPC scheduler.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-05
-</div>
-
-<h3>
-Monitor
-</h3>
-
-<p>
-Track the job, inspect the queue, monitor output,
-and identify calculation problems.
-</p>
-
-</div>
-
-</div>
-
-
----
-
-## HPC Operations
-
-<div class="environment-cards">
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-01
-</div>
-
-<div class="environment-card-label">
-ACCESS
-</div>
-
-<h2>
-Access & Linux
-</h2>
-
-<p>
-Learn how to connect to the HPC system, navigate
-directories, manage files, and work safely from
-the command line.
-</p>
-
-<a href="linux.md">
-Explore Access →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-02
-</div>
-
-<div class="environment-card-label">
-COMMAND LINE
-</div>
-
-<h2>
-Command Line
-</h2>
-
-<p>
-Use shell commands to search files, inspect outputs,
-process data, and control computational workflows.
-</p>
-
-<a href="command-line.md">
-Explore Commands →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-03
-</div>
-
-<div class="environment-card-label">
-SOFTWARE
-</div>
-
-<h2>
-Software Environment
-</h2>
-
-<p>
-Configure compilers, MPI, modules, Python environments,
-and scientific software required by computational codes.
-</p>
-
-<a href="software-environment.md">
-Configure Software →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-04
-</div>
-
-<div class="environment-card-label">
-HPC JOBS
-</div>
-
-<h2>
-Running Calculations
-</h2>
-
-<p>
-Prepare SLURM scripts, submit jobs, monitor queues,
-manage resources, and inspect calculation outputs.
-</p>
-
-<a href="running-calculations.md">
-Run a Calculation →
-</a>
-
-</div>
-
-</div>
-
-
----
-
-## HPC Quick Start
-
-<p class="section-description">
-The essential workflow for submitting a computational calculation
-to an HPC cluster.
-</p>
-
-
-<div class="quickstart">
-
-<div class="quickstart-step">
-
-<span>01</span>
-
-<div>
-<strong>Connect</strong>
-
-<code>
-ssh username@hpc-address
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>02</span>
-
-<div>
-<strong>Enter your project</strong>
-
-<code>
-cd project/
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>03</span>
-
-<div>
-<strong>Load the software</strong>
-
-<code>
-module load software
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>04</span>
-
-<div>
-<strong>Submit the job</strong>
-
-<code>
-sbatch job.slurm
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>05</span>
-
-<div>
-<strong>Check the queue</strong>
-
-<code>
-squeue -u $USER
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>06</span>
-
-<div>
-<strong>Inspect the output</strong>
-
-<code>
-tail -f calculation.out
-</code>
-</div>
-
-</div>
-
-</div>
-
-
----
-
-## Understand the HPC Architecture
-
-<div class="architecture">
-
-<div class="architecture-local">
-
-<div class="architecture-label">
-LOCAL COMPUTER
-</div>
-
-<h3>
-Your Workstation
-</h3>
-
-<p>
-Prepare inputs, scripts, structures,
-and analysis files.
-</p>
-
-</div>
-
-
-<div class="architecture-arrow">
-→
-</div>
-
-
-<div class="architecture-login">
-
-<div class="architecture-label">
-LOGIN NODE
-</div>
-
-<h3>
-Access & Preparation
-</h3>
-
-<p>
-Transfer files, configure environments,
-and submit jobs.
-</p>
-
-</div>
-
-
-<div class="architecture-arrow">
-→
-</div>
-
-
-<div class="architecture-compute">
-
-<div class="architecture-label">
-COMPUTE NODE
-</div>
-
-<h3>
-Scientific Calculation
-</h3>
-
-<p>
-Run Quantum ESPRESSO, LAMMPS,
-DFTB-MD, MACE, and other workloads.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="architecture-note">
-
-<strong>Important:</strong>
-Use the login node for lightweight preparation and job
-submission. Computationally intensive calculations should
-run on allocated compute resources according to the HPC policy.
-
-</div>
-
-
----
-
-## From Input to Result
 
 <div class="execution-pipeline">
 
 <div>
-<span>INPUT</span>
-<p>
-Structures and parameters
-</p>
+<span>01</span>
+<p>Prepare</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>ENVIRONMENT</span>
-<p>
-Software and dependencies
-</p>
+<span>02</span>
+<p>Submit</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>SLURM</span>
-<p>
-Resource allocation
-</p>
+<span>03</span>
+<p>Monitor</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>COMPUTE</span>
-<p>
-Scientific calculation
-</p>
-</div>
-
-<div>→</div>
-
-<div>
-<span>OUTPUT</span>
-<p>
-Results and logs
-</p>
+<span>04</span>
+<p>Verify</p>
 </div>
 
 </div>
-
 
 ---
 
-## Software Covered
+## 01 · Prepare
 
-<div class="software-strip">
+<p class="section-description">
+Pastikan input dan script SLURM sudah siap sebelum mengirim job.
+</p>
 
-<span>Quantum ESPRESSO</span>
-<span>LAMMPS</span>
-<span>DC-DFTB-MD</span>
-<span>MACE</span>
-<span>Python</span>
-<span>MPI</span>
-<span>SLURM</span>
+### Project Structure
+
+```text
+project/
+├── input/
+│   └── calculation.in
+│
+├── scripts/
+│   └── run.slurm
+│
+├── output/
+│
+└── analysis/
+```
+
+Struktur ini memisahkan file input, script, output,
+dan hasil analisis sehingga project lebih mudah dikelola.
+
+### Before Submission
+
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Periksa</th>
+<th>Yang Harus Dipastikan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Input</td>
+<td>File input tersedia dan berada pada lokasi yang benar</td>
+</tr>
+
+<tr>
+<td>Script</td>
+<td>SLURM script menggunakan input dan output yang benar</td>
+</tr>
+
+<tr>
+<td>Software</td>
+<td>Environment sudah disiapkan</td>
+</tr>
+
+<tr>
+<td>Resource</td>
+<td>CPU, memory, GPU, dan wall time sesuai kebutuhan</td>
+</tr>
+
+<tr>
+<td>Output</td>
+<td>Lokasi output sudah ditentukan</td>
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
 
+---
+
+## 02 · Submit
+
+<p class="section-description">
+Setelah project siap, kirim script SLURM ke scheduler.
+</p>
+
+### Submit the Job
+
+```bash
+sbatch scripts/run.slurm
+```
+
+Contoh respons:
+
+```text
+Submitted batch job 38142
+```
+
+Nomor:
+
+```text
+38142
+```
+
+merupakan **JOB ID**.
+
+Simpan JOB ID tersebut. Anda akan menggunakannya
+untuk memantau dan memeriksa job.
+
+### Submission Flow
+
+```text
+Input
+  ↓
+SLURM Script
+  ↓
+sbatch
+  ↓
+JOB ID
+  ↓
+Scheduler
+```
 
 ---
 
-## Before You Run a Calculation
+## 03 · Monitor
+
+<p class="section-description">
+Setelah job dikirim, periksa statusnya dan pantau output
+selama perhitungan berlangsung.
+</p>
+
+### Check Job Status
+
+```bash
+squeue -u $USER
+```
+
+Status yang umum:
+
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Status</th>
+<th>Arti</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>PD</code></td>
+<td>Job masih menunggu resource</td>
+</tr>
+
+<tr>
+<td><code>R</code></td>
+<td>Job sedang berjalan</td>
+</tr>
+
+<tr>
+<td><code>CG</code></td>
+<td>Job sedang menyelesaikan proses</td>
+</tr>
+
+<tr>
+<td><code>CD</code></td>
+<td>Job telah selesai</td>
+</tr>
+
+<tr>
+<td><code>F</code></td>
+<td>Job gagal</td>
+</tr>
+
+<tr>
+<td><code>CA</code></td>
+<td>Job dibatalkan</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+### Inspect Job
+
+Jika membutuhkan informasi lebih detail:
+
+```bash
+scontrol show job JOBID
+```
+
+Perintah ini membantu memeriksa informasi seperti
+partition, node, resource, dan status job.
+
+### Monitor Output
+
+Jika aplikasi menghasilkan output secara bertahap:
+
+```bash
+tail -f output/calculation.out
+```
+
+Hentikan tampilan live dengan:
+
+```text
+Ctrl + C
+```
+
+---
+
+## 04 · Verify
+
+<p class="section-description">
+Jangan langsung melakukan analisis setelah job mencapai status selesai.
+Periksa status dan output untuk memastikan perhitungan menghasilkan
+hasil yang diharapkan.
+</p>
+
+### Check Job History
+
+```bash
+sacct -j JOBID
+```
+
+### Check Final Output
+
+```bash
+tail -n 50 output/calculation.out
+```
+
+### Check Errors
+
+```bash
+grep -i "error" output/calculation.out
+```
+
+### Check Warnings
+
+```bash
+grep -i "warning" output/calculation.out
+```
+
+Gunakan urutan berikut:
+
+```text
+JOB COMPLETED
+      ↓
+OUTPUT EXISTS
+      ↓
+OUTPUT COMPLETE
+      ↓
+NO CRITICAL ERROR
+      ↓
+EXPECTED RESULT
+      ↓
+READY FOR ANALYSIS
+```
+
+> Status `COMPLETED` dari scheduler menunjukkan status job,
+> tetapi pemeriksaan output tetap diperlukan untuk memastikan
+> aplikasi menghasilkan hasil yang diharapkan.
+
+---
+
+## 05 · Troubleshooting
+
+<p class="section-description">
+Jika perhitungan tidak berjalan sesuai harapan, mulai dari status job,
+kemudian periksa output dan konfigurasi yang digunakan.
+</p>
+
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Kondisi</th>
+<th>Pemeriksaan</th>
+<th>Langkah Awal</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Job tidak muncul</td>
+<td>Periksa antrean</td>
+<td><code>squeue -u $USER</code></td>
+</tr>
+
+<tr>
+<td>Job pending</td>
+<td>Periksa detail job</td>
+<td><code>scontrol show job JOBID</code></td>
+</tr>
+
+<tr>
+<td>Job gagal</td>
+<td>Periksa status dan output</td>
+<td><code>sacct -j JOBID</code></td>
+</tr>
+
+<tr>
+<td>Output tidak muncul</td>
+<td>Periksa lokasi output</td>
+<td><code>ls -lh output/</code></td>
+</tr>
+
+<tr>
+<td>Error aplikasi</td>
+<td>Cari pesan error</td>
+<td><code>grep -i "error" output.out</code></td>
+</tr>
+
+<tr>
+<td>Software bermasalah</td>
+<td>Periksa environment</td>
+<td><code>module list</code></td>
+</tr>
+
+<tr>
+<td>Executable tidak ditemukan</td>
+<td>Periksa executable</td>
+<td><code>which COMMAND</code></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+---
+
+## Common Job States
+
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>State</th>
+<th>Makna</th>
+<th>Tindakan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>PENDING</code></td>
+<td>Job belum mendapatkan resource</td>
+<td>Periksa status dan alasan pending</td>
+</tr>
+
+<tr>
+<td><code>RUNNING</code></td>
+<td>Job sedang berjalan</td>
+<td>Pantau output</td>
+</tr>
+
+<tr>
+<td><code>COMPLETED</code></td>
+<td>Job selesai menurut scheduler</td>
+<td>Verifikasi output</td>
+</tr>
+
+<tr>
+<td><code>FAILED</code></td>
+<td>Job berakhir dengan kegagalan</td>
+<td>Periksa output dan konfigurasi</td>
+</tr>
+
+<tr>
+<td><code>CANCELLED</code></td>
+<td>Job dibatalkan</td>
+<td>Periksa alasan pembatalan</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+---
+
+## Minimal Workflow
+
+<p class="section-description">
+Jika input dan script sudah siap, workflow dasar hanya membutuhkan
+beberapa langkah.
+</p>
+
+```bash
+sbatch scripts/run.slurm
+```
+
+```bash
+squeue -u $USER
+```
+
+```bash
+tail -f output/calculation.out
+```
+
+Setelah selesai:
+
+```bash
+sacct -j JOBID
+```
+
+Kemudian:
+
+```bash
+tail -n 50 output/calculation.out
+```
+
+Dan periksa error:
+
+```bash
+grep -i "error" output/calculation.out
+```
+
+---
+
+## Job Checklist
 
 <div class="checklist">
 
-<div>
-✓
-Confirm your HPC account
-</div>
+<div>Input sudah siap</div>
 
-<div>
-✓
-Connect using SSH
-</div>
+<div>SLURM script sudah diperiksa</div>
 
-<div>
-✓
-Prepare the calculation directory
-</div>
+<div>Software environment sudah siap</div>
 
-<div>
-✓
-Verify input files
-</div>
+<div>Resource request sudah sesuai</div>
 
-<div>
-✓
-Load the correct software environment
-</div>
+<div>Job berhasil dikirim</div>
 
-<div>
-✓
-Check available computational resources
-</div>
+<div>JOB ID sudah dicatat</div>
 
-<div>
-✓
-Prepare the SLURM job script
-</div>
+<div>Status job sudah dipantau</div>
 
-<div>
-✓
-Submit and monitor the job
-</div>
+<div>Output sudah diperiksa</div>
+
+<div>Error sudah diperiksa</div>
+
+<div>Hasil siap dianalisis</div>
 
 </div>
-
-
----
-
-## Troubleshooting
-
-<div class="troubleshooting-grid">
-
-<div>
-
-<h3>
-Job does not start
-</h3>
-
-<p>
-Check the queue status, requested resources,
-partition, and scheduler messages.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Software command not found
-</h3>
-
-<p>
-Check the available modules and verify that
-the required software environment is loaded.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Calculation stops unexpectedly
-</h3>
-
-<p>
-Inspect the scheduler output, application output,
-resource usage, and calculation parameters.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Output looks incomplete
-</h3>
-
-<p>
-Check whether the job finished normally and inspect
-the final section of the application output.
-</p>
-
-</div>
-
-</div>
-
 
 ---
 
 <div class="environment-banner">
 
 <h2>
-Ready to Run Your Calculation?
+Calculation Complete
 </h2>
 
 <p>
-Start with HPC access, configure your software,
-then submit your first scientific workload.
+Setelah job selesai dan output terverifikasi, lanjutkan ke
+research case untuk melihat workflow aplikasi dan analisis ilmiah.
 </p>
 
-<a href="running-calculations.md">
-Open HPC Job Guide →
+<a href="../../hands-on-project/">
+Explore Research Cases →
 </a>
 
 </div>
