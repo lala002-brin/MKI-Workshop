@@ -92,7 +92,7 @@ nav:
       - Command Line: environment/command-line.md
       - Software Environment: environment/software-environment.md
       - Running Calculations: environment/running-calculations.md
-
+      - Script Library: environment/script-library.md
   - Simulation:
 
       - Quantum Simulation:

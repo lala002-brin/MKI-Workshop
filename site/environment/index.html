@@ -18,7 +18,7 @@
         <link rel="prev" href="../start-here/workflow/">
       
       
-        <link rel="next" href="software-environment/">
+        <link rel="next" href="access-linux/">
       
       
         
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#computational-environment" class="md-skip">
+        <a href="#running-calculations" class="md-skip">
           Skip to content
         </a>
       
@@ -633,10 +633,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-computational-environment" class="md-nav__link">
+  <a href="#job-lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Computational Environment
+        Job Lifecycle
       
     </span>
   </a>
@@ -644,10 +644,199 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hpc-operations" class="md-nav__link">
+  <a href="#01-prepare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HPC Operations
+        01 · Prepare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="01 · Prepare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before Submission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Submit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="02 · Submit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit the Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submission-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submission Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="03 · Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-job-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Job Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="04 · Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-job-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Job History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-final-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Final Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Troubleshooting
       
     </span>
   </a>
@@ -655,10 +844,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hpc-quick-start" class="md-nav__link">
+  <a href="#common-job-states" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HPC Quick Start
+        Common Job States
       
     </span>
   </a>
@@ -666,10 +855,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-the-hpc-architecture" class="md-nav__link">
+  <a href="#minimal-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand the HPC Architecture
+        Minimal Workflow
       
     </span>
   </a>
@@ -677,43 +866,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-input-to-result" class="md-nav__link">
+  <a href="#job-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From Input to Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Software Covered
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-run-a-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before You Run a Calculation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
+        Job Checklist
       
     </span>
   </a>
@@ -736,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux.md" class="md-nav__link">
+      <a href="access-linux/" class="md-nav__link">
         
   
   
@@ -764,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="command-line.md" class="md-nav__link">
+      <a href="command-line/" class="md-nav__link">
         
   
   
@@ -2212,10 +2368,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-computational-environment" class="md-nav__link">
+  <a href="#job-lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Computational Environment
+        Job Lifecycle
       
     </span>
   </a>
@@ -2223,10 +2379,199 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hpc-operations" class="md-nav__link">
+  <a href="#01-prepare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HPC Operations
+        01 · Prepare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="01 · Prepare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before Submission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Submit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="02 · Submit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submit-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit the Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submission-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submission Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="03 · Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-job-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Job Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="04 · Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-job-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Job History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-final-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Final Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Troubleshooting
       
     </span>
   </a>
@@ -2234,10 +2579,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hpc-quick-start" class="md-nav__link">
+  <a href="#common-job-states" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HPC Quick Start
+        Common Job States
       
     </span>
   </a>
@@ -2245,10 +2590,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-the-hpc-architecture" class="md-nav__link">
+  <a href="#minimal-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand the HPC Architecture
+        Minimal Workflow
       
     </span>
   </a>
@@ -2256,43 +2601,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-input-to-result" class="md-nav__link">
+  <a href="#job-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From Input to Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Software Covered
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-run-a-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before You Run a Calculation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
+        Job Checklist
       
     </span>
   </a>
@@ -2367,614 +2679,439 @@
   
 
 
-<h1 id="computational-environment">Computational Environment</h1>
-<div class="environment-hero">
+<h1 id="running-calculations">Running Calculations</h1>
+<div class="environment-hero environment-hero-compact">
 
 <div class="environment-eyebrow">
-MKI × BRIN COMPUTATIONAL MATERIALS LAB
+HPC JOB WORKFLOW
 </div>
 
 <h1>
-Run Scientific Computing<br>
-on High Performance Computing
+Running Calculations
 </h1>
 
 <p class="environment-description">
-A practical guide to connecting, preparing, configuring,
-submitting, monitoring, and managing computational
-materials science calculations on HPC systems.
+Panduan praktis untuk mengubah input yang sudah siap menjadi
+perhitungan HPC yang berjalan, terpantau, dan terverifikasi.
 </p>
 
 <div class="environment-tags">
-
-<span>HPC</span>
-<span>LINUX</span>
-<span>SLURM</span>
-<span>MPI</span>
-<span>SCIENTIFIC SOFTWARE</span>
-
+<span>PREPARE</span>
+<span>SUBMIT</span>
+<span>MONITOR</span>
+<span>VERIFY</span>
 </div>
 
 </div>
 
 <hr />
-<h2 id="the-computational-environment">The Computational Environment</h2>
+<h2 id="job-lifecycle">Job Lifecycle</h2>
 <p class="section-description">
-Computational materials simulations require more than a scientific
-method and an input file. This section provides the operational
-workflow required to move a calculation from your local computer
-to an HPC system and retrieve the resulting data.
+Setiap perhitungan HPC mengikuti siklus dasar yang sama.
+Detail aplikasi dapat berbeda, tetapi proses pengelolaan job tetap serupa.
 </p>
 
-<div class="environment-flow">
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-01
-</div>
-
-<h3>
-Connect
-</h3>
-
-<p>
-Access the HPC system using SSH and understand
-the basic structure of the computing environment.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-02
-</div>
-
-<h3>
-Prepare
-</h3>
-
-<p>
-Organize input files, directories, structures,
-scripts, and calculation data.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-03
-</div>
-
-<h3>
-Configure
-</h3>
-
-<p>
-Load scientific software, compilers, libraries,
-Python environments, and computational tools.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-04
-</div>
-
-<h3>
-Submit
-</h3>
-
-<p>
-Create a job script and submit the calculation
-to the HPC scheduler.
-</p>
-
-</div>
-
-
-<div class="environment-flow-arrow">
-→
-</div>
-
-
-<div class="environment-flow-item">
-
-<div class="environment-flow-number">
-05
-</div>
-
-<h3>
-Monitor
-</h3>
-
-<p>
-Track the job, inspect the queue, monitor output,
-and identify calculation problems.
-</p>
-
-</div>
-
-</div>
-
-<hr />
-<h2 id="hpc-operations">HPC Operations</h2>
-<div class="environment-cards">
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-01
-</div>
-
-<div class="environment-card-label">
-ACCESS
-</div>
-
-<h2>
-Access & Linux
-</h2>
-
-<p>
-Learn how to connect to the HPC system, navigate
-directories, manage files, and work safely from
-the command line.
-</p>
-
-<a href="linux.md">
-Explore Access →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-02
-</div>
-
-<div class="environment-card-label">
-COMMAND LINE
-</div>
-
-<h2>
-Command Line
-</h2>
-
-<p>
-Use shell commands to search files, inspect outputs,
-process data, and control computational workflows.
-</p>
-
-<a href="command-line.md">
-Explore Commands →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-03
-</div>
-
-<div class="environment-card-label">
-SOFTWARE
-</div>
-
-<h2>
-Software Environment
-</h2>
-
-<p>
-Configure compilers, MPI, modules, Python environments,
-and scientific software required by computational codes.
-</p>
-
-<a href="software-environment.md">
-Configure Software →
-</a>
-
-</div>
-
-
-<div class="environment-card">
-
-<div class="environment-card-number">
-04
-</div>
-
-<div class="environment-card-label">
-HPC JOBS
-</div>
-
-<h2>
-Running Calculations
-</h2>
-
-<p>
-Prepare SLURM scripts, submit jobs, monitor queues,
-manage resources, and inspect calculation outputs.
-</p>
-
-<a href="running-calculations.md">
-Run a Calculation →
-</a>
-
-</div>
-
-</div>
-
-<hr />
-<h2 id="hpc-quick-start">HPC Quick Start</h2>
-<p class="section-description">
-The essential workflow for submitting a computational calculation
-to an HPC cluster.
-</p>
-
-<div class="quickstart">
-
-<div class="quickstart-step">
-
-<span>01</span>
-
-<div>
-<strong>Connect</strong>
-
-<code>
-ssh username@hpc-address
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>02</span>
-
-<div>
-<strong>Enter your project</strong>
-
-<code>
-cd project/
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>03</span>
-
-<div>
-<strong>Load the software</strong>
-
-<code>
-module load software
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>04</span>
-
-<div>
-<strong>Submit the job</strong>
-
-<code>
-sbatch job.slurm
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>05</span>
-
-<div>
-<strong>Check the queue</strong>
-
-<code>
-squeue -u $USER
-</code>
-</div>
-
-</div>
-
-
-<div class="quickstart-step">
-
-<span>06</span>
-
-<div>
-<strong>Inspect the output</strong>
-
-<code>
-tail -f calculation.out
-</code>
-</div>
-
-</div>
-
-</div>
-
-<hr />
-<h2 id="understand-the-hpc-architecture">Understand the HPC Architecture</h2>
-<div class="architecture">
-
-<div class="architecture-local">
-
-<div class="architecture-label">
-LOCAL COMPUTER
-</div>
-
-<h3>
-Your Workstation
-</h3>
-
-<p>
-Prepare inputs, scripts, structures,
-and analysis files.
-</p>
-
-</div>
-
-
-<div class="architecture-arrow">
-→
-</div>
-
-
-<div class="architecture-login">
-
-<div class="architecture-label">
-LOGIN NODE
-</div>
-
-<h3>
-Access & Preparation
-</h3>
-
-<p>
-Transfer files, configure environments,
-and submit jobs.
-</p>
-
-</div>
-
-
-<div class="architecture-arrow">
-→
-</div>
-
-
-<div class="architecture-compute">
-
-<div class="architecture-label">
-COMPUTE NODE
-</div>
-
-<h3>
-Scientific Calculation
-</h3>
-
-<p>
-Run Quantum ESPRESSO, LAMMPS,
-DFTB-MD, MACE, and other workloads.
-</p>
-
-</div>
-
-</div>
-
-<div class="architecture-note">
-
-<strong>Important:</strong>
-Use the login node for lightweight preparation and job
-submission. Computationally intensive calculations should
-run on allocated compute resources according to the HPC policy.
-
-</div>
-
-<hr />
-<h2 id="from-input-to-result">From Input to Result</h2>
 <div class="execution-pipeline">
 
 <div>
-<span>INPUT</span>
-<p>
-Structures and parameters
-</p>
+<span>01</span>
+<p>Prepare</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>ENVIRONMENT</span>
-<p>
-Software and dependencies
-</p>
+<span>02</span>
+<p>Submit</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>SLURM</span>
-<p>
-Resource allocation
-</p>
+<span>03</span>
+<p>Monitor</p>
 </div>
 
 <div>→</div>
 
 <div>
-<span>COMPUTE</span>
-<p>
-Scientific calculation
-</p>
-</div>
-
-<div>→</div>
-
-<div>
-<span>OUTPUT</span>
-<p>
-Results and logs
-</p>
+<span>04</span>
+<p>Verify</p>
 </div>
 
 </div>
 
 <hr />
-<h2 id="software-covered">Software Covered</h2>
-<div class="software-strip">
+<h2 id="01-prepare">01 · Prepare</h2>
+<p class="section-description">
+Pastikan input dan script SLURM sudah siap sebelum mengirim job.
+</p>
 
-<span>Quantum ESPRESSO</span>
-<span>LAMMPS</span>
-<span>DC-DFTB-MD</span>
-<span>MACE</span>
-<span>Python</span>
-<span>MPI</span>
-<span>SLURM</span>
+<h3 id="project-structure">Project Structure</h3>
+<div class="highlight"><pre><span></span><code>project/
+├── input/
+│   └── calculation.in
+│
+├── scripts/
+│   └── run.slurm
+│
+├── output/
+│
+└── analysis/
+</code></pre></div>
+<p>Struktur ini memisahkan file input, script, output,
+dan hasil analisis sehingga project lebih mudah dikelola.</p>
+<h3 id="before-submission">Before Submission</h3>
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Periksa</th>
+<th>Yang Harus Dipastikan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Input</td>
+<td>File input tersedia dan berada pada lokasi yang benar</td>
+</tr>
+
+<tr>
+<td>Script</td>
+<td>SLURM script menggunakan input dan output yang benar</td>
+</tr>
+
+<tr>
+<td>Software</td>
+<td>Environment sudah disiapkan</td>
+</tr>
+
+<tr>
+<td>Resource</td>
+<td>CPU, memory, GPU, dan wall time sesuai kebutuhan</td>
+</tr>
+
+<tr>
+<td>Output</td>
+<td>Lokasi output sudah ditentukan</td>
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
 
 <hr />
-<h2 id="before-you-run-a-calculation">Before You Run a Calculation</h2>
+<h2 id="02-submit">02 · Submit</h2>
+<p class="section-description">
+Setelah project siap, kirim script SLURM ke scheduler.
+</p>
+
+<h3 id="submit-the-job">Submit the Job</h3>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>scripts/run.slurm
+</code></pre></div>
+<p>Contoh respons:</p>
+<div class="highlight"><pre><span></span><code>Submitted batch job 38142
+</code></pre></div>
+<p>Nomor:</p>
+<div class="highlight"><pre><span></span><code>38142
+</code></pre></div>
+<p>merupakan <strong>JOB ID</strong>.</p>
+<p>Simpan JOB ID tersebut. Anda akan menggunakannya
+untuk memantau dan memeriksa job.</p>
+<h3 id="submission-flow">Submission Flow</h3>
+<div class="highlight"><pre><span></span><code>Input
+  ↓
+SLURM Script
+  ↓
+sbatch
+  ↓
+JOB ID
+  ↓
+Scheduler
+</code></pre></div>
+<hr />
+<h2 id="03-monitor">03 · Monitor</h2>
+<p class="section-description">
+Setelah job dikirim, periksa statusnya dan pantau output
+selama perhitungan berlangsung.
+</p>
+
+<h3 id="check-job-status">Check Job Status</h3>
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div>
+<p>Status yang umum:</p>
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Status</th>
+<th>Arti</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>PD</code></td>
+<td>Job masih menunggu resource</td>
+</tr>
+
+<tr>
+<td><code>R</code></td>
+<td>Job sedang berjalan</td>
+</tr>
+
+<tr>
+<td><code>CG</code></td>
+<td>Job sedang menyelesaikan proses</td>
+</tr>
+
+<tr>
+<td><code>CD</code></td>
+<td>Job telah selesai</td>
+</tr>
+
+<tr>
+<td><code>F</code></td>
+<td>Job gagal</td>
+</tr>
+
+<tr>
+<td><code>CA</code></td>
+<td>Job dibatalkan</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<h3 id="inspect-job">Inspect Job</h3>
+<p>Jika membutuhkan informasi lebih detail:</p>
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>JOBID
+</code></pre></div>
+<p>Perintah ini membantu memeriksa informasi seperti
+partition, node, resource, dan status job.</p>
+<h3 id="monitor-output">Monitor Output</h3>
+<p>Jika aplikasi menghasilkan output secara bertahap:</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>output/calculation.out
+</code></pre></div>
+<p>Hentikan tampilan live dengan:</p>
+<div class="highlight"><pre><span></span><code>Ctrl + C
+</code></pre></div>
+<hr />
+<h2 id="04-verify">04 · Verify</h2>
+<p class="section-description">
+Jangan langsung melakukan analisis setelah job mencapai status selesai.
+Periksa status dan output untuk memastikan perhitungan menghasilkan
+hasil yang diharapkan.
+</p>
+
+<h3 id="check-job-history">Check Job History</h3>
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>-j<span class="w"> </span>JOBID
+</code></pre></div>
+<h3 id="check-final-output">Check Final Output</h3>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>output/calculation.out
+</code></pre></div>
+<h3 id="check-errors">Check Errors</h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error"</span><span class="w"> </span>output/calculation.out
+</code></pre></div>
+<h3 id="check-warnings">Check Warnings</h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"warning"</span><span class="w"> </span>output/calculation.out
+</code></pre></div>
+<p>Gunakan urutan berikut:</p>
+<div class="highlight"><pre><span></span><code>JOB COMPLETED
+      ↓
+OUTPUT EXISTS
+      ↓
+OUTPUT COMPLETE
+      ↓
+NO CRITICAL ERROR
+      ↓
+EXPECTED RESULT
+      ↓
+READY FOR ANALYSIS
+</code></pre></div>
+<blockquote>
+<p>Status <code>COMPLETED</code> dari scheduler menunjukkan status job,
+tetapi pemeriksaan output tetap diperlukan untuk memastikan
+aplikasi menghasilkan hasil yang diharapkan.</p>
+</blockquote>
+<hr />
+<h2 id="05-troubleshooting">05 · Troubleshooting</h2>
+<p class="section-description">
+Jika perhitungan tidak berjalan sesuai harapan, mulai dari status job,
+kemudian periksa output dan konfigurasi yang digunakan.
+</p>
+
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>Kondisi</th>
+<th>Pemeriksaan</th>
+<th>Langkah Awal</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Job tidak muncul</td>
+<td>Periksa antrean</td>
+<td><code>squeue -u $USER</code></td>
+</tr>
+
+<tr>
+<td>Job pending</td>
+<td>Periksa detail job</td>
+<td><code>scontrol show job JOBID</code></td>
+</tr>
+
+<tr>
+<td>Job gagal</td>
+<td>Periksa status dan output</td>
+<td><code>sacct -j JOBID</code></td>
+</tr>
+
+<tr>
+<td>Output tidak muncul</td>
+<td>Periksa lokasi output</td>
+<td><code>ls -lh output/</code></td>
+</tr>
+
+<tr>
+<td>Error aplikasi</td>
+<td>Cari pesan error</td>
+<td><code>grep -i "error" output.out</code></td>
+</tr>
+
+<tr>
+<td>Software bermasalah</td>
+<td>Periksa environment</td>
+<td><code>module list</code></td>
+</tr>
+
+<tr>
+<td>Executable tidak ditemukan</td>
+<td>Periksa executable</td>
+<td><code>which COMMAND</code></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<hr />
+<h2 id="common-job-states">Common Job States</h2>
+<div class="command-reference-table">
+
+<table>
+
+<thead>
+<tr>
+<th>State</th>
+<th>Makna</th>
+<th>Tindakan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><code>PENDING</code></td>
+<td>Job belum mendapatkan resource</td>
+<td>Periksa status dan alasan pending</td>
+</tr>
+
+<tr>
+<td><code>RUNNING</code></td>
+<td>Job sedang berjalan</td>
+<td>Pantau output</td>
+</tr>
+
+<tr>
+<td><code>COMPLETED</code></td>
+<td>Job selesai menurut scheduler</td>
+<td>Verifikasi output</td>
+</tr>
+
+<tr>
+<td><code>FAILED</code></td>
+<td>Job berakhir dengan kegagalan</td>
+<td>Periksa output dan konfigurasi</td>
+</tr>
+
+<tr>
+<td><code>CANCELLED</code></td>
+<td>Job dibatalkan</td>
+<td>Periksa alasan pembatalan</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<hr />
+<h2 id="minimal-workflow">Minimal Workflow</h2>
+<p class="section-description">
+Jika input dan script sudah siap, workflow dasar hanya membutuhkan
+beberapa langkah.
+</p>
+
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>scripts/run.slurm
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>output/calculation.out
+</code></pre></div>
+<p>Setelah selesai:</p>
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>-j<span class="w"> </span>JOBID
+</code></pre></div>
+<p>Kemudian:</p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>output/calculation.out
+</code></pre></div>
+<p>Dan periksa error:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error"</span><span class="w"> </span>output/calculation.out
+</code></pre></div>
+<hr />
+<h2 id="job-checklist">Job Checklist</h2>
 <div class="checklist">
 
-<div>
-✓
-Confirm your HPC account
-</div>
+<div>Input sudah siap</div>
 
-<div>
-✓
-Connect using SSH
-</div>
+<div>SLURM script sudah diperiksa</div>
 
-<div>
-✓
-Prepare the calculation directory
-</div>
+<div>Software environment sudah siap</div>
 
-<div>
-✓
-Verify input files
-</div>
+<div>Resource request sudah sesuai</div>
 
-<div>
-✓
-Load the correct software environment
-</div>
+<div>Job berhasil dikirim</div>
 
-<div>
-✓
-Check available computational resources
-</div>
+<div>JOB ID sudah dicatat</div>
 
-<div>
-✓
-Prepare the SLURM job script
-</div>
+<div>Status job sudah dipantau</div>
 
-<div>
-✓
-Submit and monitor the job
-</div>
+<div>Output sudah diperiksa</div>
 
-</div>
+<div>Error sudah diperiksa</div>
 
-<hr />
-<h2 id="troubleshooting">Troubleshooting</h2>
-<div class="troubleshooting-grid">
-
-<div>
-
-<h3>
-Job does not start
-</h3>
-
-<p>
-Check the queue status, requested resources,
-partition, and scheduler messages.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Software command not found
-</h3>
-
-<p>
-Check the available modules and verify that
-the required software environment is loaded.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Calculation stops unexpectedly
-</h3>
-
-<p>
-Inspect the scheduler output, application output,
-resource usage, and calculation parameters.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>
-Output looks incomplete
-</h3>
-
-<p>
-Check whether the job finished normally and inspect
-the final section of the application output.
-</p>
-
-</div>
+<div>Hasil siap dianalisis</div>
 
 </div>
 
@@ -2982,16 +3119,16 @@ the final section of the application output.
 <div class="environment-banner">
 
 <h2>
-Ready to Run Your Calculation?
+Calculation Complete
 </h2>
 
 <p>
-Start with HPC access, configure your software,
-then submit your first scientific workload.
+Setelah job selesai dan output terverifikasi, lanjutkan ke
+research case untuk melihat workflow aplikasi dan analisis ilmiah.
 </p>
 
-<a href="running-calculations.md">
-Open HPC Job Guide →
+<a href="../../hands-on-project/">
+Explore Research Cases →
 </a>
 
 </div>

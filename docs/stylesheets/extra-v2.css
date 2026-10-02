@@ -19343,3 +19343,274 @@ article h4 {
     margin-top: 18px !important;
     margin-bottom: 6px !important;
 }
+/* =========================================
+   SCRIPT LIBRARY
+   ========================================= */
+
+.script-library-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0 36px;
+}
+
+.script-library-card {
+    padding: 22px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    border-radius: 14px;
+    background: rgba(127, 127, 127, 0.04);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.script-library-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(127, 127, 127, 0.35);
+}
+
+.script-library-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    margin-bottom: 7px;
+}
+
+.script-library-card h3,
+.script-library-section h3 {
+    margin: 0 0 8px;
+    font-size: 18px !important;
+}
+
+.script-library-card p,
+.script-library-header p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    opacity: 0.75;
+}
+
+.script-library-meta {
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.script-library-card a {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.script-library-section {
+    margin: 28px 0 42px;
+    padding: 22px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    border-radius: 16px;
+    background: rgba(127, 127, 127, 0.035);
+}
+
+.script-library-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.script-code {
+    margin: 0;
+}
+
+.script-code pre {
+    margin: 0 !important;
+}
+
+.script-code code {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.script-editor {
+    width: 100%;
+    min-height: 360px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid rgba(127, 127, 127, 0.25);
+    border-radius: 10px;
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    tab-size: 4;
+    outline: none;
+    background: transparent;
+    color: inherit;
+}
+
+.script-editor:focus {
+    border-color: rgba(127, 127, 127, 0.55);
+}
+
+.script-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.script-actions button {
+    padding: 7px 13px;
+    border: 1px solid rgba(127, 127, 127, 0.25);
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.script-actions button:hover {
+    background: rgba(127, 127, 127, 0.08);
+}
+
+.script-actions .script-done {
+    display: none;
+}
+
+.script-local-note {
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.6;
+    text-align: center;
+}
+
+.script-local-change {
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.65;
+    margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+
+    .script-library-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .script-library-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .script-library-section {
+        padding: 16px;
+    }
+
+    .script-code code,
+    .script-editor {
+        font-size: 12px;
+    }
+
+}
+/* =========================================
+   SCRIPT LIBRARY EDITOR
+   ========================================= */
+
+.script-editor {
+    display: none;
+    width: 100%;
+    min-height: 360px;
+    box-sizing: border-box;
+    padding: 18px;
+    border: 1px solid rgba(127, 127, 127, 0.25);
+    border-radius: 12px;
+    resize: vertical;
+    outline: none;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 13px;
+    line-height: 1.65;
+    tab-size: 4;
+
+    background: rgba(127, 127, 127, 0.05);
+    color: inherit;
+}
+
+.script-library-section.is-editing .script-code {
+    display: none;
+}
+
+.script-library-section.is-editing .script-editor {
+    display: block;
+}
+
+.script-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.script-actions button {
+    border: 1px solid rgba(127, 127, 127, 0.25);
+    border-radius: 8px;
+    padding: 7px 13px;
+
+    background: transparent;
+    color: inherit;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.script-actions button:hover {
+    background: rgba(127, 127, 127, 0.08);
+    border-color: rgba(127, 127, 127, 0.4);
+}
+
+.script-done {
+    display: none;
+}
+
+.script-library-section.is-editing .script-edit {
+    display: none;
+}
+
+.script-library-section.is-editing .script-done {
+    display: inline-block;
+}
+
+.script-local-change {
+    margin-top: 9px;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+
+    .script-editor {
+        min-height: 300px;
+        font-size: 12px;
+    }
+
+    .script-actions button {
+        flex: 1;
+    }
+
+}
