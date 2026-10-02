@@ -14276,3 +14276,395 @@ grid-template-columns:1fr;
   }
 
 }
+/* =========================================================
+   HANDS-ON PROJECTS
+   PREMIUM COMPACT HERO
+   ========================================================= */
+
+.lab-hero {
+  position: relative;
+
+  margin: .25rem 0 1.35rem !important;
+  padding: 3rem 2.5rem 2.65rem !important;
+
+  min-height: 0 !important;
+
+  border-radius: 24px !important;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(47, 104, 255, .12),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f8faff 100%
+    );
+
+  border: 1px solid rgba(39, 91, 210, .09);
+
+  box-shadow:
+    0 18px 45px rgba(25, 61, 130, .07),
+    0 2px 8px rgba(25, 61, 130, .035);
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE DECORATIVE ELEMENTS
+   --------------------------------------------------------- */
+
+.lab-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -150px;
+  left: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(43, 99, 238, .045);
+
+  pointer-events: none;
+}
+
+
+.lab-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -155px;
+  bottom: -190px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(43, 99, 238, .07);
+
+  box-shadow:
+    0 0 0 35px rgba(43, 99, 238, .025),
+    0 0 0 70px rgba(43, 99, 238, .018);
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   LABEL
+   --------------------------------------------------------- */
+
+.lab-hero .hero-label {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 .75rem !important;
+
+  font-size: .62rem !important;
+  font-weight: 700 !important;
+
+  letter-spacing: .19em !important;
+
+  line-height: 1.4 !important;
+
+  color: #2764df !important;
+
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN TITLE
+   --------------------------------------------------------- */
+
+.lab-hero h1 {
+  position: relative;
+  z-index: 1;
+
+  max-width: 780px;
+
+  margin: 0 auto .85rem !important;
+
+  font-size: clamp(
+    2.45rem,
+    5vw,
+    4.4rem
+  ) !important;
+
+  line-height: .98 !important;
+
+  letter-spacing: -.055em !important;
+
+  font-weight: 800 !important;
+
+  color: #172b61 !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.lab-hero .hero-description {
+  position: relative;
+  z-index: 1;
+
+  max-width: 680px;
+
+  margin: 0 auto 1.35rem !important;
+
+  font-size: .9rem !important;
+
+  line-height: 1.65 !important;
+
+  color: #536887 !important;
+}
+
+
+/* ---------------------------------------------------------
+   TAGS
+   --------------------------------------------------------- */
+
+.lab-tags {
+  position: relative;
+  z-index: 1;
+
+  display: flex !important;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: .45rem !important;
+
+  margin: 0 !important;
+}
+
+
+.lab-tags span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 31px;
+
+  padding: .4rem .72rem !important;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.85);
+
+  border: 1px solid rgba(39, 91, 210, .1);
+
+  color: #31558f;
+
+  font-size: .58rem;
+
+  font-weight: 700;
+
+  letter-spacing: .025em;
+
+  box-shadow:
+    0 4px 12px rgba(31, 67, 130, .045);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+
+.lab-tags span:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(39, 99, 223, .25);
+
+  box-shadow:
+    0 7px 18px rgba(31, 67, 130, .08);
+}
+
+
+/* =========================================================
+   SECTION BELOW HERO
+   ========================================================= */
+
+.lab-hero + hr {
+  margin-top: 0 !important;
+  margin-bottom: 1.15rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   EXPLORE RESEARCH CASES
+   --------------------------------------------------------- */
+
+#explore-research-cases {
+  margin-top: 0 !important;
+}
+
+
+/* Jika heading pertama memakai ID berbeda */
+
+.md-typeset h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   COMPACT SECTION HEADERS
+   ========================================================= */
+
+.md-typeset h2 {
+  position: relative;
+
+  letter-spacing: -.025em !important;
+}
+
+
+.md-typeset h2::after {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 3px;
+
+  margin-top: .55rem;
+
+  border-radius: 999px;
+
+  background: #2867e8;
+}
+
+
+/* Hindari garis tambahan pada heading yang memang
+   sudah mempunyai dekorasi sendiri */
+
+.lab-hero h1::after,
+.resources-header h2::after {
+  display: none !important;
+}
+
+
+/* =========================================================
+   RESEARCH PROJECT INTRO
+   ========================================================= */
+
+.section-description {
+  max-width: 720px !important;
+
+  margin-top: .15rem !important;
+  margin-bottom: .85rem !important;
+
+  font-size: .78rem !important;
+
+  line-height: 1.55 !important;
+
+  color: #60728f !important;
+}
+
+
+/* =========================================================
+   DESKTOP REFINEMENT
+   ========================================================= */
+
+@media screen and (min-width: 1100px) {
+
+  .lab-hero {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .lab-hero {
+    padding: 2.5rem 1.8rem 2.2rem !important;
+  }
+
+  .lab-hero h1 {
+    font-size: 3rem !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+  .lab-hero {
+    margin-top: .15rem !important;
+    margin-bottom: 1rem !important;
+
+    padding: 2.15rem 1.15rem 1.8rem !important;
+
+    border-radius: 18px !important;
+  }
+
+
+  .lab-hero .hero-label {
+    font-size: .52rem !important;
+
+    letter-spacing: .14em !important;
+
+    margin-bottom: .6rem !important;
+  }
+
+
+  .lab-hero h1 {
+    font-size: 2.35rem !important;
+
+    line-height: 1 !important;
+
+    letter-spacing: -.045em !important;
+
+    margin-bottom: .7rem !important;
+  }
+
+
+  .lab-hero .hero-description {
+    font-size: .72rem !important;
+
+    line-height: 1.55 !important;
+
+    margin-bottom: 1rem !important;
+  }
+
+
+  .lab-tags {
+    gap: .3rem !important;
+  }
+
+
+  .lab-tags span {
+    min-height: 27px;
+
+    padding: .32rem .55rem !important;
+
+    font-size: .5rem !important;
+  }
+
+}

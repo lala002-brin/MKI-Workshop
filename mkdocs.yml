@@ -119,7 +119,23 @@ nav:
       - AI Acceleration: ai/index.md
 
   - Research:
-      - Hands-on Projects: hands-on-project/index.md
+      - Research Overview: hands-on-project/index.md
+
+      - Research Cases:
+          - Graphene Electronic Structure:
+              - Overview: hands-on-project/research-cases/graphene/index.md
+              - System Preparation: hands-on-project/research-cases/graphene/system-preparation.md
+              - HPC Setup: hands-on-project/research-cases/graphene/hpc-setup.md
+              - Analysis: hands-on-project/research-cases/graphene/analysis.md
+
+          - LiTFSI–EMIM/TFSI Electrolyte:
+              - Overview: hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
+
+          - Graphene–Ionic Liquid Interface:
+              - Overview: hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
+
+          - Battery Electrolyte:
+              - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
 
 extra:
   generator: false
