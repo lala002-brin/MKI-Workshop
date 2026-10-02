@@ -2798,3 +2798,1209 @@ z-index:-1;
     margin-top:1rem;
 
 }
+.workshop-hero h1 {
+
+    font-size:2.8rem;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+
+    max-width:850px;
+
+    margin:0 auto 1rem;
+
+
+    background:linear-gradient(
+        90deg,
+        #172554,
+        #2563eb
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+/* ==========================
+   About Workshop
+========================== */
+
+
+.about-workshop {
+
+    margin:4rem auto;
+
+}
+
+
+.about-workshop h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.about-workshop > p {
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 2rem;
+
+    line-height:1.8;
+
+}
+
+
+
+.about-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+.about-card {
+
+    padding:1.5rem;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    transition:.25s ease;
+
+}
+
+
+.about-card:hover {
+
+    transform:translateY(-5px);
+
+    border-color:#2563eb;
+
+}
+
+
+.about-card h3 {
+
+    font-size:1.1rem;
+
+    margin-bottom:.8rem;
+
+}
+
+
+.about-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+
+
+@media(max-width:768px){
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================
+   Learning Philosophy
+========================== */
+
+
+.learning-philosophy {
+
+    margin:4rem auto;
+
+}
+
+
+
+.learning-philosophy h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:.8rem;
+
+}
+
+
+
+.section-intro {
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 2rem;
+
+    line-height:1.8;
+
+}
+
+
+
+.philosophy-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+}
+
+
+
+.philosophy-card {
+
+    text-align:center;
+
+    padding:2rem 1.5rem;
+
+    border-radius:18px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    transition:.25s ease;
+
+}
+
+
+
+.philosophy-card:hover {
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.12);
+
+}
+
+
+
+.philosophy-icon {
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.philosophy-card h3 {
+
+    font-size:1.25rem;
+
+    margin-bottom:.8rem;
+
+}
+
+
+
+.philosophy-card p {
+
+    color:#475569;
+
+    line-height:1.7;
+
+}
+
+
+
+@media(max-width:768px){
+
+.philosophy-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================
+   Workshop Roadmap Timeline
+========================== */
+
+
+.roadmap-section {
+
+    margin:5rem auto;
+
+}
+
+
+.roadmap {
+
+    position:relative;
+
+    margin-top:3rem;
+
+}
+
+
+.roadmap::before {
+
+    content:"";
+
+    position:absolute;
+
+    left:32px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:#dbeafe;
+
+}
+
+
+
+.roadmap-item {
+
+    position:relative;
+
+    display:flex;
+
+    gap:2rem;
+
+    margin-bottom:2.5rem;
+
+}
+
+
+
+.roadmap-number {
+
+    width:64px;
+
+    height:64px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+    z-index:2;
+
+}
+
+
+
+.roadmap-content {
+
+    flex:1;
+
+    padding:1.5rem 1.8rem;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+}
+
+
+
+.roadmap-content h3 {
+
+    margin-top:0;
+
+    font-size:1.35rem;
+
+    color:#172554;
+
+}
+
+
+
+.roadmap-content p {
+
+    line-height:1.7;
+
+}
+
+
+
+.roadmap-content ul {
+
+    margin-top:1rem;
+
+}
+
+
+
+.roadmap-content li {
+
+    margin:.4rem 0;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.roadmap::before{
+
+left:20px;
+
+}
+
+
+.roadmap-item{
+
+gap:1rem;
+
+}
+
+
+.roadmap-number{
+
+width:42px;
+
+height:42px;
+
+font-size:.9rem;
+
+}
+
+
+.roadmap-content{
+
+padding:1rem;
+
+}
+
+
+}
+/* ==========================
+   Recommended Learning Path
+========================== */
+
+
+.learning-path {
+
+    margin:5rem auto;
+
+}
+
+
+
+.learning-path h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.path-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.5rem;
+
+    margin-top:3rem;
+
+}
+
+
+
+.path-card {
+
+    position:relative;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+    padding:2rem 1.5rem;
+
+    text-align:center;
+
+    transition:.25s ease;
+
+}
+
+
+
+.path-card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.12);
+
+}
+
+
+
+.path-card span {
+
+    display:flex;
+
+    width:48px;
+
+    height:48px;
+
+    margin:0 auto 1rem;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-weight:800;
+
+}
+
+
+
+.path-card h3 {
+
+    font-size:1.2rem;
+
+    margin-bottom:.8rem;
+
+    color:#172554;
+
+}
+
+
+
+.path-card p {
+
+    color:#475569;
+
+    line-height:1.7;
+
+}
+
+
+
+@media(max-width:900px){
+
+.path-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:600px){
+
+.path-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================
+   Experienced Users
+========================== */
+
+
+.experienced-section {
+
+    margin:5rem auto;
+
+}
+
+
+
+.experience-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1.5rem;
+
+    margin-top:2rem;
+
+}
+
+
+
+.experience-card {
+
+    text-align:center;
+
+    padding:1.8rem 1.4rem;
+
+    border-radius:18px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    transition:.25s ease;
+
+}
+
+
+
+.experience-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.1);
+
+}
+
+
+
+.experience-icon {
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.experience-card h3 {
+
+    font-size:1.15rem;
+
+    color:#172554;
+
+    margin-bottom:.8rem;
+
+}
+
+
+
+.experience-card p {
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+
+
+@media(max-width:900px){
+
+.experience-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =================================
+   WORKSHOP GUIDE COMPACT MODE
+================================= */
+
+
+/* Section spacing */
+
+.workshop-hero {
+
+    margin-bottom:2rem !important;
+
+}
+
+
+.about-workshop,
+.learning-philosophy,
+.roadmap-section,
+.learning-path,
+.experienced-section,
+.preparation-section {
+
+    margin-top:2.5rem !important;
+
+    margin-bottom:2.5rem !important;
+
+}
+
+
+/* Section title */
+
+.about-workshop h2,
+.learning-philosophy h2,
+.roadmap-section h2,
+.learning-path h2,
+.experienced-section h2,
+.preparation-section h2 {
+
+    margin-bottom:.8rem !important;
+
+    font-size:1.7rem !important;
+
+}
+
+
+/* Intro paragraph */
+
+.section-intro {
+
+    margin-bottom:1.2rem !important;
+
+    line-height:1.6 !important;
+
+}
+
+
+/* Semua card */
+
+.about-card,
+.philosophy-card,
+.experience-card,
+.prep-card,
+.outcome-card,
+.path-card {
+
+    padding:1rem !important;
+
+    border-radius:14px !important;
+
+}
+
+
+/* Card heading */
+
+.about-card h3,
+.philosophy-card h3,
+.experience-card h3,
+.prep-card h3,
+.outcome-card h3,
+.path-card h3 {
+
+    margin-top:.4rem !important;
+
+    margin-bottom:.5rem !important;
+
+    font-size:1rem !important;
+
+}
+
+
+/* Card paragraph */
+
+.about-card p,
+.philosophy-card p,
+.experience-card p,
+.prep-card p,
+.outcome-card p,
+.path-card p {
+
+    font-size:.9rem !important;
+
+    line-height:1.55 !important;
+
+    margin-bottom:.5rem !important;
+
+}
+
+
+/* List compact */
+
+.prep-card ul,
+.roadmap-content ul {
+
+    margin-top:.4rem !important;
+
+    margin-bottom:.3rem !important;
+
+}
+
+
+.prep-card li,
+.roadmap-content li {
+
+    margin-bottom:.15rem !important;
+
+}
+
+
+/* Grid gap */
+
+.about-grid,
+.philosophy-grid,
+.experience-grid,
+.preparation-grid,
+.outcome-grid,
+.path-grid {
+
+    gap:1rem !important;
+
+}
+.experienced-section {
+    margin:2.5rem auto;
+}
+
+.preparation-section {
+    margin:2.5rem auto;
+}
+/* =====================================
+   MKI WORKSHOP GUIDE ULTRA COMPACT
+===================================== */
+
+
+/* Global content spacing */
+
+.md-typeset {
+
+    line-height:1.55;
+
+}
+
+
+.md-typeset h1 {
+
+    margin-top:0 !important;
+
+    margin-bottom:1rem !important;
+
+}
+
+
+.md-typeset h2 {
+
+    margin-top:1.8rem !important;
+
+    margin-bottom:.6rem !important;
+
+}
+
+
+.md-typeset h3 {
+
+    margin-top:.5rem !important;
+
+    margin-bottom:.4rem !important;
+
+}
+
+
+.md-typeset p {
+
+    margin-top:.3rem !important;
+
+    margin-bottom:.6rem !important;
+
+}
+
+
+/* Hero */
+
+.workshop-hero {
+
+    margin:1rem auto 1.5rem !important;
+
+    padding:.5rem !important;
+
+}
+
+
+.workshop-hero h1 {
+
+    margin:.5rem auto !important;
+
+}
+
+
+.hero-subtitle {
+
+    margin:.5rem auto !important;
+
+}
+
+
+
+/* Semua section */
+
+.about-workshop,
+.learning-philosophy,
+.roadmap-section,
+.learning-path,
+.experienced-section,
+.preparation-section {
+
+    margin:2rem auto !important;
+
+}
+
+
+/* Intro text */
+
+.section-intro {
+
+    margin-bottom:1rem !important;
+
+}
+
+
+
+/* Semua grid */
+
+.about-grid,
+.philosophy-grid,
+.experience-grid,
+.preparation-grid,
+.outcome-grid,
+.path-grid {
+
+    gap:.8rem !important;
+
+    margin-top:1rem !important;
+
+}
+
+
+/* Semua card */
+
+.about-card,
+.philosophy-card,
+.experience-card,
+.prep-card,
+.outcome-card,
+.path-card {
+
+    padding:.9rem !important;
+
+}
+
+
+/* Icon */
+
+.philosophy-icon,
+.experience-icon,
+.prep-icon {
+
+    font-size:1.5rem !important;
+
+    margin-bottom:.4rem !important;
+
+}
+
+
+/* Card text */
+
+.about-card p,
+.philosophy-card p,
+.experience-card p,
+.prep-card p,
+.outcome-card p,
+.path-card p {
+
+    margin-bottom:.3rem !important;
+
+    line-height:1.45 !important;
+
+}
+
+
+
+/* Roadmap */
+
+.roadmap {
+
+    margin-top:1rem !important;
+
+}
+
+
+.roadmap-item {
+
+    margin-bottom:1.2rem !important;
+
+}
+
+
+.roadmap-content {
+
+    padding:1rem !important;
+
+}
+
+
+/* Remove excessive blank from HTML spacing */
+
+.workshop-hero br {
+
+    line-height:1;
+
+}
+/* =====================================
+   SECTION TITLE STYLE
+===================================== */
+
+
+.about-workshop h2,
+.learning-philosophy h2,
+.roadmap-section h2,
+.learning-path h2,
+.experienced-section h2,
+.preparation-section h2,
+.outcome-section h2 {
+
+
+    text-align:center;
+
+    font-size:2rem !important;
+
+    font-weight:800;
+
+    letter-spacing:-0.03em;
+
+    color:#172554;
+
+    margin-bottom:.8rem !important;
+
+}
+
+
+
+/* garis aksen bawah judul */
+
+
+.about-workshop h2::after,
+.learning-philosophy h2::after,
+.roadmap-section h2::after,
+.learning-path h2::after,
+.experienced-section h2::after,
+.preparation-section h2::after,
+.outcome-section h2::after {
+
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    margin:.8rem auto 0;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+
+
+/* subtitle section */
+
+.section-intro {
+
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:.8rem auto 1.5rem !important;
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+/* subtle section animation */
+
+.about-workshop h2,
+.learning-philosophy h2,
+.roadmap-section h2,
+.learning-path h2,
+.experienced-section h2,
+.preparation-section h2 {
+
+    position:relative;
+
+}
+.md-typeset h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#172554;
+
+    margin-top:2rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+.md-typeset h2::after {
+
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:3px;
+
+    margin:.7rem auto 0;
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+#expected-outcomes {
+
+    margin-top:1rem !important;
+
+}
+
+
+.md-typeset h2 {
+
+    margin-top:1.5rem !important;
+
+}
+/* =====================================
+   CENTER ALL WORKSHOP SECTION TITLES
+===================================== */
+
+
+/* semua heading level 2 di halaman workshop */
+
+.md-typeset h2 {
+
+    text-align:center !important;
+
+    font-size:2rem !important;
+
+    font-weight:800 !important;
+
+    color:#172554 !important;
+
+    margin-top:2.5rem !important;
+
+    margin-bottom:1rem !important;
+
+}
+
+
+/* garis kecil bawah judul */
+
+.md-typeset h2::after {
+
+    content:"";
+
+    display:block;
+
+    width:65px;
+
+    height:3px;
+
+    margin:.7rem auto 0;
+
+    border-radius:20px;
+
+    background:#2563eb;
+
+}
+.md-typeset h2 {
+
+    margin-top:1.8rem !important;
+
+}
+/* FORCE WORKSHOP SECTION TITLE CENTER */
+
+.md-content .md-typeset > h2,
+.md-content .md-typeset h2 {
+
+    text-align: center !important;
+    color: #172554 !important;
+    font-weight: 800 !important;
+
+}
+
+
+/* underline */
+
+.md-content .md-typeset > h2::after,
+.md-content .md-typeset h2::after {
+
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 12px auto 0;
+    background: #2563eb;
+    border-radius: 10px;
+
+}
