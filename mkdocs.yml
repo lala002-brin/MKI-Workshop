@@ -87,7 +87,8 @@ nav:
       - Computational Workflow: start-here/workflow.md
 
   - Computational Environment:
-      - Linux Fundamentals: environment/linux.md
+      - HPC Overview: environment/index.md
+      - Access & Linux: environment/linux.md
       - Command Line: environment/command-line.md
       - Software Environment: environment/software-environment.md
       - Running Calculations: environment/running-calculations.md
@@ -177,6 +178,7 @@ extra_css:
   - assets/stylesheets/chat.css
   - stylesheets/home.css
   - stylesheets/extra-v2.css
+  - stylesheets/file-editor.css
 
 extra_javascript:
 
@@ -187,5 +189,5 @@ extra_javascript:
   - javascripts/features-reveal.js 
   - javascripts/workflow-flow.js  
   - javascripts/research-reveal.js
-  - javascripts/file-preview.js
   - javascripts/scroll-reveal.js
+  - javascripts/file-editor.js
