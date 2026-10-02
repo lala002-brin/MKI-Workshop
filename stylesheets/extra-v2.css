@@ -15004,3 +15004,1357 @@ grid-template-columns:1fr;
 .md-typeset a:hover {
   color: #174bbd;
 }
+/* ============================================================
+   MKI WORKSHOP
+   GLOBAL FILE PREVIEW
+   PREMIUM CHATGPT STYLE
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   BODY LOCK
+   ------------------------------------------------------------ */
+
+body.mki-preview-open {
+    overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   BACKDROP
+   ------------------------------------------------------------ */
+
+#mki-file-preview-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    background: rgba(15, 23, 42, 0.18);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+#mki-file-preview-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ------------------------------------------------------------
+   MAIN PANEL
+   ------------------------------------------------------------ */
+
+#mki-file-preview {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: min(720px, 58vw);
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        -20px 0 60px rgba(15, 23, 42, 0.12),
+        -4px 0 18px rgba(15, 23, 42, 0.06);
+
+    transform: translateX(100%);
+
+    transition:
+        transform 0.32s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    overflow: hidden;
+}
+
+#mki-file-preview.is-open {
+    transform: translateX(0);
+}
+
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+
+.mki-preview-header {
+
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 20px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-bottom: 1px solid #edf1f7;
+
+    flex-shrink: 0;
+}
+
+
+/* FILE INFO */
+
+.mki-preview-file-info {
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.mki-preview-file-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef4ff,
+            #f7f9ff
+        );
+
+    color: #2563eb;
+
+    border: 1px solid #dce7ff;
+
+    flex-shrink: 0;
+}
+
+.mki-preview-file-icon
+.material-symbols-rounded {
+
+    font-size: 22px;
+}
+
+
+/* FILE TEXT */
+
+.mki-preview-file-text {
+    min-width: 0;
+}
+
+.mki-preview-filename {
+
+    max-width: 360px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #172554;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.mki-preview-filetype {
+
+    margin-top: 3px;
+
+    color: #71809b;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------
+   HEADER ACTIONS
+   ------------------------------------------------------------ */
+
+.mki-preview-actions {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.mki-preview-download {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff !important;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 5px 14px rgba(
+            37,
+            99,
+            235,
+            0.20
+        );
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.mki-preview-download:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(
+            37,
+            99,
+            235,
+            0.25
+        );
+}
+
+.mki-preview-download
+.material-symbols-rounded {
+
+    font-size: 17px;
+}
+
+
+/* CLOSE */
+
+.mki-preview-close {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #f5f7fb;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.mki-preview-close:hover {
+
+    background: #edf1f7;
+
+    color: #172554;
+
+    transform: rotate(3deg);
+}
+
+.mki-preview-close
+.material-symbols-rounded {
+
+    font-size: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   DIVIDER
+   ------------------------------------------------------------ */
+
+.mki-preview-divider {
+
+    height: 1px;
+
+    background: #edf1f7;
+
+    flex-shrink: 0;
+}
+
+
+/* ------------------------------------------------------------
+   BODY
+   ------------------------------------------------------------ */
+
+.mki-preview-body {
+
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: auto;
+
+    background: #f8fafc;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        #cbd5e1
+        transparent;
+}
+
+.mki-preview-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mki-preview-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mki-preview-body::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+
+    border: 2px solid #f8fafc;
+}
+
+
+/* ------------------------------------------------------------
+   CODE PREVIEW
+   ------------------------------------------------------------ */
+
+.mki-code-preview {
+
+    min-height: 100%;
+
+    padding: 20px;
+}
+
+.mki-code-toolbar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 14px;
+
+    border:
+        1px solid #e3e9f2;
+
+    border-bottom: 0;
+
+    border-radius:
+        10px 10px 0 0;
+
+    background: #ffffff;
+
+    color: #71809b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+}
+
+
+/* CODE */
+
+.mki-code-preview pre {
+
+    margin: 0;
+
+    padding: 20px;
+
+    overflow-x: auto;
+
+    background: #fdfefe;
+
+    border:
+        1px solid #e3e9f2;
+
+    border-radius:
+        0 0 10px 10px;
+
+    color: #26354d;
+
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    white-space: pre;
+
+    tab-size: 4;
+}
+
+.mki-code-preview code {
+
+    font-family: inherit;
+
+    color: inherit;
+
+    background: transparent;
+
+    padding: 0;
+}
+
+
+/* ------------------------------------------------------------
+   NOTEBOOK
+   ------------------------------------------------------------ */
+
+.mki-notebook-preview {
+
+    padding: 20px;
+}
+
+.mki-notebook-cell {
+
+    margin-bottom: 16px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4e9f1;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 2px 8px rgba(
+            15,
+            23,
+            42,
+            0.025
+        );
+}
+
+.mki-cell-label {
+
+    padding: 9px 13px;
+
+    background: #f7f9fc;
+
+    border-bottom:
+        1px solid #edf1f6;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.mki-notebook-cell pre {
+
+    margin: 0;
+
+    padding: 16px;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    color: #26354d;
+
+    font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        Consolas,
+        monospace;
+
+    font-size: 12.5px;
+
+    line-height: 1.65;
+}
+
+.mki-notebook-cell code {
+
+    background: transparent;
+
+    padding: 0;
+
+    color: inherit;
+}
+
+.markdown-cell
+.mki-cell-content {
+
+    padding: 17px 18px;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.markdown-cell
+.mki-cell-content h2 {
+
+    margin:
+        0 0 12px;
+
+    color: #172554;
+
+    font-size: 20px;
+}
+
+.markdown-cell
+.mki-cell-content h3 {
+
+    margin:
+        0 0 10px;
+
+    color: #172554;
+
+    font-size: 17px;
+}
+
+.markdown-cell
+.mki-cell-content h4 {
+
+    margin:
+        0 0 8px;
+
+    color: #172554;
+
+    font-size: 15px;
+}
+
+.markdown-cell
+.mki-cell-content p {
+
+    margin:
+        0 0 10px;
+}
+
+
+/* ------------------------------------------------------------
+   IMAGE PREVIEW
+   ------------------------------------------------------------ */
+
+.mki-preview-image-wrapper {
+
+    min-height: 100%;
+
+    padding: 28px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mki-preview-image {
+
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #e2e8f0;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 35px rgba(
+            15,
+            23,
+            42,
+            0.08
+        );
+}
+
+
+/* ------------------------------------------------------------
+   PDF
+   ------------------------------------------------------------ */
+
+.mki-preview-pdf-wrapper {
+
+    width: 100%;
+    height: 100%;
+}
+
+.mki-preview-pdf {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+
+    background: #ffffff;
+}
+
+
+/* ------------------------------------------------------------
+   LOADING
+   ------------------------------------------------------------ */
+
+.mki-preview-loading {
+
+    min-height: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #71809b;
+
+    font-size: 13px;
+}
+
+.mki-preview-spinner {
+
+    width: 28px;
+    height: 28px;
+
+    border:
+        3px solid #e6ebf3;
+
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation:
+        mki-preview-spin
+        0.8s linear infinite;
+}
+
+@keyframes mki-preview-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   ERROR / EMPTY
+   ------------------------------------------------------------ */
+
+.mki-preview-empty,
+.mki-preview-error {
+
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.mki-preview-empty
+.material-symbols-rounded,
+.mki-preview-error
+.material-symbols-rounded {
+
+    margin-bottom: 14px;
+
+    font-size: 42px;
+
+    color: #94a3b8;
+}
+
+.mki-preview-empty h3,
+.mki-preview-error h3 {
+
+    margin:
+        0 0 8px;
+
+    color: #1e293b;
+
+    font-size: 18px;
+}
+
+.mki-preview-empty p,
+.mki-preview-error p {
+
+    max-width: 360px;
+
+    margin: 0 0 20px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.mki-preview-empty-download {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+
+.mki-preview-footer {
+
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        0 18px;
+
+    background: #ffffff;
+
+    border-top:
+        1px solid #edf1f7;
+
+    color: #8a97aa;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    flex-shrink: 0;
+}
+
+.mki-preview-status-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            34,
+            197,
+            94,
+            0.10
+        );
+}
+
+.mki-preview-footer-separator {
+
+    color: #cbd5e1;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+
+@media screen and (max-width: 1100px) {
+
+    #mki-file-preview {
+
+        width: min(
+            680px,
+            70vw
+        );
+
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #mki-file-preview {
+
+        width: 100%;
+
+        top: auto;
+
+        height: 88vh;
+
+        border-left: 0;
+
+        border-top:
+            1px solid rgba(
+                15,
+                23,
+                42,
+                0.08
+            );
+
+        border-radius:
+            18px 18px 0 0;
+
+        transform:
+            translateY(100%);
+    }
+
+    #mki-file-preview.is-open {
+
+        transform:
+            translateY(0);
+    }
+
+    .mki-preview-header {
+
+        min-height: 68px;
+
+        padding:
+            12px 14px;
+    }
+
+    .mki-preview-file-icon {
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+    }
+
+    .mki-preview-filename {
+
+        max-width: 180px;
+
+        font-size: 13px;
+    }
+
+    .mki-preview-filetype {
+
+        font-size: 10px;
+    }
+
+    .mki-preview-download {
+
+        width: 38px;
+        height: 38px;
+
+        min-height: 38px;
+
+        padding: 0;
+    }
+
+    .mki-preview-download span:last-child {
+
+        display: none;
+    }
+
+    .mki-preview-body {
+
+        font-size: 12px;
+    }
+
+    .mki-code-preview,
+    .mki-notebook-preview {
+
+        padding: 12px;
+    }
+
+    .mki-code-preview pre {
+
+        padding: 14px;
+
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   REDUCE MOTION
+   ------------------------------------------------------------ */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    #mki-file-preview,
+    #mki-file-preview-backdrop,
+    .mki-preview-download,
+    .mki-preview-close {
+
+        transition: none;
+    }
+
+}
+/* =========================================================
+   GLOBAL FILE PREVIEW PANEL
+   ========================================================= */
+
+.file-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background: rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   PREVIEW PANEL
+   ========================================================= */
+
+.file-preview-panel {
+  width: min(760px, 58vw);
+  height: 100vh;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  border-left: 1px solid #e5eaf3;
+
+  box-shadow:
+    -12px 0 40px rgba(15, 23, 42, 0.12);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.file-preview-header {
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px 20px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e8edf5;
+}
+
+
+/* File icon */
+
+.file-preview-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f1f5ff;
+  color: #2563eb;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+   ========================================================= */
+
+.file-preview-info {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+.file-preview-name {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  color: #172554;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.file-preview-type {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: #7b8aa5;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.file-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex: 0 0 auto;
+}
+
+
+/* Download */
+
+.file-preview-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 0 17px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.file-preview-download:hover {
+  background: #1d4ed8;
+
+  box-shadow:
+    0 6px 18px rgba(37, 99, 235, 0.22);
+
+  transform: translateY(-1px);
+}
+
+
+.file-preview-download:active {
+  transform: translateY(0);
+}
+
+
+/* Close */
+
+.file-preview-close {
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #e3e8f1;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #64748b;
+
+  font-size: 21px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+
+.file-preview-close:hover {
+  background: #f8fafc;
+  color: #172554;
+  border-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   PREVIEW BODY
+   ========================================================= */
+
+.file-preview-body {
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 14px 20px 20px;
+
+  overflow-y: auto;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   FILE META BAR
+   ========================================================= */
+
+.file-preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 44px;
+
+  padding: 0 14px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #e1e8f2;
+  border-radius: 10px 10px 0 0;
+
+  background: #ffffff;
+
+  color: #71809b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+.file-preview-meta-type {
+  color: #64748b;
+}
+
+
+.file-preview-meta-lines {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   CODE CONTAINER
+   ========================================================= */
+
+.file-preview-code {
+  margin: 0;
+
+  padding: 20px;
+
+  border: 1px solid #e1e8f2;
+  border-radius: 0 0 10px 10px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family:
+    "SFMono-Regular",
+    "Cascadia Code",
+    "Roboto Mono",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    monospace;
+
+  font-size: 13px;
+  line-height: 1.75;
+
+  white-space: pre;
+
+  overflow-x: auto;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.file-preview-body::-webkit-scrollbar,
+.file-preview-code::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+
+.file-preview-body::-webkit-scrollbar-track,
+.file-preview-code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.file-preview-body::-webkit-scrollbar-thumb,
+.file-preview-code::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+
+.file-preview-body::-webkit-scrollbar-thumb:hover,
+.file-preview-code::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .file-preview-panel {
+    width: 72vw;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .file-preview-panel {
+    width: 100vw;
+  }
+
+  .file-preview-header {
+    padding: 14px 16px;
+  }
+
+  .file-preview-body {
+    padding: 12px 14px 16px;
+  }
+
+  .file-preview-download {
+    padding: 0 13px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .file-preview-header {
+    gap: 10px;
+  }
+
+  .file-preview-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .file-preview-name {
+    font-size: 14px;
+  }
+
+  .file-preview-download {
+    font-size: 13px;
+    padding: 0 11px;
+  }
+
+  .file-preview-close {
+    width: 38px;
+    height: 38px;
+  }
+
+}
