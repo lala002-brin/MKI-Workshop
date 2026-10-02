@@ -119,7 +119,7 @@ nav:
       - AI Acceleration: ai/index.md
 
   - Research:
-      - Research Application: research/index.md
+      - Hands-on Projects: hands-on-project/index.md
 
 extra:
   generator: false
