@@ -6,14 +6,15 @@
 
 
 <h1>
-Your Journey Into<br>
-Computational Materials<br>
+Your Journey Into
+<br>
+Computational Materials
+<br>
 Science
 </h1>
 
-
 <p class="hero-subtitle">
-MKI × ITB × BRIN Computational Materials Science Workshop
+MK1 × ITB × BRIN Computational Materials Science Workshop
 </p>
 
 
@@ -22,6 +23,8 @@ introduces participants to modern computational approaches for
 understanding, modeling, and discovering advanced materials.
 </p>
 
+
+<div class="hero-description">
 
 <p>
 This workshop provides a structured learning pathway that connects
@@ -37,9 +40,11 @@ computational models, evaluated through simulations, and interpreted
 to obtain meaningful scientific insights.
 </p>
 
-
 </div>
----
+
+
+</div
+>---
 <div class="about-workshop">
 
 <h2>
