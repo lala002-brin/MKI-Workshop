@@ -23250,3 +23250,1545 @@ article h4 {
     }
 
 }
+/* =========================================================
+   SOFTWARE ENVIRONMENT
+   FINAL OVERRIDE
+   Fix global typography + compact layout
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL PAGE RESET
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .md-content h1,
+body:has(.software-environment) .md-content h2,
+body:has(.software-environment) .md-content h3,
+body:has(.software-environment) .md-content p {
+    max-width: none;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-hero {
+    padding: 0 0 14px !important;
+}
+
+body:has(.software-environment) .software-hero h1 {
+    margin: 0 0 5px !important;
+
+    font-size: 1.85rem !important;
+    line-height: 1.12 !important;
+
+    color: #172033 !important;
+}
+
+body:has(.software-environment) .software-hero p {
+    max-width: 720px !important;
+
+    margin: 0 !important;
+
+    font-size: .72rem !important;
+    line-height: 1.45 !important;
+
+    color: #64748b !important;
+
+    text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   FLOW
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-flow {
+    margin-bottom: 9px !important;
+
+    padding: 7px !important;
+
+    border-radius: 9px !important;
+}
+
+body:has(.software-environment) .software-flow-item {
+    padding: 5px !important;
+}
+
+body:has(.software-environment) .software-flow-item strong {
+    font-size: .63rem !important;
+}
+
+body:has(.software-environment) .software-flow-item small {
+    font-size: .52rem !important;
+}
+
+body:has(.software-environment) .software-flow-item > span {
+    width: 22px !important;
+    height: 22px !important;
+
+    font-size: .53rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   OVERVIEW
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-overview {
+    margin-bottom: 9px !important;
+
+    padding: 11px 13px !important;
+
+    gap: 15px !important;
+}
+
+body:has(.software-environment) .software-overview h2 {
+    margin: 0 0 3px !important;
+
+    font-size: .82rem !important;
+    line-height: 1.25 !important;
+
+    color: #172033 !important;
+}
+
+body:has(.software-environment) .software-overview p {
+    max-width: 680px !important;
+
+    margin: 0 !important;
+
+    font-size: .61rem !important;
+    line-height: 1.4 !important;
+
+    color: #64748b !important;
+
+    text-align: left !important;
+}
+
+body:has(.software-environment) .software-overview-code {
+    padding: 7px 8px !important;
+}
+
+body:has(.software-environment) .software-overview-code code {
+    font-size: .59rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   SOFTWARE CARDS
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-grid {
+    gap: 8px !important;
+
+    margin-bottom: 9px !important;
+}
+
+body:has(.software-environment) .software-card {
+    padding: 11px !important;
+
+    border-radius: 9px !important;
+}
+
+body:has(.software-environment) .software-card-top {
+    margin-bottom: 7px !important;
+}
+
+body:has(.software-environment) .software-card h2 {
+    margin: 0 0 2px !important;
+
+    font-size: .78rem !important;
+    line-height: 1.25 !important;
+
+    color: #172033 !important;
+}
+
+body:has(.software-environment) .software-card p {
+    margin: 0 !important;
+
+    font-size: .59rem !important;
+    line-height: 1.35 !important;
+
+    color: #64748b !important;
+
+    text-align: left !important;
+}
+
+body:has(.software-environment) .software-number {
+    width: 21px !important;
+    height: 21px !important;
+
+    font-size: .52rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND BOXES
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-command {
+    margin-top: 5px !important;
+}
+
+body:has(.software-environment) .software-command > span {
+    margin-bottom: 2px !important;
+
+    font-size: .48rem !important;
+}
+
+body:has(.software-environment) .software-command pre {
+    padding: 6px 8px !important;
+
+    margin: 0 !important;
+
+    border-radius: 5px !important;
+}
+
+body:has(.software-environment) .software-command pre code {
+    font-size: .57rem !important;
+    line-height: 1.35 !important;
+}
+
+
+/* ---------------------------------------------------------
+   NOTE
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-note {
+    margin-top: 6px !important;
+
+    padding: 6px 7px !important;
+
+    font-size: .55rem !important;
+    line-height: 1.35 !important;
+}
+
+
+/* ---------------------------------------------------------
+   REFERENCE TABLE
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-reference {
+    margin-bottom: 9px !important;
+
+    padding: 11px 13px !important;
+
+    border-radius: 9px !important;
+}
+
+body:has(.software-environment) .software-reference-head {
+    margin-bottom: 6px !important;
+}
+
+body:has(.software-environment) .software-reference-head h2 {
+    margin: 0 !important;
+
+    font-size: .8rem !important;
+    line-height: 1.25 !important;
+
+    color: #172033 !important;
+}
+
+body:has(.software-environment) .software-reference-head p {
+    margin: 0 !important;
+
+    font-size: .55rem !important;
+
+    color: #94a3b8 !important;
+}
+
+body:has(.software-environment) .software-reference table {
+    font-size: .57rem !important;
+}
+
+body:has(.software-environment) .software-reference th {
+    padding: 5px 7px !important;
+
+    font-size: .54rem !important;
+}
+
+body:has(.software-environment) .software-reference td {
+    padding: 5px 7px !important;
+
+    font-size: .56rem !important;
+    line-height: 1.3 !important;
+}
+
+
+/* ---------------------------------------------------------
+   ENVIRONMENT CHECK
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-check {
+    margin-bottom: 8px !important;
+
+    padding: 10px 12px !important;
+
+    gap: 14px !important;
+
+    border-radius: 9px !important;
+}
+
+body:has(.software-environment) .software-check h2 {
+    margin: 0 0 3px !important;
+
+    font-size: .78rem !important;
+    line-height: 1.25 !important;
+
+    color: #172033 !important;
+}
+
+body:has(.software-environment) .software-check p {
+    margin: 0 !important;
+
+    max-width: 650px !important;
+
+    font-size: .57rem !important;
+    line-height: 1.35 !important;
+
+    color: #64748b !important;
+
+    text-align: left !important;
+}
+
+body:has(.software-environment) .software-check pre {
+    margin: 0 !important;
+
+    padding: 6px 8px !important;
+}
+
+body:has(.software-environment) .software-check code {
+    font-size: .56rem !important;
+    line-height: 1.4 !important;
+}
+
+
+/* ---------------------------------------------------------
+   WARNING
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-warning {
+    margin-bottom: 8px !important;
+
+    padding: 6px 8px !important;
+
+    font-size: .54rem !important;
+    line-height: 1.35 !important;
+}
+
+
+/* ---------------------------------------------------------
+   NEXT STEP
+   --------------------------------------------------------- */
+
+/* Reset global heading styles */
+
+body:has(.software-environment) .software-next {
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 11px 13px !important;
+
+    border-radius: 9px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172033 0%,
+            #1d2940 100%
+        ) !important;
+}
+
+
+/* Container */
+
+body:has(.software-environment) .software-next > div:first-child {
+    text-align: left !important;
+}
+
+
+/* Label */
+
+body:has(.software-environment) .software-next span {
+    margin-bottom: 3px !important;
+
+    color: #93c5fd !important;
+
+    font-size: .5rem !important;
+    line-height: 1.2 !important;
+}
+
+
+/* TITLE FIX */
+
+body:has(.software-environment) .software-next h2 {
+    display: block !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 0 0 3px !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: .8rem !important;
+    line-height: 1.25 !important;
+
+    font-weight: 750 !important;
+
+    text-align: left !important;
+}
+
+
+/* Remove decorative line */
+
+body:has(.software-environment) .software-next h2::after {
+    display: none !important;
+    content: none !important;
+}
+
+
+/* DESCRIPTION FIX */
+
+body:has(.software-environment) .software-next p {
+    display: block !important;
+
+    width: auto !important;
+    max-width: 700px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #b8c5d8 !important;
+
+    font-size: .57rem !important;
+    line-height: 1.4 !important;
+
+    text-align: left !important;
+}
+
+
+/* BUTTONS */
+
+body:has(.software-environment) .software-actions {
+    gap: 5px !important;
+}
+
+body:has(.software-environment) .software-actions a {
+    padding: 6px 8px !important;
+
+    border-radius: 5px !important;
+
+    color: #ffffff !important;
+
+    font-size: .55rem !important;
+    line-height: 1.2 !important;
+}
+
+
+/* ---------------------------------------------------------
+   PREVENT GLOBAL CENTERING
+   --------------------------------------------------------- */
+
+body:has(.software-environment) .software-environment
+.md-typeset h1,
+body:has(.software-environment) .software-environment
+.md-typeset h2,
+body:has(.software-environment) .software-environment
+.md-typeset h3,
+body:has(.software-environment) .software-environment
+.md-typeset p {
+    text-align: left !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP HEIGHT OPTIMIZATION
+   --------------------------------------------------------- */
+
+@media screen and (min-width: 1000px) {
+
+    body:has(.software-environment) .software-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    body:has(.software-environment) .software-card {
+        min-height: 0 !important;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 800px) {
+
+    body:has(.software-environment) .software-next {
+        display: block !important;
+    }
+
+    body:has(.software-environment) .software-actions {
+        margin-top: 8px !important;
+    }
+
+}
+/* =========================================================
+   COMMAND LINE
+   COMPACT TERMINAL REFERENCE
+   ========================================================= */
+
+.command-reference {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-bottom: 34px;
+}
+
+
+/* HERO */
+
+.command-hero {
+    padding: 0 0 16px;
+}
+
+.command-kicker {
+    margin-bottom: 5px;
+
+    color: #2563eb;
+
+    font-size: .61rem;
+    font-weight: 800;
+
+    letter-spacing: .13em;
+}
+
+.command-hero h1 {
+    margin: 0 0 6px !important;
+
+    color: #172033;
+
+    font-size: 1.9rem !important;
+    line-height: 1.1 !important;
+
+    font-weight: 800 !important;
+    letter-spacing: -.03em;
+}
+
+.command-hero p {
+    max-width: 720px;
+
+    margin: 0 !important;
+
+    color: #64748b;
+
+    font-size: .72rem !important;
+    line-height: 1.45 !important;
+
+    text-align: left !important;
+}
+
+
+/* CATEGORY BAR */
+
+.command-categories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+
+    margin-bottom: 12px;
+
+    padding: 7px;
+
+    border: 1px solid #dbe4ef;
+    border-radius: 9px;
+
+    background: #fff;
+}
+
+.command-categories > div {
+    display: grid;
+
+    grid-template-columns: 23px 1fr;
+
+    grid-template-rows:
+        auto auto;
+
+    column-gap: 6px;
+
+    align-items: center;
+
+    padding: 6px;
+
+    border-radius: 6px;
+}
+
+.command-categories > div > span {
+    grid-row: 1 / 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 5px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: .52rem;
+    font-weight: 800;
+}
+
+.command-categories strong {
+    font-size: .62rem;
+    line-height: 1.15;
+}
+
+.command-categories small {
+    color: #94a3b8;
+
+    font-size: .52rem;
+}
+
+
+/* SECTION */
+
+.command-section {
+    margin-bottom: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+
+    background: #fff;
+
+    box-shadow:
+        0 3px 14px rgba(15, 23, 42, .02);
+}
+
+
+/* SECTION HEADER */
+
+.command-section-head {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 8px;
+}
+
+.command-section-head > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.command-section-head > div > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    flex: 0 0 22px;
+
+    border-radius: 5px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: .52rem;
+    font-weight: 800;
+}
+
+.command-section-head small {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #94a3b8;
+
+    font-size: .49rem;
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+.command-section-head h2 {
+    margin: 0 !important;
+
+    color: #172033 !important;
+
+    font-size: .84rem !important;
+    line-height: 1.2 !important;
+
+    font-weight: 750 !important;
+
+    text-align: left !important;
+}
+
+.command-section-head p {
+    max-width: 420px;
+
+    margin: 0 !important;
+
+    color: #94a3b8 !important;
+
+    font-size: .57rem !important;
+    line-height: 1.4 !important;
+
+    text-align: right !important;
+}
+
+
+/* COMMAND TABLE */
+
+.command-table {
+    width: 100%;
+
+    border: 1px solid #e3e9f0;
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+.command-row {
+    display: grid;
+
+    grid-template-columns:
+        24% 38% 38%;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    border-top: 1px solid #edf1f5;
+}
+
+.command-row:first-child {
+    border-top: 0;
+}
+
+.command-row > * {
+    min-width: 0;
+
+    padding: 6px 8px;
+}
+
+.command-row > code {
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    color: #294f8d;
+
+    font-size: .6rem;
+}
+
+.command-row > span {
+    color: #64748b;
+
+    font-size: .61rem;
+    line-height: 1.3;
+}
+
+.command-header {
+    min-height: 27px;
+
+    background: #f7f9fc;
+}
+
+.command-header > span {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    color: #64748b;
+
+    font-size: .52rem;
+    font-weight: 800;
+
+    letter-spacing: .06em;
+}
+
+.command-row:not(.command-header):hover {
+    background: #fafcff;
+}
+
+
+/* WARNING */
+
+.command-warning {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 7px;
+
+    margin-top: 7px;
+
+    padding: 6px 8px;
+
+    border-left: 3px solid #94a3b8;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: .56rem;
+
+    line-height: 1.4;
+}
+
+.command-warning strong {
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+
+/* SLURM */
+
+.command-slurm {
+    border-color: #cfdced;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f9fbff
+        );
+}
+
+
+/* WORKFLOW */
+
+.command-workflow {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 370px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 10px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dbe4ef;
+    border-radius: 10px;
+
+    background: #f8fbff;
+}
+
+.command-workflow > div:first-child > span,
+.command-next > div:first-child > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #2563eb;
+
+    font-size: .52rem;
+    font-weight: 800;
+
+    letter-spacing: .1em;
+}
+
+.command-workflow h2,
+.command-next h2 {
+    margin: 0 0 4px !important;
+
+    color: #172033;
+
+    font-size: .85rem !important;
+    line-height: 1.25 !important;
+
+    text-align: left !important;
+}
+
+.command-workflow p,
+.command-next p {
+    max-width: 700px;
+
+    margin: 0 !important;
+
+    color: #64748b;
+
+    font-size: .59rem !important;
+    line-height: 1.4 !important;
+
+    text-align: left !important;
+}
+
+.command-workflow-code {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 5px;
+}
+
+.command-workflow-code code {
+    display: block;
+
+    padding: 6px 7px;
+
+    border: 1px solid #e0e7ef;
+    border-radius: 5px;
+
+    background: #fff;
+
+    color: #294f8d;
+
+    font-size: .56rem;
+
+    white-space: nowrap;
+}
+
+
+/* NEXT */
+
+.command-next {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #273650;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172033,
+            #1d2940
+        );
+}
+
+.command-next h2 {
+    color: #fff !important;
+}
+
+.command-next p {
+    color: #b8c5d8 !important;
+}
+
+.command-next > div:first-child > span {
+    color: #93c5fd;
+}
+
+.command-actions {
+    display: flex;
+
+    gap: 5px;
+
+    flex: 0 0 auto;
+}
+
+.command-actions a {
+    padding: 6px 9px;
+
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 5px;
+
+    color: #fff;
+
+    font-size: .56rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.command-actions a:hover {
+    background: rgba(255,255,255,.08);
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 800px) {
+
+    .command-categories {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .command-section-head {
+        display: block;
+    }
+
+    .command-section-head p {
+        margin-top: 5px !important;
+
+        max-width: none;
+
+        text-align: left !important;
+    }
+
+    .command-workflow {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .command-hero h1 {
+        font-size: 1.7rem !important;
+    }
+
+    .command-categories {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .command-row {
+        grid-template-columns:
+            1fr;
+    }
+
+    .command-row > * {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .command-header {
+        display: none;
+    }
+
+    .command-workflow-code {
+        grid-template-columns: 1fr;
+    }
+
+    .command-next {
+        display: block;
+    }
+
+    .command-actions {
+        margin-top: 9px;
+    }
+
+}
+/* =========================================================
+   COMMAND LINE
+   NEXT STEP CONTRAST FIX
+   ========================================================= */
+
+.command-next {
+    background: linear-gradient(
+        135deg,
+        #172554 0%,
+        #1e3a8a 100%
+    ) !important;
+
+    color: #ffffff !important;
+}
+
+.command-next > div:first-child {
+    color: #ffffff !important;
+}
+
+.command-next > div:first-child > span {
+    color: #93c5fd !important;
+}
+
+.command-next h2,
+.command-next h2:first-child {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.command-next p {
+    color: #dbeafe !important;
+    opacity: 1 !important;
+}
+
+.command-next .command-actions {
+    color: #ffffff !important;
+}
+
+.command-next .command-actions a {
+    color: #ffffff !important;
+
+    background: rgba(255, 255, 255, 0.06) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+
+    opacity: 1 !important;
+}
+
+.command-next .command-actions a:hover {
+    color: #ffffff !important;
+
+    background: rgba(255, 255, 255, 0.14) !important;
+
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* Mencegah style global MkDocs menggelapkan heading */
+
+.command-next strong,
+.command-next b,
+.command-next a,
+.command-next span {
+    opacity: 1 !important;
+}
+
+
+/* Judul utama card */
+
+.command-next h2 {
+    font-size: 0.95rem !important;
+    line-height: 1.3 !important;
+
+    font-weight: 750 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+}
+
+
+/* Deskripsi */
+
+.command-next p {
+    font-size: 0.62rem !important;
+    line-height: 1.5 !important;
+
+    margin: 0 !important;
+
+    max-width: 680px;
+}
+
+
+/* Label NEXT STEP */
+
+.command-next > div:first-child > span {
+    font-size: 0.5rem !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 0.12em !important;
+}
+/* =========================================================
+   COMMAND LINE
+   FINAL NEXT STEP COLOR OVERRIDE
+   ========================================================= */
+
+html body .md-typeset .command-reference .command-next,
+html body .md-typeset .command-reference .command-next * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+/* Background */
+
+html body .md-typeset .command-reference .command-next {
+    background: linear-gradient(
+        135deg,
+        #172554 0%,
+        #1e3a8a 100%
+    ) !important;
+
+    border: 1px solid #294b8f !important;
+}
+
+
+/* Label */
+
+html body .md-typeset .command-reference .command-next
+> div:first-child > span {
+    color: #93c5fd !important;
+
+    font-size: .5rem !important;
+    font-weight: 800 !important;
+
+    letter-spacing: .12em !important;
+}
+
+
+/* TITLE */
+
+html body .md-typeset .command-reference .command-next
+h2,
+html body .md-typeset .command-reference .command-next
+h2 *,
+html body .md-typeset .command-reference .command-next
+h2 a {
+    color: #ffffff !important;
+
+    font-size: .9rem !important;
+    line-height: 1.3 !important;
+
+    font-weight: 750 !important;
+
+    text-align: left !important;
+
+    margin: 0 0 5px !important;
+
+    opacity: 1 !important;
+}
+
+
+/* DESCRIPTION */
+
+html body .md-typeset .command-reference .command-next
+p,
+html body .md-typeset .command-reference .command-next
+p *,
+html body .md-typeset .command-reference .command-next
+p a {
+    color: #dbeafe !important;
+
+    font-size: .61rem !important;
+    line-height: 1.45 !important;
+
+    text-align: left !important;
+
+    margin: 0 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* BUTTON CONTAINER */
+
+html body .md-typeset .command-reference
+.command-next .command-actions {
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+/* BUTTON */
+
+html body .md-typeset .command-reference
+.command-next .command-actions a,
+html body .md-typeset .command-reference
+.command-next .command-actions a * {
+    color: #ffffff !important;
+
+    background: rgba(255,255,255,.07) !important;
+
+    border-color: rgba(255,255,255,.30) !important;
+
+    opacity: 1 !important;
+}
+
+
+/* BUTTON HOVER */
+
+html body .md-typeset .command-reference
+.command-next .command-actions a:hover,
+html body .md-typeset .command-reference
+.command-next .command-actions a:hover * {
+    color: #ffffff !important;
+
+    background: rgba(255,255,255,.15) !important;
+
+    border-color: rgba(255,255,255,.55) !important;
+}
+
+
+/* Hilangkan dekorasi global yang mungkin ikut masuk */
+
+html body .md-typeset .command-reference
+.command-next h2::after,
+html body .md-typeset .command-reference
+.command-next h2::before {
+    display: none !important;
+    content: none !important;
+}
+
+
+/* Pastikan tidak ada text-shadow / filter aneh */
+
+html body .md-typeset .command-reference
+.command-next h2,
+html body .md-typeset .command-reference
+.command-next p {
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+
+/* Selection tetap terbaca */
+
+html body .md-typeset .command-reference
+.command-next ::selection {
+    color: #ffffff !important;
+    background: #2563eb !important;
+}
+/* =========================================================
+   HPC OVERVIEW
+   RESEARCH CONNECTION
+   FINAL CONTRAST FIX
+   ========================================================= */
+
+html body .md-typeset .research-connection,
+html body .md-typeset .research-connection * {
+    opacity: 1 !important;
+}
+
+
+/* Background */
+
+html body .md-typeset .research-connection {
+    background: linear-gradient(
+        135deg,
+        #172554 0%,
+        #1e3a8a 100%
+    ) !important;
+
+    border: 1px solid #294b8f !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Label */
+
+html body .md-typeset .research-connection
+span {
+    color: #93c5fd !important;
+}
+
+
+/* Main heading */
+
+html body .md-typeset .research-connection
+h2,
+
+html body .md-typeset .research-connection
+h2 *,
+
+html body .md-typeset .research-connection
+h3,
+
+html body .md-typeset .research-connection
+h3 * {
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    text-shadow: none !important;
+}
+
+
+/* Paragraph */
+
+html body .md-typeset .research-connection
+p,
+
+html body .md-typeset .research-connection
+p * {
+    color: #dbeafe !important;
+
+    opacity: 1 !important;
+
+    text-shadow: none !important;
+}
+
+
+/* Link */
+
+html body .md-typeset .research-connection
+a,
+
+html body .md-typeset .research-connection
+a * {
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Link hover */
+
+html body .md-typeset .research-connection
+a:hover,
+
+html body .md-typeset .research-connection
+a:hover * {
+    color: #bfdbfe !important;
+}
+
+
+/* Hilangkan dekorasi heading global */
+
+html body .md-typeset .research-connection
+h2::before,
+
+html body .md-typeset .research-connection
+h2::after,
+
+html body .md-typeset .research-connection
+h3::before,
+
+html body .md-typeset .research-connection
+h3::after {
+    display: none !important;
+
+    content: none !important;
+}
+/* =========================================================
+   HPC OVERVIEW
+   RESEARCH CONNECTION FINAL FIX
+   ========================================================= */
+
+body:has(.home-hero) .connection-card {
+    background: linear-gradient(
+        135deg,
+        #172554 0%,
+        #1e3a8a 100%
+    ) !important;
+
+    border: 1px solid #294b8f !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Semua heading dalam card */
+
+body:has(.home-hero) .connection-card h1,
+body:has(.home-hero) .connection-card h2,
+body:has(.home-hero) .connection-card h3,
+body:has(.home-hero) .connection-card h4 {
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    text-shadow: none !important;
+
+    filter: none !important;
+}
+
+
+/* Semua paragraf */
+
+body:has(.home-hero) .connection-card p {
+    color: #dbeafe !important;
+
+    opacity: 1 !important;
+
+    text-shadow: none !important;
+}
+
+
+/* Label */
+
+body:has(.home-hero) .connection-card .section-label,
+body:has(.home-hero) .connection-card .connection-number {
+    color: #93c5fd !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Method / badge */
+
+body:has(.home-hero) .connection-card .connection-method {
+    color: #ffffff !important;
+
+    background: rgba(255,255,255,.08) !important;
+
+    border: 1px solid rgba(255,255,255,.18) !important;
+}
+
+
+/* Link */
+
+body:has(.home-hero) .connection-card a {
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Link hover */
+
+body:has(.home-hero) .connection-card a:hover {
+    color: #bfdbfe !important;
+}
+
+
+/* Hilangkan pseudo element heading global */
+
+body:has(.home-hero) .connection-card h1::before,
+body:has(.home-hero) .connection-card h1::after,
+body:has(.home-hero) .connection-card h2::before,
+body:has(.home-hero) .connection-card h2::after,
+body:has(.home-hero) .connection-card h3::before,
+body:has(.home-hero) .connection-card h3::after,
+body:has(.home-hero) .connection-card h4::before,
+body:has(.home-hero) .connection-card h4::after {
+    display: none !important;
+
+    content: none !important;
+}
+
+
+/* Pastikan child element tidak membawa warna lama */
+
+body:has(.home-hero) .connection-card * {
+    opacity: 1;
+}
+
+
+/* Khusus judul yang tadi bermasalah */
+
+body:has(.home-hero) .connection-card h3 {
+    color: #ffffff !important;
+
+    font-size: .92rem !important;
+
+    line-height: 1.3 !important;
+
+    margin: 0 0 5px !important;
+}
+
+
+/* Paragraph compact */
+
+body:has(.home-hero) .connection-card p {
+    color: #dbeafe !important;
+
+    font-size: .64rem !important;
+
+    line-height: 1.45 !important;
+
+    margin: 0 !important;
+}
