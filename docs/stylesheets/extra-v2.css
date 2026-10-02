@@ -14668,3 +14668,339 @@ grid-template-columns:1fr;
   }
 
 }
+/* =========================================================
+   PREMIUM CODE BLOCK
+   Soft Academic / Computational Style
+   ========================================================= */
+
+/* Main code container */
+.md-typeset pre {
+  position: relative;
+
+  margin: 1.25rem 0 1.8rem;
+
+  background: #f6f8fc !important;
+
+  border: 1px solid #e2e7f0 !important;
+  border-radius: 12px !important;
+
+  box-shadow:
+    0 6px 20px rgba(31, 55, 100, 0.06) !important;
+
+  overflow: hidden;
+}
+
+
+/* Code area */
+.md-typeset pre > code {
+  display: block;
+
+  padding: 1.15rem 1.25rem;
+
+  background: transparent !important;
+
+  color: #26364f !important;
+
+  font-size: 0.82rem;
+  line-height: 1.7;
+
+  font-family:
+    "SFMono-Regular",
+    "Cascadia Code",
+    "Roboto Mono",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    monospace;
+
+  font-weight: 450;
+}
+
+
+/* ---------------------------------------------------------
+   Copy button
+   --------------------------------------------------------- */
+
+.md-typeset .md-clipboard {
+  top: 9px;
+  right: 9px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.85) !important;
+
+  color: #64748b !important;
+
+  border: 1px solid #e2e7f0;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.md-typeset .md-clipboard:hover {
+  background: #ffffff !important;
+
+  color: #2463eb !important;
+
+  transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   Code syntax colors
+   --------------------------------------------------------- */
+
+.md-typeset pre code .k,
+.md-typeset pre code .kd,
+.md-typeset pre code .kn {
+  color: #315fbd;
+}
+
+
+.md-typeset pre code .s,
+.md-typeset pre code .s1,
+.md-typeset pre code .s2 {
+  color: #39745d;
+}
+
+
+.md-typeset pre code .c,
+.md-typeset pre code .c1,
+.md-typeset pre code .cm {
+  color: #7b8494;
+}
+
+
+.md-typeset pre code .m,
+.md-typeset pre code .mi,
+.md-typeset pre code .mf {
+  color: #a05a32;
+}
+
+
+/* ---------------------------------------------------------
+   Inline code
+   --------------------------------------------------------- */
+
+.md-typeset code {
+  background: #f1f4f9 !important;
+
+  color: #294a83 !important;
+
+  border: 1px solid #e2e7f0;
+
+  border-radius: 5px;
+
+  padding: 0.12em 0.38em;
+
+  font-size: 0.88em;
+}
+
+
+/* Jangan beri style inline code pada pre */
+.md-typeset pre code {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Terminal / command blocks
+   --------------------------------------------------------- */
+
+.md-typeset pre:has(code.language-bash),
+.md-typeset pre:has(code.language-shell),
+.md-typeset pre:has(code.language-console) {
+  background: #f4f7fb !important;
+}
+
+
+/* ---------------------------------------------------------
+   Hover effect
+   --------------------------------------------------------- */
+
+.md-typeset pre {
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.md-typeset pre:hover {
+  border-color: #d5deed !important;
+
+  box-shadow:
+    0 8px 24px rgba(31, 55, 100, 0.08) !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .md-typeset pre {
+    margin: 1rem 0 1.4rem;
+
+    border-radius: 10px !important;
+  }
+
+  .md-typeset pre > code {
+    padding: 1rem;
+
+    font-size: 0.76rem;
+
+    line-height: 1.6;
+  }
+
+}
+/* =========================================================
+   PREMIUM DOCUMENTATION SECTIONS
+   ========================================================= */
+
+.md-typeset h2 {
+  position: relative;
+
+  margin-top: 3.2rem;
+  margin-bottom: 1.25rem;
+
+  color: #172d5f;
+
+  font-size: 2rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+
+/* Small blue accent below heading */
+
+.md-typeset h2::after {
+  content: "";
+
+  display: block;
+
+  width: 54px;
+  height: 3px;
+
+  margin-top: 0.8rem;
+
+  border-radius: 4px;
+
+  background: #2463eb;
+}
+
+
+/* First heading should sit closer to hero */
+
+.md-typeset > h2:first-child {
+  margin-top: 1.5rem;
+}
+
+
+/* Paragraph */
+
+.md-typeset p {
+  color: #465673;
+
+  line-height: 1.75;
+}
+
+
+/* Strong text */
+
+.md-typeset strong {
+  color: #263d70;
+  font-weight: 700;
+}
+
+
+/* Lists */
+
+.md-typeset ul,
+.md-typeset ol {
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.md-typeset li {
+  margin-bottom: 0.45rem;
+  color: #465673;
+}
+
+
+/* Horizontal divider */
+
+.md-typeset hr {
+  margin: 3rem 0;
+
+  border: 0;
+
+  border-top: 1px solid #e8edf5;
+}
+
+
+/* ---------------------------------------------------------
+   Section spacing
+   --------------------------------------------------------- */
+
+.md-typeset h2 + p {
+  margin-top: 0;
+}
+
+
+.md-typeset h3 {
+  margin-top: 2rem;
+
+  color: #263d70;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   Installation page content width
+   --------------------------------------------------------- */
+
+.md-content__inner {
+  max-width: 920px;
+}
+
+
+/* ---------------------------------------------------------
+   Code spacing
+   --------------------------------------------------------- */
+
+.md-typeset p + pre {
+  margin-top: 0.9rem;
+}
+
+
+.md-typeset pre + p {
+  margin-top: 1.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+.md-typeset a {
+  color: #2463eb;
+  font-weight: 600;
+}
+
+
+.md-typeset a:hover {
+  color: #174bbd;
+}
