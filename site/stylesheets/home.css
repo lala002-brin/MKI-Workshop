@@ -1,0 +1,537 @@
+/* =====================================================
+   MKI WORKSHOP
+   COMPACT HOMEPAGE
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+body:has(.home-hero) .md-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(.home-hero) .md-main__inner {
+    margin-top: 0 !important;
+}
+
+
+/* =====================================================
+   FULL WIDTH
+===================================================== */
+
+body:has(.home-hero) .mki-features,
+body:has(.home-hero) .mki-workflow,
+body:has(.home-hero) .mki-questions,
+body:has(.home-hero) .mki-research,
+body:has(.home-hero) .mki-roadmap,
+body:has(.home-hero) .mki-contributor,
+body:has(.home-hero) .mki-partner,
+body:has(.home-hero) .mki-footer {
+
+    width: 100vw !important;
+
+    max-width: none !important;
+
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   INNER WIDTH
+===================================================== */
+
+.mki-features-inner,
+.mki-workflow-inner,
+.mki-questions-inner,
+.mki-research-inner,
+.mki-roadmap-inner,
+.mki-contributor-inner {
+
+    max-width: 1080px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* =====================================================
+   SECTION SPACING
+===================================================== */
+
+.mki-features,
+.mki-workflow,
+.mki-questions,
+.mki-research,
+.mki-roadmap,
+.mki-contributor {
+
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+
+    min-height: 0 !important;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.mki-features h2,
+.mki-workflow h2,
+.mki-questions h2,
+.mki-research h2,
+.mki-roadmap h2,
+.mki-contributor h2 {
+
+    max-width: 720px;
+
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+
+    font-size: clamp(
+        1.9rem,
+        3.5vw,
+        2.8rem
+    ) !important;
+
+    line-height: 1.12 !important;
+
+    letter-spacing: -.025em;
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+body:has(.home-hero) .section-label {
+
+    margin-top: 0 !important;
+    margin-bottom: .75rem !important;
+
+    font-size: .68rem !important;
+
+    letter-spacing: .14em;
+
+}
+
+
+/* =====================================================
+   INTRO TEXT
+===================================================== */
+
+body:has(.home-hero) .mki-section-intro {
+
+    max-width: 680px;
+
+    margin-top: 0 !important;
+
+    margin-bottom: 2.5rem !important;
+
+    font-size: .92rem !important;
+
+    line-height: 1.65 !important;
+
+}
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.mki-feature-grid {
+
+    margin-top: 2rem !important;
+
+}
+
+
+.mki-feature {
+
+    padding: 1.75rem 1.5rem !important;
+
+}
+
+
+.mki-feature-icon {
+
+    width: 40px !important;
+    height: 40px !important;
+
+    margin-bottom: 1rem !important;
+
+    border-radius: 11px;
+
+    font-size: 1rem !important;
+
+}
+
+
+.mki-feature h3 {
+
+    margin-bottom: .55rem !important;
+
+    font-size: 1.08rem !important;
+
+}
+
+
+.mki-feature p {
+
+    font-size: .85rem !important;
+
+    line-height: 1.6 !important;
+
+}
+
+
+.mki-feature-method {
+
+    margin-top: .8rem !important;
+
+    font-size: .65rem !important;
+
+}
+
+
+/* =====================================================
+   WORKFLOW
+===================================================== */
+
+.mki-workflow-path {
+
+    margin-top: 2rem !important;
+
+}
+
+
+.mki-workflow-step {
+
+    flex-basis: 175px !important;
+
+    padding: 1.25rem !important;
+
+}
+
+
+.mki-workflow-number {
+
+    width: 32px !important;
+    height: 32px !important;
+
+    margin-bottom: .9rem !important;
+
+    font-size: .7rem !important;
+
+}
+
+
+.mki-workflow-step h3 {
+
+    font-size: .95rem !important;
+
+}
+
+
+.mki-workflow-step p {
+
+    font-size: .78rem !important;
+
+    line-height: 1.55 !important;
+
+}
+
+
+.mki-workflow-connector {
+
+    flex-basis: 40px !important;
+
+    font-size: 1.1rem !important;
+
+}
+
+
+/* =====================================================
+   SCIENTIFIC QUESTIONS
+===================================================== */
+
+.mki-question-grid {
+
+    margin-top: 2rem !important;
+
+}
+
+
+.mki-question {
+
+    padding: 1.75rem !important;
+
+}
+
+
+.mki-question h3 {
+
+    font-size: 1.05rem !important;
+
+}
+
+
+.mki-question p {
+
+    font-size: .85rem !important;
+
+    line-height: 1.6 !important;
+
+}
+
+
+.mki-question-method {
+
+    margin-top: .8rem !important;
+
+    font-size: .65rem !important;
+
+}
+
+
+/* =====================================================
+   RESEARCH CASES
+===================================================== */
+
+.mki-research-list {
+
+    margin-top: 2rem !important;
+
+}
+
+
+.mki-research-case {
+
+    padding: 1.75rem !important;
+
+    margin-bottom: .75rem !important;
+
+    border-radius: 18px !important;
+
+}
+
+
+.mki-research-number {
+
+    font-size: 2.1rem !important;
+
+}
+
+
+.mki-research-case h3 {
+
+    font-size: 1.15rem !important;
+
+    margin-bottom: .65rem !important;
+
+}
+
+
+.mki-research-case p {
+
+    font-size: .85rem !important;
+
+    line-height: 1.6 !important;
+
+}
+
+
+.mki-research-tools {
+
+    margin-top: .8rem !important;
+
+    font-size: .65rem !important;
+
+}
+
+
+/* =====================================================
+   RESEARCH IMAGE
+===================================================== */
+
+.mki-research-visual img {
+
+    height: 170px !important;
+
+}
+
+
+/* =====================================================
+   ROADMAP
+===================================================== */
+
+.mki-roadmap-list {
+
+    margin-top: 2rem !important;
+
+}
+
+
+.mki-roadmap-item {
+
+    min-height: 0 !important;
+
+}
+
+
+.mki-roadmap-content {
+
+    padding-bottom: 2rem !important;
+
+}
+
+
+.mki-roadmap-content h3 {
+
+    font-size: 1.05rem !important;
+
+    margin-bottom: .5rem !important;
+
+}
+
+
+.mki-roadmap-content p {
+
+    font-size: .83rem !important;
+
+    line-height: 1.6 !important;
+
+}
+
+
+/* =====================================================
+   CONTRIBUTOR
+===================================================== */
+
+.mki-contributor-header {
+
+    margin-bottom: 2rem !important;
+
+}
+
+
+.mki-contributor-grid {
+
+    margin-top: 1.5rem !important;
+
+}
+
+
+.mki-contributor-person,
+.mki-contributor-research {
+
+    padding: 1.75rem !important;
+
+}
+
+
+.mki-contributor h3 {
+
+    font-size: 1.15rem !important;
+
+}
+
+
+.mki-contributor p {
+
+    font-size: .83rem !important;
+
+}
+
+
+/* =====================================================
+   PARTNER
+===================================================== */
+
+.mki-partner {
+
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+
+}
+
+
+.mki-partner-inner {
+
+    max-width: 1080px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.mki-footer {
+
+    padding-top: 2.5rem !important;
+    padding-bottom: 1rem !important;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .mki-features,
+    .mki-workflow,
+    .mki-questions,
+    .mki-research,
+    .mki-roadmap,
+    .mki-contributor {
+
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+
+    }
+
+
+    .mki-features h2,
+    .mki-workflow h2,
+    .mki-questions h2,
+    .mki-research h2,
+    .mki-roadmap h2,
+    .mki-contributor h2 {
+
+        font-size: 1.8rem !important;
+
+    }
+
+
+    .mki-section-intro {
+
+        font-size: .86rem !important;
+
+        margin-bottom: 2rem !important;
+
+    }
+
+
+    .mki-feature {
+
+        padding: 1.5rem 0 !important;
+
+    }
+
+
+    .mki-research-case {
+
+        padding: 1.5rem !important;
+
+    }
+
+}

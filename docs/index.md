@@ -2,22 +2,29 @@
      MKI WORKSHOP HOMEPAGE
 ===================================================== -->
 
-
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<div class="home-hero">
+<section class="home-hero">
+
+  <div class="home-hero-media">
+    <img
+      src="assets/images/home-hero.png"
+      alt="Computational materials science"
+    >
+  </div>
+
+  <div class="home-hero-overlay"></div>
 
   <div class="hero-content">
 
     <span class="hero-label">
       MKI × ITB × BRIN
     </span>
-
     <h1>
-      Integrating First-Principles,
-      HPC & AI for Materials Discovery
+      Integrating First-Principles, HPC & AI
+      for Materials Discovery
     </h1>
 
     <p>
@@ -40,9 +47,7 @@
 
   </div>
 
-</div>
-
-
+</section>
 <!-- =====================================================
      COMPUTATIONAL MATERIALS SCIENCE
 ===================================================== -->
@@ -55,10 +60,10 @@
       COMPUTATIONAL MATERIALS SCIENCE
     </span>
 
-    <h2>
-      Everything you need for materials discovery
-    </h2>
-
+<h2>
+  A Complete Computational Framework
+  for Materials Discovery
+</h2>
     <p class="mki-section-intro">
       Explore the computational approaches used throughout
       the workshop, from first-principles calculations to
@@ -250,8 +255,7 @@
     </p>
 
 
-    <div class="mki-workflow-path">
-
+   <div class="mki-workflow-path mki-workflow-modern">
 
       <!-- STEP 01 -->
 
@@ -270,11 +274,6 @@
           interfaces, and material systems.
         </p>
 
-      </div>
-
-
-      <div class="mki-workflow-connector">
-        →
       </div>
 
 
@@ -298,11 +297,6 @@
       </div>
 
 
-      <div class="mki-workflow-connector">
-        →
-      </div>
-
-
       <!-- STEP 03 -->
 
       <div class="mki-workflow-step">
@@ -321,12 +315,6 @@
         </p>
 
       </div>
-
-
-      <div class="mki-workflow-connector">
-        →
-      </div>
-
 
       <!-- STEP 04 -->
 
@@ -347,12 +335,6 @@
 
       </div>
 
-
-      <div class="mki-workflow-connector">
-        →
-      </div>
-
-
       <!-- STEP 05 -->
 
       <div class="mki-workflow-step">
@@ -370,11 +352,6 @@
           high-performance computing.
         </p>
 
-      </div>
-
-
-      <div class="mki-workflow-connector">
-        →
       </div>
 
 
@@ -401,10 +378,9 @@
     </div>
 
 
-    <p class="workflow-scroll-note">
-      Scroll horizontally to explore the complete computational pathway →
-    </p>
-
+<p class="mki-workflow-caption">
+  A six-stage computational pathway from structure to discovery.
+</p>
   </div>
 
 </section>
@@ -594,69 +570,89 @@
       </article>
 
 
-      <!-- CASE 02 -->
+<!-- CASE 02 -->
 
-      <article class="mki-research-case">
+<article class="mki-research-case">
 
-        <div class="mki-research-number">
-          02
-        </div>
+  <div class="mki-research-number">
+    02
+  </div>
 
-        <div class="mki-research-content">
+  <div class="mki-research-content">
 
-          <div class="mki-research-tag">
-            INTERFACE MODELING
-          </div>
+    <div class="mki-research-tag">
+      INTERFACE MODELING
+    </div>
 
-          <h3>
-            Graphene Ionic Liquid Interface
-          </h3>
+    <h3>
+      Graphene Ionic Liquid Interface
+    </h3>
 
-          <p>
-            Study molecular interactions and interface
-            behavior using atomistic modeling approaches.
-          </p>
+    <p>
+      Study molecular interactions and interface
+      behavior using atomistic modeling approaches.
+    </p>
 
-          <div class="mki-research-tools">
-            PACKMOL · Molecular Dynamics · Interface Modeling
-          </div>
+    <div class="mki-research-tools">
+      PACKMOL · Molecular Dynamics · Interface Modeling
+    </div>
 
-        </div>
-
-      </article>
+  </div>
 
 
-      <!-- CASE 03 -->
+  <div class="mki-research-visual">
 
-      <article class="mki-research-case">
+    <img
+      src="assets/images/research-cases/Graphene Ionic Liquid Interface.png"
+      alt="Graphene ionic liquid interface"
+    >
 
-        <div class="mki-research-number">
-          03
-        </div>
+  </div>
 
-        <div class="mki-research-content">
 
-          <div class="mki-research-tag">
-            IONIC TRANSPORT
-          </div>
+</article>
 
-          <h3>
-            LiTFSI-EMIM TFSI Electrolyte Transport
-          </h3>
+<!-- CASE 03 -->
 
-          <p>
-            Analyze ionic transport mechanisms and
-            structural properties in electrolyte systems.
-          </p>
+<article class="mki-research-case">
 
-          <div class="mki-research-tools">
-            DC-DFTB-MD · MSD · RDF · Diffusion Analysis
-          </div>
+  <div class="mki-research-number">
+    03
+  </div>
 
-        </div>
+  <div class="mki-research-content">
 
-      </article>
+    <div class="mki-research-tag">
+      IONIC TRANSPORT
+    </div>
 
+    <h3>
+      LiTFSI-EMIM TFSI Electrolyte Transport
+    </h3>
+
+    <p>
+      Analyze ionic transport mechanisms and
+      structural properties in electrolyte systems.
+    </p>
+
+    <div class="mki-research-tools">
+      DC-DFTB-MD · MSD · RDF · Diffusion Analysis
+    </div>
+
+  </div>
+
+
+  <div class="mki-research-visual">
+
+    <img
+      src="assets/images/research-cases/electrolyte-transport.png"
+      alt="LiTFSI EMIM TFSI electrolyte transport"
+    >
+
+  </div>
+
+
+</article>
 
     </div>
 
@@ -668,7 +664,6 @@
 <!-- =====================================================
      LEARNING ROADMAP
 ===================================================== -->
-
 <section class="mki-roadmap">
 
   <div class="mki-roadmap-inner">
@@ -678,326 +673,272 @@
     </span>
 
     <h2>
-      A structured path through computational materials science
+      From fundamentals to materials discovery
     </h2>
 
+
     <p class="mki-section-intro">
-      Move from fundamental concepts to practical simulation,
-      accelerated computation, and research applications.
+      Follow a structured computational pathway
+      connecting first-principles methods,
+      atomistic simulation, artificial intelligence,
+      and high-performance computing.
     </p>
 
 
-    <div class="mki-roadmap-list">
+<div class="mki-roadmap-list">
 
 
-      <!-- ROADMAP 01 -->
+<!-- ROADMAP 01 -->
 
-      <div class="mki-roadmap-item">
+<div class="mki-roadmap-item">
 
-        <div class="mki-roadmap-number">
-          01
-        </div>
+  <div class="mki-roadmap-number">
+    01
+  </div>
 
-        <div class="mki-roadmap-line"></div>
+  <div class="mki-roadmap-content">
 
-        <div class="mki-roadmap-content">
+    <span>
+      FOUNDATION
+    </span>
 
-          <span>
-            FOUNDATION
-          </span>
+    <h3>
+      Computational Materials Science
+    </h3>
 
-          <h3>
-            Computational Materials Science
-          </h3>
-
-          <p>
-            Build the fundamental concepts needed to understand
-            computational approaches to materials research.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- ROADMAP 02 -->
-
-      <div class="mki-roadmap-item">
-
-        <div class="mki-roadmap-number">
-          02
-        </div>
-
-        <div class="mki-roadmap-line"></div>
-
-        <div class="mki-roadmap-content">
-
-          <span>
-            QUANTUM SIMULATION
-          </span>
-
-          <h3>
-            First-Principles Methods
-          </h3>
-
-          <p>
-            Learn density functional theory, electronic structure,
-            convergence, and Quantum ESPRESSO workflows.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- ROADMAP 03 -->
-
-      <div class="mki-roadmap-item">
-
-        <div class="mki-roadmap-number">
-          03
-        </div>
-
-        <div class="mki-roadmap-line"></div>
-
-        <div class="mki-roadmap-content">
-
-          <span>
-            ATOMISTIC SIMULATION
-          </span>
-
-          <h3>
-            Molecular and Interface Modeling
-          </h3>
-
-          <p>
-            Explore molecular dynamics, interfaces, structural
-            analysis, and atomic-scale interactions.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- ROADMAP 04 -->
-
-      <div class="mki-roadmap-item">
-
-        <div class="mki-roadmap-number">
-          04
-        </div>
-
-        <div class="mki-roadmap-line"></div>
-
-        <div class="mki-roadmap-content">
-
-          <span>
-            AI ACCELERATION
-          </span>
-
-          <h3>
-            Machine Learning Potentials
-          </h3>
-
-          <p>
-            Understand how machine learning potentials can
-            accelerate atomistic materials simulations.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- ROADMAP 05 -->
-
-      <div class="mki-roadmap-item">
-
-        <div class="mki-roadmap-number">
-          05
-        </div>
-
-        <div class="mki-roadmap-line"></div>
-
-        <div class="mki-roadmap-content">
-
-          <span>
-            HPC COMPUTING
-          </span>
-
-          <h3>
-            Scalable Computational Workflows
-          </h3>
-
-          <p>
-            Run computational materials simulations efficiently
-            using high-performance computing and Slurm.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- ROADMAP 06 -->
-
-      <div class="mki-roadmap-item">
-
-        <div class="mki-roadmap-number">
-          06
-        </div>
-
-        <div class="mki-roadmap-line"></div>
-
-        <div class="mki-roadmap-content">
-
-          <span>
-            RESEARCH APPLICATION
-          </span>
-
-          <h3>
-            Materials Discovery
-          </h3>
-
-          <p>
-            Connect computational methods with realistic
-            materials research problems and scientific analysis.
-          </p>
-
-        </div>
-
-      </div>
-
-
-    </div>
+    <p>
+      Build fundamental concepts needed to understand
+      computational approaches in materials research.
+    </p>
 
   </div>
 
-</section>
+</div>
 
+
+
+<!-- ROADMAP 02 -->
+
+<div class="mki-roadmap-item">
+
+  <div class="mki-roadmap-number">
+    02
+  </div>
+
+  <div class="mki-roadmap-content">
+
+    <span>
+      QUANTUM SIMULATION
+    </span>
+
+    <h3>
+      First-Principles Methods
+    </h3>
+
+    <p>
+      Learn density functional theory, electronic
+      structure, convergence, and Quantum ESPRESSO workflows.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- ROADMAP 03 -->
+
+<div class="mki-roadmap-item">
+
+  <div class="mki-roadmap-number">
+    03
+  </div>
+
+  <div class="mki-roadmap-content">
+
+    <span>
+      ATOMISTIC SIMULATION
+    </span>
+
+    <h3>
+      Molecular and Interface Modeling
+    </h3>
+
+    <p>
+      Explore molecular dynamics, interfaces,
+      structural analysis, and atomic-scale interactions.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- ROADMAP 04 -->
+
+<div class="mki-roadmap-item">
+
+  <div class="mki-roadmap-number">
+    04
+  </div>
+
+  <div class="mki-roadmap-content">
+
+    <span>
+      AI ACCELERATION
+    </span>
+
+    <h3>
+      Machine Learning Potentials
+    </h3>
+
+    <p>
+      Understand how machine learning potentials
+      accelerate atomistic materials simulations.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- ROADMAP 05 -->
+
+<div class="mki-roadmap-item">
+
+  <div class="mki-roadmap-number">
+    05
+  </div>
+
+  <div class="mki-roadmap-content">
+
+    <span>
+      HPC COMPUTING
+    </span>
+
+    <h3>
+      Scalable Computational Workflows
+    </h3>
+
+    <p>
+      Run computational materials simulations efficiently
+      using high-performance computing and Slurm.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- ROADMAP 06 -->
+
+<div class="mki-roadmap-item">
+
+  <div class="mki-roadmap-number">
+    06
+  </div>
+
+  <div class="mki-roadmap-content">
+
+    <span>
+      RESEARCH APPLICATION
+    </span>
+
+    <h3>
+      Materials Discovery
+    </h3>
+
+    <p>
+      Connect computational methods with realistic
+      materials research problems and scientific analysis.
+    </p>
+
+  </div>
+
+</div>
+
+
+</div>
+</section>
 
 <!-- =====================================================
-     WORKSHOP TEAM
+     WORKSHOP COLLABORATION
 ===================================================== -->
 
-<section class="mki-contributor">
+<section class="mki-collaboration">
 
-  <div class="mki-contributor-inner">
-
-    <div class="mki-contributor-header">
-
-      <span class="section-label">
-        WORKSHOP TEAM
-      </span>
-
-      <h2>
-        Built for computational materials research
-      </h2>
-
-      <p>
-        This workshop brings together computational materials
-        science, high-performance computing, and artificial
-        intelligence through practical research workflows.
-      </p>
-
-    </div>
+  <div class="mki-collaboration-inner">
 
 
-    <div class="mki-contributor-grid">
+    <span class="section-label">
+      WORKSHOP COLLABORATION
+    </span>
 
 
-      <div class="mki-contributor-person">
+    <h2>
+      MKI × ITB × BRIN
+    </h2>
 
-        <div class="mki-contributor-avatar">
-          +
-        </div>
 
-        <div>
+    <p>
+      Integrating first-principles simulation,
+      high-performance computing,
+      and artificial intelligence
+      for materials discovery.
+    </p>
 
-          <span class="mki-contributor-role">
-            CONTRIBUTORS
-          </span>
 
-          <h3>
-            Workshop Team
-          </h3>
+    <div class="collaboration-divider"></div>
 
-          <p>
-            Contributor and research team information
-            will be added as the workshop develops.
-          </p>
+    <div class="mki-collaboration-logos">
 
-        </div>
+
+      <div class="partner">
+
+        <img
+          src="assets/images/mki-logo.jpeg"
+          alt="Masyarakat Komputasi Indonesia"
+        >
 
       </div>
 
 
-      <div class="mki-contributor-research">
 
-        <span class="mki-contributor-role">
-          RESEARCH FOCUS
-        </span>
+      <div class="collab-symbol">
+        ×
+      </div>
 
-        <h3>
-          Computational Materials
-        </h3>
 
-        <p>
-          First-principles simulation, atomistic modeling,
-          artificial intelligence, and high-performance
-          computing for materials research.
-        </p>
+
+      <div class="partner">
+
+        <img
+          src="assets/images/ITB.png"
+          alt="Institut Teknologi Bandung"
+        >
 
       </div>
 
 
-    </div>
 
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     MKI × ITB × BRIN
-===================================================== -->
-
-<section class="mki-partner">
-
-  <div class="mki-partner-inner">
+      <div class="collab-symbol">
+        ×
+      </div>
 
 
-    <div class="mki-partner-logo">
 
-      <img
-        src="assets/images/mki-logo.jpeg"
-        alt="MKI"
-      >
+      <div class="partner">
 
-    </div>
+        <img
+          src="assets/images/brin-logo.svg"
+          alt="BRIN"
+        >
 
+      </div>
 
-    <div class="mki-partner-symbol">
-      ×
-    </div>
-
-
-    <div class="mki-partner-text">
-
-      <span>
-        WORKSHOP COLLABORATION
-      </span>
-
-      <h3>
-        MKI × ITB × BRIN
-      </h3>
-
-      <p>
-        Integrating first-principles simulation,
-        high-performance computing, and artificial
-        intelligence for materials discovery.
-      </p>
 
     </div>
 
@@ -1005,8 +946,6 @@
   </div>
 
 </section>
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -1016,63 +955,94 @@
   <div class="mki-footer-inner">
 
 
-    <div class="mki-footer-brand">
+    <div class="mki-footer-main">
 
-      <img
-        src="assets/images/mki-logo.jpeg"
-        alt="MKI Workshop"
-      >
 
-      <div>
+      <div class="mki-footer-brand">
 
-        <h3>
-          MKI Workshop
-        </h3>
 
-        <p>
-          Integrating First-Principles, HPC & AI
-          for Materials Discovery.
-        </p>
+        <div class="mki-footer-logo">
+
+          <img
+            src="assets/images/mki-logo.jpeg"
+            alt="Masyarakat Komputasi Indonesia"
+          >
+
+        </div>
+
+
+
+        <div class="mki-footer-brand-text">
+
+          <h3>
+            MKI Workshop
+          </h3>
+
+
+          <p>
+            Integrating First-Principles, HPC &amp; AI
+            for Materials Discovery.
+          </p>
+
+
+        </div>
+
 
       </div>
 
+
+
+      <nav class="mki-footer-links" aria-label="Workshop navigation">
+
+
+        <a href="start-here/workshop-guide/">
+          Workshop Guide
+        </a>
+
+
+        <a href="start-here/workflow/">
+          Computational Workflow
+        </a>
+
+
+        <a href="quantum-simulation/">
+          First-Principles
+        </a>
+
+
+      </nav>
+
+
     </div>
 
 
-    <div class="mki-footer-links">
 
-      <a href="start-here/workshop-guide/">
-        Workshop Guide
-      </a>
+    <div class="mki-footer-divider"></div>
 
-      <a href="start-here/workflow/">
-        Computational Workflow
-      </a>
 
-      <a href="quantum-simulation/">
-        First-Principles
-      </a>
 
-      <a href="hands-on-project/">
-        Research Cases
-      </a>
+    <div class="mki-footer-bottom">
+
+
+      <span>
+        MKI × ITB × BRIN
+      </span>
+
+
+      <span class="mki-footer-separator">
+        ·
+      </span>
+
+
+      <span>
+        Computational Materials Science Workshop
+      </span>
+
 
     </div>
 
 
   </div>
 
-
-  <div class="mki-footer-bottom">
-
-    <span>
-      MKI × ITB × BRIN Workshop
-    </span>
-
-    <span>
-      Computational Materials Science
-    </span>
-
-  </div>
 
 </footer>

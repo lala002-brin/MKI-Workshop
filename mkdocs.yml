@@ -14,7 +14,7 @@ repo_url: https://github.com/lala002-brin/MKI-Workshop
 
 theme:
   name: material
-
+  copyright: ""
   logo: assets/images/mki-logo.jpeg
 
   favicon: assets/images/mki-logo.jpeg
@@ -84,7 +84,6 @@ nav:
 
 
   - 🚀 Start Here:
-
       - Workshop Guide:
           start-here/workshop-guide.md
 
@@ -93,115 +92,39 @@ nav:
 
 
   - 🧱 Foundation:
-
-      - Computational Materials Science:
+      - Overview:
           foundation/index.md
 
-      - Materials Informatics:
-          foundation/materials-informatics.md
-  - ⚛ First-Principles Simulation:
+      - Density Functional Theory:
+          foundation/dft.md
 
+      - Material Fundamentals:
+          foundation/materials-informatics.md
+
+
+  - ⚛ Quantum Simulation:
       - Overview:
           quantum-simulation/index.md
 
-
-      - Setup Environment:
-
-          - Installation:
-              quantum-simulation/setup/installation.md
-
-          - HPC Environment:
-              quantum-simulation/setup/hpc.md
-
-          - Pseudopotential:
-              quantum-simulation/setup/pseudopotential.md
-
-
       - Theory:
+          quantum-simulation/theory/dft-overview.md
 
-          - DFT Overview:
-              quantum-simulation/theory/dft-overview.md
-
-          - Kohn-Sham Equations:
-              quantum-simulation/theory/kohn-sham.md
-
-          - Hartree-Fock:
-              quantum-simulation/theory/hartree-fock.md
-
-          - Computational Complexity:
-              quantum-simulation/theory/computational-complexity.md
+      - Hands-on Calculation:
+          quantum-simulation/hands-on/index.md
 
 
-      - Hands-on Tutorial:
-
-          - Overview:
-              quantum-simulation/hands-on/index.md
-
-          - SCF Calculation:
-              quantum-simulation/hands-on/scf.md
-
-          - Convergence Testing:
-              quantum-simulation/hands-on/convergence-testing.md
-
-          - Geometry Optimization:
-              quantum-simulation/hands-on/relaxation.md
-
-          - Electronic Structure Analysis:
-              quantum-simulation/hands-on/density-of-states.md
-
-          - Band Structure:
-              quantum-simulation/hands-on/band-structure.md
-
-          - Advanced Topics:
-              - DFT+U:
-                  quantum-simulation/hands-on/dft-u.md
-
-              - Spin Orbit Coupling:
-                  quantum-simulation/hands-on/spin-orbit-coupling.md
-
-              - Phonon:
-                  quantum-simulation/hands-on/phonon.md
-
-              - Wannier Function:
-                  quantum-simulation/hands-on/wannier.md
-  - 🧩 System Design:
-
-      - Overview:
-          system-design/index.md
-
-      - Molecular Building:
-          atomistic-simulation/molecular-building.md
-
-      - Packmol System Generation:
-          atomistic-simulation/packmol.md
-
-      - Interface Construction:
-          system-design/graphite-interface.md
-
-
-  - 🚀 Accelerated Materials Simulation:
-
+  - 🔬 Atomistic Simulation:
       - Overview:
           atomistic-simulation/index.md
 
-      - Molecular Dynamics Fundamentals:
+      - Molecular Dynamics:
           atomistic-simulation/md.md
 
-      - DC-DFTB-MD Workflow:
+      - Transport Analysis:
+          atomistic-simulation/transport-analysis.md
 
-          - Overview:
-              atomistic-simulation/dc-dftb-md.md
 
-          - Input Preparation:
-              atomistic-simulation/dc-dftb-input.md
-
-          - HPC Execution:
-              atomistic-simulation/dc-dftb-hpc.md
-
-          - Trajectory Output:
-              atomistic-simulation/dc-dftb-trajectory.md
   - 💻 HPC Environment:
-
       - Overview:
           hpc-environment/index.md
 
@@ -209,73 +132,28 @@ nav:
           hpc-environment/job-submission.md
 
 
-  - 📊 Transport Analysis:
-
+  - 🤖 AI Acceleration:
       - Overview:
-          atomistic-simulation/transport-analysis.md
-
-      - Mean Square Displacement (MSD):
-          atomistic-simulation/msd.md
-
-      - Diffusion Coefficient:
-          atomistic-simulation/diffusion-coefficient.md
-
-      - Radial Distribution Function (RDF):
-          atomistic-simulation/rdf.md
-
-
-  - 🤖 AI Materials:
-
-      - AI for Materials Simulation:
           ai-acceleration/index.md
 
       - MACE Workflow:
           ai-acceleration/mace.md
-  - 🧪 Hands-on Research Cases:
 
-      - Overview:
+
+  - 🧪 Research Application:
+      - Hands-on Cases:
           hands-on-project/index.md
 
 
-      - Graphene Electronic Structure:
-          hands-on-project/research-cases/graphene/index.md
-
-
-      - Graphene Ionic Liquid Interface:
-          hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
-
-
-      - LiTFSI-EMIM TFSI Electrolyte Transport:
-          hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
-
-
-
-  - 🤖 AI Help Center:
-
-      - Overview:
+  - 📚 Resources:
+      - AI Help:
           resources/ai-help/index.md
 
-      - AI Chat Assistant:
-          resources/ai-help/chat.md
-
-      - Linux Command Assistant:
-          resources/ai-help/linux-command.md
-
-      - Quantum ESPRESSO Assistant:
-          resources/ai-help/quantum-espresso.md
-
-
-
-  - 📚 References:
-
-      - Software:
-          references/software.md
-
-      - Learning Resources:
+      - References:
           references/resources.md
 
 extra:
-
+  generator: false
   social:
 
     - icon: fontawesome/brands/github
@@ -311,12 +189,17 @@ copyright: >
 
 extra_css:
 
-  - stylesheets/extra.css
   - assets/stylesheets/chat.css
   - stylesheets/home.css
+  - stylesheets/extra-v2.css
 
 extra_javascript:
 
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/mermaid/dist/mermaid.min.js
   - assets/javascripts/chat.js
+  - javascripts/home-parallax.js
+  - javascripts/features-reveal.js 
+  - javascripts/workflow-flow.js  
+  - javascripts/research-reveal.js
+  - javascripts/scroll-reveal.js
