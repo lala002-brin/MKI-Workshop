@@ -15,21 +15,25 @@
       
       
       
+        <link rel="prev" href="../working-on-mahameru/">
+      
+      
+        <link rel="next" href="../workshop-workflow/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/mki-logo.jpeg">
+      <link rel="icon" href="../../../assets/images/mki-logo.jpeg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Geometry - MKI Computational Materials Science Workshop</title>
+        <title>03 · SLURM & Computing - MKI Computational Materials Science Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -48,15 +52,15 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/chat.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
     
-      <link rel="stylesheet" href="../../stylesheets/home.css">
+      <link rel="stylesheet" href="../../../stylesheets/home.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra-v2.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra-v2.css">
     
-      <link rel="stylesheet" href="../../stylesheets/file-editor.css">
+      <link rel="stylesheet" href="../../../stylesheets/file-editor.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#slurm-computing" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,9 +94,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
       
-  <img src="../../assets/images/mki-logo.jpeg" alt="logo">
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geometry
+              03 · SLURM & Computing
             
           </span>
         </div>
@@ -183,7 +192,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -204,7 +213,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../start-here/workshop-guide/" class="md-tabs__link">
+        <a href="../../../start-here/workshop-guide/" class="md-tabs__link">
           
   
   
@@ -220,11 +229,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../environment/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -251,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../" class="md-tabs__link">
+        <a href="../../../quantum-simulation/" class="md-tabs__link">
           
   
   
@@ -274,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../ai/index.md" class="md-tabs__link">
+        <a href="../../../ai/index.md" class="md-tabs__link">
           
   
   
@@ -294,7 +305,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../hands-on-project/" class="md-tabs__link">
+        <a href="../../../hands-on-project/" class="md-tabs__link">
           
   
   
@@ -334,9 +345,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
       
-  <img src="../../assets/images/mki-logo.jpeg" alt="logo">
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
 
     </a>
     MKI Computational Materials Science Workshop
@@ -363,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -442,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start-here/workshop-guide/" class="md-nav__link">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
         
   
   
@@ -470,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start-here/workflow/" class="md-nav__link">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
         
   
   
@@ -502,26 +513,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -539,7 +555,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -585,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/access-linux/" class="md-nav__link">
+      <a href="../../access-linux/" class="md-nav__link">
         
   
   
@@ -613,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/command-line/" class="md-nav__link">
+      <a href="../../command-line/" class="md-nav__link">
         
   
   
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/software-environment/" class="md-nav__link">
+      <a href="../../software-environment/" class="md-nav__link">
         
   
   
@@ -669,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/running-calculations/" class="md-nav__link">
+      <a href="../../running-calculations/" class="md-nav__link">
         
   
   
@@ -697,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/script-library/" class="md-nav__link">
+      <a href="../../script-library/" class="md-nav__link">
         
   
   
@@ -722,26 +738,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   
@@ -759,7 +780,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -777,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/mahameru-hpc-brin/getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -805,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/mahameru-hpc-brin/working-on-mahameru/" class="md-nav__link">
+      <a href="../working-on-mahameru/" class="md-nav__link">
         
   
   
@@ -830,10 +851,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../environment/mahameru-hpc-brin/slurm-computing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · SLURM & Computing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -849,6 +895,151 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLURM &amp; Computing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cara-kerja-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cara Kerja SLURM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-vs-interactive-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit vs Interactive Job
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submit vs Interactive Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memahami-status-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memahami Status Job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sebelum-lanjut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sebelum Lanjut
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -861,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment/mahameru-hpc-brin/workshop-workflow/" class="md-nav__link">
+      <a href="../workshop-workflow/" class="md-nav__link">
         
   
   
@@ -1008,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../quantum-simulation/" class="md-nav__link">
         
   
   
@@ -1088,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/" class="md-nav__link">
         
   
   
@@ -1116,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/problem-statement/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
         
   
   
@@ -1144,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/hartree-fock/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
         
   
   
@@ -1172,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/dft-overview/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
         
   
   
@@ -1200,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/kohn-sham/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
         
   
   
@@ -1228,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/computational-complexity/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
         
   
   
@@ -1256,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../theory/wannier/" class="md-nav__link">
+      <a href="../../../quantum-simulation/theory/wannier/" class="md-nav__link">
         
   
   
@@ -1344,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/installation/" class="md-nav__link">
+      <a href="../../../quantum-simulation/setup/installation/" class="md-nav__link">
         
   
   
@@ -1432,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hands-on/scf/" class="md-nav__link">
+      <a href="../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
         
   
   
@@ -1528,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../atomistic-simulation/" class="md-nav__link">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
         
   
   
@@ -1623,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/index.md" class="md-nav__link">
+      <a href="../../../ai/index.md" class="md-nav__link">
         
   
   
@@ -1710,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/" class="md-nav__link">
+      <a href="../../../hands-on-project/" class="md-nav__link">
         
   
   
@@ -1842,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/graphene/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/graphene/" class="md-nav__link">
         
   
   
@@ -1870,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/graphene/system-preparation/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/graphene/system-preparation/" class="md-nav__link">
         
   
   
@@ -1898,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/graphene/hpc-setup/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/graphene/hpc-setup/" class="md-nav__link">
         
   
   
@@ -1926,7 +2117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/graphene/analysis/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/graphene/analysis/" class="md-nav__link">
         
   
   
@@ -2014,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/" class="md-nav__link">
         
   
   
@@ -2102,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/graphene-ionic-liquid-interface/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/graphene-ionic-liquid-interface/" class="md-nav__link">
         
   
   
@@ -2190,7 +2381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hands-on-project/research-cases/battery-electrolyte/" class="md-nav__link">
+      <a href="../../../hands-on-project/research-cases/battery-electrolyte/" class="md-nav__link">
         
   
   
@@ -2252,6 +2443,141 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLURM &amp; Computing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cara-kerja-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cara Kerja SLURM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-vs-interactive-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit vs Interactive Job
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submit vs Interactive Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memahami-status-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memahami Status Job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sebelum-lanjut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sebelum Lanjut
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2268,6 +2594,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Computational Environment
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../getting-started/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mahameru HPC BRIN
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -2278,9 +2662,383 @@
   
 
 
-  <h1>Geometry</h1>
+  <h1>03 · SLURM & Computing</h1>
 
+<h2 id="slurm-computing">SLURM &amp; Computing</h2>
+<p>Setelah memahami lingkungan kerja Mahameru, langkah berikutnya adalah
+menjalankan pekerjaan komputasi melalui <strong>SLURM</strong>.</p>
+<p>SLURM membantu mengatur pekerjaan yang dikirim ke cluster, termasuk
+resource, partition, antrean, dan status job.</p>
+<div class="mahameru-workflow">
 
+<div class="mahameru-workflow-step">
+<span>01</span>
+<strong>Prepare</strong>
+<p>Siapkan file dan script.</p>
+</div>
+
+<div class="mahameru-workflow-arrow">→</div>
+
+<div class="mahameru-workflow-step">
+<span>02</span>
+<strong>Submit</strong>
+<p>Kirim job ke SLURM.</p>
+</div>
+
+<div class="mahameru-workflow-arrow">→</div>
+
+<div class="mahameru-workflow-step">
+<span>03</span>
+<strong>Queue</strong>
+<p>Job menunggu resource.</p>
+</div>
+
+<div class="mahameru-workflow-arrow">→</div>
+
+<div class="mahameru-workflow-step">
+<span>04</span>
+<strong>Run</strong>
+<p>Job berjalan di cluster.</p>
+</div>
+
+</div>
+
+<hr />
+<h2 id="cara-kerja-slurm">Cara Kerja SLURM</h2>
+<p>SLURM menerima pekerjaan dari pengguna dan mengatur kapan serta di mana
+job tersebut dijalankan berdasarkan resource dan partition yang tersedia.</p>
+<details open>
+<summary><strong>01 · Prepare</strong></summary>
+
+Siapkan script yang berisi instruksi pekerjaan dan kebutuhan resource.
+
+Contoh sederhana:
+
+    #!/bin/bash
+
+    #SBATCH --job-name=my_job
+    #SBATCH --output=output_%j.out
+
+    echo "Job started"
+    hostname
+    date
+
+Simpan sebagai:
+
+`your_script.sh`
+
+</details>
+
+<details>
+<summary><strong>02 · Submit</strong></summary>
+
+Kirim script ke SLURM menggunakan:
+
+    sbatch your_script.sh
+
+Jika berhasil, SLURM akan memberikan **Job ID**.
+
+Job tidak langsung harus berjalan. SLURM akan memasukkannya ke dalam
+antrean sesuai resource dan kondisi cluster.
+
+</details>
+
+<details>
+<summary><strong>03 · Monitor</strong></summary>
+
+Periksa status job menggunakan:
+
+    squeue
+
+Perintah ini membantu melihat pekerjaan yang sedang berada dalam sistem
+SLURM.
+
+Perhatikan informasi seperti:
+
+- JOBID
+- PARTITION
+- NAME
+- USER
+- ST
+- TIME
+- NODES
+- NODELIST
+
+</details>
+
+<details>
+<summary><strong>04 · Running</strong></summary>
+
+Ketika job mendapatkan resource dan mulai bekerja, statusnya akan berubah
+menjadi **R (Running)**.
+
+Contoh:
+
+    JOBID     PARTITION   NAME      USER     ST
+    552995    medium-1a   addition  lala002  R
+
+Status `R` menunjukkan pekerjaan sedang berjalan.
+
+</details>
+
+<hr />
+<h2 id="submit-vs-interactive-job">Submit vs Interactive Job</h2>
+<p>Mahameru juga mendukung <strong>interactive job</strong>.</p>
+<p>Gunakan interactive job ketika Anda ingin memperoleh shell pada compute
+resource dan bekerja secara langsung.</p>
+<h3 id="batch-job">Batch Job</h3>
+<p>Untuk pekerjaan yang berjalan melalui script:</p>
+<pre><code>sbatch your_script.sh
+</code></pre>
+<p>Alurnya:</p>
+<div class="mahameru-mini-flow">
+
+<span>Script</span>
+→
+<span>sbatch</span>
+→
+<span>Queue</span>
+→
+<span>Running</span>
+→
+<span>Output</span>
+
+</div>
+
+<h3 id="interactive-job">Interactive Job</h3>
+<p>Untuk membuka sesi interaktif:</p>
+<pre><code>srun --partition=interactive --pty /bin/bash
+</code></pre>
+<p>Setelah resource tersedia, Anda akan memperoleh shell pada environment
+komputasi yang diberikan.</p>
+<div class="mahameru-tip">
+
+<strong>💡 Kapan menggunakan interactive job?</strong>
+
+<p>
+Gunakan interactive job ketika Anda perlu menguji command, mengecek
+environment, atau melakukan percobaan singkat secara langsung.
+</p>
+
+</div>
+
+<hr />
+<h2 id="memahami-status-job">Memahami Status Job</h2>
+<div class="mahameru-status-grid">
+
+<div class="mahameru-status-card">
+
+<strong>PD</strong>
+
+<span>Pending</span>
+
+<p>
+Job masih menunggu resource atau kondisi tertentu.
+</p>
+
+</div>
+
+<div class="mahameru-status-card">
+
+<strong>R</strong>
+
+<span>Running</span>
+
+<p>
+Job sedang berjalan pada compute node.
+</p>
+
+</div>
+
+<div class="mahameru-status-card">
+
+<strong>CG</strong>
+
+<span>Completing</span>
+
+<p>
+Job sedang menyelesaikan proses akhir.
+</p>
+
+</div>
+
+<div class="mahameru-status-card">
+
+<strong>CD</strong>
+
+<span>Completed</span>
+
+<p>
+Job telah selesai.
+</p>
+
+</div>
+
+</div>
+
+<hr />
+<h2 id="partition">Partition</h2>
+<p><strong>Partition</strong> menentukan kelompok resource yang dapat digunakan oleh job.</p>
+<p>Nama partition yang tersedia dapat berbeda sesuai konfigurasi Mahameru
+dan akses pengguna.</p>
+<p>Karena itu, jangan menebak nama partition.</p>
+<p>Periksa informasi partition yang tersedia pada sistem sebelum membuat
+script.</p>
+<p>Gunakan:</p>
+<pre><code>sinfo
+</code></pre>
+<p>Untuk melihat detail pekerjaan pengguna:</p>
+<pre><code>squeue
+</code></pre>
+<div class="mahameru-tip">
+
+<strong>⚠️ Perhatikan resource</strong>
+
+<p>
+Gunakan resource sesuai kebutuhan pekerjaan. Jangan meminta resource
+secara berlebihan karena hal tersebut dapat memengaruhi antrean dan
+efisiensi penggunaan cluster.
+</p>
+
+</div>
+
+<hr />
+<h2 id="job-monitoring">Job Monitoring</h2>
+<p>Setelah submit, gunakan <code>squeue</code> untuk memantau pekerjaan.</p>
+<p>Contoh:</p>
+<pre><code>squeue
+</code></pre>
+<p>Informasi yang perlu diperhatikan:</p>
+<div class="mahameru-job-grid">
+
+<div class="mahameru-job-card">
+<strong>JOBID</strong>
+<p>ID unik pekerjaan.</p>
+</div>
+
+<div class="mahameru-job-card">
+<strong>PARTITION</strong>
+<p>Resource group yang digunakan.</p>
+</div>
+
+<div class="mahameru-job-card">
+<strong>ST</strong>
+<p>Status pekerjaan.</p>
+</div>
+
+<div class="mahameru-job-card">
+<strong>TIME</strong>
+<p>Waktu job berjalan.</p>
+</div>
+
+<div class="mahameru-job-card">
+<strong>NODES</strong>
+<p>Jumlah node yang digunakan.</p>
+</div>
+
+<div class="mahameru-job-card">
+<strong>NODELIST</strong>
+<p>Node tempat job berjalan.</p>
+</div>
+
+</div>
+
+<hr />
+<h2 id="mini-practice">Mini Practice</h2>
+<p>Coba lakukan alur berikut setelah login ke Mahameru.</p>
+<div class="mahameru-practice">
+
+<div>
+<span>01</span>
+<strong>Check environment</strong>
+
+    pwd
+    ls
+
+</div>
+
+<div>
+<span>02</span>
+<strong>Check partition</strong>
+
+    sinfo
+
+</div>
+
+<div>
+<span>03</span>
+<strong>Create script</strong>
+
+    nano your_script.sh
+
+</div>
+
+<div>
+<span>04</span>
+<strong>Submit job</strong>
+
+    sbatch your_script.sh
+
+</div>
+
+<div>
+<span>05</span>
+<strong>Monitor job</strong>
+
+    squeue
+
+</div>
+
+</div>
+
+<hr />
+<h2 id="quick-reference">Quick Reference</h2>
+<div class="mahameru-command-grid">
+
+<div>
+<strong>Submit</strong>
+<code>sbatch your_script.sh</code>
+</div>
+
+<div>
+<strong>Monitor</strong>
+<code>squeue</code>
+</div>
+
+<div>
+<strong>Partitions</strong>
+<code>sinfo</code>
+</div>
+
+<div>
+<strong>Interactive</strong>
+<code>srun --partition=interactive --pty /bin/bash</code>
+</div>
+
+</div>
+
+<hr />
+<h2 id="sebelum-lanjut">Sebelum Lanjut</h2>
+<p>Pastikan Anda sudah memahami:</p>
+<ul>
+<li>cara menyiapkan script</li>
+<li>cara mengirim job dengan <code>sbatch</code></li>
+<li>cara melihat antrean dengan <code>squeue</code></li>
+<li>cara melihat partition dengan <code>sinfo</code></li>
+<li>perbedaan batch job dan interactive job</li>
+<li>arti status dasar SLURM</li>
+</ul>
+<div class="mahameru-next">
+
+<strong>Next · Workshop Workflow</strong>
+
+<p>
+Setelah memahami cara kerja SLURM, kita akan menghubungkan proses ini
+dengan workflow workshop, mulai dari menyiapkan model, menjalankan
+simulasi, sampai menganalisis hasil.
+</p>
+
+</div>
 
 
 
@@ -2371,28 +3129,28 @@ MKI × ITB × BRIN
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
       
-        <script src="../../assets/javascripts/chat.js"></script>
+        <script src="../../../assets/javascripts/chat.js"></script>
       
-        <script src="../../javascripts/home-parallax.js"></script>
+        <script src="../../../javascripts/home-parallax.js"></script>
       
-        <script src="../../javascripts/features-reveal.js"></script>
+        <script src="../../../javascripts/features-reveal.js"></script>
       
-        <script src="../../javascripts/workflow-flow.js"></script>
+        <script src="../../../javascripts/workflow-flow.js"></script>
       
-        <script src="../../javascripts/research-reveal.js"></script>
+        <script src="../../../javascripts/research-reveal.js"></script>
       
-        <script src="../../javascripts/scroll-reveal.js"></script>
+        <script src="../../../javascripts/scroll-reveal.js"></script>
       
-        <script src="../../javascripts/file-editor.js"></script>
+        <script src="../../../javascripts/file-editor.js"></script>
       
     
   </body>
