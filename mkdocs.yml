@@ -122,11 +122,16 @@ nav:
       - Atomistic Simulation:
           - Overview: atomistic-simulation/index.md
 
-  - AI:
-      - AI Acceleration: ai/index.md
-
-  - Research:
+  - Hands-on Project:
       - Research Overview: hands-on-project/index.md
+
+      - Day 1:
+          - Overview: hands-on-project/day-1/index.md
+          - Foundations: hands-on-project/day-1/foundations.md
+          - LiPF6 / EC: hands-on-project/day-1/lipf6-ec.md
+          - MD Analysis: hands-on-project/day-1/md-analysis.md
+          - LiF / EC Interface: hands-on-project/day-1/lif-ec-interface.md
+          - MACE: hands-on-project/day-1/mace.md
 
       - Research Cases:
           - Graphene Electronic Structure:
@@ -134,7 +139,6 @@ nav:
               - System Preparation: hands-on-project/research-cases/graphene/system-preparation.md
               - HPC Setup: hands-on-project/research-cases/graphene/hpc-setup.md
               - Analysis: hands-on-project/research-cases/graphene/analysis.md
-
           - LiTFSI–EMIM/TFSI Electrolyte:
               - Overview: hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
 
@@ -197,3 +201,4 @@ extra_javascript:
   - javascripts/research-reveal.js
   - javascripts/scroll-reveal.js
   - javascripts/file-editor.js
+  - javascripts/md-analysis-worksheet.js
