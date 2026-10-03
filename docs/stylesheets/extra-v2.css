@@ -24792,3 +24792,1215 @@ body:has(.home-hero) .connection-card p {
 
     margin: 0 !important;
 }
+/* =========================================================
+   NEXT STEP CARD
+   GLOBAL VISIBILITY FIX
+   ========================================================= */
+
+.next-step,
+.next-step-card,
+.mki-next-step,
+body:has(.home-hero) .next-step,
+body:has(.home-hero) .next-step-card,
+body:has(.home-hero) .mki-next-step {
+    color: #ffffff !important;
+}
+
+
+/* Judul */
+
+.next-step h2,
+.next-step h3,
+.next-step h4,
+.next-step-card h2,
+.next-step-card h3,
+.next-step-card h4,
+.mki-next-step h2,
+.mki-next-step h3,
+.mki-next-step h4,
+body:has(.home-hero) .next-step h2,
+body:has(.home-hero) .next-step h3,
+body:has(.home-hero) .next-step h4,
+body:has(.home-hero) .next-step-card h2,
+body:has(.home-hero) .next-step-card h3,
+body:has(.home-hero) .next-step-card h4,
+body:has(.home-hero) .mki-next-step h2,
+body:has(.home-hero) .mki-next-step h3,
+body:has(.home-hero) .mki-next-step h4 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+
+/* Paragraf */
+
+.next-step p,
+.next-step-card p,
+.mki-next-step p,
+body:has(.home-hero) .next-step p,
+body:has(.home-hero) .next-step-card p,
+body:has(.home-hero) .mki-next-step p {
+    color: #dbeafe !important;
+    opacity: 1 !important;
+}
+
+
+/* Label NEXT STEP */
+
+.next-step .section-label,
+.next-step-card .section-label,
+.mki-next-step .section-label,
+body:has(.home-hero) .next-step .section-label,
+body:has(.home-hero) .next-step-card .section-label,
+body:has(.home-hero) .mki-next-step .section-label {
+    color: #93c5fd !important;
+    opacity: 1 !important;
+}
+
+
+/* Garis dekorasi di bawah judul */
+
+.next-step h2::after,
+.next-step h3::after,
+.next-step-card h2::after,
+.next-step-card h3::after,
+.mki-next-step h2::after,
+.mki-next-step h3::after {
+    opacity: 1 !important;
+}
+
+
+/* Tombol */
+
+.next-step a,
+.next-step-card a,
+.mki-next-step a {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+/* Pastikan tidak ada opacity dari parent/child */
+
+.next-step *,
+.next-step-card *,
+.mki-next-step * {
+    opacity: 1 !important;
+}
+/* =========================================================
+   MAHAMERU HPC BRIN
+   Getting Started + Shared Components
+   ========================================================= */
+
+.mahameru-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 14px;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-hero > div:first-child {
+  min-width: 0;
+}
+
+.mahameru-hero strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.mahameru-hero-status {
+  min-width: 210px;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  text-align: center;
+}
+
+.mahameru-hero-status strong,
+.mahameru-hero-status code {
+  display: block;
+}
+
+.mahameru-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.35rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-subnav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 7px;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.mahameru-subnav a:hover {
+  color: var(--md-primary-fg-color);
+  background: var(--md-default-bg-color);
+}
+
+.mahameru-subnav a.active {
+  color: var(--md-primary-fg-color);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.mahameru-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.mahameru-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mahameru-card {
+  padding: 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 11px;
+  background: var(--md-default-bg-color);
+}
+
+.mahameru-card h3,
+.mahameru-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.mahameru-card p:last-child {
+  margin-bottom: 0;
+}
+
+.mahameru-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 11px;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-info strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.mahameru-command {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--md-primary-fg-color);
+  border-radius: 0 9px 9px 0;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-command strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mahameru-tip,
+.mahameru-success {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.mahameru-tip strong,
+.mahameru-success strong {
+  font-weight: 750;
+}
+
+.mahameru-success {
+  margin-top: 1.1rem;
+}
+
+.mahameru-success h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.mahameru-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.45rem;
+  margin: 1rem 0 1.35rem;
+}
+
+.mahameru-flow > div:not(.flow-arrow) {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.8rem 0.65rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  text-align: center;
+}
+
+.mahameru-flow strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.mahameru-flow span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.mahameru-flow small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.mahameru-flow .flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0 0.1rem;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.mahameru-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 11px;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-checklist p {
+  margin: 0;
+}
+
+.mahameru-checklist input {
+  accent-color: var(--md-primary-fg-color);
+}
+
+.mahameru-next {
+  margin: 1.25rem 0 0.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  background: var(--md-code-bg-color);
+}
+
+.mahameru-next a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mahameru-next a:hover {
+  color: var(--md-primary-fg-color);
+}
+
+.mahameru-next strong {
+  font-size: 0.95rem;
+}
+
+.mahameru-next p {
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Mahameru tables
+   --------------------------------------------------------- */
+
+.mahameru-page table {
+  width: 100%;
+}
+
+.mahameru-page th,
+.mahameru-page td {
+  padding: 0.55rem 0.7rem;
+}
+
+.mahameru-page table tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Compact typography
+   --------------------------------------------------------- */
+
+.mahameru-page h2 {
+  margin-top: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.mahameru-page h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mahameru-page p {
+  line-height: 1.65;
+}
+
+.mahameru-page ul,
+.mahameru-page ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.mahameru-page li {
+  margin-bottom: 0.2rem;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .mahameru-hero {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .mahameru-hero-status {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .mahameru-subnav {
+    gap: 0.3rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0.3rem;
+    scrollbar-width: thin;
+  }
+
+  .mahameru-subnav a {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .mahameru-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .mahameru-info {
+    grid-template-columns: 1fr;
+  }
+
+  .mahameru-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .mahameru-flow > div:not(.flow-arrow) {
+    padding: 0.65rem;
+  }
+
+  .mahameru-flow .flow-arrow {
+    min-height: 16px;
+    transform: rotate(90deg);
+  }
+
+  .mahameru-checklist {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+  }
+
+  .mahameru-page table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .mahameru-page h2 {
+    margin-top: 1.15rem;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Dark mode adjustments
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .mahameru-hero,
+[data-md-color-scheme="slate"] .mahameru-subnav,
+[data-md-color-scheme="slate"] .mahameru-info,
+[data-md-color-scheme="slate"] .mahameru-command,
+[data-md-color-scheme="slate"] .mahameru-tip,
+[data-md-color-scheme="slate"] .mahameru-success,
+[data-md-color-scheme="slate"] .mahameru-checklist,
+[data-md-color-scheme="slate"] .mahameru-next {
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .mahameru-subnav a.active,
+[data-md-color-scheme="slate"] .mahameru-subnav a:hover {
+  background: var(--md-default-bg-color);
+}
+/* =====================================================
+   MAHAMERU HPC
+   COMPACT DOCUMENTATION TYPOGRAPHY
+===================================================== */
+
+.mahameru-page .mahameru-section-title {
+  font-size: 1.45rem !important;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: .6rem;
+  letter-spacing: -.02em;
+}
+
+.mahameru-page .mahameru-section-title::after {
+  width: 36px;
+  height: 2px;
+  margin-top: .5rem;
+}
+
+.mahameru-page h3 {
+  font-size: 1.05rem !important;
+  line-height: 1.4;
+  margin-top: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.mahameru-page p {
+  font-size: .92rem;
+  line-height: 1.65;
+}
+
+.mahameru-page .mahameru-hero h2 {
+  font-size: 1.8rem !important;
+  line-height: 1.2;
+  margin: 0 0 .6rem;
+}
+
+.mahameru-page .mahameru-hero p {
+  font-size: .9rem;
+}
+
+.mahameru-page .mahameru-card h3 {
+  font-size: 1rem !important;
+}
+
+.mahameru-page .connection-card h3 {
+  font-size: 1rem !important;
+}
+
+.mahameru-page .mahameru-next strong {
+  font-size: .8rem;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+  .mahameru-page .mahameru-section-title {
+    font-size: 1.25rem !important;
+    margin-top: 2rem;
+  }
+
+  .mahameru-page h3 {
+    font-size: .98rem !important;
+  }
+
+  .mahameru-page .mahameru-hero h2 {
+    font-size: 1.45rem !important;
+  }
+
+  .mahameru-page p {
+    font-size: .88rem;
+    line-height: 1.6;
+  }
+
+}
+@media(max-width:900px){
+  .workflow-path{
+    flex-direction:column;
+  }
+
+  .workflow-arrow{
+    transform:rotate(90deg);
+  }
+}
+/* =====================================================
+   MAHAMERU
+   ACCESS FLOW
+   FINAL COMPACT LAYOUT
+===================================================== */
+
+.mahameru-page .workflow-path {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 1.8rem 0 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+.mahameru-page .workflow-step {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 1.2rem 1rem !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #dbeafe !important;
+  border-radius: 16px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+.mahameru-page .workflow-step span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  border-radius: 50% !important;
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  font-size: .75rem !important;
+  font-weight: 700 !important;
+}
+
+.mahameru-page .workflow-step h3 {
+  margin: .7rem 0 .35rem !important;
+  font-size: 1rem !important;
+  line-height: 1.3 !important;
+  color: #1e3a8a !important;
+}
+
+.mahameru-page .workflow-step p {
+  margin: 0 !important;
+  font-size: .82rem !important;
+  line-height: 1.45 !important;
+  color: #64748b !important;
+}
+
+.mahameru-page .workflow-arrow {
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 1.4rem !important;
+  line-height: 1 !important;
+  color: #2563eb !important;
+  transform: none !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .mahameru-page .workflow-path {
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding-bottom: .6rem !important;
+  }
+
+  .mahameru-page .workflow-step {
+    flex: 0 0 160px !important;
+  }
+
+  .mahameru-page .workflow-arrow {
+    flex: 0 0 28px !important;
+    width: 28px !important;
+    font-size: 1.2rem !important;
+  }
+
+}
+/* =====================================================
+   MAHAMERU ACCESS FLOW
+   FINAL OVERRIDE
+===================================================== */
+
+.workflow-path {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    gap: 0 !important;
+    margin: 2rem 0 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* STEP */
+
+.workflow-path .workflow-step {
+    display: block !important;
+
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 1.1rem .8rem !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbeafe !important;
+    border-radius: 16px !important;
+
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+
+/* NUMBER */
+
+.workflow-path .workflow-step span {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    padding: 0 !important;
+    margin: 0 auto !important;
+
+    border-radius: 50% !important;
+
+    background: #eff6ff !important;
+    color: #2563eb !important;
+
+    font-size: .75rem !important;
+    font-weight: 700 !important;
+}
+
+
+/* TITLE */
+
+.workflow-path .workflow-step h3 {
+    margin: .65rem 0 .35rem !important;
+
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+
+    color: #1e3a8a !important;
+}
+
+
+/* DESCRIPTION */
+
+.workflow-path .workflow-step p {
+    margin: 0 !important;
+
+    font-size: .82rem !important;
+    line-height: 1.4 !important;
+
+    color: #64748b !important;
+}
+
+
+/* ARROW */
+
+.workflow-path .workflow-arrow {
+    display: flex !important;
+
+    flex: 0 0 38px !important;
+    width: 38px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    font-size: 1.35rem !important;
+    line-height: 1 !important;
+
+    color: #2563eb !important;
+
+    transform: none !important;
+}
+
+
+/* REMOVE OLD DECORATION */
+
+.workflow-path::after {
+    display: none !important;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .workflow-path {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+
+        padding-bottom: .6rem !important;
+    }
+
+    .workflow-path .workflow-step {
+        flex: 0 0 155px !important;
+        min-width: 155px !important;
+    }
+
+    .workflow-path .workflow-arrow {
+        flex: 0 0 28px !important;
+        width: 28px !important;
+
+        transform: none !important;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .workflow-path {
+        overflow-x: auto !important;
+    }
+
+    .workflow-path .workflow-step {
+        flex: 0 0 145px !important;
+        min-width: 145px !important;
+
+        padding: 1rem .7rem !important;
+    }
+
+    .workflow-path .workflow-step h3 {
+        font-size: .95rem !important;
+    }
+
+    .workflow-path .workflow-step p {
+        font-size: .78rem !important;
+    }
+
+}
+/* =========================================================
+   FIX ACCESS FLOW
+   FORCE HORIZONTAL LAYOUT
+========================================================= */
+
+/* Parent */
+.workflow-path,
+div.workflow-path {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    margin: 2rem 0 !important;
+    padding: 0 !important;
+
+    gap: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* Semua card */
+.workflow-path > .workflow-step,
+div.workflow-path > div.workflow-step {
+    display: flex !important;
+    flex-direction: column !important;
+
+    flex: 1 1 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 1.2rem !important;
+
+    box-sizing: border-box !important;
+
+    text-align: center !important;
+
+    background: #ffffff !important;
+    border: 1px solid #dbeafe !important;
+    border-radius: 16px !important;
+}
+
+
+/* Nomor */
+.workflow-path > .workflow-step span {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    margin: 0 auto .7rem auto !important;
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: #eff6ff !important;
+    color: #2563eb !important;
+
+    font-size: .75rem !important;
+}
+
+
+/* Judul */
+.workflow-path > .workflow-step h3 {
+    margin: .3rem 0 .4rem !important;
+
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+
+    color: #1e3a8a !important;
+}
+
+
+/* Keterangan */
+.workflow-path > .workflow-step p {
+    margin: 0 !important;
+
+    font-size: .82rem !important;
+    line-height: 1.45 !important;
+
+    color: #64748b !important;
+}
+
+
+/* Arrow */
+.workflow-path > .workflow-arrow,
+div.workflow-path > div.workflow-arrow {
+    display: flex !important;
+
+    flex: 0 0 42px !important;
+    width: 42px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 1.4rem !important;
+    line-height: 1 !important;
+
+    color: #2563eb !important;
+
+    transform: none !important;
+}
+
+
+/* Hilangkan pseudo element lama */
+.workflow-path::before,
+.workflow-path::after {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .workflow-path,
+    div.workflow-path {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        justify-content: flex-start !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        padding-bottom: .7rem !important;
+    }
+
+
+    .workflow-path > .workflow-step,
+    div.workflow-path > div.workflow-step {
+        flex: 0 0 155px !important;
+        width: 155px !important;
+        min-width: 155px !important;
+    }
+
+
+    .workflow-path > .workflow-arrow,
+    div.workflow-path > div.workflow-arrow {
+        flex: 0 0 30px !important;
+        width: 30px !important;
+    }
+
+}
+/* =====================================================
+   MAHAMERU ACCESS FLOW
+===================================================== */
+
+.access-flow-section {
+  margin-top: 3rem;
+}
+
+.access-flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  gap: 0;
+}
+
+.access-flow-card {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 1.2rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.access-flow-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.access-flow-card h3 {
+  margin: .65rem 0 .3rem;
+  font-size: .95rem !important;
+  line-height: 1.3;
+  color: #1e3a8a;
+}
+
+.access-flow-card p {
+  margin: 0;
+  font-size: .8rem;
+  line-height: 1.4;
+  color: #64748b;
+}
+
+.access-flow-arrow {
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+/* DARK MODE */
+
+[data-md-color-scheme="slate"] .access-flow-card {
+  background: var(--md-default-bg-color);
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 900px) {
+
+  .access-flow {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: .6rem;
+  }
+
+  .access-flow-card {
+    flex: 0 0 155px;
+  }
+
+  .access-flow-arrow {
+    flex: 0 0 30px;
+  }
+
+}
+/* =====================================================
+   MAHAMERU QUICK START
+===================================================== */
+
+.mahameru-quickstart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .65rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.mahameru-quickstep {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+
+  min-width: 0;
+  padding: .9rem;
+
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 11px;
+
+  background: var(--md-code-bg-color);
+  box-sizing: border-box;
+}
+
+.mahameru-quickstep > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+
+  font-size: .68rem;
+  font-weight: 700;
+}
+
+.mahameru-quickstep strong {
+  display: block;
+
+  margin-bottom: .35rem;
+
+  font-size: .78rem;
+  line-height: 1.3;
+}
+
+.mahameru-quickstep code {
+  display: block;
+
+  width: 100%;
+  padding: .35rem .45rem;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+
+  font-size: .7rem;
+  line-height: 1.45;
+
+  white-space: nowrap;
+}
+
+.mahameru-inline-code {
+  display: flex;
+  gap: .35rem;
+}
+
+.mahameru-inline-code code {
+  width: auto;
+}
+
+
+/* DARK MODE */
+
+[data-md-color-scheme="slate"] .mahameru-quickstep {
+  background: var(--md-code-bg-color);
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 900px) {
+
+  .mahameru-quickstart {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .mahameru-quickstart {
+    grid-template-columns: 1fr;
+  }
+
+}

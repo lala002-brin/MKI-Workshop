@@ -93,6 +93,12 @@ nav:
       - Software Environment: environment/software-environment.md
       - Running Calculations: environment/running-calculations.md
       - Script Library: environment/script-library.md
+      - Mahameru HPC BRIN:
+        - 01 · Getting Started: environment/mahameru-hpc-brin/getting-started.md
+        - 02 · Working on Mahameru: environment/mahameru-hpc-brin/working-on-mahameru.md
+        - 03 · SLURM & Computing: environment/mahameru-hpc-brin/slurm-computing.md
+        - 04 · Workshop Workflow: environment/mahameru-hpc-brin/workshop-workflow.md
+
   - Simulation:
 
       - Quantum Simulation:
