@@ -1,0 +1,746 @@
+<div class="mahameru-page">
+
+<div class="mahameru-tabs">
+
+<a class="mahameru-tab" href="./getting-started/">
+Getting Started
+</a>
+
+<a class="mahameru-tab active" href="./">
+Working on Mahameru
+</a>
+
+<a class="mahameru-tab" href="../slurm-computing/">
+SLURM & Computing
+</a>
+
+<a class="mahameru-tab" href="../workshop-workflow/">
+Workshop Workflow
+</a>
+
+</div>
+
+
+<p class="mahameru-intro">
+Setelah berhasil login, Anda bekerja dari <strong>login node</strong>.
+Gunakan lingkungan ini untuk menyiapkan file, mengatur workspace,
+memeriksa software, dan menyiapkan pekerjaan komputasi.
+</p>
+
+
+<div class="mahameru-hero">
+
+<div class="mahameru-hero-content">
+
+<span class="mahameru-label">
+WORKING ENVIRONMENT
+</span>
+
+<h2>
+From login to ready-to-run
+</h2>
+
+<p>
+Kenali lingkungan Linux di Mahameru sebelum mengirim pekerjaan
+komputasi ke compute resources.
+</p>
+
+</div>
+
+<div class="mahameru-hero-status">
+
+<span class="mahameru-label">
+CORE SKILLS
+</span>
+
+<strong>
+Navigate · Manage · Edit · Load
+</strong>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="login-node" class="mahameru-section-title">
+Login Node
+</h2>
+
+<p class="mahameru-section-intro">
+Login node menjadi titik awal setelah Anda berhasil terhubung ke
+Mahameru.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<span class="mahameru-card-number">
+01
+</span>
+
+<h3>
+Prepare your work
+</h3>
+
+<p>
+Gunakan login node untuk menyiapkan direktori, file, dan script
+yang akan digunakan dalam pekerjaan komputasi.
+</p>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<span class="mahameru-card-number">
+02
+</span>
+
+<h3>
+Prepare before computing
+</h3>
+
+<p>
+Pastikan file dan software yang diperlukan sudah siap sebelum
+melanjutkan ke proses komputasi.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-note">
+
+<strong>Keep the login node lightweight</strong>
+
+<p>
+Gunakan login node untuk persiapan pekerjaan. Proses komputasi
+dijalankan melalui compute resources dan job scheduler.
+Pembahasan tersebut ada pada halaman <strong>SLURM & Computing</strong>.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="linux-basics" class="mahameru-section-title">
+Linux Basics
+</h2>
+
+<p class="mahameru-section-intro">
+Mahameru menggunakan lingkungan Linux. Beberapa command dasar berikut
+cukup untuk mulai mengelola file dan direktori.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-3">
+
+<div class="mahameru-card">
+
+<h3>
+pwd
+</h3>
+
+<p>
+Melihat direktori aktif.
+</p>
+
+<code>pwd</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+ls
+</h3>
+
+<p>
+Melihat isi direktori.
+</p>
+
+<code>ls</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+cd
+</h3>
+
+<p>
+Berpindah direktori.
+</p>
+
+<code>cd folder</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+mkdir
+</h3>
+
+<p>
+Membuat direktori baru.
+</p>
+
+<code>mkdir project</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+touch
+</h3>
+
+<p>
+Membuat file kosong.
+</p>
+
+<code>touch script.sh</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+rm
+</h3>
+
+<p>
+Menghapus file.
+</p>
+
+<code>rm file.txt</code>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="files-and-directories" class="mahameru-section-title">
+Files & Directories
+</h2>
+
+<p class="mahameru-section-intro">
+Gunakan command berikut untuk mengatur file dan direktori selama
+menyiapkan pekerjaan.
+</p>
+
+
+<div class="mahameru-command-list">
+
+<div class="mahameru-command-row">
+
+<code>ls -a</code>
+
+<span>
+Melihat file termasuk file tersembunyi.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>ls -al</code>
+
+<span>
+Melihat informasi direktori dan file secara lebih lengkap.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>cp</code>
+
+<span>
+Menyalin file.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>mv</code>
+
+<span>
+Memindahkan atau mengubah nama file.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>rm</code>
+
+<span>
+Menghapus file.
+</span>
+
+</div>
+
+</div>
+
+
+<h3>
+Contoh workflow sederhana
+</h3>
+
+```bash
+mkdir project
+cd project
+touch input.txt
+ls
+```
+
+Setelah berada di direktori project, Anda dapat mulai menyiapkan
+input dan script untuk pekerjaan berikutnya.
+
+
+<hr>
+
+
+<h2 id="view-files" class="mahameru-section-title">
+Read Your Files
+</h2>
+
+<p class="mahameru-section-intro">
+Periksa isi file sebelum menjalankan pekerjaan.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-3">
+
+<div class="mahameru-card">
+
+<h3>
+cat
+</h3>
+
+<p>
+Menampilkan isi file.
+</p>
+
+<code>cat input.txt</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+less / more
+</h3>
+
+<p>
+Melihat isi file secara bertahap.
+</p>
+
+<code>less input.txt</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+head / tail
+</h3>
+
+<p>
+Melihat bagian awal atau akhir file.
+</p>
+
+<code>head input.txt</code>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="edit-files" class="mahameru-section-title">
+Edit Your Script
+</h2>
+
+<p class="mahameru-section-intro">
+Script dan file input dapat diedit langsung dari Terminal.
+Gunakan editor text yang tersedia pada lingkungan Linux.
+</p>
+
+
+<div class="mahameru-card">
+
+<h3>
+vi
+</h3>
+
+<p>
+Buka atau buat file menggunakan editor <code>vi</code>.
+</p>
+
+```bash
+vi script.sh
+```
+
+<p>
+Setelah selesai mengedit, simpan perubahan sesuai command editor
+yang digunakan.
+</p>
+
+</div>
+
+
+<div class="mahameru-note">
+
+<strong>For beginners</strong>
+
+<p>
+Jangan takut menggunakan Terminal. Mulai dengan file sederhana dan
+biasakan memeriksa lokasi Anda menggunakan <code>pwd</code> serta
+isi direktori menggunakan <code>ls</code>.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="software-environment" class="mahameru-section-title">
+Software Environment
+</h2>
+
+<p class="mahameru-section-intro">
+Mahameru menggunakan <strong>Lmod</strong> sebagai environment module
+untuk mengelola perangkat lunak.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<span class="mahameru-card-number">
+01
+</span>
+
+<h3>
+Module system
+</h3>
+
+<p>
+Tidak semua perangkat lunak aktif dalam kondisi default.
+Module digunakan untuk mengaktifkan perangkat lunak tertentu yang
+akan digunakan.
+</p>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<span class="mahameru-card-number">
+02
+</span>
+
+<h3>
+Research domains
+</h3>
+
+<p>
+Materi Mahameru mencantumkan environment untuk beberapa bidang
+riset, termasuk material lanjut, fisika kuantum, AI dan machine
+learning, serta bidang lainnya.
+</p>
+
+</div>
+
+</div>
+
+
+<h3>
+Check available modules
+</h3>
+
+```bash
+module avail
+```
+
+<h3>
+Load a module
+</h3>
+
+```bash
+module load <software>
+```
+
+<p>
+Gunakan nama module yang tersedia pada lingkungan Mahameru.
+</p>
+
+
+<div class="mahameru-note">
+
+<strong>Module reminder</strong>
+
+<p>
+Jika software yang Anda butuhkan belum aktif, periksa module yang
+tersedia sebelum menjalankan pekerjaan.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="download-files" class="mahameru-section-title">
+Download Files
+</h2>
+
+<p class="mahameru-section-intro">
+Materi BRIN juga memperkenalkan <code>wget</code> untuk mengunduh
+file dari Internet.
+</p>
+
+```bash
+wget <URL>
+```
+
+Contoh penggunaan:
+
+```bash
+wget https://example.org/input.txt
+```
+
+Setelah download selesai, periksa file menggunakan:
+
+```bash
+ls
+```
+
+dan:
+
+```bash
+head input.txt
+```
+
+
+<hr>
+
+
+<h2 id="get-help" class="mahameru-section-title">
+Need Help?
+</h2>
+
+<p class="mahameru-section-intro">
+Linux menyediakan beberapa cara untuk mencari informasi mengenai
+command yang belum Anda kenal.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<h3>
+--help
+</h3>
+
+<p>
+Menampilkan bantuan singkat dari command jika opsi tersebut tersedia.
+</p>
+
+```bash
+command --help
+```
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+man
+</h3>
+
+<p>
+Membuka manual command Linux.
+</p>
+
+```bash
+man command
+```
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="working-flow" class="mahameru-section-title">
+Working Flow
+</h2>
+
+<div class="access-flow">
+
+<div class="access-flow-card">
+
+<span class="access-flow-number">
+01
+</span>
+
+<h3>
+Navigate
+</h3>
+
+<p>
+Masuk ke workspace.
+</p>
+
+</div>
+
+<div class="access-flow-arrow">
+→
+</div>
+
+<div class="access-flow-card">
+
+<span class="access-flow-number">
+02
+</span>
+
+<h3>
+Manage
+</h3>
+
+<p>
+Siapkan file dan folder.
+</p>
+
+</div>
+
+<div class="access-flow-arrow">
+→
+</div>
+
+<div class="access-flow-card">
+
+<span class="access-flow-number">
+03
+</span>
+
+<h3>
+Edit
+</h3>
+
+<p>
+Siapkan script dan input.
+</p>
+
+</div>
+
+<div class="access-flow-arrow">
+→
+</div>
+
+<div class="access-flow-card">
+
+<span class="access-flow-number">
+04
+</span>
+
+<h3>
+Load
+</h3>
+
+<p>
+Siapkan software environment.
+</p>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="before-slurm" class="mahameru-section-title">
+Ready for Computing
+</h2>
+
+<p>
+Sebelum melanjutkan ke SLURM, pastikan Anda sudah dapat berpindah
+direktori, mengelola file, mengedit script, dan memeriksa software
+environment.
+</p>
+
+
+<div class="mahameru-checklist">
+
+<p>☑ Dapat menggunakan <code>pwd</code></p>
+
+<p>☑ Dapat menggunakan <code>ls</code></p>
+
+<p>☑ Dapat membuat direktori dengan <code>mkdir</code></p>
+
+<p>☑ Dapat berpindah direktori dengan <code>cd</code></p>
+
+<p>☑ Dapat membuat file dengan <code>touch</code></p>
+
+<p>☑ Dapat membaca isi file</p>
+
+<p>☑ Dapat mengedit script</p>
+
+<p>☑ Dapat memeriksa module software</p>
+
+</div>
+
+
+<div class="mahameru-next">
+
+<strong>
+Next
+</strong>
+
+<p>
+Fondasi Linux sudah siap. Selanjutnya kita masuk ke SLURM dan
+penggunaan compute resources untuk menjalankan pekerjaan komputasi.
+</p>
+
+<a href="../slurm-computing/">
+
+03 · SLURM & Computing →
+
+</a>
+
+</div>
+
+</div>
