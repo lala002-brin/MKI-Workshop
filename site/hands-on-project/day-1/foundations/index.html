@@ -1,0 +1,3933 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Integrating First-Principles, HPC & AI for Materials Discovery Computational materials science workshop by MKI and BRIN.
+">
+      
+      
+        <meta name="author" content="BRIN - ITB - Masyarakat Komputasi Indonesia
+">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../lipf6-ec/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/mki-logo.jpeg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Foundations - MKI Computational Materials Science Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/home.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra-v2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/file-editor.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MKI Computational Materials Science Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start-here/workshop-guide/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../environment/" class="md-tabs__link">
+          
+  
+  
+  Computational Environment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../quantum-simulation/" class="md-tabs__link">
+          
+  
+  
+  Simulation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Hands-on Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    MKI Computational Materials Science Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computational Environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/access-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access & Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/software-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/running-calculations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/script-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mahameru HPC BRIN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mahameru HPC BRIN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/mahameru-hpc-brin/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/mahameru-hpc-brin/working-on-mahameru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Working on Mahameru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/mahameru-hpc-brin/slurm-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · SLURM & Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/mahameru-hpc-brin/workshop-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Workshop Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kohn-Sham Equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/setup/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_4" id="__nav_4_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCF Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atomistic Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atomistic Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lipf6-ec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiPF6 / EC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../md-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lif-ec-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiF / EC Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Electronic Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/graphene/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/graphene/system-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/graphene/hpc-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/graphene/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/litfsi-emim-tfsi-electrolyte-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene–Ionic Liquid Interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene–Ionic Liquid Interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/graphene-ionic-liquid-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Battery Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-cases/battery-electrolyte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Hands-on Project
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Day 1
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Foundations</h1>
+
+<div class="mahameru-page">
+
+<div class="mahameru-tabs">
+
+<a class="mahameru-tab" href="./index.md">
+Day 1
+</a>
+
+<a class="mahameru-tab active" href="./foundations.md">
+Foundations
+</a>
+
+<a class="mahameru-tab" href="./lipf6-ec.md">
+LiPF6 / EC
+</a>
+
+<a class="mahameru-tab" href="./md-analysis.md">
+MD Analysis
+</a>
+
+<a class="mahameru-tab" href="./lif-ec-interface.md">
+LiF / EC
+</a>
+
+<a class="mahameru-tab" href="./mace.md">
+MACE
+</a>
+
+</div>
+
+
+<p class="mahameru-intro">
+Bagian ini memperkenalkan hubungan antara struktur atom, energi,
+gaya, DFT, DFTB, dan molecular dynamics. Tujuannya bukan menghafal
+persamaan, tetapi memahami apa yang dihitung dan bagaimana hasilnya
+digunakan pada latihan berikutnya.
+</p>
+
+
+<div class="mahameru-workflow-intro">
+
+<div>
+
+<strong>
+Foundations · From Atoms to Dynamics
+</strong>
+
+<p>
+Mulai dari struktur atom dan pertanyaan ilmiah. Kemudian hubungkan
+metode elektronik dengan energi dan gaya, lalu pahami bagaimana
+gaya digunakan untuk menjalankan molecular dynamics.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="workflow-roadmap">
+
+<div class="workflow-step">
+
+<span>
+01
+</span>
+
+<strong>
+Structure
+</strong>
+
+<small>
+Atoms + coordinates
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+02
+</span>
+
+<strong>
+Energy</strong>
+
+<small>
+Electronic structure
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+03
+</span>
+
+<strong>
+Force</strong>
+
+<small>
+Atomic motion
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+04
+</span>
+
+<strong>
+MD</strong>
+
+<small>
+Trajectory
+</small>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="atomic-structure" class="mahameru-section-title">
+01 · Atomic Structure
+</h2>
+
+<p>
+Satu konfigurasi atom terdiri dari jenis atom dan posisi kartesiusnya.
+Pada latihan workshop, posisi dinyatakan dalam ångström (Å).
+Untuk sistem periodik, konfigurasi juga memerlukan informasi sel.
+</p>
+
+
+<div class="workflow-grid">
+
+<div class="workflow-card">
+
+<span>
+01
+</span>
+
+<strong>
+Atomic species
+</strong>
+
+<p>
+Jenis dan jumlah atom yang membentuk sistem.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+02
+</span>
+
+<strong>
+Cartesian positions
+</strong>
+
+<p>
+Posisi setiap atom dalam koordinat kartesius.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+03
+</span>
+
+<strong>
+Periodic cell
+</strong>
+
+<p>
+Vektor translasi yang mendefinisikan sel untuk sistem periodik.
+</p>
+
+</div>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Periodic system</strong>
+</summary>
+
+<p>
+Pada sistem kristal atau elektrolit periodik, sel diulang di ruang.
+Karena itu, ukuran sel dan kondisi batas periodik menjadi bagian
+dari model, bukan sekadar informasi tambahan.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>Interface system</strong>
+</summary>
+
+<p>
+Pada antarmuka, model dapat menggunakan slab sebagai representasi
+permukaan padatan dan ruang di atasnya untuk molekul atau elektrolit.
+</p>
+
+<p>
+Pada latihan LiF–EC, model menggunakan slab LiF dan satu molekul
+ethylene carbonate dalam ruang vakum. Struktur tersebut merupakan
+geometri awal dan belum merupakan keadaan antarmuka baterai yang
+setimbang.
+</p>
+
+</details>
+
+
+<div class="workflow-check">
+
+<strong>
+STRUCTURE CHECK
+</strong>
+
+<ul>
+
+<li>Jenis atom sudah benar.</li>
+
+<li>Jumlah atom sudah benar.</li>
+
+<li>Koordinat menggunakan satuan yang sesuai.</li>
+
+<li>Sel periodik sudah dicatat jika diperlukan.</li>
+
+<li>Muatan total sistem sudah diketahui.</li>
+
+</ul>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="scientific-question" class="mahameru-section-title">
+02 · From Structure to Scientific Question
+</h2>
+
+<p>
+Sebelum memilih program atau menjalankan simulasi, tentukan
+pertanyaan yang dapat dijawab oleh model atomistik.
+</p>
+
+<p>
+Pada skala atom, kita dapat menghitung geometri, energi, gaya,
+dan perubahan posisi terhadap waktu. Besaran pada skala yang lebih
+besar memerlukan informasi tambahan dan tidak otomatis dapat
+diturunkan dari satu model kecil.
+</p>
+
+
+<div class="analysis-grid">
+
+<div class="analysis-card">
+
+<strong>
+Li⁺ in EC
+</strong>
+
+<span>
+Electrolyte
+</span>
+
+<p>
+Bagaimana Li⁺ tersolvasi dalam ethylene carbonate?
+</p>
+
+</div>
+
+
+<div class="analysis-card">
+
+<strong>
+Li⁺–F</strong>
+
+<span>
+Ion pairing
+</span>
+
+<p>
+Apakah Li⁺ berpasangan dengan anion melalui interaksi Li–F?
+</p>
+
+</div>
+
+
+<div class="analysis-card">
+
+<strong>
+LiF–EC</strong>
+
+<span>
+Interface
+</span>
+
+<p>
+Bagaimana EC berinteraksi dengan permukaan LiF?
+</p>
+
+</div>
+
+
+<div class="analysis-card">
+
+<strong>
+CO / Pt</strong>
+
+<span>
+Catalysis
+</span>
+
+<p>
+Bagaimana CO berpindah pada permukaan Pt?
+</p>
+
+</div>
+
+
+<div class="analysis-card">
+
+<strong>
+MACE / LiF</strong>
+
+<span>
+AI model
+</span>
+
+<p>
+Apakah MACE mereproduksi respons LiF?
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<strong>
+Model defines the question</strong>
+
+<p>
+Pertanyaan ilmiah menentukan besaran pertama yang perlu diperiksa.
+Jangan memilih analisis hanya karena file output tersedia.
+Mulailah dari pertanyaan, kemudian tentukan ukuran analisis yang sesuai.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="dft-dftb-md" class="mahameru-section-title">
+03 · DFT, DFTB, and MD
+</h2>
+
+<p>
+Dalam simulasi atom, kita memerlukan energi dan gaya untuk suatu
+susunan atom. DFT menghitung besaran tersebut melalui model
+elektronik. DFTB menggunakan penyederhanaan dan parameterisasi
+yang diturunkan dari DFT agar perhitungan dapat dilakukan dengan
+biaya komputasi yang lebih rendah.
+</p>
+
+<p>
+Pada molecular dynamics, gaya dihitung kembali ketika atom bergerak.
+Gaya tersebut dapat diperoleh dari DFT, DFTB, atau model yang
+dilatih dengan data, seperti MACE.
+</p>
+
+
+<div class="workflow-flow">
+
+<div>
+
+<strong>
+Structure
+</strong>
+
+<small>
+Atomic positions
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+Electronic method
+</strong>
+
+<small>
+DFT / DFTB / MACE
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+Energy & force
+</strong>
+
+<small>
+Potential surface
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+Molecular dynamics
+</strong>
+
+<small>
+Atomic trajectory
+</small>
+
+</div>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>DFT</strong>
+</summary>
+
+<p>
+Density Functional Theory merupakan metode struktur elektronik
+berbasis kerapatan elektron. Pada pendekatan Born–Oppenheimer,
+posisi inti dianggap tetap ketika keadaan elektronik dihitung.
+Hasilnya memberikan energi potensial untuk konfigurasi atom tersebut.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>DFTB</strong>
+</summary>
+
+<p>
+Density Functional Tight Binding merupakan pendekatan yang diturunkan
+dari DFT dan diparameterkan. Penyederhanaan tersebut membuat
+perhitungan lebih hemat biaya dibandingkan perhitungan DFT penuh
+untuk banyak aplikasi atomistik.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>Molecular Dynamics</strong>
+</summary>
+
+<p>
+Dalam MD, posisi atom diperbarui langkah demi langkah menggunakan
+gaya yang diperoleh dari metode energi. Hasilnya berupa lintasan
+yang dapat digunakan untuk mempelajari perubahan struktur dan
+pergerakan atom terhadap waktu.
+</p>
+
+</details>
+
+
+<div class="workflow-warning">
+
+<strong>
+Method choice matters</strong>
+
+<p>
+Pilihan metode memengaruhi biaya komputasi dan ketelitian hasil.
+Hasil DFT dengan pengaturan yang sebanding dapat digunakan sebagai
+acuan untuk memeriksa hasil DFTB pada studi yang sesuai.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="energy-force" class="mahameru-section-title">
+04 · From Energy to Force
+</h2>
+
+<p>
+Ketika posisi atom ditetapkan, keadaan elektronik menghasilkan
+energi potensial untuk konfigurasi tersebut. Gaya pada atom diperoleh
+dari turunan negatif energi terhadap posisi atom.
+</p>
+
+
+<div class="mahameru-info-card">
+
+<strong>
+Force from energy</strong>
+
+<p>
+Gaya menentukan bagaimana atom bergerak pada simulasi molecular
+dynamics. Karena itu, kualitas energi dan gaya menjadi dasar dari
+trajectory yang dihasilkan.
+</p>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Born–Oppenheimer picture</strong>
+</summary>
+
+<p>
+Dalam pendekatan Born–Oppenheimer, pergerakan inti dan perhitungan
+elektronik dipisahkan. Untuk konfigurasi posisi inti tertentu,
+perhitungan elektronik menghasilkan energi potensial. Gaya kemudian
+digunakan untuk memperbarui posisi atom.
+</p>
+
+</details>
+
+
+<div class="workflow-flow">
+
+<div>
+
+<strong>
+Atomic positions
+</strong>
+
+<small>
+R
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+Energy</strong>
+
+<small>
+E(R)
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+Force</strong>
+
+<small>
+−∇E
+</small>
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div>
+
+<strong>
+New positions
+</strong>
+
+<small>
+Next step
+</small>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="dftb-scc" class="mahameru-section-title">
+05 · SCC-DFTB
+</h2>
+
+<p>
+SCC atau Self-Consistent Charge merupakan bagian penting dalam
+perhitungan DFTB. Muatan diperbarui melalui proses iteratif sampai
+muatan dan Hamiltonian mencapai kondisi yang konsisten.
+</p>
+
+
+<div class="workflow-roadmap">
+
+<div class="workflow-step">
+
+<span>
+01
+</span>
+
+<strong>
+Initial charge
+</strong>
+
+<small>
+Starting state
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+02
+</span>
+
+<strong>
+Hamiltonian
+</strong>
+
+<small>
+Electronic state
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+03
+</span>
+
+<strong>
+Update charge
+</strong>
+
+<small>
+Charge redistribution
+</small>
+
+</div>
+
+
+<div class="workflow-arrow">
+→
+</div>
+
+
+<div class="workflow-step">
+
+<span>
+04
+</span>
+
+<strong>
+Converged?</strong>
+
+<small>
+SCC check
+</small>
+
+</div>
+
+</div>
+
+
+<div class="workflow-check">
+
+<strong>
+SCC CHECK</strong>
+
+<ul>
+
+<li>Apakah proses SCC selesai?</li>
+
+<li>Apakah output menunjukkan kondisi normal?</li>
+
+<li>Apakah energi dan gaya dapat digunakan?</li>
+
+<li>Apakah terdapat indikasi konvergensi bermasalah?</li>
+
+</ul>
+
+</div>
+
+
+<div class="workflow-warning">
+
+<strong>
+Do not skip convergence</strong>
+
+<p>
+Jika SCC tidak konvergen, jangan langsung menggunakan energi atau
+gaya pada langkah tersebut untuk interpretasi ilmiah.
+Periksa pesan output, parameter, dan geometri sistem.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="slater-koster" class="mahameru-section-title">
+06 · Slater–Koster Parameters
+</h2>
+
+<p>
+Perhitungan DFTB memerlukan parameter Slater–Koster yang sesuai
+dengan pasangan unsur dalam sistem. Berkas tersebut menyimpan
+informasi interaksi orbital untuk pasangan unsur yang digunakan
+dalam perhitungan.
+</p>
+
+
+<div class="workflow-grid">
+
+<div class="workflow-card">
+
+<span>
+01
+</span>
+
+<strong>
+Elements</strong>
+
+<p>
+Identifikasi semua unsur yang terdapat dalam sistem.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+02
+</span>
+
+<strong>
+Pairs</strong>
+
+<p>
+Pastikan pasangan unsur yang diperlukan memiliki parameter.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+03
+</span>
+
+<strong>
+Compatibility</strong>
+
+<p>
+Gunakan satu set parameter yang kompatibel untuk sistem yang dihitung.
+</p>
+
+</div>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Why the pair files matter</strong>
+</summary>
+
+<p>
+Untuk sistem dengan beberapa unsur, input membutuhkan parameter
+interaksi untuk pasangan unsur yang diperlukan. Nama unsur saja
+tidak menjamin bahwa dua berkas parameter berasal dari parameterisasi
+yang kompatibel.
+</p>
+
+</details>
+
+
+<div class="workflow-warning">
+
+<strong>
+Parameterization matters</strong>
+
+<p>
+Jangan menggabungkan berkas Slater–Koster dari parameterisasi berbeda
+hanya karena nama unsurnya sama. Periksa sumber dan kompatibilitas
+parameter sebelum menjalankan perhitungan.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="four-objects" class="mahameru-section-title">
+07 · Four Objects to Record
+</h2>
+
+<p>
+Setiap latihan harus memiliki catatan yang cukup untuk menjelaskan
+apa yang dihitung dan bagaimana hasilnya diperoleh.
+</p>
+
+
+<div class="validation-grid">
+
+<div class="validation-card">
+
+<strong>
+01
+</strong>
+
+<h3>
+Structure</h3>
+
+<p>
+Jenis atom, posisi, muatan, dan sel bila diperlukan.
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<strong>
+02
+</strong>
+
+<h3>
+Method</h3>
+
+<p>
+Pendekatan energi, parameter, dan pengaturan konvergensi.
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<strong>
+03
+</strong>
+
+<h3>
+Procedure</h3>
+
+<p>
+Single point, optimasi, atau molecular dynamics.
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<strong>
+04
+</strong>
+
+<h3>
+Results</h3>
+
+<p>
+Energi, gaya, geometri, trajectory, dan status komputasi.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<strong>
+Why record all four?</strong>
+
+<p>
+Jika salah satu dari empat objek tersebut tidak dicatat, hasil akan
+lebih sulit diulang atau dibandingkan. Catatan seperti “simulasi
+berhasil” tidak cukup untuk menjelaskan sebuah hasil komputasi.
+</p>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Example · LiPF6 / EC</strong>
+</summary>
+
+<p>
+Contoh catatan awal dapat ditulis sebagai berikut:
+</p>
+
+<ul>
+
+<li>
+<strong>Structure:</strong> sistem periodik dengan muatan total netral.
+</li>
+
+<li>
+<strong>Method:</strong> SCC-DFTB dengan parameter untuk Li/P/F/C/H/O.
+</li>
+
+<li>
+<strong>Procedure:</strong> MD NVT pada 350 K.
+</li>
+
+<li>
+<strong>Results:</strong> trajectory, energi, muatan, dan status SCC.
+</li>
+
+</ul>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="units" class="mahameru-section-title">
+08 · Units and Time Scale
+</h2>
+
+<p>
+Satuan perlu dicatat bersama hasil. Jangan memisahkan angka dari
+satuan dan pengaturan simulasi yang menghasilkan angka tersebut.
+</p>
+
+
+<div class="workflow-grid">
+
+<div class="workflow-card">
+
+<span>
+Å
+</span>
+
+<strong>
+Position</strong>
+
+<p>
+Koordinat struktur pada latihan menggunakan ångström.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+eV
+</span>
+
+<strong>
+Energy</strong>
+
+<p>
+Energi dari workflow berbasis ASE dapat dibaca dalam eV.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+eV/Å
+</span>
+
+<strong>
+Force</strong>
+
+<p>
+Gaya dapat dinyatakan dalam eV/Å.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<strong>
+Time step</strong>
+
+<p>
+DCDFTBMD menerima <code>DELTAT</code> dalam detik. Karena
+1 fs = 10<sup>−15</sup> s, maka <code>5.0e-16 s</code> sama dengan
+0,5 fs.
+</p>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Example · 1000 MD steps</strong>
+</summary>
+
+<p>
+Untuk 1000 langkah dengan timestep 0,5 fs:
+</p>
+
+<div class="highlight"><pre><span></span><code>1000 × 0,5 fs = 500 fs
+</code></pre></div>
+
+<p>
+Jika output dicetak setiap 10 langkah, jarak nominal antar-frame
+yang tersimpan adalah:
+</p>
+
+<div class="highlight"><pre><span></span><code>10 × 0,5 fs = 5 fs
+</code></pre></div>
+
+<p>
+Lintasan tersebut digunakan untuk latihan analisis awal. Modul
+menegaskan bahwa lintasan 500 fs masih terlalu pendek untuk
+mengambil koefisien transport secara andal.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>Practice · Time conversion</strong>
+</summary>
+
+<p>
+Hitung waktu nominal untuk 80 langkah dengan:
+</p>
+
+<div class="highlight"><pre><span></span><code>DELTAT = 5.0e-16 s
+</code></pre></div>
+
+<p>
+Hasilnya:
+</p>
+
+<div class="highlight"><pre><span></span><code>80 × 0,5 fs = 40 fs
+</code></pre></div>
+
+<p>
+Jika <code>PRINT=5</code>, terdapat 16 interval output sepanjang
+80 langkah. Jumlah frame aktual tetap perlu diperiksa dari file
+keluaran.
+</p>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="model-limit" class="mahameru-section-title">
+09 · Know the Model Limit
+</h2>
+
+<p>
+Model atomistik menjawab pertanyaan tertentu pada kondisi tertentu.
+Hasil tidak boleh diperluas melebihi apa yang didukung oleh model.
+</p>
+
+
+<div class="workflow-grid">
+
+<div class="workflow-card">
+
+<span>
+01
+</span>
+
+<strong>
+Scale</strong>
+
+<p>
+Model kecil tidak otomatis mewakili perilaku pada skala sel atau
+material nyata.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+02
+</span>
+
+<strong>
+Sampling</strong>
+
+<p>
+Trajectory pendek dapat membatasi analisis dinamika dan transport.
+</p>
+
+</div>
+
+
+<div class="workflow-card">
+
+<span>
+03
+</span>
+
+<strong>
+Boundary</strong>
+
+<p>
+PBC, slab, dan vakum menentukan cara hasil harus dibaca.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="workflow-warning">
+
+<strong>
+Example: LiF–EC</strong>
+
+<p>
+Model slab tipis dengan satu molekul EC dan ruang vakum belum
+mewakili antarmuka elektrokimia penuh. Model tersebut digunakan
+untuk mempelajari kontak adsorbat dan redistribusi muatan pada
+latihan workshop.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="foundation-check" class="mahameru-section-title">
+Foundation Check
+</h2>
+
+<p>
+Sebelum masuk ke praktik LiPF6/EC, pastikan Anda dapat menjelaskan
+alur dasar berikut.
+</p>
+
+
+<div class="workflow-check">
+
+<strong>
+CHECK YOUR UNDERSTANDING</strong>
+
+<ul>
+
+<li>
+Apa yang dimaksud dengan konfigurasi atom?
+</li>
+
+<li>
+Mengapa pertanyaan ilmiah perlu ditentukan sebelum memilih analisis?
+</li>
+
+<li>
+Apa hubungan antara DFT, DFTB, dan molecular dynamics?
+</li>
+
+<li>
+Mengapa energi diperlukan untuk memperoleh gaya?
+</li>
+
+<li>
+Apa fungsi SCC dalam SCC-DFTB?
+</li>
+
+<li>
+Mengapa parameter Slater–Koster harus kompatibel?
+</li>
+
+<li>
+Apa empat objek yang harus dicatat pada setiap latihan?
+</li>
+
+<li>
+Mengapa 500 fs cukup untuk latihan awal tetapi belum cukup untuk
+klaim transport yang konvergen?
+</li>
+
+</ul>
+
+</div>
+
+
+<hr>
+
+
+<div class="workflow-next">
+
+<div>
+
+<span>
+PREVIOUS
+</span>
+
+<strong>
+Day 1 Overview
+</strong>
+
+</div>
+
+
+<div>
+
+<span>
+NEXT
+</span>
+
+<strong>
+LiPF6 / EC</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+
+<footer class="custom-footer">
+
+
+<div class="footer-brand">
+
+<h3>
+MKI Computational Materials Science Workshop
+</h3>
+
+<p>
+Building knowledge, tools, and collaboration
+for advanced materials discovery.
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#">Home</a>
+<a href="#">Start Here</a>
+<a href="#">Foundation</a>
+<a href="#">Research Application</a>
+
+</div>
+
+
+
+<div class="footer-partners">
+
+<h3>
+In Collaboration With
+</h3>
+
+<p>
+MKI × ITB × BRIN
+</p>
+
+</div>
+
+
+</footer>
+
+
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../../assets/javascripts/chat.js"></script>
+      
+        <script src="../../../javascripts/home-parallax.js"></script>
+      
+        <script src="../../../javascripts/features-reveal.js"></script>
+      
+        <script src="../../../javascripts/workflow-flow.js"></script>
+      
+        <script src="../../../javascripts/research-reveal.js"></script>
+      
+        <script src="../../../javascripts/scroll-reveal.js"></script>
+      
+        <script src="../../../javascripts/file-editor.js"></script>
+      
+        <script src="../../../javascripts/md-analysis-worksheet.js"></script>
+      
+    
+  </body>
+</html>
