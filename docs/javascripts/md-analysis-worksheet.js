@@ -203,38 +203,92 @@
   }
 
 
-  function updateCompletion() {
+function updateCompletion() {
 
-    let filled = 0;
+  let filled = 0;
 
-    fields.forEach(id => {
+  fields.forEach(id => {
 
-      const element =
-        document.getElementById(id);
+    const element =
+      document.getElementById(id);
 
-      if (
-        element &&
-        element.value.trim() !== ""
-      ) {
-        filled++;
-      }
-
-    });
-
-    const completion =
-      document.getElementById(
-        "worksheet-completion"
-      );
-
-    if (completion) {
-
-      completion.textContent =
-        `${filled} / ${fields.length} fields`;
-
+    if (
+      element &&
+      element.value.trim() !== ""
+    ) {
+      filled++;
     }
+
+  });
+
+  const total = fields.length;
+
+  const percentage =
+    Math.round(
+      (filled / total) * 100
+    );
+
+
+  /*
+   * Existing completion indicator
+   */
+
+  const completion =
+    document.getElementById(
+      "worksheet-completion"
+    );
+
+  if (completion) {
+
+    completion.textContent =
+      `${filled} / ${total} fields`;
 
   }
 
+
+  /*
+   * Interactive progress indicator
+   */
+
+  const progressCount =
+    document.getElementById(
+      "worksheet-progress-count"
+    );
+
+  if (progressCount) {
+
+    progressCount.textContent =
+      `${filled} / ${total} fields`;
+
+  }
+
+
+  const progressBar =
+    document.getElementById(
+      "worksheet-progress-bar"
+    );
+
+  if (progressBar) {
+
+    progressBar.style.width =
+      `${percentage}%`;
+
+  }
+
+
+  const progressLabel =
+    document.getElementById(
+      "worksheet-progress-label"
+    );
+
+  if (progressLabel) {
+
+    progressLabel.textContent =
+      `${percentage}% complete`;
+
+  }
+
+}
 
   function restoreLocalData() {
 
@@ -260,29 +314,61 @@
   }
 
 
-  function enableAutoSave() {
+function enableAutoSave() {
 
-    fields.forEach(id => {
+  let saveTimer = null;
 
-      const element =
-        document.getElementById(id);
+  fields.forEach(id => {
 
-      if (!element) return;
+    const element =
+      document.getElementById(id);
 
-      element.addEventListener(
-        "input",
-        updateCompletion
-      );
+    if (!element) return;
 
-      element.addEventListener(
-        "change",
-        updateCompletion
-      );
+    function handleChange() {
 
-    });
+      updateCompletion();
 
-  }
+      clearTimeout(saveTimer);
 
+      saveTimer = setTimeout(() => {
+
+        const data = getData();
+
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify(data)
+        );
+
+        const lastSaved =
+          document.getElementById("last-saved");
+
+        if (lastSaved) {
+          lastSaved.textContent =
+            new Date().toLocaleTimeString();
+        }
+
+        setStatus(
+          "Auto-saved locally"
+        );
+
+      }, 700);
+
+    }
+
+    element.addEventListener(
+      "input",
+      handleChange
+    );
+
+    element.addEventListener(
+      "change",
+      handleChange
+    );
+
+  });
+
+}
 
   window.uploadMDWorksheet = async function () {
 

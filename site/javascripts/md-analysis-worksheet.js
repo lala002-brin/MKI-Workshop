@@ -293,11 +293,9 @@
      * Google Apps Script Web App URL.
      */
 
-    const GOOGLE_DRIVE_ENDPOINT =
-      "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
-
-
-    if (
+const GOOGLE_DRIVE_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbxy4DezY1LQm6_gTGl7Rctgj4Bvt_sfniXKH4qANQ9smcxONdu5ATVn4xFqjij5UPVK/exec";
+if (
       GOOGLE_DRIVE_ENDPOINT ===
       "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
     ) {
