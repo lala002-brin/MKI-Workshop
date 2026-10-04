@@ -201,4 +201,6 @@ extra_javascript:
   - javascripts/research-reveal.js
   - javascripts/scroll-reveal.js
   - javascripts/file-editor.js
+  - javascripts/worksheet.js
+  - javascripts/lifec-viewer.js
   - javascripts/md-analysis-worksheet.js

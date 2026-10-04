@@ -1,4 +1,4 @@
-<div class="mahameru-page">
+<div class="mahameru-page lifec-page">
 
 <div class="mahameru-hero">
 
@@ -269,6 +269,163 @@ Model antarmuka LiF–EC terdiri dari slab LiF, satu molekul
 ethylene carbonate, dan ruang vakum pada arah z.
 </p>
 
+<div class="lifec-viewer">
+
+<div class="lifec-viewer-header">
+
+<div>
+<span class="lifec-kicker">STRUCTURE EXPLORER</span>
+
+<h3>Antarmuka LiF–EC</h3>
+
+<p>
+Jelajahi struktur awal antarmuka LiF–ethylene carbonate sebelum menjalankan molecular dynamics.
+Pilih tampilan untuk melihat hubungan antara slab LiF, molekul EC, dan atom O karbonil yang digunakan dalam analisis.
+</p>
+</div>
+
+<div class="lifec-status">
+<span class="lifec-status-dot"></span>
+INITIAL STRUCTURE
+</div>
+
+</div>
+
+
+<div class="lifec-viewer-body">
+
+
+<div class="lifec-image-panel">
+
+<div class="lifec-image-wrap">
+
+<img
+id="lifec-main-image"
+src="/assets/images/lif-ec-interface-top.jpg"
+alt="Struktur awal antarmuka LiF–ethylene carbonate tampak atas"
+>
+
+<div class="lifec-image-badge">
+LiF–EC
+</div>
+
+</div>
+
+
+<div class="lifec-caption">
+
+<strong id="lifec-caption-title">
+Tampak Atas
+</strong>
+
+<span id="lifec-caption-text">
+Struktur awal antarmuka LiF–ethylene carbonate dari VMD.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="lifec-controls">
+
+<div class="lifec-control-title">
+VIEW
+</div>
+
+
+<button
+class="lifec-view-btn active"
+data-image="/assets/images/lif-ec-interface-top.jpg"
+data-title="Tampak Atas"
+data-text="Struktur awal antarmuka LiF–ethylene carbonate dari VMD."
+>
+
+<span class="lifec-btn-number">01</span>
+
+<span>
+Tampak Atas
+<small>Top view</small>
+</span>
+
+</button>
+
+
+<button
+class="lifec-view-btn"
+data-image="/assets/images/lif-ec-interface-side.jpg"
+data-title="Tampak Miring"
+data-text="Tampilan miring untuk melihat hubungan spasial antara molekul EC dan slab LiF."
+>
+
+<span class="lifec-btn-number">02</span>
+
+<span>
+Tampak Miring
+<small>Angled view</small>
+</span>
+
+</button>
+
+
+<div class="lifec-legend">
+
+<div class="lifec-control-title">
+ATOM LEGEND
+</div>
+
+<div class="lifec-legend-item">
+<span class="lifec-dot lifec-li"></span>
+Li
+</div>
+
+<div class="lifec-legend-item">
+<span class="lifec-dot lifec-f"></span>
+F
+</div>
+
+<div class="lifec-legend-item">
+<span class="lifec-dot lifec-o"></span>
+O karbonil
+</div>
+
+</div>
+
+
+<div class="lifec-info">
+
+<strong>Catatan ilmiah</strong>
+
+<p>
+Visual ini menunjukkan geometri awal sistem. Struktur awal belum menunjukkan keadaan antarmuka setelah equilibrasi atau molecular dynamics.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="lifec-observation">
+
+<div class="lifec-observation-icon">
+01
+</div>
+
+<div>
+
+<strong>Amati sebelum melanjutkan</strong>
+
+<p>
+Di mana posisi molekul EC terhadap slab LiF? Atom mana yang paling relevan untuk mengikuti kontak selama simulasi?
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="analysis-grid">
 
@@ -1706,7 +1863,7 @@ Gunakan hasil jarak untuk menjawab pertanyaan pertama dari studi kasus.
 Q1
 </div>
 
-<div>
+<div class="question-card-content">
 
 <h3>
 Apakah O karbonil EC tetap dekat dengan permukaan?
@@ -1716,24 +1873,25 @@ Apakah O karbonil EC tetap dekat dengan permukaan?
 Gunakan pola jarak O–Li sepanjang trajectory sebagai dasar jawaban.
 </p>
 
-<div class="answer-line"></div>
-
-<div class="answer-line"></div>
-
-<div class="answer-line"></div>
+<textarea
+class="lifec-input"
+rows="4"
+data-workshop-field
+data-section="evaluasi-kontak-o-li"
+data-label="Q1 - O karbonil tetap dekat dengan permukaan"
+placeholder="Tuliskan jawaban Anda berdasarkan pola jarak O–Li..."
+></textarea>
 
 </div>
 
 </div>
-
-
 <div class="question-card">
 
 <div class="question-card-number">
 Q2
 </div>
 
-<div>
+<div class="question-card-content">
 
 <h3>
 Apakah jarak O–Li relatif stabil atau berfluktuasi?
@@ -1743,183 +1901,209 @@ Apakah jarak O–Li relatif stabil atau berfluktuasi?
 Bandingkan nilai awal, akhir, rata-rata, minimum, dan maksimum.
 </p>
 
-<div class="answer-line"></div>
-
-<div class="answer-line"></div>
-
-</div>
-
-</div>
-
-
-<div class="mahameru-analysis-box">
-
-<strong>Gunakan bukti berikut:</strong>
-
-<ul class="mahameru-checklist">
-
-<li>
-Jarak O–Li rata-rata.
-</li>
-
-<li>
-Jarak O–Li minimum.
-</li>
-
-<li>
-Jarak O–Li maksimum.
-</li>
-
-<li>
-Perubahan jarak sepanjang trajectory.
-</li>
-
-<li>
-Pengamatan visual pada struktur.
-</li>
-
-</ul>
+<textarea
+class="lifec-input"
+rows="4"
+data-workshop-field
+data-section="evaluasi-kontak-o-li"
+data-label="Q2 - Stabilitas jarak O-Li"
+placeholder="Bandingkan nilai awal, akhir, rata-rata, minimum, dan maksimum..."
+></textarea>
 
 </div>
-
-
-<div class="mahameru-warning">
-
-<strong>Jangan menarik kesimpulan terlalu jauh.</strong>
-
-<p>
-Jarak O–Li yang kecil menunjukkan kontak geometrik dalam model.
-Nilai tersebut tidak dengan sendirinya membuktikan energi adsorpsi,
-mekanisme reaksi, atau kestabilan antarmuka dalam kondisi yang lebih luas.
-</p>
 
 </div>
 
 
 ### 06.1 · Catat Hasil O–Li
 
-<div class="result-table-wrapper">
+<div class="lifec-result-panel">
 
-<table class="mahameru-table">
+<div class="lifec-result-header">
 
-<thead>
+<div>
+<span class="lifec-result-kicker">MD ANALYSIS</span>
 
-<tr>
+<h3>O–Li Distance Results</h3>
 
-<th>Besaran</th>
+<p>
+Catat hasil analisis jarak O–Li dari trajectory molecular dynamics.
+Gunakan satuan Å untuk seluruh nilai.
+</p>
+</div>
 
-<th>Hasil</th>
-
-<th>Satuan</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>
-Jarak O–Li awal
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Jarak O–Li akhir
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Jarak O–Li rata-rata
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Jarak O–Li minimum
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Jarak O–Li maksimum
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Simpangan
-</td>
-
-<td>
-____________________
-</td>
-
-<td>
-Å
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+<div class="lifec-result-counter">
+<span id="lifec-result-count">0</span>
+<span>/ 6 fields</span>
+</div>
 
 </div>
 
+
+<div class="lifec-result-progress">
+
+<div class="lifec-result-progress-bar">
+<span id="lifec-result-progress"></span>
+</div>
+
+<span id="lifec-result-percent">
+0% complete
+</span>
+
+</div>
+
+
+<div class="lifec-result-grid">
+
+
+<label class="lifec-result-field">
+
+<span>Jarak O–Li awal</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-initial"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-result-field">
+
+<span>Jarak O–Li akhir</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-final"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-result-field">
+
+<span>Jarak O–Li rata-rata</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-average"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-result-field">
+
+<span>Jarak O–Li minimum</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-minimum"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-result-field">
+
+<span>Jarak O–Li maksimum</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-maximum"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-result-field">
+
+<span>Simpangan</span>
+
+<div class="lifec-input-wrap">
+
+<input
+type="text"
+id="lifec-o-li-std"
+placeholder="Ketik di sini..."
+>
+<span>Å</span>
+
+</div>
+
+</label>
+
+</div>
+
+
+<div class="lifec-result-actions">
+
+<button
+type="button"
+class="lifec-result-btn primary"
+id="lifec-result-save"
+>
+Save
+</button>
+
+<button
+type="button"
+class="lifec-result-btn"
+id="lifec-result-download"
+>
+Download
+</button>
+
+<button
+type="button"
+class="lifec-result-btn"
+id="lifec-result-reset"
+>
+Reset
+</button>
+
+</div>
+
+
+<div
+class="lifec-result-status"
+id="lifec-result-status"
+aria-live="polite"
+>
+Ready
+</div>
+
+</div>
 
 <div class="mahameru-note">
 
@@ -2522,58 +2706,140 @@ dan lintasan yang digunakan.
 06.6 · Evaluasi Kontak O–Li
 </h3>
 
-<div class="workflow-warning">
+<div class="lifec-analysis-card">
 
-<strong>
-Pertanyaan analisis
-</strong>
+<div class="lifec-analysis-question">
 
-<p>
+<div class="lifec-analysis-kicker">
+PERTANYAAN ANALISIS
+</div>
+
+<h3>
 Apakah O karbonil EC tetap dekat dengan Li pada permukaan?
-</p>
+</h3>
 
 </div>
 
 
-<div class="mahameru-info-card">
+<div class="lifec-choice-card">
 
-<strong>
-Pilihan pengamatan
-</strong>
+<div class="lifec-choice-header">
 
-<p>
-☐ Jarak relatif menetap</p>
+<strong>Pilihan pengamatan</strong>
 
-<p>
-☐ Jarak cenderung membesar</p>
-
-<p>
-☐ Jarak berfluktuasi</p>
-
-<p>
-☐ Belum dapat ditentukan dari data yang tersedia</p>
+<span>
+Pilih satu atau lebih berdasarkan hasil trajectory.
+</span>
 
 </div>
 
 
-<div class="mahameru-info-card">
+<label class="lifec-choice">
 
-<strong>
-Bukti numerik
-</strong>
+<input
+type="checkbox"
+data-workshop-field
+data-section="evaluasi-o-li"
+data-label="Jarak relatif menetap"
+value="Jarak relatif menetap"
+>
 
-<p>
+<span class="lifec-choice-box"></span>
+
+<span class="lifec-choice-text">
+<strong>Jarak relatif menetap</strong>
+<small>Posisi O–Li relatif stabil selama trajectory.</small>
+</span>
+
+</label>
+
+
+<label class="lifec-choice">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="evaluasi-o-li"
+data-label="Jarak cenderung membesar"
+value="Jarak cenderung membesar"
+>
+
+<span class="lifec-choice-box"></span>
+
+<span class="lifec-choice-text">
+<strong>Jarak cenderung membesar</strong>
+<small>Jarak O–Li menunjukkan kecenderungan meningkat.</small>
+</span>
+
+</label>
+
+
+<label class="lifec-choice">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="evaluasi-o-li"
+data-label="Jarak berfluktuasi"
+value="Jarak berfluktuasi"
+>
+
+<span class="lifec-choice-box"></span>
+
+<span class="lifec-choice-text">
+<strong>Jarak berfluktuasi</strong>
+<small>Jarak O–Li berubah selama trajectory.</small>
+</span>
+
+</label>
+
+
+<label class="lifec-choice">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="evaluasi-o-li"
+data-label="Belum dapat ditentukan"
+value="Belum dapat ditentukan dari data yang tersedia"
+>
+
+<span class="lifec-choice-box"></span>
+
+<span class="lifec-choice-text">
+<strong>Belum dapat ditentukan</strong>
+<small>Data yang tersedia belum cukup untuk menentukan pola.</small>
+</span>
+
+</label>
+
+</div>
+
+
+<div class="lifec-evidence-card">
+
+<div class="lifec-choice-header">
+
+<strong>Bukti numerik</strong>
+
+<span>
 Tuliskan nilai atau pola data yang mendukung pilihan Anda.
-</p>
+</span>
+
+</div>
+
 
 <textarea
-rows="5"
+data-workshop-field
+data-section="evaluasi-o-li"
+data-label="Bukti numerik"
 placeholder="Tuliskan bukti numerik dari antarmuka.csv..."
-class="lifec-input"
+rows="5"
 ></textarea>
 
 </div>
 
+</div>
 
 <h3>
 06.7 · Catatan Peserta
@@ -3128,75 +3394,115 @@ Pertanyaan analisis
 Apakah perubahan muatan EC diikuti perubahan berlawanan pada slab?
 </p>
 
-</div>
+<d<div class="lifec-choice-grid">
 
-
-<div class="validation-grid">
-
-<div class="validation-card">
-
-<strong>
-A
-</strong>
-
-<h3>
-Berubah Berlawanan
-</h3>
-
-<p>
-Muatan EC meningkat ketika muatan slab menurun, atau sebaliknya.
-</p>
+<label class="lifec-choice-card">
 
 <input
 type="checkbox"
+data-workshop-field
+data-section="tren-ec-slab"
+data-label="Berubah berlawanan"
+value="Berubah berlawanan"
 >
-&nbsp; Pilih
+
+<div class="lifec-choice-card-top">
+<span class="lifec-choice-letter">A</span>
 </div>
 
+<div class="lifec-choice-card-content">
 
-<div class="validation-card">
-
-<strong>
-B
-</strong>
-
-<h3>
-Tidak Berlawanan
-</h3>
+<strong>Berubah berlawanan</strong>
 
 <p>
-Kedua kelompok tidak menunjukkan pola perubahan yang berlawanan.
+Muatan EC meningkat ketika muatan slab menurun,
+atau sebaliknya.
 </p>
+
+</div>
+
+<div class="lifec-choice-select">
+
+<span class="lifec-choice-box"></span>
+
+<span>Pilih</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-choice-card">
 
 <input
 type="checkbox"
+data-workshop-field
+data-section="tren-ec-slab"
+data-label="Tidak berlawanan"
+value="Tidak berlawanan"
 >
-&nbsp; Pilih
+
+<div class="lifec-choice-card-top">
+<span class="lifec-choice-letter">B</span>
 </div>
 
+<div class="lifec-choice-card-content">
 
-<div class="validation-card">
+<strong>Tidak berlawanan</strong>
 
-<strong>
-C
-</strong>
+<p>
+Kedua kelompok tidak menunjukkan pola perubahan
+yang berlawanan.
+</p>
 
-<h3>
-Tidak Jelas
-</h3>
+</div>
+
+<div class="lifec-choice-select">
+
+<span class="lifec-choice-box"></span>
+
+<span>Pilih</span>
+
+</div>
+
+</label>
+
+
+<label class="lifec-choice-card">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="tren-ec-slab"
+data-label="Tidak jelas"
+value="Tidak jelas"
+>
+
+<div class="lifec-choice-card-top">
+<span class="lifec-choice-letter">C</span>
+</div>
+
+<div class="lifec-choice-card-content">
+
+<strong>Tidak jelas</strong>
 
 <p>
 Data yang tersedia belum cukup untuk menentukan pola.
 </p>
 
-<input
-type="checkbox"
->
-&nbsp; Pilih
 </div>
+
+<div class="lifec-choice-select">
+
+<span class="lifec-choice-box"></span>
+
+<span>Pilih</span>
 
 </div>
 
+</label>
+
+</div>
 
 <div class="mahameru-info-card">
 
@@ -3212,6 +3518,9 @@ Tuliskan nilai atau pola muatan yang mendukung pilihan Anda.
 rows="6"
 placeholder="Contoh: muatan EC berubah dari ... menjadi ... e, sedangkan muatan slab berubah dari ... menjadi ... e."
 class="lifec-input"
+data-workshop-field
+data-section="tren-ec-slab"
+data-label="Bukti dari data"
 ></textarea>
 
 </div>
@@ -3510,42 +3819,183 @@ dan Li permukaan, bukan pada struktur cairan massal.
 </div>
 
 
-<div class="mahameru-info-card">
+<div class="lifec-checkpoint">
 
-<strong>
-Checkpoint Part 3B
-</strong>
+<div class="lifec-checkpoint-header">
 
-<p>
+<span class="lifec-checkpoint-kicker">
+CHECKPOINT · PART 3B
+</span>
+
+<h3>
 Sebelum melanjutkan, pastikan Anda sudah memiliki:
+</h3>
+
+<p>
+Centang setiap hasil yang sudah Anda periksa atau siapkan.
 </p>
-
-<p>
-☐ Muatan EC awal dan akhir</p>
-
-<p>
-☐ Muatan slab awal dan akhir</p>
-
-<p>
-☐ Muatan EC rata-rata</p>
-
-<p>
-☐ Muatan slab rata-rata</p>
-
-<p>
-☐ Pemeriksaan jumlah muatan EC + slab</p>
-
-<p>
-☐ Grafik hasil analisis</p>
-
-<p>
-☐ Catatan struktur awal dan frame akhir</p>
-
-<p>
-☐ Jawaban mengenai alasan penggunaan jarak O–Li</p>
 
 </div>
 
+
+<div class="lifec-checklist">
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Muatan EC awal dan akhir"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Muatan EC awal dan akhir
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Muatan slab awal dan akhir"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Muatan slab awal dan akhir
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Muatan EC rata-rata"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Muatan EC rata-rata
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Muatan slab rata-rata"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Muatan slab rata-rata
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Pemeriksaan jumlah muatan EC + slab"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Pemeriksaan jumlah muatan EC + slab
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Grafik hasil analisis"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Grafik hasil analisis
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Catatan struktur awal dan frame akhir"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Catatan struktur awal dan frame akhir
+</span>
+
+</label>
+
+
+<label class="lifec-check-item">
+
+<input
+type="checkbox"
+data-workshop-field
+data-section="checkpoint-part-3b"
+data-label="Jawaban mengenai alasan penggunaan jarak O–Li"
+value="Selesai"
+>
+
+<span class="lifec-check-box"></span>
+
+<span class="lifec-check-text">
+Jawaban mengenai alasan penggunaan jarak O–Li
+</span>
+
+</label>
+
+
+</div>
+
+</div>
 
 <div class="workflow-next">
 
