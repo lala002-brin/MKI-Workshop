@@ -1,36 +1,26 @@
 /* =========================================================
    MD ANALYSIS WORKSHEET
-   JAVASCRIPT PART 1
-   C.1 + C.2
-   ========================================================= */
-
-
-/* =========================================================
-   STORAGE
+   PART 1
+   CONFIGURATION + FIELD CASE 1
    ========================================================= */
 
 const MD_WORKSHEET_STORAGE_KEY =
   "md-analysis-worksheet-v1";
 
 
-/* =========================================================
-   FIELD C.1 + C.2
-   TOTAL: 33 FIELDS
-   ========================================================= */
-
 const MD_WORKSHEET_FIELDS = [
 
-  /* -------------------------------------------------------
-     IDENTITAS
-     ------------------------------------------------------- */
+  /* =======================================================
+     IDENTITAS PESERTA
+     ======================================================= */
 
   "participant-name",
   "computer-account",
 
 
-  /* -------------------------------------------------------
-     C.1
-     ------------------------------------------------------- */
+  /* =======================================================
+     C.1 CATATAN AWAL
+     ======================================================= */
 
   "initial-date-computer",
   "initial-working-directory",
@@ -40,19 +30,19 @@ const MD_WORKSHEET_FIELDS = [
   "initial-mace-checkpoint",
 
 
-  /* -------------------------------------------------------
-     C.2
+  /* =======================================================
+     C.2 CASE 1
      HIPOTESIS
-     ------------------------------------------------------- */
+     ======================================================= */
 
   "case1-hypothesis-atom",
   "case1-hypothesis-contact",
 
 
-  /* -------------------------------------------------------
-     C.2
+  /* =======================================================
+     C.2 CASE 1
      DATA AWAL
-     ------------------------------------------------------- */
+     ======================================================= */
 
   "case1-seed-directory",
   "case1-atom-count",
@@ -65,18 +55,18 @@ const MD_WORKSHEET_FIELDS = [
   "case1-graph-name",
 
 
-  /* -------------------------------------------------------
-     C.2
+  /* =======================================================
+     C.2 CASE 1
      LATIHAN
-     ------------------------------------------------------- */
+     ======================================================= */
 
   "case1-hand-calculation",
 
 
-  /* -------------------------------------------------------
-     C.2
-     HASIL CSV / GRAFIK
-     ------------------------------------------------------- */
+  /* =======================================================
+     C.2 CASE 1
+     HASIL
+     ======================================================= */
 
   "case1-rdf-li-o-peak",
   "case1-rdf-li-o-minimum",
@@ -93,14 +83,18 @@ const MD_WORKSHEET_FIELDS = [
   "case1-fit-window-change",
 
 
-  /* -------------------------------------------------------
-     C.2
+  /* =======================================================
+     C.2 CASE 1
      TAFSIRAN
-     ------------------------------------------------------- */
+     ======================================================= */
 
   "case1-interpretation"
 
 ];
+/* =========================================================
+   PART 2
+   GET + SET + PROGRESS
+   ========================================================= */
 
 
 /* =========================================================
@@ -116,16 +110,20 @@ function getMDWorksheetData() {
     const element =
       document.getElementById(id);
 
+
     if (!element) {
       return;
     }
 
+
     data[id] =
-      element.value;
+      element.value || "";
 
   });
 
+
   return data;
+
 }
 
 
@@ -147,6 +145,7 @@ function setMDWorksheetData(data) {
 
     const element =
       document.getElementById(id);
+
 
     if (!element) {
       return;
@@ -187,6 +186,7 @@ function getMDWorksheetCompletion() {
     const element =
       document.getElementById(id);
 
+
     if (!element) {
       return;
     }
@@ -207,9 +207,11 @@ function getMDWorksheetCompletion() {
 
   return {
 
-    completed: completed,
+    completed:
+      completed,
 
-    total: MD_WORKSHEET_FIELDS.length
+    total:
+      MD_WORKSHEET_FIELDS.length
 
   };
 
@@ -228,6 +230,7 @@ function updateMDWorksheetProgress() {
 
   const completed =
     result.completed;
+
 
   const total =
     result.total;
@@ -310,6 +313,10 @@ function setMDWorksheetStatus(message) {
     message;
 
 }
+/* =========================================================
+   PART 3
+   SAVE + LOAD + DOWNLOAD + RESET
+   ========================================================= */
 
 
 /* =========================================================
@@ -320,7 +327,8 @@ function saveMDWorksheet() {
 
   const payload = {
 
-    version: 1,
+    version:
+      1,
 
     worksheet:
       "MD Analysis Worksheet",
@@ -362,7 +370,7 @@ function saveMDWorksheet() {
 
 
 /* =========================================================
-   LOAD FROM LOCAL STORAGE
+   RESTORE LOCAL STORAGE
    ========================================================= */
 
 function loadMDWorksheetFromStorage() {
@@ -417,14 +425,15 @@ function loadMDWorksheetFromStorage() {
 
 
 /* =========================================================
-   DOWNLOAD
+   DOWNLOAD JSON
    ========================================================= */
 
 function downloadMDWorksheet() {
 
   const payload = {
 
-    version: 1,
+    version:
+      1,
 
     worksheet:
       "MD Analysis Worksheet",
@@ -450,7 +459,8 @@ function downloadMDWorksheet() {
     new Blob(
       [json],
       {
-        type: "application/json"
+        type:
+          "application/json"
       }
     );
 
@@ -460,7 +470,9 @@ function downloadMDWorksheet() {
 
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   link.href =
@@ -471,7 +483,9 @@ function downloadMDWorksheet() {
     "MD_Analysis_Worksheet.json";
 
 
-  document.body.appendChild(link);
+  document.body.appendChild(
+    link
+  );
 
 
   link.click();
@@ -480,7 +494,9 @@ function downloadMDWorksheet() {
   link.remove();
 
 
-  URL.revokeObjectURL(url);
+  URL.revokeObjectURL(
+    url
+  );
 
 
   setMDWorksheetStatus(
@@ -567,7 +583,9 @@ function loadMDWorksheet(event) {
     };
 
 
-  reader.readAsText(file);
+  reader.readAsText(
+    file
+  );
 
 }
 
@@ -589,21 +607,23 @@ function clearMDWorksheet() {
   }
 
 
-  MD_WORKSHEET_FIELDS.forEach(function(id) {
+  MD_WORKSHEET_FIELDS.forEach(
+    function(id) {
 
-    const element =
-      document.getElementById(id);
+      const element =
+        document.getElementById(id);
 
 
-    if (!element) {
-      return;
+      if (!element) {
+        return;
+      }
+
+
+      element.value =
+        "";
+
     }
-
-
-    element.value =
-      "";
-
-  });
+  );
 
 
   localStorage.removeItem(
@@ -619,140 +639,19 @@ function clearMDWorksheet() {
   );
 
 }
+/* =========================================================
+   PART 4
+   CASE 2 + CASE 3
+   ========================================================= */
 
 
 /* =========================================================
-   INPUT LISTENER
+   CASE 2
+   ANTARMUKA LiF/EC
    ========================================================= */
 
-function initializeMDWorksheet() {
-
-  MD_WORKSHEET_FIELDS.forEach(function(id) {
-
-    const element =
-      document.getElementById(id);
-
-
-    if (!element) {
-      return;
-    }
-
-
-    element.addEventListener(
-      "input",
-      updateMDWorksheetProgress
-    );
-
-
-    element.addEventListener(
-      "change",
-      updateMDWorksheetProgress
-    );
-
-  });
-
-
-  updateMDWorksheetProgress();
-
-
-  loadMDWorksheetFromStorage();
-
-}
-
-
-/* =========================================================
-   GOOGLE DRIVE
-   ========================================================= */
-
-async function uploadMDWorksheet() {
-
-  const payload = {
-
-    version: 1,
-
-    worksheet:
-      "MD Analysis Worksheet",
-
-    exportedAt:
-      new Date().toISOString(),
-
-    data:
-      getMDWorksheetData()
-
-  };
-
-
-  /*
-   * Fungsi ini sengaja tidak membuat endpoint
-   * Google Drive palsu.
-   *
-   * Jika project sebelumnya sudah memiliki fungsi:
-   *
-   * saveWorksheetToGoogleDrive(payload)
-   *
-   * fungsi tersebut akan digunakan.
-   */
-
-  if (
-    typeof window.saveWorksheetToGoogleDrive ===
-    "function"
-  ) {
-
-    try {
-
-      await window.saveWorksheetToGoogleDrive(
-        payload
-      );
-
-
-      setMDWorksheetStatus(
-        "Worksheet berhasil dikirim ke Google Drive."
-      );
-
-
-    } catch (error) {
-
-      console.error(error);
-
-
-      setMDWorksheetStatus(
-        "Gagal mengirim worksheet ke Google Drive."
-      );
-
-    }
-
-
-    return;
-
-  }
-
-
-  setMDWorksheetStatus(
-    "Google Drive belum terhubung. Save dan Download tetap dapat digunakan."
-  );
-
-}
-
-
-/* =========================================================
-   INITIALIZE
-   ========================================================= */
-
-if (
-  document.readyState === "loading"
-) {
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    initializeMDWorksheet
-  );
-
-} else {
-
-  initializeMDWorksheet();
-
-}
 const CASE_2_FIELDS = [
+
   "case2-atom-count",
   "case2-carbonyl-o",
   "case2-cell-length",
@@ -767,12 +666,17 @@ const CASE_2_FIELDS = [
   "case2-preliminary-conclusion",
   "case2-next-test",
   "case2-next-test-analysis"
+
 ];
+
+
 /* =========================================================
-   CASE 3 · NEB CO PADA Pt(111)
+   CASE 3
+   NEB CO PADA Pt(111)
    ========================================================= */
 
 const CASE_3_FIELDS = [
+
   "case3-sites",
   "case3-images-fixed",
   "case3-force-criteria",
@@ -787,21 +691,21 @@ const CASE_3_FIELDS = [
   "case3-hand-calculation",
   "case3-interpretation",
   "case3-claim-limit"
+
 ];
 /* =========================================================
-   COMBINE SEMUA FIELD WORKSHEET
+   PART 5
+   CASE 4 + CASE 5 + CASE 7
    ========================================================= */
 
-const ALL_WORKSHEET_FIELDS = [
-  ...(typeof CASE_1_FIELDS !== "undefined" ? CASE_1_FIELDS : []),
-  ...(typeof CASE_2_FIELDS !== "undefined" ? CASE_2_FIELDS : []),
-  ...CASE_3_FIELDS
-];
+
 /* =========================================================
-   CASE 4 · IBUPROFENAT DAN MOTIF ARGININA
+   CASE 4
+   IBUPROFENAT DAN MOTIF ARGININA
    ========================================================= */
 
 const CASE_4_FIELDS = [
+
   "case4-seed-geometry",
   "case4-complex-atoms-charge",
   "case4-ibuprofenate-atoms-charge",
@@ -816,82 +720,280 @@ const CASE_4_FIELDS = [
   "case4-script-energy",
   "case4-interpretation",
   "case4-model-limit"
+
 ];
+
+
 /* =========================================================
-   CASE 5 · RESPONS KISI LiF
+   CASE 5
+   RESPONS KISI LiF
    ========================================================= */
 
 const CASE_5_FIELDS = [
 
   "case5-system-size",
-
   "case5-method",
-
   "case5-temperature",
-
   "case5-md-duration",
-
   "case5-frame-count",
-
   "case5-pressure-condition",
-
   "case5-dftb-file",
-
   "case5-mace-model",
-
   "case5-lattice-change",
-
   "case5-dftb-mace-difference",
-
   "case5-temperature-response",
-
   "case5-size-response",
-
   "case5-condition-response",
-
   "case5-interpretation",
-
   "case5-claim-condition"
 
 ];
+
+
 /* =========================================================
-   C.7 · LAPORAN SINGKAT DAN DISKUSI KELOMPOK
+   CASE 7
+   LAPORAN SINGKAT DAN DISKUSI
    ========================================================= */
 
 const CASE_7_FIELDS = [
 
   "case7-summary-1",
-
   "case7-summary-2",
-
   "case7-summary-3",
-
   "case7-summary-4",
-
   "case7-summary-5",
-
   "case7-discussion-evidence",
-
   "case7-uncertainty",
-
   "case7-final-conclusion",
-
   "case7-group-notes"
 
 ];
 /* =========================================================
-   FIELD GABUNGAN FINAL
-   =========================================================
-   Gunakan bagian ini untuk menggantikan array
-   ALL_WORKSHEET_FIELDS yang lama setelah CASE_7_FIELDS
-   sudah ditempatkan di worksheet.js.
+   PART 6
+   GABUNGKAN SEMUA FIELD
    ========================================================= */
 
-const ALL_WORKSHEET_FIELDS = [
-  ...CASE_1_FIELDS,
-  ...CASE_2_FIELDS,
-  ...CASE_3_FIELDS,
-  ...CASE_4_FIELDS,
-  ...CASE_5_FIELDS,
+
+/* =========================================================
+   TAMBAHKAN CASE 2
+   ========================================================= */
+
+MD_WORKSHEET_FIELDS.push(
+  ...CASE_2_FIELDS
+);
+
+
+/* =========================================================
+   TAMBAHKAN CASE 3
+   ========================================================= */
+
+MD_WORKSHEET_FIELDS.push(
+  ...CASE_3_FIELDS
+);
+
+
+/* =========================================================
+   TAMBAHKAN CASE 4
+   ========================================================= */
+
+MD_WORKSHEET_FIELDS.push(
+  ...CASE_4_FIELDS
+);
+
+
+/* =========================================================
+   TAMBAHKAN CASE 5
+   ========================================================= */
+
+MD_WORKSHEET_FIELDS.push(
+  ...CASE_5_FIELDS
+);
+
+
+/* =========================================================
+   TAMBAHKAN CASE 7
+   ========================================================= */
+
+MD_WORKSHEET_FIELDS.push(
   ...CASE_7_FIELDS
-];
+);
+
+
+/* =========================================================
+   INPUT LISTENER
+   ========================================================= */
+
+function initializeMDWorksheet() {
+
+  MD_WORKSHEET_FIELDS.forEach(
+    function(id) {
+
+      const element =
+        document.getElementById(id);
+
+
+      if (!element) {
+        return;
+      }
+
+
+      element.addEventListener(
+        "input",
+        updateMDWorksheetProgress
+      );
+
+
+      element.addEventListener(
+        "change",
+        updateMDWorksheetProgress
+      );
+
+    }
+  );
+
+
+  updateMDWorksheetProgress();
+
+
+  loadMDWorksheetFromStorage();
+
+}
+/* =========================================================
+   PART 7
+   GOOGLE DRIVE + FINAL INITIALIZE
+   ========================================================= */
+
+
+/* =========================================================
+   GOOGLE DRIVE
+   ========================================================= */
+
+window.uploadMDWorksheet = async function () {
+
+  try {
+
+    const data = {
+
+      workshop:
+        "MKI Computational Materials Science Workshop",
+
+      module:
+        "Bahan Pendalaman",
+
+      participant:
+        document.getElementById(
+          "participant-name"
+        )?.value || "",
+
+      saved_at:
+        new Date().toISOString(),
+
+      values:
+        getMDWorksheetData()
+
+    };
+
+
+    const endpoint =
+      "https://script.google.com/macros/s/AKfycbxmmq7V7mqXDSx8njezf6nRRnMv9XtSA1NRxg6NE_eumqJVChhHtFtl29p3yB6eLbi1/exec";
+
+
+    setMDWorksheetStatus(
+      "Uploading to Google Drive..."
+    );
+
+
+    await fetch(
+      endpoint,
+      {
+
+        method:
+          "POST",
+
+        mode:
+          "no-cors",
+
+        headers: {
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify(data)
+
+      }
+    );
+
+
+    setMDWorksheetStatus(
+      "✓ Worksheet berhasil dikirim ke Google Drive."
+    );
+
+
+    console.log(
+      "Worksheet sent to Google Drive:",
+      data
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Google Drive upload error:",
+      error
+    );
+
+
+    setMDWorksheetStatus(
+      "✕ Google Drive upload gagal."
+    );
+
+  }
+
+};
+
+
+/* =========================================================
+   FINAL INITIALIZE
+   ========================================================= */
+
+if (
+  document.readyState ===
+  "loading"
+) {
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeMDWorksheet
+  );
+
+} else {
+
+  initializeMDWorksheet();
+
+}
+
+
+/* =========================================================
+   MKDOCS MATERIAL INSTANT NAVIGATION
+   ========================================================= */
+
+if (
+  typeof document$ !==
+  "undefined"
+) {
+
+  document$.subscribe(
+    function() {
+
+      setTimeout(
+        initializeMDWorksheet,
+        100
+      );
+
+    }
+  );
+
+}
