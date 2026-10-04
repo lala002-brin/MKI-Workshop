@@ -128,6 +128,7 @@ nav:
       - Day 1:
           - Overview: hands-on-project/day-1/index.md
           - Foundations: hands-on-project/day-1/foundations.md
+          - Input DCDFTBMD: hands-on-project/day-1/dftbmd-input.md
           - LiPF6 / EC: hands-on-project/day-1/lipf6-ec.md
           - MD Analysis: hands-on-project/day-1/md-analysis.md
           - LiF / EC Interface: hands-on-project/day-1/lif-ec-interface.md
