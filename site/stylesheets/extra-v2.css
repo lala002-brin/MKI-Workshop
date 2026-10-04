@@ -41510,3 +41510,2741 @@ table.mahameru-table td:nth-child(3) {
   font-size: 15px;
   font-weight: 700;
 }
+/* =========================================================
+   FOUNDATION 7.1
+   ENERGI SATU TITIK DAN OPTIMASI
+   ========================================================= */
+
+.foundation-optimization-intro {
+  margin: 24px 0;
+  padding: 22px 24px;
+
+  border: 1px solid rgba(67, 97, 238, 0.12);
+  border-radius: 14px;
+
+  background: rgba(67, 97, 238, 0.035);
+}
+
+.foundation-optimization-intro p {
+  margin: 0;
+}
+
+.foundation-equation {
+  margin: 26px 0;
+  padding: 20px;
+
+  text-align: center;
+
+  border-radius: 14px;
+
+  background: rgba(67, 97, 238, 0.035);
+
+  overflow-x: auto;
+}
+
+.foundation-equation mjx-container {
+  margin: 0 !important;
+}
+.foundation-optimization-intro {
+  margin: 24px 0;
+  padding: 22px 24px;
+
+  border: 1px solid rgba(67, 97, 238, 0.12);
+  border-radius: 14px;
+
+  background: rgba(67, 97, 238, 0.035);
+}
+
+.foundation-equation {
+  margin: 26px 0;
+  padding: 20px;
+
+  text-align: center;
+
+  border-radius: 14px;
+
+  background: rgba(67, 97, 238, 0.035);
+
+  overflow-x: auto;
+}
+
+.foundation-equation mjx-container {
+  margin: 0 !important;
+}
+/* =========================================================
+   FOUNDATION SECTION 7
+   ========================================================= */
+
+.foundation-sk-main {
+  margin: 22px 0 28px;
+}
+
+.foundation-sk-main p {
+  margin: 0;
+}
+
+/* Judul utama section */
+.md-content h2 {
+  scroll-margin-top: 110px;
+}
+
+/* Subjudul */
+.md-content h3 {
+  scroll-margin-top: 110px;
+}
+
+
+/* =========================================================
+   JUDUL SECTION UTAMA
+   ========================================================= */
+
+.md-content h2 {
+  margin-top: 48px;
+  margin-bottom: 28px;
+
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   JUDUL SECTION FOUNDATION
+   ========================================================= */
+
+.md-content h2 {
+  margin-top: 38px !important;
+  margin-bottom: 20px !important;
+
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+
+  text-align: left !important;
+}
+
+
+/* =========================================================
+   SUBSECTION
+   ========================================================= */
+
+.md-content h3 {
+  margin-top: 24px !important;
+  margin-bottom: 16px !important;
+
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .md-content h2 {
+    margin-top: 30px !important;
+    margin-bottom: 16px !important;
+
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .md-content h3 {
+    font-size: .95rem !important;
+  }
+
+}
+/* =========================================================
+   FOUNDATION SECTION HEADING
+   ========================================================= */
+
+.md-content__inner > h2 {
+  display: block;
+
+  margin-top: 55px !important;
+  margin-bottom: 24px !important;
+
+  padding-top: 25px !important;
+
+  font-size: 1.45rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+
+  text-align: left !important;
+
+  color: #243b73;
+
+  scroll-margin-top: 150px !important;
+}
+
+
+/* =========================================================
+   SUBSECTION
+   ========================================================= */
+
+.md-content__inner > h3 {
+  margin-top: 24px !important;
+  margin-bottom: 18px !important;
+
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+
+  color: #243b73;
+
+  scroll-margin-top: 150px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .md-content__inner > h2 {
+    margin-top: 40px !important;
+    margin-bottom: 18px !important;
+
+    padding-top: 20px !important;
+
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+
+    text-align: left !important;
+  }
+
+  .md-content__inner > h3 {
+    margin-top: 22px !important;
+    margin-bottom: 15px !important;
+
+    font-size: .95rem !important;
+  }
+
+}
+<div class="foundation-equation">
+
+  <div class="foundation-equation-label">
+    Persamaan energi adsorpsi
+  </div>
+
+  <div class="foundation-equation-formula">
+    \[
+    E_{\mathrm{ads}}
+    =
+    E_{\mathrm{permukaan+molekul}}
+    -
+    E_{\mathrm{permukaan}}
+    -
+    E_{\mathrm{molekul}}
+    \]
+  </div>
+
+</div>
+/* =========================================================
+   FOUNDATION EQUATION
+   ========================================================= */
+
+.foundation-equation {
+  margin: 28px 0 30px;
+  padding: 22px 28px;
+
+  background: #f7f9ff;
+
+  border: 1px solid #dce4f5;
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.foundation-equation-label {
+  margin-bottom: 14px;
+
+  font-size: .72rem;
+  line-height: 1.3;
+
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: #4964c5;
+}
+
+.foundation-equation-formula {
+  padding: 10px 8px;
+
+  font-size: 1.35rem;
+  line-height: 1.8;
+
+  color: #1f356c;
+}
+
+
+/* MathJax */
+
+.foundation-equation-formula mjx-container {
+  margin: 0 !important;
+}
+
+.foundation-equation-formula mjx-container[display="true"] {
+  margin: 0 !important;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-equation {
+    margin: 22px 0 25px;
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+
+  .foundation-equation-label {
+    font-size: .65rem;
+    margin-bottom: 10px;
+  }
+
+  .foundation-equation-formula {
+    font-size: 1.05rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+}
+/* =========================================================
+   FOUNDATION EQUATION
+   Tampilan mengikuti equation 6.2
+   ========================================================= */
+
+.foundation-equation-box {
+  margin: 30px 0 32px;
+  padding: 25px 24px 24px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 15px;
+
+  box-sizing: border-box;
+}
+
+
+/* LABEL DI ATAS RUMUS */
+
+.foundation-equation-label {
+  margin-bottom: 27px;
+
+  text-align: center;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  color: #4a5fc1;
+}
+
+
+/* KOTAK RUMUS */
+
+.foundation-equation-inner {
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  background: #f1f3ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* MATHJAX */
+
+.foundation-equation-inner mjx-container {
+  margin: 0 !important;
+
+  color: #182d62;
+
+  font-size: 125% !important;
+}
+
+
+/* CAPTION */
+
+.foundation-equation-caption {
+  margin: 25px auto 0;
+
+  max-width: 720px;
+
+  text-align: center;
+
+  font-size: 12px;
+  line-height: 1.7;
+
+  color: #667595;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-equation-box {
+    margin: 24px 0 28px;
+    padding: 21px 16px 20px;
+
+    border-radius: 13px;
+  }
+
+  .foundation-equation-label {
+    margin-bottom: 21px;
+
+    font-size: 9px;
+  }
+
+  .foundation-equation-inner {
+    min-height: 64px;
+
+    padding: 10px 12px;
+
+    overflow-x: auto;
+  }
+
+  .foundation-equation-inner mjx-container {
+    font-size: 105% !important;
+  }
+
+  .foundation-equation-caption {
+    margin-top: 20px;
+
+    font-size: 11px;
+  }
+
+}
+/* =========================================================
+   FOUNDATION SECTION HEADING
+   ========================================================= */
+
+.foundation-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 34px 0 20px;
+}
+
+.foundation-section-heading .foundation-section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 42px;
+  height: 30px;
+
+  padding: 0 9px;
+
+  box-sizing: border-box;
+
+  background: #eef2ff;
+
+  border-radius: 9px;
+
+  color: #4058b8;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.foundation-section-heading h3 {
+  margin: 0 !important;
+
+  color: #182d62;
+
+  font-size: 18px !important;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOUNDATION NOTE
+   ========================================================= */
+
+.foundation-note {
+  margin: 28px 0 32px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.foundation-note-label {
+  padding: 14px 20px 8px;
+
+  color: #4a5fc1;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.foundation-note-content {
+  padding: 4px 20px 18px;
+}
+
+.foundation-note-content p {
+  margin: 10px 0;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-section-heading {
+    gap: 9px;
+
+    margin: 28px 0 17px;
+  }
+
+  .foundation-section-heading .foundation-section-number {
+    min-width: 38px;
+    height: 28px;
+
+    font-size: 10px;
+  }
+
+  .foundation-section-heading h3 {
+    font-size: 16px !important;
+  }
+
+  .foundation-note {
+    margin: 24px 0 28px;
+
+    border-radius: 12px;
+  }
+
+  .foundation-note-label {
+    padding: 12px 16px 7px;
+
+    font-size: 9px;
+  }
+
+  .foundation-note-content {
+    padding: 3px 16px 15px;
+  }
+
+  .foundation-note-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   FOUNDATION PARAMETER BOX
+   ========================================================= */
+
+.foundation-parameter-box {
+  margin: 28px 0 32px;
+
+  padding: 24px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 15px;
+}
+
+.foundation-parameter-label {
+  margin-bottom: 18px;
+
+  text-align: center;
+
+  color: #4a5fc1;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.foundation-parameter-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.foundation-parameter-item {
+  padding: 16px 12px;
+
+  text-align: center;
+
+  background: #f1f3ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 12px;
+}
+
+.foundation-parameter-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #7885a3;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.foundation-parameter-item strong {
+  display: block;
+
+  color: #1d346b;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-parameter-box {
+    margin: 24px 0 28px;
+
+    padding: 18px 14px;
+
+    border-radius: 12px;
+  }
+
+  .foundation-parameter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .foundation-parameter-item {
+    padding: 13px 10px;
+  }
+
+}
+/* =========================================================
+   FOUNDATION 8.1
+   SEL PERIODIK DAN CITRA TERDEKAT
+   ========================================================= */
+
+.foundation-section-text {
+  margin: 20px 0;
+}
+
+.foundation-section-text p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   PERIODIC NOTE
+   ========================================================= */
+
+.foundation-periodic-note {
+  margin: 26px 0 28px;
+  padding: 21px 23px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid var(--md-primary-fg-color);
+
+  border-radius: 0 14px 14px 0;
+}
+
+.foundation-periodic-note-label {
+  margin-bottom: 12px;
+
+  color: #4a5fc1;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.foundation-periodic-note p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-periodic-note {
+    margin: 22px 0 25px;
+    padding: 18px 17px;
+
+    border-radius: 0 12px 12px 0;
+  }
+
+  .foundation-periodic-note-label {
+    font-size: 9px;
+  }
+
+  .foundation-periodic-note p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   FOUNDATION 8.3
+   ANTARMUKA LiF–EC
+   ========================================================= */
+
+.foundation-interface-main {
+  margin: 20px 0;
+}
+
+.foundation-interface-main p {
+  margin: 0;
+}
+
+
+/* ANALISIS ANTARMUKA */
+
+.foundation-interface-note {
+  margin: 26px 0;
+  padding: 21px 23px;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid var(--md-primary-fg-color);
+
+  border-radius: 0 14px 14px 0;
+}
+
+.foundation-interface-note-label {
+  margin-bottom: 12px;
+
+  color: #4a5fc1;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.foundation-interface-note p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-interface-note {
+    margin: 22px 0;
+    padding: 18px 17px;
+
+    border-radius: 0 12px 12px 0;
+  }
+
+  .foundation-interface-note-label {
+    font-size: 9px;
+  }
+
+  .foundation-interface-note p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   FOUNDATION 8.4
+   PETA PEMERIKSAAN MUTU
+   ========================================================= */
+
+.foundation-quality-table {
+  width: 100%;
+
+  margin: 28px 0 30px;
+
+  overflow-x: auto;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+}
+
+.foundation-quality-table table {
+  width: 100%;
+  min-width: 680px;
+
+  margin: 0;
+
+  border-collapse: collapse;
+
+  font-size: 13px;
+}
+
+.foundation-quality-table th {
+  padding: 14px 16px;
+
+  background: #eef2ff;
+
+  color: #344b92;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-align: left;
+
+  border-bottom: 1px solid #dce3f5;
+}
+
+.foundation-quality-table td {
+  padding: 15px 16px;
+
+  color: #4f5d79;
+
+  line-height: 1.65;
+
+  border-bottom: 1px solid #e8ebf4;
+
+  vertical-align: top;
+}
+
+.foundation-quality-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.foundation-quality-table td:first-child {
+  width: 18%;
+
+  color: #243b73;
+}
+
+.foundation-quality-table strong {
+  color: #243b73;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-quality-table {
+    margin: 22px 0 26px;
+
+    border-radius: 12px;
+  }
+
+  .foundation-quality-table table {
+    min-width: 620px;
+
+    font-size: 12px;
+  }
+
+  .foundation-quality-table th {
+    padding: 12px 13px;
+
+    font-size: 10px;
+  }
+
+  .foundation-quality-table td {
+    padding: 13px;
+
+    line-height: 1.6;
+  }
+
+}
+/* =========================================================
+   FOUNDATION SECTION 8
+   ========================================================= */
+
+.foundation-section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 42px 0 28px;
+}
+
+.foundation-section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 46px;
+  height: 38px;
+
+  padding: 0 12px;
+
+  border-radius: 10px;
+
+  background: #eef2ff;
+  color: #3854b8;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.foundation-section-title h2 {
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1.25;
+
+  color: #182d63;
+}
+
+.foundation-subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 38px 0 18px;
+}
+
+.foundation-subsection-title span {
+  color: #3854b8;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.foundation-subsection-title h3 {
+  margin: 0;
+
+  color: #203b78;
+
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+
+/* QUALITY TABLE */
+
+.foundation-quality-table {
+  margin: 28px 0 36px;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.foundation-quality-table table {
+  width: 100%;
+  margin: 0 !important;
+  border-collapse: collapse;
+}
+
+.foundation-quality-table th {
+  padding: 14px 16px;
+
+  background: #eef2ff;
+
+  color: #29447f;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-align: left;
+}
+
+.foundation-quality-table td {
+  padding: 15px 16px;
+
+  border-top: 1px solid #e4e8f2;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.foundation-quality-table td strong {
+  color: #203b78;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-section-title {
+    gap: 10px;
+    margin: 32px 0 22px;
+  }
+
+  .foundation-section-number {
+    min-width: 40px;
+    height: 34px;
+
+    font-size: 13px;
+  }
+
+  .foundation-section-title h2 {
+    font-size: 22px;
+  }
+
+  .foundation-subsection-title {
+    margin: 30px 0 15px;
+  }
+
+  .foundation-subsection-title h3 {
+    font-size: 17px;
+  }
+
+  .foundation-quality-table {
+    overflow-x: auto;
+  }
+
+  .foundation-quality-table table {
+    min-width: 650px;
+  }
+
+}
+/* =========================================================
+   FIX FOUNDATION NOTE CARD
+   ========================================================= */
+
+.foundation-sk-note {
+  position: relative;
+
+  margin: 28px 0 32px;
+  padding: 28px 28px 24px 28px;
+
+  background: #f7f8ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid #4058c8;
+
+  border-radius: 0 14px 14px 0;
+
+  box-sizing: border-box;
+}
+
+.foundation-sk-note h4 {
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+
+  color: #263f7b !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+
+  line-height: 1.4 !important;
+}
+
+.foundation-sk-note p {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #4b5d7c;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* Code di dalam note */
+
+.foundation-sk-note code {
+  padding: 3px 7px;
+
+  border: 1px solid #dbe2f2;
+  border-radius: 5px;
+
+  background: #eef2fa;
+
+  color: #31518e;
+
+  font-size: 0.9em;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-sk-note {
+    margin: 22px 0 28px;
+    padding: 20px 18px 18px 18px;
+  }
+
+  .foundation-sk-note h4 {
+    font-size: 12px !important;
+  }
+
+  .foundation-sk-note p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   SECTION 8 - REFLECTION
+   ========================================================= */
+
+.foundation-reflection {
+  margin: 34px 0 36px;
+  padding: 24px 28px;
+
+  background: #f7f8ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid #4058c8;
+
+  border-radius: 0 14px 14px 0;
+
+  box-sizing: border-box;
+}
+
+.foundation-reflection-label {
+  margin-bottom: 12px;
+
+  color: #4058c8;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+.foundation-reflection p {
+  margin: 0;
+
+  color: #40516f;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   NEXT CARD
+   ========================================================= */
+
+.foundation-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 42px 0 20px;
+  padding: 24px 26px;
+
+  background: linear-gradient(
+    135deg,
+    #f7f9ff 0%,
+    #eef3ff 100%
+  );
+
+  border: 1px solid #d6e0f5;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.foundation-next:hover {
+  transform: translateY(-2px);
+
+  border-color: #b9c9ed;
+
+  box-shadow: 0 8px 24px rgba(38, 63, 123, 0.08);
+}
+
+.foundation-next-content {
+  min-width: 0;
+}
+
+.foundation-next-label {
+  margin-bottom: 7px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.foundation-next-title {
+  color: #263f7b;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+.foundation-next-text {
+  max-width: 720px;
+  margin-top: 6px;
+
+  color: #61718d;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.foundation-next-arrow {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-left: 24px;
+
+  border-radius: 50%;
+
+  background: #4058c8;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  transition: transform 0.2s ease;
+}
+
+.foundation-next:hover .foundation-next-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-reflection {
+    margin: 26px 0 30px;
+    padding: 20px 18px;
+  }
+
+  .foundation-reflection p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .foundation-next {
+    padding: 20px 18px;
+  }
+
+  .foundation-next-title {
+    font-size: 16px;
+  }
+
+  .foundation-next-text {
+    font-size: 13px;
+  }
+
+  .foundation-next-arrow {
+    width: 36px;
+    height: 36px;
+
+    margin-left: 14px;
+
+    font-size: 19px;
+  }
+
+}
+/* =========================================================
+   SECTION 9 · DCDFTBMD INPUT
+   ========================================================= */
+
+.foundation-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.foundation-session-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 24px 0 34px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #dce3f5;
+}
+
+.foundation-session-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+  color: #4058c8;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.foundation-session-label {
+  margin-bottom: 5px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.foundation-session-header h1 {
+  margin: 0;
+
+  color: #263f7b;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+.foundation-intro {
+  margin-bottom: 34px;
+}
+
+.foundation-page p {
+  color: #4b5d7c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.foundation-page h2 {
+  margin: 38px 0 18px;
+
+  color: #263f7b;
+
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.foundation-page h3 {
+  margin: 30px 0 15px;
+
+  color: #294477;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* STEP */
+
+.foundation-step {
+  display: flex;
+  gap: 18px;
+
+  margin: 22px 0 28px;
+  padding: 24px;
+
+  border: 1px solid #dce3f5;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow: 0 6px 22px rgba(32, 57, 103, 0.04);
+
+  box-sizing: border-box;
+}
+
+.foundation-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  border-radius: 11px;
+
+  background: #eef2ff;
+  color: #4058c8;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.foundation-step-content {
+  min-width: 0;
+  flex: 1;
+}
+
+
+/* CODE */
+
+.foundation-page pre {
+  margin: 18px 0;
+
+  padding: 20px;
+
+  overflow-x: auto;
+
+  border: 1px solid #d9e1ef;
+  border-radius: 12px;
+
+  background: #f6f8fc;
+
+  box-sizing: border-box;
+}
+
+.foundation-page pre code {
+  color: #263f7b;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  white-space: pre;
+}
+
+
+/* NOTE */
+
+.foundation-note {
+  margin: 28px 0;
+  padding: 23px 26px;
+
+  background: #f7f8ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid #4058c8;
+
+  border-radius: 0 14px 14px 0;
+
+  box-sizing: border-box;
+}
+
+.foundation-note-label {
+  margin-bottom: 10px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.foundation-note p {
+  margin: 0;
+}
+
+
+/* INFO GRID */
+
+.foundation-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin: 22px 0 28px;
+}
+
+.foundation-info-card {
+  padding: 20px;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+
+  background: #f9faff;
+}
+
+.foundation-info-card strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #294477;
+
+  font-size: 15px;
+}
+
+.foundation-info-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* RESULT */
+
+.foundation-result {
+  margin: 28px 0;
+
+  padding: 24px 26px;
+
+  border: 1px solid #dce3f5;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #f7f9ff,
+    #eef3ff
+  );
+}
+
+.foundation-result-label {
+  margin-bottom: 10px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.foundation-result p {
+  margin: 0;
+}
+
+
+/* TABLE */
+
+.foundation-table {
+  margin: 22px 0 30px;
+
+  overflow-x: auto;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+}
+
+.foundation-table table {
+  width: 100%;
+  margin: 0;
+
+  border-collapse: collapse;
+}
+
+.foundation-table th {
+  padding: 14px 16px;
+
+  background: #eef2ff;
+
+  color: #294477;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-align: left;
+}
+
+.foundation-table td {
+  padding: 14px 16px;
+
+  border-top: 1px solid #e2e7f1;
+
+  color: #4b5d7c;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  vertical-align: top;
+}
+
+
+/* NEXT */
+
+.foundation-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 44px 0 24px;
+  padding: 24px 26px;
+
+  border: 1px solid #d6e0f5;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #f7f9ff,
+    #eef3ff
+  );
+
+  box-sizing: border-box;
+}
+
+.foundation-next-label {
+  margin-bottom: 6px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.foundation-next-title {
+  color: #263f7b;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.foundation-next p {
+  max-width: 680px;
+
+  margin: 7px 0 0;
+
+  font-size: 13px;
+}
+
+.foundation-next-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  margin-left: 20px;
+
+  border-radius: 50%;
+
+  background: #4058c8;
+  color: white;
+
+  font-size: 21px;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-page {
+    max-width: 100%;
+  }
+
+  .foundation-session-header h1 {
+    font-size: 24px;
+  }
+
+  .foundation-step {
+    padding: 18px;
+  }
+
+  .foundation-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-next {
+    padding: 20px 18px;
+  }
+
+  .foundation-next-title {
+    font-size: 16px;
+  }
+
+  .foundation-page p {
+    font-size: 14px;
+  }
+
+}
+/* =========================================================
+   SESSION 3
+   BUILDING AND RUNNING DCDFTBMD
+   PART 1 · HEADER & SECTION TITLE
+   ========================================================= */
+
+.dftbmd-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   SESSION HEADER
+   --------------------------------------------------------- */
+
+.dftbmd-session-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin: 24px 0 34px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(80, 100, 150, 0.16);
+}
+
+.dftbmd-session-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+  color: #4058c8;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.dftbmd-session-label {
+  margin-bottom: 5px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+.dftbmd-session-header h1 {
+  margin: 0 !important;
+
+  color: #263f7b;
+
+  font-size: 29px !important;
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION 9 TITLE
+   --------------------------------------------------------- */
+
+.dftbmd-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 34px 0 22px;
+}
+
+.dftbmd-section-title-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 42px;
+  height: 32px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  background: #eef2ff;
+  color: #4058c8;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.dftbmd-section-title h2 {
+  margin: 0 !important;
+
+  color: #263f7b;
+
+  font-size: 22px !important;
+  line-height: 1.35;
+
+  font-weight: 800;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .dftbmd-page {
+    max-width: 100%;
+  }
+
+  .dftbmd-session-header {
+    gap: 11px;
+
+    margin: 20px 0 28px;
+    padding-bottom: 18px;
+  }
+
+  .dftbmd-session-number {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+  }
+
+  .dftbmd-session-label {
+    font-size: 9px;
+  }
+
+  .dftbmd-session-header h1 {
+    font-size: 23px !important;
+  }
+
+  .dftbmd-section-title {
+    gap: 9px;
+
+    margin: 28px 0 18px;
+  }
+
+  .dftbmd-section-title-number {
+    min-width: 37px;
+    height: 29px;
+
+    font-size: 10px;
+  }
+
+  .dftbmd-section-title h2 {
+    font-size: 18px !important;
+  }
+
+}
+/* =========================================================
+   SESSION 3
+   PART 2 · TERMINAL CODE BLOCK
+   ========================================================= */
+
+.dftbmd-page pre {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 20px 0 26px;
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+
+  border: 1px solid rgba(80, 100, 150, 0.16);
+  border-radius: 12px;
+
+  background: #f7f8fc;
+}
+
+.dftbmd-page pre code {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+
+  color: #263f7b;
+
+  font-family:
+    "SFMono-Regular",
+    "Cascadia Code",
+    "Roboto Mono",
+    Consolas,
+    monospace;
+
+  font-size: 13px;
+  line-height: 1.75;
+
+  white-space: pre;
+}
+
+
+/* ---------------------------------------------------------
+   TERMINAL CODE HOVER
+   --------------------------------------------------------- */
+
+.dftbmd-page pre:hover {
+  border-color: rgba(64, 88, 200, 0.28);
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.dftbmd-page :not(pre) > code {
+  padding: 2px 6px;
+
+  border: 1px solid rgba(80, 100, 150, 0.14);
+  border-radius: 5px;
+
+  background: #f1f3f8;
+
+  color: #31518e;
+
+  font-size: .9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .dftbmd-page pre {
+    margin: 17px 0 23px;
+    padding: 15px 14px;
+
+    border-radius: 10px;
+  }
+
+  .dftbmd-page pre code {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   SESSION 3
+   PART 3 · NOTE / EXPLANATION CARD
+   ========================================================= */
+
+.dftbmd-page .foundation-note {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 28px 0 32px;
+  padding: 22px 24px;
+
+  box-sizing: border-box;
+
+  background: #f7f8ff;
+
+  border: 1px solid #dce3f5;
+  border-left: 4px solid #4058c8;
+
+  border-radius: 0 14px 14px 0;
+}
+
+
+/* LABEL */
+
+.dftbmd-page .foundation-note-label {
+  margin: 0 0 11px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: .12em;
+}
+
+
+/* TEXT */
+
+.dftbmd-page .foundation-note p {
+  margin: 0;
+
+  color: #4b5d7c;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* INLINE CODE */
+
+.dftbmd-page .foundation-note code {
+  padding: 2px 6px;
+
+  border: 1px solid #dce3f5;
+  border-radius: 5px;
+
+  background: #eef2fa;
+
+  color: #31518e;
+
+  font-size: .9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .dftbmd-page .foundation-note {
+    margin: 23px 0 27px;
+    padding: 18px 17px;
+
+    border-radius: 0 12px 12px 0;
+  }
+
+  .dftbmd-page .foundation-note-label {
+    margin-bottom: 9px;
+
+    font-size: 9px;
+  }
+
+  .dftbmd-page .foundation-note p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+}
+/* =========================================================
+   SESSION 3
+   PART 4 · GEOMETRY INFORMATION CARDS
+   ========================================================= */
+
+.dftbmd-page .foundation-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+
+  margin: 22px 0 30px;
+}
+
+.dftbmd-page .foundation-info-card {
+  min-width: 0;
+
+  padding: 19px 18px;
+
+  box-sizing: border-box;
+
+  background: #f8f9ff;
+
+  border: 1px solid #dce3f5;
+  border-radius: 13px;
+}
+
+.dftbmd-page .foundation-info-card strong {
+  display: block;
+
+  margin: 0 0 8px;
+
+  color: #294477;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+.dftbmd-page .foundation-info-card p {
+  margin: 0;
+
+  color: #596a86;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .dftbmd-page .foundation-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin: 20px 0 26px;
+  }
+
+  .dftbmd-page .foundation-info-card {
+    padding: 16px;
+  }
+
+  .dftbmd-page .foundation-info-card strong {
+    font-size: 14px;
+  }
+
+  .dftbmd-page .foundation-info-card p {
+    font-size: 12px;
+  }
+
+}
+/* =========================================================
+   SESSION 3
+   PART 5 · ERROR TABLE & NEXT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   ERROR TABLE
+   --------------------------------------------------------- */
+
+.dftbmd-page .foundation-table {
+  width: 100%;
+
+  margin: 24px 0 32px;
+
+  overflow-x: auto;
+
+  border: 1px solid #dce3f5;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+.dftbmd-page .foundation-table table {
+  width: 100%;
+  min-width: 680px;
+
+  margin: 0 !important;
+
+  border-collapse: collapse;
+}
+
+.dftbmd-page .foundation-table th {
+  padding: 14px 16px;
+
+  background: #eef2ff;
+
+  color: #294477;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  text-align: left;
+}
+
+.dftbmd-page .foundation-table td {
+  padding: 14px 16px;
+
+  border-top: 1px solid #e3e7f1;
+
+  color: #52627e;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  vertical-align: top;
+}
+
+.dftbmd-page .foundation-table td:first-child {
+  width: 30%;
+
+  color: #294477;
+
+  font-weight: 700;
+}
+
+.dftbmd-page .foundation-table td code {
+  padding: 2px 5px;
+
+  border-radius: 4px;
+
+  background: #eef2fa;
+
+  color: #31518e;
+}
+
+
+/* ---------------------------------------------------------
+   NEXT CARD
+   --------------------------------------------------------- */
+
+.dftbmd-page .foundation-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin: 44px 0 24px;
+  padding: 23px 25px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    135deg,
+    #f8faff 0%,
+    #eef3ff 100%
+  );
+
+  border: 1px solid #d6e0f5;
+  border-radius: 15px;
+
+  text-decoration: none;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.dftbmd-page .foundation-next:hover {
+  transform: translateY(-2px);
+
+  border-color: #bac9ed;
+
+  box-shadow: 0 8px 24px rgba(38, 63, 123, .07);
+}
+
+.dftbmd-page .foundation-next-label {
+  margin-bottom: 6px;
+
+  color: #4058c8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+.dftbmd-page .foundation-next-title {
+  color: #263f7b;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+.dftbmd-page .foundation-next p {
+  max-width: 700px;
+
+  margin: 6px 0 0;
+
+  color: #61718d;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.dftbmd-page .foundation-next-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  margin-left: 22px;
+
+  border-radius: 50%;
+
+  background: #4058c8;
+
+  color: white;
+
+  font-size: 21px;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .dftbmd-page .foundation-table {
+    border-radius: 11px;
+  }
+
+  .dftbmd-page .foundation-table table {
+    min-width: 620px;
+  }
+
+  .dftbmd-page .foundation-table th {
+    padding: 12px 13px;
+
+    font-size: 10px;
+  }
+
+  .dftbmd-page .foundation-table td {
+    padding: 12px 13px;
+
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .dftbmd-page .foundation-next {
+    margin-top: 34px;
+
+    padding: 19px 17px;
+
+    border-radius: 13px;
+  }
+
+  .dftbmd-page .foundation-next-title {
+    font-size: 16px;
+  }
+
+  .dftbmd-page .foundation-next p {
+    font-size: 12px;
+  }
+
+  .dftbmd-page .foundation-next-arrow {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+
+    margin-left: 13px;
+
+    font-size: 18px;
+  }
+
+}
+.foundation-sk-steps {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.foundation-sk-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgba(40, 90, 180, 0.12);
+  border-radius: 12px;
+  background: rgba(245, 247, 255, 0.72);
+}
+
+.foundation-sk-step > span {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eaf0ff;
+  color: #315bc6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.foundation-sk-step strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #1d356f;
+}
+
+.foundation-sk-step p {
+  margin: 0;
+}
+/* =========================================================
+   SESI 11 · DCDFTBMD INPUT
+   Part 1
+   ========================================================= */
+
+.foundation-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 2.2rem 0 1.5rem;
+}
+
+.foundation-section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4966c8;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.foundation-section-heading h3 {
+  margin: 0;
+  color: #243b70;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.foundation-sk-main {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.foundation-sk-main h4 {
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  color: #243b70;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.foundation-sk-main p {
+  line-height: 1.8;
+}
+
+.foundation-code {
+  margin: 1rem 0 1.25rem;
+}
+
+.foundation-code pre {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #6bc1c8;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+  overflow-x: auto;
+}
+
+.foundation-code pre code {
+  display: block;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  color: #263238;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.foundation-image {
+  margin: 2rem auto 2.5rem;
+  text-align: center;
+}
+
+.foundation-image img {
+  display: block;
+  max-width: 620px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.foundation-image-caption {
+  max-width: 700px;
+  margin: 0.8rem auto 0;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  text-align: center;
+}
+/* =========================================================
+   SESI 11 · INPUT DCDFTBMD
+   CSS PART 4
+   Konsisten dengan tampilan Sesi 10
+   ========================================================= */
+
+/* Konten utama */
+.foundation-sk-main {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Judul setiap langkah */
+.foundation-sk-main h4 {
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  color: #243b70;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Paragraf */
+.foundation-sk-main p {
+  margin: 0 0 1.25rem;
+  color: #4b6288;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Inline code */
+.foundation-sk-main p code {
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  background: #f1f4fa;
+  color: #31548e;
+  font-size: 0.9em;
+}
+
+/* Jarak antar kotak command */
+.foundation-code {
+  margin: 1rem 0 1.25rem;
+}
+
+/* Kotak command */
+.foundation-code pre {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #5dbcc3;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  overflow-x: auto;
+}
+
+/* Isi command */
+.foundation-code pre code {
+  display: block;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  color: #263238;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, monospace;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+/* Hilangkan styling MkDocs yang bisa membuat kotak terlalu gelap */
+.foundation-code pre code::before,
+.foundation-code pre code::after {
+  display: none;
+}
+
+/* Hover ringan pada command */
+.foundation-code pre:hover {
+  border-color: #3caab3;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-sk-main {
+    max-width: 100%;
+  }
+
+  .foundation-sk-main h4 {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+
+  .foundation-sk-main p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .foundation-code {
+    margin: 0.9rem 0 1.1rem;
+  }
+
+  .foundation-code pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .foundation-code pre code {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.78rem;
+  }
+}
+/* =========================================================
+   SESI 11 · DCDFTBMD
+   PENYESUAIAN PROPORSI
+   ========================================================= */
+
+/* Lebar area konten */
+.foundation-sk-main {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Judul langkah */
+.foundation-sk-main h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+/* Paragraf */
+.foundation-sk-main p {
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Inline code */
+.foundation-sk-main p code {
+  padding: 0.08rem 0.28rem;
+  font-size: 0.86em;
+  border-radius: 3px;
+}
+
+/* =========================================================
+   KOTAK COMMAND
+   ========================================================= */
+
+.foundation-code {
+  margin: 0.7rem 0;
+}
+
+.foundation-code pre {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  min-height: 0 !important;
+
+  border: 1px solid #55b8c0 !important;
+  border-radius: 0 !important;
+
+  background: #ffffff !important;
+  box-shadow: none !important;
+
+  overflow-x: auto;
+}
+
+.foundation-code pre code {
+  display: block;
+
+  margin: 0 !important;
+
+  padding: 0.58rem 0.75rem !important;
+
+  min-height: 0 !important;
+
+  background: #ffffff !important;
+
+  color: #26384f !important;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace !important;
+
+  font-size: 0.72rem !important;
+  line-height: 1.45 !important;
+
+  white-space: pre !important;
+}
+
+/* Hilangkan pseudo element dari theme */
+.foundation-code pre code::before,
+.foundation-code pre code::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Jangan tampilkan tombol copy terlalu besar */
+.foundation-code button,
+.foundation-code .md-clipboard {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 4px !important;
+}
+
+/* =========================================================
+   GAMBAR
+   ========================================================= */
+
+.foundation-image {
+  margin: 1.5rem auto 2rem;
+  text-align: center;
+}
+
+.foundation-image img {
+  max-width: 560px;
+  width: 100%;
+  height: auto;
+}
+
+.foundation-image-caption {
+  max-width: 620px;
+  margin: 0.6rem auto 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .foundation-sk-main {
+    max-width: 100%;
+  }
+
+  .foundation-sk-main h4 {
+    font-size: 0.95rem;
+  }
+
+  .foundation-sk-main p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .foundation-code {
+    margin: 0.6rem 0;
+  }
+
+  .foundation-code pre code {
+    padding: 0.55rem 0.65rem !important;
+    font-size: 0.68rem !important;
+  }
+}
