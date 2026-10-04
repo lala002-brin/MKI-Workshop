@@ -4177,243 +4177,154 @@
   </div>
 
 </div>
-<!-- =========================================================
-     C.2 KASUS 2 · ANTARMUKA LiF–EC
-     ========================================================= -->
+<!-- =======================================================
+     C.3 KASUS 2
+     ANTARMUKA LiF/EC
+     ======================================================= -->
 
-<div class="worksheet-section">
+<section class="worksheet-case">
 
-  <div class="worksheet-section-title">
+  <h3>C.3 Kasus 2: antarmuka LiF–EC</h3>
 
-    <span>
-      C.2
-    </span>
+  <p class="worksheet-instruction">
+    Sketsa pengamatan VMD. Tandai bidang slab, O karbonil, dan Li
+    permukaan terdekat. Mengapa jarak antarkeduanya lebih tepat
+    daripada RDF 3D seluruh sel yang memiliki vakum?
+  </p>
 
-    <div>
-      <strong>
-        Kasus 2 · antarmuka LiF–EC
-      </strong>
+  <div class="worksheet-table-wrapper">
 
-      <small>
-        Surface contact and charge analysis
-      </small>
-    </div>
+    <table class="worksheet-table">
+
+      <thead>
+        <tr>
+          <th>Langkah / besaran</th>
+          <th>Isian peserta</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Jumlah atom slab dan EC</td>
+          <td>
+            <input
+              id="case2-atom-count"
+              type="text"
+              placeholder="Tuliskan jumlah atom">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Nomor atom O karbonil</td>
+          <td>
+            <input
+              id="case2-carbonyl-o"
+              type="text"
+              placeholder="Tuliskan nomor atom">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Panjang sel x, y, z</td>
+          <td>
+            <input
+              id="case2-cell-length"
+              type="text"
+              placeholder="Tuliskan ukuran sel dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Suhu, lama MD, jumlah frame</td>
+          <td>
+            <input
+              id="case2-md-condition"
+              type="text"
+              placeholder="Tuliskan parameter MD">
+          </td>
+        </tr>
+
+        <tr>
+          <td>File antarmuka.csv tersedia?</td>
+          <td>
+            <input
+              id="case2-interface-csv"
+              type="text"
+              placeholder="Ya / Tidak">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jarak O–Li awal dan akhir</td>
+          <td>
+            <input
+              id="case2-distance-initial-final"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jarak O–Li rata-rata ± simpangan</td>
+          <td>
+            <input
+              id="case2-distance-average"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jarak O–Li minimum dan maksimum</td>
+          <td>
+            <input
+              id="case2-distance-min-max"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Muatan EC rata-rata</td>
+          <td>
+            <input
+              id="case2-charge-ec"
+              type="text"
+              placeholder="Tuliskan nilai">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Muatan slab rata-rata</td>
+          <td>
+            <input
+              id="case2-charge-slab"
+              type="text"
+              placeholder="Tuliskan nilai">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Perubahan jumlah muatan EC+slab</td>
+          <td>
+            <input
+              id="case2-charge-change"
+              type="text"
+              placeholder="Tuliskan hasil">
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
 
   </div>
 
 
-  <div class="worksheet-question">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Sketsa pengamatan VMD.
-    </strong>
-
-    <p>
-      Tandai slab, O karbonil, dan Li permukaan terdekat.
-      Mengapa jarak antarkerdua atom ini lebih tepat daripada RDF 3D
-      seluruh sel yang memiliki vakum?
-    </p>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Langkah / besaran
-      </span>
-
-      <span>
-        Isian peserta
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah atom slab dan EC
-      </span>
-
-      <input
-        type="text"
-        id="case2-atom-count"
-        placeholder="Masukkan jumlah atom"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Nomor atom O karbonil
-      </span>
-
-      <input
-        type="text"
-        id="case2-carbonyl-o"
-        placeholder="Nomor atom"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Panjang sel x, y, z
-      </span>
-
-      <input
-        type="text"
-        id="case2-cell-length"
-        placeholder="Masukkan x, y, z"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Suhu, lama MD, jumlah frame
-      </span>
-
-      <input
-        type="text"
-        id="case2-md-condition"
-        placeholder="Suhu, waktu MD, jumlah frame"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        File antarmuka.csv tersedia?
-      </span>
-
-      <select id="case2-interface-file">
-
-        <option value="">
-          Pilih
-        </option>
-
-        <option value="Ya">
-          Ya
-        </option>
-
-        <option value="Tidak">
-          Tidak
-        </option>
-
-      </select>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jarak O–Li awal dan akhir
-      </span>
-
-      <input
-        type="text"
-        id="case2-distance-initial-final"
-        placeholder="Contoh: 2.10 Å → 2.25 Å"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jarak O–Li rata-rata ± simpangan
-      </span>
-
-      <input
-        type="text"
-        id="case2-distance-average"
-        placeholder="Masukkan nilai dan simpangan"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jarak O–Li minimum dan maksimum
-      </span>
-
-      <input
-        type="text"
-        id="case2-distance-range"
-        placeholder="Minimum dan maksimum"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Muatan EC rata-rata
-      </span>
-
-      <input
-        type="text"
-        id="case2-charge-ec"
-        placeholder="Masukkan hasil"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Muatan slab rata-rata
-      </span>
-
-      <input
-        type="text"
-        id="case2-charge-slab"
-        placeholder="Masukkan hasil"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Perubahan jumlah muatan EC+slab
-      </span>
-
-      <input
-        type="text"
-        id="case2-charge-total-change"
-        placeholder="Masukkan hasil"
-      >
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Kesimpulan sementara
-    </strong>
+    <strong>Kesimpulan sementara.</strong>
 
     <p>
       Apakah jarak kontak menetap, membesar, atau berfluktuasi?
@@ -4423,19 +4334,16 @@
     </p>
 
     <textarea
-      id="case2-preliminary-conclusion"
-      rows="5"
-      placeholder="Tuliskan kesimpulan sementara berdasarkan data yang diperoleh..."
-    ></textarea>
+      id="case2-conclusion"
+      rows="6"
+      placeholder="Tuliskan kesimpulan sementara..."></textarea>
 
   </div>
 
 
-  <div class="worksheet-reflection">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Uji berikutnya
-    </strong>
+    <strong>Uji berikutnya.</strong>
 
     <p>
       Pilih satu: slab lebih tebal, beberapa EC, garam dalam elektrolit,
@@ -4443,1307 +4351,636 @@
       dibandingkan agar uji tersebut informatif.
     </p>
 
-    <select id="case2-next-test">
+    <textarea
+      id="case2-next-test"
+      rows="6"
+      placeholder="Tuliskan usulan uji berikutnya..."></textarea>
 
-      <option value="">
-        Pilih uji berikutnya
-      </option>
+  </div>
 
-      <option value="Slab lebih tebal">
-        Slab lebih tebal
-      </option>
+</section>
+<!-- =======================================================
+     C.4 KASUS 3
+     NEB CO PADA Pt(111)
+     ======================================================= -->
 
-      <option value="Beberapa EC">
-        Beberapa EC
-      </option>
+<section class="worksheet-case">
 
-      <option value="Garam dalam elektrolit">
-        Garam dalam elektrolit
-      </option>
+  <h3>C.4 Kasus 3: NEB CO pada Pt(111)</h3>
 
-      <option value="Lintasan lebih panjang">
-        Lintasan lebih panjang
-      </option>
+  <p class="worksheet-instruction">
+    Pisahkan tiga tahap: image interpolasi, energi awal per image,
+    dan NEB terelaksasi. Hanya tahap terakhir dapat digunakan untuk
+    memperkirakan barrier setelah status konvergensi diperiksa.
+  </p>
 
-    </select>
+  <div class="worksheet-table-wrapper">
+
+    <table class="worksheet-table">
+
+      <thead>
+        <tr>
+          <th>Langkah / besaran</th>
+          <th>Isian peserta</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Situs awal dan akhir menurut VMD</td>
+          <td>
+            <input
+              id="case3-sites"
+              type="text"
+              placeholder="Tuliskan situs awal dan akhir">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jumlah image / Pt dibekukan?</td>
+          <td>
+            <input
+              id="case3-images"
+              type="text"
+              placeholder="Tuliskan jumlah image dan kondisi Pt">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Kriteria gaya dan langkah maksimum</td>
+          <td>
+            <input
+              id="case3-force-criteria"
+              type="text"
+              placeholder="Tuliskan parameter">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Status optimasi ujung awal</td>
+          <td>
+            <input
+              id="case3-initial-status"
+              type="text"
+              placeholder="Tuliskan status">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Status optimasi ujung akhir</td>
+          <td>
+            <input
+              id="case3-final-status"
+              type="text"
+              placeholder="Tuliskan status">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Status NEB dari status_neb.txt</td>
+          <td>
+            <input
+              id="case3-neb-status"
+              type="text"
+              placeholder="Tuliskan status konvergensi">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Energi image awal E₀</td>
+          <td>
+            <input
+              id="case3-e0"
+              type="text"
+              placeholder="eV">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Energi image tertinggi Emax</td>
+          <td>
+            <input
+              id="case3-emax"
+              type="text"
+              placeholder="eV">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Barrier maju Emax − E₀</td>
+          <td>
+            <input
+              id="case3-barrier"
+              type="text"
+              placeholder="eV">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Eakhir − E₀</td>
+          <td>
+            <input
+              id="case3-final-energy"
+              type="text"
+              placeholder="eV">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Nama grafik profil</td>
+          <td>
+            <input
+              id="case3-graph-name"
+              type="text"
+              placeholder="Nama file atau grafik">
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <div class="worksheet-interpretation">
+
+    <strong>Latihan hitung tangan.</strong>
+
+    <p>
+      Untuk contoh aritmetika saja, jika E₀ = −100,00 eV dan
+      Emax = −99,65 eV, barrier maju = ______ eV.
+      Tuliskan persamaan yang sama dengan angka dari
+      profil_neb.csv bila perhitungan Anda normal.
+    </p>
 
     <textarea
-      id="case2-next-test-analysis"
-      rows="4"
-      placeholder="Jelaskan besaran yang perlu dibandingkan..."
-    ></textarea>
-
-  </div>
-
-</div>
-<!-- =========================================================
-     C.4 KASUS 3 · NEB CO PADA Pt(111)
-     ========================================================= -->
-
-<div class="worksheet-section">
-
-  <div class="worksheet-section-title">
-
-    <span>
-      C.4
-    </span>
-
-    <div>
-      <strong>
-        Kasus 3 · NEB CO pada Pt(111)
-      </strong>
-
-      <small>
-        Nudged Elastic Band
-      </small>
-    </div>
+      id="case3-hand-calculation"
+      rows="5"
+      placeholder="Tuliskan perhitungan Anda..."></textarea>
 
   </div>
 
 
-  <div class="worksheet-question">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Pisahkan tiga tahap:
-    </strong>
-
-    <p>
-      antara image interpolasi, energi awal per image, dan NEB terelaksasi.
-      Hanya tahap terakhir dapat digunakan untuk memperkirakan barrier
-      setelah status konvergensi diperiksa.
-    </p>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Langkah / besaran
-      </span>
-
-      <span>
-        Isian peserta
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Situs awal dan akhir menurut VMD
-      </span>
-
-      <input
-        type="text"
-        id="case3-sites"
-        placeholder="Tuliskan situs awal dan akhir"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah image / Pt dibekukan?
-      </span>
-
-      <input
-        type="text"
-        id="case3-images-fixed"
-        placeholder="Contoh: 7 image; Pt dibekukan"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kriteria gaya dan langkah maksimum
-      </span>
-
-      <input
-        type="text"
-        id="case3-force-criteria"
-        placeholder="Masukkan kriteria gaya dan langkah maksimum"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Status optimasi ujung awal
-      </span>
-
-      <input
-        type="text"
-        id="case3-initial-end-status"
-        placeholder="Masukkan status"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Status optimasi ujung akhir
-      </span>
-
-      <input
-        type="text"
-        id="case3-final-end-status"
-        placeholder="Masukkan status"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Status NEB dari status_neb.txt
-      </span>
-
-      <input
-        type="text"
-        id="case3-neb-status"
-        placeholder="Konvergen / belum konvergen"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Energi image awal E<sub>0</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case3-energy-initial"
-          placeholder="Masukkan energi"
-        >
-
-        <em>
-          eV
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Energi image tertinggi E<sub>max</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case3-energy-max"
-          placeholder="Masukkan energi"
-        >
-
-        <em>
-          eV
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Barrier maju E<sub>max</sub> − E<sub>0</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case3-forward-barrier"
-          placeholder="Hitung barrier maju"
-        >
-
-        <em>
-          eV
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        E<sub>akhir</sub> − E<sub>0</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case3-final-energy-difference"
-          placeholder="Hitung selisih energi"
-        >
-
-        <em>
-          eV
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Nama grafik profil
-      </span>
-
-      <input
-        type="text"
-        id="case3-profile-graph"
-        placeholder="Nama file grafik"
-      >
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-calculation">
-
-    <strong>
-      Latihan hitung tangan
-    </strong>
-
-    <p>
-      Untuk contoh aritmetika saja, jika
-      E<sub>0</sub> = −100,00 eV dan
-      E<sub>max</sub> = −99,65 eV,
-      barrier maju =
-      <span class="worksheet-blank">
-        ______
-      </span>
-      eV.
-      Tuliskan persamaan yang sama dengan angka dari
-      <em>profil_neb.csv</em> bila perhitungan Anda selesai.
-    </p>
-
-    <label class="worksheet-field full">
-
-      <span>
-        Hasil perhitungan contoh
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case3-hand-calculation"
-          placeholder="Masukkan hasil"
-        >
-
-        <em>
-          eV
-        </em>
-
-      </div>
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Tafsirkan
-    </strong>
+    <strong>Tafsirkan.</strong>
 
     <p>
       Apakah image energi tertinggi berada di tengah lintasan?
       Apakah urutan posisi CO pada gambar VMD cocok dengan perubahan
-      energi? Uji apa yang paling mungkin mengurangi ketidakpastian
-      barrier: jumlah image, ketebalan slab, atau ukuran sel?
-      Jelaskan alasannya.
+      energi? Uji apa yang paling mungkin mengubah barrier:
+      jumlah image, ketebalan slab, atau ukuran sel? Jelaskan alasannya.
     </p>
 
     <textarea
       id="case3-interpretation"
       rows="6"
-      placeholder="Tuliskan interpretasi berdasarkan hasil NEB..."
-    ></textarea>
+      placeholder="Tuliskan tafsiran Anda..."></textarea>
 
   </div>
 
 
-  <div class="worksheet-reflection">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Catatan batas kesimpulan
-    </strong>
-
-    <p>
-      Gunakan barrier hanya setelah status konvergensi NEB diperiksa.
-      Pisahkan hasil image interpolasi dari hasil NEB terelaksasi.
-    </p>
+    <strong>Uji sensitivitas.</strong>
 
     <textarea
-      id="case3-claim-limit"
-      rows="4"
-      placeholder="Tuliskan batas kesimpulan Anda..."
-    ></textarea>
+      id="case3-sensitivity"
+      rows="5"
+      placeholder="Tuliskan uji sensitivitas yang diusulkan..."></textarea>
 
   </div>
 
-</div>
-<!-- =========================================================
-     C.5 KASUS 4 · IBUPROFENAT DAN MOTIF ARGININA
-     ========================================================= -->
-
-<div class="worksheet-section">
-
-  <div class="worksheet-section-title">
-
-    <span>
-      C.5
-    </span>
-
-    <div>
-      <strong>
-        Kasus 4 · ibuprofenat dan motif arginina
-      </strong>
-
-      <small>
-        Interaksi elektronik
-      </small>
-    </div>
-
-  </div>
-
-
-  <div class="worksheet-question">
-
-    <strong>
-      Rumus yang digunakan:
-    </strong>
-
-    <div class="worksheet-formula">
-
-      ΔE<sub>int</sub> =
-      E<sub>kompleks</sub> −
-      E<sub>ibuprofenat</sub> −
-      E<sub>guanidinium</sub>
-
-    </div>
-
-    <p>
-      Fragmen mempertahankan geometri yang dimiliki dalam kompleks.
-      Periksa bahwa jumlah muatan fragmen sama dengan muatan kompleks.
-    </p>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Langkah / besaran
-      </span>
-
-      <span>
-        Isian peserta
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Seed dan sumber geometri awal
-      </span>
-
-      <input
-        type="text"
-        id="case4-seed-geometry"
-        placeholder="Masukkan seed / sumber geometri"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah atom / muatan kompleks
-      </span>
-
-      <input
-        type="text"
-        id="case4-complex-atoms-charge"
-        placeholder="Contoh: jumlah atom, muatan 0"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah atom / muatan ibuprofenat
-      </span>
-
-      <input
-        type="text"
-        id="case4-ibuprofenate-atoms-charge"
-        placeholder="Contoh: jumlah atom, muatan −1"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah atom / muatan guanidinium
-      </span>
-
-      <input
-        type="text"
-        id="case4-guanidinium-atoms-charge"
-        placeholder="Contoh: jumlah atom, muatan +1"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jarak O−N terpendek
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-on-shortest"
-          placeholder="Masukkan jarak"
-        >
-
-        <em>
-          Å
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jarak O−N lain yang dekat
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-on-other"
-          placeholder="Masukkan jarak"
-        >
-
-        <em>
-          Å
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        E<sub>kompleks</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-energy-complex"
-          placeholder="Masukkan energi"
-        >
-
-        <em>
-          Hartree
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        E<sub>ibuprofenat</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-energy-ibuprofenate"
-          placeholder="Masukkan energi"
-        >
-
-        <em>
-          Hartree
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        E<sub>guanidinium</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-energy-guanidinium"
-          placeholder="Masukkan energi"
-        >
-
-        <em>
-          Hartree
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        ΔE<sub>int</sub>
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-interaction-energy"
-          placeholder="Hitung dari tiga energi"
-        >
-
-        <em>
-          kcal/mol
-        </em>
-
-      </div>
-
-    </label>
+</section>
+<!-- =======================================================
+     C.5 KASUS 4
+     IBUPROFENAT DAN MOTIF ARGININA
+     ======================================================= -->
+
+<section class="worksheet-case">
+
+  <h3>C.5 Kasus 4: ibuprofenat dan motif arginina</h3>
+
+  <p class="worksheet-instruction">
+    Rumus yang digunakan:
+  </p>
+
+  <p class="worksheet-formula">
+    ΔE<sub>int</sub> =
+    E<sub>kompleks</sub> −
+    E<sub>ibuprofenat</sub> −
+    E<sub>guanidinium</sub>
+  </p>
+
+  <p class="worksheet-instruction">
+    Fragmen mempertahankan geometri yang dimiliki dalam kompleks.
+    Periksa bahwa jumlah muatan fragmen sama dengan muatan kompleks.
+  </p>
+
+  <div class="worksheet-table-wrapper">
+
+    <table class="worksheet-table">
+
+      <thead>
+        <tr>
+          <th>Langkah / besaran</th>
+          <th>Isian peserta</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Seed dan sumber geometri awal</td>
+          <td>
+            <input
+              id="case4-seed-geometry"
+              type="text"
+              placeholder="Tuliskan seed dan sumber">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jumlah atom / muatan kompleks</td>
+          <td>
+            <input
+              id="case4-complex-atoms-charge"
+              type="text"
+              placeholder="Jumlah atom dan muatan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jumlah atom / muatan ibuprofenat</td>
+          <td>
+            <input
+              id="case4-ibuprofenate-atoms-charge"
+              type="text"
+              placeholder="Jumlah atom dan muatan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jumlah atom / muatan guanidinium</td>
+          <td>
+            <input
+              id="case4-guanidinium-atoms-charge"
+              type="text"
+              placeholder="Jumlah atom dan muatan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jarak O–N terpendek</td>
+          <td>
+            <input
+              id="case4-on-shortest"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jarak O–N lain yang dekat</td>
+          <td>
+            <input
+              id="case4-on-other-close"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>E<sub>kompleks</sub> (Hartree)</td>
+          <td>
+            <input
+              id="case4-e-complex"
+              type="text"
+              placeholder="Hartree">
+          </td>
+        </tr>
+
+        <tr>
+          <td>E<sub>ibuprofenat</sub> (Hartree)</td>
+          <td>
+            <input
+              id="case4-e-ibuprofenate"
+              type="text"
+              placeholder="Hartree">
+          </td>
+        </tr>
+
+        <tr>
+          <td>E<sub>guanidinium</sub> (Hartree)</td>
+          <td>
+            <input
+              id="case4-e-guanidinium"
+              type="text"
+              placeholder="Hartree">
+          </td>
+        </tr>
+
+        <tr>
+          <td>ΔE<sub>int</sub> (kcal/mol)</td>
+          <td>
+            <input
+              id="case4-e-interaction"
+              type="text"
+              placeholder="kcal/mol">
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
 
   </div>
 
 
-  <div class="worksheet-calculation">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Periksa perhitungan
-    </strong>
+    <strong>Periksa perhitungan.</strong>
 
     <p>
       Kurangi energi tiga berkas secara manual dan bandingkan dengan
       keluaran skrip. Satuan konversi yang dipakai adalah
-      1 Hartree = 627,509 kcal/mol.
-    </p>
-
-    <label class="worksheet-field full">
-
-      <span>
-        Hasil perhitungan manual
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-manual-energy"
-          placeholder="Masukkan hasil perhitungan"
-        >
-
-        <em>
-          kcal/mol
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-field full">
-
-      <span>
-        Hasil skrip
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case4-script-energy"
-          placeholder="Masukkan hasil dari kontak.csv"
-        >
-
-        <em>
-          kcal/mol
-        </em>
-
-      </div>
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Tafsirkan hasil
-    </strong>
-
-    <p>
-      Apakah tanda dan besarnya masuk akal untuk pasangan bermuatan
-      berlawanan dalam vakum?
+      1 Hartree = 627,509 kcal/mol. Apakah tanda dan besarnya masuk
+      akal untuk pasangan bermuatan dalam vakum?
     </p>
 
     <textarea
-      id="case4-interpretation"
-      rows="5"
-      placeholder="Tuliskan interpretasi hasil..."
-    ></textarea>
+      id="case4-calculation-check"
+      rows="6"
+      placeholder="Tuliskan pemeriksaan perhitungan..."></textarea>
 
   </div>
 
 
-  <div class="worksheet-reflection">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Batas model
-    </strong>
+    <strong>Batas model.</strong>
 
     <p>
-      Tuliskan tiga hal yang belum dicakup oleh energi interaksi
-      vertikal ini. Jelaskan mengapa nilai tersebut tidak boleh
-      dilaporkan sebagai entalpi adsorpsi proton.
+      Tulis tiga hal yang belum dicakup oleh energi interaksi vertikal ini.
+      Jelaskan mengapa nilai tersebut tidak boleh dilaporkan sebagai
+      entalpi adsorpsi atom proton.
     </p>
 
     <textarea
       id="case4-model-limit"
       rows="6"
-      placeholder="Tuliskan batas model dan alasan..."
-    ></textarea>
+      placeholder="Tuliskan batas model..."></textarea>
 
   </div>
 
-</div>
-<!-- =========================================================
-     C.6 KASUS 5 · RESPONS KISI LiF
-     ========================================================= -->
+</section>
+<!-- =======================================================
+     C.6 KASUS 5
+     RESPONS LiF
+     ======================================================= -->
 
-<div class="worksheet-section">
+<section class="worksheet-case">
 
-  <div class="worksheet-section-title">
+  <h3>C.6 Kasus 5: respons kisi LiF</h3>
 
-    <span>
-      C.6
-    </span>
+  <p class="worksheet-instruction">
+    Hipotesis awal. Ketika sel LiF diperbesar melewati ukuran yang
+    disukai model, energi akan ______ dan tekanan diperkirakan
+    bertanda ______. Verifikasi dengan data.
+  </p>
 
-    <div>
-      <strong>
-        Kasus 5 · respons kisi LiF
-      </strong>
+  <div class="worksheet-table-wrapper">
 
-      <small>
-        Perbandingan DFTB dan MACE
-      </small>
-    </div>
+    <table class="worksheet-table">
+
+      <thead>
+        <tr>
+          <th>Langkah / besaran</th>
+          <th>Isian peserta</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Lima faktor skala dari parameter.csv</td>
+          <td>
+            <input
+              id="case5-scale-factors"
+              type="text"
+              placeholder="Tuliskan lima faktor skala">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Titik DFTB yang selesai normal</td>
+          <td>
+            <input
+              id="case5-dftb-points"
+              type="text"
+              placeholder="Tuliskan jumlah titik">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Nama checkpoint MACE</td>
+          <td>
+            <input
+              id="case5-mace-checkpoint"
+              type="text"
+              placeholder="Nama checkpoint">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Skala energi minimum DFTB</td>
+          <td>
+            <input
+              id="case5-dftb-energy-min"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Skala energi minimum MACE</td>
+          <td>
+            <input
+              id="case5-mace-energy-min"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Skala tekanan MACE dekat nol</td>
+          <td>
+            <input
+              id="case5-mace-pressure-zero"
+              type="text"
+              placeholder="Tuliskan nilai dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Perbedaan bentuk kurva</td>
+          <td>
+            <textarea
+              id="case5-curve-difference"
+              rows="4"
+              placeholder="Tuliskan perbedaan bentuk kurva..."></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Rentang nilai gaya maksimum MACE</td>
+          <td>
+            <input
+              id="case5-mace-force-range"
+              type="text"
+              placeholder="Tuliskan rentang dan satuan">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Nama grafik perbandingan</td>
+          <td>
+            <input
+              id="case5-comparison-graph"
+              type="text"
+              placeholder="Nama grafik">
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
 
   </div>
 
 
-  <div class="worksheet-question">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Pertanyaan utama.
-    </strong>
+    <strong>Periksa interpretasi.</strong>
 
     <p>
-      Bagaimana respons kisi LiF berubah terhadap lima faktor skala?
-      Pisahkan perubahan akibat ukuran sistem, metode, suhu, dan
-      kondisi simulasi sebelum menarik kesimpulan.
-    </p>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Faktor / besaran
-      </span>
-
-      <span>
-        Isian peserta
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Ukuran sistem LiF
-      </span>
-
-      <input
-        type="text"
-        id="case5-system-size"
-        placeholder="Masukkan ukuran sistem"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Metode yang digunakan
-      </span>
-
-      <input
-        type="text"
-        id="case5-method"
-        placeholder="DFTB / MACE"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Suhu simulasi
-      </span>
-
-      <div class="input-unit">
-
-        <input
-          type="text"
-          id="case5-temperature"
-          placeholder="Masukkan suhu"
-        >
-
-        <em>
-          K
-        </em>
-
-      </div>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Lama simulasi
-      </span>
-
-      <input
-        type="text"
-        id="case5-md-duration"
-        placeholder="Masukkan lama simulasi"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Jumlah frame yang dianalisis
-      </span>
-
-      <input
-        type="text"
-        id="case5-frame-count"
-        placeholder="Masukkan jumlah frame"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Parameter tekanan / kondisi kisi
-      </span>
-
-      <input
-        type="text"
-        id="case5-pressure-condition"
-        placeholder="Masukkan kondisi"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Nama berkas hasil DFTB
-      </span>
-
-      <input
-        type="text"
-        id="case5-dftb-file"
-        placeholder="Nama file"
-      >
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Nama checkpoint / model MACE
-      </span>
-
-      <input
-        type="text"
-        id="case5-mace-model"
-        placeholder="Nama checkpoint / model"
-      >
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Hasil pengamatan
-    </strong>
-
-    <p>
-      Catat perubahan utama pada parameter kisi yang diperoleh dari
-      masing-masing metode.
-    </p>
-
-    <textarea
-      id="case5-lattice-change"
-      rows="5"
-      placeholder="Tuliskan hasil pengamatan..."
-    ></textarea>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Perbandingan
-      </span>
-
-      <span>
-        Hasil
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Perbedaan kurva DFTB dan MACE
-      </span>
-
-      <textarea
-        id="case5-dftb-mace-difference"
-        rows="4"
-        placeholder="Tuliskan perbedaan yang terlihat..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Perubahan terhadap suhu
-      </span>
-
-      <textarea
-        id="case5-temperature-response"
-        rows="4"
-        placeholder="Tuliskan hasil pengamatan..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Perubahan terhadap ukuran sistem
-      </span>
-
-      <textarea
-        id="case5-size-response"
-        rows="4"
-        placeholder="Tuliskan hasil pengamatan..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Perubahan terhadap kondisi simulasi
-      </span>
-
-      <textarea
-        id="case5-condition-response"
-        rows="4"
-        placeholder="Tuliskan hasil pengamatan..."
-      ></textarea>
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Tafsirkan
-    </strong>
-
-    <p>
-      Apakah perbedaan antara DFTB dan MACE dapat langsung dianggap
-      sebagai perbedaan fisik? Jelaskan faktor lain yang harus
-      dibandingkan sebelum membuat klaim.
+      Mengapa energi relatif DFTB dan MACE dapat dibandingkan bentuk
+      kurvanya meskipun titik nol energi berbeda? Apakah titik minimum
+      energi berimpit dengan tekanan mendekati nol? Berapa titik
+      tambahan di sekitar minimum yang Anda usulkan?
     </p>
 
     <textarea
       id="case5-interpretation"
-      rows="6"
-      placeholder="Tuliskan interpretasi Anda..."
-    ></textarea>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Syarat klaim
-    </strong>
-
-    <p>
-      Tuliskan syarat yang harus dipenuhi sebelum menyatakan bahwa
-      satu metode memberikan respons kisi yang berbeda secara fisik
-      dari metode lainnya.
-    </p>
-
-    <textarea
-      id="case5-claim-condition"
-      rows="6"
-      placeholder="Tuliskan syarat klaim..."
-    ></textarea>
-
-  </div>
-
-</div>
-<!-- =========================================================
-     C.7 LAPORAN SINGKAT DAN DISKUSI KELOMPOK
-     PART 6
-     ========================================================= -->
-
-<div class="worksheet-section">
-
-  <div class="worksheet-section-title">
-
-    <span>
-      C.7
-    </span>
-
-    <div>
-      <strong>
-        Laporan singkat dan diskusi kelompok
-      </strong>
-
-      <small>
-        Sintesis hasil praktikum
-      </small>
-    </div>
-
-  </div>
-
-
-  <div class="worksheet-question">
-
-    <strong>
-      Ringkas hasil utama dari setiap kasus.
-    </strong>
-
-    <p>
-      Gunakan hasil yang telah Anda catat pada Kasus 1 sampai Kasus 5.
-      Bedakan hasil yang berasal dari perhitungan, pengamatan visual,
-      dan interpretasi.
-    </p>
-
-  </div>
-
-
-  <div class="worksheet-table">
-
-    <div class="worksheet-table-header">
-
-      <span>
-        Kasus
-      </span>
-
-      <span>
-        Ringkasan hasil
-      </span>
-
-    </div>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kasus 1 · elektrolit LiPF<sub>6</sub>/EC
-      </span>
-
-      <textarea
-        id="case7-summary-1"
-        rows="4"
-        placeholder="Ringkas hasil utama Kasus 1..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kasus 2 · antarmuka LiF–EC
-      </span>
-
-      <textarea
-        id="case7-summary-2"
-        rows="4"
-        placeholder="Ringkas hasil utama Kasus 2..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kasus 3 · NEB CO pada Pt(111)
-      </span>
-
-      <textarea
-        id="case7-summary-3"
-        rows="4"
-        placeholder="Ringkas hasil utama Kasus 3..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kasus 4 · ibuprofenat dan motif arginina
-      </span>
-
-      <textarea
-        id="case7-summary-4"
-        rows="4"
-        placeholder="Ringkas hasil utama Kasus 4..."
-      ></textarea>
-
-    </label>
-
-
-    <label class="worksheet-table-row">
-
-      <span>
-        Kasus 5 · respons kisi LiF
-      </span>
-
-      <textarea
-        id="case7-summary-5"
-        rows="4"
-        placeholder="Ringkas hasil utama Kasus 5..."
-      ></textarea>
-
-    </label>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Pertanyaan diskusi
-    </strong>
-
-    <p>
-      Besaran apa yang paling kuat mendukung kesimpulan Anda?
-      Jelaskan alasan Anda berdasarkan hasil simulasi yang diperoleh.
-    </p>
-
-    <textarea
-      id="case7-discussion-evidence"
-      rows="5"
-      placeholder="Tuliskan jawaban Anda..."
-    ></textarea>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Ketidakpastian dan keterbatasan
-    </strong>
-
-    <p>
-      Sebutkan hasil yang masih membutuhkan lintasan lebih panjang,
-      perubahan parameter, ukuran sistem yang berbeda, atau pengujian
-      metode lain sebelum kesimpulan yang lebih kuat dapat dibuat.
-    </p>
-
-    <textarea
-      id="case7-uncertainty"
-      rows="5"
-      placeholder="Tuliskan ketidakpastian dan keterbatasan..."
-    ></textarea>
-
-  </div>
-
-
-  <div class="worksheet-reflection">
-
-    <strong>
-      Kesimpulan akhir
-    </strong>
-
-    <p>
-      Tuliskan kesimpulan singkat berdasarkan seluruh kasus yang
-      dianalisis. Batasi kesimpulan pada model, metode, parameter,
-      dan lintasan yang benar-benar Anda analisis.
-    </p>
-
-    <textarea
-      id="case7-final-conclusion"
       rows="7"
-      placeholder="Tuliskan kesimpulan akhir..."
-    ></textarea>
+      placeholder="Tuliskan interpretasi Anda..."></textarea>
 
   </div>
 
 
-  <div class="worksheet-reflection">
+  <div class="worksheet-interpretation">
 
-    <strong>
-      Catatan kelompok
-    </strong>
+    <strong>Syarat klaim.</strong>
 
     <p>
-      Catat pertanyaan, hasil diskusi, atau hal yang perlu diperiksa
-      kembali setelah workshop.
+      Jelaskan mengapa kurva LiF ini belum menunjukkan stabilitas seluruh
+      interphase baterai atau akurasi MACE untuk larutan elektrolit.
     </p>
 
     <textarea
-      id="case7-group-notes"
+      id="case5-claim-limit"
       rows="6"
-      placeholder="Catatan kelompok..."
-    ></textarea>
+      placeholder="Tuliskan batas klaim..."></textarea>
 
   </div>
 
-</div>
-<!-- =========================================================
-     WORKSHEET COMPLETION
-     ========================================================= -->
+</section>
+<!-- =======================================================
+     C.7 LAPORAN SINGKAT DAN DISKUSI KELOMPOK
+     ======================================================= -->
 
-<div class="worksheet-completion-final">
+<section class="worksheet-case">
 
-  <div class="worksheet-completion-final-header">
+  <h3>C.7 Laporan singkat dan diskusi kelompok</h3>
 
-    <strong>
-      Worksheet selesai
-    </strong>
-
-    <span id="worksheet-final-completion">
-      0 / 0 fields
-    </span>
-
-  </div>
-
-  <p>
-    Pastikan seluruh hasil telah diperiksa sebelum mengunduh
-    atau menyimpan worksheet ke Google Drive.
+  <p class="worksheet-instruction">
+    Pilih satu kasus untuk ditulis dalam laporan. Gunakan grafik hasil
+    Anda dan isi semua satuan.
   </p>
 
-</div>
+  <ol class="worksheet-report-list">
+
+    <li>
+      Pertanyaan ilmiah yang hendak dijawab.
+      <textarea
+        id="case7-scientific-question"
+        rows="4"
+        placeholder="Tuliskan pertanyaan ilmiah..."></textarea>
+    </li>
+
+    <li>
+      Sistem, ukuran, muatan, sel, kondisi, dan metode.
+      <textarea
+        id="case7-system-method"
+        rows="5"
+        placeholder="Tuliskan sistem dan metode..."></textarea>
+    </li>
+
+    <li>
+      Nama input serta keluaran yang benar-benar tersedia.
+      <textarea
+        id="case7-input-output"
+        rows="5"
+        placeholder="Tuliskan nama input dan output..."></textarea>
+    </li>
+
+    <li>
+      Grafik atau tabel utama dan cara menghitung besaran di dalamnya.
+      <textarea
+        id="case7-graph-table"
+        rows="5"
+        placeholder="Tuliskan grafik atau tabel utama..."></textarea>
+    </li>
+
+    <li>
+      Satu pemeriksaan kewajaran atau uji sensitivitas.
+      <textarea
+        id="case7-sensitivity-check"
+        rows="5"
+        placeholder="Tuliskan pemeriksaan atau uji sensitivitas..."></textarea>
+    </li>
+
+    <li>
+      Kesimpulan terbatas yang didukung data dan satu langkah lanjut.
+      <textarea
+        id="case7-conclusion-next"
+        rows="6"
+        placeholder="Tuliskan kesimpulan dan langkah lanjut..."></textarea>
+    </li>
+
+  </ol>
+
+
+  <div class="worksheet-interpretation">
+
+    <strong>Pertukaran laporan.</strong>
+
+    <p>
+      Mintalah seorang peserta lain menjawab:
+      “Dari berkas dan parameter yang disebut, apakah saya dapat mengulang
+      angka utama?” Jika tidak, tambahkan informasi yang hilang.
+    </p>
+
+    <textarea
+      id="case7-report-exchange"
+      rows="6"
+      placeholder="Tuliskan hasil pertukaran laporan..."></textarea>
+
+  </div>
+
+</section>
 
 
 

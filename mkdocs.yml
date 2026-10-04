@@ -127,16 +127,12 @@ nav:
 
       - Day 1:
           - Overview: hands-on-project/day-1/index.md
-          - Foundations: hands-on-project/day-1/foundations.md
-          - Input DCDFTBMD: hands-on-project/day-1/dftbmd-input.md
+          - Sesi 1 · dari First Principles ke Molecular Dynamics: hands-on-project/day-1/foundations.md
+          - Sesi 3 · Membangun Input dan Menjalankan DCDFTBMD: hands-on-project/day-1/dftbmd-input.md
           - Sesi 4 · Analisis Lintasan dan Antarmuka: hands-on-project/day-1/sesi-4-analisis-lintasan-antarmuka.md
           - Sesi 5 · Pemodelan Material dengan MACE: hands-on-project/day-1/sesi-5-pemodelan-material-mace.md
           - Sesi 6 · Hasil Riset Terbit Sakti Lab: hands-on-project/day-1/sesi-6-hasil-riset-terbit-sakti-lab.md
           - Bahan Pendalaman: hands-on-project/day-1/bahan-pendalaman.md
-          - LiPF6 / EC: hands-on-project/day-1/lipf6-ec.md
-          - MD Analysis: hands-on-project/day-1/md-analysis.md
-          - LiF / EC Interface: hands-on-project/day-1/lif-ec-interface.md
-          - MACE: hands-on-project/day-1/mace.md
 
       - Research Cases:
           - Graphene Electronic Structure:

@@ -21,129 +21,150 @@
   const MODULE_NAME =
     "Bahan Pendalaman";
 
+d/* =======================================================
+   WORKSHEET FIELD DISCOVERY
+   CASE 1 - CASE 5
+   ======================================================= */
 
-  /* =======================================================
-     FIELD DISCOVERY
-     -------------------------------------------------------
-     Semua input worksheet dibaca otomatis.
-     Tidak perlu CASE_1_FIELDS, CASE_2_FIELDS, dst.
-     ======================================================= */
+function getWorksheetFields() {
 
-  function getWorksheetFields() {
+  const fields = [];
 
-    const selectors = [
-      ".worksheet-card input",
-      ".worksheet-card select",
-      ".worksheet-card textarea",
-      ".worksheet-form input",
-      ".worksheet-form select",
-      ".worksheet-form textarea"
-    ];
+  /*
+   * Ambil SEMUA form control di halaman.
+   *
+   * Dengan cara ini Case 1 sampai Case 5
+   * tidak bergantung pada class tertentu.
+   */
 
-    const elements = [];
+  document
+    .querySelectorAll(
+      "input, select, textarea"
+    )
+    .forEach(field => {
 
-    selectors.forEach(selector => {
+      /*
+       * Jangan ambil file uploader.
+       */
 
-      document
-        .querySelectorAll(selector)
-        .forEach(element => {
-
-          if (!elements.includes(element)) {
-            elements.push(element);
-          }
-
-        });
-
-    });
-
-
-    /*
-     * Fallback.
-     * Jika struktur halaman tidak menggunakan
-     * .worksheet-card atau .worksheet-form,
-     * baca semua field yang terlihat.
-     */
-
-    if (!elements.length) {
-
-      document
-        .querySelectorAll(
-          "input:not([type='hidden']):not([type='file']), select, textarea"
-        )
-        .forEach(element => {
-
-          if (!elements.includes(element)) {
-            elements.push(element);
-          }
-
-        });
-
-    }
-
-
-    return elements.filter(element => {
-
-      if (!element.id) return false;
-
-      if (element.type === "file") return false;
-
-      if (element.disabled) return false;
-
-      return true;
-
-    });
-
-  }
-
-
-  /* =======================================================
-     COLLECT VALUES
-     ======================================================= */
-
-  function collectWorksheetValues() {
-
-    const values = {};
-
-    const fields = getWorksheetFields();
-
-
-    fields.forEach(field => {
-
-      const id = field.id;
-
-      if (!id) return;
-
-
-      if (field.type === "checkbox") {
-
-        values[id] = field.checked;
-
+      if (
+        field.type === "file"
+      ) {
         return;
+      }
+
+
+      /*
+       * Jangan ambil tombol.
+       */
+
+      if (
+        field.type === "button" ||
+        field.type === "submit" ||
+        field.type === "reset"
+      ) {
+        return;
+      }
+
+
+      /*
+       * Jangan ambil field yang disabled.
+       */
+
+      if (
+        field.disabled
+      ) {
+        return;
+      }
+
+
+      /*
+       * Hindari field sistem.
+       */
+
+      const id =
+        field.id || "";
+
+
+      if (
+        id === "participant" ||
+        id === "participant-name" ||
+        id === "analysis-date" ||
+        id === "worksheet-date"
+      ) {
+        return;
+      }
+
+
+      /*
+       * Hindari duplikasi.
+       */
+
+      if (
+        !fields.includes(field)
+      ) {
+
+        fields.push(field);
 
       }
 
+    });
+
+
+  return fields;
+
+}
+/* =======================================================
+   COLLECT VALUES
+   CASE 1 - CASE 5
+   ======================================================= */
+
+function collectWorksheetValues() {
+
+  const values = {};
+
+  document
+    .querySelectorAll(
+      "input[id], textarea[id], select[id]"
+    )
+    .forEach(field => {
+
+      const key = field.id;
+
+      if (!key) return;
+
+      if (field.type === "checkbox") {
+
+        if (!values[key]) {
+          values[key] = [];
+        }
+
+        if (field.checked) {
+          values[key].push(
+            field.value || true
+          );
+        }
+
+        return;
+      }
 
       if (field.type === "radio") {
 
         if (field.checked) {
-          values[id] = field.value;
+          values[key] =
+            field.value || "";
         }
 
         return;
-
       }
 
-
-      values[id] = field.value || "";
+      values[key] =
+        field.value || "";
 
     });
 
-
-    return values;
-
-  }
-
-
+  return values;
+}
   /* =======================================================
      PARTICIPANT
      ======================================================= */
@@ -816,7 +837,7 @@
     );
 
 
-    saveTimer =
+   ALL_WORKSHEET_FIELDS saveTimer =
       setTimeout(() => {
 
         const data =
