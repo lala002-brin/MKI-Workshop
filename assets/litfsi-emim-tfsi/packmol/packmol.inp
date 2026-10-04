@@ -1,0 +1,23 @@
+tolerance 2.0
+
+filetype xyz
+
+output electrolyte_system.xyz
+
+
+structure ../structures/LiTFSI.xyz
+
+  number 10
+
+  inside box 0.0 0.0 0.0 50.0 50.0 50.0
+
+end structure
+
+
+structure ../structures/EMIM-TFSI.xyz
+
+  number 50
+
+  inside box 0.0 0.0 0.0 50.0 50.0 50.0
+
+end structure

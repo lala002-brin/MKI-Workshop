@@ -1,0 +1,4000 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Integrating First-Principles, HPC & AI for Materials Discovery Computational materials science workshop by MKI and BRIN.
+">
+      
+      
+        <meta name="author" content="BRIN - ITB - Masyarakat Komputasi Indonesia
+">
+      
+      
+      
+        <link rel="prev" href="../working-on-mahameru/">
+      
+      
+        <link rel="next" href="../workshop-workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/mki-logo.jpeg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>03 · SLURM & Computing - MKI Computational Materials Science Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/home.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra-v2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/file-editor.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MKI Computational Materials Science Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03 · SLURM & Computing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start-here/workshop-guide/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Computational Environment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../quantum-simulation/" class="md-tabs__link">
+          
+  
+  
+  Simulation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hands-on-project/" class="md-tabs__link">
+          
+  
+  
+  Hands-on Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    MKI Computational Materials Science Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computational Environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../access-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access & Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../running-calculations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../script-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mahameru HPC BRIN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mahameru HPC BRIN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-on-mahameru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Working on Mahameru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · SLURM & Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Workshop Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kohn-Sham Equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/setup/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_4" id="__nav_4_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCF Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atomistic Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atomistic Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/dftbmd-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input DCDFTBMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/lipf6-ec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiPF6 / EC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/md-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/lif-ec-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiF / EC Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/day-1/mace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Electronic Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/graphene/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/graphene/system-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/graphene/hpc-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/graphene/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene–Ionic Liquid Interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene–Ionic Liquid Interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/graphene-ionic-liquid-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Battery Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hands-on-project/research-cases/battery-electrolyte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Computational Environment
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../getting-started/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Mahameru HPC BRIN
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>03 · SLURM & Computing</h1>
+
+<div class="mahameru-page">
+
+<div class="mahameru-tabs">
+
+<a class="mahameru-tab" href="../getting-started.md">
+Getting Started
+</a>
+
+<a class="mahameru-tab" href="./working-on-mahameru.md">
+Working on Mahameru
+</a>
+
+<a class="mahameru-tab active" href="./slurm-computing.md">
+SLURM & Computing
+</a>
+
+<a class="mahameru-tab" href="./workshop-workflow.md">
+Workshop Workflow
+</a>
+
+</div>
+
+
+<p class="mahameru-intro">
+Gunakan <strong>SLURM</strong> untuk mengirim dan mengelola pekerjaan
+komputasi pada Mahameru. Halaman ini menjelaskan alur dari penyiapan
+script, pemilihan resource, submission, sampai pemeriksaan hasil.
+</p>
+
+
+<div class="mahameru-hero">
+
+<div class="mahameru-hero-content">
+
+<span class="mahameru-label">
+SLURM & COMPUTING
+</span>
+
+<h2>
+From script to compute
+</h2>
+
+<p>
+Siapkan kebutuhan pekerjaan, kirim job ke SLURM, pantau statusnya,
+kemudian periksa output yang dihasilkan.
+</p>
+
+</div>
+
+<div class="mahameru-hero-status">
+
+<span class="mahameru-label">
+CORE FLOW
+</span>
+
+<strong>
+Prepare · Submit · Monitor · Inspect
+</strong>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="slurm-overview" class="mahameru-section-title">
+What is SLURM?
+</h2>
+
+<p class="mahameru-section-intro">
+SLURM digunakan untuk mengelola pekerjaan komputasi pada cluster.
+Anda tidak perlu menjalankan seluruh pekerjaan langsung pada login node.
+Siapkan pekerjaan, lalu serahkan pengelolaannya kepada scheduler.
+</p>
+
+
+<div class="mahameru-info-grid">
+
+<div class="mahameru-info-card">
+
+<span class="mahameru-info-icon">
+01
+</span>
+
+<strong>
+Prepare
+</strong>
+
+<p>
+Siapkan input, script, software, dan kebutuhan resource.
+</p>
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<span class="mahameru-info-icon">
+02
+</span>
+
+<strong>
+Submit
+</strong>
+
+<p>
+Kirim script menggunakan command SLURM.
+</p>
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<span class="mahameru-info-icon">
+03
+</span>
+
+<strong>
+Monitor
+</strong>
+
+<p>
+Periksa status pekerjaan pada queue.
+</p>
+
+</div>
+
+
+<div class="mahameru-info-card">
+
+<span class="mahameru-info-icon">
+04
+</span>
+
+<strong>
+Inspect
+</strong>
+
+<p>
+Periksa output setelah pekerjaan selesai.
+</p>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="compute-resources" class="mahameru-section-title">
+Compute Resources
+</h2>
+
+<p class="mahameru-section-intro">
+Sebelum membuat job, pahami resource yang diperlukan oleh pekerjaan.
+Resource yang diminta harus sesuai dengan kebutuhan simulasi.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<h3>
+CPU
+</h3>
+
+<p>
+Jumlah core CPU yang dibutuhkan oleh pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+Node
+</h3>
+
+<p>
+Jumlah compute node yang dibutuhkan oleh pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+Time
+</h3>
+
+<p>
+Batas waktu yang dialokasikan untuk pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+Partition
+</h3>
+
+<p>
+Kelompok resource tempat job akan dijalankan.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-tip">
+
+<strong>
+Request according to your workload
+</strong>
+
+<p>
+Gunakan resource sesuai kebutuhan pekerjaan. Jangan menentukan
+resource hanya berdasarkan perkiraan tanpa memahami kebutuhan
+simulasi.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="partition" class="mahameru-section-title">
+Partition
+</h2>
+
+<p class="mahameru-section-intro">
+Partition merupakan kelompok resource dengan karakteristik tertentu.
+Materi Mahameru yang digunakan dalam workshop mencantumkan beberapa
+partition CPU berikut.
+</p>
+
+
+<div class="mahameru-partition-grid">
+
+<div class="mahameru-partition-card">
+
+<strong>
+short
+</strong>
+
+<span>
+32 cores · 1 node
+</span>
+
+<small>
+Maximum 1 day
+</small>
+
+</div>
+
+
+<div class="mahameru-partition-card">
+
+<strong>
+medium-small
+</strong>
+
+<span>
+32 cores · 1 node
+</span>
+
+<small>
+Maximum 3 days
+</small>
+
+</div>
+
+
+<div class="mahameru-partition-card">
+
+<strong>
+medium-large
+</strong>
+
+<span>
+64 cores · 4 nodes
+</span>
+
+<small>
+Maximum 3 days
+</small>
+
+</div>
+
+
+<div class="mahameru-partition-card">
+
+<strong>
+long
+</strong>
+
+<span>
+32 cores · 1 node
+</span>
+
+<small>
+Maximum 7 days
+</small>
+
+</div>
+
+
+<div class="mahameru-partition-card">
+
+<strong>
+very-long
+</strong>
+
+<span>
+32 cores · 1 node
+</span>
+
+<small>
+Maximum 30 days
+</small>
+
+</div>
+
+
+<div class="mahameru-partition-card">
+
+<strong>
+interactive
+</strong>
+
+<span>
+1–8 cores · 2 nodes
+</span>
+
+<small>
+Maximum 4 hours
+</small>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-note">
+
+<strong>
+Partition information</strong>
+
+<p>
+Daftar di atas mengikuti materi Mahameru yang menjadi dasar workshop.
+Konfigurasi cluster dapat berubah. Periksa partition yang tersedia
+pada sistem sebelum menjalankan pekerjaan.
+</p>
+
+</div>
+
+
+<h3>
+Check available partitions
+</h3>
+
+<div class="highlight"><pre><span></span><code>sinfo
+</code></pre></div>
+
+
+<hr>
+
+
+<h2 id="slurm-script" class="mahameru-section-title">
+Create a SLURM Script
+</h2>
+
+<p class="mahameru-section-intro">
+SLURM script berisi instruksi pekerjaan dan resource yang diperlukan.
+Script biasanya dimulai dengan shell interpreter kemudian diikuti
+oleh directive <code>#SBATCH</code>.
+</p>
+
+
+<div class="mahameru-card">
+
+<h3>
+Minimal structure
+</h3>
+
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=my_job</span>
+<span class="c1">#SBATCH --partition=short</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=16</span>
+<span class="c1">#SBATCH --time=00:30:00</span>
+<span class="c1">#SBATCH --output=job-%j.out</span>
+
+module<span class="w"> </span>load<span class="w"> </span>&lt;software&gt;
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>
+
+<span class="c1"># command untuk menjalankan pekerjaan</span>
+</code></pre></div>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Memahami setiap bagian</strong>
+</summary>
+
+<p>
+Directive <code>#SBATCH</code> digunakan untuk menentukan kebutuhan
+job sebelum pekerjaan dijalankan.
+</p>
+
+<div class="mahameru-command-list">
+
+<div class="mahameru-command-row">
+
+<code>--job-name</code>
+
+<span>
+Nama pekerjaan.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>--partition</code>
+
+<span>
+Partition yang digunakan.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>--nodes</code>
+
+<span>
+Jumlah node yang diminta.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>--ntasks</code>
+
+<span>
+Jumlah task yang diminta.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>--time</code>
+
+<span>
+Batas waktu pekerjaan.
+</span>
+
+</div>
+
+<div class="mahameru-command-row">
+
+<code>--output</code>
+
+<span>
+Nama file output SLURM.
+</span>
+
+</div>
+
+</div>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="workshop-example" class="mahameru-section-title">
+Workshop Example
+</h2>
+
+<p class="mahameru-section-intro">
+Berikut contoh pola script yang digunakan dalam research workflow
+Quantum ESPRESSO pada workshop.
+</p>
+
+
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=QE-test</span>
+<span class="c1">#SBATCH --partition=short</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=16</span>
+<span class="c1">#SBATCH --time=00:30:00</span>
+<span class="c1">#SBATCH --output=qe-%j.out</span>
+
+module<span class="w"> </span>load<span class="w"> </span>materials/qe/7.2-openmpi
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>tmp
+
+mpirun<span class="w"> </span>--mca<span class="w"> </span>btl<span class="w"> </span>^openib<span class="w"> </span>-np<span class="w"> </span><span class="m">16</span><span class="w"> </span>pw.x<span class="w"> </span>-in<span class="w"> </span>si.scf.in<span class="w"> </span>&gt;<span class="w"> </span>si.scf.out
+</code></pre></div>
+
+
+<div class="mahameru-tip">
+
+<strong>
+Do not copy blindly
+</strong>
+
+<p>
+Contoh ini menunjukkan struktur job untuk research case tertentu.
+Sesuaikan software, input, resource, dan command eksekusi dengan
+pekerjaan yang sedang Anda jalankan.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="before-submit" class="mahameru-section-title">
+Before You Submit
+</h2>
+
+<p class="mahameru-section-intro">
+Lakukan pemeriksaan singkat sebelum mengirim job.
+</p>
+
+
+<div class="mahameru-checklist">
+
+<div>
+
+<span>
+01
+</span>
+
+<strong>
+Input Ready
+</strong>
+
+<p>
+File input sudah tersedia.
+</p>
+
+</div>
+
+
+<div>
+
+<span>
+02
+</span>
+
+<strong>
+Software Ready
+</strong>
+
+<p>
+Module yang diperlukan sudah diketahui.
+</p>
+
+</div>
+
+
+<div>
+
+<span>
+03
+</span>
+
+<strong>
+Resource Ready
+</strong>
+
+<p>
+Partition, node, task, dan time sudah ditentukan.
+</p>
+
+</div>
+
+
+<div>
+
+<span>
+04
+</span>
+
+<strong>
+Output Ready
+</strong>
+
+<p>
+Lokasi dan nama output sudah jelas.
+</p>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="submit" class="mahameru-section-title">
+Submit a Job
+</h2>
+
+<p class="mahameru-section-intro">
+Setelah script siap, kirim pekerjaan ke SLURM menggunakan
+<code>sbatch</code>.
+</p>
+
+
+<div class="mahameru-command-highlight">
+
+<span>
+SUBMIT
+</span>
+
+<code>
+sbatch your_script.sh
+</code>
+
+</div>
+
+
+<p>
+Jika submission berhasil, SLURM akan memberikan Job ID.
+Simpan Job ID tersebut karena dapat digunakan untuk mengenali
+pekerjaan Anda pada queue.
+</p>
+
+
+<div class="mahameru-mini-flow">
+
+<span>
+Script
+</span>
+
+→
+
+<span>
+sbatch
+</span>
+
+→
+
+<span>
+Job ID
+</span>
+
+→
+
+<span>
+Queue
+</span>
+
+→
+
+<span>
+Running
+</span>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="monitor" class="mahameru-section-title">
+Monitor Your Job
+</h2>
+
+<p class="mahameru-section-intro">
+Gunakan <code>squeue</code> untuk melihat pekerjaan yang berada
+dalam sistem SLURM.
+</p>
+
+
+<div class="mahameru-command-highlight">
+
+<span>
+MONITOR
+</span>
+
+<code>
+squeue -u $USER
+</code>
+
+</div>
+
+
+<details open>
+
+<summary>
+<strong>Informasi yang perlu diperhatikan</strong>
+</summary>
+
+<div class="mahameru-job-grid">
+
+<div class="mahameru-job-card">
+
+<strong>
+JOBID
+</strong>
+
+<p>
+ID pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-job-card">
+
+<strong>
+PARTITION
+</strong>
+
+<p>
+Partition yang digunakan.
+</p>
+
+</div>
+
+
+<div class="mahameru-job-card">
+
+<strong>
+NAME
+</strong>
+
+<p>
+Nama pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-job-card">
+
+<strong>
+USER
+</strong>
+
+<p>
+Pemilik pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-job-card">
+
+<strong>
+ST
+</strong>
+
+<p>
+Status pekerjaan.
+</p>
+
+</div>
+
+
+<div class="mahameru-job-card">
+
+<strong>
+TIME
+</strong>
+
+<p>
+Waktu yang sudah digunakan.
+</p>
+
+</div>
+
+</div>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="job-status" class="mahameru-section-title">
+Understand Job Status
+</h2>
+
+
+<div class="mahameru-status-grid">
+
+<div class="mahameru-status-card">
+
+<strong>
+R
+</strong>
+
+<span>
+Running
+</span>
+
+<p>
+Job sedang berjalan.
+</p>
+
+</div>
+
+
+<div class="mahameru-status-card">
+
+<strong>
+PD
+</strong>
+
+<span>
+Pending
+</span>
+
+<p>
+Job masih menunggu.
+</p>
+
+</div>
+
+
+<div class="mahameru-status-card">
+
+<strong>
+CG
+</strong>
+
+<span>
+Completing
+</span>
+
+<p>
+Job sedang menyelesaikan proses.
+</p>
+
+</div>
+
+
+<div class="mahameru-status-card">
+
+<strong>
+CD
+</strong>
+
+<span>
+Completed
+</span>
+
+<p>
+Job telah selesai.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-tip">
+
+<strong>
+Job belum running?</strong>
+
+<p>
+Status pending tidak otomatis berarti script bermasalah.
+Periksa kondisi queue dan resource yang diminta sebelum
+mengubah script.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="interactive-job" class="mahameru-section-title">
+Interactive Job
+</h2>
+
+<p class="mahameru-section-intro">
+Selain batch job, Mahameru juga menyediakan interactive job.
+Mode ini berguna ketika Anda membutuhkan sesi interaktif pada
+resource yang dialokasikan.
+</p>
+
+
+<div class="mahameru-command-highlight">
+
+<span>
+INTERACTIVE
+</span>
+
+<code>
+srun --partition=interactive --pty /bin/bash
+</code>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Batch vs Interactive</strong>
+</summary>
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<h3>
+Batch Job
+</h3>
+
+<p>
+Pekerjaan dijalankan berdasarkan script yang dikirim ke scheduler.
+</p>
+
+<code>
+sbatch your_script.sh
+</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+Interactive Job
+</h3>
+
+<p>
+Anda memperoleh sesi interaktif setelah SLURM mengalokasikan
+resource yang diminta.
+</p>
+
+<code>
+srun --partition=interactive --pty /bin/bash
+</code>
+
+</div>
+
+</div>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="output" class="mahameru-section-title">
+Output & Logs
+</h2>
+
+<p class="mahameru-section-intro">
+Job yang selesai perlu diperiksa hasilnya. Jangan hanya melihat
+status job. Periksa file output dan log yang dihasilkan.
+</p>
+
+
+<div class="mahameru-grid mahameru-grid-2">
+
+<div class="mahameru-card">
+
+<h3>
+SLURM Output
+</h3>
+
+<p>
+Nama output dapat ditentukan melalui directive:
+</p>
+
+<code>
+#SBATCH --output=qe-%j.out
+</code>
+
+</div>
+
+
+<div class="mahameru-card">
+
+<h3>
+Application Output
+</h3>
+
+<p>
+Software juga dapat menghasilkan file output sendiri.
+Contoh workflow QE:
+</p>
+
+<code>
+si.scf.out
+</code>
+
+</div>
+
+</div>
+
+
+<details>
+
+<summary>
+<strong>Example output workflow</strong>
+</summary>
+
+<div class="highlight"><pre><span></span><code>qe_test/
+├── si.scf.in
+├── run_qe.sh
+├── qe-12345.out
+├── si.scf.out
+└── tmp/
+</code></pre></div>
+
+<p>
+Nama dan isi file mengikuti script serta software yang digunakan.
+</p>
+
+</details>
+
+
+<div class="mahameru-tip">
+
+<strong>
+Check the result</strong>
+
+<p>
+Pastikan output tersedia dan berisi hasil yang diharapkan sebelum
+melanjutkan ke tahap analisis.
+</p>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="troubleshooting" class="mahameru-section-title">
+Quick Troubleshooting
+</h2>
+
+
+<details>
+
+<summary>
+<strong>Job masih Pending</strong>
+</summary>
+
+<p>
+Periksa status job dengan:
+</p>
+
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div>
+
+<p>
+Kemudian perhatikan partition, status, dan resource yang diminta.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>Module tidak ditemukan</strong>
+</summary>
+
+<p>
+Periksa module yang tersedia:
+</p>
+
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail
+</code></pre></div>
+
+<p>
+Kemudian gunakan nama module yang tersedia pada sistem.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>File output tidak ditemukan</strong>
+</summary>
+
+<p>
+Periksa lokasi kerja:
+</p>
+
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+</code></pre></div>
+
+<p>
+Kemudian lihat file:
+</p>
+
+<div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
+
+</details>
+
+
+<details>
+
+<summary>
+<strong>Job sudah selesai tetapi hasil belum sesuai</strong>
+</summary>
+
+<p>
+Periksa kembali:
+
+</p>
+
+<ul>
+
+<li>file input</li>
+
+<li>software module</li>
+
+<li>parameter simulasi</li>
+
+<li>resource yang diminta</li>
+
+<li>file output dan log</li>
+
+</ul>
+
+</details>
+
+
+<hr>
+
+
+<h2 id="quick-reference" class="mahameru-section-title">
+Quick Reference
+</h2>
+
+
+<div class="mahameru-command-grid">
+
+<div>
+
+<strong>
+Partitions
+</strong>
+
+<code>
+sinfo
+</code>
+
+</div>
+
+
+<div>
+
+<strong>
+Submit
+</strong>
+
+<code>
+sbatch your_script.sh
+</code>
+
+</div>
+
+
+<div>
+
+<strong>
+Monitor
+</strong>
+
+<code>
+squeue -u $USER
+</code>
+
+</div>
+
+
+<div>
+
+<strong>
+Interactive
+</strong>
+
+<code>
+srun --partition=interactive --pty /bin/bash
+</code>
+
+</div>
+
+
+<div>
+
+<strong>
+Modules
+</strong>
+
+<code>
+module avail
+</code>
+
+</div>
+
+
+<div>
+
+<strong>
+Load Software
+</strong>
+
+<code>
+module load &lt;software&gt;
+</code>
+
+</div>
+
+</div>
+
+
+<hr>
+
+
+<h2 id="practice" class="mahameru-section-title">
+Mini Practice
+</h2>
+
+<p class="mahameru-section-intro">
+Gunakan alur berikut untuk memahami siklus sederhana sebuah job.
+</p>
+
+
+<div class="mahameru-practice">
+
+<div>
+
+<span>
+01
+</span>
+
+<strong>
+Check partition
+</strong>
+
+<div class="highlight"><pre><span></span><code>sinfo
+</code></pre></div>
+
+</div>
+
+
+<div>
+
+<span>
+02
+</span>
+
+<strong>
+Prepare script
+</strong>
+
+<div class="highlight"><pre><span></span><code>run.sh
+</code></pre></div>
+
+</div>
+
+
+<div>
+
+<span>
+03
+</span>
+
+<strong>
+Submit
+</strong>
+
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>run.sh
+</code></pre></div>
+
+</div>
+
+
+<div>
+
+<span>
+04
+</span>
+
+<strong>
+Monitor
+</strong>
+
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</code></pre></div>
+
+</div>
+
+
+<div>
+
+<span>
+05
+</span>
+
+<strong>
+Inspect
+</strong>
+
+<div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
+
+</div>
+
+</div>
+
+
+<div class="mahameru-next">
+
+<strong>
+Next · Workshop Workflow
+</strong>
+
+<p>
+SLURM sudah siap digunakan. Selanjutnya hubungkan workflow job
+dengan research case, mulai dari model preparation sampai analysis.
+</p>
+
+<a href="./workshop-workflow.md">
+Workshop Workflow →
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+
+<footer class="custom-footer">
+
+
+<div class="footer-brand">
+
+<h3>
+MKI Computational Materials Science Workshop
+</h3>
+
+<p>
+Building knowledge, tools, and collaboration
+for advanced materials discovery.
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#">Home</a>
+<a href="#">Start Here</a>
+<a href="#">Foundation</a>
+<a href="#">Research Application</a>
+
+</div>
+
+
+
+<div class="footer-partners">
+
+<h3>
+In Collaboration With
+</h3>
+
+<p>
+MKI × ITB × BRIN
+</p>
+
+</div>
+
+
+</footer>
+
+
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../../assets/javascripts/chat.js"></script>
+      
+        <script src="../../../javascripts/home-parallax.js"></script>
+      
+        <script src="../../../javascripts/features-reveal.js"></script>
+      
+        <script src="../../../javascripts/workflow-flow.js"></script>
+      
+        <script src="../../../javascripts/research-reveal.js"></script>
+      
+        <script src="../../../javascripts/scroll-reveal.js"></script>
+      
+        <script src="../../../javascripts/file-editor.js"></script>
+      
+        <script src="../../../javascripts/worksheet.js"></script>
+      
+        <script src="../../../javascripts/lifec-viewer.js"></script>
+      
+        <script src="../../../javascripts/session1.js"></script>
+      
+        <script src="../../../javascripts/md-analysis-worksheet.js"></script>
+      
+    
+  </body>
+</html>
