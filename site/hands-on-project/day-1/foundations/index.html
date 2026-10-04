@@ -2484,1335 +2484,1602 @@
   
 
 
-  <h1>Foundations</h1>
+<div class="mahameru-page session-1-page">
 
-<div class="mahameru-page">
+  <div class="mahameru-tabs">
 
-<div class="mahameru-tabs">
+    <a class="mahameru-tab" href="./index.md">
+      Day 1
+    </a>
 
-<a class="mahameru-tab" href="./index.md">
-Day 1
-</a>
+    <a class="mahameru-tab active" href="./foundations.md">
+      Foundations
+    </a>
 
-<a class="mahameru-tab active" href="./foundations.md">
-Foundations
-</a>
+    <a class="mahameru-tab" href="./lipf6-ec.md">
+      LiPF6 / EC
+    </a>
 
-<a class="mahameru-tab" href="./lipf6-ec.md">
-LiPF6 / EC
-</a>
+    <a class="mahameru-tab" href="./md-analysis.md">
+      MD Analysis
+    </a>
 
-<a class="mahameru-tab" href="./md-analysis.md">
-MD Analysis
-</a>
+    <a class="mahameru-tab" href="./lif-ec-interface.md">
+      LiF / EC
+    </a>
 
-<a class="mahameru-tab" href="./lif-ec-interface.md">
-LiF / EC
-</a>
+    <a class="mahameru-tab" href="./mace.md">
+      MACE
+    </a>
 
-<a class="mahameru-tab" href="./mace.md">
-MACE
-</a>
+  </div>
 
-</div>
 
+  <header class="session-1-header">
 
-<p class="mahameru-intro">
-Bagian ini memperkenalkan hubungan antara struktur atom, energi,
-gaya, DFT, DFTB, dan molecular dynamics. Tujuannya bukan menghafal
-persamaan, tetapi memahami apa yang dihitung dan bagaimana hasilnya
-digunakan pada latihan berikutnya.
-</p>
+    <div class="session-1-kicker">
+      Persiapan peserta
+    </div>
 
+    <h1>
+      Persiapan peserta
+    </h1>
 
-<div class="mahameru-workflow-intro">
+  </header>
 
-<div>
 
-<strong>
-Foundations · From Atoms to Dynamics
-</strong>
+  <section class="session-1-section">
 
-<p>
-Mulai dari struktur atom dan pertanyaan ilmiah. Kemudian hubungkan
-metode elektronik dengan energi dan gaya, lalu pahami bagaimana
-gaya digunakan untuk menjalankan molecular dynamics.
-</p>
+    <div class="session-1-section-heading">
 
-</div>
+      <span class="session-1-number">
+        1
+      </span>
 
-</div>
+      <h2>
+        Dari Windows ke HPC Mahameru
+      </h2>
 
+    </div>
 
-<div class="workflow-roadmap">
 
-<div class="workflow-step">
+    <div class="session-1-text">
 
-<span>
-01
-</span>
+      <p>
+        Anda bekerja pada laptop Windows, tetapi perhitungan berlangsung di Linux HPC Mahameru.
+        Termius menyediakan Terminal SSH untuk mengetik perintah Linux dan SFTP untuk memindahkan
+        berkas. Unduh aplikasi dari laman resmi Termius untuk Windows. Siapkan nama pengguna,
+        alamat host, port, serta kunci SSH atau cara autentikasi yang diberikan panitia.
+        Alamat dan kredensial setiap peserta mengikuti informasi panitia; contoh ini tidak
+        memakai alamat server rekaan. Tata letak tombol Termius dapat berubah menurut versi.
+      </p>
 
-<strong>
-Structure
-</strong>
+    </div>
 
-<small>
-Atoms + coordinates
-</small>
 
-</div>
+    <div class="session-1-subsection">
 
+      <div class="session-1-subheading">
 
-<div class="workflow-arrow">
-→
-</div>
+        <span>
+          1.1
+        </span>
 
+        <h3>
+          Langkah 1 — masuk dengan Termius
+        </h3>
 
-<div class="workflow-step">
+      </div>
 
-<span>
-02
-</span>
 
-<strong>
-Energy</strong>
+      <ol class="session-1-instructions">
 
-<small>
-Electronic structure
-</small>
+        <li>
+          Pasang dan buka Termius di Windows. Pilih <em>New Host</em>.
+        </li>
 
-</div>
+        <li>
+          Isi <strong>Address</strong> dengan alamat Mahameru dari panitia,
+          <strong>Username</strong> dengan akun pribadi, dan <strong>Port</strong>
+          sesuai instruksi. Jika port tidak disebut, konfirmasikan ke fasilitator
+          sebelum mengubah nilai bawaan SSH.
+        </li>
 
+        <li>
+          Pada bagian autentikasi, pilih SSH key atau kata sandi sesuai kredensial
+          yang benar-benar diberikan. Jika memakai kunci privat, impor kunci itu ke
+          <strong>Keychain</strong> Termius lalu pilih untuk host ini. Jangan gunakan
+          kunci privat di direktori HPC atau membagikannya.
+        </li>
 
-<div class="workflow-arrow">
-→
-</div>
+        <li>
+          Simpan host, buka koneksi Terminal, dan cocokkan sidik jari host dengan
+          informasi panitia saat koneksi pertama. Setelah masuk, ketik satu kotak
+          perintah, lalu tekan Enter satu kali sebelum berpindah ke kotak perintah
+          berikutnya.
+        </li>
 
+      </ol>
 
-<div class="workflow-step">
 
-<span>
-03
-</span>
+      <div class="session-1-command-list">
 
-<strong>
-Force</strong>
+        <div class="session-1-command-card">
 
-<small>
-Atomic motion
-</small>
+          <span class="session-1-command-number">
+            01
+          </span>
 
-</div>
+          <code>
+            whoami
+          </code>
 
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-<div class="workflow-arrow">
-→
-</div>
+        </div>
 
 
-<div class="workflow-step">
+        <div class="session-1-command-card">
 
-<span>
-04
-</span>
+          <span class="session-1-command-number">
+            02
+          </span>
 
-<strong>
-MD</strong>
+          <code>
+            hostname
+          </code>
 
-<small>
-Trajectory
-</small>
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-</div>
+        </div>
 
-</div>
 
+        <div class="session-1-command-card">
 
-<hr>
+          <span class="session-1-command-number">
+            03
+          </span>
 
+          <code>
+            pwd
+          </code>
 
-<h2 id="atomic-structure" class="mahameru-section-title">
-01 · Atomic Structure
-</h2>
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-<p>
-Satu konfigurasi atom terdiri dari jenis atom dan posisi kartesiusnya.
-Pada latihan workshop, posisi dinyatakan dalam ångström (Å).
-Untuk sistem periodik, konfigurasi juga memerlukan informasi sel.
-</p>
+        </div>
 
 
-<div class="workflow-grid">
+        <div class="session-1-command-card">
 
-<div class="workflow-card">
+          <span class="session-1-command-number">
+            04
+          </span>
 
-<span>
-01
-</span>
+          <code>
+            cd ~
+          </code>
 
-<strong>
-Atomic species
-</strong>
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-<p>
-Jenis dan jumlah atom yang membentuk sistem.
-</p>
+        </div>
 
-</div>
 
+        <div class="session-1-command-card">
 
-<div class="workflow-card">
+          <span class="session-1-command-number">
+            05
+          </span>
 
-<span>
-02
-</span>
+          <code>
+            pwd
+          </code>
 
-<strong>
-Cartesian positions
-</strong>
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-<p>
-Posisi setiap atom dalam koordinat kartesius.
-</p>
+        </div>
 
-</div>
 
+        <div class="session-1-command-card">
 
-<div class="workflow-card">
+          <span class="session-1-command-number">
+            06
+          </span>
 
-<span>
-03
-</span>
+          <code>
+            ls
+          </code>
 
-<strong>
-Periodic cell
-</strong>
+          <button
+            class="session-1-copy"
+            type="button"
+            onclick="copySession1Command(this)"
+          >
+            Copy
+          </button>
 
-<p>
-Vektor translasi yang mendefinisikan sel untuk sistem periodik.
-</p>
+        </div>
 
-</div>
+      </div>
+
+    </div>
 
+  </section>
+
 </div>
+<!-- =========================================================
+     SESI 1
+     HALAMAN PDF 6
+     LANGKAH 2 — UNGGAH PAKET DENGAN SFTP
+     ========================================================= -->
 
+<div class="session-1-continuation">
 
-<details>
+  <div class="session-1-note-text">
 
-<summary>
-<strong>Periodic system</strong>
-</summary>
+    <p>
+      <strong>whoami</strong> harus menunjukkan akun Anda.
+      <strong>hostname</strong> menunjukkan komputer tempat Terminal berada.
+      <strong>cd</strong> berpindah ke direktori pribadi di Linux;
+      <strong>pwd</strong> mencetak lokasinya.
+      Perintah dalam kotak berbningkai hijau selalu diketik di Terminal Linux,
+      kecuali langkah yang secara khusus menyebut SFTP Windows.
+      Jangan mengetik tanda prompt seperti <code>$</code>.
+      Jika perintah panjang tampak terbungkus menjadi dua baris oleh tata letak PDF,
+      keduanya tetap satu perintah: ketik sampai akhir lalu tekan Enter setelah lengkap.
+    </p>
 
-<p>
-Pada sistem kristal atau elektrolit periodik, sel diulang di ruang.
-Karena itu, ukuran sel dan kondisi batas periodik menjadi bagian
-dari model, bukan sekadar informasi tambahan.
-</p>
+  </div>
 
-</details>
 
+  <section class="session-1-section">
 
-<details>
+    <div class="session-1-subheading">
 
-<summary>
-<strong>Interface system</strong>
-</summary>
+      <span>
+        1.2
+      </span>
 
-<p>
-Pada antarmuka, model dapat menggunakan slab sebagai representasi
-permukaan padatan dan ruang di atasnya untuk molekul atau elektrolit.
-</p>
+      <h3>
+        Langkah 2 — unggah paket dengan SFTP
+      </h3>
 
-<p>
-Pada latihan LiF–EC, model menggunakan slab LiF dan satu molekul
-ethylene carbonate dalam ruang vakum. Struktur tersebut merupakan
-geometri awal dan belum merupakan keadaan antarmuka baterai yang
-setimbang.
-</p>
+    </div>
 
-</details>
 
+    <div class="session-1-text">
 
-<div class="workflow-check">
+      <p>
+        Simpan <strong>Paket_Workshop_BRIN_2026.zip</strong> pada folder
+        <strong>Downloads</strong> di Windows. Pada Terminal Linux,
+        buat tempat kerja:
+      </p>
 
-<strong>
-STRUCTURE CHECK
-</strong>
+    </div>
 
-<ul>
 
-<li>Jenis atom sudah benar.</li>
+    <div class="session-1-command-list">
 
-<li>Jumlah atom sudah benar.</li>
+      <div class="session-1-command-card">
 
-<li>Koordinat menggunakan satuan yang sesuai.</li>
+        <span class="session-1-command-number">
+          01
+        </span>
 
-<li>Sel periodik sudah dicatat jika diperlukan.</li>
+        <code>cd ~</code>
 
-<li>Muatan total sistem sudah diketahui.</li>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-</ul>
+      </div>
 
-</div>
 
+      <div class="session-1-command-card">
 
-<hr>
+        <span class="session-1-command-number">
+          02
+        </span>
 
+        <code>mkdir -p latihan_simulasi</code>
 
-<h2 id="scientific-question" class="mahameru-section-title">
-02 · From Structure to Scientific Question
-</h2>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<p>
-Sebelum memilih program atau menjalankan simulasi, tentukan
-pertanyaan yang dapat dijawab oleh model atomistik.
-</p>
+      </div>
 
-<p>
-Pada skala atom, kita dapat menghitung geometri, energi, gaya,
-dan perubahan posisi terhadap waktu. Besaran pada skala yang lebih
-besar memerlukan informasi tambahan dan tidak otomatis dapat
-diturunkan dari satu model kecil.
-</p>
 
+      <div class="session-1-command-card">
 
-<div class="analysis-grid">
+        <span class="session-1-command-number">
+          03
+        </span>
 
-<div class="analysis-card">
+        <code>pwd</code>
 
-<strong>
-Li⁺ in EC
-</strong>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<span>
-Electrolyte
-</span>
+      </div>
 
-<p>
-Bagaimana Li⁺ tersolvasi dalam ethylene carbonate?
-</p>
+    </div>
 
-</div>
 
+    <div class="session-1-text session-1-text-spaced">
 
-<div class="analysis-card">
+      <p>
+        Di Termius, buka <em>SFTP/file transfer</em> untuk host Mahameru yang sama.
+        Panel local menunjuk ke laptop Windows; buka
+        <code>C:\Users\NAMA_ANDA\Downloads</code>.
+        Panel remote menunjuk ke Linux; buka direktori pribadi yang ditampilkan
+        <code>pwd</code>, lalu <code>latihan_simulasi</code>.
+        Seret berkas ZIP dari panel local ke remote atau gunakan perintah
+        <em>Upload</em>. Tunggu sampai transfer selesai. Pada Terminal Linux,
+        periksa ukuran lalu ekstrak:
+      </p>
 
-<strong>
-Li⁺–F</strong>
+    </div>
 
-<span>
-Ion pairing
-</span>
 
-<p>
-Apakah Li⁺ berpasangan dengan anion melalui interaksi Li–F?
-</p>
+    <div class="session-1-command-list">
 
-</div>
+      <div class="session-1-command-card">
 
+        <span class="session-1-command-number">
+          04
+        </span>
 
-<div class="analysis-card">
+        <code>cd ~/latihan_simulasi</code>
 
-<strong>
-LiF–EC</strong>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<span>
-Interface
-</span>
+      </div>
 
-<p>
-Bagaimana EC berinteraksi dengan permukaan LiF?
-</p>
 
-</div>
+      <div class="session-1-command-card">
 
+        <span class="session-1-command-number">
+          05
+        </span>
 
-<div class="analysis-card">
+        <code>ls -lh Paket_Workshop_BRIN_2026.zip</code>
 
-<strong>
-CO / Pt</strong>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<span>
-Catalysis
-</span>
+      </div>
 
-<p>
-Bagaimana CO berpindah pada permukaan Pt?
-</p>
 
-</div>
+      <div class="session-1-command-card">
 
+        <span class="session-1-command-number">
+          06
+        </span>
 
-<div class="analysis-card">
+        <code>unzip -q Paket_Workshop_BRIN_2026.zip</code>
 
-<strong>
-MACE / LiF</strong>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<span>
-AI model
-</span>
+      </div>
 
-<p>
-Apakah MACE mereproduksi respons LiF?
-</p>
 
-</div>
+      <div class="session-1-command-card">
 
-</div>
+        <span class="session-1-command-number">
+          07
+        </span>
 
+        <code>cd workshop_material</code>
 
-<div class="mahameru-info-card">
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<strong>
-Model defines the question</strong>
+      </div>
 
-<p>
-Pertanyaan ilmiah menentukan besaran pertama yang perlu diperiksa.
-Jangan memilih analisis hanya karena file output tersedia.
-Mulailah dari pertanyaan, kemudian tentukan ukuran analisis yang sesuai.
-</p>
 
-</div>
+      <div class="session-1-command-card">
 
+        <span class="session-1-command-number">
+          08
+        </span>
 
-<hr>
+        <code>pwd</code>
 
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<h2 id="dft-dftb-md" class="mahameru-section-title">
-03 · DFT, DFTB, and MD
-</h2>
+      </div>
 
-<p>
-Dalam simulasi atom, kita memerlukan energi dan gaya untuk suatu
-susunan atom. DFT menghitung besaran tersebut melalui model
-elektronik. DFTB menggunakan penyederhanaan dan parameterisasi
-yang diturunkan dari DFT agar perhitungan dapat dilakukan dengan
-biaya komputasi yang lebih rendah.
-</p>
 
-<p>
-Pada molecular dynamics, gaya dihitung kembali ketika atom bergerak.
-Gaya tersebut dapat diperoleh dari DFT, DFTB, atau model yang
-dilatih dengan data, seperti MACE.
-</p>
+      <div class="session-1-command-card">
 
+        <span class="session-1-command-number">
+          09
+        </span>
 
-<div class="workflow-flow">
+        <code>ls</code>
 
-<div>
+        <button
+          class="session-1-copy"
+          type="button"
+          onclick="copySession1Command(this)"
+        >
+          Copy
+        </button>
 
-<strong>
-Structure
-</strong>
+      </div>
 
-<small>
-Atomic positions
-</small>
+    </div>
 
+
+    <div class="session-1-note">
+
+      <p>
+        Hasil <code>pwd</code> harus berakhir dengan
+        <code>latihan_simulasi/workshop_material</code>.
+        <code>ls</code> seharusnya menunjukkan
+        <code>katalog</code>, <code>skrip</code>, <code>parameter</code>,
+        dan <code>PDF</code> jika belum tersedia.
+        Panitia menyediakan program tersebut atau unggah folder
+        <code>workshop_material</code> langsung dengan SFTP.
+        Jika panitia telah menaruh folder itu di akun Anda,
+        jalankan <code>cp -R /workshop_material ~/latihan_simulasi/</code>
+        sebagai ganti langkah unggah dan ekstrak.
+      </p>
+
+    </div>
+
+  </section>
+
 </div>
+<!-- =========================================================
+     SESI 1
+     LANGKAH 3 — PERIKSA LINGKUNGAN LINUX
+     ========================================================= -->
 
+<section class="session-1-section session-1-section-next">
 
-<span>
-→
-</span>
+  <div class="session-1-subheading">
 
+    <span>
+      1.3
+    </span>
 
-<div>
+    <h3>
+      Langkah 3 — periksa lingkungan Linux
+    </h3>
 
-<strong>
-Electronic method
-</strong>
+  </div>
 
-<small>
-DFT / DFTB / MACE
-</small>
 
-</div>
+  <div class="session-1-command-list">
 
+    <div class="session-1-command-card">
 
-<span>
-→
-</span>
+      <span class="session-1-command-number">
+        01
+      </span>
 
+      <code>cd ~/latihan_simulasi/workshop_material</code>
 
-<div>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<strong>
-Energy & force
-</strong>
+    </div>
 
-<small>
-Potential surface
-</small>
 
-</div>
+    <div class="session-1-command-card">
 
+      <span class="session-1-command-number">
+        02
+      </span>
 
-<span>
-→
-</span>
+      <code>python --version</code>
 
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<div>
+    </div>
 
-<strong>
-Molecular dynamics
-</strong>
 
-<small>
-Atomic trajectory
-</small>
+    <div class="session-1-command-card">
 
-</div>
+      <span class="session-1-command-number">
+        03
+      </span>
 
-</div>
+      <code>python skrip/cek_paket.py</code>
 
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<details>
+    </div>
 
-<summary>
-<strong>DFT</strong>
-</summary>
 
-<p>
-Density Functional Theory merupakan metode struktur elektronik
-berbasis kerapatan elektron. Pada pendekatan Born–Oppenheimer,
-posisi inti dianggap tetap ketika keadaan elektronik dihitung.
-Hasilnya memberikan energi potensial untuk konfigurasi atom tersebut.
-</p>
+    <div class="session-1-command-card">
 
-</details>
+      <span class="session-1-command-number">
+        04
+      </span>
 
+      <code>command -v dftb_serial.00.x</code>
 
-<details>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<summary>
-<strong>DFTB</strong>
-</summary>
+    </div>
 
-<p>
-Density Functional Tight Binding merupakan pendekatan yang diturunkan
-dari DFT dan diparameterkan. Penyederhanaan tersebut membuat
-perhitungan lebih hemat biaya dibandingkan perhitungan DFT penuh
-untuk banyak aplikasi atomistik.
-</p>
 
-</details>
+    <div class="session-1-command-card">
 
+      <span class="session-1-command-number">
+        05
+      </span>
 
-<details>
+      <code>command -v sbatch</code>
 
-<summary>
-<strong>Molecular Dynamics</strong>
-</summary>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<p>
-Dalam MD, posisi atom diperbarui langkah demi langkah menggunakan
-gaya yang diperoleh dari metode energi. Hasilnya berupa lintasan
-yang dapat digunakan untuk mempelajari perubahan struktur dan
-pergerakan atom terhadap waktu.
-</p>
+    </div>
 
-</details>
 
+    <div class="session-1-command-card">
 
-<div class="workflow-warning">
+      <span class="session-1-command-number">
+        06
+      </span>
 
-<strong>
-Method choice matters</strong>
+      <code>ls parameter</code>
 
-<p>
-Pilihan metode memengaruhi biaya komputasi dan ketelitian hasil.
-Hasil DFT dengan pengaturan yang sebanding dapat digunakan sebagai
-acuan untuk memeriksa hasil DFTB pada studi yang sesuai.
-</p>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-</div>
+    </div>
 
+  </div>
 
-<hr>
 
+  <div class="session-1-note">
 
-<h2 id="energy-force" class="mahameru-section-title">
-04 · From Energy to Force
-</h2>
+    <p>
+      Skrip pemeriksa memeriksa kelengkapan paket, model MACE, dan pustaka Python.
+      Jika <code>python</code> tidak ditemukan, coba <code>python3</code> dan gunakan
+      nama itu untuk semua contoh berikutnya. Biner DCDFTBMD, set Slater–Koster,
+      serta environment Python untuk MACE disediakan sesuai pengaturan panitia;
+      catat pesan yang belum lengkap lalu tanyakan perintah
+      <code>module load</code> atau aktivasi environment yang berlaku.
+      Panduan kebijakan Mahameru tersedia pada dokumen resmi BRIN.
+    </p>
 
-<p>
-Ketika posisi atom ditetapkan, keadaan elektronik menghasilkan
-energi potensial untuk konfigurasi tersebut. Gaya pada atom diperoleh
-dari turunan negatif energi terhadap posisi atom.
-</p>
+  </div>
 
 
-<div class="mahameru-info-card">
+  <div class="session-1-info">
 
-<strong>
-Force from energy</strong>
+    <div class="session-1-info-title">
+      Perintah dasar
+    </div>
 
-<p>
-Gaya menentukan bagaimana atom bergerak pada simulasi molecular
-dynamics. Karena itu, kualitas energi dan gaya menjadi dasar dari
-trajectory yang dihasilkan.
-</p>
+    <p>
+      <code>cd</code> berpindah direktori,
+      <code>ls</code> melihat berkas,
+      <code>cat</code> membaca berkas pendek,
+      <code>less</code> membaca berkas panjang
+      (tekan <code>q</code> untuk keluar),
+      <code>mkdir</code> membuat direktori,
+      dan <code>cp</code> menyalin berkas.
+    </p>
 
-</div>
+  </div>
 
 
-<details>
+  <div class="session-1-note">
 
-<summary>
-<strong>Born–Oppenheimer picture</strong>
-</summary>
+    <p>
+      Direktori
+      <code>~/latihan_simulasi/workshop_material</code>
+      menjadi titik awal semua perintah praktikum,
+      kecuali bila disebut lain.
+    </p>
 
-<p>
-Dalam pendekatan Born–Oppenheimer, pergerakan inti dan perhitungan
-elektronik dipisahkan. Untuk konfigurasi posisi inti tertentu,
-perhitungan elektronik menghasilkan energi potensial. Gaya kemudian
-digunakan untuk memperbarui posisi atom.
-</p>
+  </div>
 
-</details>
+</section>
+<!-- =========================================================
+     SESI 1
+     LANGKAH 4 — KIRIM PERHITUNGAN KE NODE KOMPUTASI
+     ========================================================= -->
 
+<section class="session-1-section session-1-section-next">
 
-<div class="workflow-flow">
+  <div class="session-1-subheading">
 
-<div>
+    <span>
+      1.4
+    </span>
 
-<strong>
-Atomic positions
-</strong>
+    <h3>
+      Langkah 4 — kirim perhitungan ke node komputasi
+    </h3>
 
-<small>
-R
-</small>
+  </div>
 
-</div>
 
+  <div class="session-1-text">
 
-<span>
-→
-</span>
+    <p>
+      Terminal setelah login dipakai untuk menyiapkan dan memeriksa berkas.
+      Perhitungan DFTB/MD atau MACE yang memakan waktu dikirim melalui
+      job scheduler Slurm.
+    </p>
 
+    <p>
+      Contoh berikut memakai partisi <code>short</code> sebagaimana tercantum
+      dalam kebijakan Mahameru. Ikuti pengaturan terbaru dari fasilitator
+      untuk partisi, waktu, dan kuota.
+    </p>
 
-<div>
+    <p>
+      Setelah membuat input kasus 1 pada bab praktikum, jalankan:
+    </p>
 
-<strong>
-Energy</strong>
+  </div>
 
-<small>
-E(R)
-</small>
 
-</div>
+  <div class="session-1-command-list">
 
+    <div class="session-1-command-card">
 
-<span>
-→
-</span>
+      <span class="session-1-command-number">
+        01
+      </span>
 
+      <code>
+        cd ~/latihan_simulasi/workshop_material
+      </code>
 
-<div>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<strong>
-Force</strong>
+    </div>
 
-<small>
-−∇E
-</small>
 
-</div>
+    <div class="session-1-command-card">
 
+      <span class="session-1-command-number">
+        02
+      </span>
 
-<span>
-→
-</span>
+      <code>
+        sbatch skrip/job_dftb_slurm.sh proyek_pribadi/lipf6_ec
+      </code>
 
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<div>
+    </div>
 
-<strong>
-New positions
-</strong>
 
-<small>
-Next step
-</small>
+    <div class="session-1-command-card">
 
-</div>
+      <span class="session-1-command-number">
+        03
+      </span>
 
-</div>
+      <code>
+        squeue -u $(whoami)
+      </code>
 
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<hr>
+    </div>
 
+  </div>
 
-<h2 id="dftb-scc" class="mahameru-section-title">
-05 · SCC-DFTB
-</h2>
 
-<p>
-SCC atau Self-Consistent Charge merupakan bagian penting dalam
-perhitungan DFTB. Muatan diperbarui melalui proses iteratif sampai
-muatan dan Hamiltonian mencapai kondisi yang konsisten.
-</p>
+  <div class="session-1-info">
 
+    <div class="session-1-info-title">
+      Memahami status job
+    </div>
 
-<div class="workflow-roadmap">
+    <p>
+      <code>sbatch</code> mencetak nomor job.
+      <code>squeue</code> menampilkan status menunggu atau berjalan.
+    </p>
 
-<div class="workflow-step">
+  </div>
 
-<span>
-01
-</span>
 
-<strong>
-Initial charge
-</strong>
+  <div class="session-1-text">
 
-<small>
-Starting state
-</small>
+    <p>
+      Ketika job hilang dari daftar, lihat log:
+    </p>
 
-</div>
+  </div>
 
 
-<div class="workflow-arrow">
-→
-</div>
+  <div class="session-1-command-list">
 
+    <div class="session-1-command-card">
 
-<div class="workflow-step">
+      <span class="session-1-command-number">
+        04
+      </span>
 
-<span>
-02
-</span>
+      <code>
+        ls -lt slurm-*.out
+      </code>
 
-<strong>
-Hamiltonian
-</strong>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<small>
-Electronic state
-</small>
+    </div>
 
-</div>
 
+    <div class="session-1-command-card">
 
-<div class="workflow-arrow">
-→
-</div>
+      <span class="session-1-command-number">
+        05
+      </span>
 
+      <code>
+        tail -n 30 slurm-NOMOR_JOB.out
+      </code>
 
-<div class="workflow-step">
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<span>
-03
-</span>
+    </div>
 
-<strong>
-Update charge
-</strong>
 
-<small>
-Charge redistribution
-</small>
+    <div class="session-1-command-card">
 
-</div>
+      <span class="session-1-command-number">
+        06
+      </span>
 
+      <code>
+        ls -lh proyek_pribadi/lipf6_ec/traject
+      </code>
 
-<div class="workflow-arrow">
-→
-</div>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
+    </div>
 
-<div class="workflow-step">
+  </div>
 
-<span>
-04
-</span>
 
-<strong>
-Converged?</strong>
+  <div class="session-1-note">
 
-<small>
-SCC check
-</small>
+    <p>
+      Ganti <code>NOMOR_JOB</code> dengan angka dari <code>sbatch</code>.
+      Jika job gagal, baca log dahulu. Jangan menganggap tidak muncul di
+      <code>squeue</code> berarti berhasil.
+    </p>
 
-</div>
+  </div>
 
-</div>
 
+  <div class="session-1-note">
 
-<div class="workflow-check">
+    <p>
+      Contoh <code>--jalankan</code> pada bab kasus dipakai di dalam job
+      atau alokasi komputasi, bukan langsung di node login.
+      Analisis CSV yang singkat dapat dilakukan sesudah keluaran MD tersedia.
+    </p>
 
-<strong>
-SCC CHECK</strong>
+  </div>
 
-<ul>
 
-<li>Apakah proses SCC selesai?</li>
+  <div class="session-1-info">
 
-<li>Apakah output menunjukkan kondisi normal?</li>
+    <div class="session-1-info-title">
+      Catatan Slurm
+    </div>
 
-<li>Apakah energi dan gaya dapat digunakan?</li>
+    <p>
+      Contoh Slurm resmi dari kegiatan HPC Mahameru dapat dilihat pada
+      repositori pelatihan Mahameru.
+    </p>
 
-<li>Apakah terdapat indikasi konvergensi bermasalah?</li>
+  </div>
 
-</ul>
+</section>
+<!-- =========================================================
+     SESI 1
+     LANGKAH 5 — UNDUH KELUARAN KE WINDOWS
+     ========================================================= -->
 
-</div>
+<section class="session-1-section">
 
+  <div class="session-1-subheading">
 
-<div class="workflow-warning">
+    <span>
+      1.5
+    </span>
 
-<strong>
-Do not skip convergence</strong>
+    <h3>
+      Langkah 5 — unduh keluaran ke Windows
+    </h3>
 
-<p>
-Jika SCC tidak konvergen, jangan langsung menggunakan energi atau
-gaya pada langkah tersebut untuk interpretasi ilmiah.
-Periksa pesan output, parameter, dan geometri sistem.
-</p>
+  </div>
 
-</div>
 
+  <div class="session-1-text">
 
-<hr>
+    <p>
+      Setelah analisis kasus 1, periksa nama hasil di Terminal Linux:
+    </p>
 
+  </div>
 
-<h2 id="slater-koster" class="mahameru-section-title">
-06 · Slater–Koster Parameters
-</h2>
 
-<p>
-Perhitungan DFTB memerlukan parameter Slater–Koster yang sesuai
-dengan pasangan unsur dalam sistem. Berkas tersebut menyimpan
-informasi interaksi orbital untuk pasangan unsur yang digunakan
-dalam perhitungan.
-</p>
+  <div class="session-1-command-list">
 
+    <div class="session-1-command-card">
 
-<div class="workflow-grid">
+      <span class="session-1-command-number">
+        01
+      </span>
 
-<div class="workflow-card">
+      <code>
+        cd ~/latihan_simulasi/workshop_material
+      </code>
 
-<span>
-01
-</span>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<strong>
-Elements</strong>
+    </div>
 
-<p>
-Identifikasi semua unsur yang terdapat dalam sistem.
-</p>
 
-</div>
+    <div class="session-1-command-card">
 
+      <span class="session-1-command-number">
+        02
+      </span>
 
-<div class="workflow-card">
+      <code>
+        ls -lh proyek_pribadi/lipf6_ec/*.csv
+      </code>
 
-<span>
-02
-</span>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<strong>
-Pairs</strong>
+    </div>
 
-<p>
-Pastikan pasangan unsur yang diperlukan memiliki parameter.
-</p>
 
-</div>
+    <div class="session-1-command-card">
 
+      <span class="session-1-command-number">
+        03
+      </span>
 
-<div class="workflow-card">
+      <code>
+        ls -lh proyek_pribadi/lipf6_ec/*.png
+      </code>
 
-<span>
-03
-</span>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<strong>
-Compatibility</strong>
+    </div>
 
-<p>
-Gunakan satu set parameter yang kompatibel untuk sistem yang dihitung.
-</p>
 
-</div>
+    <div class="session-1-command-card">
 
-</div>
+      <span class="session-1-command-number">
+        04
+      </span>
 
+      <code>
+        ls -lh proyek_pribadi/lipf6_ec/hasil.log
+      </code>
 
-<details>
+      <button
+        class="session-1-copy"
+        type="button"
+        onclick="copySession1Command(this)"
+      >
+        Copy
+      </button>
 
-<summary>
-<strong>Why the pair files matter</strong>
-</summary>
+    </div>
 
-<p>
-Untuk sistem dengan beberapa unsur, input membutuhkan parameter
-interaksi untuk pasangan unsur yang diperlukan. Nama unsur saja
-tidak menjamin bahwa dua berkas parameter berasal dari parameterisasi
-yang kompatibel.
-</p>
+  </div>
 
-</details>
 
+  <div class="session-1-info">
 
-<div class="workflow-warning">
+    <div class="session-1-info-title">
+      Siapkan folder hasil di Windows
+    </div>
 
-<strong>
-Parameterization matters</strong>
+    <p>
+      Di Windows, buat folder
+      <code>Downloads\hasil_workshop</code>.
+    </p>
 
-<p>
-Jangan menggabungkan berkas Slater–Koster dari parameterisasi berbeda
-hanya karena nama unsurnya sama. Periksa sumber dan kompatibilitas
-parameter sebelum menjalankan perhitungan.
-</p>
+  </div>
 
-</div>
 
+  <div class="session-1-text">
 
-<hr>
+    <p>
+      Buka SFTP Termius untuk host yang sama.
+      Pada panel remote, telusuri:
+    </p>
 
+  </div>
 
-<h2 id="four-objects" class="mahameru-section-title">
-07 · Four Objects to Record
-</h2>
 
-<p>
-Setiap latihan harus memiliki catatan yang cukup untuk menjelaskan
-apa yang dihitung dan bagaimana hasilnya diperoleh.
-</p>
+  <div class="session-1-path-box">
 
+    <code>
+      latihan_simulasi/workshop_material/proyek_pribadi/lipf6_ec
+    </code>
 
-<div class="validation-grid">
+  </div>
 
-<div class="validation-card">
 
-<strong>
-01
-</strong>
+  <div class="session-1-text">
 
-<h3>
-Structure</h3>
+    <p>
+      Pada panel local, buka:
+    </p>
 
-<p>
-Jenis atom, posisi, muatan, dan sel bila diperlukan.
-</p>
+  </div>
 
-</div>
 
+  <div class="session-1-path-box">
 
-<div class="validation-card">
+    <code>
+      Downloads\hasil_workshop
+    </code>
 
-<strong>
-02
-</strong>
+  </div>
 
-<h3>
-Method</h3>
 
-<p>
-Pendekatan energi, parameter, dan pengaturan konvergensi.
-</p>
+  <div class="session-1-text">
 
-</div>
+    <p>
+      Pilih CSV, PNG, <code>dftb.inp</code>, dan
+      <code>hasil.log</code>. Gunakan Download atau seret
+      berkas ke panel local.
+    </p>
 
+    <p>
+      Untuk menyimpan lintasan lengkap, unduh juga
+      <code>traject</code> dan <code>mulliken</code>,
+      yang dapat berukuran jauh lebih besar.
+    </p>
 
-<div class="validation-card">
+  </div>
 
-<strong>
-03
-</strong>
 
-<h3>
-Procedure</h3>
+  <div class="session-1-info">
 
-<p>
-Single point, optimasi, atau molecular dynamics.
-</p>
+    <div class="session-1-info-title">
+      Setelah transfer selesai
+    </div>
 
-</div>
+    <p>
+      Buka PNG atau CSV dengan aplikasi Windows setelah
+      transfer selesai.
+    </p>
 
+    <p>
+      Path <code>C:\Users</code> merupakan path Windows dan
+      tidak diketik dalam Terminal Linux.
+    </p>
 
-<div class="validation-card">
+    <p>
+      Termius mendukung SFTP dan transfer berkas langsung.
+    </p>
 
-<strong>
-04
-</strong>
+  </div>
 
-<h3>
-Results</h3>
 
-<p>
-Energi, gaya, geometri, trajectory, dan status komputasi.
-</p>
+  <div class="session-1-note">
 
-</div>
+    <p>
+      Jika koneksi putus, sambungkan kembali host di Termius.
+      Berkas dan job yang sudah dikirim tetap berada di Mahameru.
+      Periksa <code>squeue</code> dan log sebelum mengirim ulang.
+    </p>
 
-</div>
+  </div>
 
 
-<div class="mahameru-info-card">
+  <div class="session-1-note">
 
-<strong>
-Why record all four?</strong>
+    <p>
+      Simpan hasil penting pada direktori pribadi dan unduh
+      salinannya setelah sesi.
+    </p>
 
-<p>
-Jika salah satu dari empat objek tersebut tidak dicatat, hasil akan
-lebih sulit diulang atau dibandingkan. Catatan seperti “simulasi
-berhasil” tidak cukup untuk menjelaskan sebuah hasil komputasi.
-</p>
+  </div>
 
-</div>
+</section>
+<!-- =========================================================
+     SESI 1
+     BAGIAN 2 — HASIL BELAJAR DAN RANGKAIAN KEGIATAN
+     ========================================================= -->
 
+<section class="session-1-learning">
 
-<details>
+  <div class="session-1-section-heading">
 
-<summary>
-<strong>Example · LiPF6 / EC</strong>
-</summary>
+    <div class="session-1-section-number">
+      02
+    </div>
 
-<p>
-Contoh catatan awal dapat ditulis sebagai berikut:
-</p>
+    <div class="session-1-section-heading-text">
 
-<ul>
+      <span>
+        HASIL BELAJAR
+      </span>
 
-<li>
-<strong>Structure:</strong> sistem periodik dengan muatan total netral.
-</li>
+      <h2>
+        Hasil belajar dan rangkaian kegiatan
+      </h2>
 
-<li>
-<strong>Method:</strong> SCC-DFTB dengan parameter untuk Li/P/F/C/H/O.
-</li>
+    </div>
 
-<li>
-<strong>Procedure:</strong> MD NVT pada 350 K.
-</li>
+  </div>
 
-<li>
-<strong>Results:</strong> trajectory, energi, muatan, dan status SCC.
-</li>
 
-</ul>
+  <div class="session-1-learning-intro">
 
-</details>
+    <p>
+      Setelah mengikuti kegiatan ini, Anda dapat:
+    </p>
 
+  </div>
 
-<hr>
 
+  <div class="session-1-learning-grid">
 
-<h2 id="units" class="mahameru-section-title">
-08 · Units and Time Scale
-</h2>
+    <div class="session-1-learning-card">
 
-<p>
-Satuan perlu dicatat bersama hasil. Jangan memisahkan angka dari
-satuan dan pengaturan simulasi yang menghasilkan angka tersebut.
-</p>
+      <div class="session-1-learning-number">
+        01
+      </div>
 
+      <div>
+        <strong>
+          Membaca dan menyusun
+        </strong>
 
-<div class="workflow-grid">
+        <p>
+          <code>dftb.inp</code>
+        </p>
+      </div>
 
-<div class="workflow-card">
+    </div>
 
-<span>
-Å
-</span>
 
-<strong>
-Position</strong>
+    <div class="session-1-learning-card">
 
-<p>
-Koordinat struktur pada latihan menggunakan ångström.
-</p>
+      <div class="session-1-learning-number">
+        02
+      </div>
 
-</div>
+      <div>
+        <strong>
+          Menjelaskan SCC-DFTB
+        </strong>
 
+        <p>
+          serta parameter Slater–Koster.
+        </p>
+      </div>
 
-<div class="workflow-card">
+    </div>
 
-<span>
-eV
-</span>
 
-<strong>
-Energy</strong>
+    <div class="session-1-learning-card">
 
-<p>
-Energi dari workflow berbasis ASE dapat dibaca dalam eV.
-</p>
+      <div class="session-1-learning-number">
+        03
+      </div>
 
-</div>
+      <div>
+        <strong>
+          Menyiapkan simulasi MD
+        </strong>
 
+        <p>
+          elektrolit.
+        </p>
 
-<div class="workflow-card">
+      </div>
 
-<span>
-eV/Å
-</span>
+    </div>
 
-<strong>
-Force</strong>
 
-<p>
-Gaya dapat dinyatakan dalam eV/Å.
-</p>
+    <div class="session-1-learning-card">
 
-</div>
+      <div class="session-1-learning-number">
+        04
+      </div>
 
+      <div>
+        <strong>
+          Menganalisis
+        </strong>
 
-</div>
+        <p>
+          RDF, koordinasi, MSD, dan muatan.
+        </p>
 
+      </div>
 
-<div class="mahameru-info-card">
+    </div>
 
-<strong>
-Time step</strong>
 
-<p>
-DCDFTBMD menerima <code>DELTAT</code> dalam detik. Karena
-1 fs = 10<sup>−15</sup> s, maka <code>5.0e-16 s</code> sama dengan
-0,5 fs.
-</p>
+    <div class="session-1-learning-card">
 
-</div>
+      <div class="session-1-learning-number">
+        05
+      </div>
 
+      <div>
+        <strong>
+          Mengestimasi difusi
+        </strong>
 
-<details>
+        <p>
+          dan konduktivitas ion ideal serta
+          menilai lintasan NEB dan energi
+          interaksi molekul.
+        </p>
 
-<summary>
-<strong>Example · 1000 MD steps</strong>
-</summary>
+      </div>
 
-<p>
-Untuk 1000 langkah dengan timestep 0,5 fs:
-</p>
+    </div>
 
-<div class="highlight"><pre><span></span><code>1000 × 0,5 fs = 500 fs
-</code></pre></div>
 
-<p>
-Jika output dicetak setiap 10 langkah, jarak nominal antar-frame
-yang tersimpan adalah:
-</p>
+    <div class="session-1-learning-card">
 
-<div class="highlight"><pre><span></span><code>10 × 0,5 fs = 5 fs
-</code></pre></div>
+      <div class="session-1-learning-number">
+        06
+      </div>
 
-<p>
-Lintasan tersebut digunakan untuk latihan analisis awal. Modul
-menegaskan bahwa lintasan 500 fs masih terlalu pendek untuk
-mengambil koefisien transport secara andal.
-</p>
+      <div>
+        <strong>
+          Membandingkan respons LiF
+        </strong>
 
-</details>
+        <p>
+          dari DFTB dan MACE.
+        </p>
 
+      </div>
 
-<details>
+    </div>
 
-<summary>
-<strong>Practice · Time conversion</strong>
-</summary>
+  </div>
 
-<p>
-Hitung waktu nominal untuk 80 langkah dengan:
-</p>
 
-<div class="highlight"><pre><span></span><code>DELTAT = 5.0e-16 s
-</code></pre></div>
+  <!-- =====================================================
+       RANGKAIAN KEGIATAN
+       ===================================================== -->
 
-<p>
-Hasilnya:
-</p>
+  <div class="session-1-activity">
 
-<div class="highlight"><pre><span></span><code>80 × 0,5 fs = 40 fs
-</code></pre></div>
+    <div class="session-1-activity-heading">
 
-<p>
-Jika <code>PRINT=5</code>, terdapat 16 interval output sepanjang
-80 langkah. Jumlah frame aktual tetap perlu diperiksa dari file
-keluaran.
-</p>
+      <span>
+        06 OKTOBER 2026
+      </span>
 
-</details>
+      <h3>
+        Waktu dan rangkaian kegiatan
+      </h3>
 
+    </div>
 
-<hr>
 
+    <div class="session-1-schedule">
 
-<h2 id="model-limit" class="mahameru-section-title">
-09 · Know the Model Limit
-</h2>
 
-<p>
-Model atomistik menjawab pertanyaan tertentu pada kondisi tertentu.
-Hasil tidak boleh diperluas melebihi apa yang didukung oleh model.
-</p>
+      <div class="session-1-schedule-row">
 
+        <div class="session-1-schedule-time">
+          08.45–09.30
+        </div>
 
-<div class="workflow-grid">
+        <div class="session-1-schedule-duration">
+          45 menit
+        </div>
 
-<div class="workflow-card">
+        <div class="session-1-schedule-content">
 
-<span>
-01
-</span>
+          <strong>
+            Sesi 1
+          </strong>
 
-<strong>
-Scale</strong>
+          <p>
+            Pengantar sains material komputasi,
+            hubungan DFT, DFTB, dan MD
+          </p>
 
-<p>
-Model kecil tidak otomatis mewakili perilaku pada skala sel atau
-material nyata.
-</p>
+        </div>
 
-</div>
+      </div>
 
 
-<div class="workflow-card">
+      <div class="session-1-schedule-row">
 
-<span>
-02
-</span>
+        <div class="session-1-schedule-time">
+          10.30–12.00
+        </div>
 
-<strong>
-Sampling</strong>
+        <div class="session-1-schedule-duration">
+          90 menit
+        </div>
 
-<p>
-Trajectory pendek dapat membatasi analisis dinamika dan transport.
-</p>
+        <div class="session-1-schedule-content">
 
-</div>
+          <strong>
+            Sesi 3
+          </strong>
 
+          <p>
+            Praktik input DCDFTBMD dan MD elektrolit
+            LiPF6/ethylene carbonate
+          </p>
 
-<div class="workflow-card">
+        </div>
 
-<span>
-03
-</span>
+      </div>
 
-<strong>
-Boundary</strong>
 
-<p>
-PBC, slab, dan vakum menentukan cara hasil harus dibaca.
-</p>
+      <div class="session-1-schedule-row">
 
-</div>
+        <div class="session-1-schedule-time">
+          13.00–14.30
+        </div>
 
+        <div class="session-1-schedule-duration">
+          90 menit
+        </div>
 
-</div>
+        <div class="session-1-schedule-content">
 
+          <strong>
+            Sesi 4
+          </strong>
 
-<div class="workflow-warning">
+          <p>
+            Analisis RDF, koordinasi, MSD/transport,
+            muatan, dan antarmuka LiF–EC
+          </p>
 
-<strong>
-Example: LiF–EC</strong>
+        </div>
 
-<p>
-Model slab tipis dengan satu molekul EC dan ruang vakum belum
-mewakili antarmuka elektrokimia penuh. Model tersebut digunakan
-untuk mempelajari kontak adsorbat dan redistribusi muatan pada
-latihan workshop.
-</p>
+      </div>
 
-</div>
 
+      <div class="session-1-schedule-row">
 
-<hr>
+        <div class="session-1-schedule-time">
+          14.30–15.15
+        </div>
 
+        <div class="session-1-schedule-duration">
+          45 menit
+        </div>
 
-<h2 id="foundation-check" class="mahameru-section-title">
-Foundation Check
-</h2>
+        <div class="session-1-schedule-content">
 
-<p>
-Sebelum masuk ke praktik LiPF6/EC, pastikan Anda dapat menjelaskan
-alur dasar berikut.
-</p>
+          <strong>
+            Sesi 5
+          </strong>
 
+          <p>
+            Pendekatan pemodelan berbasis AI (MACE)
+          </p>
 
-<div class="workflow-check">
+        </div>
 
-<strong>
-CHECK YOUR UNDERSTANDING</strong>
+      </div>
 
-<ul>
 
-<li>
-Apa yang dimaksud dengan konfigurasi atom?
-</li>
+      <div class="session-1-schedule-row">
 
-<li>
-Mengapa pertanyaan ilmiah perlu ditentukan sebelum memilih analisis?
-</li>
+        <div class="session-1-schedule-time">
+          15.45–16.30
+        </div>
 
-<li>
-Apa hubungan antara DFT, DFTB, dan molecular dynamics?
-</li>
+        <div class="session-1-schedule-duration">
+          45 menit
+        </div>
 
-<li>
-Mengapa energi diperlukan untuk memperoleh gaya?
-</li>
+        <div class="session-1-schedule-content">
 
-<li>
-Apa fungsi SCC dalam SCC-DFTB?
-</li>
+          <strong>
+            Sesi 6
+          </strong>
 
-<li>
-Mengapa parameter Slater–Koster harus kompatibel?
-</li>
+          <p>
+            Studi kasus material, katalisis, baterai,
+            dan biomedis
+          </p>
 
-<li>
-Apa empat objek yang harus dicatat pada setiap latihan?
-</li>
+        </div>
 
-<li>
-Mengapa 500 fs cukup untuk latihan awal tetapi belum cukup untuk
-klaim transport yang konvergen?
-</li>
+      </div>
 
-</ul>
 
-</div>
+    </div>
 
+  </div>
 
-<hr>
 
+  <!-- =====================================================
+       CARA MENGGUNAKAN BUKU KERJA
+       ===================================================== -->
 
-<div class="workflow-next">
+  <div class="session-1-guide">
 
-<div>
+    <div class="session-1-guide-label">
+      CARA MENGGUNAKAN BUKU KERJA
+    </div>
 
-<span>
-PREVIOUS
-</span>
 
-<strong>
-Day 1 Overview
-</strong>
+    <div class="session-1-guide-content">
 
-</div>
+      <p>
+        Mulai dari persiapan akun dan pembuatan input MD
+        elektrolit LiPF6/ethylene carbonate.
+      </p>
 
+      <p>
+        Sesi praktik berikutnya menganalisis RDF,
+        koordinasi Li–O/Li–F, MSD, estimasi transport,
+        muatan Mulliken, dan interaksi EC dengan
+        permukaan LiF.
+      </p>
 
-<div>
+      <p>
+        Studi lanjutan membahas migrasi CO pada Pt,
+        interaksi ibuprofenat dengan motif arginina,
+        serta respons kisi LiF menggunakan MACE.
+      </p>
 
-<span>
-NEXT
-</span>
+      <p>
+        Lembar kerja membantu Anda mencatat angka dari
+        komputer sendiri; lampiran berisi kode lengkap
+        untuk dibaca kembali setelah kelas.
+      </p>
 
-<strong>
-LiPF6 / EC</strong>
+    </div>
 
-</div>
+  </div>
 
-</div>
 
-</div>
+  <!-- =====================================================
+       CATATAN PESERTA
+       ===================================================== -->
+
+  <div class="session-1-save-note">
+
+    <div class="session-1-save-icon">
+      ✓
+    </div>
+
+    <div>
+
+      <strong>
+        Simpan hasil setiap latihan
+      </strong>
+
+      <p>
+        Simpan struktur, pengaturan metode, energi,
+        dan gaya dari setiap latihan.
+      </p>
+
+      <p>
+        Catatan tersebut membantu Anda mengikuti diskusi
+        komputasi HPC dan membandingkan hasilnya dengan
+        perhitungan DFT menggunakan Quantum ESPRESSO
+        pada sesi berikutnya.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       PRASYARAT
+       ===================================================== -->
+
+  <div class="session-1-prerequisite">
+
+    <div class="session-1-prerequisite-label">
+      PRASYARAT
+    </div>
+
+
+    <div class="session-1-prerequisite-content">
+
+      <p>
+        Pemahaman sederhana mengenai atom dan molekul.
+        Perintah Terminal dan pustaka Python yang dipakai
+        akan diperkenalkan selangkah demi selangkah.
+      </p>
+
+      <p>
+        Untuk perhitungan DCDFTBMD diperlukan program dan
+        parameter Slater–Koster yang sesuai.
+      </p>
+
+      <p>
+        Halaman unduhan resmi DCDFTBMD menyebut biner
+        siap pakai Linux x86_64 dan proses lisensi akademik.
+      </p>
+
+      <p>
+        Untuk latihan MACE tersedia model MACE-MP-0 small
+        dan studi persamaan keadaan LiF.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
@@ -3929,6 +4196,8 @@ MKI × ITB × BRIN
         <script src="../../../javascripts/worksheet.js"></script>
       
         <script src="../../../javascripts/lifec-viewer.js"></script>
+      
+        <script src="../../../javascripts/session1.js"></script>
       
         <script src="../../../javascripts/md-analysis-worksheet.js"></script>
       

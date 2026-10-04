@@ -1594,3 +1594,1720 @@
   </div>
 
 </section>
+<div class="foundation-section">
+
+  <div class="foundation-section-heading">
+    <div class="foundation-section-number">03</div>
+
+    <div>
+      <span class="foundation-section-label">
+        STRUKTUR ATOM
+      </span>
+
+      <h2>
+        Struktur atom dan pertanyaan ilmiah
+      </h2>
+    </div>
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Satu konfigurasi atom adalah daftar jenis atom dan posisi kartesiusnya.
+      Posisi dinyatakan dalam ångström (Å). Pada kristal, tiga vektor translasi
+      menyatakan sel periodik. Pada antarmuka, kita biasanya membuat slab
+      (model permukaan padatan) dan ruang di atasnya untuk molekul atau
+      elektrolit. Model antarmuka pada latihan ini memuat LiF dan satu molekul
+      ethylene carbonate dalam ruang vakum.
+    </p>
+
+    <p>
+      Sebelum menghitung, rumuskan besaran yang ingin diamati. Dalam elektrolit,
+      ukur distribusi Li–O dan Li–F, bilangan koordinasi, MSD, perkiraan
+      transport, serta tren muatan. Di antarmuka, ikuti jarak O karbonil
+      EC–Li permukaan dan redistribusi muatan. Dalam katalisis, hitung barrier
+      migrasi dari lintasan NEB. Untuk kompleks obat, bandingkan energi
+      interaksi dengan referensi yang konsisten.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-structure-grid">
+
+    <div class="foundation-structure-card">
+
+      <div class="foundation-card-label">
+        KONFIGURASI ATOM
+      </div>
+
+      <h3>Struktur awal</h3>
+
+      <p>
+        Jenis atom dan posisi kartesius menjadi dasar untuk menentukan
+        geometri sistem sebelum simulasi dilakukan.
+      </p>
+
+      <div class="foundation-mini-list">
+        <span>Jenis atom</span>
+        <span>Posisi kartesius</span>
+        <span>Sel periodik</span>
+      </div>
+
+    </div>
+
+
+    <div class="foundation-structure-card">
+
+      <div class="foundation-card-label">
+        PERTANYAAN ILMIAH
+      </div>
+
+      <h3>Besaran yang diamati</h3>
+
+      <p>
+        Pertanyaan ilmiah menentukan besaran yang perlu dihitung dan
+        menentukan metode analisis yang digunakan.
+      </p>
+
+      <div class="foundation-mini-list">
+        <span>RDF</span>
+        <span>Koordinasi</span>
+        <span>MSD</span>
+        <span>Muatan</span>
+        <span>Barrier energi</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-figure">
+
+    <div class="foundation-figure-placeholder">
+      <span>GAMBAR 2</span>
+      <strong>
+        Struktur awal antarmuka LiF–ethylene carbonate
+      </strong>
+      <small>
+        Tampak atas dan tampak miring
+      </small>
+    </div>
+
+    <p class="foundation-caption">
+      Gambar 2: Struktur awal antarmuka LiF–ethylene carbonate dari VMD.
+      Li biru, F hijau, dan O karbonil merah. Kedua gambar memakai koordinat
+      yang sama; struktur ini belum merupakan hasil MD.
+    </p>
+
+  </div>
+
+</div>
+<div class="foundation-section foundation-section-4">
+
+  <div class="foundation-section-heading">
+    <div class="foundation-section-number">04</div>
+
+    <div>
+      <span class="foundation-section-label">
+        DASAR METODE
+      </span>
+
+      <h2>
+        Hubungan DFT, DFTB, dan MD
+      </h2>
+    </div>
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Dalam simulasi atom, kita memerlukan energi dan gaya untuk suatu
+      susunan atom. DFT menghitung besaran tersebut melalui model elektron.
+      Dalam kasus DFTB, DFT menjadi landasan teori: energi DFT didekati
+      dengan penyederhanaan dan parameter agar perhitungan lebih cepat.
+      Hasil DFT dengan pendekatan yang sebenarnya juga dapat digunakan
+      sebagai acuan untuk memeriksa hasil DFTB.
+    </p>
+
+    <p>
+      Pada dinamika molekul (MD), gaya dihitung kembali setiap kali atom
+      bergerak. Gaya itu dapat diperoleh dari DFT, DFTB, atau model yang
+      dilatih dengan data, seperti MACE. Pilihan metode memengaruhi waktu
+      komputasi dan ketelitian hasil. Jika Quantum ESPRESSO pada hari kedua
+      memakai DFT untuk dapt digunakan sebagai pembanding, istilah
+      <em>first-principles</em> tidak berarti tanpa pendekatan atau tanpa
+      kesalahan.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-method-grid">
+
+    <div class="foundation-method-card">
+
+      <div class="foundation-card-label">
+        DFT
+      </div>
+
+      <h3>Density Functional Theory</h3>
+
+      <p>
+        DFT menghitung energi dari kerapatan elektron dan menjadi dasar
+        teori untuk pendekatan yang lebih sederhana.
+      </p>
+
+    </div>
+
+
+    <div class="foundation-method-card">
+
+      <div class="foundation-card-label">
+        DFTB
+      </div>
+
+      <h3>Density Functional Tight Binding</h3>
+
+      <p>
+        DFTB menyederhanakan perhitungan DFT dengan menggunakan pendekatan
+        dan parameter tertentu sehingga komputasi dapat berlangsung lebih
+        cepat.
+      </p>
+
+    </div>
+
+
+    <div class="foundation-method-card">
+
+      <div class="foundation-card-label">
+        MD
+      </div>
+
+      <h3>Molecular Dynamics</h3>
+
+      <p>
+        MD menggunakan energi dan gaya untuk menentukan pergerakan atom
+        dari waktu ke waktu.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-equation">
+
+    <div class="foundation-equation-label">
+      BENTUK ENERGI DFTB
+    </div>
+
+    <div class="foundation-equation-formula">
+      E<sub>DFTB2</sub> ≈
+      ∑<sub>i</sub> n<sub>i</sub>
+      ⟨ψ<sub>i</sub>|H<sup>0</sup>|ψ<sub>i</sub>⟩
+      +
+      ½∑<sub>A,B</sub> γ<sub>AB</sub>Δq<sub>A</sub>Δq<sub>B</sub>
+      +
+      E<sub>rep</sub>
+    </div>
+
+  </div>
+
+
+  <div class="foundation-text foundation-text-secondary">
+
+    <p>
+      Suku pertama menyatakan energi elektron pada model acuan; suku kedua
+      memperhitungkan perubahan muatan atom Δq<sub>A</sub>; suku terakhir
+      menyatakan interaksi antartatom pada jarak dekat yang ditentukan oleh
+      parameter. SCC berarti muatan diperbarui, Hamiltonian diperbarui,
+      lalu diulang sampai perubahan muatan atau energi konvergen. Bila SCC
+      gagal, energi dan gaya langkah tersebut tidak boleh dipakai tanpa
+      pemeriksaan.
+    </p>
+
+    <p>
+      Berkas Slater–Koster (<code>.skf</code> pada PTB) menyimpan informasi
+      untuk setiap pasangan atom yang terurut. Setiap pasangan atom
+      memiliki maksimal empat orbital valensi: 1 untuk s dan 2 untuk p.
+      Urutan unsur di bagian parameter menentukan urutan seluruh nama
+      berkas. Jangan menyatukan berkas dari parameterisasi berbeda hanya
+      karena nama unsurnya cocok. Manual resmi DCDTBFMD 2.0 menjelaskan
+      format ini pada bagian 1.3.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-info-block">
+
+    <strong>Catatan metode</strong>
+
+    <p>
+      Seluruh input latihan memakai NVT atau folder parameter/PTBP dalam
+      paket, dengan nama berkas asli seperti <code>Li-F.skf</code>.
+      DCDTBFMD merupakan wrapper untuk simulasi yang menggunakan metode
+      tersebut.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-dc-block">
+
+    <div class="foundation-card-label">
+      DIVIDE-AND-CONQUER
+    </div>
+
+    <h3>Pembagian sistem dengan metode DC</h3>
+
+    <p>
+      Divide-and-conquer (DC) membagi sistem besar menjadi subsistem agar
+      DFTB dapat dijalankan lebih efisien. Dalam latihan ini
+      <code>DC=FALSE</code>, sehingga Anda dapat mempelajari SCC-DFTB dan
+      format input lebih dahulu. Pengaktifan DC untuk sistem besar
+      memerlukan pemeriksaan ukuran subsistem dan konvergensi khusus.
+    </p>
+
+  </div>
+
+</div>
+<div class="foundation-subsection foundation-dynamics">
+
+  <div class="foundation-subsection-heading">
+    <span>4.1</span>
+    <h3>Dari energi ke dinamika</h3>
+  </div>
+
+  <div class="foundation-text">
+
+    <p>
+      Gaya atom A adalah
+      <strong>F<sub>A</sub> = −∇<sub>A</sub>E</strong>.
+      Optimasi menggeser atom menuju gaya kecil. MD menyelesaikan gerak
+      atom berikut:
+      <strong>m<sub>A</sub>R̈<sub>A</sub> = F<sub>A</sub></strong>.
+      Skema velocity Verlet memakai posisi, kecepatan, dan gaya saat ini
+      untuk memperkirakan keadaan berikutnya, lalu memperbarui kecepatan
+      dengan gaya baru.
+    </p>
+
+    <p>
+      Langkah waktu yang terlalu besar dapat membuat energi melonjak atau
+      ikatan pecah secara numerik. Langkah yang sangat kecil meningkatkan
+      biaya komputasi. Uji langkah biasanya memakai simulasi singkat dengan
+      kondisi awal yang sama, lalu membandingkan konservasi energi atau
+      stabilitas temperatur.
+    </p>
+
+    <div class="foundation-parameter-card">
+
+      <div class="foundation-card-label">
+        CONTOH PARAMETER
+      </div>
+
+      <div class="foundation-parameter-grid">
+
+        <div>
+          <span>Time step</span>
+          <strong>0,5 fs</strong>
+        </div>
+
+        <div>
+          <span>Jumlah langkah</span>
+          <strong>1000</strong>
+        </div>
+
+        <div>
+          <span>Total waktu</span>
+          <strong>500 fs</strong>
+        </div>
+
+        <div>
+          <span>Integrator</span>
+          <strong>Velocity Verlet</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+    <p>
+      Untuk kasus LiPF<sub>6</sub>/EC, 1000 × 0,5 fs = 500 fs.
+      DCDTBFMD memakai integrator velocity Verlet dan menyediakan NVE/NVT;
+      lihat manual bagian 1.1.9.
+    </p>
+
+  </div>
+
+</div>
+<div class="foundation-section foundation-concept-map">
+
+  <div class="foundation-section-heading">
+    <span class="foundation-section-number">05</span>
+
+    <div>
+      <div class="foundation-section-label">
+        PETA KONSEP
+      </div>
+
+      <h2>Peta konsep: dari pertanyaan ke perhitungan</h2>
+    </div>
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Sebelum memilih program, pertanyaan yang bisa dijawab oleh sebuah
+      model atomistik perlu dirumuskan dengan jelas. Pada skala atom,
+      kita dapat menghitung geometri, energi, gaya, dan perubahan posisi
+      terhadap waktu. Besaran seperti kapasitas umur siklus, atau laju
+      degradasi sel memerlukan informasi pada skala dan kondisi tambahan.
+      Model kecil dalam buku ini dipakai untuk berlatih merumuskan
+      pertanyaan dan memeriksa hasil.
+    </p>
+
+
+    <div class="foundation-concept-intro">
+
+      <div class="foundation-concept-intro-number">
+        01
+      </div>
+
+      <div>
+        <strong>
+          Mulai dari pertanyaan ilmiah
+        </strong>
+
+        <p>
+          Tentukan terlebih dahulu besaran yang ingin diperiksa sebelum
+          memilih metode dan parameter perhitungan.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="foundation-concept-table">
+
+  <div class="foundation-table-label">
+    PETA PERTANYAAN
+  </div>
+
+  <div class="foundation-table-wrapper">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Pertanyaan</th>
+          <th>Besaran pertama yang diperiksa</th>
+          <th>Langkah berikutnya</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>
+            Bagaimana Li<sup>+</sup> tersolvasi dalam EC?
+          </td>
+
+          <td>
+            RDF Li–O, koordinasi, dan muatan
+          </td>
+
+          <td>
+            Equilibrasi dan lintasan lebih panjang
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Apakah Li<sup>+</sup> berpasangan dengan PF<sub>6</sub><sup>−</sup>?
+          </td>
+
+          <td>
+            RDF Li–F dan koordinasi Li–F
+          </td>
+
+          <td>
+            Uji komposisi garam dan suhu
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Bagaimana EC berinteraksi dengan LiF?
+          </td>
+
+          <td>
+            Jarak karbonil–Li dan redistribusi muatan
+          </td>
+
+          <td>
+            Variasikan orientasi, slab, dan pelarut
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Bagaimana CO berpindah pada Pt?
+          </td>
+
+          <td>
+            Lintasan NEB dan barrier energi
+          </td>
+
+          <td>
+            Uji ukuran slab dan jumlah image
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Apakah MACE mereproduksi respons LiF?
+          </td>
+
+          <td>
+            Energi relatif dan tekanan terhadap volume
+          </td>
+
+          <td>
+            Tambahkan titik dan acuan DFTB
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+<div class="foundation-subsection foundation-objects">
+
+  <div class="foundation-subsection-heading">
+    <span class="foundation-subsection-number">5.1</span>
+
+    <h3>Empat objek yang selalu dicatat</h3>
+  </div>
+
+  <div class="foundation-text">
+
+    <p>
+      Struktur memuat jenis atom, posisi, muatan, dan bila perlu sel.
+      Metode memuat pendekatan energi, parameter, dan pengaturan
+      konvergensi. Prosedur menjelaskan apakah kita menghitung satu
+      titik, mengoptimasi, atau menjalankan dinamika. Hasil meliputi
+      energi, gaya, geometri, dan status komputasi. Jika salah satu dari
+      empat objek itu tidak tercatat, hasil sulit diulang atau
+      dibandingkan.
+    </p>
+
+    <p>
+      Tuliskan empat objek ini di awal setiap latihan. Misalnya untuk
+      elektrolit LiPF<sub>6</sub>/EC: struktur periodik bermuatan netral,
+      metode SCC-DFTB dengan satu set parameter Li/P/F/C/H/O, prosedur
+      MD NVT pada 350 K, dan hasil berupa lintasan, energi, muatan,
+      serta status SCC. Catatan seperti ini lebih informatif daripada
+      hanya menulis “simulasi berhasil”.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-four-objects">
+
+    <div class="foundation-object-card">
+      <span class="foundation-object-index">01</span>
+
+      <div>
+        <span class="foundation-object-label">OBJEK 1</span>
+        <h4>Struktur</h4>
+
+        <p>
+          Jenis atom, posisi, muatan, dan sel.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="foundation-object-card">
+      <span class="foundation-object-index">02</span>
+
+      <div>
+        <span class="foundation-object-label">OBJEK 2</span>
+        <h4>Metode</h4>
+
+        <p>
+          Pendekatan energi, parameter, dan pengaturan konvergensi.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="foundation-object-card">
+      <span class="foundation-object-index">03</span>
+
+      <div>
+        <span class="foundation-object-label">OBJEK 3</span>
+        <h4>Prosedur</h4>
+
+        <p>
+          Perhitungan satu titik, optimasi, atau dinamika.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="foundation-object-card">
+      <span class="foundation-object-index">04</span>
+
+      <div>
+        <span class="foundation-object-label">OBJEK 4</span>
+        <h4>Hasil</h4>
+
+        <p>
+          Energi, gaya, geometri, dan status komputasi.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="foundation-example">
+
+    <div class="foundation-example-label">
+      CONTOH LATIHAN
+    </div>
+
+    <div class="foundation-example-title">
+      Elektrolit LiPF<sub>6</sub>/EC
+    </div>
+
+    <div class="foundation-example-grid">
+
+      <div>
+        <span>Struktur</span>
+        <strong>
+          Periodik bermuatan netral
+        </strong>
+      </div>
+
+      <div>
+        <span>Metode</span>
+        <strong>
+          SCC-DFTB
+        </strong>
+      </div>
+
+      <div>
+        <span>Prosedur</span>
+        <strong>
+          MD NVT pada 350 K
+        </strong>
+      </div>
+
+      <div>
+        <span>Hasil</span>
+        <strong>
+          Lintasan, energi, muatan, status SCC
+        </strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="foundation-subsection foundation-units">
+
+  <div class="foundation-subsection-heading">
+    <span class="foundation-subsection-number">5.2</span>
+
+    <h3>Satuan dan skala waktu</h3>
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Koordinat XYZ pada latihan menggunakan angström (Å), dengan
+      <strong>1 Å = 10<sup>−10</sup> m</strong>. Energi dari ASE umumnya
+      dibaca dalam eV. DCDTFBMD menerima <code>DELTAT</code> dalam detik.
+      Karena <strong>1 fs = 10<sup>−15</sup> s</strong>, maka
+      <strong>5,0 × 10<sup>−16</sup> s = 0,5 fs</strong>.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-scale-card">
+
+    <div class="foundation-scale-header">
+      <span class="foundation-scale-label">KONVERSI SATUAN</span>
+      <span class="foundation-scale-title">
+        Hubungan satuan panjang, energi, dan waktu
+      </span>
+    </div>
+
+
+    <div class="foundation-scale-grid">
+
+      <div class="foundation-scale-item">
+        <span class="foundation-scale-symbol">Å</span>
+
+        <div>
+          <strong>Angström</strong>
+          <small>1 Å = 10<sup>−10</sup> m</small>
+        </div>
+      </div>
+
+
+      <div class="foundation-scale-item">
+        <span class="foundation-scale-symbol">eV</span>
+
+        <div>
+          <strong>Energi</strong>
+          <small>Satuan energi yang umum digunakan ASE</small>
+        </div>
+      </div>
+
+
+      <div class="foundation-scale-item">
+        <span class="foundation-scale-symbol">fs</span>
+
+        <div>
+          <strong>Femtosecond</strong>
+          <small>1 fs = 10<sup>−15</sup> s</small>
+        </div>
+      </div>
+
+
+      <div class="foundation-scale-item">
+        <span class="foundation-scale-symbol">Δt</span>
+
+        <div>
+          <strong>DELTAT</strong>
+          <small>Langkah waktu dalam satuan detik</small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-time-example">
+
+    <div class="foundation-time-example-heading">
+      <span class="foundation-scale-label">CONTOH PERHITUNGAN</span>
+
+      <h4>1000 langkah dengan time step 0,5 fs</h4>
+    </div>
+
+
+    <div class="foundation-time-equation">
+      <span>Jumlah langkah</span>
+      <strong>1000</strong>
+
+      <span>×</span>
+
+      <span>Time step</span>
+      <strong>0,5 fs</strong>
+
+      <span>=</span>
+
+      <strong>500 fs</strong>
+    </div>
+
+
+    <p>
+      Dengan 1000 langkah dan time step 0,5 fs, waktu simulasi nominal
+      menjadi:
+    </p>
+
+
+    <div class="foundation-formula">
+      1000 × 0,5 fs = <strong>500 fs</strong>
+    </div>
+
+  </div>
+
+
+  <div class="foundation-frame-note">
+
+    <div class="foundation-frame-icon">
+      10
+    </div>
+
+    <div>
+
+      <span class="foundation-scale-label">
+        INTERVAL FRAME
+      </span>
+
+      <p>
+        Jika kerangka dicetak setiap 10 langkah, jarak waktu antarframe
+        mengikuti jumlah langkah yang dilewati dikalikan dengan time step.
+        Nilai ini perlu diperhatikan ketika melakukan analisis lintasan.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-diffusion-note">
+
+    <div class="foundation-scale-label">
+      CATATAN ANALISIS
+    </div>
+
+    <p>
+      Perhitungan 20 fs cukup untuk memeriksa apakah integrasi berjalan,
+      tetapi terlalu pendek untuk menghitung difusi secara andal.
+      Sebagai latihan satuan, hitung waktu nominal untuk 80 langkah
+      dengan <code>DELTAT = 5.0e−16</code> s. Hasilnya adalah
+      <strong>40 fs</strong>.
+    </p>
+
+    <p>
+      Untuk pemeriksaan interval keluaran, bila <code>PRINT = 5</code>,
+      terdapat 16 interval sepanjang lintasan 80 langkah. Jumlah bingkai
+      yang benar tetap perlu diperiksa dari keluaran program.
+    </p>
+
+  </div>
+
+</div>
+<!-- =========================================================
+     6. DASAR DFT DAN MENGAPA DFTB LEBIH CEPAT
+     ========================================================= -->
+
+<div class="foundation-main-section">
+
+  <div class="foundation-section-heading">
+    <span class="foundation-section-number">06</span>
+
+    <div>
+      <span class="foundation-section-label">
+        DASAR TEORI
+      </span>
+
+      <h2>Dasar DFT dan mengapa DFTB lebih cepat</h2>
+    </div>
+  </div>
+
+
+  <!-- 6.1 -->
+
+  <div class="foundation-subsection foundation-dft-fixed">
+
+    <div class="foundation-subsection-heading">
+
+      <span class="foundation-subsection-number">
+        6.1
+      </span>
+
+      <h3>Masalah elektron pada posisi atom tetap</h3>
+
+    </div>
+
+
+    <div class="foundation-text">
+
+      <p>
+        Ketika posisi inti ditetapkan, elektron menyesuaikan diri
+        terhadap lingkungan inti tersebut. Dalam pendekatan
+        Born–Oppenheimer, langkah ini menghasilkan sebuah energi
+        potensial <em>E(R)</em> untuk setiap kumpulan posisi atom
+        <em>R</em>.
+      </p>
+
+
+      <p>
+        Gaya pada atom diperoleh dari
+        <strong>F<sub>A</sub> = −∇<sub>A</sub>E</strong>.
+        Optimasi dan dinamika MD menggunakan gaya tersebut untuk
+        menentukan bagaimana posisi atom berubah terhadap waktu.
+      </p>
+
+    </div>
+
+
+    <!-- Konsep utama -->
+
+    <div class="foundation-concept-card">
+
+      <div class="foundation-concept-card-header">
+
+        <span class="foundation-scale-label">
+          IDE UTAMA
+        </span>
+
+        <h4>
+          Energi menentukan gaya pada atom
+        </h4>
+
+      </div>
+
+
+      <div class="foundation-concept-flow">
+
+        <div class="foundation-concept-step">
+
+          <span class="foundation-concept-icon">
+            R
+          </span>
+
+          <strong>
+            Posisi atom
+          </strong>
+
+          <small>
+            Geometri sistem ditetapkan
+          </small>
+
+        </div>
+
+
+        <span class="foundation-concept-arrow">
+          →
+        </span>
+
+
+        <div class="foundation-concept-step">
+
+          <span class="foundation-concept-icon">
+            E
+          </span>
+
+          <strong>
+            Energi
+          </strong>
+
+          <small>
+            Energi potensial dihitung
+          </small>
+
+        </div>
+
+
+        <span class="foundation-concept-arrow">
+          →
+        </span>
+
+
+        <div class="foundation-concept-step">
+
+          <span class="foundation-concept-icon">
+            F
+          </span>
+
+          <strong>
+            Gaya
+          </strong>
+
+          <small>
+            Gaya mengarahkan gerak atom
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Grafik -->
+
+    <figure class="foundation-energy-figure">
+
+      <div class="foundation-energy-plot">
+
+        <div class="foundation-energy-axis-y">
+          Energi potensial E(R)
+        </div>
+
+
+        <div class="foundation-energy-curve">
+
+          <svg
+            viewBox="0 0 720 330"
+            role="img"
+            aria-label="Skema hubungan energi, gaya, dan geometri setimbang"
+          >
+
+            <line
+              x1="90"
+              y1="270"
+              x2="670"
+              y2="270"
+              class="energy-axis"
+            />
+
+            <line
+              x1="90"
+              y1="270"
+              x2="90"
+              y2="35"
+              class="energy-axis"
+            />
+
+
+            <path
+              d="M 115 85
+                 C 175 135, 220 205, 315 250
+                 C 365 274, 420 270, 470 245
+                 C 540 210, 590 135, 650 55"
+              class="energy-line"
+            />
+
+
+            <line
+              x1="365"
+              y1="45"
+              x2="365"
+              y2="270"
+              class="energy-min-line"
+            />
+
+
+            <circle
+              cx="365"
+              cy="270"
+              r="7"
+              class="energy-point"
+            />
+
+
+            <circle
+              cx="195"
+              cy="190"
+              r="6"
+              class="energy-point-secondary"
+            />
+
+
+            <circle
+              cx="545"
+              cy="190"
+              r="6"
+              class="energy-point-secondary"
+            />
+
+
+            <text
+              x="365"
+              y="25"
+              class="energy-label"
+            >
+              minimum energi
+            </text>
+
+
+            <text
+              x="365"
+              y="43"
+              class="energy-label"
+            >
+              gaya = 0
+            </text>
+
+
+            <text
+              x="120"
+              y="125"
+              class="energy-label"
+            >
+              gaya ke kanan
+            </text>
+
+
+            <text
+              x="510"
+              y="125"
+              class="energy-label"
+            >
+              gaya ke kiri
+            </text>
+
+
+            <text
+              x="320"
+              y="312"
+              class="energy-axis-label"
+            >
+              Koordinat sederhana r (skema)
+            </text>
+
+          </svg>
+
+        </div>
+
+      </div>
+
+
+      <figcaption>
+        Gambar 3. Skema hubungan energi, gaya, dan geometri setimbang.
+        Kurva ini merupakan ilustrasi matematis, bukan energi dari salah
+        satu kasus latihan.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- Penjelasan DFT -->
+
+    <div class="foundation-text">
+
+      <p>
+        DFT menggunakan kerapatan elektron <em>ρ(r)</em> sebagai
+        variabel utama. Dalam bentuk Kohn–Sham, elektron bantu bergerak
+        dalam potensial efektif yang bergantung pada kerapatan tersebut.
+        Perhitungan dilakukan berulang sampai kerapatan masukan dan
+        keluaran konsisten.
+      </p>
+
+
+      <p>
+        Pilihan fungsional, basis atau kisi, pseudopotensial, serta
+        kriteria konvergensi memengaruhi hasil. Karena itu, hasil DFT
+        harus disertai catatan parameter dan pemeriksaan konvergensi.
+      </p>
+
+    </div>
+
+
+    <!-- Ringkasan -->
+
+    <div class="foundation-summary-card">
+
+      <span class="foundation-scale-label">
+        INTI BAGIAN 6.1
+      </span>
+
+      <div class="foundation-summary-grid">
+
+        <div>
+          <strong>Posisi atom</strong>
+          <span>
+            R menentukan geometri sistem.
+          </span>
+        </div>
+
+
+        <div>
+          <strong>Energi</strong>
+          <span>
+            E(R) menggambarkan energi potensial.
+          </span>
+        </div>
+
+
+        <div>
+          <strong>Gaya</strong>
+          <span>
+            F<sub>A</sub> = −∇<sub>A</sub>E.
+          </span>
+        </div>
+
+
+        <div>
+          <strong>Konvergensi</strong>
+          <span>
+            Kerapatan elektron harus mencapai kondisi konsisten.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- =========================================================
+     6.2 GAGASAN PENGEMBANGAN ENERGI DFTB
+     ========================================================= -->
+
+<div class="foundation-subsection foundation-dftb-idea">
+
+  <div class="foundation-subsection-heading">
+
+    <span class="foundation-subsection-number">
+      6.2
+    </span>
+
+    <h3>Gagasan pengembangan energi DFTB</h3>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      DFTB berawal dari ekspansi energi DFT di sekitar kerapatan acuan
+      <em>ρ<sub>0</sub></em>, dengan perubahan kerapatan dituliskan sebagai
+      <em>ρ = ρ<sub>0</sub> + δρ</em>.
+      Secara konseptual, energi dapat dikembangkan dalam bentuk:
+    </p>
+
+  </div>
+
+
+  <div class="foundation-equation-card">
+
+    <span class="foundation-scale-label">
+      EKSPANSI ENERGI
+    </span>
+
+    <div class="foundation-equation">
+
+      E[ρ]
+      ≈
+      E[ρ<sub>0</sub>]
+      +
+      E<sup>(1)</sup>[δρ]
+      +
+      E<sup>(2)</sup>[δρ]
+      + ...
+
+    </div>
+
+    <p>
+      Bentuk ini menjadi dasar gagasan bahwa energi dapat didekati
+      melalui ekspansi di sekitar keadaan referensi.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Suku pada orde rendah disederhanakan dengan basis orbital atom
+      yang ringkas. Sebagian integral dan tolakan antaratomm dipersiapkan
+      sebagai parameter. SCC-DFTB, sering disebut DFTB2, memakai koreksi
+      muatan hingga orde dua. DFTB3 menambah informasi orde tiga.
+    </p>
+
+
+    <p>
+      Bentuk energi sistem kemudian dapat memuat beberapa komponen,
+      seperti energi pita, koreksi muatan, dan energi repulsif.
+      Pendekatan ini membuat perhitungan lebih sederhana dibandingkan
+      perhitungan DFT penuh.
+    </p>
+
+  </div>
+
+
+  <!-- Komponen pendekatan -->
+
+  <div class="foundation-dftb-components">
+
+    <div class="foundation-dftb-component">
+
+      <span class="foundation-dftb-number">
+        01
+      </span>
+
+      <div>
+
+        <strong>Energi pita</strong>
+
+        <p>
+          Menggambarkan kontribusi elektron dalam pendekatan
+          orbital atom.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="foundation-dftb-component">
+
+      <span class="foundation-dftb-number">
+        02
+      </span>
+
+      <div>
+
+        <strong>Koreksi muatan</strong>
+
+        <p>
+          Memperhitungkan perubahan muatan dan interaksi
+          akibat redistribusi elektron.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="foundation-dftb-component">
+
+      <span class="foundation-dftb-number">
+        03
+      </span>
+
+      <div>
+
+        <strong>Energi repulsif</strong>
+
+        <p>
+          Memperhitungkan kontribusi repulsif yang bergantung
+          pada pasangan atom.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-highlight-card">
+
+    <div class="foundation-highlight-icon">
+      ≈
+    </div>
+
+    <div>
+
+      <span class="foundation-scale-label">
+        KEUNTUNGAN PENDEKATAN
+      </span>
+
+      <h4>
+        Lebih murah daripada DFT penuh
+      </h4>
+
+      <p>
+        Keuntungan pendekatan ini adalah perhitungan energi dan gaya
+        dapat lebih murah daripada DFT penuh untuk sistem yang sesuai.
+        Batasannya terletak pada parameter yang harus tersedia bagi
+        semua pasangan unsur dan telah diuji untuk lingkungan kimia
+        yang relevan.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Kesesuaian nama unsur saja tidak menjamin kesesuaian fisika.
+      Parameter harus sesuai dengan sistem yang dipelajari dan
+      digunakan secara konsisten.
+    </p>
+
+
+    <p>
+      Untuk pembelajaran lebih lanjut, formulasi DFTB dapat dikaji
+      melalui materi rujukan yang digunakan dalam workshop.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-parameter-note">
+
+    <div class="foundation-parameter-note-title">
+
+      <span class="foundation-scale-label">
+        PERHATIAN PARAMETER
+      </span>
+
+      <strong>
+        Parameter bukan sekadar nama unsur
+      </strong>
+
+    </div>
+
+
+    <div class="foundation-parameter-checks">
+
+      <span>✓ Pasangan unsur tersedia</span>
+
+      <span>✓ Lingkungan kimia sesuai</span>
+
+      <span>✓ Parameter telah diuji</span>
+
+      <span>✓ Referensi digunakan konsisten</span>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- =========================================================
+     6.3 SCC SEBAGAI LINGKARAN UMPAN BALIK
+     ========================================================= -->
+
+<div class="foundation-subsection foundation-scc">
+
+  <div class="foundation-subsection-heading">
+
+    <span class="foundation-subsection-number">
+      6.3
+    </span>
+
+    <h3>SCC sebagai lingkaran umpan balik</h3>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Bayangkan Li<sup>+</sup> mendekati atom O pada
+      <em>ethylene carbonate</em>. Perpindahan muatan lokal mengubah
+      lingkungan elektron. Perubahan tersebut kemudian mengubah
+      Hamiltonian dan menyebabkan muatan dihitung kembali.
+    </p>
+
+    <p>
+      <strong>Self-consistent charge (SCC)</strong> mengulang proses ini
+      sampai perubahan muatan atau energi menjadi lebih kecil daripada
+      ambang yang ditentukan.
+    </p>
+
+  </div>
+
+
+  <!-- SCC LOOP -->
+
+  <div class="foundation-scc-loop">
+
+    <div class="foundation-scc-loop-header">
+
+      <span class="foundation-scale-label">
+        SIKLUS SCC
+      </span>
+
+      <strong>
+        Dari tebakan muatan menuju energi dan gaya
+      </strong>
+
+    </div>
+
+
+    <div class="foundation-scc-flow">
+
+      <div class="foundation-scc-step">
+
+        <span class="foundation-scc-number">
+          01
+        </span>
+
+        <div>
+
+          <strong>
+            Tebakan muatan
+          </strong>
+
+          <p>
+            Mulai dari tebakan muatan atom.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="foundation-scc-arrow">
+        ↓
+      </div>
+
+
+      <div class="foundation-scc-step">
+
+        <span class="foundation-scc-number">
+          02
+        </span>
+
+        <div>
+
+          <strong>
+            Hamiltonian
+          </strong>
+
+          <p>
+            Bentuk Hamiltonian dan selesaikan keadaan elektron.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="foundation-scc-arrow">
+        ↓
+      </div>
+
+
+      <div class="foundation-scc-step">
+
+        <span class="foundation-scc-number">
+          03
+        </span>
+
+        <div>
+
+          <strong>
+            Muatan baru
+          </strong>
+
+          <p>
+            Hitung populasi elektron dan muatan atom baru.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="foundation-scc-arrow">
+        ↓
+      </div>
+
+
+      <div class="foundation-scc-step">
+
+        <span class="foundation-scc-number">
+          04
+        </span>
+
+        <div>
+
+          <strong>
+            Perbarui
+          </strong>
+
+          <p>
+            Campur atau perbarui muatan dan ulangi bila belum konvergen.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="foundation-scc-arrow">
+        ↓
+      </div>
+
+
+      <div class="foundation-scc-step foundation-scc-final">
+
+        <span class="foundation-scc-number">
+          05
+        </span>
+
+        <div>
+
+          <strong>
+            Energi dan gaya
+          </strong>
+
+          <p>
+            Setelah konvergen, hitung energi dan gaya untuk geometri
+            tersebut.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CONVERGENCE -->
+
+  <div class="foundation-scc-convergence">
+
+    <div class="foundation-scc-convergence-icon">
+      ✓
+    </div>
+
+    <div>
+
+      <span class="foundation-scale-label">
+        KONVERGENSI
+      </span>
+
+      <h4>
+        Kapan siklus SCC berhenti?
+      </h4>
+
+      <p>
+        Iterasi berhenti ketika perubahan muatan atau energi sudah
+        memenuhi ambang konvergensi yang ditentukan.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Jika SCC gagal pada satu langkah MD, gaya pada langkah tersebut
+      tidak dapat langsung dipercaya. Menambah jumlah langkah MD tidak
+      memperbaiki masalah dasarnya.
+    </p>
+
+  </div>
+
+
+  <!-- TROUBLESHOOTING -->
+
+  <div class="foundation-scc-warning">
+
+    <div class="foundation-scc-warning-header">
+
+      <span class="foundation-scale-label">
+        JIKA SCC GAGAL
+      </span>
+
+      <strong>
+        Periksa penyebab sebelum melanjutkan simulasi
+      </strong>
+
+    </div>
+
+
+    <div class="foundation-scc-checklist">
+
+      <span>
+        Geometri awal
+      </span>
+
+      <span>
+        Pasangan parameter
+      </span>
+
+      <span>
+        Muatan total
+      </span>
+
+      <span>
+        Pengaturan SCC
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div class="foundation-text foundation-scc-final-text">
+
+    <p>
+      Bila <code>MAXITER</code> tidak ditulis, nilai bawaannya adalah
+      200 siklus. Batas ini bukan jaminan konvergensi.
+    </p>
+
+  </div>
+
+<h3>6.4 Arti berkas Slater–Koster</h3>
+
+<div class="foundation-sk-main">
+
+<p>
+Untuk \(N\) jenis unsur, matriks pasangan berurutan berisi \(N^2\) jalur berkas. Air memiliki O dan H, sehingga ada empat: O–O, O–H, H–O, dan H–H. Antarmuka Li/F/O/H memiliki 16. Setiap baris pada bagian parameter diawali lambang \(j\) dan momentum sudut orbital tertinggi. Pada contoh, H memakai s (1) dan O memakai p (2). Jalur seperti <code>../../parameter/PTBP/O-H.skf</code> dihitung relatif terhadap direktori kasus saat DCDFTBMD dijalankan.
+</p>
+
+</div>
+
+<div class="foundation-sk-note">
+
+<h4>Mengapa urutan berkas penting?</h4>
+
+<p>
+Matriks parameter mengikuti urutan unsur yang ditulis pada input. Menukar dua kolom tanpa menukar deklarasi unsur dapat membuat program memakai interaksi yang keliru. Pemeriksaan input latihan hanya memeriksa keberadaan berkas dan bentuk dasar, ia tidak dapat membuktikan bahwa parameter itu cocok untuk reaksi atau permukaan yang diteliti. Selalu catat nama set dan sumbernya pada laporan perhitungan.
+</p>
+
+</div>
+<!-- =========================================================
+     6.5 PEMBAGIAN SISTEM DENGAN METODE DC
+     ========================================================= -->
+
+<div class="foundation-subsection foundation-dc">
+
+  <div class="foundation-subsection-heading">
+
+    <span class="foundation-subsection-number">
+      6.5
+    </span>
+
+    <h3>Pembagian sistem dengan metode DC</h3>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Pada sistem besar, metode DC membagi ruang menjadi subsistem sehingga
+      pekerjaan elektron dapat dikelola lebih efisien.
+    </p>
+
+    <p>
+      Di latihan kecil ini:
+    </p>
+
+  </div>
+
+
+  <div class="foundation-code-highlight">
+
+    <code>DC=FALSE</code>
+
+  </div>
+
+
+  <div class="foundation-text">
+
+    <p>
+      Dengan demikian, Anda dapat mempelajari SCC-DFTB dan format input
+      lebih dahulu.
+    </p>
+
+    <p>
+      Bila DC diaktifkan untuk riset, ukuran wilayah utama, wilayah
+      penyangga, dan batas subsistem perlu diuji terhadap perhitungan
+      tanpa DC.
+    </p>
+
+  </div>
+
+
+  <div class="foundation-dc-note">
+
+    <span class="foundation-scale-label">
+      CATATAN
+    </span>
+
+    <p>
+      Dokumentasi resmi DCDFTBMD bagian 1.1.4 menjelaskan pilihan tersebut.
+    </p>
+
+  </div>
+
+</div>
