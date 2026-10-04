@@ -129,6 +129,8 @@ nav:
           - Overview: hands-on-project/day-1/index.md
           - Foundations: hands-on-project/day-1/foundations.md
           - Input DCDFTBMD: hands-on-project/day-1/dftbmd-input.md
+          - Sesi 4 · Analisis Lintasan dan Antarmuka: hands-on-project/day-1/sesi-4-analisis-lintasan-antarmuka.md
+          - Sesi 5 · Pemodelan Material dengan MACE: hands-on-project/day-1/sesi-5-pemodelan-material-mace.md
           - LiPF6 / EC: hands-on-project/day-1/lipf6-ec.md
           - MD Analysis: hands-on-project/day-1/md-analysis.md
           - LiF / EC Interface: hands-on-project/day-1/lif-ec-interface.md
