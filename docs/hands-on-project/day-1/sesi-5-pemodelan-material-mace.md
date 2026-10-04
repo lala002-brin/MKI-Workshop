@@ -112,86 +112,241 @@
   </p>
 
 </section>
+<!-- =========================================================
+     SESI 5 · PART 3
+     Halaman 34–35
+     ========================================================= -->
+
 <section class="analysis-section">
 
-  <h3>15.2 Menggunakan MACE melalui ASE</h3>
+  <h3>15.2 · Menyiapkan data untuk MACE</h3>
 
   <p>
-    ASE menyediakan antarmuka kalkulator untuk menghitung energi dan gaya dari
-    model MACE. Pada latihan ini, gunakan model yang sudah disediakan dan
-    terapkan pada struktur LiF yang sama dengan perhitungan sebelumnya.
+    Untuk melatih model bagi elektrolit atau antarmuka, kumpulkan konfigurasi
+    dari lintasan dan geometri yang relevan, lalu hitung energi serta gaya
+    dengan metode acuan yang konsisten. Pisahkan data menurut lintasan induk
+    agar frame yang hampir sama tidak bocor ke data uji. Pantau galat energi
+    dan gaya serta uji sifat target seperti RDF, koordinasi, dan kestabilan MD.
+    Model yang dilatih pada kristal LiF tidak otomatis akurat untuk ion,
+    pelarut, reaksi, atau antarmuka. Lihat
+    <a href="#" class="analysis-link">panduan pelatihan MACE</a>.
   </p>
-
-  <div class="analysis-command">
-    <pre><code>python -c "import ase, mace; print('ASE dan MACE tersedia')"</code></pre>
-  </div>
-
-  <p>
-    Periksa kembali model yang digunakan sebelum menjalankan perhitungan.
-    Pastikan checkpoint yang dipakai sama dengan yang dicatat pada hasil
-    sebelumnya agar perbandingan tetap konsisten.
-  </p>
-
-  <div class="analysis-command">
-    <pre><code>ls -lh model_pralatih/mace_mp_0_small.model</code></pre>
-  </div>
-
-  <p>
-    Jalankan perhitungan energi dan gaya pada struktur LiF:
-  </p>
-
-  <div class="analysis-command">
-    <pre><code>python skrip/energi_mace.py \
---struktur kasus/05_baterai_lif_eos/titik_02/struktur.xyz \
---model model_pralatih/mace_mp_0_small.model</code></pre>
-  </div>
-
-  <p>
-    Periksa keluaran energi dan gaya yang dihasilkan:
-  </p>
-
-  <div class="analysis-command">
-    <pre><code>cat proyek_pribadi/hasil_mace.txt</code></pre>
-  </div>
 
 </section>
 
 
 <section class="analysis-section">
 
-  <h3>15.3 Membandingkan MACE dan DFTB</h3>
+  <h2>16 · Menafsirkan keluaran studi kasus</h2>
 
   <p>
-    Gunakan geometri yang sama untuk kedua metode. Jangan membandingkan hasil
-    dari struktur yang berbeda karena perubahan geometri dapat memengaruhi
-    energi dan gaya.
+    Untuk RDF dan bilangan koordinasi, laporkan jumlah frame, waktu
+    ekuilibrasi, cutoff, ukuran sel, serta variasi antar lintasan. Untuk
+    muatan Mulliken, jelaskan bahwa nilainya bergantung pada basis dan cara
+    populasi dibagi. Untuk NEB dan kompleks obat, laporkan konvergensi,
+    persamaan energi, serta keadaan referensi. Struktur awal dan energi yang
+    belum dihitung tidak boleh disajikan sebagai hasil simulasi.
   </p>
+
+
+  <h3>16.1 · Pertanyaan diskusi</h3>
+
+  <ol class="analysis-discussion">
+
+    <li>
+      Apakah puncak RDF dan bilangan koordinasi Li–O berubah ketika suhu atau
+      komposisi garam diubah?
+    </li>
+
+    <li>
+      Bagaimana perbedaan antara kontak ion dalam elektrolit periodik dan
+      kontak EC pada slab LiF yang memiliki vakum?
+    </li>
+
+    <li>
+      Parameter struktur mana yang paling memengaruhi barrier NEB CO/Pt?
+    </li>
+
+    <li>
+      Apakah energi interaksi ibuprofen–guanidinium tetap sama setelah pelarut
+      dan orientasi lain ditambahkan?
+    </li>
+
+    <li>
+      Seberapa baik MACE mereproduksi tren energi dan tekanan DFTB pada
+      geometri LiF yang sama?
+    </li>
+
+  </ol>
+
+</section>
+
+
+<section class="analysis-section">
+
+  <h2>17 · Perbandingan DFTB dan MACE pada LiF</h2>
+
+  <h3>17.1 · Kasus 5 — respons kisi LiF menurut DFTB dan MACE</h3>
+
+  <p>
+    <strong>Pertanyaan.</strong>
+    Bagaimana energi dan tekanan berubah ketika sel LiF diperbesar atau
+    diperkecil? Lima faktor skala 0,96–1,04 tersedia. Bandingkan bentuk kurva
+    DFTB dan MACE-MP pada geometri yang sama, serta periksa lokasi energi
+    minimum dan perubahan tanda tekanan.
+  </p>
+
+</section>
+
+
+<section class="analysis-section">
+
+  <figure class="analysis-figure">
+
+    <img
+      src="../images/lif-supercell.png"
+      alt="Susunan LiF yang divisualkan sebagai supercell 2 kali 2 kali 2"
+    >
+
+    <figcaption class="analysis-figure-caption">
+      Gambar 9: Susunan LiF yang divisualkan sebagai supercell 2 × 2 × 2;
+      Li biru dan F hijau. Perhitungan energi memakai sel 8 atom.
+    </figcaption>
+
+  </figure>
+
+
+  <h3>Langkah 1. Buat seri geometri.</h3>
+
+  <div class="analysis-command">
+    <pre><code>cd ~/latihan_simulasi/workshop_material</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>mkdir -p proyek_pribadi</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>python skrip/scan_dftb.py --help</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>python skrip/scan_dftb.py --kasus lif --mode siapkan --output proyek_pribadi/scan_lif_awal</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>cat proyek_pribadi/scan_lif_awal/parameter.csv</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>head -n 8 proyek_pribadi/scan_lif_awal/titik_02/dftb.inp</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>cd proyek_pribadi/scan_lif_awal/titik_02</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>pwd</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>cd ../../../</code></pre>
+  </div>
+
+</section>
+<!-- =========================================================
+     SESI 6 · PART 1
+     Halaman 36
+     File baru:
+     sesi-6-hasil-riset-terbit-sakti-lab.md
+     ========================================================= -->
+
+<section class="analysis-section">
+
+  <p>
+    <code>parameter.csv</code> menghubungkan <code>titik_00</code>–<code>titik_04</code>
+    dengan faktor skala. Posisi atom dan tiga vektor TV diselaraskan. Pada tahap
+    ini dilihat energi DFTB.
+  </p>
+
+  <h3>Langkah 2. Hitung seri DFTB pada direktori baru.</h3>
+
+  <div class="analysis-command">
+    <pre><code>python skrip/periksa_dcdftbmd.py kasus/05_baterai_lif_eos</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>sbatch skrip/job_python_slurm.sh python skrip/scan_dftb.py --kasus lif --mode jalankan --output
+→ proyek_pribadi/scan_lif_hasil</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>squeue -u $(whoami)</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>ls proyek_pribadi/scan_lif_hasil/titik_02/dftb.out</code></pre>
+  </div>
 
   <div class="analysis-command">
     <pre><code>cat proyek_pribadi/scan_lif_hasil/profil.csv</code></pre>
   </div>
 
   <div class="analysis-command">
+    <pre><code>python skrip/gambar_scan_dftb.py proyek_pribadi/scan_lif_hasil</code></pre>
+  </div>
+
+  <p>
+    <code>profil.csv</code> memuat energi relatif terhadap minimum dari titik yang
+    benar-benar selesai. Jika satu titik gagal, periksa <code>dftb.out</code> di
+    folder titik tersebut dan jangan menganggap kurva lengkap.
+  </p>
+
+
+  <h3>Langkah 3. Hitung MACE pada geometri yang sama.</h3>
+
+  <div class="analysis-command">
+    <pre><code>python -c "import ase, mace; print('ASE dan MACE tersedia')"</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>sbatch skrip/job_python_slurm.sh python skrip/kurva_mace_lif.py --output
+→ proyek_pribadi/kurva_lif_mace.csv</code></pre>
+  </div>
+
+  <div class="analysis-command">
+    <pre><code>squeue -u $(whoami)</code></pre>
+  </div>
+
+  <div class="analysis-command">
     <pre><code>cat proyek_pribadi/kurva_lif_mace.csv</code></pre>
   </div>
 
-  <p>
-    Bandingkan lokasi minimum energi relatif dan perubahan tekanan terhadap
-    faktor skala kisi. Perhatikan apakah kedua metode memberikan bentuk kurva
-    yang serupa atau menunjukkan perbedaan pada ukuran sel tertentu.
-  </p>
-
   <div class="analysis-command">
-    <pre><code>python skrip/grafik_hasil.py lif \
-proyek_pribadi/scan_lif_hasil \
---mace proyek_pribadi/kurva_lif_mace.csv</code></pre>
+    <pre><code>python skrip/grafik_hasil.py lif proyek_pribadi/scan_lif_hasil --mace
+→ proyek_pribadi/kurva_lif_mace.csv</code></pre>
   </div>
 
   <p>
-    Catat faktor skala dengan energi minimum untuk masing-masing metode.
-    Kemudian catat tanda tekanan pada titik yang sama. Gunakan hasil tersebut
-    untuk menjelaskan apakah MACE mereproduksi tren respons kisi LiF yang
-    diperoleh dari DFTB.
+    Kolom <code>relatif_min_eV</code> menggunakan minimum masing-masing metode
+    sehingga bentuk kurva dapat dibandingkan. Kolom tekanan pada adalah tekanan
+    MACE; titik mendekati nol menunjukkan kandidat skala keseimbangan pada model
+    ini. Lima titik terlalu sedikit untuk menentukan parameter persamaan keadaan
+    secara presisi. Tambahkan titik di sekitar posisi minimum dan uji model MACE
+    terhadap data acuan yang relevan.
   </p>
+
+  <p>
+    Unduh <code>profil.csv</code>, <code>parameter.csv</code>, dan grafik dari
+    remote
+    <code>latihan_simulasi/workshop_material/proyek_pribadi/scan_lif_hasil</code>,
+    serta <code>kurva_lif_mace.csv</code> dari
+    <code>latihan_simulasi/workshop_material/proyek_pribadi/</code>. Untuk
+    pemeriksaan struktur, unduh <code>struktur.xyz</code> dan
+    <code>dftb.out</code> dari <code>titik_00</code>, <code>titik_02</code>,
+    dan <code>titik_04</code>; simpan dalam subfolder yang sama pada
+    <code>Downloads\hasil_workshop\</code>. Buka ketiga XYZ di VMD Windows
+    untuk membandingkan perubahan jarak atom ketika sel diubah.
 
 </section>
