@@ -2329,3 +2329,59 @@
   </div>
 
 </section>
+# G. Glosarium ringkas
+
+<div class="glossary-card">
+
+<table>
+  <thead>
+    <tr>
+      <th>Istilah</th>
+      <th>Arti singkat</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>DFT</strong></td>
+      <td>Metode struktur elektron berbasis kerapatan elektron.</td>
+    </tr>
+
+    <tr>
+      <td><strong>DFTB</strong></td>
+      <td>Pendekatan hemat biaya yang diturunkan dari DFT dan diparameterkan.</td>
+    </tr>
+
+    <tr>
+      <td><strong>SCC</strong></td>
+      <td>Iterasi muatan sampai konsisten dengan Hamiltonian.</td>
+    </tr>
+
+    <tr>
+      <td><strong>Slater–Koster</strong></td>
+      <td>Berkas parameter interaksi orbital untuk pasangan unsur.</td>
+    </tr>
+
+    <tr>
+      <td><strong>PBC</strong></td>
+      <td>Syarat batas periodik, sel diulang di ruang.</td>
+    </tr>
+
+    <tr>
+      <td><strong>MD</strong></td>
+      <td>Gerak atom dihitung dari gaya.</td>
+    </tr>
+
+    <tr>
+      <td><strong>Gaya</strong></td>
+      <td>Turunan negatif energi terhadap posisi atom.</td>
+    </tr>
+
+    <tr>
+      <td><strong>Validasi</strong></td>
+      <td>Memeriksa model pada data yang tidak dipakai untuk melatih.</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
