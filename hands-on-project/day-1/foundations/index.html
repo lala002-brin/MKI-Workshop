@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../lipf6-ec/">
+        <link rel="next" href="../dftbmd-input/">
       
       
         
@@ -1751,6 +1751,34 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dftbmd-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input DCDFTBMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -5794,6 +5822,438 @@ Matriks parameter mengikuti urutan unsur yang ditulis pada input. Menukar dua ko
       Dokumentasi resmi DCDFTBMD bagian 1.1.4 menjelaskan pilihan tersebut.
     </p>
 
+  </div>
+
+</div>
+<h2>7. Optimasi, dinamika, dan pembacaan lintasan</h2>
+
+<h3>7.1 Energi satu titik dan optimasi</h3>
+
+<div class="foundation-sk-main">
+
+<p>
+Perhitungan satu titik mengevaluasi energi dan gaya pada geometri yang tidak digerakkan. Ia cocok untuk menguji input, tetapi satu angka energi tidak langsung menjawab apakah geometri sudah optimum. Optimasi memindahkan atom agar gaya mengecil. Kriteria seperti <code>GCONV=1.0e-4</code> pada DCDFTBMD adalah batas komponen gaya dalam satuan atomik. Setelah optimasi, selain status konvergensi, amati apakah ikatan atau orientasi berubah masuk akal. Geometri yang “konvergen” pada minimum lokal yang salah tetap tidak menjawab pertanyaan fisika yang dimaksud.
+</p>
+
+</div>
+
+<p>
+Untuk membandingkan dua geometri dengan geometri yang sama dan metode yang sama, selisih energi bisa memberi petunjuk kestabilan relatif. Untuk energi adsorpsi, komposisinya berubah karena molekul terpisah digabungkan dengan permukaan. Oleh sebab itu gunakan referensi yang konsisten, misalnya:
+</p>
+
+<div class="foundation-equation-box">
+
+  <div class="foundation-equation-label">
+    ENERGI ADSORPSI
+  </div>
+
+  <div class="foundation-equation-inner">
+
+    $$
+    E_{\mathrm{ads}}
+    =
+    E_{\mathrm{permukaan+molekul}}
+    -
+    E_{\mathrm{permukaan}}
+    -
+    E_{\mathrm{molekul}}
+    $$
+
+  </div>
+
+  <p class="foundation-equation-caption">
+    Energi adsorpsi dihitung dari perbedaan energi sistem gabungan
+    dengan energi permukaan dan molekul secara terpisah.
+  </p>
+
+</div>
+<div class="foundation-section-heading">
+
+  <span class="foundation-section-number">7.2</span>
+
+  <h3>Persamaan gerak dan langkah waktu</h3>
+
+</div>
+
+<p>
+MD klasik mengintegrasikan
+\(m_i\ddot{R}_i = F_i\).
+Skema velocity Verlet memakai posisi, kecepatan, dan gaya saat ini
+untuk memperkirakan keadaan berikutnya, lalu memperbarui kecepatan
+dengan gaya baru.
+</p>
+
+<p>
+Langkah waktu yang terlalu besar dapat membuat energi melonjak atau
+ikatan pecah secara numerik. Langkah yang sangat kecil meningkatkan
+biaya komputasi. Uji langkah biasanya memakai simulasi singkat dengan
+kondisi awal yang sama, lalu membandingkan konservasi energi atau
+stabilitas temperatur.
+</p>
+
+<div class="foundation-note">
+
+  <div class="foundation-note-label">
+    ENSEMBLE
+  </div>
+
+  <div class="foundation-note-content">
+
+    <p>
+      Ensemble NVE menjaga jumlah partikel, volume, dan energi secara
+      ideal. NVT mengatur temperatur melalui termostat.
+    </p>
+
+    <p>
+      Temperatur sesaat pada sistem tiga atom berfluktuasi besar;
+      garis temperatur yang naik turun bukan otomatis kegagalan.
+      Target 350 K pada input menyatakan pengaturan termostat,
+      bukan bukti bahwa sampel 0,5 ps telah seimbang.
+    </p>
+
+  </div>
+
+</div>
+<div class="foundation-section-heading">
+
+  <span class="foundation-section-number">7.3</span>
+
+  <h3>Keluaran traject dan PRINT</h3>
+
+</div>
+
+<p>
+Manual DCDFTBMD menyebut <em>traject</em> sebagai keluaran koordinat
+XYZ selama MD; <em>velocity</em> menyimpan kecepatan dan mulkian dapat
+ditulis bersama lintasan. Dengan <code>PRINT=5</code> serta
+<code>DELTA=0,5 fs</code>, dua bingkai yang dicetak berturut-turut
+berjarak nominal 2,5 fs. Periksa komentar tiap bingkai bila waktu
+sebenarnya berbeda.
+</p>
+
+<div class="foundation-parameter-box">
+
+  <div class="foundation-parameter-label">
+    CONTOH PARAMETER
+  </div>
+
+  <div class="foundation-parameter-grid">
+
+    <div class="foundation-parameter-item">
+      <span>PRINT</span>
+      <strong>5</strong>
+    </div>
+
+    <div class="foundation-parameter-item">
+      <span>DELTA</span>
+      <strong>0,5 fs</strong>
+    </div>
+
+    <div class="foundation-parameter-item">
+      <span>Jarak output</span>
+      <strong>2,5 fs</strong>
+    </div>
+
+  </div>
+
+</div>
+
+<p>
+Gunakan skrip <code>analisis_elektron_lintasan.py</code> pada folder
+hasil kasus elektrolit. Skrip menyelaraskan bingkai koordinat dan
+muatan Mulliken, lalu menulis RDF, bilangan koordinasi per ion, dan
+tren muatan.
+</p>
+
+<p>
+Tentukan selang waktu dari DELTA; jangan menganggap waktu tersimpan
+selalu satu fs.
+</p>
+<div class="foundation-section-heading">
+
+  <span class="foundation-section-number">7.4</span>
+
+  <h3>MSD, difusi, dan transport ion</h3>
+
+</div>
+
+<p>
+Untuk satu spesies, <em>mean square displacement</em> (MSD) pada jeda
+\(t\) adalah
+\[
+\left\langle
+\left|r(t+t_0)-r(t_0)\right|^2
+\right\rangle .
+\]
+Rata-rata dihitung atas atom sejenis dan banyak titik awal \(t_0\).
+Koordinat <em>periodic</em> yang kembali ke sisi lain sel harus dibuka
+(<em>unwrapped</em>) sebelum jumlah dihitung.
+</p>
+
+<div class="foundation-equation-box">
+
+  <div class="foundation-equation-label">
+    MEAN SQUARE DISPLACEMENT
+  </div>
+
+  <div class="foundation-equation-inner">
+
+    $$
+    \mathrm{MSD}(t)
+    =
+    \left\langle
+    \left|
+    r(t+t_0)-r(t_0)
+    \right|^2
+    \right\rangle
+    $$
+
+  </div>
+
+</div>
+
+<p>
+Jika perpindahan antarframe melebihi setengah sel, pembukaan dari
+koordinat tersimpan dapat ambigu. Simpan frame lebih sering atau
+gunakan koordinat <em>unwrapped</em> langsung yang tersedia.
+</p>
+
+<p>
+Pada rezim difusi tiga dimensi, hubungan Einstein memberikan
+\[
+D=\lim_{t\rightarrow\infty}\frac{\mathrm{MSD}(t)}{6t};
+\]
+pada batas terbatas kita bisa memakai bidang atau arah tertentu
+dengan faktor yang sesuai.
+</p>
+
+<div class="foundation-equation-box">
+
+  <div class="foundation-equation-label">
+    HUBUNGAN EINSTEIN
+  </div>
+
+  <div class="foundation-equation-inner">
+
+    $$
+    D
+    =
+    \lim_{t\rightarrow\infty}
+    \frac{\mathrm{MSD}(t)}{6t}
+    $$
+
+  </div>
+
+</div>
+
+<p>
+Untuk elektrolit, pendekatan Nernst–Einstein memberi
+\[
+\sigma_{\mathrm{NE}}
+=
+\frac{e^2}{Vk_BT}
+\left(
+N_+D_+ + N_-D_-
+\right).
+\]
+Besaran ini adalah perkiraan ion independen. Gerak ion yang berkorelasi
+dapat mengurangi atau mengubah nilai konduktivitas sebenarnya.
+</p>
+
+<div class="foundation-note">
+
+  <div class="foundation-note-label">
+    CATATAN ANALISIS
+  </div>
+
+  <div class="foundation-note-content">
+
+    <p>
+      Untuk analisis transport, lintasan harus diproses dengan
+      memperhatikan periodisitas sel dan pilihan interval waktu.
+      Hasil MSD perlu diperiksa pada rentang waktu yang menunjukkan
+      perilaku difusif sebelum kemiringannya digunakan untuk memperoleh
+      koefisien difusi.
+    </p>
+
+  </div>
+
+</div>
+<div class="foundation-section-heading">
+
+  <span class="foundation-section-number">7.5</span>
+
+  <h3>Sampling dan ketidakpastian</h3>
+
+</div>
+
+<div class="foundation-note">
+
+  <div class="foundation-note-label">
+    CATATAN SAMPLING
+  </div>
+
+  <div class="foundation-note-content">
+
+    <p>
+      Satu lintasan pendek memperlihatkan cara program bekerja, bukan
+      distribusi statistik yang mapan. Untuk sebab seperti difusi,
+      orang perlu menilai panjang waktu, banyak lintasan independen,
+      ukuran sel, dan sensitivitas terhadap model gaya.
+    </p>
+
+  </div>
+
+</div>
+
+<p>
+Nilai difusi biasanya terbaik dengan perpindahan kuadrat rata-rata
+pada rezim waktu yang tepat. Lintasan pendek pada lokakarya dipakai
+untuk memeriksa parameter dan koordinasi, bukan untuk mengklaim
+koefisien difusi atau konduktivitas yang telah konvergen.
+</p>
+<h2>8 Memodelkan padatan, larutan, dan antarmuka</h2>
+
+<div class="foundation-subsection-title">
+  <span>8.1</span>
+  <h3>Sel periodik dan citra terdekat</h3>
+</div>
+
+<p>
+Tiga vektor sel \(a\), \(b\), \(c\) mendefinisikan pengulangan ruang. Kristal LiF pada latihan memakai sel kubik 4,02 Å. Jika sebuah atom berada dekat tepi sel, tetangganya dapat berada di salinan sel sebelah; jarak yang relevan untuk struktur periodik sering merupakan jarak citra terdekat.
+</p>
+
+<div class="foundation-sk-note">
+
+<h4>Periodic Boundary Conditions</h4>
+
+<p>
+Skrip sederhana <code>amati_xyz.py</code> menghitung jarak Kartesius langsung dari XYZ, tanpa menerapkan citra terdekat. Karena itu pakai skrip tersebut untuk pasangan atom yang dipilih dengan sadar, terutama pada tepi sel. ASE atau perangkat kristalografi dapat menangani PBC secara eksplisit ketika analisis memerlukannya.
+</p>
+
+</div>
+
+<p>
+Untuk menguji ukuran sel, ulangi perhitungan dengan sel lebih besar atau kerapatan sampel lebih tepat, kemudian bandingkan besaran target seperti energi relatif dan gaya. Energi total sistem dengan jumlah atom berbeda tidak bisa dibandingkan secara langsung; normalkan atau bangun persamaan reaksi yang sesuai.
+</p>
+
+</div>
+<div class="foundation-subsection-title">
+  <span>8.2</span>
+  <h3>Larutan: koordinasi Li+ dalam elektrolit karbonat</h3>
+</div>
+
+<p>
+Kasus LiPF₆/EC mewakili lingkungan elektrolit yang lebih relevan untuk baterai daripada klaster molekul terisolasi. RDF Li–O menunjukkan jarak interaksi ion-pelarut, sedangkan RDF Li–F memberi petunjuk kontak kation-anion. Integrasi RDF atau hitungan tetangga sampai minimum pertama memberi bilangan koordinasi. Hasilnya bergantung pada komposisi, ukuran sel, cutoff, dan waktu sampling.
+</p>
+<div class="foundation-subsection-title">
+  <span>8.3</span>
+  <h3>Antarmuka LiF–EC</h3>
+</div>
+
+<p>
+Model antarmuka memiliki slab LiF dan satu molekul EC dalam sel dengan ruang vakum. LiF dapat menjadi komponen anorganik lapisan antarmuka padatan–elektrolit (SEI), meskipun SEI nyata memiliki banyak spesies dan bergantung pada kondisi operasi.
+</p>
+
+<div class="foundation-sk-note">
+
+<h4>Analisis antarmuka</h4>
+
+<p>
+Skrip analisis mengikuti jarak O karbonil–Li permukaan dan muatan Mulliken pada molekul/slab. Vakum arah z membuat isotropi cairan tidak berlaku; karena itu RDF 3D tidak tepat untuk slab ini.
+</p>
+
+</div>
+
+<p>
+Model satu adsorbat belum menyatakan potensial elektroda, reaksi reduksi, atau kestabilan siklus.
+</p>
+<div class="foundation-subsection-title">
+  <span>8.4</span>
+  <h3>Peta pemeriksaan mutu untuk setiap sistem</h3>
+</div>
+
+<div class="foundation-quality-table">
+
+<table>
+<thead>
+<tr>
+<th>Sistem</th>
+<th>Pemeriksaan input</th>
+<th>Pemeriksaan hasil</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>LiPF6/EC</strong></td>
+<td>Netralitas, PBC, parameter 36 pasangan</td>
+<td>SCC, temperatur, RDF, koordinasi, muatan</td>
+</tr>
+
+<tr>
+<td><strong>LiF–EC</strong></td>
+<td>Slab, vakum, parameter 25 pasangan</td>
+<td>Kontak karbonil–Li dan muatan kelompok</td>
+</tr>
+
+<tr>
+<td><strong>CO/Pt(111)</strong></td>
+<td>Urutan atom, situs, parameter 9 pasangan</td>
+<td>Energi image dan status konvergensi NEB</td>
+</tr>
+
+<tr>
+<td><strong>Ibuprofenat–guanidinium</strong></td>
+<td>Muatan fragmen dan referensi</td>
+<td>Kontak O–N dan energi interaksi</td>
+</tr>
+
+<tr>
+<td><strong>LiF EOS</strong></td>
+<td>Volume dan parameter Li/F</td>
+<td>Energi relatif, tekanan, uji MACE/DFTB</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+<div class="foundation-reflection">
+
+  <div class="foundation-reflection-label">
+    PERTANYAAN REFLEKSI
+  </div>
+
+  <p>
+    Mengapa energi total LiF dan LiF–EC tidak boleh dikurangkan begitu saja lalu disebut energi adsorpsi?
+    Tuliskan tiga perhitungan referensi yang diperlukan dan sebutkan dua kondisi komputasi yang harus dijaga konsisten.
+  </p>
+
+</div>
+
+<div class="foundation-next">
+
+  <div class="foundation-next-content">
+
+    <div class="foundation-next-label">
+      NEXT
+    </div>
+
+    <div class="foundation-next-title">
+      Membangun input dan menjalankan DCDFTBMD
+    </div>
+
+    <div class="foundation-next-text">
+      Setelah memahami model sistem, referensi energi, dan pemeriksaan hasil,
+      lanjutkan ke halaman berikutnya untuk membangun input dan menjalankan DCDFTBMD.
+    </div>
+
+  </div>
+
+  <div class="foundation-next-arrow">
+    →
   </div>
 
 </div>
