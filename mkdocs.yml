@@ -203,4 +203,5 @@ extra_javascript:
   - javascripts/file-editor.js
   - javascripts/worksheet.js
   - javascripts/lifec-viewer.js
+  - javascripts/session1.js  
   - javascripts/md-analysis-worksheet.js
