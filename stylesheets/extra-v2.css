@@ -44404,3 +44404,1494 @@ table.mahameru-table td:nth-child(3) {
     font-size: 0.78rem;
   }
 }
+/* =========================================================
+   SESI 4 · PART 1
+   Analisis lintasan dan antarmuka
+   ========================================================= */
+
+.analysis-session {
+  max-width: 100%;
+}
+
+.analysis-header {
+  margin-bottom: 2.4rem;
+}
+
+.analysis-session-label {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  background: #eef4ff;
+  color: #425b91;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.analysis-header h2 {
+  margin: 0.7rem 0 0.45rem;
+}
+
+.analysis-header p {
+  margin: 0;
+  color: #6b7890;
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.analysis-section {
+  margin-top: 2rem;
+}
+
+.analysis-section > h3 {
+  margin-bottom: 1.8rem;
+}
+
+
+/* =========================================================
+   CASE
+   ========================================================= */
+
+.analysis-case {
+  margin: 1.8rem 0 2rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #168c9c;
+  border-radius: 0 8px 8px 0;
+  background: #f5f8fa;
+}
+
+.analysis-case span {
+  color: #168c9c;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.analysis-case h4 {
+  display: inline;
+  margin: 0 0 0 0.4rem;
+}
+
+
+/* =========================================================
+   STEP
+   ========================================================= */
+
+.analysis-step {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.analysis-step-number {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef4ff;
+  color: #425b91;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.analysis-step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.analysis-step-body h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.analysis-step-body p {
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   COMMAND
+   ========================================================= */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-header {
+    margin-bottom: 2rem;
+  }
+
+  .analysis-step {
+    gap: 0.7rem;
+  }
+
+  .analysis-step-number {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .analysis-case {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command pre {
+    border-radius: 7px;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+}
+/* =========================================================
+   SESI 4 · PART 2
+   Mengikuti style Part 1
+   ========================================================= */
+
+/* Step */
+
+.analysis-step {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.analysis-step-number {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef4ff;
+  color: #425b91;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.analysis-step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.analysis-step-body h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.analysis-step-body p {
+  line-height: 1.75;
+}
+
+
+/* Command */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* Formula */
+
+.analysis-step-body em {
+  font-style: italic;
+}
+
+.analysis-step-body sub {
+  font-size: 0.72em;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-step {
+    gap: 0.7rem;
+  }
+
+  .analysis-step-number {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .analysis-step-body p {
+    line-height: 1.65;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+}
+/* =========================================================
+   SESI 4 · KASUS 2
+   Kontak EC pada permukaan LiF
+   Mengikuti style Part 1 dan Part 2
+   ========================================================= */
+
+.analysis-question {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid #168c9c;
+  border-radius: 0 8px 8px 0;
+  background: #f5f8fa;
+}
+
+.analysis-question strong {
+  color: #425b91;
+  font-size: 0.88rem;
+}
+
+.analysis-question p {
+  margin: 0.55rem 0 0;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CASE HEADER
+   ========================================================= */
+
+.analysis-case {
+  margin: 2rem 0 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #168c9c;
+  border-radius: 0 8px 8px 0;
+  background: #f5f8fa;
+}
+
+.analysis-case span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #168c9c;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.analysis-case h4 {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-case {
+    margin: 1.5rem 0 1.2rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .analysis-question {
+    margin: 1.2rem 0 1.5rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .analysis-question p {
+    line-height: 1.65;
+  }
+
+}
+/* =========================================================
+   SESI 4 · KASUS 2 · PART 1
+   Antarmuka LiF-EC
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   QUESTION
+   --------------------------------------------------------- */
+
+.analysis-question {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid #168c9c;
+  border-radius: 0 8px 8px 0;
+  background: #f5f8fa;
+}
+
+.analysis-question strong {
+  color: #425b91;
+  font-size: 0.88rem;
+}
+
+.analysis-question p {
+  margin: 0.55rem 0 0;
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   FIGURE
+   --------------------------------------------------------- */
+
+.analysis-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.analysis-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.analysis-figure figcaption {
+  margin-top: 0.8rem;
+  color: #5f6b7a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   STEP
+   --------------------------------------------------------- */
+
+.analysis-step {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.analysis-step-number {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+  background: #eef4ff;
+  color: #425b91;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.analysis-step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.analysis-step-body h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.analysis-step-body p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-question {
+    margin: 1.2rem 0 1.5rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .analysis-question p {
+    line-height: 1.65;
+  }
+
+  .analysis-figure {
+    margin: 1.5rem 0;
+  }
+
+  .analysis-figure figcaption {
+    font-size: 0.8rem;
+  }
+
+  .analysis-step {
+    gap: 0.7rem;
+  }
+
+  .analysis-step-number {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 4 · KASUS 2 · PART 2
+   Mengikuti style Part 1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   STEP CONTENT
+   --------------------------------------------------------- */
+
+.analysis-step-body p {
+  line-height: 1.75;
+}
+
+.analysis-step-body h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.analysis-step-body h4:first-child {
+  margin-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   Tetap konsisten dengan Part 1
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-step-body code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-step-body h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .analysis-step-body p {
+    line-height: 1.65;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 4 · BAGIAN 13 · PART 1
+   Dari tabel ke kesimpulan
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section > h3 {
+  margin-bottom: 1rem;
+}
+
+.analysis-section > h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+
+/* ---------------------------------------------------------
+   PARAGRAPH
+   --------------------------------------------------------- */
+
+.analysis-section p,
+.analysis-step-body p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   EQUATION
+   --------------------------------------------------------- */
+
+.analysis-equation {
+  margin: 1.5rem auto;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  overflow-x: auto;
+  color: #263957;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   Tetap sama dengan Part sebelumnya
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p,
+  .analysis-step-body p {
+    line-height: 1.65;
+  }
+
+  .analysis-equation {
+    padding: 0.8rem;
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 4 · BAGIAN 13 · PART 2
+   Membandingkan grafik dan statistik
+   Mengikuti style Part 1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section > h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   FIGURE
+   --------------------------------------------------------- */
+
+.analysis-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.analysis-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.analysis-figure figcaption {
+  margin-top: 0.8rem;
+  color: #5f6b7a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   EMPHASIS
+   --------------------------------------------------------- */
+
+.analysis-section em {
+  font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-figure {
+    margin: 1.5rem 0;
+  }
+
+  .analysis-figure figcaption {
+    font-size: 0.8rem;
+  }
+
+}
+/* PART 1 · CSS · SESI 4 · HALAMAN 30 */
+
+/* =========================================================
+   TABLE · STATUS HASIL
+   ========================================================= */
+
+.analysis-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.analysis-table th,
+.analysis-table td {
+  padding: 0.75rem 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  vertical-align: top;
+  text-align: left;
+}
+
+.analysis-table th {
+  font-weight: 700;
+}
+
+.analysis-table tr:last-child td {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   ANALYSIS COMMAND
+   ========================================================= */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-table {
+    min-width: 680px;
+  }
+
+  .analysis-table-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 4 · BAGIAN 13.5 & 14 · PART 1
+   Konsisten dengan style Part sebelumnya
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.analysis-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   TABLE
+   --------------------------------------------------------- */
+
+.analysis-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.analysis-table th,
+.analysis-table td {
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #777;
+  line-height: 1.5;
+}
+
+.analysis-table th {
+  font-weight: 700;
+}
+
+.analysis-table tbody tr:last-child td {
+  border-bottom: 1.5px solid #555;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   Sama dengan Part sebelumnya
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-table-wrap {
+    overflow-x: auto;
+  }
+
+  .analysis-table {
+    min-width: 650px;
+    font-size: 0.82rem;
+  }
+
+  .analysis-table th,
+  .analysis-table td {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 4 · BAGIAN 14 · PART 2
+   Visualisasi dengan VMD
+   Konsisten dengan Part 1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 5 · PART 1
+   Konsisten dengan style Sesi 4
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SESSION HEADER
+   --------------------------------------------------------- */
+
+.session-header {
+  margin: 2.5rem 0 2rem;
+}
+
+.session-header h1 {
+  margin-bottom: 0.8rem;
+}
+
+.session-header p {
+  margin: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   ANALYSIS SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.analysis-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   FIGURE
+   --------------------------------------------------------- */
+
+.analysis-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.analysis-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.analysis-figure-caption {
+  margin-top: 0.8rem;
+  color: #5f6b7a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .session-header {
+    margin: 2rem 0 1.5rem;
+  }
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-figure {
+    margin: 1.5rem 0;
+  }
+
+  .analysis-figure-caption {
+    font-size: 0.8rem;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   SESI 5 · PART 1
+   Pemodelan material dengan MACE
+   Mengikuti style Sesi 4
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SESSION HEADER
+   --------------------------------------------------------- */
+
+.session-header {
+  margin: 2.5rem 0 2rem;
+}
+
+.session-header h1 {
+  margin-bottom: 0.8rem;
+}
+
+.session-header p {
+  margin: 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   ANALYSIS SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.analysis-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   FIGURE
+   --------------------------------------------------------- */
+
+.analysis-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.analysis-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.analysis-figure-caption {
+  margin-top: 0.8rem;
+  color: #5f6b7a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   LINK
+   --------------------------------------------------------- */
+
+.analysis-link {
+  color: #168c9c;
+  font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .session-header {
+    margin: 2rem 0 1.5rem;
+  }
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-figure {
+    margin: 1.5rem 0;
+  }
+
+  .analysis-figure-caption {
+    font-size: 0.8rem;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
+/* =========================================================
+   MACE WORKFLOW
+   ========================================================= */
+
+.mace-workflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 2rem 0 1rem;
+  width: 100%;
+}
+
+.mace-workflow-step {
+  flex: 1;
+  min-width: 0;
+  min-height: 76px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 0.5rem;
+
+  border-radius: 8px;
+  background: #eef4ff;
+
+  color: #263957;
+  text-align: center;
+  line-height: 1.35;
+
+  font-size: 0.78rem;
+}
+
+.mace-workflow-number {
+  display: block;
+  margin-bottom: 0.35rem;
+
+  color: #168c9c;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.mace-workflow-arrow {
+  flex: 0 0 auto;
+
+  color: #168c9c;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .mace-workflow {
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: stretch;
+  }
+
+  .mace-workflow-step {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+
+    padding: 0.7rem;
+  }
+
+  .mace-workflow-arrow {
+    text-align: center;
+    transform: rotate(90deg);
+    height: 20px;
+  }
+
+}
+/* =========================================================
+   SESI 5 · PART 2
+   Mengikuti style Part 1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   SECTION
+   --------------------------------------------------------- */
+
+.analysis-section {
+  margin: 2.5rem 0;
+}
+
+.analysis-section h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #168c9c;
+}
+
+.analysis-section p {
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND
+   --------------------------------------------------------- */
+
+.analysis-command {
+  margin: 1rem 0;
+}
+
+.analysis-command pre {
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.analysis-command code {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.analysis-section code {
+  font-size: 0.9em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .analysis-section {
+    margin: 2rem 0;
+  }
+
+  .analysis-section p {
+    line-height: 1.65;
+  }
+
+  .analysis-command {
+    margin: 0.8rem 0;
+  }
+
+  .analysis-command code {
+    font-size: 0.76rem;
+  }
+
+}
