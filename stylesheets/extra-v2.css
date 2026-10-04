@@ -38094,3 +38094,1217 @@ table.mahameru-table td:nth-child(3) {
   }
 
 }
+/* =========================================================
+   SESSION 1
+   PERSIAPAN PESERTA
+   ========================================================= */
+
+.session-1-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px 70px;
+}
+
+
+/* ---------------------------------------------------------
+   TOP TABS
+   --------------------------------------------------------- */
+
+.session-1-page .mahameru-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 42px;
+  padding: 6px;
+  background: #f5f7fb;
+  border: 1px solid #e6eaf2;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.session-1-page .mahameru-tab {
+  flex: 0 0 auto;
+  padding: 9px 15px;
+  border-radius: 9px;
+  color: #5d6b82;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.session-1-page .mahameru-tab:hover {
+  color: #2458d6;
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.session-1-page .mahameru-tab.active {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2458d6,
+    #356df0
+  );
+  box-shadow: 0 4px 12px rgba(37, 88, 214, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   SESSION HEADER
+   --------------------------------------------------------- */
+
+.session-1-header {
+  position: relative;
+  margin: 0 auto 58px;
+  padding: 10px 0 0;
+  text-align: center;
+}
+
+.session-1-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 7px 13px;
+  border: 1px solid #dce5fb;
+  border-radius: 999px;
+  background: #f3f6ff;
+  color: #3565d5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.session-1-header h1 {
+  margin: 0;
+  color: #1c2f63;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.session-1-header h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 20px auto 0;
+  border-radius: 999px;
+  background: #2e63df;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN SECTION
+   --------------------------------------------------------- */
+
+.session-1-section {
+  position: relative;
+  margin: 0 auto;
+  padding: 34px 38px 42px;
+  border: 1px solid #e4e9f2;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow:
+    0 8px 28px rgba(24, 47, 91, 0.055),
+    0 1px 3px rgba(24, 47, 91, 0.035);
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADING
+   --------------------------------------------------------- */
+
+.session-1-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 24px;
+}
+
+.session-1-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    #2862e3,
+    #3a73ee
+  );
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 7px 16px rgba(43, 98, 227, 0.18);
+}
+
+.session-1-section-heading h2 {
+  margin: 0;
+  color: #1f3267;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO TEXT
+   --------------------------------------------------------- */
+
+.session-1-text {
+  margin-left: 65px;
+  margin-bottom: 32px;
+}
+
+.session-1-text p {
+  margin: 0;
+  color: #526783;
+  font-size: 15px;
+  line-height: 1.82;
+}
+
+
+/* ---------------------------------------------------------
+   SUBSECTION
+   --------------------------------------------------------- */
+
+.session-1-subsection {
+  margin-left: 65px;
+}
+
+.session-1-subheading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.session-1-subheading span {
+  color: #2b65dd;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.session-1-subheading h3 {
+  margin: 0;
+  color: #168b91;
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+
+/* ---------------------------------------------------------
+   INSTRUCTIONS
+   --------------------------------------------------------- */
+
+.session-1-instructions {
+  margin: 0 0 30px;
+  padding-left: 25px;
+  color: #435873;
+}
+
+.session-1-instructions li {
+  margin: 0 0 16px;
+  padding-left: 7px;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.session-1-instructions li:last-child {
+  margin-bottom: 0;
+}
+
+.session-1-instructions strong {
+  color: #263d68;
+}
+
+.session-1-instructions em {
+  color: #354d75;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND LIST
+   --------------------------------------------------------- */
+
+.session-1-command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND CARD
+   --------------------------------------------------------- */
+
+.session-1-command-card {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 7px 8px 7px 10px;
+  border: 1px solid #dce5f2;
+  border-radius: 12px;
+  background: #fbfcfe;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.session-1-command-card:hover {
+  border-color: #c6d5ef;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(30, 63, 117, 0.07);
+  transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND NUMBER
+   --------------------------------------------------------- */
+
+.session-1-command-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  margin-right: 11px;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #4d70b7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+
+/* ---------------------------------------------------------
+   COMMAND TEXT
+   --------------------------------------------------------- */
+
+.session-1-command-card code {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f1f4f9;
+  color: #29466f;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+
+/* ---------------------------------------------------------
+   COPY BUTTON
+   --------------------------------------------------------- */
+
+.session-1-copy {
+  flex: 0 0 auto;
+  margin-left: 9px;
+  padding: 8px 12px;
+  border: 1px solid #d9e3f3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2f64d7;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.session-1-copy:hover {
+  border-color: #b9cdf1;
+  background: #edf3ff;
+  color: #1f54c5;
+  transform: translateY(-1px);
+}
+
+.session-1-copy:active {
+  transform: translateY(0);
+}
+
+.session-1-copy.copied {
+  border-color: #b9dfd5;
+  background: #eefaf6;
+  color: #178264;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .session-1-page {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .session-1-section {
+    padding: 30px 28px 36px;
+  }
+
+  .session-1-text,
+  .session-1-subsection {
+    margin-left: 0;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .session-1-page {
+    padding: 0 12px 45px;
+  }
+
+  .session-1-page .mahameru-tabs {
+    margin-bottom: 30px;
+    border-radius: 11px;
+  }
+
+  .session-1-page .mahameru-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .session-1-header {
+    margin-bottom: 36px;
+  }
+
+  .session-1-header h1 {
+    font-size: 34px;
+  }
+
+  .session-1-section {
+    padding: 23px 18px 28px;
+    border-radius: 17px;
+  }
+
+  .session-1-section-heading {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .session-1-number {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .session-1-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .session-1-text {
+    margin-bottom: 27px;
+  }
+
+  .session-1-text p {
+    font-size: 14px;
+    line-height: 1.72;
+  }
+
+  .session-1-subheading {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .session-1-subheading span {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .session-1-subheading h3 {
+    font-size: 17px;
+  }
+
+  .session-1-instructions {
+    padding-left: 22px;
+  }
+
+  .session-1-instructions li {
+    padding-left: 4px;
+    font-size: 13.5px;
+    line-height: 1.68;
+  }
+
+  .session-1-command-card {
+    align-items: stretch;
+    min-height: 0;
+    padding: 7px;
+  }
+
+  .session-1-command-number {
+    align-self: center;
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    margin-right: 7px;
+    font-size: 9px;
+  }
+
+  .session-1-command-card code {
+    align-self: center;
+    padding: 8px 9px;
+    font-size: 11.5px;
+  }
+
+  .session-1-copy {
+    align-self: center;
+    margin-left: 6px;
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 430px) {
+
+  .session-1-header h1 {
+    font-size: 29px;
+  }
+
+  .session-1-section {
+    padding: 20px 14px 24px;
+  }
+
+  .session-1-section-heading h2 {
+    font-size: 19px;
+  }
+
+  .session-1-command-card {
+    flex-wrap: wrap;
+  }
+
+  .session-1-command-number {
+    flex: 0 0 30px;
+  }
+
+  .session-1-command-card code {
+    flex: 1 1 calc(100% - 43px);
+    min-width: 0;
+  }
+
+  .session-1-copy {
+    margin-left: 37px;
+    margin-top: 5px;
+  }
+
+}
+/* =========================================================
+   SESSION 1
+   LEARNING + ATOMIC STRUCTURE
+   ========================================================= */
+
+.session-1-learning,
+.session-1-structure {
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.session-1-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 48px 0 28px;
+}
+
+.session-1-section-number {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 52px;
+
+  border-radius: 14px;
+  background: var(--md-primary-fg-color);
+  color: white;
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.session-1-section-heading-text > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+
+  opacity: .65;
+}
+
+.session-1-section-heading h2 {
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+
+/* =========================
+   LEARNING INTRO
+   ========================= */
+
+.session-1-learning-intro {
+  margin-bottom: 20px;
+}
+
+.session-1-learning-intro p {
+  margin: 0;
+  font-size: 16px;
+}
+
+
+/* =========================
+   LEARNING CARDS
+   ========================= */
+
+.session-1-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.session-1-learning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  min-height: 105px;
+  padding: 18px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+
+  background: var(--md-default-bg-color);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.session-1-learning-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+.session-1-learning-number {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 32px;
+
+  border-radius: 9px;
+
+  background: rgba(127, 127, 127, .10);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.session-1-learning-card strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.session-1-learning-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  opacity: .78;
+}
+
+
+/* =========================
+   ACTIVITY
+   ========================= */
+
+.session-1-activity {
+  margin-top: 42px;
+}
+
+.session-1-activity-heading {
+  margin-bottom: 18px;
+}
+
+.session-1-activity-heading span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+
+  opacity: .6;
+}
+
+.session-1-activity-heading h3 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+
+/* =========================
+   SCHEDULE
+   ========================= */
+
+.session-1-schedule {
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.session-1-schedule-row {
+  display: grid;
+  grid-template-columns: 115px 90px 1fr;
+  gap: 18px;
+
+  align-items: center;
+
+  padding: 15px 18px;
+
+  border-bottom: 1px solid rgba(127, 127, 127, .13);
+}
+
+.session-1-schedule-row:last-child {
+  border-bottom: 0;
+}
+
+.session-1-schedule-time {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.session-1-schedule-duration {
+  font-size: 12px;
+  opacity: .6;
+}
+
+.session-1-schedule-content strong {
+  display: block;
+  margin-bottom: 3px;
+
+  font-size: 13px;
+}
+
+.session-1-schedule-content p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* =========================
+   GUIDE
+   ========================= */
+
+.session-1-guide {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+
+  margin-top: 30px;
+  padding: 22px;
+
+  border-radius: 14px;
+
+  background: rgba(127, 127, 127, .07);
+}
+
+.session-1-guide-label,
+.session-1-prerequisite-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.session-1-guide-content p,
+.session-1-prerequisite-content p {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.session-1-guide-content p:last-child,
+.session-1-prerequisite-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   SAVE NOTE
+   ========================= */
+
+.session-1-save-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-top: 18px;
+  padding: 18px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+}
+
+.session-1-save-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 32px;
+
+  border-radius: 50%;
+
+  background: rgba(127, 127, 127, .10);
+
+  font-weight: 800;
+}
+
+.session-1-save-note strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.session-1-save-note p {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.session-1-save-note p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   PREREQUISITE
+   ========================= */
+
+.session-1-prerequisite {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+
+  margin-top: 18px;
+  padding: 22px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+}
+
+
+/* =========================
+   ATOMIC STRUCTURE
+   ========================= */
+
+.session-1-structure-intro {
+  margin-bottom: 20px;
+}
+
+.session-1-structure-intro p {
+  margin: 0 0 12px;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.session-1-structure-intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   CONCEPT CARDS
+   ========================= */
+
+.session-1-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.session-1-concept-card {
+  padding: 20px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+
+  background: var(--md-default-bg-color);
+}
+
+.session-1-concept-number {
+  margin-bottom: 16px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  opacity: .55;
+}
+
+.session-1-concept-label {
+  margin-bottom: 8px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+
+  opacity: .6;
+}
+
+.session-1-concept-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 16px;
+}
+
+.session-1-concept-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  opacity: .78;
+}
+
+
+/* =========================
+   MODEL
+   ========================= */
+
+.session-1-structure-model {
+  margin-top: 18px;
+  padding: 22px;
+
+  border-radius: 14px;
+
+  background: rgba(127, 127, 127, .07);
+}
+
+.session-1-structure-model-label,
+.session-1-scientific-question-label {
+  margin-bottom: 9px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+
+  opacity: .65;
+}
+
+.session-1-structure-model p {
+  margin: 0 0 10px;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.session-1-structure-model p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   SCIENTIFIC QUESTION
+   ========================= */
+
+.session-1-scientific-question {
+  margin-top: 28px;
+  padding: 20px;
+
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 0 12px 12px 0;
+
+  background: rgba(127, 127, 127, .06);
+}
+
+.session-1-scientific-question p {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   OBSERVATION CARDS
+   ========================= */
+
+.session-1-observation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.session-1-observation-card {
+  padding: 18px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+}
+
+.session-1-observation-number {
+  margin-bottom: 14px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  opacity: .55;
+}
+
+.session-1-observation-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 15px;
+}
+
+.session-1-observation-card p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  opacity: .78;
+}
+
+
+/* =========================
+   ENERGY WARNING
+   ========================= */
+
+.session-1-energy-warning {
+  margin-top: 18px;
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(127, 127, 127, .07);
+}
+
+.session-1-energy-warning-title {
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.session-1-energy-warning p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CHECKPOINT
+   ========================= */
+
+.session-1-question-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-top: 18px;
+  padding: 18px;
+
+  border: 1px solid rgba(127, 127, 127, .18);
+  border-radius: 14px;
+}
+
+.session-1-question-prompt-number {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 34px;
+
+  border-radius: 9px;
+
+  background: var(--md-primary-fg-color);
+  color: white;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.session-1-question-prompt span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+
+  opacity: .6;
+}
+
+.session-1-question-prompt strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.session-1-question-prompt p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .session-1-learning,
+  .session-1-structure {
+    margin: 28px auto;
+  }
+
+  .session-1-section-heading {
+    gap: 12px;
+    margin: 34px 0 20px;
+  }
+
+  .session-1-section-number {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+
+    border-radius: 11px;
+  }
+
+  .session-1-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .session-1-learning-grid,
+  .session-1-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-1-observation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .session-1-schedule-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+
+    padding: 15px;
+  }
+
+  .session-1-schedule-duration {
+    font-size: 11px;
+  }
+
+  .session-1-guide,
+  .session-1-prerequisite {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    padding: 18px;
+  }
+
+  .session-1-save-note,
+  .session-1-question-prompt {
+    padding: 16px;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .session-1-observation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-1-learning-card {
+    min-height: auto;
+  }
+
+}
