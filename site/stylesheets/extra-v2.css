@@ -47402,3 +47402,1762 @@ table.mahameru-table td:nth-child(3) {
   }
 
 }
+/* =======================================================
+   GLOSARIUM RINGKAS
+   ======================================================= */
+
+.glossary-card {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.glossary-card table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.glossary-card thead th {
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.glossary-card tbody td {
+  padding: 0.72rem 0.85rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glossary-card tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.glossary-card th:first-child,
+.glossary-card td:first-child {
+  width: 28%;
+  white-space: nowrap;
+}
+
+.glossary-card td:first-child strong {
+  color: #008c95;
+}
+
+.glossary-card tbody tr:hover {
+  background: rgba(0, 140, 149, 0.035);
+}
+
+
+/* =======================================================
+   MOBILE
+   ======================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .glossary-card {
+    margin: 1rem 0 1.5rem;
+    padding: 0.75rem;
+    border-radius: 14px;
+    overflow-x: auto;
+  }
+
+  .glossary-card table {
+    min-width: 520px;
+    font-size: 0.88rem;
+  }
+
+  .glossary-card thead th,
+  .glossary-card tbody td {
+    padding: 0.6rem 0.65rem;
+  }
+
+  .glossary-card th:first-child,
+  .glossary-card td:first-child {
+    width: 30%;
+  }
+
+}
+/* =======================================================
+   GLOSARIUM RINGKAS
+   ======================================================= */
+
+.glossary-card {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.glossary-card table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.glossary-card thead th {
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.glossary-card tbody td {
+  padding: 0.72rem 0.85rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glossary-card tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.glossary-card th:first-child,
+.glossary-card td:first-child {
+  width: 28%;
+  white-space: nowrap;
+}
+
+.glossary-card td:first-child strong {
+  color: #008c95;
+}
+
+.glossary-card tbody tr:hover {
+  background: rgba(0, 140, 149, 0.035);
+}
+
+
+/* =======================================================
+   MOBILE
+   ======================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .glossary-card {
+    margin: 1rem 0 1.5rem;
+    padding: 0.75rem;
+    border-radius: 14px;
+  }
+
+  .glossary-card table {
+    min-width: 520px;
+    font-size: 0.88rem;
+  }
+
+  .glossary-card thead th,
+  .glossary-card tbody td {
+    padding: 0.6rem 0.65rem;
+  }
+
+  .glossary-card th:first-child,
+  .glossary-card td:first-child {
+    width: 30%;
+  }
+
+}
+/* =======================================================
+   WORKSHEET LAYOUT FIX
+   Merapikan textarea dan pertanyaan worksheet
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   1. SEMUA TEXTAREA WORKSHEET
+   ------------------------------------------------------- */
+
+.worksheet textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+
+  margin: 0.75rem 0 0 0;
+  padding: 0.85rem 1rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  resize: vertical;
+}
+
+
+/* -------------------------------------------------------
+   2. TEXTAREA SAAT BERADA DALAM QUESTION
+   ------------------------------------------------------- */
+
+.worksheet-question textarea,
+.worksheet-item textarea,
+.worksheet-report-item textarea,
+.worksheet-interpretation textarea,
+.worksheet-sensitivity textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 0.85rem;
+}
+
+
+/* -------------------------------------------------------
+   3. JANGAN BIARKAN FLEX MEMBUAT TEXTAREA DI SAMPING
+   ------------------------------------------------------- */
+
+.worksheet-question,
+.worksheet-item,
+.worksheet-report-item,
+.worksheet-interpretation,
+.worksheet-sensitivity {
+  display: block;
+  width: 100%;
+}
+
+
+/* -------------------------------------------------------
+   4. PERTANYAAN / LABEL
+   ------------------------------------------------------- */
+
+.worksheet-question > strong,
+.worksheet-question > p,
+.worksheet-item > strong,
+.worksheet-item > p,
+.worksheet-report-item > strong,
+.worksheet-report-item > p {
+  display: block;
+  width: 100%;
+}
+
+
+/* -------------------------------------------------------
+   5. BAGIAN C.7 LAPORAN SINGKAT
+   ------------------------------------------------------- */
+
+.worksheet-report {
+  width: 100%;
+}
+
+.worksheet-report ol {
+  margin: 1rem 0 0 1.5rem;
+  padding: 0;
+}
+
+.worksheet-report li {
+  display: block;
+  width: 100%;
+
+  margin-bottom: 1.25rem;
+  padding-left: 0.25rem;
+}
+
+.worksheet-report li textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 0.65rem;
+}
+
+
+/* -------------------------------------------------------
+   6. CARD WORKSHEET
+   ------------------------------------------------------- */
+
+.worksheet-card,
+.worksheet-section,
+.worksheet-interpretation,
+.worksheet-question {
+  box-sizing: border-box;
+}
+
+
+/* -------------------------------------------------------
+   7. INPUT TEXT DAN TEXTAREA DALAM TABEL
+   ------------------------------------------------------- */
+
+.worksheet table input,
+.worksheet table textarea,
+.worksheet-table input,
+.worksheet-table textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.worksheet table textarea {
+  min-height: 90px;
+}
+
+
+/* -------------------------------------------------------
+   8. TAMPILAN TEXTAREA
+   ------------------------------------------------------- */
+
+.worksheet textarea:focus {
+  outline: none;
+
+  border-color: #008c95;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 140, 149, 0.12);
+}
+
+
+/* -------------------------------------------------------
+   9. PLACEHOLDER
+   ------------------------------------------------------- */
+
+.worksheet textarea::placeholder {
+  color: rgba(0, 0, 0, 0.48);
+}
+
+
+/* -------------------------------------------------------
+   10. MOBILE
+   ------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .worksheet textarea,
+  .worksheet-question textarea,
+  .worksheet-item textarea,
+  .worksheet-report-item textarea,
+  .worksheet-interpretation textarea,
+  .worksheet-sensitivity textarea {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 110px;
+
+    margin-top: 0.65rem;
+
+    font-size: 0.9rem;
+  }
+
+  .worksheet-report li {
+    margin-bottom: 1rem;
+  }
+
+}
+/* =========================================================
+   WORKSHEET FINAL LAYOUT FIX
+   Bahan Pendalaman
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   AREA UTAMA WORKSHEET
+   --------------------------------------------------------- */
+
+.md-content textarea {
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   SEMUA TEXTAREA DI CONTENT WORKSHEET
+   Dibuat vertikal, tidak lagi berada di samping teks
+   --------------------------------------------------------- */
+
+.md-content textarea {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  min-height: 120px;
+
+  margin-top: 12px !important;
+  margin-right: 0 !important;
+  margin-bottom: 20px !important;
+  margin-left: 0 !important;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  border: 1px solid #d6dce5;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  flex: none !important;
+  float: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   PAKSA ELEMEN YANG MENGANDUNG TEXTAREA
+   MENJADI BLOK VERTIKAL
+   --------------------------------------------------------- */
+
+.md-content div:has(> textarea),
+.md-content li:has(> textarea),
+.md-content p:has(+ textarea) {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+
+/* ---------------------------------------------------------
+   ITEM LAPORAN C.7
+   --------------------------------------------------------- */
+
+.md-content li:has(textarea) {
+  display: block !important;
+
+  width: 100% !important;
+
+  margin-bottom: 28px !important;
+  padding-left: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTAREA DI DALAM LIST
+   --------------------------------------------------------- */
+
+.md-content li textarea {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-top: 12px !important;
+}
+
+
+/* ---------------------------------------------------------
+   JANGAN BIARKAN FLEX MENGECILKAN TEXTAREA
+   --------------------------------------------------------- */
+
+.md-content textarea {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+
+  position: static !important;
+}
+
+
+/* ---------------------------------------------------------
+   CARD / BLOK INTERPRETASI
+   --------------------------------------------------------- */
+
+.md-content div:has(textarea) {
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   FOCUS
+   --------------------------------------------------------- */
+
+.md-content textarea:focus {
+  outline: none;
+
+  border-color: #008c95;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 140, 149, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   PLACEHOLDER
+   --------------------------------------------------------- */
+
+.md-content textarea::placeholder {
+  color: #7a8494;
+}
+
+
+/* ---------------------------------------------------------
+   TABEL
+   Supaya textarea yang memang berada di tabel
+   tetap mengikuti lebar kolom
+   --------------------------------------------------------- */
+
+.md-content table textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  min-height: 80px;
+
+  margin: 6px 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   INPUT DALAM TABEL
+   --------------------------------------------------------- */
+
+.md-content table input,
+.md-content table select,
+.md-content table textarea {
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+  .md-content textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: 110px;
+
+    font-size: 0.9rem;
+  }
+
+  .md-content li:has(textarea) {
+    margin-bottom: 22px !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE KECIL
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 480px) {
+
+  .md-content textarea {
+    min-height: 100px;
+
+    padding: 10px 12px;
+
+    font-size: 0.88rem;
+  }
+
+}
+/* =========================================================
+   UKURAN KOTAK ISIAN WORKSHEET
+   ========================================================= */
+
+.md-content textarea {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 160px;
+
+  box-sizing: border-box;
+
+  margin-top: 10px !important;
+  margin-bottom: 18px !important;
+
+  padding: 10px 12px;
+
+  resize: vertical;
+
+  border: 1px solid #d6dce5;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+
+  flex: none !important;
+  float: none !important;
+}
+
+
+/* Isian yang membutuhkan jawaban lebih panjang */
+.md-content textarea[rows="6"],
+.md-content textarea[rows="5"] {
+  height: 90px !important;
+  min-height: 90px !important;
+}
+
+
+/* Textarea dalam tabel */
+.md-content table textarea {
+  height: 55px !important;
+  min-height: 55px !important;
+
+  margin: 4px 0 !important;
+}
+
+
+/* C.7 laporan singkat */
+.md-content li:has(textarea) textarea {
+  height: 65px !important;
+  min-height: 65px !important;
+
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+
+/* Fokus */
+.md-content textarea:focus {
+  outline: none;
+
+  border-color: #008c95;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 140, 149, 0.12);
+}
+
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+  .md-content textarea {
+    height: 65px !important;
+    min-height: 65px !important;
+
+    font-size: 0.88rem;
+  }
+
+  .md-content textarea[rows="6"],
+  .md-content textarea[rows="5"] {
+    height: 85px !important;
+    min-height: 85px !important;
+  }
+
+}
+/* =========================================================
+   WORKSHEET HEADER COMPACT
+   Mengecilkan bagian pembuka Lembar Kerja Peserta
+   ========================================================= */
+
+/* Judul */
+.worksheet h1,
+.worksheet-header h1,
+.worksheet-intro h1 {
+  font-size: 1.8rem !important;
+  line-height: 1.2 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+
+/* Garis biru di bawah judul */
+.worksheet h1::after,
+.worksheet-header h1::after,
+.worksheet-intro h1::after {
+  margin-top: 0.45rem !important;
+}
+
+
+/* Teks penjelasan */
+.worksheet-intro p,
+.worksheet-header p {
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  margin: 0.5rem 0 !important;
+}
+
+
+/* Card pembuka */
+.worksheet-intro,
+.worksheet-header {
+  padding: 1.25rem 1.5rem !important;
+}
+
+
+/* Jika pembuka berada dalam card */
+.worksheet > div:first-child,
+.worksheet > section:first-child {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+
+/* Nama dan akun komputer */
+.worksheet-header input,
+.worksheet-intro input {
+  height: 42px !important;
+  padding: 8px 11px !important;
+  font-size: 0.85rem !important;
+}
+
+
+/* Label Nama dan Akun */
+.worksheet-header label,
+.worksheet-intro label {
+  font-size: 0.8rem !important;
+}
+
+
+/* Tampilan desktop */
+@media screen and (min-width: 769px) {
+
+  .worksheet-intro p,
+  .worksheet-header p {
+    max-width: 720px;
+  }
+
+}
+
+
+/* Tampilan mobile */
+@media screen and (max-width: 768px) {
+
+  .worksheet h1,
+  .worksheet-header h1,
+  .worksheet-intro h1 {
+    font-size: 1.45rem !important;
+  }
+
+  .worksheet-intro p,
+  .worksheet-header p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+}
+/* =========================================================
+   BAHAN PENDALAMAN
+   WORKSHEET HEADER REDESIGN
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CARD UTAMA WORKSHEET
+   --------------------------------------------------------- */
+
+.worksheet {
+  max-width: 100%;
+  margin: 1.5rem auto;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER WORKSHEET
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child {
+  box-sizing: border-box;
+
+  padding: 1.5rem 2rem !important;
+
+  border: 1px solid rgba(30, 70, 130, 0.12);
+  border-radius: 18px 18px 0 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(248, 251, 255, 0.98),
+      rgba(255, 255, 255, 1)
+    );
+
+  box-shadow:
+    0 4px 18px rgba(25, 55, 100, 0.06);
+}
+
+
+/* ---------------------------------------------------------
+   JUDUL
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child h1 {
+  margin: 0 !important;
+
+  font-size: 1.7rem !important;
+  line-height: 1.25 !important;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* Garis dekorasi di bawah judul */
+
+.worksheet > div:first-child h1::after {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 3px;
+
+  margin-top: 0.45rem;
+
+  border-radius: 99px;
+
+  background: #2764e8;
+}
+
+
+/* ---------------------------------------------------------
+   PARAGRAF PEMBUKA
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child p {
+  max-width: 680px;
+
+  margin: 0.75rem 0 0 !important;
+
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+
+  color: #536174;
+
+  text-align: left;
+}
+
+
+/* ---------------------------------------------------------
+   INPUT PESERTA
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child input {
+  height: 40px !important;
+
+  padding: 0.55rem 0.75rem !important;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8e0eb;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font-size: 0.85rem !important;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.worksheet > div:first-child input:focus {
+  outline: none;
+
+  border-color: #2764e8;
+
+  box-shadow:
+    0 0 0 3px rgba(39, 100, 232, 0.1);
+}
+
+
+/* ---------------------------------------------------------
+   LABEL INPUT
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child label {
+  margin-bottom: 0.35rem;
+
+  font-size: 0.76rem !important;
+  font-weight: 700;
+
+  color: #526078;
+}
+
+
+/* ---------------------------------------------------------
+   BADGE C
+   --------------------------------------------------------- */
+
+.worksheet > div:first-child .worksheet-section-number {
+  font-size: 0.72rem;
+}
+
+
+/* ---------------------------------------------------------
+   C.1 DAN SECTION BERIKUTNYA
+   --------------------------------------------------------- */
+
+.worksheet > section {
+  margin-top: 0 !important;
+
+  border-top: 1px solid #e7ebf1;
+}
+
+
+/* ---------------------------------------------------------
+   JUDUL SECTION
+   --------------------------------------------------------- */
+
+.worksheet section h2,
+.worksheet section h3 {
+  margin-top: 0 !important;
+
+  font-size: 1.05rem !important;
+  line-height: 1.35 !important;
+}
+
+
+/* ---------------------------------------------------------
+   SUBTITLE SECTION
+   --------------------------------------------------------- */
+
+.worksheet section .section-description {
+  font-size: 0.82rem;
+
+  color: #8a96a8;
+}
+
+
+/* =========================================================
+   COMPACT DESKTOP HEADER
+   ========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .worksheet > div:first-child {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    column-gap: 2rem;
+    align-items: start;
+
+    min-height: 0 !important;
+  }
+
+
+  /* Area judul dan deskripsi */
+
+  .worksheet > div:first-child h1,
+  .worksheet > div:first-child p {
+    grid-column: 1;
+  }
+
+
+  /* Input peserta */
+
+  .worksheet > div:first-child input,
+  .worksheet > div:first-child label {
+    grid-column: 2;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .worksheet > div:first-child {
+    padding: 1.25rem !important;
+
+    border-radius: 14px 14px 0 0;
+  }
+
+
+  .worksheet > div:first-child h1 {
+    font-size: 1.4rem !important;
+  }
+
+
+  .worksheet > div:first-child p {
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+  }
+
+
+  .worksheet > div:first-child input {
+    width: 100% !important;
+
+    margin-bottom: 0.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA COMPACT
+   ========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .worksheet > div:first-child {
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+
+}
+/* =========================================================
+   BAHAN PENDALAMAN
+   FINAL WORKSHEET HEADER
+   ========================================================= */
+
+
+/* CARD WORKSHEET */
+.worksheet-card {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.worksheet-card .worksheet-header {
+  display: grid !important;
+
+  grid-template-columns: minmax(0, 1fr) auto !important;
+
+  align-items: center !important;
+
+  gap: 20px !important;
+
+  padding: 22px 28px !important;
+
+  min-height: 0 !important;
+}
+
+
+/* =========================================================
+   BAGIAN KIRI
+   ========================================================= */
+
+.worksheet-card .worksheet-header-content {
+  min-width: 0 !important;
+
+  display: block !important;
+}
+
+
+/* LABEL C */
+
+.worksheet-card .worksheet-label {
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 32px !important;
+  height: 28px !important;
+
+  margin-bottom: 10px !important;
+
+  border-radius: 7px !important;
+
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+}
+
+
+/* JUDUL */
+
+.worksheet-card .worksheet-header h2 {
+  margin: 0 !important;
+
+  font-size: 1.55rem !important;
+  line-height: 1.25 !important;
+
+  letter-spacing: -0.02em !important;
+}
+
+
+/* GARIS DI BAWAH JUDUL */
+
+.worksheet-card .worksheet-header h2::after {
+  content: "";
+
+  display: block;
+
+  width: 48px;
+  height: 3px;
+
+  margin-top: 8px;
+
+  border-radius: 10px;
+
+  background: #2764e8;
+}
+
+
+/* =========================================================
+   PARAGRAF PEMBUKA
+   ========================================================= */
+
+.worksheet-card .worksheet-header-content p {
+  max-width: 680px !important;
+
+  margin: 12px 0 0 !important;
+
+  font-size: 0.88rem !important;
+
+  line-height: 1.55 !important;
+
+  text-align: left !important;
+
+  color: #59677a !important;
+}
+
+
+/* =========================================================
+   NAMA DAN AKUN KOMPUTER
+   ========================================================= */
+
+.worksheet-card .worksheet-meta {
+  display: grid !important;
+
+  grid-template-columns: repeat(2, minmax(110px, 1fr)) !important;
+
+  gap: 12px !important;
+
+  width: 280px !important;
+
+  align-self: start !important;
+}
+
+
+/* LABEL */
+
+.worksheet-card .worksheet-meta label {
+  display: block !important;
+
+  margin-bottom: 5px !important;
+
+  font-size: 0.72rem !important;
+
+  font-weight: 700 !important;
+
+  color: #526078 !important;
+}
+
+
+/* INPUT */
+
+.worksheet-card .worksheet-meta input {
+  width: 100% !important;
+
+  height: 38px !important;
+
+  box-sizing: border-box !important;
+
+  padding: 8px 10px !important;
+
+  border: 1px solid #d7dfeb !important;
+
+  border-radius: 8px !important;
+
+  font-size: 0.82rem !important;
+
+  background: #fff !important;
+}
+
+
+/* FOCUS INPUT */
+
+.worksheet-card .worksheet-meta input:focus {
+  outline: none !important;
+
+  border-color: #2764e8 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(39, 100, 232, 0.10) !important;
+}
+
+
+/* =========================================================
+   C.1 SUPAYA LEBIH DEKAT DENGAN HEADER
+   ========================================================= */
+
+.worksheet-card .worksheet-section {
+  margin-top: 0 !important;
+}
+
+
+.worksheet-card .worksheet-section-title {
+  padding-top: 20px !important;
+  padding-bottom: 12px !important;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .worksheet-card .worksheet-header {
+    min-height: 0 !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .worksheet-card .worksheet-header {
+    grid-template-columns: 1fr !important;
+
+    gap: 14px !important;
+  }
+
+  .worksheet-card .worksheet-meta {
+    width: 100% !important;
+
+    max-width: 360px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .worksheet-card .worksheet-header {
+    display: block !important;
+
+    padding: 18px !important;
+  }
+
+
+  .worksheet-card .worksheet-header h2 {
+    font-size: 1.3rem !important;
+  }
+
+
+  .worksheet-card .worksheet-header-content p {
+    font-size: 0.84rem !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  .worksheet-card .worksheet-meta {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin-top: 15px !important;
+  }
+
+
+  .worksheet-card .worksheet-meta input {
+    height: 40px !important;
+  }
+
+}
+/* =========================================================
+   E. BACAAN LANJUTAN
+   F. PETA PAKET DAN PERINTAH DASAR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTAINER
+   --------------------------------------------------------- */
+
+.deep-section {
+  margin: 32px 0;
+}
+
+
+/* ---------------------------------------------------------
+   JUDUL SECTION
+   --------------------------------------------------------- */
+
+.deep-section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+
+.deep-section-number {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 8px;
+
+  background: #eef6f7;
+
+  color: #008b94;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}
+
+
+.deep-section-heading h2 {
+  margin: 2px 0 0 !important;
+
+  color: #1c376d !important;
+
+  font-size: 1.35rem !important;
+
+  line-height: 1.25 !important;
+}
+
+
+/* GARIS BIRU */
+
+.deep-section-line {
+  width: 48px;
+
+  height: 3px;
+
+  margin-top: 7px;
+
+  border-radius: 10px;
+
+  background: #2764e8;
+}
+
+
+/* ---------------------------------------------------------
+   CARD UTAMA
+   --------------------------------------------------------- */
+
+.deep-card {
+  padding: 22px 24px;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(20, 40, 80, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO
+   --------------------------------------------------------- */
+
+.deep-intro {
+  margin: 0 0 16px;
+
+  color: #52627a;
+
+  font-size: 0.92rem;
+
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   BACAAN
+   --------------------------------------------------------- */
+
+.reading-item {
+  display: grid;
+
+  grid-template-columns: 250px minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+
+.reading-item:last-child {
+  border-bottom: none;
+
+  padding-bottom: 2px;
+}
+
+
+.reading-title {
+  color: #008b94;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+.reading-description {
+  color: #52627a;
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE CODE
+   --------------------------------------------------------- */
+
+.deep-card code {
+  padding: 2px 6px;
+
+  border-radius: 5px;
+
+  background: #f1f4f8;
+
+  color: #2458a6;
+
+  font-size: 0.86em;
+}
+
+
+/* ---------------------------------------------------------
+   PATH
+   --------------------------------------------------------- */
+
+.deep-code {
+  margin: 12px 0 20px;
+
+  padding: 11px 14px;
+
+  border: 1px solid #dce4ee;
+
+  border-radius: 8px;
+
+  background: #f7f9fc;
+
+  overflow-x: auto;
+}
+
+
+.deep-code code {
+  padding: 0;
+
+  background: transparent;
+
+  color: #2458a6;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+}
+
+
+/* ---------------------------------------------------------
+   PACKAGE TREE
+   --------------------------------------------------------- */
+
+.package-tree {
+  margin: 14px 0 18px;
+
+  padding: 16px 18px;
+
+  border: 1px solid #008b94;
+
+  border-radius: 8px;
+
+  background: #fbfdfd;
+
+  overflow-x: auto;
+
+  box-sizing: border-box;
+}
+
+
+.package-tree code {
+  display: block;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #26384d;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 0.78rem;
+
+  line-height: 1.55;
+
+  white-space: pre;
+}
+
+
+/* ---------------------------------------------------------
+   NOTE
+   --------------------------------------------------------- */
+
+.deep-note {
+  margin-top: 18px;
+
+  padding: 13px 16px;
+
+  border-left: 3px solid #2764e8;
+
+  border-radius: 0 8px 8px 0;
+
+  background: #f6f8fc;
+}
+
+
+.deep-note strong {
+  color: #1c376d;
+
+  font-size: 0.86rem;
+}
+
+
+.deep-note p {
+  margin: 5px 0 0;
+
+  color: #59677a;
+
+  font-size: 0.86rem;
+
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   SUBSECTION F.1
+   --------------------------------------------------------- */
+
+.deep-subsection {
+  margin-top: 22px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(20, 40, 80, 0.05);
+}
+
+
+.deep-subsection h3 {
+  margin: 0;
+
+  color: #008b94;
+
+  font-size: 1.05rem;
+
+  line-height: 1.4;
+}
+
+
+.deep-subsection > p {
+  color: #52627a;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   INPUT BLOCKS
+   --------------------------------------------------------- */
+
+.input-blocks {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin: 16px 0;
+}
+
+
+.input-block {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 44px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+
+  background: #fafbfd;
+
+  box-sizing: border-box;
+}
+
+
+.input-block span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  flex: 0 0 auto;
+
+  border-radius: 6px;
+
+  background: #eef6f7;
+
+  color: #008b94;
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+}
+
+
+.input-block strong {
+  color: #43536a;
+
+  font-size: 0.84rem;
+
+  line-height: 1.35;
+}
+
+
+/* ---------------------------------------------------------
+   MANUAL
+   --------------------------------------------------------- */
+
+.manual-note {
+  margin-top: 18px !important;
+
+  color: #52627a;
+
+  font-size: 0.86rem !important;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .reading-item {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .deep-section {
+    margin: 24px 0;
+  }
+
+
+  .deep-card,
+  .deep-subsection {
+    padding: 17px;
+  }
+
+
+  .deep-section-heading h2 {
+    font-size: 1.15rem !important;
+  }
+
+
+  .reading-item {
+    display: block;
+
+    padding: 11px 0;
+  }
+
+
+  .reading-title {
+    margin-bottom: 4px;
+  }
+
+
+  .reading-description {
+    font-size: 0.84rem;
+  }
+
+
+  .package-tree {
+    padding: 13px;
+
+    font-size: 0.72rem;
+  }
+
+
+  .input-blocks {
+    grid-template-columns: 1fr;
+  }
+
+
+  .input-block {
+    min-height: 42px;
+  }
+
+}
