@@ -56,10 +56,6 @@ molekuler sebelum simulasi.
   <h3>Packmol</h3>
 </div>
 
-<p>
-Digunakan untuk menyiapkan konfigurasi awal sistem molekuler.
-</p>
-
 <a class="software-download"
    href="https://m3g.github.io/packmol/download.shtml"
    target="_blank">
@@ -78,10 +74,6 @@ Digunakan untuk menyiapkan konfigurasi awal sistem molekuler.
   <span class="software-badge">PREPROCESSING</span>
   <h3>Termius</h3>
 </div>
-
-<p>
-Digunakan untuk mengakses lingkungan HPC melalui koneksi SSH.
-</p>
 
 <a class="software-download"
    href="https://docs.termius.com/getting-started/download-termius"
@@ -110,10 +102,6 @@ berbasis first-principles.
   <h3>Quantum ESPRESSO</h3>
 </div>
 
-<p>
-Digunakan untuk menjalankan perhitungan berbasis first-principles.
-</p>
-
 <a class="software-download"
    href="https://www.quantum-espresso.org/login/?redirect_to=https://www.quantum-espresso.org/download-page"
    target="_blank">
@@ -133,11 +121,6 @@ molecular dynamics berbasis DFTB.
   <span class="software-badge">PROCESS</span>
   <h3>DC-DFTB-MD</h3>
 </div>
-
-<p>
-Digunakan untuk menjalankan simulasi molecular dynamics
-berbasis Density-Functional Tight-Binding.
-</p>
 
 <a class="software-download"
    href="https://www.chem.waseda.ac.jp/dcdftbmd/?page_id=37&lang=en"
@@ -166,10 +149,6 @@ perhitungan material.
   <h3>XCrySDen</h3>
 </div>
 
-<p>
-Digunakan untuk memvisualisasikan struktur dan hasil perhitungan.
-</p>
-
 <a class="software-download"
    href="http://www.xcrysden.org/Download.html"
    target="_blank">
@@ -190,11 +169,6 @@ molekuler serta trajectory hasil simulasi.
   <h3>VMD</h3>
 </div>
 
-<p>
-Digunakan untuk visualisasi dan analisis sistem molekuler
-serta trajectory simulasi.
-</p>
-
 <a class="software-download"
    href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD"
    target="_blank">
@@ -213,10 +187,6 @@ serta trajectory simulasi.
   <span class="software-badge">POST-PROCESSING</span>
   <h3>VESTA</h3>
 </div>
-
-<p>
-Digunakan untuk memvisualisasikan struktur dan data kristal.
-</p>
 
 <a class="software-download"
    href="https://jp-minerals.org/vesta/en/download.html"

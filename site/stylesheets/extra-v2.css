@@ -44248,3 +44248,159 @@ table.mahameru-table td:nth-child(3) {
     font-size: 0.68rem !important;
   }
 }
+/* =========================================================
+   SOFTWARE SETUP
+   Part 1
+   ========================================================= */
+
+.software-workflow {
+  margin: 2rem 0;
+}
+
+.software-workflow-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #dce5ef;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.software-workflow-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #eef4ff;
+  color: #3659a8;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.software-workflow-item strong {
+  display: block;
+  color: #243b70;
+  font-size: 0.98rem;
+}
+
+.software-workflow-item p {
+  margin: 0.2rem 0 0;
+  color: #66758a;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.software-workflow-arrow {
+  margin: 0.45rem 0;
+  color: #7b8ba3;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Software card */
+
+.software-card {
+  margin: 1.2rem 0 2rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid #dce5ef;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.software-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.software-card-header h3 {
+  margin: 0;
+  color: #243b70;
+  font-size: 1.05rem;
+}
+
+.software-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  background: #eef4ff;
+  color: #4966a8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.software-card p {
+  margin: 0 0 1rem;
+  color: #596b82;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.software-download {
+  display: inline-block;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #55b8c0;
+  border-radius: 6px;
+  color: #267d84 !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.software-download:hover {
+  background: #f1fbfc;
+}
+
+/* Workflow */
+
+.software-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #dce5ef;
+  border-radius: 10px;
+  background: #f9fbfd;
+}
+
+.software-flow span {
+  color: #3d536e;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+  .software-workflow-item {
+    padding: 0.85rem;
+  }
+
+  .software-card {
+    padding: 1rem;
+  }
+
+  .software-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .software-flow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .software-flow span {
+    font-size: 0.78rem;
+  }
+}
