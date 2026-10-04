@@ -46497,3 +46497,908 @@ table.mahameru-table td:nth-child(3) {
   }
 
 }
+/* =========================================================
+   BAHAN PENDALAMAN · PART 6
+   Troubleshooting tables
+   ========================================================= */
+
+.troubleshooting-table {
+  width: 100%;
+  margin: 1.25rem 0 2rem;
+  overflow-x: auto;
+}
+
+.troubleshooting-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.troubleshooting-table th,
+.troubleshooting-table td {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.troubleshooting-table th {
+  font-weight: 700;
+}
+
+.troubleshooting-table td code {
+  font-size: 0.88em;
+}
+
+@media screen and (max-width: 768px) {
+
+  .troubleshooting-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .troubleshooting-table table {
+    min-width: 720px;
+    font-size: 0.82rem;
+  }
+
+  .troubleshooting-table th,
+  .troubleshooting-table td {
+    padding: 0.6rem;
+  }
+
+}
+/* =========================================================
+   MD ANALYSIS WORKSHEET
+   CSS PART 1
+   ========================================================= */
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.worksheet-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.worksheet-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #dfe5eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.worksheet-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.worksheet-btn {
+  border: 1px solid #d7dee7;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #243447;
+  padding: 9px 15px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.worksheet-btn:hover {
+  background: #f4f7fa;
+  border-color: #b8c4d0;
+  transform: translateY(-1px);
+}
+
+.worksheet-btn.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.worksheet-btn.primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.worksheet-btn.drive {
+  background: #173f8f;
+  border-color: #173f8f;
+  color: #ffffff;
+}
+
+.worksheet-btn.drive:hover {
+  background: #123473;
+  border-color: #123473;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.worksheet-progress {
+  margin-bottom: 14px;
+  padding: 16px 18px;
+  border: 1px solid #e3e8ef;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.worksheet-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.worksheet-progress-header strong {
+  color: #1e3a8a;
+}
+
+.worksheet-progress-track {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.worksheet-progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.worksheet-progress-label {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.worksheet-status {
+  min-height: 20px;
+  margin: 8px 2px 14px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.worksheet-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 30px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #ffffff 70%
+  );
+}
+
+.worksheet-header-content {
+  min-width: 0;
+}
+
+.worksheet-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.worksheet-header h2 {
+  margin: 10px 0 8px;
+  color: #172033;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.worksheet-header p {
+  max-width: 680px;
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.worksheet-meta {
+  min-width: 270px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.worksheet-meta label {
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.worksheet-section {
+  padding: 28px 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.worksheet-section:last-child {
+  border-bottom: 0;
+}
+
+.worksheet-section-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.worksheet-section-title > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 7px;
+  background: #ecfeff;
+  color: #087f8c;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.worksheet-section-title strong {
+  display: block;
+  color: #172033;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.worksheet-section-title small {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.worksheet-page input,
+.worksheet-page textarea,
+.worksheet-page select {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+  font: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.worksheet-page input,
+.worksheet-page select {
+  min-height: 38px;
+  padding: 8px 11px;
+}
+
+.worksheet-page textarea {
+  min-height: 80px;
+  padding: 10px 11px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.worksheet-page input:focus,
+.worksheet-page textarea:focus,
+.worksheet-page select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.worksheet-page input::placeholder,
+.worksheet-page textarea::placeholder {
+  color: #a8b2bf;
+}
+
+.worksheet-page code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.9em;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.worksheet-table-wrap {
+  width: 100%;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.worksheet-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  color: #334155;
+  font-size: 13px;
+}
+
+.worksheet-table th {
+  padding: 11px 12px;
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+  background: #fafafa;
+  color: #334155;
+  text-align: left;
+  font-weight: 700;
+}
+
+.worksheet-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.worksheet-table td:first-child {
+  width: 42%;
+}
+
+.worksheet-table tr:last-child td {
+  border-bottom: 1px solid #cbd5e1;
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+.worksheet-question {
+  margin: 0 0 18px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.inline-answer {
+  display: inline-block !important;
+  width: 150px !important;
+  min-height: 32px !important;
+  margin: 0 4px;
+  padding: 5px 8px !important;
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   CALCULATION
+   ========================================================= */
+
+.worksheet-calculation {
+  margin: 20px 0;
+  padding: 16px 18px;
+  border-left: 3px solid #0f9aa8;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.worksheet-calculation strong {
+  color: #172033;
+}
+
+.worksheet-calculation p {
+  margin: 8px 0 0;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.worksheet-note {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.worksheet-note strong {
+  color: #334155;
+  font-size: 13px;
+}
+
+.worksheet-note p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   INTERPRETATION
+   ========================================================= */
+
+.worksheet-interpretation {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid #dfe6ee;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.worksheet-interpretation strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+.worksheet-interpretation p {
+  margin: 8px 0 12px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .worksheet-header {
+    flex-direction: column;
+  }
+
+  .worksheet-meta {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .worksheet-page {
+    padding: 15px 10px 40px;
+  }
+
+  .worksheet-toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .worksheet-btn {
+    width: 100%;
+    padding: 9px 8px;
+    font-size: 12px;
+  }
+
+  .worksheet-btn.drive {
+    grid-column: 1 / -1;
+  }
+
+  .worksheet-header {
+    padding: 22px 18px;
+  }
+
+  .worksheet-header h2 {
+    font-size: 23px;
+  }
+
+  .worksheet-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .worksheet-section {
+    padding: 22px 18px;
+  }
+
+  .worksheet-table {
+    min-width: 620px;
+  }
+
+  .inline-answer {
+    width: 125px !important;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .worksheet-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .worksheet-btn.drive {
+    grid-column: auto;
+  }
+
+  .worksheet-progress {
+    padding: 13px;
+  }
+
+  .worksheet-header {
+    padding: 20px 15px;
+  }
+
+  .worksheet-section {
+    padding: 20px 15px;
+  }
+
+}
+/* =========================================================
+   WORKSHEET · CASE 2
+   Antarmuka LiF–EC
+   ========================================================= */
+
+.worksheet-question {
+  margin: 18px 0 20px;
+  line-height: 1.7;
+}
+
+.worksheet-question strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.worksheet-question p {
+  margin: 0;
+}
+
+
+.worksheet-table {
+  width: 100%;
+  border: 1px solid rgba(0, 128, 128, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+
+.worksheet-table-header,
+.worksheet-table-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, 1.2fr);
+  gap: 18px;
+  align-items: center;
+}
+
+
+.worksheet-table-header {
+  padding: 13px 16px;
+  font-weight: 700;
+  background: rgba(0, 128, 128, 0.06);
+  border-bottom: 1px solid rgba(0, 128, 128, 0.25);
+}
+
+
+.worksheet-table-row {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.worksheet-table-row:last-child {
+  border-bottom: none;
+}
+
+
+.worksheet-table-row > span {
+  line-height: 1.5;
+}
+
+
+.worksheet-table-row input,
+.worksheet-table-row select,
+.worksheet-reflection textarea,
+.worksheet-reflection select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.worksheet-reflection {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(0, 128, 128, 0.035);
+  border: 1px solid rgba(0, 128, 128, 0.18);
+}
+
+
+.worksheet-reflection strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+.worksheet-reflection p {
+  margin: 0 0 14px;
+  line-height: 1.65;
+}
+
+
+.worksheet-reflection textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+@media (max-width: 768px) {
+
+  .worksheet-table-header {
+    display: none;
+  }
+
+  .worksheet-table-row {
+    display: block;
+    padding: 15px;
+  }
+
+  .worksheet-table-row > span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .worksheet-table-row input,
+  .worksheet-table-row select {
+    min-height: 44px;
+  }
+
+  .worksheet-reflection {
+    padding: 15px;
+  }
+
+}
+/* =========================================================
+   WORKSHEET · CASE 3
+   NEB CO pada Pt(111)
+   ========================================================= */
+
+.worksheet-calculation {
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(0, 128, 128, 0.035);
+  border: 1px solid rgba(0, 128, 128, 0.18);
+}
+
+.worksheet-calculation strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.worksheet-calculation p {
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.worksheet-blank {
+  display: inline-block;
+  min-width: 55px;
+  text-align: center;
+}
+
+.worksheet-calculation .worksheet-field {
+  margin-top: 12px;
+}
+
+.worksheet-calculation .input-unit {
+  display: flex;
+  align-items: center;
+}
+
+.worksheet-calculation .input-unit input {
+  flex: 1;
+}
+
+.worksheet-calculation .input-unit em {
+  padding: 0 12px;
+  font-style: normal;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+  .worksheet-calculation {
+    padding: 15px;
+  }
+
+  .worksheet-calculation .input-unit {
+    width: 100%;
+  }
+
+}
+/* =========================================================
+   CASE 4 · IBUPROFENAT DAN MOTIF ARGININA
+   ========================================================= */
+
+.worksheet-formula {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-left: 3px solid #008b8b;
+  background: rgba(0, 128, 128, 0.045);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.worksheet-question p {
+  margin-bottom: 0;
+}
+
+.worksheet-reflection {
+  margin-top: 22px;
+}
+
+.worksheet-reflection strong {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.worksheet-reflection p {
+  margin: 0 0 12px;
+  line-height: 1.65;
+}
+
+.worksheet-reflection textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+
+  .worksheet-formula {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .worksheet-reflection textarea {
+    min-height: 110px;
+  }
+
+}
+/* =========================================================
+   CASE 5 · RESPONS KISI LiF
+   ========================================================= */
+
+#case5-lattice-change,
+#case5-dftb-mace-difference,
+#case5-temperature-response,
+#case5-size-response,
+#case5-condition-response,
+#case5-interpretation,
+#case5-claim-condition {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+.worksheet-section .input-unit {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.worksheet-section .input-unit input {
+  flex: 1;
+}
+
+
+.worksheet-section .input-unit em {
+  min-width: 42px;
+  padding-left: 10px;
+  color: #64748b;
+  font-size: 12px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+
+  .worksheet-section .input-unit {
+    align-items: stretch;
+  }
+
+  .worksheet-section .input-unit em {
+    display: flex;
+    align-items: center;
+  }
+
+}
+/* =========================================================
+   C.7 · LAPORAN SINGKAT DAN DISKUSI KELOMPOK
+   ========================================================= */
+
+.worksheet-section .worksheet-reflection {
+  margin-top: 22px;
+}
+
+.worksheet-section .worksheet-reflection textarea {
+  width: 100%;
+  min-height: 105px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+#case7-final-conclusion {
+  min-height: 150px;
+}
+
+#case7-group-notes {
+  min-height: 130px;
+}
+
+@media (max-width: 768px) {
+
+  .worksheet-section .worksheet-reflection {
+    padding: 15px;
+  }
+
+  .worksheet-section .worksheet-reflection textarea {
+    min-height: 120px;
+  }
+
+}
