@@ -1,479 +1,979 @@
+/* =========================================================
+   MKI WORKSHOP
+   WORKSHEET ENGINE
+   Bahan Pendalaman · Case 1–5
+   ========================================================= */
+
 (function () {
 
-  const STORAGE_KEY = "mki_day1_md_analysis";
-
-  const fields = [
-    "participant",
-    "analysis-date",
-    "rdf-li-o-peak",
-    "rdf-li-o-min",
-    "cn-li-o",
-    "cn-li-o-mode",
-    "rdf-li-f-peak",
-    "cn-li-f-positive",
-    "charge-li",
-    "charge-o",
-    "charge-trend",
-    "msd-li-100",
-    "msd-li-200",
-    "fit-start",
-    "fit-end",
-    "fit-points",
-    "d-li",
-    "d-p",
-    "sigma-ne",
-    "sensitivity-rdf",
-    "sensitivity-msd",
-    "longer-trajectory",
-    "conclusion"
-  ];
+  "use strict";
 
 
-  function getData() {
+  /* =======================================================
+     CONFIGURATION
+     ======================================================= */
 
-    const data = {
-      workshop: "MKI Computational Materials Science Workshop",
-      module: "Day 1 · MD Analysis",
-      system: "LiPF6 / EC",
-      saved_at: new Date().toISOString(),
-      values: {}
-    };
+  const STORAGE_KEY = "mki-bahan-pendalaman-worksheet";
 
-    fields.forEach(id => {
+  const WORKSHOP_NAME =
+    "MKI Computational Materials Science Workshop";
 
-      const element = document.getElementById(id);
+  const MODULE_NAME =
+    "Bahan Pendalaman";
+
+
+  /* =======================================================
+     FIELD DISCOVERY
+     -------------------------------------------------------
+     Semua input worksheet dibaca otomatis.
+     Tidak perlu CASE_1_FIELDS, CASE_2_FIELDS, dst.
+     ======================================================= */
+
+  function getWorksheetFields() {
+
+    const selectors = [
+      ".worksheet-card input",
+      ".worksheet-card select",
+      ".worksheet-card textarea",
+      ".worksheet-form input",
+      ".worksheet-form select",
+      ".worksheet-form textarea"
+    ];
+
+    const elements = [];
+
+    selectors.forEach(selector => {
+
+      document
+        .querySelectorAll(selector)
+        .forEach(element => {
+
+          if (!elements.includes(element)) {
+            elements.push(element);
+          }
+
+        });
+
+    });
+
+
+    /*
+     * Fallback.
+     * Jika struktur halaman tidak menggunakan
+     * .worksheet-card atau .worksheet-form,
+     * baca semua field yang terlihat.
+     */
+
+    if (!elements.length) {
+
+      document
+        .querySelectorAll(
+          "input:not([type='hidden']):not([type='file']), select, textarea"
+        )
+        .forEach(element => {
+
+          if (!elements.includes(element)) {
+            elements.push(element);
+          }
+
+        });
+
+    }
+
+
+    return elements.filter(element => {
+
+      if (!element.id) return false;
+
+      if (element.type === "file") return false;
+
+      if (element.disabled) return false;
+
+      return true;
+
+    });
+
+  }
+
+
+  /* =======================================================
+     COLLECT VALUES
+     ======================================================= */
+
+  function collectWorksheetValues() {
+
+    const values = {};
+
+    const fields = getWorksheetFields();
+
+
+    fields.forEach(field => {
+
+      const id = field.id;
+
+      if (!id) return;
+
+
+      if (field.type === "checkbox") {
+
+        values[id] = field.checked;
+
+        return;
+
+      }
+
+
+      if (field.type === "radio") {
+
+        if (field.checked) {
+          values[id] = field.value;
+        }
+
+        return;
+
+      }
+
+
+      values[id] = field.value || "";
+
+    });
+
+
+    return values;
+
+  }
+
+
+  /* =======================================================
+     PARTICIPANT
+     ======================================================= */
+
+  function getParticipant() {
+
+    const selectors = [
+      "#participant",
+      "#participant-name",
+      "[name='participant']"
+    ];
+
+    for (const selector of selectors) {
+
+      const element =
+        document.querySelector(selector);
 
       if (element) {
-        data.values[id] = element.value;
+        return element.value || "";
       }
 
-    });
+    }
 
-    return data;
+    return "";
+
   }
 
 
-  function setData(data) {
+  /* =======================================================
+     DATE
+     ======================================================= */
 
-    if (!data || !data.values) return;
+  function getWorksheetDate() {
 
-    fields.forEach(id => {
+    const selectors = [
+      "#analysis-date",
+      "#worksheet-date",
+      "#date",
+      "[name='date']"
+    ];
 
-      const element = document.getElementById(id);
+    for (const selector of selectors) {
 
-      if (
-        element &&
-        Object.prototype.hasOwnProperty.call(data.values, id)
-      ) {
-        element.value = data.values[id];
+      const element =
+        document.querySelector(selector);
+
+      if (element) {
+        return element.value || "";
       }
 
-    });
+    }
 
-    updateCompletion();
-
-    setStatus("Worksheet loaded");
+    return "";
 
   }
 
+
+  /* =======================================================
+     BUILD DATA
+     ======================================================= */
+
+  function buildWorksheetData() {
+
+    return {
+
+      workshop: WORKSHOP_NAME,
+
+      module: MODULE_NAME,
+
+      participant: getParticipant(),
+
+      date: getWorksheetDate(),
+
+      saved_at: new Date().toISOString(),
+
+      values: collectWorksheetValues()
+
+    };
+
+  }
+
+
+  /* =======================================================
+     SAVE
+     ======================================================= */
 
   window.saveMDWorksheet = function () {
 
-    const data = getData();
+    try {
 
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(data)
-    );
+      const data =
+        buildWorksheetData();
 
-    document.getElementById("last-saved").textContent =
-      new Date().toLocaleTimeString();
 
-    setStatus("Saved locally");
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+      );
+
+
+      updateWorksheetStatus(
+        "Worksheet saved locally."
+      );
+
+
+      updateWorksheetProgress();
+
+
+      console.log(
+        "Worksheet saved:",
+        data
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Worksheet save error:",
+        error
+      );
+
+
+      updateWorksheetStatus(
+        "Failed to save worksheet."
+      );
+
+    }
 
   };
 
+
+  /* =======================================================
+     DOWNLOAD
+     ======================================================= */
 
   window.downloadMDWorksheet = function () {
 
-    const data = getData();
+    try {
 
-    const blob = new Blob(
-      [JSON.stringify(data, null, 2)],
-      { type: "application/json" }
-    );
+      const data =
+        buildWorksheetData();
 
-    const url = URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
+      const json =
+        JSON.stringify(data, null, 2);
 
-    const participant =
-      data.values.participant
-        ? data.values.participant.replace(/\s+/g, "_")
-        : "participant";
 
-    a.href = url;
+      const blob =
+        new Blob(
+          [json],
+          {
+            type: "application/json"
+          }
+        );
 
-    a.download =
-      `MKI_Day1_MD_Analysis_${participant}.json`;
 
-    a.click();
+      const url =
+        URL.createObjectURL(blob);
 
-    URL.revokeObjectURL(url);
 
-    setStatus("Downloaded");
+      const participant =
+        getParticipant()
+        .trim()
+        .replace(/\s+/g, "_")
+        .replace(/[^a-zA-Z0-9_-]/g, "");
+
+
+      const date =
+        getWorksheetDate()
+        .replace(/[^0-9-]/g, "");
+
+
+      const filename =
+        "MKI_Bahan_Pendalaman_" +
+        (participant || "Unknown_Participant") +
+        "_" +
+        (date || new Date().toISOString().slice(0, 10)) +
+        ".json";
+
+
+      const link =
+        document.createElement("a");
+
+
+      link.href = url;
+
+      link.download = filename;
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      link.remove();
+
+
+      URL.revokeObjectURL(url);
+
+
+      updateWorksheetStatus(
+        "Worksheet downloaded."
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Download error:",
+        error
+      );
+
+      updateWorksheetStatus(
+        "Failed to download worksheet."
+      );
+
+    }
 
   };
 
 
+  /* =======================================================
+     LOAD
+     ======================================================= */
+
   window.loadMDWorksheet = function (event) {
 
-    const file = event.target.files[0];
+    const file =
+      event?.target?.files?.[0];
+
 
     if (!file) return;
 
-    const reader = new FileReader();
+
+    const reader =
+      new FileReader();
+
 
     reader.onload = function (e) {
 
       try {
 
-        const data = JSON.parse(e.target.result);
+        const data =
+          JSON.parse(e.target.result);
 
-        setData(data);
+
+        restoreWorksheetData(data);
+
 
         localStorage.setItem(
           STORAGE_KEY,
           JSON.stringify(data)
         );
 
+
+        updateWorksheetProgress();
+
+
+        updateWorksheetStatus(
+          "Worksheet loaded successfully."
+        );
+
+
       } catch (error) {
 
-        setStatus("Invalid worksheet file");
+        console.error(
+          "Load error:",
+          error
+        );
+
+
+        updateWorksheetStatus(
+          "Invalid worksheet JSON."
+        );
 
       }
 
     };
+
 
     reader.readAsText(file);
 
   };
 
 
-  window.clearMDWorksheet = function () {
+  /* =======================================================
+     RESTORE
+     ======================================================= */
 
-    const confirmed =
-      confirm(
-        "Reset semua isian worksheet?"
+  function restoreWorksheetData(data) {
+
+    if (!data || typeof data !== "object") {
+      return;
+    }
+
+
+    /*
+     * Participant
+     */
+
+    const participant =
+      document.querySelector("#participant");
+
+
+    if (participant) {
+
+      participant.value =
+        data.participant || "";
+
+    }
+
+
+    /*
+     * Date
+     */
+
+    const date =
+      document.querySelector("#analysis-date");
+
+
+    if (date) {
+
+      date.value =
+        data.date || "";
+
+    }
+
+
+    /*
+     * Main worksheet fields
+     */
+
+    const values =
+      data.values || {};
+
+
+    Object.keys(values).forEach(id => {
+
+      const element =
+        document.getElementById(id);
+
+
+      if (!element) return;
+
+
+      if (element.type === "checkbox") {
+
+        element.checked =
+          Boolean(values[id]);
+
+        return;
+
+      }
+
+
+      if (element.type === "radio") {
+
+        element.checked =
+          element.value === values[id];
+
+        return;
+
+      }
+
+
+      element.value =
+        values[id];
+
+    });
+
+
+    /*
+     * Trigger change/input events
+     * supaya progress dan komponen lain
+     * ikut memperbarui.
+     */
+
+    getWorksheetFields()
+      .forEach(field => {
+
+        field.dispatchEvent(
+          new Event(
+            "input",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+        field.dispatchEvent(
+          new Event(
+            "change",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+      });
+
+  }
+
+
+  /* =======================================================
+     RESTORE LOCAL STORAGE
+     ======================================================= */
+
+  function restoreLocalWorksheet() {
+
+    try {
+
+      const saved =
+        localStorage.getItem(
+          STORAGE_KEY
+        );
+
+
+      if (!saved) return;
+
+
+      const data =
+        JSON.parse(saved);
+
+
+      restoreWorksheetData(data);
+
+
+      updateWorksheetStatus(
+        "Previous worksheet restored."
       );
 
-    if (!confirmed) return;
 
-    fields.forEach(id => {
+    } catch (error) {
 
-      const element = document.getElementById(id);
+      console.warn(
+        "No valid local worksheet found.",
+        error
+      );
 
-      if (element) {
-        element.value = "";
+    }
+
+  }
+
+
+  /* =======================================================
+     RESET
+     ======================================================= */
+
+  window.clearMDWorksheet = function () {
+
+    const fields =
+      getWorksheetFields();
+
+
+    fields.forEach(field => {
+
+      if (field.type === "checkbox") {
+
+        field.checked = false;
+
+      } else if (field.type === "radio") {
+
+        field.checked = false;
+
+      } else {
+
+        field.value = "";
+
       }
 
     });
 
-    localStorage.removeItem(STORAGE_KEY);
 
-    document.getElementById("last-saved").textContent =
-      "Not saved";
+    const participant =
+      document.querySelector("#participant");
 
-    updateCompletion();
 
-    setStatus("Worksheet reset");
+    if (participant) {
+      participant.value = "";
+    }
+
+
+    const date =
+      document.querySelector("#analysis-date");
+
+
+    if (date) {
+      date.value = "";
+    }
+
+
+    localStorage.removeItem(
+      STORAGE_KEY
+    );
+
+
+    updateWorksheetProgress();
+
+
+    updateWorksheetStatus(
+      "Worksheet reset."
+    );
 
   };
 
 
-  function setStatus(message) {
+  /* =======================================================
+     PROGRESS
+     ======================================================= */
 
-    const status =
-      document.getElementById("worksheet-status");
+  function updateWorksheetProgress() {
 
-    if (status) {
-      status.textContent = message;
-    }
-
-  }
+    const fields =
+      getWorksheetFields();
 
 
-function updateCompletion() {
-
-  let filled = 0;
-
-  fields.forEach(id => {
-
-    const element =
-      document.getElementById(id);
-
-    if (
-      element &&
-      element.value.trim() !== ""
-    ) {
-      filled++;
-    }
-
-  });
-
-  const total = fields.length;
-
-  const percentage =
-    Math.round(
-      (filled / total) * 100
-    );
+    if (!fields.length) return;
 
 
-  /*
-   * Existing completion indicator
-   */
-
-  const completion =
-    document.getElementById(
-      "worksheet-completion"
-    );
-
-  if (completion) {
-
-    completion.textContent =
-      `${filled} / ${total} fields`;
-
-  }
+    let completed = 0;
 
 
-  /*
-   * Interactive progress indicator
-   */
+    fields.forEach(field => {
 
-  const progressCount =
-    document.getElementById(
-      "worksheet-progress-count"
-    );
-
-  if (progressCount) {
-
-    progressCount.textContent =
-      `${filled} / ${total} fields`;
-
-  }
+      let value = "";
 
 
-  const progressBar =
-    document.getElementById(
-      "worksheet-progress-bar"
-    );
+      if (field.type === "checkbox") {
 
-  if (progressBar) {
+        value =
+          field.checked
+            ? "checked"
+            : "";
 
-    progressBar.style.width =
-      `${percentage}%`;
+      } else if (field.type === "radio") {
 
-  }
+        value =
+          field.checked
+            ? field.value
+            : "";
+
+      } else {
+
+        value =
+          String(field.value || "")
+            .trim();
+
+      }
 
 
-  const progressLabel =
-    document.getElementById(
-      "worksheet-progress-label"
-    );
+      if (value !== "") {
+        completed++;
+      }
 
-  if (progressLabel) {
+    });
 
-    progressLabel.textContent =
-      `${percentage}% complete`;
 
-  }
+    const total =
+      fields.length;
 
-}
 
-  function restoreLocalData() {
+    const percentage =
+      total
+        ? Math.round(
+            (completed / total) * 100
+          )
+        : 0;
 
-    const saved =
-      localStorage.getItem(STORAGE_KEY);
 
-    if (!saved) return;
+    /*
+     * Progress counter
+     */
 
-    try {
+    document
+      .querySelectorAll(
+        "#worksheet-completion"
+      )
+      .forEach(element => {
 
-      setData(JSON.parse(saved));
+        element.textContent =
+          `${completed} / ${total} fields`;
 
-      setStatus(
-        "Previous worksheet restored"
+      });
+
+
+    /*
+     * Progress bar
+     */
+
+    const bar =
+      document.querySelector(
+        "#worksheet-progress-bar"
       );
 
-    } catch (error) {
 
-      localStorage.removeItem(STORAGE_KEY);
+    if (bar) {
+
+      bar.style.width =
+        `${percentage}%`;
 
     }
+
+
+    /*
+     * Progress label
+     */
+
+    const label =
+      document.querySelector(
+        "#worksheet-progress-label"
+      );
+
+
+    if (label) {
+
+      label.textContent =
+        `${percentage}% complete`;
+
+    }
+
+
+    /*
+     * Optional result counter
+     */
+
+    document
+      .querySelectorAll(
+        "#worksheet-result-count"
+      )
+      .forEach(element => {
+
+        element.textContent =
+          completed;
+
+      });
 
   }
 
 
-function enableAutoSave() {
+  /* =======================================================
+     STATUS
+     ======================================================= */
+
+  function updateWorksheetStatus(message) {
+
+    const status =
+      document.querySelector(
+        "#worksheet-status"
+      );
+
+
+    if (!status) return;
+
+
+    status.textContent =
+      message;
+
+  }
+
+
+  /* =======================================================
+     AUTO SAVE
+     ======================================================= */
 
   let saveTimer = null;
 
-  fields.forEach(id => {
 
-    const element =
-      document.getElementById(id);
+  function scheduleAutoSave() {
 
-    if (!element) return;
+    clearTimeout(
+      saveTimer
+    );
 
-    function handleChange() {
 
-      updateCompletion();
+    saveTimer =
+      setTimeout(() => {
 
-      clearTimeout(saveTimer);
+        const data =
+          buildWorksheetData();
 
-      saveTimer = setTimeout(() => {
-
-        const data = getData();
 
         localStorage.setItem(
           STORAGE_KEY,
           JSON.stringify(data)
         );
 
-        const lastSaved =
-          document.getElementById("last-saved");
 
-        if (lastSaved) {
-          lastSaved.textContent =
-            new Date().toLocaleTimeString();
-        }
+        updateWorksheetProgress();
 
-        setStatus(
-          "Auto-saved locally"
+      }, 400);
+
+  }
+
+
+  /* =======================================================
+     INPUT LISTENER
+     ======================================================= */
+
+  function attachFieldListeners() {
+
+    getWorksheetFields()
+      .forEach(field => {
+
+        field.addEventListener(
+          "input",
+          scheduleAutoSave
         );
 
-      }, 700);
 
-    }
+        field.addEventListener(
+          "change",
+          scheduleAutoSave
+        );
 
-    element.addEventListener(
-      "input",
-      handleChange
-    );
+      });
 
-    element.addEventListener(
-      "change",
-      handleChange
-    );
+  }
+/* =======================================================
+   GOOGLE DRIVE
+   ======================================================= */
 
-  });
+window.uploadMDWorksheet = async function () {
 
-}
+  try {
 
-  window.uploadMDWorksheet = async function () {
+    const data =
+      buildWorksheetData();
 
-    const data = getData();
-
-    /*
-     * Replace this URL with the deployed
-     * Google Apps Script Web App URL.
-     */
-
-const GOOGLE_DRIVE_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbxy4DezY1LQm6_gTGl7Rctgj4Bvt_sfniXKH4qANQ9smcxONdu5ATVn4xFqjij5UPVK/exec";
-if (
-      GOOGLE_DRIVE_ENDPOINT ===
-      "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
-    ) {
-
-      setStatus(
-        "Google Drive endpoint belum dikonfigurasi"
-      );
-
-      alert(
-        "Endpoint Google Drive belum dikonfigurasi."
-      );
-
-      return;
-
-    }
+    const endpoint =
+      "https://script.google.com/macros/s/AKfycbxmmq7V7mqXDSx8njezf6nRRnMv9XtSA1NRxg6NE_eumqJVChhHtFtl29p3yB6eLbi1/exec";
 
 
-    setStatus(
+    updateWorksheetStatus(
       "Uploading to Google Drive..."
     );
 
 
-    try {
+    await fetch(
+      endpoint,
+      {
+        method: "POST",
 
-      const response =
-        await fetch(
-          GOOGLE_DRIVE_ENDPOINT,
-          {
-            method: "POST",
+        mode: "no-cors",
 
-            headers: {
-              "Content-Type":
-                "text/plain;charset=utf-8"
-            },
+        headers: {
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
 
-            body:
-              JSON.stringify(data)
-          }
-        );
-
-
-      const result =
-        await response.json();
-
-
-      if (result.success) {
-
-        setStatus(
-          "Saved to Google Drive"
-        );
-
-        alert(
-          "Worksheet berhasil disimpan ke Google Drive Admin."
-        );
-
-      } else {
-
-        throw new Error(
-          result.message ||
-          "Upload failed"
-        );
-
+        body:
+          JSON.stringify(data)
       }
+    );
 
-    } catch (error) {
 
-      console.error(error);
+    updateWorksheetStatus(
+      "✓ Worksheet berhasil dikirim ke Google Drive."
+    );
 
-      setStatus(
-        "Upload failed"
+
+    console.log(
+      "Worksheet sent to Google Drive:",
+      data
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Google Drive upload error:",
+      error
+    );
+
+
+    updateWorksheetStatus(
+      "✕ Google Drive upload gagal."
+    );
+
+  }
+
+};
+  /* =======================================================
+     INITIALIZE
+     ======================================================= */
+
+  function initializeWorksheet() {
+
+    attachFieldListeners();
+
+    restoreLocalWorksheet();
+
+    updateWorksheetProgress();
+
+  }
+
+
+  if (
+    document.readyState ===
+    "loading"
+  ) {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeWorksheet
+    );
+
+  } else {
+
+    initializeWorksheet();
+
+  }
+
+
+  /*
+   * MkDocs Material instant navigation
+   */
+
+  if (
+    typeof document$ !==
+    "undefined"
+  ) {
+
+    document$.subscribe(() => {
+
+      setTimeout(
+        initializeWorksheet,
+        100
       );
 
-      alert(
-        "Upload gagal. Periksa koneksi dan konfigurasi Google Drive."
-      );
+    });
 
-    }
+  }
 
-  };
-
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-      restoreLocalData();
-
-      enableAutoSave();
-
-      updateCompletion();
-
-    }
-  );
 
 })();
