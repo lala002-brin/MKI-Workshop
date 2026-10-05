@@ -1,5 +1,5 @@
 /* =========================================================
-   MKI COMPUTATIONAL MATERIALS SCIENCE WORKSHOP
+   MKI WORKSHOP
    POSTEST JAVASCRIPT
    ========================================================= */
 
@@ -13,160 +13,68 @@
      ======================================================= */
 
   const STORAGE_KEY =
-    "mki-workshop-posttest-v1";
+    "mki-workshop-posttest-v3";
 
 
-  const TOTAL_QUESTIONS = 25;
-
-
-  /*
-   * Kunci jawaban
-   *
-   * q1  - q8   : Linux
-   * q9  - q10  : Linux / computational environment
-   * q11 - q15  : Quantum ESPRESSO
-   * q16 - q20  : MACE
-   * q21 - q25  : HPC / workflow
-   */
-
-  const ANSWERS = {
-
-    q1: "B",
-    q2: "A",
-    q3: "B",
-    q4: "C",
-    q5: "A",
-    q6: "B",
-    q7: "A",
-    q8: "A",
-
-    q9: "B",
-    q10: "A",
-
-    q11: "C",
-    q12: "B",
-    q13: "A",
-    q14: "C",
-    q15: "A",
-
-    q16: "B",
-    q17: "A",
-    q18: "C",
-    q19: "A",
-    q20: "B",
-
-    q21: "A",
-    q22: "A",
-    q23: "B",
-    q24: "C",
-    q25: "C"
-
-  };
+  const GOOGLE_SCRIPT_ENDPOINT =
+    "https://script.google.com/macros/s/AKfycbxmmq7V7mqXDSx8njezf6nRRnMv9XtSA1NRxg6NE_eumqJVChhHtFtl29p3yB6eLbi1/exec";
 
 
   /* =======================================================
-     PEMBAHASAN
+     BASIC HELPER
      ======================================================= */
 
-  const EXPLANATIONS = {
-
-    q1:
-      "Perintah ls digunakan untuk menampilkan isi direktori.",
-
-    q2:
-      "Perintah pwd menampilkan lokasi atau path direktori kerja saat ini.",
-
-    q3:
-      "Perintah mkdir digunakan untuk membuat direktori baru.",
-
-    q4:
-      "Perintah cd digunakan untuk berpindah dari satu direktori ke direktori lainnya.",
-
-    q5:
-      "Perintah cat dapat digunakan untuk menampilkan isi berkas teks melalui terminal.",
-
-    q6:
-      "Perintah pwd memberikan lokasi lengkap direktori kerja saat ini.",
-
-    q7:
-      "Working directory menentukan lokasi kerja sehingga program dapat menemukan input dan menyimpan output pada lokasi yang sesuai.",
-
-    q8:
-      "Environment menyediakan kondisi dan konfigurasi yang dibutuhkan program ketika dijalankan.",
-
-    q9:
-      "SSH memungkinkan pengguna membuat koneksi terminal yang aman ke sistem komputer jarak jauh.",
-
-    q10:
-      "Pemeriksaan versi perangkat lunak membantu memastikan program dan fitur yang digunakan sesuai dengan kebutuhan perhitungan.",
-
-    q11:
-      "SCF atau Self-Consistent Field digunakan untuk memperoleh struktur elektronik yang memenuhi kriteria konsistensi yang ditentukan.",
-
-    q12:
-      "Pseudopotential merupakan pendekatan efektif untuk merepresentasikan interaksi elektron valensi dengan inti atom.",
-
-    q13:
-      "Konvergensi menunjukkan bahwa proses iteratif telah mencapai kriteria numerik yang ditentukan.",
-
-    q14:
-      "Ukuran sistem dan parameter cutoff dapat memengaruhi jumlah pekerjaan komputasi dalam perhitungan DFT.",
-
-    q15:
-      "Output Quantum ESPRESSO perlu diperiksa untuk memastikan perhitungan berjalan sesuai konfigurasi dan kriteria yang diperlukan.",
-
-    q16:
-      "MACE digunakan untuk pemodelan atomistik berbasis machine learning, termasuk prediksi energi dan gaya.",
-
-    q17:
-      "Checkpoint menyimpan kondisi model yang telah dilatih sehingga model dapat digunakan kembali.",
-
-    q18:
-      "Data yang tidak digunakan dalam training membantu mengevaluasi kemampuan model melakukan generalisasi terhadap data baru.",
-
-    q19:
-      "Gaya berkaitan dengan gradien negatif energi potensial terhadap posisi atom.",
-
-    q20:
-      "MACE dapat mempercepat simulasi tertentu dengan menggunakan model machine learning yang telah dilatih untuk memprediksi interaksi atom.",
-
-    q21:
-      "HPC menyediakan sumber daya komputasi yang sesuai untuk pekerjaan komputasi berukuran besar atau kompleks.",
-
-    q22:
-      "CPU, GPU, memori, dan waktu komputasi merupakan resource yang perlu diperhatikan ketika menjalankan pekerjaan di HPC.",
-
-    q23:
-      "Direktori, input file, environment, resource, dan konfigurasi job perlu diperiksa sebelum pekerjaan dijalankan.",
-
-    q24:
-      "Workflow yang baik dimulai dari persiapan sistem, pemeriksaan input dan environment, simulasi, analisis output, kemudian validasi hasil.",
-
-    q25:
-      "Linux menyediakan lingkungan kerja. DCDFTBMD, Quantum ESPRESSO, dan MACE menjalankan tahapan komputasi tertentu, sedangkan HPC menyediakan sumber daya komputasi."
-  };
-
-
-  /* =======================================================
-     HELPER
-     ======================================================= */
-
-  function $(id) {
+  function getElement(id) {
 
     return document.getElementById(id);
 
   }
 
 
+  function getQuestions() {
+
+    return Array.from(
+      document.querySelectorAll(
+        ".posttest-question"
+      )
+    );
+
+  }
+
+
+  function getParticipantData() {
+
+    return {
+
+      name:
+        getValue("participant-name"),
+
+      date:
+        getValue("participant-date"),
+
+      linuxExperience:
+        getValue("linux-experience"),
+
+      reflection:
+        getValue("posttest-reflection")
+
+    };
+
+  }
+
+
   function getValue(id) {
 
-    const element = $(id);
+    const element =
+      getElement(id);
+
 
     if (!element) {
 
       return "";
 
     }
+
 
     return element.value || "";
 
@@ -175,13 +83,16 @@
 
   function setValue(id, value) {
 
-    const element = $(id);
+    const element =
+      getElement(id);
+
 
     if (!element) {
 
       return;
 
     }
+
 
     element.value =
       value || "";
@@ -196,7 +107,10 @@
   function setStatus(message) {
 
     const status =
-      $("posttest-status");
+      getElement(
+        "posttest-status"
+      );
+
 
     if (status) {
 
@@ -209,33 +123,129 @@
 
 
   /* =======================================================
-     GET ANSWERS
+     ANSWERS
      ======================================================= */
 
   function getAnswers() {
 
     const answers = {};
 
-    for (
-      let i = 1;
-      i <= TOTAL_QUESTIONS;
-      i++
-    ) {
-
-      const selected =
-        document.querySelector(
-          `input[name="q${i}"]:checked`
-        );
+    const questions =
+      getQuestions();
 
 
-      answers[`q${i}`] =
-        selected
-          ? selected.value
-          : "";
+    questions.forEach(
+      function (question, index) {
 
-    }
+        const questionNumber =
+          index + 1;
+
+
+        const selected =
+          question.querySelector(
+            'input[type="radio"]:checked'
+          );
+
+
+        answers[
+          "q" + questionNumber
+        ] =
+          selected
+            ? selected.value
+            : "";
+
+      }
+    );
+
 
     return answers;
+
+  }
+
+
+  /* =======================================================
+     SCORE
+     ======================================================= */
+
+  function calculateScore() {
+
+    const questions =
+      getQuestions();
+
+
+    let correct = 0;
+
+    let incorrect = 0;
+
+    let unanswered = 0;
+
+
+    questions.forEach(
+      function (question) {
+
+        const correctAnswer =
+          question.dataset.answer;
+
+
+        const selected =
+          question.querySelector(
+            'input[type="radio"]:checked'
+          );
+
+
+        if (!selected) {
+
+          unanswered++;
+
+          return;
+
+        }
+
+
+        if (
+          selected.value ===
+          correctAnswer
+        ) {
+
+          correct++;
+
+        }
+
+        else {
+
+          incorrect++;
+
+        }
+
+      }
+    );
+
+
+    const total =
+      questions.length;
+
+
+    const percentage =
+      total > 0
+        ? Math.round(
+            (correct / total) * 100
+          )
+        : 0;
+
+
+    return {
+
+      total: total,
+
+      correct: correct,
+
+      incorrect: incorrect,
+
+      unanswered: unanswered,
+
+      percentage: percentage
+
+    };
 
   }
 
@@ -246,70 +256,86 @@
 
   function updateProgress() {
 
-    const answers =
-      getAnswers();
+    const questions =
+      getQuestions();
+
+
+    const total =
+      questions.length;
 
 
     let answered = 0;
 
 
-    for (
-      let i = 1;
-      i <= TOTAL_QUESTIONS;
-      i++
-    ) {
+    questions.forEach(
+      function (question) {
 
-      if (
-        answers[`q${i}`]
-      ) {
+        const selected =
+          question.querySelector(
+            'input[type="radio"]:checked'
+          );
 
-        answered++;
+
+        if (selected) {
+
+          answered++;
+
+        }
 
       }
-
-    }
+    );
 
 
     const percentage =
-      Math.round(
-        (answered /
-          TOTAL_QUESTIONS) *
-        100
+      total > 0
+        ? Math.round(
+            (answered / total) * 100
+          )
+        : 0;
+
+
+    const progressText =
+      getElement(
+        "posttest-progress-text"
       );
 
 
-    const text =
-      $("posttest-progress-text");
+    const progressPercent =
+      getElement(
+        "posttest-progress-percent"
+      );
 
 
-    const percent =
-      $("posttest-progress-percent");
+    const progressBar =
+      getElement(
+        "posttest-progress-bar"
+      );
 
 
-    const bar =
-      $("posttest-progress-bar");
+    if (progressText) {
 
-
-    if (text) {
-
-      text.textContent =
-        `${answered} / ${TOTAL_QUESTIONS} terjawab`;
-
-    }
-
-
-    if (percent) {
-
-      percent.textContent =
-        `${percentage}% selesai`;
+      progressText.textContent =
+        answered +
+        " / " +
+        total +
+        " terjawab";
 
     }
 
 
-    if (bar) {
+    if (progressPercent) {
 
-      bar.style.width =
-        `${percentage}%`;
+      progressPercent.textContent =
+        percentage +
+        "% selesai";
+
+    }
+
+
+    if (progressBar) {
+
+      progressBar.style.width =
+        percentage + "%";
 
     }
 
@@ -317,83 +343,211 @@
 
 
   /* =======================================================
-     CALCULATE SCORE
+     BUILD DATA
      ======================================================= */
 
-  function calculateScore() {
+  function buildPosttestData() {
 
-    const answers =
-      getAnswers();
-
-
-    let correct = 0;
-
-    let incorrect = 0;
-
-    let unanswered = 0;
+    const participant =
+      getParticipantData();
 
 
-    for (
-      let i = 1;
-      i <= TOTAL_QUESTIONS;
-      i++
-    ) {
-
-      const key =
-        `q${i}`;
-
-
-      const userAnswer =
-        answers[key];
-
-
-      if (!userAnswer) {
-
-        unanswered++;
-
-      }
-
-      else if (
-        userAnswer ===
-        ANSWERS[key]
-      ) {
-
-        correct++;
-
-      }
-
-      else {
-
-        incorrect++;
-
-      }
-
-    }
-
-
-    const percentage =
-      Math.round(
-        (correct /
-          TOTAL_QUESTIONS) *
-        100
-      );
+    const score =
+      calculateScore();
 
 
     return {
 
-      answers,
+      workshop:
+        "Computational Materials Science Workshop",
 
-      correct,
+      assessment:
+        "Postest",
 
-      incorrect,
+      participant:
+        participant,
 
-      unanswered,
+      score:
+        score,
 
-      score: correct,
+      answers:
+        getAnswers(),
 
-      percentage
+      submittedAt:
+        new Date().toISOString()
 
     };
+
+  }
+
+
+  /* =======================================================
+     SAVE LOCAL
+     ======================================================= */
+
+  function savePosttest() {
+
+    const data =
+      buildPosttestData();
+
+
+    try {
+
+      localStorage.setItem(
+
+        STORAGE_KEY,
+
+        JSON.stringify(data)
+
+      );
+
+
+      setStatus(
+        "✓ Jawaban berhasil disimpan di browser."
+      );
+
+
+      return true;
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Local storage error:",
+        error
+      );
+
+
+      setStatus(
+        "✕ Jawaban tidak dapat disimpan di browser."
+      );
+
+
+      return false;
+
+    }
+
+  }
+
+
+  /* =======================================================
+     RESTORE LOCAL
+     ======================================================= */
+
+  function restorePosttest() {
+
+    const saved =
+      localStorage.getItem(
+        STORAGE_KEY
+      );
+
+
+    if (!saved) {
+
+      return;
+
+    }
+
+
+    try {
+
+      const data =
+        JSON.parse(saved);
+
+
+      if (
+        data.participant
+      ) {
+
+        setValue(
+          "participant-name",
+          data.participant.name
+        );
+
+
+        setValue(
+          "participant-date",
+          data.participant.date
+        );
+
+
+        setValue(
+          "linux-experience",
+          data.participant.linuxExperience
+        );
+
+
+        setValue(
+          "posttest-reflection",
+          data.participant.reflection
+        );
+
+      }
+
+
+      if (
+        data.answers
+      ) {
+
+        Object.keys(
+          data.answers
+        ).forEach(
+          function (questionName) {
+
+            const value =
+              data.answers[
+                questionName
+              ];
+
+
+            if (!value) {
+
+              return;
+
+            }
+
+
+            const radio =
+              document.querySelector(
+                'input[name="' +
+                questionName +
+                '"][value="' +
+                value +
+                '"]'
+              );
+
+
+            if (radio) {
+
+              radio.checked =
+                true;
+
+            }
+
+          }
+        );
+
+      }
+
+
+      updateProgress();
+
+
+      setStatus(
+        "✓ Jawaban sebelumnya berhasil dipulihkan."
+      );
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Restore error:",
+        error
+      );
+
+    }
 
   }
 
@@ -402,10 +556,16 @@
      SHOW RESULT
      ======================================================= */
 
-  function showResult(result) {
+  function showResult() {
+
+    const result =
+      calculateScore();
+
 
     const resultBox =
-      $("posttest-result");
+      getElement(
+        "posttest-result"
+      );
 
 
     if (!resultBox) {
@@ -420,29 +580,41 @@
 
 
     const score =
-      $("posttest-score");
+      getElement(
+        "posttest-score"
+      );
 
 
     const percentage =
-      $("posttest-percentage");
+      getElement(
+        "posttest-percentage"
+      );
 
 
     const correct =
-      $("posttest-correct");
+      getElement(
+        "posttest-correct"
+      );
 
 
     const incorrect =
-      $("posttest-incorrect");
+      getElement(
+        "posttest-incorrect"
+      );
 
 
     const unanswered =
-      $("posttest-unanswered");
+      getElement(
+        "posttest-unanswered"
+      );
 
 
     if (score) {
 
       score.textContent =
-        `${result.score} / ${TOTAL_QUESTIONS}`;
+        result.correct +
+        " / " +
+        result.total;
 
     }
 
@@ -450,7 +622,8 @@
     if (percentage) {
 
       percentage.textContent =
-        `${result.percentage}%`;
+        result.percentage +
+        "%";
 
     }
 
@@ -479,16 +652,14 @@
     }
 
 
-    showExplanations(
-      result.answers
-    );
+    showExplanations();
 
 
     resultBox.scrollIntoView({
 
       behavior: "smooth",
 
-      block: "center"
+      block: "start"
 
     });
 
@@ -499,27 +670,12 @@
      SHOW EXPLANATIONS
      ======================================================= */
 
-  function showExplanations(
-    userAnswers
-  ) {
-
-    /*
-     * Hapus pembahasan lama.
-     */
-
-    const oldBox =
-      $("posttest-explanations");
-
-
-    if (oldBox) {
-
-      oldBox.remove();
-
-    }
-
+  function showExplanations() {
 
     const resultBox =
-      $("posttest-result");
+      getElement(
+        "posttest-result"
+      );
 
 
     if (!resultBox) {
@@ -529,335 +685,547 @@
     }
 
 
-    const container =
+    const old =
+      getElement(
+        "posttest-explanations"
+      );
+
+
+    if (old) {
+
+      old.remove();
+
+    }
+
+
+    const questions =
+      getQuestions();
+
+
+    const wrapper =
       document.createElement(
         "div"
       );
 
 
-    container.id =
+    wrapper.id =
       "posttest-explanations";
 
 
-    container.className =
+    wrapper.className =
       "posttest-explanations";
 
 
-    const title =
+    const heading =
       document.createElement(
         "h3"
       );
 
 
-    title.textContent =
+    heading.textContent =
       "Pembahasan Jawaban";
 
 
-    container.appendChild(
-      title
+    wrapper.appendChild(
+      heading
     );
 
 
-    for (
-      let i = 1;
-      i <= TOTAL_QUESTIONS;
-      i++
-    ) {
+    questions.forEach(
+      function (question, index) {
 
-      const key =
-        `q${i}`;
+        const number =
+          index + 1;
 
 
-      const userAnswer =
-        userAnswers[key];
+        const correctAnswer =
+          question.dataset.answer;
 
 
-      const correctAnswer =
-        ANSWERS[key];
+        const explanation =
+          question.dataset.explanation ||
+          "Pembahasan belum tersedia.";
 
 
-      const item =
-        document.createElement(
-          "div"
+        const selected =
+          question.querySelector(
+            'input[type="radio"]:checked'
+          );
+
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+
+        item.className =
+          "posttest-explanation-item";
+
+
+        const title =
+          document.createElement(
+            "strong"
+          );
+
+
+        title.textContent =
+          "Soal " +
+          String(number).padStart(
+            2,
+            "0"
+          );
+
+
+        const answer =
+          document.createElement(
+            "div"
+          );
+
+
+        answer.className =
+          "posttest-explanation-answer";
+
+
+        const description =
+          document.createElement(
+            "p"
+          );
+
+
+        description.textContent =
+          explanation;
+
+
+        if (!selected) {
+
+          item.classList.add(
+            "is-wrong"
+          );
+
+
+          answer.textContent =
+            "Tidak dijawab. " +
+            "Jawaban benar: " +
+            correctAnswer;
+
+        }
+
+        else if (
+          selected.value ===
+          correctAnswer
+        ) {
+
+          item.classList.add(
+            "is-correct"
+          );
+
+
+          answer.textContent =
+            "Jawaban Anda: " +
+            selected.value +
+            ". Benar.";
+
+        }
+
+        else {
+
+          item.classList.add(
+            "is-wrong"
+          );
+
+
+          answer.textContent =
+            "Jawaban Anda: " +
+            selected.value +
+            ". Jawaban benar: " +
+            correctAnswer;
+
+        }
+
+
+        item.appendChild(
+          title
         );
 
 
-      item.className =
-        "posttest-explanation-item";
+        item.appendChild(
+          answer
+        );
 
 
-      if (
-        userAnswer ===
-        correctAnswer
-      ) {
+        item.appendChild(
+          description
+        );
 
-        item.classList.add(
-          "is-correct"
+
+        wrapper.appendChild(
+          item
         );
 
       }
-
-      else {
-
-        item.classList.add(
-          "is-wrong"
-        );
-
-      }
-
-
-      const questionTitle =
-        document.createElement(
-          "strong"
-        );
-
-
-      questionTitle.textContent =
-        `Soal ${String(i).padStart(2, "0")}`;
-
-
-      const answerText =
-        document.createElement(
-          "div"
-        );
-
-
-      answerText.className =
-        "posttest-explanation-answer";
-
-
-      if (!userAnswer) {
-
-        answerText.textContent =
-          `Tidak dijawab. Jawaban benar: ${correctAnswer}`;
-
-      }
-
-      else if (
-        userAnswer ===
-        correctAnswer
-      ) {
-
-        answerText.textContent =
-          `Jawaban Anda: ${userAnswer}. Benar.`;
-
-      }
-
-      else {
-
-        answerText.textContent =
-          `Jawaban Anda: ${userAnswer}. Jawaban benar: ${correctAnswer}`;
-
-      }
-
-
-      const explanation =
-        document.createElement(
-          "p"
-        );
-
-
-      explanation.textContent =
-        EXPLANATIONS[key] ||
-        "";
-
-
-      item.appendChild(
-        questionTitle
-      );
-
-
-      item.appendChild(
-        answerText
-      );
-
-
-      item.appendChild(
-        explanation
-      );
-
-
-      container.appendChild(
-        item
-      );
-
-    }
+    );
 
 
     resultBox.appendChild(
-      container
+      wrapper
     );
+
+  }
+/* =======================================================
+   RESET
+   ======================================================= */
+
+function resetPosttest() {
+
+  const confirmed =
+    window.confirm(
+      "Apakah Anda yakin ingin menghapus seluruh jawaban?"
+    );
+
+
+  if (!confirmed) {
+
+    return;
 
   }
 
 
-  /* =======================================================
-     SAVE
-     ======================================================= */
+  /* Reset radio */
 
-  function savePosttest() {
+  document
+    .querySelectorAll(
+      ".posttest-page input[type='radio']"
+    )
+    .forEach(
+      function (radio) {
 
-    const data = {
+        radio.checked =
+          false;
 
-      workshop:
-        "MKI Computational Materials Science Workshop",
-
-      module:
-        "Postest",
-
-      participant:
-        getValue(
-          "participant-name"
-        ),
-
-      date:
-        getValue(
-          "participant-date"
-        ),
-
-      linuxExperience:
-        getValue(
-          "linux-experience"
-        ),
-
-      answers:
-        getAnswers(),
-
-      savedAt:
-        new Date()
-          .toISOString()
-
-    };
+      }
+    );
 
 
-    localStorage.setItem(
+  /* Reset participant */
 
-      STORAGE_KEY,
+  setValue(
+    "participant-name",
+    ""
+  );
 
-      JSON.stringify(data)
+
+  setValue(
+    "participant-date",
+    ""
+  );
+
+
+  setValue(
+    "linux-experience",
+    ""
+  );
+
+
+  setValue(
+    "posttest-reflection",
+    ""
+  );
+
+
+  /* Remove local storage */
+
+  localStorage.removeItem(
+    STORAGE_KEY
+  );
+
+
+  /* Hide result */
+
+  const result =
+    getElement(
+      "posttest-result"
+    );
+
+
+  if (result) {
+
+    result.style.display =
+      "none";
+
+  }
+
+
+  /* Remove explanation */
+
+  const explanation =
+    getElement(
+      "posttest-explanations"
+    );
+
+
+  if (explanation) {
+
+    explanation.remove();
+
+  }
+
+
+  updateProgress();
+
+
+  setStatus(
+    "Postest berhasil direset."
+  );
+
+}
+
+
+/* =======================================================
+   DOWNLOAD RESULT
+   ======================================================= */
+
+function downloadPosttest() {
+
+  const data =
+    buildPosttestData();
+
+
+  const json =
+    JSON.stringify(
+      data,
+      null,
+      2
+    );
+
+
+  const blob =
+    new Blob(
+      [json],
+      {
+        type:
+          "application/json"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+
+  const participant =
+    data.participant.name
+      .trim()
+      .replace(
+        /\s+/g,
+        "_"
+      )
+      .replace(
+        /[^a-zA-Z0-9_-]/g,
+        ""
+      );
+
+
+  const filename =
+    participant
+      ? "postest_" +
+        participant +
+        ".json"
+      : "postest_result.json";
+
+
+  link.href =
+    url;
+
+
+  link.download =
+    filename;
+
+
+  document.body.appendChild(
+    link
+  );
+
+
+  link.click();
+
+
+  link.remove();
+
+
+  URL.revokeObjectURL(
+    url
+  );
+
+
+  setStatus(
+    "✓ Hasil postest berhasil diunduh."
+  );
+
+}
+
+
+/* =======================================================
+   GOOGLE DRIVE
+   ======================================================= */
+
+async function uploadPosttest() {
+
+  const participant =
+    getParticipantData();
+
+
+  if (
+    !participant.name.trim()
+  ) {
+
+    alert(
+      "Silakan isi nama peserta terlebih dahulu."
+    );
+
+
+    const name =
+      getElement(
+        "participant-name"
+      );
+
+
+    if (name) {
+
+      name.focus();
+
+    }
+
+
+    return;
+
+  }
+
+
+  const data =
+    buildPosttestData();
+
+
+  setStatus(
+    "Mengirim hasil postest ke Google Drive..."
+  );
+
+
+  try {
+
+    await fetch(
+
+      GOOGLE_SCRIPT_ENDPOINT,
+
+      {
+
+        method:
+          "POST",
+
+        mode:
+          "no-cors",
+
+        headers: {
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify(data)
+
+      }
 
     );
 
 
     setStatus(
-      "✓ Jawaban berhasil disimpan di perangkat ini."
+      "✓ Hasil postest berhasil dikirim."
+    );
+
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "Google Drive upload error:",
+      error
+    );
+
+
+    setStatus(
+      "✕ Pengiriman ke Google Drive gagal."
     );
 
   }
 
+}
 
-  /* =======================================================
-     RESTORE
-     ======================================================= */
 
-  function restorePosttest() {
+/* =======================================================
+   SUBMIT
+   ======================================================= */
 
-    const saved =
-      localStorage.getItem(
-        STORAGE_KEY
+function submitPosttest() {
+
+  const participant =
+    getParticipantData();
+
+
+  if (
+    !participant.name.trim()
+  ) {
+
+    alert(
+      "Silakan isi nama peserta terlebih dahulu."
+    );
+
+
+    const name =
+      getElement(
+        "participant-name"
       );
 
 
-    if (!saved) {
+    if (name) {
 
-      return;
+      name.focus();
 
     }
 
 
-    try {
-
-      const data =
-        JSON.parse(saved);
-
-
-      setValue(
-        "participant-name",
-        data.participant
-      );
-
-
-      setValue(
-        "participant-date",
-        data.date
-      );
-
-
-      setValue(
-        "linux-experience",
-        data.linuxExperience
-      );
-
-
-      if (
-        data.answers
-      ) {
-
-        Object.entries(
-          data.answers
-        ).forEach(
-          ([question, value]) => {
-
-            if (!value) {
-
-              return;
-
-            }
-
-
-            const radio =
-              document.querySelector(
-                `input[name="${question}"][value="${value}"]`
-              );
-
-
-            if (radio) {
-
-              radio.checked =
-                true;
-
-            }
-
-          }
-        );
-
-      }
-
-
-      updateProgress();
-
-
-      setStatus(
-        "✓ Jawaban tersimpan sebelumnya berhasil dipulihkan."
-      );
-
-    }
-
-    catch (error) {
-
-      console.error(
-        "Postest restore error:",
-        error
-      );
-
-      setStatus(
-        "Data tersimpan tidak dapat dipulihkan."
-      );
-
-    }
+    return;
 
   }
 
 
-  /* =======================================================
-     RESET
-     ======================================================= */
+  const result =
+    calculateScore();
 
-  function resetPosttest() {
+
+  if (
+    result.unanswered > 0
+  ) {
 
     const confirmed =
       window.confirm(
-        "Apakah Anda yakin ingin menghapus seluruh jawaban postest?"
+
+        "Masih ada " +
+        result.unanswered +
+        " soal yang belum dijawab.\n\n" +
+
+        "Apakah Anda tetap ingin mengirim postest?"
+
       );
 
 
@@ -867,317 +1235,310 @@
 
     }
 
-
-    document
-      .querySelectorAll(
-        '.posttest-page input[type="radio"]'
-      )
-      .forEach(
-        radio => {
-
-          radio.checked =
-            false;
-
-        }
-      );
-
-
-    setValue(
-      "participant-name",
-      ""
-    );
-
-
-    setValue(
-      "participant-date",
-      ""
-    );
-
-
-    setValue(
-      "linux-experience",
-      ""
-    );
-
-
-    localStorage.removeItem(
-      STORAGE_KEY
-    );
-
-
-    const result =
-      $("posttest-result");
-
-
-    if (result) {
-
-      result.style.display =
-        "none";
-
-    }
-
-
-    const explanations =
-      $("posttest-explanations");
-
-
-    if (explanations) {
-
-      explanations.remove();
-
-    }
-
-
-    updateProgress();
-
-
-    setStatus(
-      "Postest berhasil direset."
-    );
-
   }
 
 
-  /* =======================================================
-     SUBMIT
-     ======================================================= */
+  /* Save locally */
 
-  function submitPosttest() {
-
-    const result =
-      calculateScore();
+  savePosttest();
 
 
-    /*
-     * Cek peserta.
-     */
+  /* Show result */
 
-    const participant =
-      getValue(
-        "participant-name"
-      );
+  showResult();
 
 
-    if (!participant.trim()) {
+  /* Status */
 
-      alert(
-        "Silakan isi nama peserta terlebih dahulu."
-      );
+  setStatus(
+    "✓ Postest selesai. Skor berhasil dihitung."
+  );
 
-
-      const field =
-        $("participant-name");
+}
 
 
-      if (field) {
+/* =======================================================
+   EVENT LISTENERS
+   ======================================================= */
 
-        field.focus();
+function attachPosttestListeners() {
 
-      }
-
-
-      return;
-
-    }
+  const questions =
+    getQuestions();
 
 
-    /*
-     * Jika masih ada soal kosong,
-     * beri peringatan tetapi tetap
-     * izinkan submit.
-     */
+  /* -----------------------------------------------
+     Radio buttons
+     ----------------------------------------------- */
 
-    if (
-      result.unanswered > 0
-    ) {
+  questions.forEach(
+    function (question) {
 
-      const proceed =
-        window.confirm(
-          `Masih ada ${result.unanswered} soal yang belum dijawab.\n\nApakah Anda tetap ingin mengirim jawaban?`
+      const radios =
+        question.querySelectorAll(
+          'input[type="radio"]'
         );
 
 
-      if (!proceed) {
-
-        return;
-
-      }
-
-    }
-
-
-    savePosttest();
-
-
-    showResult(
-      result
-    );
-
-
-    setStatus(
-      "✓ Postest selesai. Hasil telah dihitung."
-    );
-
-  }
-
-
-  /* =======================================================
-     EVENT LISTENERS
-     ======================================================= */
-
-  function attachListeners() {
-
-    /*
-     * Radio buttons
-     */
-
-    document
-      .querySelectorAll(
-        '.posttest-page input[type="radio"]'
-      )
-      .forEach(
-        radio => {
+      radios.forEach(
+        function (radio) {
 
           radio.addEventListener(
             "change",
-            updateProgress
+            function () {
+
+              updateProgress();
+
+              savePosttest();
+
+            }
           );
 
         }
       );
 
-
-    /*
-     * Save
-     */
-
-    const save =
-      $("posttest-save");
-
-
-    if (save) {
-
-      save.addEventListener(
-        "click",
-        savePosttest
-      );
-
     }
+  );
 
 
-    /*
-     * Reset
-     */
+  /* -----------------------------------------------
+     Save
+     ----------------------------------------------- */
 
-    const reset =
-      $("posttest-reset");
-
-
-    if (reset) {
-
-      reset.addEventListener(
-        "click",
-        resetPosttest
-      );
-
-    }
-
-
-    /*
-     * Submit
-     */
-
-    const submit =
-      $("posttest-submit");
-
-
-    if (submit) {
-
-      submit.addEventListener(
-        "click",
-        submitPosttest
-      );
-
-    }
-
-  }
-
-
-  /* =======================================================
-     INITIALIZE
-     ======================================================= */
-
-  function initializePosttest() {
-
-    /*
-     * Pastikan halaman memang
-     * memiliki posttest.
-     */
-
-    if (
-      !document.querySelector(
-        ".posttest-page"
-      )
-    ) {
-
-      return;
-
-    }
-
-
-    attachListeners();
-
-    restorePosttest();
-
-    updateProgress();
-
-  }
-
-
-  /* =======================================================
-     INITIAL PAGE LOAD
-     ======================================================= */
-
-  if (
-    document.readyState ===
-    "loading"
-  ) {
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      initializePosttest
+  const saveButton =
+    getElement(
+      "posttest-save"
     );
 
-  }
-
-  else {
-
-    initializePosttest();
-
-  }
-
-
-  /* =======================================================
-     MKDOCS MATERIAL INSTANT NAVIGATION
-     ======================================================= */
 
   if (
-    typeof document$ !==
-    "undefined"
+    saveButton &&
+    !saveButton.dataset.bound
   ) {
 
-    document$.subscribe(
-      function () {
-
-        setTimeout(
-          initializePosttest,
-          100
-        );
-
-      }
+    saveButton.addEventListener(
+      "click",
+      savePosttest
     );
+
+
+    saveButton.dataset.bound =
+      "true";
 
   }
 
+
+  /* -----------------------------------------------
+     Reset
+     ----------------------------------------------- */
+
+  const resetButton =
+    getElement(
+      "posttest-reset"
+    );
+
+
+  if (
+    resetButton &&
+    !resetButton.dataset.bound
+  ) {
+
+    resetButton.addEventListener(
+      "click",
+      resetPosttest
+    );
+
+
+    resetButton.dataset.bound =
+      "true";
+
+  }
+
+
+  /* -----------------------------------------------
+     Submit
+     ----------------------------------------------- */
+
+  const submitButton =
+    getElement(
+      "posttest-submit"
+    );
+
+
+  if (
+    submitButton &&
+    !submitButton.dataset.bound
+  ) {
+
+    submitButton.addEventListener(
+      "click",
+      submitPosttest
+    );
+
+
+    submitButton.dataset.bound =
+      "true";
+
+  }
+
+
+  /* -----------------------------------------------
+     Optional download button
+     ----------------------------------------------- */
+
+  const downloadButton =
+    getElement(
+      "posttest-download"
+    );
+
+
+  if (
+    downloadButton &&
+    !downloadButton.dataset.bound
+  ) {
+
+    downloadButton.addEventListener(
+      "click",
+      downloadPosttest
+    );
+
+
+    downloadButton.dataset.bound =
+      "true";
+
+  }
+
+
+  /* -----------------------------------------------
+     Optional Google Drive button
+     ----------------------------------------------- */
+
+  const uploadButton =
+    getElement(
+      "posttest-upload"
+    );
+
+
+  if (
+    uploadButton &&
+    !uploadButton.dataset.bound
+  ) {
+
+    uploadButton.addEventListener(
+      "click",
+      uploadPosttest
+    );
+
+
+    uploadButton.dataset.bound =
+      "true";
+
+  }
+
+}
+
+
+/* =======================================================
+   INITIALIZE
+   ======================================================= */
+
+function initializePosttest() {
+
+  const page =
+    document.querySelector(
+      ".posttest-page"
+    );
+
+
+  if (!page) {
+
+    return;
+
+  }
+
+
+  attachPosttestListeners();
+
+  restorePosttest();
+
+  updateProgress();
+
+}
+
+
+/* =======================================================
+   INITIAL PAGE LOAD
+   ======================================================= */
+
+if (
+  document.readyState ===
+  "loading"
+) {
+
+  document.addEventListener(
+
+    "DOMContentLoaded",
+
+    initializePosttest
+
+  );
+
+}
+
+else {
+
+  initializePosttest();
+
+}
+
+
+/* =======================================================
+   MKDOCS MATERIAL INSTANT NAVIGATION
+   ======================================================= */
+
+if (
+  typeof document$ !==
+  "undefined"
+) {
+
+  document$.subscribe(
+    function () {
+
+      setTimeout(
+        initializePosttest,
+        100
+      );
+
+    }
+  );
+
+}
+
+
+/* =======================================================
+   PUBLIC FUNCTIONS
+   ======================================================= */
+
+window.MKI_Posttest = {
+
+  calculateScore:
+    calculateScore,
+
+  save:
+    savePosttest,
+
+  reset:
+    resetPosttest,
+
+  submit:
+    submitPosttest,
+
+  download:
+    downloadPosttest,
+
+  upload:
+    uploadPosttest
+
+};
 
 })();
