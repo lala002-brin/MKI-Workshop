@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pretest | Linux & Computational Environment</title>
+<link rel="stylesheet" href="pretest.css">
+</head>
+<body>
+<main class="pretest-shell">
+  <section class="pretest-hero">
+    <div>
+      <span class="eyebrow">MKI COMPUTATIONAL MATERIALS SCIENCE WORKSHOP</span>
+      <h1>Pretest: Linux & Computational Environment</h1>
+      <p>Assess your initial understanding of Linux, terminal commands, environments, SSH, software dependencies, and basic HPC concepts.</p>
+    </div>
+    <div class="hero-badge">
+      <strong>25</strong>
+      <span>Questions</span>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <button class="btn primary" onclick="savePretest()">💾 Save</button>
+    <button class="btn" onclick="resetPretest()">↻ Reset</button>
+    <button class="btn submit" onclick="submitPretest()">✓ Submit & Score</button>
+  </div>
+
+  <div id="status" class="status">Ready</div>
+
+  <section class="participant-card">
+    <div class="section-title"><span>01</span><div><strong>Participant Information</strong><small>Complete before starting</small></div></div>
+    <div class="participant-grid">
+      <label>Participant Name<input id="participant" type="text" placeholder="Nama peserta"></label>
+      <label>Date<input id="test-date" type="date"></label>
+      <label>Prior Linux Experience
+        <select id="linux-experience">
+          <option value="">Select</option>
+          <option>Never used Linux</option>
+          <option>Basic exposure</option>
+          <option>Comfortable with basic commands</option>
+          <option>Regular Linux user</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section class="progress-card">
+    <div class="progress-head"><span>Pretest Progress</span><strong id="progress-text">0 / 25 answered</strong></div>
+    <div class="progress-track"><div id="progress-bar"></div></div>
+    <div id="progress-label">0% complete</div>
+  </section>
+
+  <form id="pretest-form"></form>
+
+  <section id="result" class="result-card hidden">
+    <div class="result-kicker">PRETEST RESULT</div>
+    <div class="score" id="score">0 / 25</div>
+    <div class="percentage" id="percentage">0%</div>
+    <p id="result-message"></p>
+    <div class="result-grid">
+      <div><span>Correct</span><strong id="correct-count">0</strong></div>
+      <div><span>Incorrect</span><strong id="incorrect-count">0</strong></div>
+      <div><span>Unanswered</span><strong id="unanswered-count">25</strong></div>
+    </div>
+  </section>
+
+  <section class="note">
+    <strong>Important</strong>
+    <p>This pretest measures initial knowledge. It does not determine final workshop performance. Try to answer independently before checking external references.</p>
+  </section>
+</main>
+<script src="pretest.js"></script>
+</body>
+</html>
