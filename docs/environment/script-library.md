@@ -1,1148 +1,1371 @@
-# Script Library
+<div class="script-library">
 
-<div class="environment-hero environment-hero-compact">
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-<div class="environment-eyebrow">
-HPC SCRIPT LIBRARY
-</div>
-
-<h1>
-Script Library
-</h1>
-
-<p class="environment-description">
-Kumpulan template script untuk menjalankan berbagai workload
-komputasi pada HPC. Gunakan template sebagai titik awal,
-sesuaikan parameter yang diperlukan, lalu salin script untuk digunakan.
-</p>
-
-<div class="environment-tags">
-<span>SLURM</span>
-<span>DFT</span>
-<span>MD</span>
-<span>PYTHON</span>
-</div>
-
-</div>
-
----
-
-## Script Collection
-
-<p class="section-description">
-Template berikut mencakup workflow HPC yang umum digunakan.
-Pilih template berdasarkan aplikasi atau jenis workload.
-</p>
-
-<div class="script-library-grid">
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-SLURM
-</span>
-
-<h3>
-Basic CPU Job
-</h3>
-
-<p>
-Template dasar untuk menjalankan workload CPU menggunakan SLURM.
-</p>
-
-<div class="script-library-meta">
-CPU · SLURM
-</div>
-
-<a href="#basic-cpu-job">
-View Template →
-</a>
-
-</div>
-
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-QUANTUM ESPRESSO
-</span>
-
-<h3>
-SCF Calculation
-</h3>
-
-<p>
-Template untuk menjalankan perhitungan self-consistent field.
-</p>
-
-<div class="script-library-meta">
-DFT · CPU · SLURM
-</div>
-
-<a href="#quantum-espresso-scf">
-View Template →
-</a>
-
-</div>
-
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-QUANTUM ESPRESSO
-</span>
-
-<h3>
-NSCF Calculation
-</h3>
-
-<p>
-Template untuk melanjutkan workflow Quantum ESPRESSO
-ke perhitungan non-self-consistent field.
-</p>
-
-<div class="script-library-meta">
-DFT · CPU · SLURM
-</div>
-
-<a href="#quantum-espresso-nscf">
-View Template →
-</a>
-
-</div>
-
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-LAMMPS
-</span>
-
-<h3>
-Molecular Dynamics
-</h3>
-
-<p>
-Template dasar untuk menjalankan simulasi molecular dynamics.
-</p>
-
-<div class="script-library-meta">
-MD · CPU · SLURM
-</div>
-
-<a href="#lammps-md">
-View Template →
-</a>
-
-</div>
-
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-PYTHON
-</span>
-
-<h3>
-Python CPU Job
-</h3>
-
-<p>
-Template untuk menjalankan program Python pada compute node.
-</p>
-
-<div class="script-library-meta">
-PYTHON · CPU · SLURM
-</div>
-
-<a href="#python-cpu">
-View Template →
-</a>
-
-</div>
-
-
-<div class="script-library-card">
-
-<span class="script-library-label">
-GPU
-</span>
-
-<h3>
-GPU Job
-</h3>
-
-<p>
-Template dasar untuk workload yang membutuhkan GPU.
-</p>
-
-<div class="script-library-meta">
-GPU · SLURM
-</div>
-
-<a href="#gpu-job">
-View Template →
-</a>
-
-</div>
-
-</div>
-
----
-
-## How the Library Works
-
-<div class="command-reference-table">
-
-<table>
-
-<thead>
-<tr>
-<th>Action</th>
-<th>Function</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Select</td>
-<td>Pilih template sesuai dengan workload</td>
-</tr>
-
-<tr>
-<td>Review</td>
-<td>Periksa resource, software, input, dan output</td>
-</tr>
-
-<tr>
-<td>Edit</td>
-<td>Sesuaikan script secara lokal di browser</td>
-</tr>
-
-<tr>
-<td>Copy</td>
-<td>Salin script yang sudah disesuaikan</td>
-</tr>
-
-<tr>
-<td>Reset</td>
-<td>Kembalikan script ke template asli</td>
-</tr>
-
-<tr>
-<td>Run</td>
-<td>Gunakan script pada workflow HPC</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
----
-
-## 01 · Basic CPU Job
-
-<div class="script-library-section" id="basic-cpu-job">
-
-<div class="script-library-header">
-
-<div>
-
-<span class="script-library-label">
-SLURM
-</span>
-
-<h3>
-Basic CPU Job
-</h3>
-
-<p>
-Template minimal untuk menjalankan workload CPU menggunakan SLURM.
-</p>
-
-</div>
-
-<div class="script-library-meta">
-CPU · 1 NODE · 16 TASKS
-</div>
-
-</div>
-
-<div class="script-info-grid">
-
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
-
-<div>
-<strong>Resource</strong>
-<span>CPU</span>
-</div>
-
-<div>
-<strong>Nodes</strong>
-<span>1</span>
-</div>
-
-<div>
-<strong>Tasks</strong>
-<span>16</span>
-</div>
-
-</div>
-
-<div class="script-code">
-
-<pre><code class="language-bash">#!/bin/bash
-
-#SBATCH --job-name=calculation
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load software
-
-application \
-    -in input/calculation.in \
-    > output/calculation.out</code></pre>
-
-</div>
-
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
-
-#SBATCH --job-name=calculation
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load software
-
-application \
-    -in input/calculation.in \
-    > output/calculation.out</textarea>
-
-<div class="script-actions">
-
-<button type="button" class="script-edit">
-Edit
-</button>
-
-<button type="button" class="script-copy">
-Copy
-</button>
-
-<button type="button" class="script-reset">
-Reset
-</button>
-
-<button type="button" class="script-done">
-Done Editing
-</button>
-
-</div>
-
-<div class="script-local-change" hidden>
-Edited locally
-</div>
-
-<div class="script-note">
-Sesuaikan partition, jumlah task, wall time, module,
-nama executable, input, dan output dengan cluster yang digunakan.
-</div>
-
-</div>
-
----
-
-## 02 · Quantum ESPRESSO SCF
-
-<div class="script-library-section" id="quantum-espresso-scf">
-
-<div class="script-library-header">
-
-<div>
-
-<span class="script-library-label">
-QUANTUM ESPRESSO
-</span>
-
-<h3>
-SCF Calculation
-</h3>
-
-<p>
-Template untuk menjalankan perhitungan self-consistent field.
-</p>
-
-</div>
-
-<div class="script-library-meta">
-DFT · CPU · SLURM
-</div>
-
-</div>
-
-<div class="script-info-grid">
-
-<div>
-<strong>Application</strong>
-<span>Quantum ESPRESSO</span>
-</div>
-
-<div>
-<strong>Executable</strong>
-<span>pw.x</span>
-</div>
-
-<div>
-<strong>Method</strong>
-<span>SCF</span>
-</div>
-
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
-
-</div>
-
-<div class="script-code">
-
-<pre><code class="language-bash">#!/bin/bash
-
-#SBATCH --job-name=graphene_scf
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load quantum-espresso
-
-pw.x \
-    -in input/graphene_scf.in \
-    > output/graphene_scf.out</code></pre>
-
-</div>
-
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
-
-#SBATCH --job-name=graphene_scf
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load quantum-espresso
-
-pw.x \
-    -in input/graphene_scf.in \
-    > output/graphene_scf.out</textarea>
-
-<div class="script-actions">
-
-<button type="button" class="script-edit">
-Edit
-</button>
-
-<button type="button" class="script-copy">
-Copy
-</button>
-
-<button type="button" class="script-reset">
-Reset
-</button>
-
-<button type="button" class="script-done">
-Done Editing
-</button>
-
-</div>
-
-<div class="script-local-change" hidden>
-Edited locally
-</div>
-
-<div class="script-note">
-SCF biasanya menjadi tahap awal untuk menghasilkan
-konfigurasi elektronik yang dibutuhkan tahap berikutnya.
-</div>
-
-</div>
-
----
-
-## 03 · Quantum ESPRESSO NSCF
-
-<div class="script-library-section" id="quantum-espresso-nscf">
-
-<div class="script-library-header">
-
-<div>
-
-<span class="script-library-label">
-QUANTUM ESPRESSO
-</span>
-
-<h3>
-NSCF Calculation
-</h3>
+<div class="script-hero">
 
-<p>
-Template untuk menjalankan perhitungan non-self-consistent field.
-</p>
+    <div class="script-kicker">
+        HPC SCRIPT LIBRARY
+    </div>
 
-</div>
-
-<div class="script-library-meta">
-DFT · CPU · SLURM
-</div>
-
-</div>
-
-<div class="script-info-grid">
-
-<div>
-<strong>Application</strong>
-<span>Quantum ESPRESSO</span>
-</div>
-
-<div>
-<strong>Executable</strong>
-<span>pw.x</span>
-</div>
-
-<div>
-<strong>Method</strong>
-<span>NSCF</span>
-</div>
-
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
-
-</div>
+    <h1>Script Library</h1>
 
-<div class="script-code">
+    <p>
+        Kumpulan template job script yang dapat digunakan sebagai
+        titik awal untuk menjalankan berbagai workload komputasi
+        pada HPC. Setiap template menunjukkan struktur dasar
+        submission menggunakan SLURM dan dapat disesuaikan dengan
+        kebutuhan calculation.
+    </p>
 
-<pre><code class="language-bash">#!/bin/bash
+    <p>
+        Sebelum melakukan submission, periksa kembali partition,
+        jumlah CPU atau GPU, memory, wall time, lokasi input,
+        lokasi output, software environment, serta kebutuhan
+        calculation Anda.
+    </p>
 
-#SBATCH --job-name=graphene_nscf
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
-
-cd "$SLURM_SUBMIT_DIR"
-
-module load quantum-espresso
-
-pw.x \
-    -in input/graphene_nscf.in \
-    > output/graphene_nscf.out</code></pre>
-
 </div>
 
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
 
-#SBATCH --job-name=graphene_nscf
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=01:00:00
+<!-- =========================================================
+     IMPORTANT
+     ========================================================= -->
 
-cd "$SLURM_SUBMIT_DIR"
+<div class="script-important">
 
-module load quantum-espresso
+    <div class="script-important-icon">
+        !
+    </div>
 
-pw.x \
-    -in input/graphene_nscf.in \
-    > output/graphene_nscf.out</textarea>
+    <div>
 
-<div class="script-actions">
+        <strong>
+            Cara menggunakan Script Library
+        </strong>
 
-<button type="button" class="script-edit">
-Edit
-</button>
+        <p>
+            Pilih template yang paling dekat dengan jenis calculation
+            Anda. Baca fungsi setiap parameter sebelum mengubah nilainya.
+            Salin script ke directory project, sesuaikan bagian yang
+            diperlukan, kemudian lakukan pemeriksaan sebelum menjalankan
+            <code>sbatch</code>.
+        </p>
 
-<button type="button" class="script-copy">
-Copy
-</button>
+        <p>
+            Template di halaman ini bukan konfigurasi universal.
+            Setiap cluster dapat memiliki partition, software,
+            compiler, resource limit, dan aturan penggunaan yang
+            berbeda.
+        </p>
 
-<button type="button" class="script-reset">
-Reset
-</button>
+    </div>
 
-<button type="button" class="script-done">
-Done Editing
-</button>
-
 </div>
 
-<div class="script-local-change" hidden>
-Edited locally
-</div>
 
-<div class="script-note">
-Sesuaikan input NSCF dengan workflow ilmiah yang digunakan.
-</div>
+<!-- =========================================================
+     TEMPLATE NAVIGATION
+     ========================================================= -->
 
-</div>
+<div class="script-navigation">
 
----
+    <a href="#cpu-job" class="script-navigation-item">
 
-## 04 · LAMMPS Molecular Dynamics
+        <span class="script-navigation-number">
+            01
+        </span>
 
-<div class="script-library-section" id="lammps-md">
+        <div>
+            <strong>CPU Job</strong>
 
-<div class="script-library-header">
+            <small>
+                Calculation umum berbasis CPU.
+            </small>
+        </div>
 
-<div>
+    </a>
 
-<span class="script-library-label">
-LAMMPS
-</span>
 
-<h3>
-Molecular Dynamics
-</h3>
+    <a href="#gpu-job" class="script-navigation-item">
 
-<p>
-Template dasar untuk menjalankan simulasi molecular dynamics.
-</p>
+        <span class="script-navigation-number">
+            02
+        </span>
 
-</div>
+        <div>
+            <strong>GPU Job</strong>
 
-<div class="script-library-meta">
-MD · CPU · SLURM
-</div>
+            <small>
+                Calculation yang membutuhkan GPU.
+            </small>
+        </div>
 
-</div>
+    </a>
 
-<div class="script-info-grid">
 
-<div>
-<strong>Application</strong>
-<span>LAMMPS</span>
-</div>
+    <a href="#dft-job" class="script-navigation-item">
 
-<div>
-<strong>Executable</strong>
-<span>lmp</span>
-</div>
+        <span class="script-navigation-number">
+            03
+        </span>
 
-<div>
-<strong>Workload</strong>
-<span>Molecular Dynamics</span>
-</div>
+        <div>
+            <strong>DFT Job</strong>
 
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
+            <small>
+                Workflow first-principles dengan Quantum ESPRESSO.
+            </small>
+        </div>
 
-</div>
+    </a>
 
-<div class="script-code">
 
-<pre><code class="language-bash">#!/bin/bash
+    <a href="#md-job" class="script-navigation-item">
 
-#SBATCH --job-name=md
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=02:00:00
+        <span class="script-navigation-number">
+            04
+        </span>
 
-cd "$SLURM_SUBMIT_DIR"
+        <div>
+            <strong>Molecular Dynamics</strong>
 
-module load lammps
+            <small>
+                Workflow MD dengan LAMMPS.
+            </small>
+        </div>
 
-lmp \
-    -in input/in.lammps \
-    > output/lammps.out</code></pre>
+    </a>
 
 </div>
 
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
 
-#SBATCH --job-name=md
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=16
-#SBATCH --time=02:00:00
+<!-- =========================================================
+     WORKFLOW
+     ========================================================= -->
 
-cd "$SLURM_SUBMIT_DIR"
+<div class="script-workflow">
 
-module load lammps
+    <div class="script-workflow-heading">
 
-lmp \
-    -in input/in.lammps \
-    > output/lammps.out</textarea>
+        <span>
+            WORKFLOW
+        </span>
 
-<div class="script-actions">
+        <h2>
+            Dari template hingga submission
+        </h2>
 
-<button type="button" class="script-edit">
-Edit
-</button>
+        <p>
+            Gunakan urutan berikut agar perubahan pada job script
+            tetap terkontrol.
+        </p>
 
-<button type="button" class="script-copy">
-Copy
-</button>
+    </div>
 
-<button type="button" class="script-reset">
-Reset
-</button>
 
-<button type="button" class="script-done">
-Done Editing
-</button>
+    <div class="script-steps">
 
-</div>
-
-<div class="script-local-change" hidden>
-Edited locally
-</div>
-
-<div class="script-note">
-Pastikan input LAMMPS, data file, force field, dan kebutuhan
-resource sudah sesuai sebelum submission.
-</div>
-
-</div>
+        <div class="script-step">
 
----
+            <span class="script-step-number">
+                01
+            </span>
 
-## 05 · Python CPU Job
+            <strong>
+                Pilih template
+            </strong>
 
-<div class="script-library-section" id="python-cpu">
+            <small>
+                Tentukan template berdasarkan jenis calculation.
+            </small>
 
-<div class="script-library-header">
+        </div>
 
-<div>
 
-<span class="script-library-label">
-PYTHON
-</span>
+        <div class="script-step">
 
-<h3>
-Python CPU Job
-</h3>
+            <span class="script-step-number">
+                02
+            </span>
 
-<p>
-Template untuk menjalankan program Python pada compute node.
-</p>
+            <strong>
+                Edit parameter
+            </strong>
 
-</div>
+            <small>
+                Sesuaikan partition, resource, waktu, dan path.
+            </small>
 
-<div class="script-library-meta">
-PYTHON · CPU · SLURM
-</div>
+        </div>
 
-</div>
 
-<div class="script-info-grid">
+        <div class="script-step">
 
-<div>
-<strong>Language</strong>
-<span>Python</span>
-</div>
+            <span class="script-step-number">
+                03
+            </span>
 
-<div>
-<strong>Resource</strong>
-<span>CPU</span>
-</div>
+            <strong>
+                Periksa script
+            </strong>
 
-<div>
-<strong>Tasks</strong>
-<span>1</span>
-</div>
+            <small>
+                Pastikan input, software, executable, dan resource benar.
+            </small>
 
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
+        </div>
 
-</div>
 
-<div class="script-code">
+        <div class="script-step">
 
-<pre><code class="language-bash">#!/bin/bash
+            <span class="script-step-number">
+                04
+            </span>
 
-#SBATCH --job-name=python
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --time=01:00:00
+            <strong>
+                Submit job
+            </strong>
 
-cd "$SLURM_SUBMIT_DIR"
+            <small>
+                Simpan sebagai file <code>.slurm</code> lalu gunakan
+                <code>sbatch</code>.
+            </small>
 
-module load python
+        </div>
 
-python script.py</code></pre>
+    </div>
 
 </div>
-
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
 
-#SBATCH --job-name=python
-#SBATCH --partition=compute
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --time=01:00:00
 
-cd "$SLURM_SUBMIT_DIR"
+<!-- =========================================================
+     CPU JOB
+     ========================================================= -->
 
-module load python
+<div class="script-card" id="cpu-job">
 
-python script.py</textarea>
+    <div class="script-card-header">
 
-<div class="script-actions">
+        <div class="script-card-title">
 
-<button type="button" class="script-edit">
-Edit
-</button>
+            <span class="script-number">
+                01
+            </span>
 
-<button type="button" class="script-copy">
-Copy
-</button>
+            <div>
 
-<button type="button" class="script-reset">
-Reset
-</button>
+                <div class="script-section-label">
+                    BASIC CPU WORKLOAD
+                </div>
 
-<button type="button" class="script-done">
-Done Editing
-</button>
+                <h2>
+                    CPU Job
+                </h2>
 
-</div>
-
-<div class="script-local-change" hidden>
-Edited locally
-</div>
-
-<div class="script-note">
-Jika workflow membutuhkan environment Python tertentu,
-sesuaikan module atau environment sebelum menjalankan script.
-</div>
-
-</div>
-
----
+                <p>
+                    Template dasar untuk calculation yang berjalan
+                    menggunakan CPU.
+                </p>
 
-## 06 · GPU Job
+            </div>
 
-<div class="script-library-section" id="gpu-job">
+        </div>
 
-<div class="script-library-header">
+        <span class="script-badge cpu">
+            CPU
+        </span>
 
-<div>
+    </div>
 
-<span class="script-library-label">
-SLURM
-</span>
 
-<h3>
-GPU Job
-</h3>
+    <div class="script-description">
 
-<p>
-Template dasar untuk workload yang membutuhkan GPU.
-</p>
+        <p>
+            Gunakan template ini untuk calculation yang tidak membutuhkan
+            GPU. Jumlah task, CPU per task, memory, dan wall time harus
+            mengikuti kebutuhan aplikasi yang digunakan.
+        </p>
 
-</div>
-
-<div class="script-library-meta">
-GPU · SLURM
-</div>
+        <p>
+            Untuk workshop, gunakan partition yang memang diberikan
+            kepada peserta. Jangan mengganti partition berdasarkan
+            contoh dari cluster lain tanpa memeriksa konfigurasi HPC
+            yang sedang digunakan.
+        </p>
 
-</div>
+    </div>
 
-<div class="script-info-grid">
 
-<div>
-<strong>Resource</strong>
-<span>GPU</span>
-</div>
+    <div class="script-workspace">
 
-<div>
-<strong>Nodes</strong>
-<span>1</span>
-</div>
+        <div class="script-code-toolbar">
 
-<div>
-<strong>CPU Tasks</strong>
-<span>4</span>
-</div>
+            <span class="script-code-language">
+                JOB SCRIPT
+            </span>
 
-<div>
-<strong>Scheduler</strong>
-<span>SLURM</span>
-</div>
+            <button
+                class="script-copy-button"
+                type="button">
+                Salin Script
+            </button>
 
-</div>
+        </div>
 
-<div class="script-code">
 
-<pre><code class="language-bash">#!/bin/bash
+        <pre><code>#!/bin/bash
 
-#SBATCH --job-name=gpu-job
-#SBATCH --partition=gpu
+#SBATCH --job-name=lala002-cpu
+#SBATCH --partition=workshop
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
+#SBATCH --time=01:00:00
+
+echo "Job started"
+echo "Hostname: $(hostname)"
+echo "Date: $(date)"
+
+# Jalankan calculation di bawah ini
+# ./your_program input.in
+
+echo "Job finished"
+echo "Date: $(date)"</code></pre>
+
+    </div>
+
+
+    <div class="script-parameters">
+
+        <div class="script-parameter">
+            <code>--job-name</code>
+
+            <span>
+                Nama job yang akan muncul pada scheduler.
+                Gunakan nama yang singkat dan mudah dikenali.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--partition</code>
+
+            <span>
+                Menentukan partition tempat job dikirim.
+                Gunakan partition yang tersedia untuk akun Anda.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--nodes</code>
+
+            <span>
+                Menentukan jumlah node yang diminta oleh job.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--ntasks</code>
+
+            <span>
+                Menentukan jumlah task. Nilainya harus sesuai dengan
+                kebutuhan aplikasi dan strategi paralelisasi.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--time</code>
+
+            <span>
+                Menentukan batas waktu maksimum job.
+                Jangan meminta waktu jauh lebih besar dari kebutuhan
+                calculation.
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="script-note">
+
+        <strong>
+            Catatan
+        </strong>
+
+        <p>
+            Template ini hanya menunjukkan struktur dasar.
+            Resource yang sama tidak otomatis cocok untuk semua
+            calculation.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     GPU JOB
+     ========================================================= -->
+
+<div class="script-card" id="gpu-job">
+
+    <div class="script-card-header">
+
+        <div class="script-card-title">
+
+            <span class="script-number">
+                02
+            </span>
+
+            <div>
+
+                <div class="script-section-label">
+                    ACCELERATED WORKLOAD
+                </div>
+
+                <h2>
+                    GPU Job
+                </h2>
+
+                <p>
+                    Template untuk calculation yang memanfaatkan GPU.
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="script-badge gpu">
+            GPU
+        </span>
+
+    </div>
+
+
+    <div class="script-description">
+
+        <p>
+            Gunakan template ini hanya jika aplikasi yang digunakan
+            memang mendukung GPU. Meminta GPU tidak otomatis membuat
+            calculation menjadi lebih cepat.
+        </p>
+
+        <p>
+            Pastikan akun memiliki akses GPU, partition yang digunakan
+            menyediakan GPU, dan software sudah dikompilasi atau
+            dikonfigurasi untuk memanfaatkan GPU.
+        </p>
+
+    </div>
+
+
+    <div class="script-workspace">
+
+        <div class="script-code-toolbar">
+
+            <span class="script-code-language">
+                GPU JOB SCRIPT
+            </span>
+
+            <button
+                class="script-copy-button"
+                type="button">
+                Salin Script
+            </button>
+
+        </div>
+
+
+        <pre><code>#!/bin/bash
+
+#SBATCH --job-name=lala002-gpu
+#SBATCH --partition=workshop
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --time=01:00:00
 
-cd "$SLURM_SUBMIT_DIR"
+echo "GPU job started"
+echo "Hostname: $(hostname)"
+echo "Date: $(date)"
 
-module load software
+# Periksa GPU yang diberikan kepada job
+nvidia-smi
 
-application \
-    --input input/calculation.in \
-    > output/calculation.out</code></pre>
+# Load software yang diperlukan
+# module load your-software
+
+# Jalankan calculation
+# your_gpu_program input.in
+
+echo "GPU job finished"
+echo "Date: $(date)"</code></pre>
+
+    </div>
+
+
+    <div class="script-parameters">
+
+        <div class="script-parameter">
+            <code>--gres=gpu:1</code>
+
+            <span>
+                Contoh permintaan satu GPU.
+                Format resource GPU dapat berbeda pada setiap cluster.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>nvidia-smi</code>
+
+            <span>
+                Memeriksa GPU yang tersedia dari dalam job.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--ntasks=1</code>
+
+            <span>
+                Contoh menggunakan satu task.
+                Konfigurasi aktual harus mengikuti kebutuhan aplikasi.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--time</code>
+
+            <span>
+                Menentukan batas waktu maksimum calculation.
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="script-note warning">
+
+        <strong>
+            Perhatikan resource GPU
+        </strong>
+
+        <p>
+            Jangan meminta GPU hanya karena node memiliki GPU.
+            Pastikan aplikasi yang digunakan memang mendukung GPU
+            dan konfigurasi software sudah benar.
+        </p>
+
+    </div>
 
 </div>
 
-<textarea class="script-editor" spellcheck="false">#!/bin/bash
 
-#SBATCH --job-name=gpu-job
-#SBATCH --partition=gpu
+<!-- =========================================================
+     DFT JOB
+     ========================================================= -->
+
+<div class="script-card" id="dft-job">
+
+    <div class="script-card-header">
+
+        <div class="script-card-title">
+
+            <span class="script-number">
+                03
+            </span>
+
+            <div>
+
+                <div class="script-section-label">
+                    FIRST-PRINCIPLES
+                </div>
+
+                <h2>
+                    DFT Job
+                </h2>
+
+                <p>
+                    Contoh workflow sederhana menggunakan Quantum ESPRESSO.
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="script-badge dft">
+            DFT
+        </span>
+
+    </div>
+
+
+    <div class="script-description">
+
+        <p>
+            Template ini menunjukkan pola umum menjalankan calculation
+            first-principles menggunakan Quantum ESPRESSO.
+        </p>
+
+        <p>
+            Nama module, executable, partition, dan parameter SLURM
+            harus disesuaikan dengan instalasi HPC yang digunakan.
+        </p>
+
+    </div>
+
+
+    <div class="script-workspace">
+
+        <div class="script-code-toolbar">
+
+            <span class="script-code-language">
+                QUANTUM ESPRESSO
+            </span>
+
+            <button
+                class="script-copy-button"
+                type="button">
+                Salin Script
+            </button>
+
+        </div>
+
+
+        <pre><code>#!/bin/bash
+
+#SBATCH --job-name=lala002-qe
+#SBATCH --partition=workshop
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
-#SBATCH --gres=gpu:1
 #SBATCH --time=01:00:00
 
-cd "$SLURM_SUBMIT_DIR"
+echo "Quantum ESPRESSO calculation"
+echo "Hostname: $(hostname)"
+echo "Date: $(date)"
 
-module load software
+# Sesuaikan dengan module yang tersedia
+# module load quantum-espresso
 
-application \
-    --input input/calculation.in \
-    > output/calculation.out</textarea>
+mkdir -p output
 
-<div class="script-actions">
+pw.x \
+    -in input/scf.in \
+    > output/scf.out
 
-<button type="button" class="script-edit">
-Edit
-</button>
+echo "Calculation finished"
+echo "Date: $(date)"</code></pre>
 
-<button type="button" class="script-copy">
-Copy
-</button>
+    </div>
 
-<button type="button" class="script-reset">
-Reset
-</button>
 
-<button type="button" class="script-done">
-Done Editing
-</button>
+    <div class="script-parameters">
 
-</div>
+        <div class="script-parameter">
+            <code>pw.x</code>
 
-<div class="script-local-change" hidden>
-Edited locally
-</div>
+            <span>
+                Executable Quantum ESPRESSO untuk calculation
+                yang menggunakan input SCF.
+            </span>
+        </div>
 
-<div class="script-note">
-Sintaks GPU, nama partition, dan resource GPU dapat berbeda
-antarcluster. Gunakan konfigurasi yang disediakan administrator.
-</div>
 
-</div>
+        <div class="script-parameter">
+            <code>input/scf.in</code>
 
----
+            <span>
+                File input calculation. Pastikan file tersedia
+                pada path yang digunakan.
+            </span>
+        </div>
 
-## SLURM Parameters
 
-<p class="section-description">
-Parameter berikut merupakan bagian yang paling sering disesuaikan
-ketika menggunakan template SLURM.
-</p>
+        <div class="script-parameter">
+            <code>output/scf.out</code>
 
-<div class="command-reference-table">
+            <span>
+                File output yang menyimpan informasi calculation.
+            </span>
+        </div>
 
-<table>
 
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Fungsi</th>
-<th>Contoh</th>
-</tr>
-</thead>
+        <div class="script-parameter">
+            <code>module load</code>
 
-<tbody>
+            <span>
+                Mengaktifkan environment Quantum ESPRESSO sesuai
+                nama module yang tersedia pada cluster.
+            </span>
+        </div>
 
-<tr>
-<td><code>--job-name</code></td>
-<td>Memberikan nama pada job</td>
-<td><code>--job-name=graphene</code></td>
-</tr>
+    </div>
 
-<tr>
-<td><code>--partition</code></td>
-<td>Menentukan partition</td>
-<td><code>--partition=compute</code></td>
-</tr>
 
-<tr>
-<td><code>--nodes</code></td>
-<td>Menentukan jumlah node</td>
-<td><code>--nodes=1</code></td>
-</tr>
+    <div class="script-note">
 
-<tr>
-<td><code>--ntasks</code></td>
-<td>Menentukan jumlah task</td>
-<td><code>--ntasks=16</code></td>
-</tr>
+        <strong>
+            Pemeriksaan DFT
+        </strong>
 
-<tr>
-<td><code>--time</code></td>
-<td>Menentukan batas waktu</td>
-<td><code>--time=01:00:00</code></td>
-</tr>
+        <p>
+            Sebelum submission, periksa structure, pseudopotential,
+            cutoff, k-point, parameter SCF, convergence criteria,
+            dan software environment.
+        </p>
 
-<tr>
-<td><code>--gres</code></td>
-<td>Meminta resource khusus seperti GPU</td>
-<td><code>--gres=gpu:1</code></td>
-</tr>
-
-</tbody>
-
-</table>
+    </div>
 
 </div>
 
----
 
-## Before You Run
+<!-- =========================================================
+     MOLECULAR DYNAMICS
+     ========================================================= -->
 
-<div class="checklist">
+<div class="script-card" id="md-job">
 
-<div>Template sesuai dengan jenis workload</div>
+    <div class="script-card-header">
 
-<div>Partition sesuai dengan cluster</div>
+        <div class="script-card-title">
 
-<div>CPU atau GPU sesuai kebutuhan</div>
+            <span class="script-number">
+                04
+            </span>
 
-<div>Jumlah node dan task sudah diperiksa</div>
+            <div>
 
-<div>Wall time sudah diperiksa</div>
+                <div class="script-section-label">
+                    ATOMISTIC SIMULATION
+                </div>
 
-<div>Module software sudah benar</div>
+                <h2>
+                    Molecular Dynamics
+                </h2>
 
-<div>Executable sudah tersedia</div>
+                <p>
+                    Contoh template untuk calculation berbasis LAMMPS.
+                </p>
 
-<div>Input path sudah benar</div>
+            </div>
 
-<div>Output path sudah benar</div>
+        </div>
 
-<div>Resource request sudah masuk akal</div>
+        <span class="script-badge md">
+            MD
+        </span>
+
+    </div>
+
+
+    <div class="script-description">
+
+        <p>
+            Template berikut menunjukkan struktur umum job Molecular
+            Dynamics menggunakan LAMMPS. File input LAMMPS menentukan
+            system, force field, timestep, ensemble, temperature,
+            pressure, dan jumlah langkah simulasi.
+        </p>
+
+    </div>
+
+
+    <div class="script-workspace">
+
+        <div class="script-code-toolbar">
+
+            <span class="script-code-language">
+                LAMMPS
+            </span>
+
+            <button
+                class="script-copy-button"
+                type="button">
+                Salin Script
+            </button>
+
+        </div>
+
+
+        <pre><code>#!/bin/bash
+
+#SBATCH --job-name=lala002-md
+#SBATCH --partition=workshop
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --time=02:00:00
+
+echo "LAMMPS MD started"
+echo "Hostname: $(hostname)"
+echo "Date: $(date)"
+
+# Sesuaikan dengan module yang tersedia
+# module load lammps
+
+mkdir -p output
+
+lmp \
+    -in input/md.in \
+    -log output/md.log
+
+echo "MD calculation finished"
+echo "Date: $(date)"</code></pre>
+
+    </div>
+
+
+    <div class="script-parameters">
+
+        <div class="script-parameter">
+            <code>lmp</code>
+
+            <span>
+                Executable LAMMPS. Nama executable dapat berbeda
+                pada setiap cluster.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>input/md.in</code>
+
+            <span>
+                File input yang berisi konfigurasi Molecular Dynamics.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>-log</code>
+
+            <span>
+                Menentukan file log untuk menyimpan informasi calculation.
+            </span>
+        </div>
+
+
+        <div class="script-parameter">
+            <code>--ntasks</code>
+
+            <span>
+                Menentukan jumlah task yang digunakan calculation.
+                Sesuaikan dengan konfigurasi paralel LAMMPS.
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="script-note">
+
+        <strong>
+            Pemeriksaan workflow MD
+        </strong>
+
+        <p>
+            Sebelum menjalankan simulasi, periksa system preparation,
+            potential atau force field, timestep, ensemble,
+            temperature, pressure, equilibration, dan production run.
+        </p>
+
+    </div>
 
 </div>
 
----
 
-## Local Editing
+<!-- =========================================================
+     INTERACTIVE SCRIPT EDITOR
+     ========================================================= -->
 
-<p class="section-description">
-Editor digunakan untuk menyesuaikan template tanpa mengubah
-versi asli yang tersedia bagi pengguna lain.
-</p>
+<div class="script-editor-section">
 
-<div class="command-reference-table">
+    <div class="script-editor-intro">
 
-<table>
+        <div>
 
-<thead>
-<tr>
-<th>Action</th>
-<th>Result</th>
-</tr>
+            <span class="script-section-label">
+                INTERACTIVE TOOL
+            </span>
 
-</thead>
+            <h2>
+                Job Script Editor
+            </h2>
 
-<tbody>
+            <p>
+                Gunakan editor berikut untuk mencoba mengubah
+                parameter job script sebelum menyimpannya sebagai
+                file <code>.slurm</code>.
+            </p>
 
-<tr>
-<td>Edit</td>
-<td>Membuka script dalam editor</td>
-</tr>
+        </div>
 
-<tr>
-<td>Copy</td>
-<td>Menyalin versi script yang sedang digunakan</td>
-</tr>
+        <div class="script-editor-status">
+            PRACTICE MODE
+        </div>
 
-<tr>
-<td>Reset</td>
-<td>Menghapus perubahan lokal dan mengembalikan template asli</td>
-</tr>
+    </div>
 
-<tr>
-<td>Done Editing</td>
-<td>Menyimpan perubahan lokal pada browser</td>
-</tr>
 
-</tbody>
+    <div class="script-editor-help">
 
-</table>
+        <strong>
+            Cara menggunakan editor
+        </strong>
+
+        <p>
+            Klik <strong>Edit Script</strong>, ubah parameter yang
+            diperlukan, kemudian gunakan <strong>Validasi Script</strong>
+            untuk memeriksa struktur dasar SLURM. Tombol validasi
+            tidak menjalankan job dan tidak mengirim script ke HPC.
+        </p>
+
+    </div>
+
+
+    <div class="script-editor">
+
+        <div class="script-editor-header">
+
+            <div>
+
+                <span class="script-editor-label">
+                    JOB SCRIPT EDITOR
+                </span>
+
+                <span class="script-editor-help-inline">
+                    Edit script pada area putih di bawah
+                </span>
+
+            </div>
+
+            <span
+                class="script-line-counter"
+                data-line-count>
+                0 baris
+            </span>
+
+        </div>
+
+
+        <textarea
+            id="job-script-editor"
+            spellcheck="false">#!/bin/bash
+
+#SBATCH --job-name=lala002-test
+#SBATCH --partition=workshop
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --time=01:00:00
+
+echo "Job started"
+echo "Hostname: $(hostname)"
+echo "Date: $(date)"
+
+# Tambahkan module dan executable sesuai kebutuhan calculation.
+# module load your-software
+# your_program input.in</textarea>
+
+
+        <div class="script-editor-actions">
+
+            <button
+                type="button"
+                class="script-editor-button primary"
+                data-action="edit">
+                Edit Script
+            </button>
+
+            <button
+                type="button"
+                class="script-editor-button"
+                data-action="copy">
+                Salin
+            </button>
+
+            <button
+                type="button"
+                class="script-editor-button validate"
+                data-action="validate">
+                Validasi Script
+            </button>
+
+            <button
+                type="button"
+                class="script-editor-button reset"
+                data-action="reset">
+                Reset
+            </button>
+
+        </div>
+
+
+        <div
+            class="script-validation">
+        </div>
+
+    </div>
+
+
+    <div class="script-editor-warning">
+
+        <strong>
+            Penting
+        </strong>
+
+        <p>
+            Editor ini hanya membantu latihan dan pemeriksaan
+            struktur dasar. Validasi tidak menjamin job dapat
+            berjalan pada HPC. Sebelum submission, tetap periksa
+            partition, resource, module, executable, input,
+            output path, dan aturan cluster.
+        </p>
+
+    </div>
 
 </div>
 
-<div class="script-local-note">
-Perubahan editor bersifat lokal pada browser. Template asli tidak
-berubah dan perubahan pengguna tidak memengaruhi pengguna lain.
+
+<!-- =========================================================
+     SBATCH REFERENCE
+     ========================================================= -->
+
+<div class="script-card sbatch-reference">
+
+    <div class="script-card-header">
+
+        <div class="script-card-title">
+
+            <span class="script-number">
+                05
+            </span>
+
+            <div>
+
+                <div class="script-section-label">
+                    SLURM REFERENCE
+                </div>
+
+                <h2>
+                    SBATCH Reference
+                </h2>
+
+                <p>
+                    Parameter SLURM yang paling sering disesuaikan
+                    dalam job script.
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="script-badge slurm">
+            SLURM
+        </span>
+
+    </div>
+
+
+    <div class="script-description">
+
+        <p>
+            Nilai parameter harus mengikuti kebijakan dan konfigurasi
+            cluster. Jangan menyalin parameter dari cluster lain
+            tanpa melakukan pemeriksaan terlebih dahulu.
+        </p>
+
+    </div>
+
+
+    <div class="command-reference-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Parameter</th>
+                    <th>Fungsi</th>
+                    <th>Contoh</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <code>--job-name</code>
+                    </td>
+
+                    <td>
+                        Memberikan nama pada job agar mudah dikenali
+                        pada scheduler.
+                    </td>
+
+                    <td>
+                        <code>--job-name=lala002</code>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <code>--partition</code>
+                    </td>
+
+                    <td>
+                        Memilih partition yang digunakan oleh job.
+                    </td>
+
+                    <td>
+                        <code>--partition=workshop</code>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <code>--nodes</code>
+                    </td>
+
+                    <td>
+                        Menentukan jumlah node yang diminta.
+                    </td>
+
+                    <td>
+                        <code>--nodes=1</code>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <code>--ntasks</code>
+                    </td>
+
+                    <td>
+                        Menentukan jumlah task untuk job.
+                    </td>
+
+                    <td>
+                        <code>--ntasks=4</code>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <code>--time</code>
+                    </td>
+
+                    <td>
+                        Menentukan batas waktu maksimum job.
+                    </td>
+
+                    <td>
+                        <code>--time=01:00:00</code>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <code>--gres</code>
+                    </td>
+
+                    <td>
+                        Meminta resource tambahan seperti GPU,
+                        jika cluster menggunakan konfigurasi tersebut.
+                    </td>
+
+                    <td>
+                        <code>--gres=gpu:1</code>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 </div>
 
----
 
-## Template Workflow
+<!-- =========================================================
+     CHECKLIST
+     ========================================================= -->
 
-```text
-SELECT TEMPLATE
-      ↓
-REVIEW RESOURCE
-      ↓
-EDIT PARAMETERS
-      ↓
-COPY SCRIPT
-      ↓
-SUBMIT TO HPC
-      ↓
-MONITOR JOB
-      ↓
-VERIFY OUTPUT
-```
+<div class="script-checklist">
 
----
+    <div class="script-checklist-heading">
+
+        <span>
+            BEFORE SUBMISSION
+        </span>
+
+        <h2>
+            Checklist sebelum menjalankan sbatch
+        </h2>
+
+        <p>
+            Gunakan checklist ini sebagai pemeriksaan akhir sebelum
+            mengirim job ke scheduler.
+        </p>
+
+    </div>
+
+
+    <div class="script-checklist-grid">
+
+        <div>
+            <span>01</span>
+            <strong>Partition</strong>
+            <small>
+                Pastikan partition sesuai dengan akses pengguna.
+            </small>
+        </div>
+
+
+        <div>
+            <span>02</span>
+            <strong>Input</strong>
+            <small>
+                Pastikan semua input file tersedia.
+            </small>
+        </div>
+
+
+        <div>
+            <span>03</span>
+            <strong>Output</strong>
+            <small>
+                Pastikan lokasi output sudah benar.
+            </small>
+        </div>
+
+
+        <div>
+            <span>04</span>
+            <strong>Software</strong>
+            <small>
+                Pastikan module dan environment tersedia.
+            </small>
+        </div>
+
+
+        <div>
+            <span>05</span>
+            <strong>Executable</strong>
+            <small>
+                Pastikan program dapat ditemukan dan dijalankan.
+            </small>
+        </div>
+
+
+        <div>
+            <span>06</span>
+            <strong>Resource</strong>
+            <small>
+                Sesuaikan CPU, GPU, memory, dan wall time.
+            </small>
+        </div>
+
+
+        <div>
+            <span>07</span>
+            <strong>Path</strong>
+            <small>
+                Periksa kembali semua path input dan output.
+            </small>
+        </div>
+
+
+        <div>
+            <span>08</span>
+            <strong>Script</strong>
+            <small>
+                Periksa script sebelum melakukan submission.
+            </small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FINAL ACTION
+     ========================================================= -->
 
 <div class="environment-banner">
 
-<h2>
-Build From a Template
-</h2>
+    <div>
 
-<p>
-Gunakan template sebagai titik awal. Selalu sesuaikan resource,
-software environment, input, output, dan aturan cluster sebelum
-menjalankan job.
-</p>
+        <span>
+            READY TO SUBMIT?
+        </span>
+
+        <h2>
+            Script sudah diperiksa?
+        </h2>
+
+        <p>
+            Simpan script sebagai file dengan ekstensi
+            <code>.slurm</code>, kemudian jalankan submission
+            dari terminal HPC.
+        </p>
+
+    </div>
+
+
+    <div class="environment-command">
+
+        <code>
+            sbatch scripts/run.slurm
+        </code>
+
+        <small>
+            Setelah submission, gunakan squeue untuk memantau job.
+        </small>
+
+    </div>
+
+
+    <div class="environment-next">
+
+        <strong>
+            Langkah berikutnya
+        </strong>
+
+        <p>
+            Gunakan <code>squeue -u $USER</code> untuk melihat status
+            job. Setelah job selesai, periksa output dan lanjutkan
+            ke proses analisis.
+        </p>
+
+    </div>
+
+</div>
+
 
 </div>
