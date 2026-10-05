@@ -1,371 +1,809 @@
 <div class="hpc-overview">
 
-<div class="hpc-overview-hero">
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="hpc-overview-hero">
+
+    <div class="hpc-overview-kicker">
+      LINGKUNGAN KOMPUTASI
+    </div>
+
+    <h1>
+      Komputasi HPC
+    </h1>
+
+    <p>
+      Computational Environment merupakan lingkungan kerja utama
+      untuk menjalankan perhitungan dan simulasi dalam workshop.
+      Pada bagian ini, peserta akan mempelajari bagaimana komputer
+      pribadi terhubung dengan sistem HPC, bagaimana file dikelola
+      melalui Linux, bagaimana software disiapkan, dan bagaimana
+      calculation dijalankan menggunakan sumber daya komputasi
+      berperforma tinggi.
+    </p>
+
+    <p>
+      Materi disusun sebagai alur kerja yang saling terhubung.
+      Peserta tidak hanya mempelajari perintah Linux secara terpisah,
+      tetapi juga memahami hubungan antara akses sistem, persiapan
+      input, software environment, job submission, monitoring,
+      hingga analisis hasil simulasi.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       INTRODUCTION
+       ===================================================== -->
+
+  <section class="hpc-overview-intro">
 
-<div class="hpc-overview-kicker">
-COMPUTATIONAL ENVIRONMENT
-</div>
+    <div class="hpc-overview-intro-label">
+      MENGAPA BAGIAN INI PENTING?
+    </div>
 
-<h1>
-HPC Computing
-</h1>
+    <h2>
+      Memahami lingkungan kerja sebelum menjalankan simulasi
+    </h2>
 
-<p>
-Lingkungan komputasi untuk menjalankan simulation workflow,
-mengelola software, memanfaatkan compute resources, dan
-menghasilkan hasil penelitian secara reproducible.
-</p>
+    <p>
+      Simulasi computational materials science membutuhkan lebih dari
+      sekadar software perhitungan. Peserta juga perlu memahami
+      lingkungan tempat calculation dijalankan. Kesalahan pada lokasi
+      file, konfigurasi software, environment, input, atau job submission
+      dapat menyebabkan calculation gagal meskipun model ilmiahnya
+      sudah benar.
+    </p>
+
+    <p>
+      Karena itu, bagian Computational Environment memperkenalkan
+      komponen dasar yang diperlukan sebelum peserta menjalankan
+      Quantum ESPRESSO, DCDFTBMD, MACE, molecular dynamics,
+      maupun workflow simulasi lainnya.
+    </p>
+
+    <p>
+      Setelah menyelesaikan bagian ini, peserta diharapkan mampu
+      mengenali struktur lingkungan HPC, bekerja melalui terminal Linux,
+      menyiapkan software yang diperlukan, mengirim calculation ke
+      scheduler, memantau status job, serta menemukan output yang
+      dihasilkan oleh calculation.
+    </p>
 
-</div>
+  </section>
 
 
-<div class="hpc-overview-start">
+  <!-- =====================================================
+       START HERE
+       ===================================================== -->
 
-<div class="hpc-overview-start-main">
+  <section class="hpc-overview-start">
 
-<span>START HERE</span>
+    <div class="hpc-overview-start-main">
 
-<h2>
-Build your HPC workflow
-</h2>
+      <span>
+        MULAI DI SINI
+      </span>
 
-<p>
-Ikuti alur dari akses sistem hingga menjalankan calculation.
-Setiap halaman memiliki fungsi yang berbeda sehingga Anda
-tidak perlu membaca seluruh dokumentasi sekaligus.
-</p>
+      <h2>
+        Bangun workflow HPC secara bertahap
+      </h2>
 
-</div>
+      <p>
+        Jika Anda baru pertama kali menggunakan HPC, mulai dari
+        bagian Akses & Linux. Bagian ini menjelaskan cara masuk
+        ke sistem, mengenali direktori kerja, memahami filesystem,
+        dan menggunakan terminal untuk menjalankan perintah dasar.
+      </p>
 
-<div class="hpc-overview-start-next">
+      <p>
+        Setelah memahami Linux, lanjutkan ke Software Environment.
+        Di sini Anda akan belajar bagaimana software, compiler,
+        library, module, dan Python environment disiapkan sebelum
+        calculation dijalankan.
+      </p>
 
-<small>NEXT STEP</small>
+      <p>
+        Tahap berikutnya adalah Running Calculations. Pada bagian
+        tersebut, Anda akan mempelajari bagaimana input disiapkan,
+        job dikirim melalui scheduler, proses calculation dipantau,
+        dan output diperiksa setelah pekerjaan selesai.
+      </p>
 
-<strong>Access & Linux</strong>
+    </div>
 
-<a href="access-linux/">
-Get Started →
-</a>
 
-</div>
+    <div class="hpc-overview-start-next">
 
-</div>
+      <small>
+        LANGKAH PERTAMA
+      </small>
 
+      <strong>
+        Akses & Linux
+      </strong>
 
-<div class="hpc-overview-section-head">
+      <p>
+        Pelajari cara mengakses sistem HPC dan bekerja
+        menggunakan lingkungan Linux.
+      </p>
 
-<span>THE ENVIRONMENT</span>
+      <a href="access-linux/">
+        Mulai Belajar →
+      </a>
 
-<h2>
-Everything you need to run a calculation
-</h2>
+    </div>
 
-<p>
-Gunakan setiap bagian sesuai kebutuhan. Mulai dari akses,
-pelajari command dasar, siapkan software, lalu jalankan job.
-</p>
+  </section>
 
-</div>
 
+  <!-- =====================================================
+       ENVIRONMENT
+       ===================================================== -->
 
-<div class="hpc-overview-modules">
+  <section class="hpc-overview-section-head">
 
+    <span>
+      KOMPONEN LINGKUNGAN KOMPUTASI
+    </span>
 
-<a class="hpc-overview-module" href="access-linux/">
+    <h2>
+      Apa saja yang perlu Anda kuasai?
+    </h2>
 
-<div class="hpc-overview-module-top">
+    <p>
+      Lingkungan komputasi terdiri dari beberapa komponen yang
+      saling berhubungan. Anda tidak harus menguasai semuanya
+      sekaligus. Pelajari setiap bagian sesuai tahapan workflow
+      yang sedang Anda kerjakan.
+    </p>
 
-<span>01</span>
+    <p>
+      Keenam bagian berikut membentuk jalur dari penggunaan terminal
+      hingga penerapan workflow komputasi pada research case.
+    </p>
 
-<small>GET STARTED</small>
+  </section>
 
-</div>
 
-<h3>
-Access & Linux
-</h3>
+  <!-- =====================================================
+       MODULES
+       ===================================================== -->
 
-<p>
-Masuk ke HPC, memahami filesystem, dan bekerja pada lingkungan Linux.
-</p>
+  <section class="hpc-overview-modules">
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
 
-</a>
+    <!-- 01 -->
 
+    <a
+      class="hpc-overview-module"
+      href="access-linux/"
+    >
 
-<a class="hpc-overview-module" href="command-line/">
+      <div class="hpc-overview-module-top">
 
-<div class="hpc-overview-module-top">
+        <span>
+          01
+        </span>
 
-<span>02</span>
+        <small>
+          FONDASI
+        </small>
 
-<small>REFERENCE</small>
+      </div>
 
-</div>
+      <h3>
+        Akses & Linux
+      </h3>
 
-<h3>
-Command Line
-</h3>
+      <p>
+        Bagian ini memperkenalkan cara mengakses sistem HPC
+        dan bekerja melalui terminal Linux. Anda akan belajar
+        mengenali home directory, membuat folder, berpindah
+        direktori, melihat file, mengubah lokasi kerja, serta
+        memahami struktur filesystem.
+      </p>
 
-<p>
-Perintah terminal untuk file, directory, process, monitoring,
-dan pekerjaan sehari-hari.
-</p>
+      <p>
+        Kemampuan ini menjadi dasar untuk seluruh aktivitas
+        berikutnya karena sebagian besar workflow HPC dilakukan
+        melalui command line.
+      </p>
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
+      <div class="hpc-overview-module-link">
+        Buka Materi →
+      </div>
 
-</a>
+    </a>
 
 
-<a class="hpc-overview-module" href="software-environment/">
+    <!-- 02 -->
 
-<div class="hpc-overview-module-top">
+    <a
+      class="hpc-overview-module"
+      href="command-line/"
+    >
 
-<span>03</span>
+      <div class="hpc-overview-module-top">
 
-<small>SOFTWARE</small>
+        <span>
+          02
+        </span>
 
-</div>
+        <small>
+          TERMINAL
+        </small>
 
-<h3>
-Software Environment
-</h3>
+      </div>
 
-<p>
-Kelola module, compiler, Python environment, dan software
-yang diperlukan calculation.
-</p>
+      <h3>
+        Command Line
+      </h3>
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
+      <p>
+        Command Line digunakan untuk berinteraksi langsung
+        dengan sistem komputasi. Anda akan mempelajari perintah
+        untuk mengelola file dan directory, memeriksa lokasi kerja,
+        membaca informasi sistem, mengelola process, dan melakukan
+        monitoring pekerjaan.
+      </p>
 
-</a>
+      <p>
+        Penguasaan command line membantu Anda bekerja lebih cepat
+        dan lebih terstruktur ketika menjalankan calculation
+        pada sistem HPC.
+      </p>
 
+      <div class="hpc-overview-module-link">
+        Buka Materi →
+      </div>
 
-<a class="hpc-overview-module" href="running-calculations/">
+    </a>
 
-<div class="hpc-overview-module-top">
 
-<span>04</span>
+    <!-- 03 -->
 
-<small>WORKFLOW</small>
+    <a
+      class="hpc-overview-module"
+      href="software-environment/"
+    >
 
-</div>
+      <div class="hpc-overview-module-top">
 
-<h3>
-Running Calculations
-</h3>
+        <span>
+          03
+        </span>
 
-<p>
-Submit job, monitor scheduler, membaca output, dan memverifikasi hasil.
-</p>
+        <small>
+          SOFTWARE
+        </small>
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
+      </div>
 
-</a>
+      <h3>
+        Software Environment
+      </h3>
 
+      <p>
+        Calculation membutuhkan software dan dependency yang
+        sesuai dengan sistem yang digunakan. Bagian ini membahas
+        module, compiler, Python environment, library, serta
+        software yang diperlukan untuk workflow simulasi.
+      </p>
 
-<a class="hpc-overview-module hpc-overview-module-featured" href="script-library/">
+      <p>
+        Anda akan belajar memeriksa software yang tersedia,
+        memilih environment yang sesuai, dan memastikan bahwa
+        program dapat dijalankan sebelum mengirim calculation
+        ke compute resources.
+      </p>
 
-<div class="hpc-overview-module-top">
+      <div class="hpc-overview-module-link">
+        Buka Materi →
+      </div>
 
-<span>05</span>
+    </a>
 
-<small>WORKSPACE</small>
 
-</div>
+    <!-- 04 -->
 
-<h3>
-Script Library
-</h3>
+    <a
+      class="hpc-overview-module"
+      href="running-calculations/"
+    >
 
-<p>
-Cari template job script, edit langsung, dan salin script
-yang siap digunakan.
-</p>
+      <div class="hpc-overview-module-top">
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
+        <span>
+          04
+        </span>
 
-</a>
+        <small>
+          WORKFLOW
+        </small>
 
+      </div>
 
-<a class="hpc-overview-module" href="../../hands-on-project/">
+      <h3>
+        Menjalankan Calculation
+      </h3>
 
-<div class="hpc-overview-module-top">
+      <p>
+        Setelah sistem dan software siap, calculation dapat
+        dijalankan. Bagian ini menjelaskan tahapan mulai dari
+        menyiapkan input, menentukan kebutuhan resource,
+        membuat job script, hingga melakukan submission.
+      </p>
 
-<span>06</span>
+      <p>
+        Anda juga akan belajar membaca status job, memeriksa
+        output, mengenali error dasar, dan memastikan bahwa
+        calculation benar-benar berjalan sesuai tujuan.
+      </p>
 
-<small>APPLICATION</small>
+      <div class="hpc-overview-module-link">
+        Buka Materi →
+      </div>
 
-</div>
+    </a>
 
-<h3>
-Research Cases
-</h3>
 
-<p>
-Terapkan computational workflow pada sistem material
-dan research problem yang nyata.
-</p>
+    <!-- 05 -->
 
-<div class="hpc-overview-module-link">
-Open →
-</div>
+    <a
+      class="hpc-overview-module hpc-overview-module-featured"
+      href="script-library/"
+    >
 
-</a>
+      <div class="hpc-overview-module-top">
 
+        <span>
+          05
+        </span>
 
-</div>
+        <small>
+          TEMPLATE
+        </small>
 
+      </div>
 
-<div class="hpc-overview-section-head hpc-overview-section-head-tight">
+      <h3>
+        Script Library
+      </h3>
 
-<span>WORKFLOW</span>
+      <p>
+        Script Library menyediakan contoh job script yang dapat
+        digunakan sebagai titik awal. Peserta tidak perlu selalu
+        membuat script dari awal untuk setiap calculation.
+      </p>
 
-<h2>
-From terminal to scientific result
-</h2>
+      <p>
+        Gunakan template yang tersedia, pahami setiap bagian
+        script, sesuaikan nama file, resource, waktu, software,
+        dan parameter calculation sebelum digunakan.
+      </p>
 
-</div>
+      <div class="hpc-overview-module-link">
+        Buka Script Library →
+      </div>
 
+    </a>
 
-<div class="hpc-overview-flow">
 
-<div class="hpc-overview-flow-step">
+    <!-- 06 -->
 
-<span>01</span>
+    <a
+      class="hpc-overview-module"
+      href="../../hands-on-project/"
+    >
 
-<strong>Access</strong>
+      <div class="hpc-overview-module-top">
 
-<small>
-Connect to HPC
-</small>
+        <span>
+          06
+        </span>
 
-</div>
+        <small>
+          APLIKASI
+        </small>
 
-<div class="hpc-overview-flow-line"></div>
+      </div>
 
-<div class="hpc-overview-flow-step">
+      <h3>
+        Research Cases
+      </h3>
 
-<span>02</span>
+      <p>
+        Research Cases menghubungkan konsep computational environment
+        dengan permasalahan penelitian. Pada bagian ini, peserta dapat
+        melihat bagaimana workflow HPC digunakan untuk menjalankan
+        simulasi pada sistem material yang lebih nyata.
+      </p>
 
-<strong>Prepare</strong>
+      <p>
+        Contoh workflow dapat mencakup Quantum ESPRESSO,
+        DCDFTBMD, molecular dynamics, MACE, serta analisis
+        hasil simulasi sesuai tujuan penelitian.
+      </p>
 
-<small>
-Input + software
-</small>
+      <div class="hpc-overview-module-link">
+        Lihat Research Cases →
+      </div>
 
-</div>
+    </a>
 
-<div class="hpc-overview-flow-line"></div>
 
-<div class="hpc-overview-flow-step">
+  </section>
 
-<span>03</span>
 
-<strong>Submit</strong>
+  <!-- =====================================================
+       WORKFLOW
+       ===================================================== -->
 
-<small>
-Send job
-</small>
+  <section
+    class="hpc-overview-section-head
+           hpc-overview-section-head-tight"
+  >
 
-</div>
+    <span>
+      ALUR KERJA HPC
+    </span>
 
-<div class="hpc-overview-flow-line"></div>
+    <h2>
+      Dari terminal hingga hasil penelitian
+    </h2>
 
-<div class="hpc-overview-flow-step">
+    <p>
+      Workflow HPC dapat dipahami sebagai rangkaian tahapan
+      yang saling berhubungan. Setiap tahap memiliki tujuan
+      yang berbeda dan perlu dilakukan secara berurutan.
+    </p>
 
-<span>04</span>
+    <p>
+      Memahami alur ini membantu peserta mengetahui posisi
+      setiap aktivitas dalam keseluruhan proses simulasi.
+    </p>
 
-<strong>Monitor</strong>
+  </section>
 
-<small>
-Track job
-</small>
 
-</div>
+  <section class="hpc-overview-flow">
 
-<div class="hpc-overview-flow-line"></div>
 
-<div class="hpc-overview-flow-step">
+    <!-- 01 -->
 
-<span>05</span>
+    <div class="hpc-overview-flow-step">
 
-<strong>Analyze</strong>
+      <span>
+        01
+      </span>
 
-<small>
-Interpret result
-</small>
+      <strong>
+        Akses
+      </strong>
 
-</div>
+      <small>
+        Hubungkan ke sistem HPC
+      </small>
 
-</div>
+      <p>
+        Masuk ke sistem dan pastikan
+        lingkungan kerja tersedia.
+      </p>
 
+    </div>
 
-<div class="hpc-overview-quick">
 
-<div class="hpc-overview-quick-main">
+    <div class="hpc-overview-flow-line"></div>
 
-<span>QUICK START</span>
 
-<h2>
-Already familiar with Linux?
-</h2>
+    <!-- 02 -->
 
-<p>
-Lewati materi dasar dan langsung gunakan Script Library
-untuk menyiapkan job, kemudian lanjutkan ke Running Calculations.
-</p>
+    <div class="hpc-overview-flow-step">
 
-</div>
+      <span>
+        02
+      </span>
 
-<div class="hpc-overview-quick-actions">
+      <strong>
+        Persiapan
+      </strong>
 
-<a href="script-library/">
-Script Library
-</a>
+      <small>
+        Input dan software
+      </small>
 
-<a href="running-calculations/">
-Running Calculations
-</a>
+      <p>
+        Siapkan struktur, input,
+        software, dan dependency.
+      </p>
 
-</div>
+    </div>
 
-</div>
 
+    <div class="hpc-overview-flow-line"></div>
 
-<div class="hpc-overview-footer">
 
-<div>
+    <!-- 03 -->
 
-<span>RESEARCH CONNECTION</span>
+    <div class="hpc-overview-flow-step">
 
-<h2>
-Computational Environment → Research Cases
-</h2>
+      <span>
+        03
+      </span>
 
-<p>
-Environment menyediakan tools dan workflow komputasi.
-Research Cases menunjukkan bagaimana workflow tersebut
-digunakan untuk menjawab pertanyaan ilmiah.
-</p>
+      <strong>
+        Submit
+      </strong>
 
-</div>
+      <small>
+        Kirim job ke scheduler
+      </small>
 
-<a href="../../hands-on-project/">
-Explore Research Cases →
-</a>
+      <p>
+        Tentukan resource dan
+        kirim calculation sebagai job.
+      </p>
 
-</div>
+    </div>
+
+
+    <div class="hpc-overview-flow-line"></div>
+
+
+    <!-- 04 -->
+
+    <div class="hpc-overview-flow-step">
+
+      <span>
+        04
+      </span>
+
+      <strong>
+        Monitoring
+      </strong>
+
+      <small>
+        Pantau status job
+      </small>
+
+      <p>
+        Periksa status job dan
+        pastikan calculation berjalan.
+      </p>
+
+    </div>
+
+
+    <div class="hpc-overview-flow-line"></div>
+
+
+    <!-- 05 -->
+
+    <div class="hpc-overview-flow-step">
+
+      <span>
+        05
+      </span>
+
+      <strong>
+        Analisis
+      </strong>
+
+      <small>
+        Interpretasikan hasil
+      </small>
+
+      <p>
+        Periksa output dan gunakan
+        hasil untuk menjawab pertanyaan ilmiah.
+      </p>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       MAHAMERU BRIN
+       ===================================================== -->
+
+  <section class="hpc-overview-mahameru">
+
+    <div class="hpc-overview-mahameru-label">
+      HPC WORKSHOP
+    </div>
+
+    <h2>
+      Bekerja pada HPC Mahameru BRIN
+    </h2>
+
+    <p>
+      Dalam workshop ini, lingkungan HPC digunakan sebagai
+      tempat menjalankan calculation yang membutuhkan sumber
+      daya komputasi lebih besar daripada komputer pribadi.
+      Peserta akan berinteraksi dengan sistem melalui terminal,
+      mengelola file dan software, kemudian mengirim calculation
+      ke resource komputasi yang tersedia.
+    </p>
+
+    <p>
+      Fokus utama bukan hanya membuat calculation berjalan,
+      tetapi memahami seluruh workflow. Peserta perlu mengetahui
+      dari mana input berasal, software apa yang digunakan,
+      resource apa yang diperlukan, bagaimana job dijalankan,
+      dan di mana hasil calculation tersimpan.
+    </p>
+
+    <p>
+      Prinsip ini penting ketika workflow dikembangkan menjadi
+      penelitian yang lebih besar. Workflow yang terstruktur
+      membuat proses komputasi lebih mudah diperiksa, diulang,
+      didokumentasikan, dan dikembangkan.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       QUICK START
+       ===================================================== -->
+
+  <section class="hpc-overview-quick">
+
+    <div class="hpc-overview-quick-main">
+
+      <span>
+        MULAI CEPAT
+      </span>
+
+      <h2>
+        Sudah terbiasa menggunakan Linux?
+      </h2>
+
+      <p>
+        Jika Anda sudah memahami command dasar Linux,
+        tidak perlu mengulang seluruh materi dari awal.
+        Gunakan Script Library untuk melihat contoh job script,
+        kemudian lanjutkan ke Running Calculations untuk
+        memahami proses submission dan monitoring.
+      </p>
+
+      <p>
+        Jika Anda belum terbiasa dengan HPC, tetap disarankan
+        mengikuti urutan materi dari Akses & Linux agar setiap
+        tahapan workflow dapat dipahami dengan baik.
+      </p>
+
+    </div>
+
+
+    <div class="hpc-overview-quick-actions">
+
+      <a href="script-library/">
+        Buka Script Library
+      </a>
+
+      <a href="running-calculations/">
+        Pelajari Running Calculations
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BEFORE RESEARCH
+       ===================================================== -->
+
+  <section class="hpc-overview-check">
+
+    <div class="hpc-overview-check-label">
+      SEBELUM MASUK KE SIMULASI
+    </div>
+
+    <h2>
+      Pastikan Anda sudah memahami dasar berikut
+    </h2>
+
+    <p>
+      Sebelum menjalankan research case, pastikan Anda sudah
+      dapat mengakses sistem HPC, berpindah directory, membuat
+      dan membaca file, memeriksa software, serta memahami
+      konsep dasar job submission.
+    </p>
+
+    <div class="hpc-overview-check-list">
+
+      <div>
+        <span>✓</span>
+        <p>
+          Dapat mengakses HPC melalui terminal atau SSH.
+        </p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>
+          Dapat memahami home directory dan struktur filesystem.
+        </p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>
+          Dapat menggunakan command Linux dasar.
+        </p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>
+          Dapat memeriksa dan menyiapkan software environment.
+        </p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>
+          Memahami konsep dasar job, scheduler, dan compute resource.
+        </p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>
+          Mengetahui cara menemukan output dan memeriksa hasil calculation.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       RESEARCH CONNECTION
+       ===================================================== -->
+
+  <section class="hpc-overview-footer">
+
+    <div>
+
+      <span>
+        HUBUNGAN DENGAN PENELITIAN
+      </span>
+
+      <h2>
+        Computational Environment → Research Cases
+      </h2>
+
+      <p>
+        Computational Environment menyediakan fondasi teknis
+        untuk menjalankan workflow komputasi. Peserta belajar
+        bagaimana sistem diakses, software disiapkan, calculation
+        dijalankan, dan output diperiksa.
+      </p>
+
+      <p>
+        Setelah fondasi tersebut dikuasai, peserta dapat berpindah
+        ke Research Cases untuk menerapkan workflow pada sistem
+        material dan permasalahan ilmiah yang lebih spesifik.
+      </p>
+
+    </div>
+
+
+    <a href="../../hands-on-project/">
+      Jelajahi Research Cases →
+    </a>
+
+  </section>
+
 
 </div>
