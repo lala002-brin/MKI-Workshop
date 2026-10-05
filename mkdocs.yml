@@ -81,7 +81,7 @@ plugins:
 nav:
 
   - Home: index.md
-
+  - 📝 Pretest: hands-on-project/day-1/pretest.md
   - Start Here:
       - Workshop Guide: start-here/workshop-guide.md
       - Computational Workflow: start-here/workflow.md
@@ -190,7 +190,7 @@ extra_css:
   - stylesheets/home.css
   - stylesheets/extra-v2.css
   - stylesheets/file-editor.css
-
+  - stylesheets/pretest.css
 extra_javascript:
 
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
@@ -205,4 +205,5 @@ extra_javascript:
   - javascripts/worksheet.js
   - javascripts/lifec-viewer.js
   - javascripts/session1.js  
+  - javascripts/pretest.js 
   - javascripts/md-analysis-worksheet.js
