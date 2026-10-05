@@ -1,0 +1,1520 @@
+/* =========================================================
+   MKI WORKSHOP
+   POSTEST CSS
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.posttest-page {
+
+  --posttest-primary: #173f5f;
+  --posttest-primary-dark: #102f47;
+  --posttest-accent: #2f80ed;
+
+  --posttest-bg: #f5f7fa;
+  --posttest-card: #ffffff;
+
+  --posttest-text: #17212b;
+  --posttest-muted: #667085;
+
+  --posttest-border: #e4e7ec;
+
+  --posttest-success: #16803c;
+  --posttest-danger: #d92d20;
+
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+
+  color: var(--posttest-text);
+
+  box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   BOX SIZING
+   ========================================================= */
+
+.posttest-page *,
+.posttest-page *::before,
+.posttest-page *::after {
+
+  box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.posttest-hero {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 38px 40px;
+
+  margin-bottom: 22px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #173f5f 0%,
+      #205b7a 55%,
+      #2f80ed 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 14px 35px rgba(16, 47, 71, 0.16);
+
+}
+
+
+/* HERO CONTENT */
+
+.posttest-hero-content {
+
+  min-width: 0;
+
+}
+
+
+/* EYEBROW */
+
+.posttest-eyebrow {
+
+  margin-bottom: 10px;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.82;
+
+}
+
+
+/* HERO TITLE */
+
+.posttest-hero h1 {
+
+  margin: 0;
+
+  max-width: 760px;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    1.65rem,
+    3vw,
+    2.35rem
+  );
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+}
+
+
+/* HERO DESCRIPTION */
+
+.posttest-description {
+
+  max-width: 720px;
+
+  margin: 14px 0 0;
+
+  color: rgba(255,255,255,0.86);
+
+  font-size: 0.98rem;
+
+  line-height: 1.7;
+
+}
+
+
+/* NUMBER 25 */
+
+.posttest-count {
+
+  flex: 0 0 100px;
+
+  width: 100px;
+
+  height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.12);
+
+  border: 1px solid rgba(255,255,255,0.28);
+
+  backdrop-filter: blur(8px);
+
+}
+
+
+.posttest-count-number {
+
+  font-size: 2rem;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-count-label {
+
+  margin-top: 6px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.12em;
+
+  font-weight: 700;
+
+  opacity: 0.8;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.posttest-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+}
+
+
+/* BUTTON */
+
+.posttest-btn {
+
+  min-height: 42px;
+
+  padding: 10px 17px;
+
+  border: 1px solid transparent;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 0.88rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+
+}
+
+
+.posttest-btn:hover {
+
+  transform: translateY(-1px);
+
+}
+
+
+.posttest-btn:active {
+
+  transform: translateY(0);
+
+}
+
+
+/* SAVE */
+
+.posttest-btn-save {
+
+  background: #ffffff;
+
+  color: var(--posttest-primary);
+
+  border-color: var(--posttest-border);
+
+}
+
+
+.posttest-btn-save:hover {
+
+  box-shadow:
+    0 5px 16px rgba(16, 24, 40, 0.08);
+
+}
+
+
+/* RESET */
+
+.posttest-btn-reset {
+
+  background: #ffffff;
+
+  color: var(--posttest-danger);
+
+  border-color: #f0d5d2;
+
+}
+
+
+/* SUBMIT */
+
+.posttest-btn-submit {
+
+  background: var(--posttest-primary);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 14px rgba(23, 63, 95, 0.18);
+
+}
+
+
+.posttest-btn-submit:hover {
+
+  background: var(--posttest-primary-dark);
+
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.posttest-status {
+
+  min-height: 22px;
+
+  margin-bottom: 18px;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.84rem;
+
+  text-align: right;
+
+}
+
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.posttest-card {
+
+  margin-bottom: 20px;
+
+  padding: 25px;
+
+  background: var(--posttest-card);
+
+  border: 1px solid var(--posttest-border);
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 4px 16px rgba(16, 24, 40, 0.04);
+
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.posttest-section-header {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+
+}
+
+
+.posttest-section-number {
+
+  flex: 0 0 38px;
+
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eaf2f8;
+
+  color: var(--posttest-primary);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-section-title {
+
+  margin: 0;
+
+  font-size: 1.15rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-section-subtitle {
+
+  margin: 5px 0 0;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.84rem;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   PARTICIPANT FORM
+   ========================================================= */
+
+.posttest-participant-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+}
+
+
+.posttest-field {
+
+  min-width: 0;
+
+}
+
+
+.posttest-field label {
+
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #344054;
+
+  font-size: 0.83rem;
+
+  font-weight: 700;
+
+}
+
+
+.posttest-field input,
+.posttest-field select {
+
+  width: 100%;
+
+  height: 43px;
+
+  padding: 9px 12px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: var(--posttest-text);
+
+  font-family: inherit;
+
+  font-size: 0.88rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+
+.posttest-field input:focus,
+.posttest-field select:focus {
+
+  border-color: var(--posttest-accent);
+
+  box-shadow:
+    0 0 0 3px rgba(47,128,237,0.10);
+
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.posttest-progress-card {
+
+  margin-bottom: 20px;
+
+  padding: 20px 23px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--posttest-border);
+
+  border-radius: 15px;
+
+}
+
+
+.posttest-progress-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 11px;
+
+}
+
+
+.posttest-progress-title {
+
+  font-size: 0.88rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-progress-percent {
+
+  margin-top: 3px;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.76rem;
+
+}
+
+
+.posttest-progress-value {
+
+  color: var(--posttest-primary);
+
+  font-size: 0.82rem;
+
+  white-space: nowrap;
+
+}
+
+
+.posttest-progress-track {
+
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background: #edf0f3;
+
+}
+
+
+.posttest-progress-fill {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #173f5f,
+      #2f80ed
+    );
+
+  transition:
+    width 0.25s ease;
+
+}
+
+
+/* =========================================================
+   INSTRUCTION
+   ========================================================= */
+
+.posttest-instruction {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 25px;
+
+  padding: 17px 19px;
+
+  border: 1px solid #d9e7f3;
+
+  border-radius: 13px;
+
+  background: #f4f9fc;
+
+}
+
+
+.posttest-instruction-icon {
+
+  flex: 0 0 28px;
+
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--posttest-primary);
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-instruction strong {
+
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--posttest-primary);
+
+  font-size: 0.88rem;
+
+}
+
+
+.posttest-instruction p {
+
+  margin: 0;
+
+  color: #52606d;
+
+  font-size: 0.82rem;
+
+  line-height: 1.65;
+
+}
+
+
+/* =========================================================
+   TOPIC
+   ========================================================= */
+
+.posttest-topic {
+
+  margin-bottom: 28px;
+
+}
+
+
+.posttest-topic-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 13px;
+
+  padding: 3px 2px 10px;
+
+  border-bottom: 1px solid var(--posttest-border);
+
+}
+
+
+.posttest-topic-number {
+
+  flex: 0 0 34px;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--posttest-primary);
+
+  color: #ffffff;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-topic-header h2 {
+
+  margin: 0;
+
+  font-size: 1.15rem;
+
+  font-weight: 800;
+
+}
+
+
+.posttest-topic-header p {
+
+  margin: 3px 0 0;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.8rem;
+
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+.posttest-question {
+
+  margin-bottom: 15px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--posttest-border);
+
+  border-radius: 14px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+
+.posttest-question:hover {
+
+  border-color: #cfd8e3;
+
+  box-shadow:
+    0 4px 14px rgba(16, 24, 40, 0.04);
+
+}
+
+
+/* QUESTION HEADER */
+
+.posttest-question-header {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.posttest-question-number {
+
+  flex: 0 0 auto;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: #edf4f8;
+
+  color: var(--posttest-primary);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+}
+
+
+.posttest-question-text {
+
+  padding-top: 2px;
+
+  color: #1d2939;
+
+  font-size: 0.91rem;
+
+  line-height: 1.65;
+
+  font-weight: 650;
+
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.posttest-options {
+
+  display: grid;
+
+  gap: 8px;
+
+}
+
+
+.posttest-option {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.16s ease,
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+
+}
+
+
+.posttest-option:hover {
+
+  border-color: #b8c8d8;
+
+  background: #f8fafc;
+
+}
+
+
+.posttest-option input {
+
+  flex: 0 0 auto;
+
+  width: 16px;
+
+  height: 16px;
+
+  margin: 2px 0 0;
+
+  accent-color: var(--posttest-primary);
+
+  cursor: pointer;
+
+}
+
+
+.posttest-option span {
+
+  flex: 1;
+
+  color: #344054;
+
+  font-size: 0.84rem;
+
+  line-height: 1.5;
+
+}
+
+
+/* SELECTED */
+
+.posttest-option:has(input:checked) {
+
+  border-color: #8bb8dd;
+
+  background: #f1f7fb;
+
+  box-shadow:
+    0 0 0 2px rgba(47,128,237,0.05);
+
+}
+
+
+.posttest-option:has(input:checked) span {
+
+  color: var(--posttest-primary);
+
+  font-weight: 650;
+
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.posttest-result {
+
+  margin-top: 35px;
+
+  margin-bottom: 25px;
+
+  padding: 27px;
+
+  border: 1px solid #d9e7f3;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8fbfd,
+      #eef6fb
+    );
+
+}
+
+
+.posttest-result-kicker {
+
+  margin-bottom: 4px;
+
+  color: var(--posttest-accent);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+}
+
+
+.posttest-result h2 {
+
+  margin: 0;
+
+  color: var(--posttest-primary);
+
+  font-size: 1.35rem;
+
+}
+
+
+/* SCORE */
+
+.posttest-result-score {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 50px;
+
+  margin: 25px 0;
+
+  padding: 22px;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--posttest-border);
+
+}
+
+
+.posttest-score-main {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.posttest-score-main span,
+.posttest-score-percent span {
+
+  color: var(--posttest-muted);
+
+  font-size: 0.75rem;
+
+}
+
+
+.posttest-score-main strong {
+
+  margin-top: 4px;
+
+  color: var(--posttest-primary);
+
+  font-size: 2rem;
+
+}
+
+
+.posttest-score-percent {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.posttest-score-percent strong {
+
+  color: var(--posttest-accent);
+
+  font-size: 2rem;
+
+}
+
+
+/* STAT */
+
+.posttest-result-stat {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+}
+
+
+.posttest-result-stat > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 80px;
+
+  padding: 12px;
+
+  border: 1px solid var(--posttest-border);
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+}
+
+
+.posttest-result-stat span {
+
+  color: var(--posttest-muted);
+
+  font-size: 0.73rem;
+
+}
+
+
+.posttest-result-stat strong {
+
+  margin-top: 4px;
+
+  color: var(--posttest-primary);
+
+  font-size: 1.35rem;
+
+}
+
+
+/* RESULT MESSAGE */
+
+.posttest-result-message {
+
+  margin-top: 15px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.72);
+
+}
+
+
+.posttest-result-message strong {
+
+  color: var(--posttest-primary);
+
+  font-size: 0.85rem;
+
+}
+
+
+.posttest-result-message p {
+
+  margin: 4px 0 0;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   IMPORTANT
+   ========================================================= */
+
+.posttest-important {
+
+  margin-top: 25px;
+
+  padding: 17px 19px;
+
+  border-left: 4px solid var(--posttest-primary);
+
+  border-radius: 9px;
+
+  background: #f7f9fb;
+
+}
+
+
+.posttest-important strong {
+
+  color: var(--posttest-primary);
+
+  font-size: 0.84rem;
+
+}
+
+
+.posttest-important p {
+
+  margin: 5px 0 0;
+
+  color: var(--posttest-muted);
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   MKDOCS MATERIAL COMPATIBILITY
+   ========================================================= */
+
+.md-content .posttest-page h1,
+.md-content .posttest-page h2 {
+
+  letter-spacing: normal;
+
+}
+
+
+.md-content .posttest-page p {
+
+  margin-top: 0;
+
+}
+
+
+.md-content .posttest-page input,
+.md-content .posttest-page select,
+.md-content .posttest-page button {
+
+  font: inherit;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .posttest-page {
+
+    padding:
+      12px 10px 40px;
+
+  }
+
+
+  .posttest-hero {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 27px 23px;
+
+    border-radius: 17px;
+
+  }
+
+
+  .posttest-count {
+
+    width: 70px;
+
+    height: 70px;
+
+    flex-basis: 70px;
+
+    align-self: flex-end;
+
+  }
+
+
+  .posttest-count-number {
+
+    font-size: 1.4rem;
+
+  }
+
+
+  .posttest-eyebrow {
+
+    font-size: 0.62rem;
+
+  }
+
+
+  .posttest-description {
+
+    font-size: 0.87rem;
+
+  }
+
+
+  .posttest-actions {
+
+    justify-content: stretch;
+
+  }
+
+
+  .posttest-btn {
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+  }
+
+
+  .posttest-status {
+
+    text-align: left;
+
+  }
+
+
+  .posttest-card {
+
+    padding: 18px;
+
+  }
+
+
+  .posttest-participant-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+  }
+
+
+  .posttest-progress-card {
+
+    padding: 17px;
+
+  }
+
+
+  .posttest-question {
+
+    padding: 15px;
+
+  }
+
+
+  .posttest-question-header {
+
+    flex-direction: column;
+
+    gap: 7px;
+
+  }
+
+
+  .posttest-question-number {
+
+    align-self: flex-start;
+
+  }
+
+
+  .posttest-question-text {
+
+    font-size: 0.87rem;
+
+  }
+
+
+  .posttest-option {
+
+    padding: 10px;
+
+  }
+
+
+  .posttest-option span {
+
+    font-size: 0.81rem;
+
+  }
+
+
+  .posttest-result {
+
+    padding: 20px;
+
+  }
+
+
+  .posttest-result-score {
+
+    gap: 25px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .posttest-page {
+
+    padding-left: 6px;
+
+    padding-right: 6px;
+
+  }
+
+
+  .posttest-hero {
+
+    padding: 23px 18px;
+
+  }
+
+
+  .posttest-hero h1 {
+
+    font-size: 1.45rem;
+
+  }
+
+
+  .posttest-actions {
+
+    flex-direction: column;
+
+  }
+
+
+  .posttest-btn {
+
+    width: 100%;
+
+  }
+
+
+  .posttest-section-header {
+
+    gap: 10px;
+
+  }
+
+
+  .posttest-topic-header {
+
+    align-items: flex-start;
+
+  }
+
+
+  .posttest-topic-header h2 {
+
+    font-size: 1rem;
+
+  }
+
+
+  .posttest-result-score {
+
+    flex-direction: column;
+
+    gap: 16px;
+
+  }
+
+
+  .posttest-result-stat {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .posttest-instruction {
+
+    padding: 14px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .posttest-page * {
+
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+  }
+
+}
