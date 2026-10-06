@@ -99,6 +99,7 @@ nav:
 
       - Quantum Simulation:
           - Overview: quantum-simulation/index.md
+          - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
           - Modul Workshop DFT QE_2: hands-on-project/day-1/Materi workshop QE CO Pt(100).pdf
           - Theory:
               - Theory Overview: quantum-simulation/theory/index.md
