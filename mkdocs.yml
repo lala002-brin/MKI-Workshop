@@ -123,23 +123,16 @@ nav:
       - Research Overview: hands-on-project/index.md
 
       - Day 1:
-          - Overview: hands-on-project/day-1/index.md
-          - Sesi 1 · dari First Principles ke Molecular Dynamics: hands-on-project/day-1/foundations.md
-          - Sesi 3 · Membangun Input dan Menjalankan DCDFTBMD: hands-on-project/day-1/dftbmd-input.md
-          - Sesi 4 · Analisis Lintasan dan Antarmuka: hands-on-project/day-1/sesi-4-analisis-lintasan-antarmuka.md
-          - Sesi 5 · Pemodelan Material dengan MACE: hands-on-project/day-1/sesi-5-pemodelan-material-mace.md
-          - Sesi 6 · Hasil Riset Terbit Sakti Lab: hands-on-project/day-1/sesi-6-hasil-riset-terbit-sakti-lab.md
-          - Bahan Pendalaman: hands-on-project/day-1/bahan-pendalaman.md
           - Modul Workshop DCDFTBMD MACE: hands-on-project/day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf
           - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
       - Day 2:
           - Overview: hands-on-project/day-2/index.md
           - Preparasi · Persiapan Peserta: hands-on-project/persiapan-peserta.md
           - Sesi 1 · Dari first principles ke molecular dynamics : hands-on-project/day-2/sesi-1-first-principles.md
-          - Sesi 4 · Analisis Lintasan dan Antarmuka: hands-on-project/day-1/sesi-4-analisis-lintasan-antarmuka.md
-          - Sesi 5 · Pemodelan Material dengan MACE: hands-on-project/day-1/sesi-5-pemodelan-material-mace.md
-          - Sesi 6 · Hasil Riset Terbit Sakti Lab: hands-on-project/day-1/sesi-6-hasil-riset-terbit-sakti-lab.md
-          - Bahan Pendalaman: hands-on-project/day-1/bahan-pendalaman.md
+          - Sesi 3 · Membangun input dan menjalankan DFTB+ : hands-on-project/day-2/sesi-3-menjalankan-dftb.md
+          - Sesi 4 · Analisis Lintasan dan Antarmuka : hands-on-project/day-2/sesi-4-analisis-lintasan-dan-antarmuka.md
+          - Sesi 5-6 · Pemodelan Material dengan MACE dan diskusi : hands-on-project/day-2/sesi-5-mace.md
+          - Bahan Pendalaman: hands-on-project/day-2/bahan-pendalaman.md
           - Modul Workshop DCDFTBMD MACE: hands-on-project/day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf
           - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
   - Research Cases:
@@ -202,21 +195,22 @@ extra_css:
   - stylesheets/script-lib.css
   - stylesheets/w_day2.css
   - stylesheets/dftb-workshop.css
+
 extra_javascript:
 
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/mermaid/dist/mermaid.min.js
-  - assets/javascripts/chat.js
   - javascripts/home-parallax.js
-  - javascripts/features-reveal.js 
-  - javascripts/workflow-flow.js  
+  - javascripts/features-reveal.js
+  - javascripts/workflow-flow.js
   - javascripts/research-reveal.js
   - javascripts/scroll-reveal.js
   - javascripts/file-editor.js
   - javascripts/worksheet.js
   - javascripts/lifec-viewer.js
-  - javascripts/session1.js  
-  - javascripts/pretest.js 
+  - javascripts/session1.js
+  - javascripts/pretest.js
   - javascripts/md-analysis-worksheet.js
-  - javascripts/dftb-workshop.css 
-  - javascripts/scipt-library.js 
+  - javascripts/scipt-library.js
+  
+  - assets/javascripts/chat.js
