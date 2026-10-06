@@ -1,0 +1,4198 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Integrating First-Principles, HPC & AI for Materials Discovery Computational materials science workshop by MKI and BRIN.
+">
+      
+      
+        <meta name="author" content="BRIN - ITB - Masyarakat Komputasi Indonesia
+">
+      
+      
+      
+        <link rel="prev" href="../graphene/analysis/">
+      
+      
+        <link rel="next" href="../graphene-ionic-liquid-interface/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/mki-logo.jpeg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Overview - MKI Computational Materials Science Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/home.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra-v2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/file-editor.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pretest.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/script-lib.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#litfsi-emim-tfsi-ionic-liquid-electrolyte-transport" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MKI Computational Materials Science Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../day-1/pretest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📝 Pretest
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start-here/workshop-guide/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../environment/" class="md-tabs__link">
+          
+  
+  
+  Computational Environment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../quantum-simulation/" class="md-tabs__link">
+          
+  
+  
+  Simulation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Hands-on Project
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../graphene/" class="md-tabs__link">
+          
+  
+  
+  Research Cases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    MKI Computational Materials Science Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/pretest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Pretest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computational Environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/access-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access & Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/software-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/running-calculations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/script-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/hpc-practical-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Practical Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kohn-Sham Equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/setup/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCF Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atomistic Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atomistic Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 1 · dari First Principles ke Molecular Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/dftbmd-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 3 · Membangun Input dan Menjalankan DCDFTBMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-4-analisis-lintasan-antarmuka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 4 · Analisis Lintasan dan Antarmuka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-5-pemodelan-material-mace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 5 · Pemodelan Material dengan MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-6-hasil-riset-terbit-sakti-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 6 · Hasil Riset Terbit Sakti Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/bahan-pendalaman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bahan Pendalaman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modul Workshop DCDFTBMD MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/Komputasi%20Density%20Functional%20Theory%20%28DFT%29_QE.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modul Workshop DFT QE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Electronic Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/system-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/hpc-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ionic-liquid-electrolyte-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔋 Ionic Liquid Electrolyte System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Research Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-dc-dftb-md" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚛️ Why DC-DFTB-MD?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Simulation Objectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Simulation Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-analyze-lithium-ion-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Analyze Lithium Ion Mobility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-understand-ion-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Understand Ion Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-calculate-transport-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Calculate Transport Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-evaluate-electrolyte-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Evaluate Electrolyte Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 Research Pipeline Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Simulation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-dftb-md-simulation-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ DC-DFTB-MD Simulation Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ DC-DFTB-MD Simulation Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-01-ionic-liquid-structure-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 01 — Ionic Liquid Structure Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-02-electrolyte-system-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 02 — Electrolyte System Construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-03-dc-dftb-md-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 03 — DC-DFTB-MD Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-04-transport-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 04 — Transport Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Simulation Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Computational Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Simulation Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Download Simulation Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene–Ionic Liquid Interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene–Ionic Liquid Interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene-ionic-liquid-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Battery Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../battery-electrolyte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ionic-liquid-electrolyte-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔋 Ionic Liquid Electrolyte System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Research Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-dc-dftb-md" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚛️ Why DC-DFTB-MD?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Simulation Objectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Simulation Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-analyze-lithium-ion-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Analyze Lithium Ion Mobility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-understand-ion-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Understand Ion Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-calculate-transport-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Calculate Transport Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-evaluate-electrolyte-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Evaluate Electrolyte Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 Research Pipeline Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Simulation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-dftb-md-simulation-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ DC-DFTB-MD Simulation Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ DC-DFTB-MD Simulation Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-01-ionic-liquid-structure-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 01 — Ionic Liquid Structure Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-02-electrolyte-system-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 02 — Electrolyte System Construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-03-dc-dftb-md-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 03 — DC-DFTB-MD Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-04-transport-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 04 — Transport Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Simulation Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Computational Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Simulation Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Download Simulation Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../graphene/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Research Cases
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    LiTFSI–EMIM/TFSI Electrolyte
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><span class="section-label">COMPUTATIONAL MATERIALS CASE STUDY</span></p>
+<h1 id="litfsi-emim-tfsi-ionic-liquid-electrolyte-transport">🔋 LiTFSI-EMIM TFSI Ionic Liquid Electrolyte Transport</h1>
+<div class="badge-container">
+
+<span class="badge">DC-DFTB-MD</span>
+<span class="badge">MOLECULAR DYNAMICS</span>
+<span class="badge">PACKMOL</span>
+<span class="badge">HPC</span>
+<span class="badge">TRANSPORT ANALYSIS</span>
+
+</div>
+
+<div class="hero-description">
+
+Atomistic simulation of LiTFSI-EMIM TFSI ionic liquid electrolyte
+to investigate lithium ion mobility, molecular organization,
+and transport properties using DC-DFTB-MD.
+
+</div>
+
+<p><span class="section-label">CASE OVERVIEW</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">Case Overview</p>
+<p>This hands-on case demonstrates the complete workflow
+of lithium-based ionic liquid electrolyte simulation.</p>
+<p>LiTFSI salt dissolved in EMIM-TFSI ionic liquid is used
+as a model electrolyte system to study ion transport behavior
+at the atomic scale.</p>
+<p>The workflow combines molecular structure preparation,
+PACKMOL system generation, DC-DFTB-MD simulation,
+HPC execution, and trajectory-based transport analysis.</p>
+</div>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Material System</strong></p>
+<p><strong>LiTFSI Salt</strong></p>
+<p>Lithium salt component
+responsible for lithium ion transport.</p>
+<p><strong>EMIM-TFSI Ionic Liquid</strong></p>
+<p>Electrolyte environment
+for ion interaction and mobility study.</p>
+</li>
+<li>
+<p><strong>🧮 Computational Method</strong></p>
+<p><strong>DC-DFTB-MD</strong></p>
+<p>Quantum-based molecular dynamics
+for atomic-scale simulation.</p>
+<p><strong>Transport Analysis</strong></p>
+<p>MSD, diffusion coefficient,
+and RDF calculation.</p>
+</li>
+<li>
+<p><strong>💻 Simulation Tools</strong></p>
+<p><strong>PACKMOL</strong></p>
+<p>Initial electrolyte structure generation.</p>
+<p><strong>DC-DFTB-MD</strong></p>
+<p>Molecular dynamics simulation.</p>
+<p><strong>HPC Environment</strong></p>
+<p>Large-scale simulation execution.</p>
+</li>
+<li>
+<p><strong>📈 Analysis</strong></p>
+<p><strong>Structural</strong></p>
+<p>RDF and ion coordination analysis.</p>
+<p><strong>Dynamic</strong></p>
+<p>MSD and lithium ion diffusion analysis.</p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">SCIENTIFIC BACKGROUND</span></p>
+<h2 id="ionic-liquid-electrolyte-system">🔋 Ionic Liquid Electrolyte System</h2>
+<p>Lithium-based electrolytes play an important role in energy storage
+systems, especially lithium-ion batteries. The electrolyte provides
+a medium for lithium ion transport between electrodes during battery
+operation.</p>
+<p>Ionic liquids have attracted attention as alternative electrolyte
+materials because they exhibit low volatility, high thermal stability,
+and tunable ionic properties.</p>
+<p>In this case study, a LiTFSI salt dissolved in an EMIM-TFSI ionic
+liquid environment is investigated using DC-DFTB-MD simulation.
+The simulation focuses on understanding lithium ion movement,
+ionic coordination, and transport behavior at the atomic scale.</p>
+<p><span class="section-label">SCIENTIFIC MOTIVATION</span></p>
+<p><span class="section-label">RESEARCH QUESTIONS</span></p>
+<h2 id="research-questions">❓ Research Questions</h2>
+<p>This case study addresses the following questions:</p>
+<ol>
+<li>
+<p>How do lithium ions move within the EMIM-TFSI ionic liquid environment?</p>
+</li>
+<li>
+<p>How do lithium ions interact with surrounding TFSI anions and
+   ionic liquid components?</p>
+</li>
+<li>
+<p>How can molecular dynamics simulation reveal transport properties
+   such as diffusion behavior?</p>
+</li>
+</ol>
+<p><span class="section-label">COMPUTATIONAL APPROACH</span></p>
+<h2 id="why-dc-dftb-md">⚛️ Why DC-DFTB-MD?</h2>
+<p>Molecular dynamics simulations require an appropriate computational
+method to describe atomic interactions. Classical molecular dynamics
+is efficient for large systems, but it uses predefined interaction
+parameters.</p>
+<p>DC-DFTB-MD provides a quantum-based approach that can describe
+electronic interactions while maintaining computational efficiency
+for larger atomistic systems.</p>
+<p>For the LiTFSI-EMIM TFSI electrolyte system, DC-DFTB-MD is used to
+investigate:</p>
+<ul>
+<li>Lithium ion movement</li>
+<li>Ion coordination behavior</li>
+<li>Molecular interaction within electrolyte environment</li>
+<li>Structural evolution during simulation</li>
+</ul>
+<p>The method provides a connection between atomic-scale simulation
+and measurable electrolyte transport properties.</p>
+<p><span class="section-label">SIMULATION OBJECTIVES</span></p>
+<h2 id="simulation-objectives">🎯 Simulation Objectives</h2>
+<p>The main objectives of this simulation case are:</p>
+<h3 id="1-analyze-lithium-ion-mobility">1. Analyze Lithium Ion Mobility</h3>
+<p>Evaluate lithium ion movement through the ionic liquid electrolyte
+environment using trajectory analysis.</p>
+<h3 id="2-understand-ion-coordination">2. Understand Ion Coordination</h3>
+<p>Investigate interactions between Li+ ions and surrounding TFSI-
+anions through structural analysis.</p>
+<h3 id="3-calculate-transport-properties">3. Calculate Transport Properties</h3>
+<p>Extract diffusion-related properties from molecular dynamics
+trajectory data.</p>
+<h3 id="4-evaluate-electrolyte-structure">4. Evaluate Electrolyte Structure</h3>
+<p>Understand the relationship between molecular organization and
+ion transport behavior.</p>
+<p><span class="section-label">LEARNING GOALS</span></p>
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
+<p>After completing this case, participants will understand the complete
+workflow of ionic liquid electrolyte simulation using DC-DFTB-MD.</p>
+<p>The participants will learn how to:</p>
+<table>
+<thead>
+<tr>
+<th>Objective</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prepare</td>
+<td>Build LiTFSI-EMIM TFSI electrolyte simulation systems</td>
+</tr>
+<tr>
+<td>Construct</td>
+<td>Generate molecular configurations using PACKMOL</td>
+</tr>
+<tr>
+<td>Simulate</td>
+<td>Perform DC-DFTB-MD molecular dynamics simulation</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>Extract transport properties from trajectory data</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">MODEL DESCRIPTION</span></p>
+<h2 id="system-overview">🧩 System Overview</h2>
+<p>The simulated system represents a lithium-based ionic liquid
+electrolyte environment consisting of LiTFSI salt dissolved
+in EMIM-TFSI ionic liquid.</p>
+<p>The model consists of three main components:</p>
+<pre class="mermaid"><code>flowchart TB
+
+A["Lithium Salt&lt;br&gt;&lt;br&gt;Li+ ions&lt;br&gt;TFSI- anions"]
+
+B["Ionic Liquid Environment&lt;br&gt;&lt;br&gt;EMIM+ cations&lt;br&gt;TFSI- anions"]
+
+C["Electrolyte System&lt;br&gt;&lt;br&gt;Ion interaction&lt;br&gt;Transport behavior"]
+
+
+A --&gt; C
+B --&gt; C
+
+
+classDef salt fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef liquid fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef system fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+
+
+class A salt;
+class B liquid;
+class C system;</code></pre>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Physical Role</th>
+<th>Simulation Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Li+ Ion</td>
+<td>Lithium charge carrier</td>
+<td>Determines lithium ion mobility</td>
+</tr>
+<tr>
+<td>TFSI- Anion</td>
+<td>Counter ion species</td>
+<td>Controls ionic interaction and coordination</td>
+</tr>
+<tr>
+<td>EMIM+ Cation</td>
+<td>Ionic liquid component</td>
+<td>Provides electrolyte environment</td>
+</tr>
+<tr>
+<td>Liquid Electrolyte System</td>
+<td>Bulk simulation environment</td>
+<td>Represents battery electrolyte behavior</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">SIMULATION DESIGN</span></p>
+<p><span class="section-label">RESEARCH PIPELINE</span></p>
+<h2 id="research-pipeline-overview">🧭 Research Pipeline Overview</h2>
+<p>The research pipeline illustrates the transformation of molecular
+components into a complete atomistic simulation workflow for
+ionic liquid electrolyte transport analysis.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["LiTFSI + EMIM-TFSI&lt;br&gt;&lt;br&gt;Molecular Components"]
+
+B["PACKMOL&lt;br&gt;&lt;br&gt;Electrolyte Structure Generation"]
+
+C["DC-DFTB-MD&lt;br&gt;&lt;br&gt;Atomic Simulation"]
+
+D["Trajectory Data&lt;br&gt;&lt;br&gt;Atomic Movement"]
+
+E["Transport Analysis&lt;br&gt;&lt;br&gt;MSD, Diffusion, RDF"]
+
+F["Electrolyte Properties&lt;br&gt;&lt;br&gt;Ion Transport Behavior"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+E --&gt; F
+
+
+classDef material fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A material;
+class B structure;
+class C md;
+class D md;
+class E analysis;
+class F analysis;</code></pre>
+<h2 id="simulation-workflow">🚀 Simulation Workflow</h2>
+<p>The simulation workflow connects molecular preparation,<br />
+quantum-based molecular dynamics simulation, and transport<br />
+property analysis into a complete computational pipeline.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["01&lt;br&gt;MOLECULAR STRUCTURE&lt;br&gt;Preparation"]
+
+B["02&lt;br&gt;PACKMOL&lt;br&gt;Electrolyte Construction"]
+
+C["03&lt;br&gt;DC-DFTB-MD&lt;br&gt;Simulation"]
+
+D["04&lt;br&gt;HPC&lt;br&gt;Execution"]
+
+E["05&lt;br&gt;TRAJECTORY&lt;br&gt;Generation"]
+
+F["06&lt;br&gt;TRANSPORT&lt;br&gt;Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+E --&gt; F
+
+
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef hpc fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A structure;
+class B structure;
+class C md;
+class D hpc;
+class E md;
+class F analysis;</code></pre>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Main Activity</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Prepare LiTFSI and EMIM-TFSI molecular structures</td>
+<td>Molecular models</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Generate electrolyte configuration using PACKMOL</td>
+<td>Initial electrolyte system</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Perform DC-DFTB-MD simulation</td>
+<td>Atomic trajectory</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Execute simulation using HPC resources</td>
+<td>Simulation results</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Store atomic movement data</td>
+<td>Trajectory files</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Calculate transport properties</td>
+<td>Diffusion and structural information</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">COMPUTATIONAL METHOD</span></p>
+<p><span class="section-label">SIMULATION PROTOCOL</span></p>
+<h2 id="dc-dftb-md-simulation-procedure">⚙️ DC-DFTB-MD Simulation Procedure</h2>
+<p>The simulation is performed through several computational stages,
+starting from electrolyte structure preparation to transport
+property analysis.</p>
+<h3 id="stage-01-ionic-liquid-structure-preparation">Stage 01 — Ionic Liquid Structure Preparation</h3>
+<p><strong>Purpose</strong></p>
+<p>Prepare molecular structures of LiTFSI and EMIM-TFSI
+as initial components for electrolyte simulation.</p>
+<p><strong>Input</strong></p>
+<pre><code>LiTFSI molecular structure
+
++
+
+EMIM-TFSI molecular structure
+
++
+
+DC-DFTB-MD parameter files
+</code></pre>
+<p><strong>Computational Process</strong></p>
+<pre><code>Molecular components
+
+        ↓
+
+Geometry preparation
+
+        ↓
+
+Initial electrolyte structures
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>Prepared molecular structures
+</code></pre>
+<h3 id="stage-02-electrolyte-system-construction">Stage 02 — Electrolyte System Construction</h3>
+<p><strong>Purpose</strong></p>
+<p>Generate the initial LiTFSI-EMIM TFSI electrolyte configuration
+with proper molecular composition and spatial distribution
+before molecular dynamics simulation.</p>
+<p><strong>Input</strong></p>
+<pre><code>LiTFSI molecular structure
+
++
+
+EMIM-TFSI molecular structure
+
++
+
+Packmol input configuration
+</code></pre>
+<p><strong>Computational Process</strong></p>
+<pre><code>Molecular components
+
+        ↓
+
+Molecular packing using PACKMOL
+
+        ↓
+
+Periodic electrolyte simulation box
+</code></pre>
+<p><strong>Packmol Configuration</strong></p>
+<p>The Packmol input defines the molecular composition,
+number of molecules, and simulation box dimensions.</p>
+<p>Important parameters include:</p>
+<ul>
+<li>Molecular quantity</li>
+<li>Molecular ratio</li>
+<li>Packing region</li>
+<li>Minimum atomic distance</li>
+</ul>
+<p><strong>Example Application</strong></p>
+<p>The electrolyte system is generated by combining:</p>
+<ul>
+<li>Li+ ions</li>
+<li>TFSI- anions</li>
+<li>EMIM+ cations</li>
+</ul>
+<p><strong>Output</strong></p>
+<pre><code>electrolyte_system.xyz
+</code></pre>
+<p>The generated structure is used as the initial configuration
+for DC-DFTB-MD simulation.</p>
+<h3 id="stage-03-dc-dftb-md-simulation">Stage 03 — DC-DFTB-MD Simulation</h3>
+<p><strong>Purpose</strong></p>
+<p>Perform quantum-based molecular dynamics simulation to study
+atomic movement, ion interaction, and structural evolution
+of the LiTFSI-EMIM TFSI electrolyte system.</p>
+<p><strong>Input</strong></p>
+<pre><code>Electrolyte initial structure
+
++
+
+DC-DFTB-MD input parameters
+
++
+
+Chemical interaction parameters
+</code></pre>
+<p><strong>Simulation Parameters</strong></p>
+<p>The molecular dynamics simulation is controlled by several
+important parameters:</p>
+<ul>
+<li>Ensemble selection</li>
+<li>Temperature control</li>
+<li>Pressure condition</li>
+<li>Time step</li>
+<li>Simulation duration</li>
+</ul>
+<p><strong>Computational Process</strong></p>
+<pre><code>Initial electrolyte structure
+
+        ↓
+
+Energy minimization
+
+        ↓
+
+NVT equilibration
+
+        ↓
+
+NPT equilibration
+
+        ↓
+
+Production molecular dynamics
+</code></pre>
+<p><strong>HPC Execution</strong></p>
+<p>Large-scale DC-DFTB-MD simulations require computational
+resources for efficient execution.</p>
+<p>The simulation is performed using:</p>
+<ul>
+<li>Parallel computing</li>
+<li>HPC environment</li>
+<li>Job scheduling system</li>
+</ul>
+<p><strong>Output</strong></p>
+<pre><code>Molecular dynamics trajectory file
+</code></pre>
+<p>The trajectory contains atomic information during simulation,
+including:</p>
+<ul>
+<li>Atomic positions</li>
+<li>Atomic movement</li>
+<li>Energy evolution</li>
+<li>Structural changes</li>
+</ul>
+<h3 id="stage-04-transport-analysis">Stage 04 — Transport Analysis</h3>
+<p><strong>Purpose</strong></p>
+<p>Extract structural and dynamic properties from molecular dynamics
+trajectory data to understand ion transport behavior in the
+LiTFSI-EMIM TFSI electrolyte system.</p>
+<p><strong>Input</strong></p>
+<pre><code>Molecular dynamics trajectory file
+
++
+
+Atomic position data during simulation
+</code></pre>
+<p><strong>Analysis Methods</strong></p>
+<p>The trajectory data is analyzed using several approaches:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lithium ion mobility</td>
+<td>Mean Square Displacement (MSD)</td>
+<td>Evaluate atomic movement during simulation</td>
+</tr>
+<tr>
+<td>Diffusion behavior</td>
+<td>Diffusion coefficient calculation</td>
+<td>Determine ion transport rate</td>
+</tr>
+<tr>
+<td>Ion interaction</td>
+<td>Radial Distribution Function (RDF)</td>
+<td>Analyze local coordination structure</td>
+</tr>
+<tr>
+<td>Molecular arrangement</td>
+<td>Coordination analysis</td>
+<td>Understand electrolyte organization</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Computational Process</strong></p>
+<pre><code>MD trajectory
+
+        ↓
+
+MSD calculation
+
+        ↓
+
+Diffusion coefficient
+
+        ↓
+
+RDF calculation
+
+        ↓
+
+Transport property interpretation
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>Ion transport properties
+
++
+
+Electrolyte structural information
+</code></pre>
+<p>The analysis results provide insight into:</p>
+<ul>
+<li>Lithium ion mobility</li>
+<li>Ion coordination behavior</li>
+<li>Electrolyte structural organization</li>
+<li>Transport mechanisms</li>
+</ul>
+<p><span class="section-label">RESULTS AND ANALYSIS</span></p>
+<h2 id="simulation-outputs">📊 Simulation Outputs</h2>
+<p>The DC-DFTB-MD simulation generates structural and dynamic
+information that describes the behavior of LiTFSI-EMIM TFSI
+ionic liquid electrolyte at the atomic scale.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Electrolyte Structure</strong></p>
+<p>Initial atomic configuration
+of LiTFSI-EMIM TFSI electrolyte.</p>
+<p><strong>Tools</strong></p>
+<p>PACKMOL</p>
+<p>DC-DFTB-MD</p>
+</li>
+<li>
+<p><strong>🔗 Ion Coordination</strong></p>
+<p>Local interaction between
+lithium ions, anions, and cations.</p>
+<p><strong>Analysis</strong></p>
+<p>RDF</p>
+<p>Coordination number</p>
+</li>
+<li>
+<p><strong>🌊 Ion Mobility</strong></p>
+<p>Dynamic movement of lithium ions
+during molecular dynamics simulation.</p>
+<p><strong>Analysis</strong></p>
+<p>MSD</p>
+<p>Diffusion coefficient</p>
+</li>
+<li>
+<p><strong>⚡ Transport Properties</strong></p>
+<p>Quantitative evaluation of
+electrolyte transport behavior.</p>
+<p><strong>Analysis</strong></p>
+<p>Ion diffusion</p>
+<p>Molecular organization</p>
+</li>
+</ul>
+</div>
+<h2 id="expected-results">Expected Results</h2>
+<p>The simulation results provide information about:</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Description</th>
+<th>Analysis Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electrolyte configuration</td>
+<td>Initial LiTFSI-EMIM TFSI molecular arrangement</td>
+<td>PACKMOL</td>
+</tr>
+<tr>
+<td>MD trajectory</td>
+<td>Atomic movement during simulation</td>
+<td>DC-DFTB-MD</td>
+</tr>
+<tr>
+<td>Ion coordination</td>
+<td>Local interaction between ionic species</td>
+<td>RDF</td>
+</tr>
+<tr>
+<td>Lithium mobility</td>
+<td>Ion movement behavior</td>
+<td>MSD analysis</td>
+</tr>
+<tr>
+<td>Diffusion coefficient</td>
+<td>Transport performance indicator</td>
+<td>Einstein relation</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">SOFTWARE ENVIRONMENT</span></p>
+<h2 id="computational-tools">🖥️ Computational Tools</h2>
+<p>The workflow combines molecular structure preparation,
+quantum-based molecular dynamics simulation, HPC execution,
+and trajectory analysis using several computational tools.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["PACKMOL&lt;br&gt;&lt;br&gt;Electrolyte Structure Generation"]
+
+B["DC-DFTB-MD&lt;br&gt;&lt;br&gt;Quantum Molecular Dynamics"]
+
+C["HPC Environment&lt;br&gt;&lt;br&gt;Parallel Execution"]
+
+D["OVITO&lt;br&gt;&lt;br&gt;Trajectory Visualization"]
+
+E["Python&lt;br&gt;&lt;br&gt;Transport Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+C --&gt; E
+
+
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef hpc fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A structure;
+class B md;
+class C hpc;
+class D analysis;
+class E analysis;</code></pre>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Function in Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PACKMOL</td>
+<td>Generates initial LiTFSI-EMIM TFSI electrolyte configuration</td>
+</tr>
+<tr>
+<td>DC-DFTB-MD</td>
+<td>Performs quantum-based molecular dynamics simulation</td>
+</tr>
+<tr>
+<td>HPC Environment</td>
+<td>Executes large-scale simulation using parallel computing</td>
+</tr>
+<tr>
+<td>OVITO</td>
+<td>Visualizes molecular structures and trajectories</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Calculates MSD, diffusion coefficient, and RDF</td>
+</tr>
+</tbody>
+</table>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧩 PACKMOL</strong></p>
+<p>Electrolyte structure generation</p>
+<p>Creates initial molecular
+configuration before simulation.</p>
+</li>
+<li>
+<p><strong>⚛️ DC-DFTB-MD</strong></p>
+<p>Quantum-based molecular dynamics</p>
+<p>Simulates atomic evolution
+and molecular interactions.</p>
+</li>
+<li>
+<p><strong>💻 HPC Environment</strong></p>
+<p>Large-scale computation</p>
+<p>Provides computational resources
+for simulation execution.</p>
+</li>
+<li>
+<p><strong>📊 Python Analysis</strong></p>
+<p>Transport property analysis</p>
+<p>Calculates MSD, diffusion,
+and RDF.</p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">EXPECTED OUTCOMES</span></p>
+<h2 id="expected-results_1">📈 Expected Results</h2>
+<p>After completing the DC-DFTB-MD workflow, participants will obtain
+simulation data describing the structural and dynamic behavior
+of the LiTFSI-EMIM TFSI ionic liquid electrolyte system.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["Initial Electrolyte Structure&lt;br&gt;&lt;br&gt;PACKMOL"]
+
+B["DC-DFTB-MD Simulation&lt;br&gt;&lt;br&gt;Atomic Evolution"]
+
+C["Trajectory Data&lt;br&gt;&lt;br&gt;Molecular Movement"]
+
+D["Transport Analysis&lt;br&gt;&lt;br&gt;MSD, RDF, Diffusion"]
+
+E["Electrolyte Properties&lt;br&gt;&lt;br&gt;Ion Transport Behavior"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A structure;
+class B md;
+class C md;
+class D analysis;
+class E analysis;</code></pre>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Description</th>
+<th>Analysis Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electrolyte configuration</td>
+<td>Initial LiTFSI-EMIM TFSI molecular arrangement</td>
+<td>PACKMOL</td>
+</tr>
+<tr>
+<td>MD trajectory</td>
+<td>Atomic movement during simulation</td>
+<td>DC-DFTB-MD</td>
+</tr>
+<tr>
+<td>Ion coordination</td>
+<td>Interaction between lithium ions and electrolyte species</td>
+<td>RDF</td>
+</tr>
+<tr>
+<td>Lithium mobility</td>
+<td>Movement behavior of lithium ions</td>
+<td>MSD analysis</td>
+</tr>
+<tr>
+<td>Diffusion coefficient</td>
+<td>Quantitative ion transport property</td>
+<td>Einstein relation</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">RESOURCES</span></p>
+<h2 id="simulation-files">📂 Simulation Files</h2>
+<p>The repository contains the essential files required to reproduce
+the LiTFSI-EMIM TFSI ionic liquid electrolyte simulation workflow.</p>
+<div class="highlight"><pre><span></span><code>litfsi-emim-tfsi-electrolyte-transport/
+
+├── structures/
+│   ├── LiTFSI.xyz
+│   │   Lithium salt molecular structure
+│   │
+│   └── EMIM-TFSI.xyz
+│       Ionic liquid molecular structure
+│
+├── packmol/
+│   ├── packmol.inp
+│   │   Electrolyte system generation input
+│   │
+│   └── electrolyte_system.xyz
+│       Generated electrolyte configuration
+│
+├── dcdftbmd/
+│   ├── input.in
+│   │   DC-DFTB-MD simulation control parameters
+│   │
+│   └── parameter.dat
+│       Chemical interaction parameters
+│
+├── hpc/
+│   └── run_dcdftbmd.slurm
+│       HPC simulation submission script
+│
+├── trajectory/
+│   └── md_trajectory.xyz
+│       Molecular dynamics trajectory output
+│
+└── analysis/
+    ├── msd_analysis.py
+    ├── rdf_analysis.py
+    └── diffusion_analysis.py
+        Transport property analysis scripts
+</code></pre></div>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Structures</strong></p>
+<p>Contains initial molecular structures.</p>
+<p>Includes:</p>
+<ul>
+<li>LiTFSI</li>
+<li>EMIM-TFSI</li>
+</ul>
+</li>
+<li>
+<p><strong>📦 PACKMOL</strong></p>
+<p>Generates the initial electrolyte box.</p>
+<p>Includes:</p>
+<ul>
+<li>Packing input</li>
+<li>Generated structure</li>
+</ul>
+</li>
+<li>
+<p><strong>⚛️ DC-DFTB-MD</strong></p>
+<p>Contains simulation input files.</p>
+<p>Includes:</p>
+<ul>
+<li>Control parameters</li>
+<li>Interaction parameters</li>
+</ul>
+</li>
+<li>
+<p><strong>📊 Analysis</strong></p>
+<p>Contains trajectory analysis tools.</p>
+<p>Includes:</p>
+<ul>
+<li>MSD calculation</li>
+<li>RDF analysis</li>
+<li>Diffusion calculation</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="section-label">RESOURCE ACCESS</span></p>
+<p><span class="section-label">DOWNLOAD RESOURCES</span></p>
+<h2 id="download-simulation-files">📥 Download Simulation Files</h2>
+<p>The following files are provided for each stage of the
+LiTFSI-EMIM TFSI ionic liquid electrolyte simulation workflow.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧩 Molecular Structures</strong></p>
+<p>Initial molecular structures for electrolyte preparation.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/structures/LiTFSI.xyz">⬇ Download LiTFSI.xyz</a></p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/structures/EMIM-TFSI.xyz">⬇ Download EMIM-TFSI.xyz</a></p>
+</li>
+<li>
+<p><strong>📦 PACKMOL Setup</strong></p>
+<p>Files for electrolyte configuration generation.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/packmol/packmol.inp">⬇ Download packmol.inp</a></p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/packmol/electrolyte_system.xyz">⬇ Download electrolyte_system.xyz</a></p>
+</li>
+<li>
+<p><strong>⚛️ DC-DFTB-MD Input</strong></p>
+<p>Quantum molecular dynamics simulation files.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/dcdftbmd/input.in">⬇ Download input.in</a></p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/dcdftbmd/parameter.dat">⬇ Download parameter.dat</a></p>
+</li>
+<li>
+<p><strong>💻 HPC Execution</strong></p>
+<p>HPC submission script.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/hpc/run_dcdftbmd.slurm">⬇ Download SLURM Script</a></p>
+</li>
+<li>
+<p><strong>📈 Trajectory Data</strong></p>
+<p>Molecular dynamics trajectory output.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/trajectory/md_trajectory.xyz">⬇ Download Trajectory</a></p>
+</li>
+<li>
+<p><strong>📊 Analysis Scripts</strong></p>
+<p>Transport property calculation scripts.</p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/analysis/msd_analysis/">⬇ Download MSD Script</a></p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/analysis/rdf_analysis/">⬇ Download RDF Script</a></p>
+<p><a class="md-button" href="../../../assets/litfsi-emim-tfsi/analysis/diffusion_analysis/">⬇ Download Diffusion Script</a></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+
+<footer class="custom-footer">
+
+
+<div class="footer-brand">
+
+<h3>
+MKI Computational Materials Science Workshop
+</h3>
+
+<p>
+Building knowledge, tools, and collaboration
+for advanced materials discovery.
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#">Home</a>
+<a href="#">Start Here</a>
+<a href="#">Foundation</a>
+<a href="#">Research Application</a>
+
+</div>
+
+
+
+<div class="footer-partners">
+
+<h3>
+In Collaboration With
+</h3>
+
+<p>
+MKI × ITB × BRIN
+</p>
+
+</div>
+
+
+</footer>
+
+
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../../assets/javascripts/chat.js"></script>
+      
+        <script src="../../../javascripts/home-parallax.js"></script>
+      
+        <script src="../../../javascripts/features-reveal.js"></script>
+      
+        <script src="../../../javascripts/workflow-flow.js"></script>
+      
+        <script src="../../../javascripts/research-reveal.js"></script>
+      
+        <script src="../../../javascripts/scroll-reveal.js"></script>
+      
+        <script src="../../../javascripts/file-editor.js"></script>
+      
+        <script src="../../../javascripts/worksheet.js"></script>
+      
+        <script src="../../../javascripts/lifec-viewer.js"></script>
+      
+        <script src="../../../javascripts/session1.js"></script>
+      
+        <script src="../../../javascripts/pretest.js"></script>
+      
+        <script src="../../../javascripts/md-analysis-worksheet.js"></script>
+      
+        <script src="../../../javascripts/scipt-library.js"></script>
+      
+    
+  </body>
+</html>

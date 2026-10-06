@@ -1,0 +1,4044 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Integrating First-Principles, HPC & AI for Materials Discovery Computational materials science workshop by MKI and BRIN.
+">
+      
+      
+        <meta name="author" content="BRIN - ITB - Masyarakat Komputasi Indonesia
+">
+      
+      
+      
+        <link rel="prev" href="../litfsi-emim-tfsi-electrolyte-transport/">
+      
+      
+        <link rel="next" href="../battery-electrolyte/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/mki-logo.jpeg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Overview - MKI Computational Materials Science Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/home.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra-v2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/file-editor.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pretest.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/script-lib.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grapheneionic-liquid-interface-simulation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-header__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MKI Computational Materials Science Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../day-1/pretest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📝 Pretest
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start-here/workshop-guide/" class="md-tabs__link">
+          
+  
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../environment/" class="md-tabs__link">
+          
+  
+  
+  Computational Environment
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../quantum-simulation/" class="md-tabs__link">
+          
+  
+  
+  Simulation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Hands-on Project
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../graphene/" class="md-tabs__link">
+          
+  
+  
+  Research Cases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MKI Computational Materials Science Workshop" class="md-nav__button md-logo" aria-label="MKI Computational Materials Science Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/mki-logo.jpeg" alt="logo">
+
+    </a>
+    MKI Computational Materials Science Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lala002-brin/MKI-Workshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MKI-Workshop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/pretest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Pretest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workshop-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../start-here/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../software-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computational Environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/access-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access & Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/software-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/running-calculations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/script-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment/hpc-practical-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Practical Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Theory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/problem-statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem Statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/hartree-fock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hartree-Fock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/dft-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DFT Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/kohn-sham/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kohn-Sham Equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/computational-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/theory/wannier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wannier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/setup/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quantum-simulation/hands-on/scf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCF Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atomistic Simulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atomistic Simulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../atomistic-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-on Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-on Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 1 · dari First Principles ke Molecular Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/dftbmd-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 3 · Membangun Input dan Menjalankan DCDFTBMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-4-analisis-lintasan-antarmuka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 4 · Analisis Lintasan dan Antarmuka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-5-pemodelan-material-mace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 5 · Pemodelan Material dengan MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/sesi-6-hasil-riset-terbit-sakti-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesi 6 · Hasil Riset Terbit Sakti Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/bahan-pendalaman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bahan Pendalaman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modul Workshop DCDFTBMD MACE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day-1/Komputasi%20Density%20Functional%20Theory%20%28DFT%29_QE.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modul Workshop DFT QE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene Electronic Structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene Electronic Structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/system-preparation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Preparation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/hpc-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HPC Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphene/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LiTFSI–EMIM/TFSI Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../litfsi-emim-tfsi-electrolyte-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphene–Ionic Liquid Interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphene–Ionic Liquid Interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#research-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Research Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 Research Pipeline Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Simulation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Simulation Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Simulation Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-01-graphene-electrode-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 01 — Graphene Electrode Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-02-ionic-liquid-interface-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 02 — Ionic Liquid Interface Construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-03-molecular-dynamics-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 03 — Molecular Dynamics Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-04-interface-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 04 — Interface Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Simulation Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Computational Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📓 Analysis Notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Simulation Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📂 Simulation Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Quick Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-with-graphene-electronic-structure-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Connection with Graphene Electronic Structure Case
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery Electrolyte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Battery Electrolyte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../battery-electrolyte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#research-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Research Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-pipeline-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 Research Pipeline Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Simulation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Simulation Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Simulation Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-01-graphene-electrode-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 01 — Graphene Electrode Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-02-ionic-liquid-interface-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 02 — Ionic Liquid Interface Construction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-03-molecular-dynamics-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 03 — Molecular Dynamics Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-04-interface-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 04 — Interface Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Simulation Outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖥️ Computational Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Expected Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📓 Analysis Notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 Simulation Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📂 Simulation Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📥 Quick Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-with-graphene-electronic-structure-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Connection with Graphene Electronic Structure Case
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../graphene/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Research Cases
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Graphene–Ionic Liquid Interface
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><span class="section-label">COMPUTATIONAL MATERIALS CASE STUDY</span></p>
+<h1 id="grapheneionic-liquid-interface-simulation">🔋 Graphene/Ionic Liquid Interface Simulation</h1>
+<div class="badge-container">
+
+<span class="badge">DFT</span>
+<span class="badge">MOLECULAR DYNAMICS</span>
+<span class="badge">QUANTUM ESPRESSO</span>
+<span class="badge">LAMMPS</span>
+
+</div>
+
+<div class="hero-description">
+
+Atomic-scale simulation of an electrode-electrolyte interface
+using graphene as a model electrode surface and ionic liquid
+as the battery electrolyte environment.
+
+</div>
+
+<p><span class="section-label">CASE OVERVIEW</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">Case Overview</p>
+<p>This hands-on case extends graphene electronic structure
+simulation into a battery electrode-electrolyte interface model.</p>
+<p>Graphene is used as a conductive electrode surface, while
+ionic liquid represents the electrolyte environment.</p>
+<p>The workflow combines Quantum ESPRESSO, PACKMOL, LAMMPS,
+and Python-based analysis.</p>
+</div>
+<div class="hero-image">
+
+<img src="images/interface_overview.png">
+
+<p align="center">
+<em>
+Atomic-scale visualization of graphene electrode and ionic liquid
+electrolyte interface model.
+</em>
+</p>
+
+</div>
+
+<hr />
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Material System</strong></p>
+<p><strong>Graphene Electrode</strong></p>
+<p>Model conductive surface
+for battery electrode interface.</p>
+<p><strong>Electrolyte</strong></p>
+<p>Ionic liquid environment
+surrounding the electrode.</p>
+</li>
+<li>
+<p><strong>🧮 Computational Method</strong></p>
+<p><strong>DFT</strong></p>
+<p>Quantum ESPRESSO is used
+for graphene structure optimization.</p>
+<p><strong>MD</strong></p>
+<p>LAMMPS is used to study
+interface evolution.</p>
+</li>
+<li>
+<p><strong>💻 Simulation Tools</strong></p>
+<p><strong>Quantum ESPRESSO</strong></p>
+<p>Electronic structure calculation</p>
+<p><strong>PACKMOL</strong></p>
+<p>Interface construction</p>
+<p><strong>LAMMPS</strong></p>
+<p>Molecular dynamics</p>
+</li>
+<li>
+<p><strong>📈 Analysis</strong></p>
+<p><strong>Structural</strong></p>
+<p>RDF and density profile</p>
+<p><strong>Dynamic</strong></p>
+<p>Ion distribution and diffusion</p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">SCIENTIFIC MOTIVATION</span></p>
+<h2 id="research-question">🔬 Research Question</h2>
+<p>This simulation investigates how ionic liquid species organize and
+interact near a graphene electrode surface.</p>
+<p>The main questions explored are:</p>
+<ul>
+<li>How are ions distributed near the graphene surface?</li>
+<li>How do electrolyte molecules interact with the electrode?</li>
+<li>How does the interface structure evolve during molecular dynamics?</li>
+</ul>
+<p><span class="section-label">LEARNING GOALS</span></p>
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
+<p>After completing this case, participants will understand the complete
+workflow of graphene-based electrode-electrolyte interface simulation.</p>
+<p>The participants will learn how to:</p>
+<table>
+<thead>
+<tr>
+<th>Objective</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Understand graphene as an electrode surface model</td>
+</tr>
+<tr>
+<td>Construct</td>
+<td>Build graphene and ionic liquid interface structures</td>
+</tr>
+<tr>
+<td>Simulate</td>
+<td>Perform molecular dynamics simulation of the interface</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>Extract structural properties from simulation results</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">MODEL DESCRIPTION</span></p>
+<h2 id="system-overview">🧩 System Overview</h2>
+<p>The simulated system represents an electrode-electrolyte interface,
+where ionic liquid molecules interact with a graphene electrode surface.</p>
+<div class="system-image">
+
+<img src="images/system_model.png" width="900">
+
+<p align="center">
+<em>
+Schematic representation of graphene electrode and ionic liquid
+interface system used in molecular dynamics simulation.
+</em>
+</p>
+
+</div>
+
+<p>The model consists of three main regions:</p>
+<pre class="mermaid"><code>flowchart TB
+
+A["Ionic Liquid Electrolyte&lt;br&gt;&lt;br&gt;Li+ ions&lt;br&gt;Cations&lt;br&gt;Anions"]
+
+B["Electrode-Electrolyte Interface&lt;br&gt;&lt;br&gt;Ion organization&lt;br&gt;Surface interaction"]
+
+C["Graphene Electrode&lt;br&gt;&lt;br&gt;Carbon atomic layers"]
+
+D["Vacuum Region&lt;br&gt;&lt;br&gt;Surface boundary condition"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+
+
+classDef electrolyte fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef interface fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef electrode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef vacuum fill:#eeeeee,stroke:#616161,stroke-width:2px;
+
+
+class A electrolyte;
+class B interface;
+class C electrode;
+class D vacuum;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Physical Role</th>
+<th>Simulation Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ionic Liquid Electrolyte</td>
+<td>Mobile ionic environment containing Li⁺, cations, and anions</td>
+<td>Represents electrolyte behavior near electrode surface</td>
+</tr>
+<tr>
+<td>Electrode-Electrolyte Interface</td>
+<td>Interaction zone between graphene and ionic species</td>
+<td>Determines ion organization and surface interaction</td>
+</tr>
+<tr>
+<td>Graphene Electrode</td>
+<td>Conductive carbon-based electrode model</td>
+<td>Provides active surface for electrolyte interaction</td>
+</tr>
+<tr>
+<td>Vacuum Region</td>
+<td>Empty space above surface model</td>
+<td>Maintains surface boundary condition in simulation</td>
+</tr>
+</tbody>
+</table>
+<p>The graphene structure from the previous electronic structure case
+is reused as the electrode foundation before introducing the ionic
+liquid electrolyte.</p>
+<p><span class="section-label">SIMULATION DESIGN</span></p>
+<p><span class="section-label">RESEARCH PIPELINE</span></p>
+<h2 id="research-pipeline-overview">🧭 Research Pipeline Overview</h2>
+<p>The research pipeline illustrates the transformation from a
+material model into a complete simulation-based understanding
+of the graphene-electrolyte interface.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["Graphene + Ionic Liquid&lt;br&gt;&lt;br&gt;Interface Model"]
+
+B["Quantum ESPRESSO&lt;br&gt;&lt;br&gt;Graphene Optimization"]
+
+C["PACKMOL&lt;br&gt;&lt;br&gt;Interface Construction"]
+
+D["LAMMPS&lt;br&gt;&lt;br&gt;Molecular Dynamics"]
+
+E["Python Analysis&lt;br&gt;&lt;br&gt;RDF, Density, Diffusion"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef material fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef dft fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A material;
+class B dft;
+class C structure;
+class D md;
+class E analysis;
+</code></pre>
+<h2 id="simulation-workflow">🚀 Simulation Workflow</h2>
+<p>The simulation workflow connects material preparation,</p>
+<p>interface construction, molecular dynamics simulation,</p>
+<p>and data analysis into a complete computational pipeline.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["01&lt;br&gt;GRAPHENE&lt;br&gt;Surface Preparation"]
+
+B["02&lt;br&gt;QUANTUM ESPRESSO&lt;br&gt;Geometry Optimization"]
+
+C["03&lt;br&gt;PACKMOL&lt;br&gt;Interface Construction"]
+
+D["04&lt;br&gt;LAMMPS&lt;br&gt;Molecular Dynamics"]
+
+E["05&lt;br&gt;PYTHON&lt;br&gt;Interface Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef graphene fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A graphene;
+class B qe;
+class C qe;
+class D md;
+class E analysis;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Main Activity</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>Prepare graphene electrode structure</td>
+<td>Graphene model</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Optimize graphene geometry using QE</td>
+<td>Stable surface structure</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Add ionic liquid electrolyte using PACKMOL</td>
+<td>Interface configuration</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Simulate atomic evolution using LAMMPS</td>
+<td>MD trajectory</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Analyze interface properties</td>
+<td>Structural information</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">COMPUTATIONAL METHOD</span></p>
+<p><span class="section-label">SIMULATION PROTOCOL</span></p>
+<h2 id="simulation-procedure">⚙️ Simulation Procedure</h2>
+<p>The simulation is performed through four computational stages,
+starting from graphene preparation to interface property analysis.</p>
+<hr />
+<h3 id="stage-01-graphene-electrode-preparation">Stage 01 — Graphene Electrode Preparation</h3>
+<p><strong>Purpose</strong></p>
+<p>Prepare a stable graphene surface model as the electrode foundation.</p>
+<p><strong>Input</strong></p>
+<div class="highlight"><pre><span></span><code>Initial graphene structure
+
+Quantum ESPRESSO input files
+
+Pseudopotential data
+</code></pre></div>
+<p><strong>Computational Process</strong></p>
+<div class="highlight"><pre><span></span><code>Graphene structure
+
+        ↓
+
+Geometry relaxation
+
+        ↓
+
+Optimized graphene electrode
+</code></pre></div>
+<p><strong>Output</strong>
+<div class="highlight"><pre><span></span><code>optimized_graphene structure
+</code></pre></div></p>
+<hr />
+<h3 id="stage-02-ionic-liquid-interface-construction">Stage 02 — Ionic Liquid Interface Construction</h3>
+<p><strong>Purpose</strong>
+Generate the initial electrode-electrolyte interface configuration.</p>
+<p><strong>Input</strong>
+<div class="highlight"><pre><span></span><code>Optimized graphene surface
+
++
+
+Ionic liquid molecules
+</code></pre></div></p>
+<p><strong>Computational Process</strong>
+<div class="highlight"><pre><span></span><code>Graphene surface
+
+        +
+
+Ionic liquid components
+
+        ↓
+
+PACKMOL structure generation
+
+        ↓
+
+Interface configuration
+</code></pre></div></p>
+<p><strong>Output</strong></p>
+<div class="highlight"><pre><span></span><code>interface.xyz
+</code></pre></div>
+<hr />
+<h3 id="stage-03-molecular-dynamics-simulation">Stage 03 — Molecular Dynamics Simulation</h3>
+<p><strong>Purpose</strong></p>
+<p>Observe atomic movement and structural evolution
+of the graphene-electrolyte interface.</p>
+<p><strong>Input</strong></p>
+<div class="highlight"><pre><span></span><code>Interface structure
+
+LAMMPS input parameters
+</code></pre></div>
+<p><strong>Computational Process</strong></p>
+<div class="highlight"><pre><span></span><code>Energy minimization
+
+        ↓
+
+Equilibration
+
+        ↓
+
+Production molecular dynamics
+</code></pre></div>
+<p><strong>Output</strong></p>
+<div class="highlight"><pre><span></span><code>trajectory.lammpstrj
+</code></pre></div>
+<hr />
+<h3 id="stage-04-interface-analysis">Stage 04 — Interface Analysis</h3>
+<p><strong>Purpose</strong></p>
+<p>Extract structural and dynamic properties
+from molecular dynamics results.</p>
+<p><strong>Analysis Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ion distribution</td>
+<td>Density profile</td>
+</tr>
+<tr>
+<td>Atomic interaction</td>
+<td>RDF</td>
+</tr>
+<tr>
+<td>Local environment</td>
+<td>Coordination number</td>
+</tr>
+<tr>
+<td>Ion transport</td>
+<td>MSD and diffusion coefficient</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output</strong></p>
+<div class="highlight"><pre><span></span><code>Interface structural properties
+
++
+
+Ion transport information
+</code></pre></div>
+<hr />
+<p><span class="section-label">RESULTS AND ANALYSIS</span></p>
+<h2 id="simulation-outputs">📊 Simulation Outputs</h2>
+<p>The molecular dynamics simulation generates structural and dynamic
+properties that describe the behavior of the graphene-electrolyte
+interface at atomic scale.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🧱 Interface Structure</strong></p>
+<p>Atomic configuration of graphene
+and ionic liquid interface.</p>
+<p><strong>Tools</strong></p>
+<p>PACKMOL<br />
+LAMMPS<br />
+OVITO</p>
+</li>
+<li>
+<p><strong>🌊 Ion Distribution</strong></p>
+<p>Spatial arrangement of ionic
+species near graphene surface.</p>
+<p><strong>Analysis</strong></p>
+<p>Density profile<br />
+Concentration distribution</p>
+</li>
+<li>
+<p><strong>🔗 Molecular Interaction</strong></p>
+<p>Interaction between graphene
+and electrolyte species.</p>
+<p><strong>Analysis</strong></p>
+<p>RDF<br />
+Coordination number</p>
+</li>
+<li>
+<p><strong>⚡ Ion Transport</strong></p>
+<p>Dynamic movement of ions
+during molecular simulation.</p>
+<p><strong>Analysis</strong></p>
+<p>MSD<br />
+Diffusion coefficient</p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">SOFTWARE ENVIRONMENT</span></p>
+<h2 id="computational-tools">🖥️ Computational Tools</h2>
+<p>The workflow combines electronic structure calculation,
+interface construction, molecular dynamics simulation,
+and post-processing analysis using several computational tools.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["Quantum ESPRESSO&lt;br&gt;&lt;br&gt;DFT Calculation"]
+
+B["PACKMOL&lt;br&gt;&lt;br&gt;Interface Construction"]
+
+C["LAMMPS&lt;br&gt;&lt;br&gt;Molecular Dynamics"]
+
+D["OVITO&lt;br&gt;&lt;br&gt;Atomic Visualization"]
+
+E["Python&lt;br&gt;&lt;br&gt;Data Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+C --&gt; E
+
+
+classDef dft fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A dft;
+class B structure;
+class C md;
+class D analysis;
+class E analysis;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Function in Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantum ESPRESSO</td>
+<td>Optimizes graphene structure and calculates electronic properties</td>
+</tr>
+<tr>
+<td>PACKMOL</td>
+<td>Generates initial graphene-electrolyte interface configuration</td>
+</tr>
+<tr>
+<td>LAMMPS</td>
+<td>Performs molecular dynamics simulation of interface evolution</td>
+</tr>
+<tr>
+<td>OVITO</td>
+<td>Visualizes atomic structures and simulation trajectories</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Calculates RDF, density profile, and transport properties</td>
+</tr>
+</tbody>
+</table>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Quantum ESPRESSO</strong></p>
+<p>Graphene optimization<br />
+and electronic structure input</p>
+<p><a class="md-button md-button--primary" href="qe/scf.in">
+Download QE
+</a></p>
+</li>
+<li>
+<p><strong>LAMMPS</strong></p>
+<p>Molecular dynamics<br />
+interface simulation input</p>
+<p><a class="md-button md-button--primary" href="lammps/in.lammps">
+Download LAMMPS
+</a></p>
+</li>
+<li>
+<p><strong>Python Analysis</strong></p>
+<p>Interface analysis<br />
+and visualization notebook</p>
+<p><a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Notebook
+</a></p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">EXPECTED OUTCOMES</span></p>
+<h2 id="expected-results">📈 Expected Results</h2>
+<p>After completing the workflow, participants will obtain
+simulation data describing the structural and dynamic behavior
+of the graphene-electrolyte interface.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["Optimized Graphene&lt;br&gt;&lt;br&gt;QE"]
+
+B["Interface Configuration&lt;br&gt;&lt;br&gt;PACKMOL"]
+
+C["MD Trajectory&lt;br&gt;&lt;br&gt;LAMMPS"]
+
+D["Structural Analysis&lt;br&gt;&lt;br&gt;Python"]
+
+E["Interface Properties&lt;br&gt;&lt;br&gt;Scientific Interpretation"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef structure fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A qe;
+class B structure;
+class C md;
+class D analysis;
+class E analysis;
+</code></pre>
+<p>The main simulation outputs include:</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Description</th>
+<th>Analysis Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized graphene structure</td>
+<td>Stable electrode surface configuration</td>
+<td>Quantum ESPRESSO</td>
+</tr>
+<tr>
+<td>Interface configuration</td>
+<td>Initial graphene and ionic liquid arrangement</td>
+<td>PACKMOL</td>
+</tr>
+<tr>
+<td>MD trajectory</td>
+<td>Atomic movement during simulation</td>
+<td>LAMMPS</td>
+</tr>
+<tr>
+<td>Density profile</td>
+<td>Spatial distribution of ions near surface</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>RDF curve</td>
+<td>Interaction between atomic species</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>Diffusion behavior</td>
+<td>Ion mobility information</td>
+<td>MSD analysis</td>
+</tr>
+</tbody>
+</table>
+<p><span class="section-label">DATA ANALYSIS WORKFLOW</span></p>
+<h2 id="analysis-notebook">📓 Analysis Notebook</h2>
+<p>The simulation trajectory and interface properties are analyzed
+using Python-based post-processing tools.</p>
+<p>The analysis workflow converts atomic trajectory data into
+structural and dynamic information of the graphene-electrolyte
+interface.</p>
+<pre class="mermaid"><code>flowchart LR
+
+A["LAMMPS Trajectory&lt;br&gt;&lt;br&gt;Atomic movement data"]
+
+B["Python Processing&lt;br&gt;&lt;br&gt;Data extraction"]
+
+C["Structural Analysis&lt;br&gt;&lt;br&gt;RDF and Density Profile"]
+
+D["Dynamic Analysis&lt;br&gt;&lt;br&gt;Diffusion and MSD"]
+
+E["Scientific Interpretation&lt;br&gt;&lt;br&gt;Interface behavior"]
+
+
+A --&gt; B
+B --&gt; C
+B --&gt; D
+C --&gt; E
+D --&gt; E
+
+
+classDef md fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef python fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+classDef analysis fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+
+
+class A md;
+class B python;
+class C analysis;
+class D analysis;
+class E analysis;
+</code></pre>
+<p><strong>The notebook contains</strong></p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>🎞 Trajectory Visualization</strong></p>
+<p>Visualize atomic movement
+during molecular dynamics.</p>
+<p>Tool:</p>
+<p><code>OVITO</code></p>
+</li>
+<li>
+<p><strong>📊 Density Profile</strong></p>
+<p>Analyze spatial distribution
+of ionic species near
+graphene surface.</p>
+</li>
+<li>
+<p><strong>🔗 Radial Distribution Function</strong></p>
+<p>Evaluate atomic interaction
+between graphene and electrolyte
+components.</p>
+</li>
+<li>
+<p><strong>⚡ Diffusion Analysis</strong></p>
+<p>Calculate ion mobility behavior
+using molecular dynamics trajectory.</p>
+</li>
+</ul>
+</div>
+<p>Download:</p>
+<p><a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Download Analysis Notebook
+</a></p>
+<p><span class="section-label">RESOURCES</span></p>
+<h2 id="simulation-files">📂 Simulation Files</h2>
+<p>The repository contains all input files required to reproduce
+the graphene/ionic liquid interface simulation workflow.</p>
+<div class="highlight"><pre><span></span><code>graphene-ionic-liquid-interface/
+
+├── qe/
+│   ├── graphene_surface.in
+│   │   Graphene geometry optimization input
+│   │
+│   ├── scf.in
+│   │   Electronic structure calculation
+│   │
+│   └── pseudo/
+│       Quantum ESPRESSO pseudopotential files
+│
+├── packmol/
+│   ├── packmol.inp
+│   │   Interface construction parameters
+│   │
+│   └── interface.xyz
+│       Initial graphene-electrolyte structure
+│
+├── lammps/
+│   ├── data.interface
+│   │   Atomic configuration for MD
+│   │
+│   └── in.lammps
+│       Molecular dynamics input
+│
+├── scripts/
+│   ├── submit_qe.sh
+│   │   HPC submission script for QE
+│   │
+│   └── submit_lammps.sh
+│       HPC submission script for LAMMPS
+│
+└── analysis/
+    └── interface_analysis.ipynb
+        Python-based interface analysis
+</code></pre></div>
+<h3 id="download-resources">Download Resources</h3>
+<p><span class="section-label">RESOURCE ACCESS</span></p>
+<p><span class="section-label">RESOURCE ACCESS</span></p>
+<h2 id="quick-access">📥 Quick Access</h2>
+<p>The following resources provide the essential files required
+to reproduce the graphene/ionic liquid interface simulation workflow.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>⚛️ Quantum ESPRESSO</strong></p>
+<p>Graphene surface optimization
+and electronic structure calculation.</p>
+<p>Files:</p>
+<ul>
+<li><code>graphene_surface.in</code></li>
+<li><code>scf.in</code></li>
+</ul>
+<p><br></p>
+<p><a class="md-button md-button--primary" href="qe/graphene_surface.in">
+QE Input
+</a></p>
+</li>
+<li>
+<p><strong>🧩 PACKMOL</strong></p>
+<p>Construction of the initial
+graphene-electrolyte interface.</p>
+<p>Files:</p>
+<ul>
+<li><code>packmol.inp</code></li>
+<li><code>interface.xyz</code></li>
+</ul>
+<p><br></p>
+<p><a class="md-button md-button--primary" href="packmol/packmol.inp">
+PACKMOL Input
+</a></p>
+</li>
+<li>
+<p><strong>🌊 LAMMPS</strong></p>
+<p>Molecular dynamics simulation
+of interface evolution.</p>
+<p>Files:</p>
+<ul>
+<li><code>data.interface</code></li>
+<li><code>in.lammps</code></li>
+</ul>
+<p><br></p>
+<p><a class="md-button md-button--primary" href="lammps/in.lammps">
+LAMMPS Input
+</a></p>
+</li>
+<li>
+<p><strong>📊 Analysis Notebook</strong></p>
+<p>Python workflow for extracting
+interface properties.</p>
+<p>Includes:</p>
+<ul>
+<li>RDF</li>
+<li>Density profile</li>
+<li>Diffusion analysis</li>
+</ul>
+<p><br></p>
+<p><a class="md-button md-button--primary" href="analysis/interface_analysis.ipynb">
+Notebook
+</a></p>
+</li>
+</ul>
+</div>
+<p><span class="section-label">PREVIOUS CASE CONNECTION</span></p>
+<p><span class="section-label">CASE EXTENSION</span></p>
+<h2 id="connection-with-graphene-electronic-structure-case">🔗 Connection with Graphene Electronic Structure Case</h2>
+<p>This case extends the previous graphene electronic structure
+simulation by transforming an isolated graphene model into a
+realistic electrode-electrolyte interface system.</p>
+<p>The computational progression is:</p>
+<pre class="mermaid"><code>flowchart TD
+
+A["Graphene Electronic Structure Case"]
+
+B["Quantum ESPRESSO&lt;br&gt;&lt;br&gt;Electronic Properties"]
+
+C["Graphene Electrode Model"]
+
+D["Graphene + Ionic Liquid&lt;br&gt;&lt;br&gt;Interface System"]
+
+E["Molecular Dynamics&lt;br&gt;&lt;br&gt;Interface Analysis"]
+
+
+A --&gt; B
+B --&gt; C
+C --&gt; D
+D --&gt; E
+
+
+classDef previous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
+classDef qe fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef interface fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef analysis fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+
+class A previous;
+class B qe;
+class C previous;
+class D interface;
+class E analysis;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Previous Graphene Case</th>
+<th>Graphene/Ionic Liquid Interface Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electronic structure study</td>
+<td>Electrode-electrolyte interaction study</td>
+</tr>
+<tr>
+<td>Single graphene system</td>
+<td>Graphene and ionic liquid interface</td>
+</tr>
+<tr>
+<td>Quantum ESPRESSO calculation</td>
+<td>QE + PACKMOL + LAMMPS workflow</td>
+</tr>
+<tr>
+<td>Material properties</td>
+<td>Structural and dynamic interface properties</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+
+<footer class="custom-footer">
+
+
+<div class="footer-brand">
+
+<h3>
+MKI Computational Materials Science Workshop
+</h3>
+
+<p>
+Building knowledge, tools, and collaboration
+for advanced materials discovery.
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#">Home</a>
+<a href="#">Start Here</a>
+<a href="#">Foundation</a>
+<a href="#">Research Application</a>
+
+</div>
+
+
+
+<div class="footer-partners">
+
+<h3>
+In Collaboration With
+</h3>
+
+<p>
+MKI × ITB × BRIN
+</p>
+
+</div>
+
+
+</footer>
+
+
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "content.code.copy", "content.tabs.link", "navigation.tabs.sticky", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../../assets/javascripts/chat.js"></script>
+      
+        <script src="../../../javascripts/home-parallax.js"></script>
+      
+        <script src="../../../javascripts/features-reveal.js"></script>
+      
+        <script src="../../../javascripts/workflow-flow.js"></script>
+      
+        <script src="../../../javascripts/research-reveal.js"></script>
+      
+        <script src="../../../javascripts/scroll-reveal.js"></script>
+      
+        <script src="../../../javascripts/file-editor.js"></script>
+      
+        <script src="../../../javascripts/worksheet.js"></script>
+      
+        <script src="../../../javascripts/lifec-viewer.js"></script>
+      
+        <script src="../../../javascripts/session1.js"></script>
+      
+        <script src="../../../javascripts/pretest.js"></script>
+      
+        <script src="../../../javascripts/md-analysis-worksheet.js"></script>
+      
+        <script src="../../../javascripts/scipt-library.js"></script>
+      
+    
+  </body>
+</html>
