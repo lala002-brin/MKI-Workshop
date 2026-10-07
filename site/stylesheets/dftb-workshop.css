@@ -6612,247 +6612,1970 @@
     0 12px 30px rgba(88, 128, 47, 0.08);
 }
 
+/* =====================================================
+   MKI COMPUTATIONAL MATERIALS SCIENCE WORKSHOP
+   PREMIUM ACADEMIC THEME
+   SAFE FOR MKDOCS MATERIAL
+   ===================================================== */
 
-/* ============================================================
-   PROCESS AND CYCLE
-   ============================================================ */
 
-.s1-process-item,
-.s1-cycle-item {
-  padding:
-    14px
-    16px;
+/* MAIN WORKSHOP CONTAINER */
 
-  background:
+.workshop-content {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 35px 25px 80px;
+
+}
+
+
+
+/* SECTION CARD */
+
+.workshop-section {
+
+    margin: 55px 0;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+
     linear-gradient(
-      180deg,
-      #ffffff,
-      #fbfdff
+        145deg,
+        rgba(255,255,255,.96),
+        rgba(248,250,252,.96)
     );
 
-  border:
-    1px solid
-    var(--premium-border);
 
-  border-radius:
-    14px;
+    border:
 
-  transition:
-    transform 0.20s ease,
-    box-shadow 0.20s ease;
+    1px solid rgba(148,163,184,.25);
+
+
+    box-shadow:
+
+    0 18px 45px rgba(15,23,42,.08);
+
+
+    transition:
+
+    transform .3s ease,
+    box-shadow .3s ease;
+
 }
 
 
-.s1-process-item:hover,
-.s1-cycle-item:hover {
-  transform:
-    translateX(5px);
 
-  box-shadow:
-    0 10px 26px rgba(29, 53, 83, 0.06);
+.workshop-section:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+    0 25px 60px rgba(15,23,42,.12);
+
 }
 
 
-/* ============================================================
-   REFLECTION BOX
-   ============================================================ */
 
-.s1-reflection {
+/* TITLE */
+
+.workshop-content h1 {
+
+
+    font-size: 2.8rem;
+
+    font-weight: 850;
+
+    letter-spacing: -.8px;
+
+    color:#102a56;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.workshop-content h2 {
+
+
+    margin-top:45px;
+
+    font-size:2rem;
+
+    color:#163b73;
+
+    font-weight:750;
+
+}
+
+
+
+.workshop-content h3 {
+
+
+    margin-top:35px;
+
+    font-size:1.35rem;
+
+    color:#1d4ed8;
+
+    font-weight:700;
+
+}
+
+
+
+.workshop-content h4 {
+
+
+    color:#2563eb;
+
+}
+
+
+
+/* PARAGRAPH */
+
+
+.workshop-content p {
+
+    color:#475569;
+
+    font-size:1.03rem;
+
+    line-height:1.85;
+
+    text-align:justify;
+
+}
+
+
+
+/* CODE BLOCK */
+
+
+.workshop-content pre {
+
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #071426,
+        #122b46
+    );
+
+
+    border-radius:18px;
+
+
+    padding:28px;
+
+
+    margin:30px 0;
+
+
+    overflow-x:auto;
+
+
+    box-shadow:
+
+    0 20px 45px rgba(2,8,23,.25);
+
+
+}
+
+
+
+.workshop-content code {
+
+
+    font-family:
+
+    "JetBrains Mono",
+    "Fira Code",
+    Consolas,
+    monospace;
+
+
+    font-size:.9rem;
+
+
+    color:#e2e8f0;
+
+}
+
+
+
+/* CODE COPY BUTTON */
+
+.copy-code {
+
+
+    position:absolute;
+
+    right:15px;
+
+    top:12px;
+
+
+    border:none;
+
+    padding:7px 14px;
+
+    border-radius:10px;
+
+
+    background:
+
+    rgba(255,255,255,.12);
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+    font-size:.75rem;
+
+
+}
+
+
+
+.copy-code:hover {
+
+    background:
+
+    rgba(255,255,255,.25);
+
+}
+
+
+
+/* TABLE */
+
+
+.workshop-content table {
+
+
+    width:100%;
+
+
+    border-collapse:separate;
+
+
+    border-spacing:0;
+
+
+    overflow:hidden;
+
+
+    border-radius:18px;
+
+
+    margin:35px 0;
+
+
+    box-shadow:
+
+    0 15px 35px rgba(15,23,42,.1);
+
+
+}
+
+
+
+.workshop-content th {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #12356b,
+        #2563eb
+    );
+
+
+    color:white;
+
+
+    padding:16px;
+
+
+}
+
+
+
+.workshop-content td {
+
+
+    padding:15px;
+
+
+    background:white;
+
+
+    border-bottom:
+
+    1px solid #e2e8f0;
+
+
+    color:#475569;
+
+
+}
+
+
+
+.workshop-content tr:hover td {
+
+
+    background:#f8fafc;
+
+}
+
+
+
+/* IMAGE */
+
+
+.workshop-content figure {
+
+
+    text-align:center;
+
+
+    margin:45px auto;
+
+
+}
+
+
+
+.workshop-content img {
+
+
+    max-width:85%;
+
+
+    border-radius:22px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.18);
+
+
+    transition:.35s ease;
+
+
+}
+
+
+
+.workshop-content img:hover {
+
+
+    transform:scale(1.03);
+
+}
+
+
+
+.workshop-content figcaption {
+
+
+    margin-top:15px;
+
+
+    color:#64748b;
+
+
+    font-style:italic;
+
+
+}
+
+
+
+/* SPECIAL PARAMETER SECTION */
+
+
+.parameter-section {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #f0fdf4,
+        #ffffff
+    );
+
+
+    border-left:
+
+    7px solid #16a34a;
+
+
+}
+
+
+
+/* SLURM SECTION */
+
+
+.slurm-section {
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+
+    border-left:
+
+    7px solid #2563eb;
+
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.workshop-content {
+
+padding:20px 12px;
+
+}
+
+
+.workshop-section {
+
+padding:22px;
+
+}
+
+
+.workshop-content h1 {
+
+font-size:2rem;
+
+}
+
+
+}
+/* =========================================================
+   WORKSHOP PREMIUM CLEAN LAYOUT
+   Aman untuk MkDocs Material
+   Fokus: rapi, ideal, profesional
+   ========================================================= */
+
+.workshop-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* Card section */
+.workshop-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 40px 38px;
+  margin: 36px 0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* Heading utama halaman */
+.workshop-content h1 {
+  font-size: 2.45rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #17305c;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.03em;
+}
+
+/* Heading bagian besar */
+.workshop-content h2 {
+  font-size: 1.9rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #1f3b72;
+  margin: 36px 0 16px;
+  text-align: center;
+}
+
+/* Heading subbagian */
+.workshop-content h3 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 28px 0 12px;
+}
+
+/* Heading kecil */
+.workshop-content h4 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 22px 0 10px;
+}
+
+/* Garis aksen */
+.workshop-divider {
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  margin: 12px 0 24px;
+}
+
+.workshop-divider.center {
+  margin: 12px auto 24px;
+}
+
+/* Paragraf */
+.workshop-content p {
+  font-size: 1.03rem;
+  line-height: 1.85;
+  color: #475569;
+  margin: 0 0 16px;
+}
+
+/* Paragraf pembuka / lead */
+.workshop-lead {
+  font-size: 1.18rem;
+  line-height: 1.9;
+  color: #475569;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+/* List */
+.workshop-content ul,
+.workshop-content ol {
+  margin: 0 0 18px 22px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.workshop-content li {
+  margin-bottom: 8px;
+}
+
+/* Inline code */
+.workshop-content :not(pre) > code {
+  background: #eff6ff;
+  color: #1e3a8a;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.92em;
+  border: 1px solid #dbeafe;
+}
+
+/* Code block */
+.workshop-content pre {
   position: relative;
-
-  padding:
-    23px
-    25px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4f9fd,
-      #ffffff
-    );
-
-  border:
-    1px solid
-    var(--premium-border);
-
-  border-radius:
-    18px;
-
-  box-shadow:
-    0 10px 28px rgba(28, 54, 87, 0.04);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  border-radius: 18px;
+  padding: 24px 24px;
+  margin: 18px 0 26px;
+  overflow-x: auto;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
 }
 
-
-/* ============================================================
-   CONCEPT MAP
-   ============================================================ */
-
-.s1-concept-map {
-  padding:
-    30px;
-
-  border:
-    1px solid
-    var(--premium-border);
-
-  border-radius:
-    22px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fcfdff,
-      #ffffff
-    );
-
-  box-shadow:
-    0 14px 38px rgba(28, 52, 82, 0.05);
+.workshop-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  white-space: pre;
 }
 
-
-.s1-concept-object {
-  min-height:
-    78px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f7f5bf,
-      #d8f4e9
-    );
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+/* Tombol copy jika dipakai JS */
+.copy-code {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 0;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-
-.s1-concept-box {
-  min-height:
-    78px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #faf9ce,
-      #ddf5e9
-    );
-
-  border:
-    1px solid
-    rgba(57, 111, 95, 0.07);
-
-  border-radius:
-    14px;
+.copy-code:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 
-
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
-
-.premium-reveal {
-  opacity:
-    0;
-
-  transform:
-    translateY(20px);
-
-  transition:
-    opacity 0.65s cubic-bezier(.22,.61,.36,1),
-    transform 0.65s cubic-bezier(.22,.61,.36,1);
+/* Table */
+.workshop-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0 28px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
 }
 
-
-.premium-visible {
-  opacity:
-    1;
-
-  transform:
-    translateY(0);
+.workshop-content th {
+  background: #eaf2ff;
+  color: #17305c;
+  font-weight: 700;
+  padding: 14px 16px;
+  border: 1px solid #d6e3f5;
+  text-align: left;
 }
 
-
-/* ============================================================
-   DARK MODE
-   ============================================================ */
-
-[data-md-color-scheme="slate"] .s1-hero,
-[data-md-color-scheme="slate"] .s3-hero,
-[data-md-color-scheme="slate"] .s1-card,
-[data-md-color-scheme="slate"] .s3-card {
-  background:
-    linear-gradient(
-      180deg,
-      #111b27,
-      #0e1722
-    );
-
-  border-color:
-    rgba(255, 255, 255, 0.08);
+.workshop-content td {
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  vertical-align: top;
+  color: #475569;
+  background: #fff;
 }
 
-
-[data-md-color-scheme="slate"] .s1-body p,
-[data-md-color-scheme="slate"] .s3-body p {
-  color:
-    #cbd6e1;
+/* Figure */
+.workshop-content figure {
+  margin: 28px auto;
+  text-align: center;
 }
 
+.workshop-content figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+}
 
-/* ============================================================
-   MOBILE
-   ============================================================ */
+.workshop-content figcaption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #64748b;
+  font-style: italic;
+}
 
-@media (max-width: 680px) {
+/* Special sections */
+.parameter-section {
+  border-left: 6px solid #84cc16;
+  background: linear-gradient(180deg, #fcfff5 0%, #ffffff 100%);
+}
 
-  .s1-page,
-  .s3-page {
-    width:
-      min(
-        100% - 18px,
-        1080px
-      );
+.slurm-section {
+  border-left: 6px solid #2563eb;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+/* Utility title block */
+.workshop-title-block {
+  margin-bottom: 26px;
+}
+
+.workshop-title-block.center {
+  text-align: center;
+}
+
+.workshop-title-block.center .workshop-divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Jangan biarkan konten terlalu mepet */
+.workshop-section > *:first-child {
+  margin-top: 0;
+}
+
+.workshop-section > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .workshop-content {
+    padding: 20px 14px 56px;
   }
 
-
-  .s1-hero,
-  .s3-hero {
-    padding:
-      40px
-      22px;
-
-    border-radius:
-      22px;
+  .workshop-section {
+    padding: 26px 20px;
+    border-radius: 18px;
   }
 
-
-  .s1-card,
-  .s3-card {
-    padding:
-      30px
-      20px;
-
-    border-radius:
-      22px;
+  .workshop-content h1 {
+    font-size: 1.9rem;
   }
 
-
-  .s1-equation {
-    padding:
-      18px
-      15px;
+  .workshop-content h2 {
+    font-size: 1.45rem;
   }
 
+  .workshop-content h3 {
+    font-size: 1.15rem;
+  }
 
-  .s1-code-block pre,
-  .s3-code-block pre {
+  .workshop-lead {
+    font-size: 1.03rem;
+    line-height: 1.75;
+  }
+
+  .workshop-content pre {
+    padding: 18px 16px;
+  }
+
+  .workshop-content pre code {
+    font-size: 0.88rem;
+  }
+}
+/* FIX MKDOCS WORKSHOP LAYOUT */
+
+.workshop-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: 950px !important;
+    margin: 0 auto !important;
+}
+
+
+.workshop-section {
+    display: block !important;
+    width: 100% !important;
+}
+
+
+.workshop-content h1,
+.workshop-content h2,
+.workshop-content h3,
+.workshop-content h4 {
+    max-width: none !important;
+}
+
+
+.workshop-content p {
+    max-width: none !important;
+}
+
+
+.workshop-content pre {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+
+.workshop-content table {
+    width: 100% !important;
+}
+/* =========================================
+   MKI WORKSHOP CLEAN PREMIUM STYLE
+   Safe for MkDocs Material
+========================================= */
+
+
+/* Container utama */
+
+.workshop-content {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 25px 20px;
+
+}
+
+
+
+/* Section */
+
+.workshop-section {
+
+    margin-bottom: 45px;
+
+}
+
+
+
+/* Judul utama */
+
+.workshop-content h1 {
+
+    font-size: 2.4rem;
+
+    font-weight: 800;
+
+    color: #123b6d;
+
+    line-height: 1.25;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* Heading */
+
+.workshop-content h2 {
+
+    font-size: 1.8rem;
+
+    font-weight: 750;
+
+    color: #174a8b;
+
+    margin-top: 40px;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+.workshop-content h3 {
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    color: #2563eb;
+
+    margin-top: 32px;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.workshop-content h4 {
+
+    color: #1d4ed8;
+
+}
+
+
+
+/* Paragraf */
+
+.workshop-content p {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    color: #475569;
+
+    text-align: justify;
+
+}
+
+
+
+/* Code block */
+
+.workshop-content pre {
+
+    background: #111827;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin: 25px 0;
+
+    overflow-x: auto;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.workshop-content pre code {
+
+    color: #e5e7eb;
+
+    font-size: .9rem;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Inline code */
+
+.workshop-content code {
+
+    border-radius: 6px;
+
+}
+
+
+
+/* Table */
+
+.workshop-content table {
+
+    width: 100%;
+
+    margin: 25px 0;
+
+    border-collapse: collapse;
+
+    overflow: hidden;
+
+}
+
+
+
+.workshop-content th {
+
+    background: #eaf2ff;
+
+    color: #123b6d;
+
+    font-weight: 700;
+
+    padding: 14px;
+
+}
+
+
+
+.workshop-content td {
+
+    padding: 13px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+
+/* Image */
+
+.workshop-content figure {
+
+    text-align: center;
+
+    margin: 35px auto;
+
+}
+
+
+
+.workshop-content img {
+
+    max-width: 85%;
+
+    border-radius: 16px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+.workshop-content figcaption {
+
+    margin-top: 10px;
+
+    font-size: .9rem;
+
+    color: #64748b;
+
+    font-style: italic;
+
+}
+
+
+
+/* Section khusus */
+
+.parameter-section {
+
+    background: #f7fee7;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    border-left: 5px solid #65a30d;
+
+}
+
+
+
+.slurm-section {
+
+    background: #eff6ff;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    border-left: 5px solid #2563eb;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .workshop-content {
+
+        padding: 15px;
+
+    }
+
+
+    .workshop-content h1 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .workshop-content img {
+
+        max-width:100%;
+
+    }
+
+}
+/* =================================
+   FINAL DOCUMENTATION POLISH
+================================= */
+
+
+/* Area isi utama */
+.workshop-content {
+    max-width: 1000px;
+}
+
+
+/* Hilangkan kesan box besar */
+.workshop-content {
+    background: transparent;
+}
+
+
+/* Judul sesi */
+.workshop-content > h1:first-child {
+    font-size: 2.6rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 35px;
+}
+
+
+/* Garis aksen heading */
+.workshop-content h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+
+.workshop-content h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    background: #2563eb;
+
+    border-radius: 10px;
+
+    margin-top: 12px;
+
+}
+
+
+/* Sub heading lebih clean */
+.workshop-content h3 {
+
+    padding-left: 12px;
+
+    border-left: 4px solid #2563eb;
+
+}
+
+
+
+/* Paragraf */
+.workshop-content p {
+
+    max-width: 850px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+}
+
+
+
+/* Code block lebih premium */
+.workshop-content pre {
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 15px 35px rgba(15,23,42,.15);
+
+}
+
+
+/* Code copy button MkDocs */
+.md-clipboard {
+
+    opacity: .5;
+
+}
+
+
+.md-clipboard:hover {
+
+    opacity:1;
+
+}
+
+
+/* Tabel */
+.workshop-content table {
+
+    border-radius: 12px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 20px rgba(15,23,42,.08);
+
+}
+
+
+
+/* Section parameter */
+.parameter-section {
+
+    margin-top:30px;
+
+    padding:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f7fee7,
+        #ecfccb
+    );
+
+}
+
+
+/* Section slurm */
+
+.slurm-section {
+
+    margin-top:35px;
+
+    padding:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+}
+/* =================================
+   IMPORTANT QUESTIONS STYLE
+================================= */
+
+
+.workshop-content h3:has(+ ol) {
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    color: #1e40af;
+
+    padding: 18px 25px;
+
+    border-radius: 16px 16px 0 0;
+
+    margin-bottom: 0;
+
+    border-left: 6px solid #2563eb;
+
+    font-size: 1.35rem;
+
+    font-weight: 800;
+
+}
+
+
+
+.workshop-content h3:has(+ ol) + ol {
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fafc
+    );
+
+    padding: 25px 35px 25px 55px;
+
+    margin-top: 0;
+
+    border-radius: 0 0 16px 16px;
+
+    border-left: 6px solid #2563eb;
+
+    box-shadow:
+
+    0 10px 25px rgba(15,23,42,.08);
+
+}
+
+
+
+.workshop-content h3:has(+ ol) + ol li {
+
+    margin-bottom: 14px;
+
+    color: #334155;
+
+    line-height: 1.7;
+
+}
+
+
+
+.workshop-content h3:has(+ ol) + ol li::marker {
+
+    color: #2563eb;
+
+    font-weight: 800;
+
+}
+/* =========================================
+   MKI WORKSHOP PREMIUM DOCUMENT STYLE
+========================================= */
+
+
+/* ROOT */
+
+:root {
+    --primary: #1648c5;
+    --primary-light: #eaf1ff;
+    --text: #1f2937;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --code-bg: #0f172a;
+    --card-bg: #ffffff;
+}
+
+
+
+/* GLOBAL */
+
+body {
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+
+/* CONTENT AREA */
+
+.workshop-content {
+
+    max-width: 1050px;
+
+    margin: auto;
+
     padding:
-      20px
-      16px
-      21px !important;
+
+        40px
+
+        45px;
+
+}
+
+
+
+/* SECTION */
+
+.workshop-section {
+
+    margin-bottom: 60px;
+
+}
+
+
+
+/* TITLE */
+
+.workshop-section h1 {
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    color: #12356d;
+
+    margin-bottom: 35px;
+
+}
+
+
+.workshop-section h2 {
+
+    font-size: 30px;
+
+    color: #163b7a;
+
+    margin-top: 45px;
+
+    border-left:
+
+        5px solid
+
+        var(--primary);
+
+    padding-left:
+
+        18px;
+
+}
+
+
+.workshop-section h3 {
+
+    font-size: 22px;
+
+    color:
+
+        #1654d8;
+
+    margin-top:
+
+        35px;
+
+}
+
+
+
+/* PARAGRAPH */
+
+.workshop-section p {
 
     font-size:
-      0.78rem;
-  }
+
+        17px;
+
+    color:
+
+        #374151;
+
+}
+
+
+
+/* =================================
+   IMPORTANT QUESTIONS BOX
+================================= */
+
+
+.important-box {
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #fffbe8,
+
+        #fef3c7
+
+    );
+
+
+    border:
+
+    2px solid
+
+    #facc15;
+
+
+    border-radius:
+
+    18px;
+
+
+    padding:
+
+    28px;
+
+
+    margin:
+
+    35px 0;
+
+
+    box-shadow:
+
+    0 12px 30px
+
+    rgba(0,0,0,.08);
+
+}
+
+
+
+.important-box h3 {
+
+    text-align:center;
+
+    color:
+
+    #92400e;
+
+    font-size:
+
+    25px;
+
+}
+
+
+
+.important-box ol {
+
+    margin-top:
+
+    20px;
+
+}
+
+
+
+
+
+/* =================================
+   INFO BOX
+================================= */
+
+
+.info-box {
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #ecfccb,
+
+        #f0fdf4
+
+    );
+
+
+    border-left:
+
+    6px solid
+
+    #65a30d;
+
+
+    padding:
+
+    25px;
+
+
+    border-radius:
+
+    14px;
+
+
+    margin:
+
+    30px 0;
+
+
+}
+
+
+
+/* =================================
+   CODE BLOCK
+================================= */
+
+
+pre {
+
+
+    background:
+
+    var(--code-bg);
+
+
+    color:
+
+    #e2e8f0;
+
+
+    border-radius:
+
+    16px;
+
+
+    padding:
+
+    25px;
+
+
+    overflow-x:
+
+    auto;
+
+
+    box-shadow:
+
+    0 15px 35px
+
+    rgba(15,23,42,.25);
+
+
+    margin:
+
+    25px 0;
+
+
+}
+
+
+
+code {
+
+
+    font-family:
+
+    "JetBrains Mono",
+
+    "Fira Code",
+
+    monospace;
+
+
+    font-size:
+
+    14px;
+
+}
+
+
+
+
+/* INLINE CODE */
+
+
+p code,
+li code {
+
+
+    background:
+
+    #eef2ff;
+
+
+    color:
+
+    #3730a3;
+
+
+    padding:
+
+    4px 8px;
+
+
+    border-radius:
+
+    6px;
+
+}
+
+
+
+
+
+/* =================================
+   TABLE
+================================= */
+
+
+table {
+
+
+    width:
+
+    100%;
+
+
+    border-collapse:
+
+    separate;
+
+
+    border-spacing:
+
+    0;
+
+
+    margin:
+
+    30px 0;
+
+
+    overflow:
+
+    hidden;
+
+
+    border-radius:
+
+    14px;
+
+
+    box-shadow:
+
+    0 10px 25px
+
+    rgba(0,0,0,.08);
+
+
+}
+
+
+
+thead {
+
+
+    background:
+
+    #dbeafe;
+
+
+}
+
+
+
+th {
+
+
+    padding:
+
+    15px;
+
+
+    text-align:
+
+    left;
+
+
+    color:
+
+    #1e3a8a;
+
+
+}
+
+
+
+td {
+
+
+    padding:
+
+    14px;
+
+
+    border-bottom:
+
+    1px solid
+
+    var(--border);
+
+
+}
+
+
+
+
+
+tr:last-child td {
+
+    border-bottom:none;
+
+}
+
+
+
+tbody tr:hover {
+
+
+    background:
+
+    #f8fafc;
+
+}
+
+
+
+/* =================================
+   IMAGE
+================================= */
+
+
+figure {
+
+
+    text-align:
+
+    center;
+
+
+    margin:
+
+    40px auto;
+
+
+}
+
+
+
+figure img {
+
+
+    max-width:
+
+    90%;
+
+
+    border-radius:
+
+    18px;
+
+
+    box-shadow:
+
+    0 15px 40px
+
+    rgba(0,0,0,.15);
+
+
+}
+
+
+
+figcaption {
+
+
+    margin-top:
+
+    12px;
+
+
+    color:
+
+    var(--muted);
+
+
+    font-style:
+
+    italic;
+
+}
+
+
+
+/* =================================
+   LIST
+================================= */
+
+
+li {
+
+    margin-bottom:
+
+    8px;
+
+}
+
+
+
+
+
+/* =================================
+   MOBILE
+================================= */
+
+
+@media(max-width:768px){
+
+
+.workshop-content {
+
+
+padding:
+
+20px;
+
+}
+
+
+
+.workshop-section h1 {
+
+
+font-size:
+
+32px;
+
+}
+
+
+
+.workshop-section h2 {
+
+
+font-size:
+
+24px;
+
+}
+
+
+
+.workshop-section p {
+
+
+font-size:
+
+16px;
+
+}
+
+
+
+table {
+
+
+font-size:
+
+14px;
+
+display:
+
+block;
+
+overflow-x:
+
+auto;
+
+}
+
+
+
+pre {
+
+
+padding:
+
+18px;
+
+font-size:
+
+13px;
+
+}
+
+
+figure img {
+
+
+max-width:
+
+100%;
+
+}
+
+
+}
+table {
+
+    table-layout: fixed;
+
+    width:100%;
+
+}
+
+td, th {
+
+    word-wrap:break-word;
 
 }

@@ -132,9 +132,9 @@ nav:
           - Sesi 3 · Membangun input dan menjalankan DFTB+ : hands-on-project/day-2/sesi-3-menjalankan-dftb.md
           - Sesi 4 · Analisis Lintasan dan Antarmuka : hands-on-project/day-2/sesi-4-analisis-lintasan-dan-antarmuka.md
           - Sesi 5-6 · Pemodelan Material dengan MACE dan diskusi : hands-on-project/day-2/sesi-5-mace.md
-          - Bahan Pendalaman: hands-on-project/day-2/bahan-pendalaman.md
-          - Modul Workshop DCDFTBMD MACE: hands-on-project/day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf
-          - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
+          - Bahan Pendalaman : hands-on-project/day-2/bahan-pendalaman.md
+          - Modul Workshop DFTBPlus : hands-on-project/day-2/Modul_Workshop_DFTBPlus.pdf
+
   - Research Cases:
           - Graphene Electronic Structure:
               - Overview: hands-on-project/research-cases/graphene/index.md
