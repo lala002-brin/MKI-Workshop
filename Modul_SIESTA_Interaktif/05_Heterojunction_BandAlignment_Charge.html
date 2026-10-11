@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>05 · Interface dan heterojunction | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="active" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 5 / 6</div><h1>05 · Interface dan heterojunction</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="04_Surface_Slab_dan_WorkFunction.html">← Part sebelumnya</a><a href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">Part berikutnya →</a></div><article class="paper"><h1>Part 05. Heterojunction: kontak ZIF-67/Cu₂O dan Fe₃O₄/ZIF-67</h1>
+<h2>1. Pertanyaan yang tidak dapat dijawab hanya dari bulk</h2>
+<p>Dari bulk, kita mengetahui gap elektronik masing-masing material. Tetapi dua material dengan gap serupa dapat memiliki posisi pita berbeda terhadap vakum. Karena itu <strong>perbandingan gap bulk saja tidak menentukan arah transfer muatan maupun jenis heterojunction</strong>.</p>
+<h2>2. Urutan interface yang lebih efisien</h2>
+<ol>
+<li>Optimasi bulk masing-masing material.</li>
+<li>Pilih facet dan terminasi surface dari data morfologi dan energi permukaan.</li>
+<li>Hitung properti permukaan terpisah: DOS, PDOS, potensial dan fungsi kerja.</li>
+<li>Bangun <strong>ZIF-67/Cu₂O</strong> dan <strong>Fe₃O₄/ZIF-67</strong> secara terpisah.</li>
+<li>Uji orientasi, jarak kontak, dan strain. Pilih beberapa struktur awal.</li>
+<li>Optimasi interface dengan kondisi magnetik yang konsisten.</li>
+<li>Bandingkan energi ikatan, PDOS, beda muatan, potensial dan band offsets.</li>
+<li>Baru usulkan model tiga komponen yang mengikuti morfologi eksperimental.</li>
+</ol>
+<h2>3. Cara membuat interface fisik</h2>
+<p>Untuk interface periodik, vektor lateral kedua permukaan harus dapat dicocokkan lewat pengulangan integer dengan strain rendah. Secara konseptual:</p>
+<p>$<span class="math">\(\mathbf L_{A}^{matched}\approx \mathbf L_{B}^{matched}\)</span>$</p>
+<p>Strain satu arah:</p>
+<p>$<span class="math">\(\varepsilon=(L_{matched}-L_0)/L_0\times 100\%\)</span>$</p>
+<p><strong>Jangan mengejar sel &lt;5% strain dengan mengabaikan ukuran model:</strong> interface MOF/oksida mungkin inkoheren atau lokal. Dalam kondisi itu, gunakan fragmen/klaster berjangkar yang sesuai dan laporkan keterbatasan model.</p>
+<h2>4. Kapan memakai komposit triple?</h2>
+<p>Setelah hasil kedua interface bilayer tersedia. Model Fe₃O₄/ZIF-67/Cu₂O sebaiknya membentuk kontak yang realistis, misalnya inti Fe₃O₄, MOF yang tumbuh pada inti, dan Cu₂O di permukaan luar. Jangan menumpuk tiga sel kubik secara arbitrer.</p>
+<h2>5. Binding energy</h2>
+<p>$<span class="math">\(E_{bind}=E_{AB}-E_A-E_B\)</span>$</p>
+<p>Tentukan apakah komponen A dan B dihitung pada geometri <strong>terdeformasi di interface</strong> atau geometri <strong>relaksasi terpisah</strong>. Perbedaan definisi mengubah apakah energi strain masuk ke nilai ikatan. Untuk antarmuka luas, laporkan eV per interface area dan, bila relevan, koreksi BSSE.</p>
+<h2>6. Charge density difference</h2>
+<p>$<span class="math">\(\Delta\rho(\mathbf r)=\rho_{AB}(\mathbf r)-\rho_A(\mathbf r)-\rho_B(\mathbf r)\)</span>$</p>
+<p>Lakukan tiga SCF dengan <strong>grid, sel, posisi atom, basis, dan referensi konsisten</strong>. Untuk A dan B, gunakan koordinat yang sama seperti dalam interface AB, dengan atom komponen lain dihilangkan. Pastikan penyelarasan grid sebelum mengurangkan cube/rho; jika tidak, file 3D tidak dapat dikurangkan begitu saja.</p>
+<h2>7. PDOS yang diproyeksikan per komponen</h2>
+<ul>
+<li>Fe₃O₄: Fe(A) dan Fe(B) 3d serta O 2p, pisah spin.</li>
+<li>ZIF-67: Co 3d, N 2p, C 2p.</li>
+<li>Cu₂O: Cu 3d dan O 2p.</li>
+<li>Interface: bandingkan orbital pada atom dekat kontak dan atom jauh dari kontak.</li>
+</ul>
+<p>Fokuskan analisis pada perubahan posisi fitur PDOS, hibridisasi, dan keadaan antarmuka. Jangan hanya membandingkan total DOS seluruh komposit.</p>
+<h2>8. Band alignment dan work function</h2>
+<p>Dari slab terpisah, tentukan level vakum dan fungsi kerja. Untuk semikonduktor yang mempunyai bulk-like region, gunakan <strong>potential lineup</strong> untuk membandingkan VBM/CBM. Surface state, keadaan Fermi pinned, dipol antarmuka, dan sifat konduktif Fe₃O₄ dapat mengaburkan konsep band offset sederhana.</p>
+<p>Untuk skema type-II/Z-scheme/S-scheme:</p>
+<ul>
+<li><strong>DFT ground state:</strong> memberi struktur, redistribusi muatan kesetimbangan, band alignment dan potensial.</li>
+<li><strong>Eksperimen/teori eksitasi:</strong> diperlukan untuk menilai arah aliran pembawa muatan akibat cahaya, kinetika rekombinasi, dan spesies reaktif.</li>
+<li>Jangan menggunakan Δρ keadaan dasar sebagai bukti tunggal S-scheme.</li>
+</ul>
+<h2>9. Tabel yang mahasiswa harus buat</h2>
+<table>
+<thead>
+<tr>
+  <th>Konfigurasi</th>
+  <th style="text-align:right">Jumlah atom</th>
+  <th style="text-align:right">Strain x/y (%)</th>
+  <th style="text-align:right">E_bind (eV)</th>
+  <th style="text-align:right">Δq (e)</th>
+  <th style="text-align:right">ΔΦ (eV)</th>
+  <th>Status relaksasi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ZIF-67/Cu₂O posisi 1</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td>...</td>
+</tr>
+<tr>
+  <td>ZIF-67/Cu₂O posisi 2</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td>...</td>
+</tr>
+<tr>
+  <td>Fe₃O₄/ZIF-67 posisi 1</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td style="text-align:right">...</td>
+  <td>...</td>
+</tr>
+</tbody>
+</table>
+<h2>10. Checkpoint</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Ada alasan fisik untuk facet, terminasi, orientasi kontak.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Lattice match/strain dan biaya model diketahui.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Semua struktur interface memenuhi toleransi gaya dan spin.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Analisis Δρ memakai grid identik dan geometri referensi sesuai.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Klaim heterojunction sesuai bukti, bukan hanya perbedaan gap.</li>
+</ul>
+</article><div class="topnav"><a href="04_Surface_Slab_dan_WorkFunction.html">← Part sebelumnya</a><a href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">Part berikutnya →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>

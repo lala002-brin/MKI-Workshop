@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>06 · Tetrasiklin, reaksi dan proyek mahasiswa | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="active" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 6 / 6</div><h1>06 · Tetrasiklin, reaksi dan proyek mahasiswa</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="05_Heterojunction_BandAlignment_Charge.html">← Part sebelumnya</a><a href="index.html">Kembali ke daftar isi →</a></div><article class="paper"><h1>Part 06. Tetrasiklin: dari konformer hingga mekanisme reaksi</h1>
+<h2>1. Definisikan endpoint penelitian</h2>
+<p><strong>Adsorpsi/penghilangan TC</strong> berbeda dari <strong>degradasi TC</strong> dan berbeda dari <strong>mineralisasi</strong>. DFT pada keadaan dasar dapat mendukung mekanisme adsorpsi dan energi reaksi elementer; tidak secara otomatis memprediksi laju degradasi fotokatalitik.</p>
+<h2>2. Siapkan TC dengan benar</h2>
+<ol>
+<li>Tetapkan identitas kimia: tetracycline base atau bentuk garam tertentu.</li>
+<li>Buat beberapa konformer molekul (rotasi gugus, ikatan hidrogen intramolekul).</li>
+<li>Pilih bentuk protonasi dominan sesuai pH eksperimen. TC dapat berubah spesiasinya karena gugus yang dapat terprotonasi/deprotonasi.</li>
+<li>Optimasi tiap spesies dan periksa muatan total serta multiplicity/spin.</li>
+<li>Pertimbangkan solvation, ion countercharge, dan artefak elektrostatik sistem bermuatan periodik.</li>
+</ol>
+<p>Untuk skrining awal, Anda dapat menggunakan molekul TC terisolasi di sel vakum yang cukup besar, tetapi laporkan bahwa ini bukan model larutan air yang lengkap.</p>
+<h2>3. Pilih situs adsorpsi</h2>
+<table>
+<thead>
+<tr>
+  <th>Sistem</th>
+  <th>Situs kandidat</th>
+  <th>Interaksi diuji</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cu₂O surface</td>
+  <td>Cu terkoordinasi rendah</td>
+  <td>koordinasi O karbonil/hidroksil TC</td>
+</tr>
+<tr>
+  <td>Fe₃O₄ surface</td>
+  <td>Fe pada permukaan</td>
+  <td>kompleksasi gugus beroksigen TC</td>
+</tr>
+<tr>
+  <td>ZIF-67</td>
+  <td>ligan permukaan, Co terbuka pada cacat realistis</td>
+  <td>H-bond, dispersi, koordinasi Co</td>
+</tr>
+<tr>
+  <td>ZIF-67/Cu₂O</td>
+  <td>atom pada interface dan permukaan luar</td>
+  <td>perubahan situs akibat kontak</td>
+</tr>
+<tr>
+  <td>Triple composite</td>
+  <td>situs yang benar-benar dapat dicapai TC</td>
+  <td>pengaruh heterointerface terhadap adsorpsi</td>
+</tr>
+</tbody>
+</table>
+<p>Jangan menguji hanya satu orientasi. Mulai setidaknya beberapa orientasi karbonil, hidroksil, sejajar, dan miring, kemudian optimasi.</p>
+<h2>4. Membangun geometri trial TC/surface</h2>
+<p><code>place_tc_trial.py</code> dalam paket hanyalah penempatan <strong>awal</strong> ke pusat permukaan pada ketinggian yang dipilih. Sebelum DFT, inspeksi tumbukan dan replika periodik; lakukan rotasi molekul dan sampling situs. Jangan langsung menganggap konformasi pertama sebagai minimum global.</p>
+<pre><code class="language-bash">python scripts/place_tc_trial.py Cu2O_111_trial.vasp TC_optimized.xyz \
+  --height 3.0 -o Cu2O_TC_trial.vasp
+</code></pre>
+<h2>5. Energi adsorpsi</h2>
+<p>$<span class="math">\(E_{ads}=E_{slab+TC}-E_{slab}-E_{TC}\)</span>$</p>
+<p>Semua bagian harus memakai functional, basis, pseudopotential, pengaturan numerik, spin, dan referensi atom yang konsisten.</p>
+<ul>
+<li>Nilai negatif berarti keadaan adsorpsi lebih rendah energi daripada referensi yang dipilih.</li>
+<li>Energi lebih negatif <strong>tidak selalu</strong> berarti fotodegradasi lebih cepat.</li>
+<li>Basis orbital lokal SIESTA dapat mengalami <strong>basis-set superposition error</strong>. Evaluasi koreksi counterpoise/ghost basis.</li>
+<li>Adsorpsi dari larutan memerlukan kontribusi hidrasi, keadaan protonasi, entropi dan pH untuk memperoleh energi bebas yang relevan.</li>
+</ul>
+<h2>6. Analisis struktural dan elektronik</h2>
+<p>Simpan dan bandingkan:</p>
+<ol>
+<li>Panjang kontak Cu–O(TC), Fe–O(TC), Co–O(TC) jika terbentuk.</li>
+<li>Perubahan ikatan C=O atau O–H yang relevan pada TC.</li>
+<li>Δρ(permukaan+TC) dengan tiga densitas pada geometri yang sama.</li>
+<li>PDOS orbital yang berinteraksi; charge partitioning dengan metode disebut eksplisit.</li>
+<li>Beberapa minimum adsorpsi, bukan hanya satu nilai E_ads.</li>
+</ol>
+<h2>7. Jika tujuannya fotodegradasi</h2>
+<ul>
+<li>Kaitkan band alignment dengan kemampuan oksidasi/reduksi <strong>hanya setelah</strong> memvalidasi referensi energi dan sifat permukaan.</li>
+<li>Gunakan uji scavenger/EPR untuk mengidentifikasi kemungkinan <code>·OH</code>, <code>O₂·−</code>, hole, atau spesies lain.</li>
+<li>Pakai LC-MS untuk memilih produk antara yang masuk akal.</li>
+<li>Hitung reaktan, intermediat, produk, dan transition state untuk reaksi tertentu.</li>
+<li>Gunakan NEB untuk reaksi pada permukaan yang bisa dijelaskan oleh lintasan reaksi keadaan dasar. Photochemistry dapat memerlukan metode excited-state.</li>
+</ul>
+<p>$<span class="math">\(E_a=E_{TS}-E_{reactant}\)</span>$</p>
+<p>Dari data energi total saja jangan menyatakan konstanta laju tanpa kontribusi entropi dan teori kinetika yang sesuai.</p>
+<h2>8. Alur praktikum mahasiswa dan deliverables</h2>
+<table>
+<thead>
+<tr>
+  <th>Minggu</th>
+  <th>Fokus</th>
+  <th>Luaran</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Validasi CIF, pseudopotential, smoke test Cu₂O</td>
+  <td>laporan struktur, output SCF pertama</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Konvergensi Cu₂O, optimasi</td>
+  <td>grafik konvergensi, Cu₂O optimal</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>DOS/PDOS dan pita Cu₂O</td>
+  <td>gap KS dan interpretasi orbital</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Bulk Fe₃O₄ dan spin</td>
+  <td>perbandingan keadaan magnetik dan DOS spin</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>ZIF-67 dan dispersi</td>
+  <td>struktur MOF, spin Co dan PDOS</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Surface Cu₂O dan Fe₃O₄</td>
+  <td>geometri slab, energi dan work function</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Surface/klaster ZIF-67, konstruksi interface</td>
+  <td>kandidat kontak tervalidasi</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Interface dan Δρ</td>
+  <td>binding energy, PDOS, peta beda muatan</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>TC: konformer, protonasi, adsorpsi</td>
+  <td>geometri dan energi adsorpsi</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>Sintesis hasil dan interpretasi</td>
+  <td>laporan teknis + gambar + batas metode</td>
+</tr>
+</tbody>
+</table>
+<p>Timeline di atas adalah <strong>contoh pengajaran</strong>, bukan estimasi pasti waktu HPC.</p>
+<h2>9. Struktur laporan ilmiah</h2>
+<ol>
+<li>Detail struktur dan sumber CIF (DOI/identifier).</li>
+<li>Versi SIESTA, compiler/MPI, XC, pseudopotential beserta file hash.</li>
+<li>Spin dan DFT+U, parameter dispersi serta alasan pemilihannya.</li>
+<li>Hasil convergence (mesh, k-point, basis, slab).</li>
+<li>Geometri akhir (parameter kisi, gaya dan tegangan).</li>
+<li>DOS/PDOS, pita dan gap (jelaskan referensi energi dan batas PBE).</li>
+<li>Surface/interface: terminasi, strain, energi, work function, Δρ.</li>
+<li>TC: spesies/protonasi, orientasi, E_ads, koreksi, interaksi.</li>
+<li>Interpretasi dibanding eksperimen dengan pembatasan kesimpulan yang jelas.</li>
+</ol>
+<h2>10. Kesalahan yang harus dihindari</h2>
+<ul>
+<li>Mengganti nama XYZ menjadi CIF atau FDF tanpa mengisi informasi struktur.</li>
+<li>Menggunakan k-grid 1×1×1 untuk semua bulk tanpa uji.</li>
+<li>Menggunakan satu nilai U untuk semua logam tanpa validasi.</li>
+<li>Menyatakan optimasi berhasil karena job berhenti, padahal SCF/forces gagal.</li>
+<li>Menumpuk tiga CIF sebagai interface tanpa terminasi dan strain yang benar.</li>
+<li>Membandingkan Fermi level dari perhitungan terpisah tanpa acuan energi bersama.</li>
+<li>Mengklaim S-scheme dari perubahan DOS/Δρ saja.</li>
+<li>Mengklaim degradasi hanya dari energi adsorpsi TC.</li>
+</ul>
+<h2>11. Sumber teknis dan catatan reproduksibilitas</h2>
+<ul>
+<li><a href="https://docs.siesta-project.org/projects/siesta/en/5.4/reference/siesta.html">Dokumentasi SIESTA</a></li>
+<li><a href="https://docs.siesta-project.org/projects/siesta/en/latest/tutorials/basic/structure-optimization/index.html">Tutorial optimasi SIESTA</a></li>
+<li><a href="https://ase-lib.org/ase/build/surface.html">ASE crystal surfaces</a></li>
+<li><a href="https://spglib.readthedocs.io/">spglib</a></li>
+<li><a href="https://seekpath.readthedocs.io/">SeeK-path</a></li>
+</ul>
+<p><strong>Penanda akhir:</strong> Seluruh struktur interface dan parameter numerik harus diuji pada HPC serta dibandingkan terhadap data eksperimen sebelum menjadi hasil publikasi.</p>
+</article><div class="topnav"><a href="05_Heterojunction_BandAlignment_Charge.html">← Part sebelumnya</a><a href="index.html">Kembali ke daftar isi →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>

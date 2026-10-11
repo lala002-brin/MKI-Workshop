@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>04 · Surface dan slab atomistik | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="active" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 4 / 6</div><h1>04 · Surface dan slab atomistik</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="03_Convergence_OPT_SCF_DOS_Bands.html">← Part sebelumnya</a><a href="05_Heterojunction_BandAlignment_Charge.html">Part berikutnya →</a></div><article class="paper"><h1>Part 04. Surface/slab: dari bulk ke permukaan aktif</h1>
+<h2>1. Kapan permukaan wajib dibuat?</h2>
+<ul>
+<li>Adsorpsi TC pada permukaan luar Cu₂O, Fe₃O₄, atau ZIF-67.</li>
+<li>Work function dan dipol permukaan.</li>
+<li>Rekonstruksi/terminasi serta energi permukaan.</li>
+<li>Persiapan kontak interface.</li>
+</ul>
+<p><strong>Bulk 3D tidak memiliki daerah vakum</strong>, sehingga tidak dapat langsung menghasilkan work function permukaan yang benar.</p>
+<h2>2. Pilihan permukaan awal</h2>
+<table>
+<thead>
+<tr>
+  <th>Material</th>
+  <th>Kandidat</th>
+  <th>Pemeriksaan wajib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cu₂O</td>
+  <td>(111), (100), opsional (110)</td>
+  <td>Cu-rich/O-rich, nonstoikiometri, kemungkinan polar</td>
+</tr>
+<tr>
+  <td>Fe₃O₄</td>
+  <td>(001), (111)</td>
+  <td>rekonstruksi, Fe(A)/Fe(B), polaritas dan spin</td>
+</tr>
+<tr>
+  <td>ZIF-67</td>
+  <td>facet berdasarkan morfologi eksperimen</td>
+  <td>pemutusan Co-N, ligan terminal, passivation, stabilitas pori</td>
+</tr>
+</tbody>
+</table>
+<p>Indeks Miller <strong>bukan penetapan terminasi</strong>. Permukaan (111) dapat memiliki beberapa susunan atom terluar. Jangan menyimpulkan permukaan paling stabil hanya dengan melihat satu slab.</p>
+<h2>3. Contoh pembuatan Cu₂O(111) dengan ASE</h2>
+<p>Gunakan <code>scripts/build_slab_trial.py</code> dalam paket. Contoh:</p>
+<pre><code class="language-bash">python scripts/build_slab_trial.py inputs/Cu2O.cif \
+  --hkl 1 1 1 --layers 6 --repeat 2 2 \
+  --vacuum 18 -o Cu2O_111_trial.vasp
+</code></pre>
+<p><strong>Periksa visualisasi</strong>: koordinasi atom, polaritas, terminasi atas/bawah, jarak antaratom, serta apakah pemotongan struktur menghasilkan ikatan/stoikiometri yang wajar. Generator ini hanya kandidat geometri.</p>
+<h2>4. Konvergensi slab</h2>
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Uji awal</th>
+  <th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ketebalan</td>
+  <td>4, 6, 8 lapisan struktural</td>
+  <td>energi permukaan/adsorpsi stabil</td>
+</tr>
+<tr>
+  <td>Vakum</td>
+  <td>15, 18, 22 Å</td>
+  <td>potensial vakum datar dan energi stabil</td>
+</tr>
+<tr>
+  <td>Sel lateral</td>
+  <td>1×1, 2×2, 3×3 jika memungkinkan</td>
+  <td>interaksi antar salinan TC kecil</td>
+</tr>
+<tr>
+  <td>Grid k</td>
+  <td>Nx × Ny × 1</td>
+  <td>energi adsorpsi/work function stabil</td>
+</tr>
+<tr>
+  <td>Constraint</td>
+  <td>fiksasi bawah jika sesuai bulk</td>
+  <td>bagian atas bebas berelaksasi</td>
+</tr>
+</tbody>
+</table>
+<p>Satu lapisan struktural tidak sama pada setiap orientasi atau bahan. Permukaan polar/asimetris dapat memerlukan koreksi dipol dan strategi terminasi khusus.</p>
+<h2>5. Surface energy</h2>
+<p>Untuk slab simetris stoikiometrik dengan dua permukaan identik:</p>
+<p>$<span class="math">\(\gamma=\frac{E_{slab}-nE_{bulk}}{2A}\)</span>$</p>
+<p>Untuk slab asimetris atau nonstoikiometrik, formula sederhana ini umumnya tidak cukup. Gunakan pendekatan potensial kimia dan perhatikan dua permukaan yang berbeda.</p>
+<h2>6. Work function dan acuan energi</h2>
+<p>$<span class="math">\(\Phi=E_{vac}-E_F\)</span>$</p>
+<p>Gunakan profil potensial rata-rata bidang (planar average) sepanjang normal slab. Tentukan level vakum dari daerah plateau yang tidak terganggu. Untuk semikonduktor, hati-hati menyamakan energi Fermi dengan band edge. Bila ingin vacuum-referenced VBM/CBM, lakukan penyelarasan potensial bulk dan slab secara konsisten.</p>
+<h2>7. SIESTA untuk slab</h2>
+<p>Sebagian parameter:</p>
+<pre><code class="language-fdf">MD.TypeOfRun CG
+MD.Steps 250
+MD.VariableCell F
+MD.MaxForceTol 0.02 eV/Ang
+%block kgrid_Monkhorst_Pack
+4 0 0 0.0
+0 4 0 0.0
+0 0 1 0.0
+%endblock kgrid_Monkhorst_Pack
+SaveRho T
+SaveElectrostaticPotential T
+</code></pre>
+<p><strong>Catatan versi:</strong> nama/dukungan output tertentu perlu dikonfirmasi terhadap manual SIESTA yang terinstal. Untuk work function pastikan file potensial benar-benar dihasilkan dan dapat dibaca utilitas yang sesuai.</p>
+<h2>8. Checkpoint surface</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Permukaan berasal dari bulk yang sudah optimal.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Semua kandidat terminasi dipertimbangkan secara kimia.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Energi permukaan dan sifat elektronik konvergen terhadap ketebalan/vakum.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Slab asimetris dianalisis untuk dipol.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Sel cukup besar untuk adsorpsi TC.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Sel lateral disimpan untuk perhitungan interface berikutnya.</li>
+</ul>
+</article><div class="topnav"><a href="03_Convergence_OPT_SCF_DOS_Bands.html">← Part sebelumnya</a><a href="05_Heterojunction_BandAlignment_Charge.html">Part berikutnya →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>
