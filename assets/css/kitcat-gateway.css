@@ -1,0 +1,145 @@
+/* KITCAT Research Gateway — Password Page */
+
+.md-content__inner:has(input[type="password"]) {
+  max-width: 780px;
+  margin: 36px auto 60px;
+  padding: 42px 36px !important;
+  border-radius: 24px;
+  background: linear-gradient(125deg, #102b5c, #21569a 65%, #087e9b);
+  box-shadow: 0 18px 48px rgba(10,35,80,.18);
+  text-align: center;
+  color: white;
+}
+
+.md-content__inner:has(input[type="password"])::before {
+  content: "KITCAT  /  MKI RESEARCH WORKSPACE";
+  display: block;
+  margin-bottom: 18px;
+  color: #bde7fb;
+  font-weight: 800;
+  letter-spacing: .12em;
+  font-size: 12px;
+}
+
+.md-content__inner:has(input[type="password"]) h1 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: transparent !important;
+  font-size: clamp(24px, 3vw, 36px) !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+}
+
+.md-content__inner:has(input[type="password"]) h1::after {
+  display: none !important;
+}
+
+.md-content__inner:has(input[type="password"]) p {
+  color: #e3efff !important;
+  -webkit-text-fill-color: #e3efff !important;
+}
+
+.md-content__inner input[type="password"] {
+  display: inline-block !important;
+  width: min(100%, 340px) !important;
+  min-height: 52px;
+  padding: 12px 16px !important;
+  box-sizing: border-box;
+  border-radius: 12px !important;
+  border: 2px solid #a8d7ff !important;
+  background: white !important;
+  color: #142b55 !important;
+  -webkit-text-fill-color: #142b55 !important;
+  font-size: 15px !important;
+}
+
+.md-content__inner input[type="password"]::placeholder {
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+  opacity: 1;
+}
+
+.md-content__inner:has(input[type="password"]) button {
+  min-height: 52px;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  background: #3477e4 !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  font-weight: 800 !important;
+  cursor: pointer;
+}
+
+.md-content__inner:has(input[type="password"]) button:hover {
+  background: #4a94fa !important;
+}
+
+@media (max-width: 600px) {
+  .md-content__inner:has(input[type="password"]) {
+    padding: 28px 18px !important;
+    margin: 15px auto 35px;
+  }
+  .md-content__inner input[type="password"],
+  .md-content__inner:has(input[type="password"]) button {
+    display: block !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}
+
+/* === KITCAT RESEARCH GATEWAY V3 — CLEAN DESIGN === */
+
+/* Hilangkan kartu luar, pertahankan kartu login bagian dalam */
+.md-content__inner:has(input[type="password"]) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 28px auto 60px !important;
+  max-width: 850px !important;
+}
+
+/* Hilangkan identitas KITCAT yang muncul dua kali */
+.md-content__inner:has(input[type="password"])::before {
+  display: none !important;
+}
+
+/* Kartu login utama */
+.md-content__inner:has(input[type="password"]) > *:has(input[type="password"]) {
+  background: linear-gradient(
+    125deg,
+    #102b5c 0%,
+    #21569a 65%,
+    #087e9b 100%
+  ) !important;
+  border-radius: 24px !important;
+  padding: 42px 35px !important;
+  box-shadow: 0 18px 48px rgba(10,35,80,.18) !important;
+}
+
+/* Judul halaman password */
+.md-content__inner:has(input[type="password"]) h1 {
+  font-size: clamp(24px, 3vw, 34px) !important;
+  line-height: 1.25 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Kolom password */
+.md-content__inner input[type="password"] {
+  width: min(100%, 360px) !important;
+  border-radius: 12px !important;
+}
+
+/* Tombol akses */
+.md-content__inner:has(input[type="password"]) button {
+  border-radius: 12px !important;
+  background: #3477e4 !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 600px) {
+  .md-content__inner:has(input[type="password"]) > *:has(input[type="password"]) {
+    padding: 30px 18px !important;
+  }
+}
