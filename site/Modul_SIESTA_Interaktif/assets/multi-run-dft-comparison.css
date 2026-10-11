@@ -1,0 +1,152 @@
+.mrd-root{--mrd-line:#dce4ee;--mrd-ink:#1d2c3d;color:var(--md-default-fg-color);font-size:.91rem}.mrd-hero{background:linear-gradient(125deg,#123b63,#187b90);padding:1.45rem 1.65rem;border-radius:15px;margin:1rem 0 1.1rem;color:#fff}.mrd-hero h2,.mrd-hero p{color:#fff!important;margin:.3rem 0!important}.mrd-hero h2{font-size:1.5rem!important}.mrd-eyebrow{letter-spacing:.1em;text-transform:uppercase;font-size:.7rem;color:#cfeaf5}.mrd-panel{border:1px solid var(--mrd-line);border-radius:12px;padding:1rem 1.15rem;margin:0 0 1rem;background:var(--md-default-bg-color);min-width:0}.mrd-panel h3{margin:.1rem 0 .7rem!important;font-size:1rem!important}.mrd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.mrd-grid .mrd-panel{margin:0 0 1rem}.mrd-upload{display:block;border:2px dashed #7bacc5;padding:1rem;border-radius:10px;cursor:pointer}.mrd-upload input{display:block;margin-top:.6rem;max-width:100%}.mrd-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.85rem 0}.mrd-actions button{background:#096f82;color:white;border:0;border-radius:7px;padding:.5rem .72rem;cursor:pointer;font-weight:600}.mrd-actions button.mrd-secondary{background:#e9f1f5;color:#173a55}.mrd-actions button:hover{filter:brightness(.94)}.mrd-panel label:not(.mrd-upload){display:block;margin:.5rem 0}.mrd-panel select{display:block;max-width:100%;width:100%;padding:.35rem;background:var(--md-default-bg-color);color:var(--md-default-fg-color);border:1px solid #94aabb;border-radius:6px}.mrd-graph-wrap{width:100%;overflow-x:auto}.mrd-graph-wrap svg{display:block;width:100%;min-width:540px;height:auto;background:var(--md-default-bg-color);border-radius:8px}.mrd-legend{display:flex;flex-wrap:wrap;gap:.6rem 1rem;font-size:.76rem;margin-top:.6rem}.mrd-chip{display:inline-flex;align-items:center;gap:.4rem}.mrd-swatch{width:12px;height:12px;border-radius:2px}.mrd-table-wrap{overflow-x:auto}.mrd-table-wrap table{width:100%;min-width:740px;font-size:.78rem}.mrd-table-wrap td,.mrd-table-wrap th{padding:.5rem .55rem;white-space:nowrap}.mrd-table-wrap th{background:rgba(68,123,154,.12)}.mrd-table-wrap tr:hover{background:rgba(68,123,154,.07)}.mrd-audit p{margin:.4rem 0;padding:.4rem .6rem;border-radius:6px;border-left:3px solid #7896ac;background:rgba(100,130,160,.07)}.mrd-audit .mrd-warn{border-left-color:#db8c23}.mrd-audit .mrd-ok{border-left-color:#299873}.mrd-note,#mrd-message{font-size:.8rem;color:var(--md-default-fg-color--light)}@media(max-width:760px){.mrd-grid{grid-template-columns:1fr}.mrd-hero{padding:1rem}.mrd-hero h2{font-size:1.2rem!important}}
+
+
+/* v1.1 — table layout fix, scoped to Multi-Run DFT Comparison Studio */
+.mrd-root, .mrd-root .mrd-panel { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.mrd-root .mrd-table-wrap {
+  display: block; width: 100%; max-width: 100%; min-width: 0;
+  overflow-x: auto; overflow-y: auto; overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--mrd-line); border-radius: 9px;
+  margin: .65rem 0; scrollbar-width: thin;
+}
+/* MkDocs Material's unclassed table default uses display:inline-block.
+   Restore native table layout inside the scroll container only. */
+.md-typeset .mrd-root .mrd-table-wrap > table,
+.mrd-root .mrd-table-wrap > table {
+  display: table !important; width: max-content !important;
+  min-width: 100% !important; max-width: none !important;
+  margin: 0 !important; border-collapse: separate !important;
+  border-spacing: 0 !important; table-layout: auto !important;
+  overflow: visible !important; background: var(--md-default-bg-color);
+}
+.md-typeset .mrd-root .mrd-table-wrap th,
+.md-typeset .mrd-root .mrd-table-wrap td,
+.mrd-root .mrd-table-wrap th, .mrd-root .mrd-table-wrap td {
+  display: table-cell !important; box-sizing: border-box;
+  padding: .62rem .72rem !important;
+  white-space: nowrap !important; overflow-wrap: normal !important;
+  word-break: normal !important; line-height: 1.45;
+  font-size: .75rem; vertical-align: middle;
+  border-bottom: 1px solid var(--mrd-line);
+}
+.mrd-root .mrd-table-wrap th {
+  position: sticky; top: 0; z-index: 1;
+  background: #dbe7f5 !important; color: #183b61 !important;
+  font-weight: 700; text-align: left;
+}
+/* Run names remain readable; other fields keep useful numerical width. */
+.mrd-root .mrd-table-wrap th:first-child,
+.mrd-root .mrd-table-wrap td:first-child { min-width: 235px; max-width: 380px; }
+.mrd-root .mrd-table-wrap th:not(:first-child),
+.mrd-root .mrd-table-wrap td:not(:first-child) { min-width: 105px; }
+.mrd-root .mrd-table-wrap td:nth-child(3),
+.mrd-root .mrd-table-wrap td:nth-child(4),
+.mrd-root .mrd-table-wrap td:nth-child(5),
+.mrd-root .mrd-table-wrap td:nth-child(6) {
+  font-variant-numeric: tabular-nums; text-align: right;
+}
+.mrd-root .mrd-table-wrap tbody tr:nth-child(even) { background: rgba(100,140,175,.055); }
+.mrd-root .mrd-table-wrap tbody tr:hover { background: rgba(45,118,173,.12); }
+.mrd-root .mrd-table-wrap:focus-within { outline: 2px solid #307ab4; outline-offset: 2px; }
+@media (max-width: 760px) {
+  .mrd-root .mrd-table-wrap th:first-child,
+  .mrd-root .mrd-table-wrap td:first-child { min-width: 185px; }
+  .mrd-root .mrd-table-wrap th, .mrd-root .mrd-table-wrap td { font-size: .72rem; }
+}
+
+/* FIX: Multi-Run DFT Comparison Table */
+.md-typeset .multi-run-table,
+.md-typeset .multi-run-table table {
+  table-layout: auto !important;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.md-typeset .multi-run-table th,
+.md-typeset .multi-run-table td {
+  min-width: 110px !important;
+  padding: 12px 14px !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  vertical-align: middle;
+}
+
+.md-typeset .multi-run-table th:first-child,
+.md-typeset .multi-run-table td:first-child {
+  min-width: 230px !important;
+}
+
+
+/* === FIX TABLE OVERLAP V1.2 === */
+
+/* Batasi perubahan pada modul Multi-Run */
+.md-typeset [class*="multi-run"] table,
+.md-typeset [id*="multi-run"] table {
+  width: max-content !important;
+  min-width: 100% !important;
+  table-layout: auto !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.md-typeset [class*="multi-run"] table th,
+.md-typeset [class*="multi-run"] table td,
+.md-typeset [id*="multi-run"] table th,
+.md-typeset [id*="multi-run"] table td {
+  min-width: 115px !important;
+  max-width: none !important;
+  padding: 12px 16px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  box-sizing: border-box !important;
+}
+
+.md-typeset [class*="multi-run"] table th:first-child,
+.md-typeset [class*="multi-run"] table td:first-child,
+.md-typeset [id*="multi-run"] table th:first-child,
+.md-typeset [id*="multi-run"] table td:first-child {
+  min-width: 245px !important;
+}
+
+
+/* === MULTI-RUN TABLE FIX V1.3 === */
+.md-typeset .mrd-root .mrd-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.md-typeset .mrd-root .mrd-table-wrap table {
+  display: table !important;
+  width: max-content !important;
+  min-width: 100% !important;
+  table-layout: auto !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.md-typeset .mrd-root .mrd-table-wrap th,
+.md-typeset .mrd-root .mrd-table-wrap td {
+  min-width: 125px !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 12px 16px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  box-sizing: border-box !important;
+}
+
+.md-typeset .mrd-root .mrd-table-wrap th:first-child,
+.md-typeset .mrd-root .mrd-table-wrap td:first-child {
+  min-width: 255px !important;
+}
+
+.md-typeset .mrd-root .mrd-table-wrap th:nth-child(2),
+.md-typeset .mrd-root .mrd-table-wrap td:nth-child(2) {
+  min-width: 150px !important;
+}
+
