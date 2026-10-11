@@ -84,9 +84,12 @@ plugins:
         research_toolkit: !ENV MKI_TOOLKIT_PASSWORD
       search_index: encrypted
       password_button: true
-      password_button_text: Buka Toolkit
-      placeholder: Masukkan password toolkit
-      decryption_failure_message: Password salah.
+      password_button_text: "Unlock Research Workspace"
+      placeholder: "Masukkan password KITCAT"
+      decryption_failure_message: "Password tidak sesuai. Silakan coba lagi."
+      title_prefix: ""
+      summary: "KITCAT Research Gateway"
+      encryption_info_message: "Secure Access to Computational Materials Science Tools"
 nav:
 
   - Home: index.md

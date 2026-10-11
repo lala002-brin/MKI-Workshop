@@ -1,0 +1,8 @@
+
+# Local configuration and secrets
+.venv/
+.env
+.env.*
+mkdocs.yml.backup*
+backup_before_encryption_*/
+site/
