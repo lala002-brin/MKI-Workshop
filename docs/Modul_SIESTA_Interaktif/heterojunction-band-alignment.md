@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Heterojunction Band Alignment Studio
 
 Analisis diagram pita elektronik berbasis **energi terhadap level vakum**. Untuk Cu₂O, ZIF-67, dan Fe₃O₄, masukkan VBM/CBM jika memiliki gap terdefinisi, atau gunakan level Fermi dan work function untuk material yang bersifat metalik. **Contoh bawaan adalah ilustrasi, bukan hasil SIESTA.**

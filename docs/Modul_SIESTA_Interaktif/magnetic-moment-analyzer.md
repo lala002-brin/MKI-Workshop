@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Magnetic Moment & Spin Polarization Analyzer
 
 Evaluasi momen magnetik lokal, kontribusi unsur, kompensasi spin, dan perbandingan dua keadaan magnetik untuk hasil *spin-polarized DFT*. **Momen Mulliken bergantung pada basis dan partisi populasi; momen lokal bukan pengukuran langsung, dan bukan pengganti magnetisasi total sel dari SIESTA.**

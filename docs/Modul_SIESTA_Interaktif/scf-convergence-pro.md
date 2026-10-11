@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # SCF Convergence Analyzer Pro
 
 Analisis *self-consistent field* (SCF) SIESTA: riwayat energi, perubahan energi, osilasi, beberapa siklus, dan perbandingan run. **Hasil diagnostik grafik bukan bukti bahwa SCF mencapai kriteria SIESTA.** Periksa pesan konvergensi resmi pada log serta pengaturan toleransi dan parameter lainnya.

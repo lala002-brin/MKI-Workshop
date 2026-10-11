@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Band Structure & Band Gap Analyzer
 
 Unggah file `SystemLabel.bands` dari SIESTA atau gunakan data contoh. Grafik dibuat di browser, tanpa mengunggah data ke server.

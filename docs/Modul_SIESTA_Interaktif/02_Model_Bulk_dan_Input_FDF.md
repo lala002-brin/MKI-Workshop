@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Part 02. Bulk nyata: Cu₂O, Fe₃O₄, dan ZIF-67
 
 > Tujuan: membuat struktur awal teruji dan file `.fdf` untuk **single-point SCF** serta optimasi. Jangan menjalankan geometri yang belum lolos pemeriksaan ikatan atau spin.

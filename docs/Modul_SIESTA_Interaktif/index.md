@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # DFT SIESTA Workspace
 
 <div id="siesta-hub" class="shub">

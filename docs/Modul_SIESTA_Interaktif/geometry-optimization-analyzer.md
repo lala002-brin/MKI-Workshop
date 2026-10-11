@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # SIESTA Geometry Optimization Analyzer
 
 Analisis perubahan energi dan gaya maksimum sepanjang **langkah optimasi geometri** SIESTA. Semua data diproses secara lokal di browser. **Data demo bersifat sintetis**, bukan hasil perhitungan DFT.

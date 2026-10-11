@@ -1,0 +1,324 @@
+site_name: MKI Computational Materials Science Workshop
+
+site_description: >
+  Integrating First-Principles, HPC & AI for Materials Discovery
+  Computational materials science workshop by MKI and BRIN.
+
+site_author: >
+  BRIN - ITB - Masyarakat Komputasi Indonesia
+
+
+repo_name: MKI-Workshop
+
+repo_url: https://github.com/lala002-brin/MKI-Workshop
+
+theme:
+  name: material
+  custom_dir: overrides
+  copyright: ""
+  logo: assets/images/mki-logo.jpeg
+
+  favicon: assets/images/mki-logo.jpeg
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - content.tabs.link
+    - navigation.tabs.sticky
+    - navigation.path  
+    - navigation.indexes
+
+palette:
+
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+markdown_extensions:
+
+  - admonition
+
+  - attr_list
+
+  - md_in_html
+
+  - pymdownx.details
+
+  - pymdownx.arithmatex:
+      generic: true
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - pymdownx.superfences:
+      custom_fences:
+
+        - name: mermaid
+          class: mermaid
+
+        - name: yaml
+          class: yaml
+plugins:
+
+  - search
+
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
+  - encryptcontent:
+      password_inventory:
+        research_toolkit: !ENV MKI_TOOLKIT_PASSWORD
+      search_index: encrypted
+      password_button: true
+      password_button_text: Buka Toolkit
+      placeholder: Masukkan password toolkit
+      decryption_failure_message: Password salah.
+nav:
+
+  - Home: index.md
+  - 📝 Pretest: hands-on-project/day-1/pretest.md
+  - Start Here:
+      - Workshop Guide: start-here/workshop-guide.md
+      - Computational Workflow: start-here/workflow.md
+      - Required Software: software-setup.md
+  - Computational Environment:
+      - HPC Overview: environment/index.md
+      - Access & Linux: environment/access-linux.md
+      - Command Line: environment/command-line.md
+      - Software Environment: environment/software-environment.md
+      - Running Calculations: environment/running-calculations.md
+      - Script Library: environment/script-library.md
+      - HPC Practical Test: environment/hpc-practical-test.md
+
+  - Simulation:
+
+      - Quantum Simulation:
+          - Overview: quantum-simulation/index.md
+          - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
+          - Modul Workshop DFT QE_2: hands-on-project/day-1/Materi workshop QE CO Pt(100).pdf
+          - Theory:
+              - Theory Overview: quantum-simulation/theory/index.md
+              - Problem Statement: quantum-simulation/theory/problem-statement.md
+              - Hartree-Fock: quantum-simulation/theory/hartree-fock.md
+              - DFT Overview: quantum-simulation/theory/dft-overview.md
+              - Kohn-Sham Equation: quantum-simulation/theory/kohn-sham.md
+              - Computational Complexity: quantum-simulation/theory/computational-complexity.md
+              - Wannier: quantum-simulation/theory/wannier.md
+
+          - Setup:
+              - Installation: quantum-simulation/setup/installation.md
+
+          - Hands-on:
+              - SCF Calculation: quantum-simulation/hands-on/scf.md
+
+      - Atomistic Simulation:
+          - Overview: atomistic-simulation/index.md
+
+  - Hands-on Project:
+      - Research Overview: hands-on-project/index.md
+
+      - Day 1:
+          - Modul Workshop DCDFTBMD MACE: hands-on-project/day-1/files/Modul_Workshop_DCDFTBMD_MACE.pdf
+          - Modul Workshop DFT QE: hands-on-project/day-1/Komputasi Density Functional Theory (DFT)_QE.pdf
+      - Day 2:
+          - Overview: hands-on-project/day-2/index.md
+          - Preparasi · Persiapan Peserta: hands-on-project/persiapan-peserta.md
+          - Sesi 1 · Dari first principles ke molecular dynamics : hands-on-project/day-2/sesi-1-first-principles.md
+          - Sesi 3 · Membangun input dan menjalankan DFTB+ : hands-on-project/day-2/sesi-3-menjalankan-dftb.md
+          - Sesi 4 · Analisis Lintasan dan Antarmuka : hands-on-project/day-2/sesi-4-analisis-lintasan-dan-antarmuka.md
+          - Sesi 5-6 · Pemodelan Material dengan MACE dan diskusi : hands-on-project/day-2/sesi-5-mace.md
+          - Bahan Pendalaman : hands-on-project/day-2/bahan-pendalaman.md
+          - Modul Workshop DFTB+ : hands-on-project/day-1/files/Modul_DFTBPlus.pdf
+
+  - Research Cases:
+          - Graphene Electronic Structure:
+              - Overview: hands-on-project/research-cases/graphene/index.md
+              - System Preparation: hands-on-project/research-cases/graphene/system-preparation.md
+              - HPC Setup: hands-on-project/research-cases/graphene/hpc-setup.md
+              - Analysis: hands-on-project/research-cases/graphene/analysis.md
+          - LiTFSI–EMIM/TFSI Electrolyte:
+              - Overview: hands-on-project/research-cases/litfsi-emim-tfsi-electrolyte-transport/index.md
+
+          - Graphene–Ionic Liquid Interface:
+              - Overview: hands-on-project/research-cases/graphene-ionic-liquid-interface/index.md
+
+          - Battery Electrolyte:
+              - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
+
+  - Quantum ESPRESSO:
+      - Overview: Modul_QE_Interaktif/index.md
+
+      - "01 · Structure & Geometry":
+          - "Crystal & Bond Analysis": Modul_QE_Interaktif/qe-bond-analysis.md
+          - "Geometry Optimization": Modul_QE_Interaktif/qe-geometry-optimization.md
+
+      - "02 · SCF & Electronic Properties":
+          - "QE Output Explorer": Modul_QE_Interaktif/qe-output-explorer.md
+          - "SCF Convergence": Modul_QE_Interaktif/qe-scf-convergence.md
+          - "Cutoff & K-Point Convergence": Modul_QE_Interaktif/qe-convergence-studio.md
+          - "DOS & PDOS": Modul_QE_Interaktif/qe-dos-pdos.md
+          - "Band Structure": Modul_QE_Interaktif/qe-band-structure.md
+
+      - "03 · Surfaces & Interfaces":
+          - "Surface & Work Function": Modul_QE_Interaktif/qe-surface-workfunction.md
+          - "Heterojunction Band Alignment": Modul_QE_Interaktif/qe-heterojunction.md
+          - "Charge Density Difference": Modul_QE_Interaktif/qe-charge-density.md
+          - "Adsorption Energy": Modul_QE_Interaktif/qe-adsorption-energy.md
+
+      - "04 · Magnetism & Research Tools":
+          - "Magnetic Moment Analyzer": Modul_QE_Interaktif/qe-magnetism.md
+          - "Multi-Run Comparison": Modul_QE_Interaktif/qe-multi-run.md
+          - "DFT Quality Checker": Modul_QE_Interaktif/qe-quality-checker.md
+          - "Research Report Generator": Modul_QE_Interaktif/qe-report-generator.md
+  - DFT SIESTA:
+      - Overview: Modul_SIESTA_Interaktif/index.md
+
+      - "01 · Panduan Pembelajaran":
+          - "Part 1 · Fondasi & Persiapan": Modul_SIESTA_Interaktif/01_Fondasi_dan_Persiapan.md
+          - "Part 2 · Bulk & Input FDF": Modul_SIESTA_Interaktif/02_Model_Bulk_dan_Input_FDF.md
+          - "Part 3 · Konvergensi & Analisis": Modul_SIESTA_Interaktif/03_Convergence_OPT_SCF_DOS_Bands.md
+          - "Part 4 · Surface & Slab": Modul_SIESTA_Interaktif/04_Surface_Slab_dan_WorkFunction.md
+          - "Part 5 · Heterojunction": Modul_SIESTA_Interaktif/05_Heterojunction_BandAlignment_Charge.md
+          - "Part 6 · Adsorpsi & Pelaporan": Modul_SIESTA_Interaktif/06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.md
+
+      - "02 · Structure & Geometry":
+          - "Crystal Structure Viewer": Modul_SIESTA_Interaktif/crystal-structure-viewer.md
+          - "Geometry Optimization": Modul_SIESTA_Interaktif/geometry-optimization-analyzer.md
+          - "Geometry & Bond Analysis": Modul_SIESTA_Interaktif/geometry-bond-analysis.md
+
+      - "03 · SCF & Electronic Properties":
+          - "K-Point Calculator": Modul_SIESTA_Interaktif/kpoint-calculator.md
+          - "SCF Convergence": Modul_SIESTA_Interaktif/scf-convergence-pro.md
+          - "DOS & PDOS Plotter": Modul_SIESTA_Interaktif/dos-pdos-plotter.md
+          - "Band Structure Analyzer": Modul_SIESTA_Interaktif/band-structure-analyzer.md
+          - "Advanced Band Studio": Modul_SIESTA_Interaktif/advanced-band-studio.md
+
+      - "04 · Surfaces & Interfaces":
+          - "Surface & Work Function": Modul_SIESTA_Interaktif/surface-workfunction-analyzer.md
+          - "Heterojunction Band Alignment": Modul_SIESTA_Interaktif/heterojunction-band-alignment.md
+          - "Charge Density Difference": Modul_SIESTA_Interaktif/charge-density-difference.md
+          - "Adsorption Energy Calculator": Modul_SIESTA_Interaktif/adsorption-energy-calculator-pro.md
+
+      - "05 · Quality & Research Tools":
+          - "SIESTA Output Explorer": Modul_SIESTA_Interaktif/siesta-output-explorer-pro.md
+          - "Magnetic Moment Analyzer": Modul_SIESTA_Interaktif/magnetic-moment-analyzer.md
+          - "DFT Quality Checker": Modul_SIESTA_Interaktif/dft-quality-checker.md
+          - "Multi-Run Comparison": Modul_SIESTA_Interaktif/multi-run-dft-comparison.md
+          - "Research Report Generator": Modul_SIESTA_Interaktif/dft-research-report-generator.md
+extra:
+  generator: false
+  social:
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/lala002-brin/MKI-Workshop
+
+
+  workshop_progress:
+
+    title: "Workshop Roadmap"
+
+    modules:
+
+      - "01 Foundation"
+
+      - "02 First-Principles Simulation"
+
+      - "03 System Design"
+
+      - "04 Accelerated Atomistic Simulation"
+
+      - "05 HPC Environment"
+
+      - "06 AI Materials"
+
+      - "07 Research Cases"
+
+
+copyright: >
+  MKI × BRIN Computational Materials Science Workshop
+  <br>
+  Developed for scientific computing education
+
+
+extra_css:
+
+  - assets/css/mki-navbar-pro.css
+  - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.css
+  - assets/stylesheets/chat.css
+  - stylesheets/home.css
+  - stylesheets/extra-v2.css
+  - stylesheets/file-editor.css
+  - stylesheets/pretest.css
+  - stylesheets/script-lib.css
+  - stylesheets/w_day2.css
+  - stylesheets/dftb-workshop.css
+  - stylesheets/style_siesta.css
+  - Modul_SIESTA_Interaktif/assets/kpoint-calculator.css
+  - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.css
+  - Modul_SIESTA_Interaktif/assets/band-structure-analyzer.css
+  - Modul_SIESTA_Interaktif/assets/advanced-band-studio.css
+  - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.css
+  - Modul_SIESTA_Interaktif/assets/heterojunction-band-alignment.css
+  - Modul_SIESTA_Interaktif/assets/crystal-structure-viewer.css
+  - Modul_SIESTA_Interaktif/assets/siesta-output-explorer.css
+  - Modul_SIESTA_Interaktif/assets/siesta-output-explorer-pro.css
+  - Modul_SIESTA_Interaktif/assets/geometry-optimization-analyzer.css
+  - Modul_SIESTA_Interaktif/assets/scf-convergence-pro.css
+  - Modul_SIESTA_Interaktif/assets/magnetic-moment-analyzer.css
+  - Modul_SIESTA_Interaktif/assets/dft-quality-checker.css
+  - Modul_SIESTA_Interaktif/assets/geometry-bond-analysis.css
+  - Modul_SIESTA_Interaktif/assets/multi-run-dft-comparison.css
+  - Modul_SIESTA_Interaktif/assets/charge-density-difference.css
+  - Modul_SIESTA_Interaktif/assets/adsorption-energy-calculator-pro.css
+  - Modul_SIESTA_Interaktif/assets/dft-research-report-generator.css
+  - Modul_QE_Interaktif/assets/qe-toolkit-pro.css
+extra_javascript:
+  - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.js
+  - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+  - javascripts/home-parallax.js
+  - javascripts/features-reveal.js
+  - javascripts/workflow-flow.js
+  - javascripts/research-reveal.js
+  - javascripts/scroll-reveal.js
+  - javascripts/file-editor.js
+  - javascripts/worksheet.js
+  - javascripts/lifec-viewer.js
+  - javascripts/session1.js
+  - javascripts/pretest.js
+  - javascripts/md-analysis-worksheet.js
+  - javascripts/scipt-library.js 
+  - assets/javascripts/chat.js
+  - Modul_SIESTA_Interaktif/assets/band-structure-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/advanced-band-studio.js
+  - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.js
+  - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/crystal-structure-viewer.js
+  - Modul_SIESTA_Interaktif/assets/siesta-output-explorer.js
+  - Modul_SIESTA_Interaktif/assets/heterojunction-band-alignment.js
+  - Modul_SIESTA_Interaktif/assets/geometry-optimization-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/scf-convergence-pro.js
+  - Modul_SIESTA_Interaktif/assets/magnetic-moment-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/siesta-output-explorer-pro.js
+  - Modul_SIESTA_Interaktif/assets/dft-quality-checker.js
+  - Modul_SIESTA_Interaktif/assets/geometry-bond-analysis.js
+  - Modul_SIESTA_Interaktif/assets/multi-run-dft-comparison.js
+  - Modul_SIESTA_Interaktif/assets/charge-density-difference.js
+  - Modul_SIESTA_Interaktif/assets/adsorption-energy-calculator-pro.js
+  - Modul_SIESTA_Interaktif/assets/dft-research-report-generator.js
+  - Modul_QE_Interaktif/assets/qe-toolkit-pro.js

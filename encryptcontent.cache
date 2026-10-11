@@ -1,0 +1,5 @@
+kdf_iterations: 100000
+obfuscate: {}
+password:
+  kucinglucu21: 5601eb635af29fe1253329590345e3e777df119a1cb8932d0d5023218e67f9b8;b46c73b4c28814053d612e0f808d302e;d9decc915f9b359ec9150bace67b2f59c4c506bf353798ba3fed56ccfef376ec
+userpass: {}

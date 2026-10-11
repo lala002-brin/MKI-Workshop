@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Kalkulator Konvergensi K-Point SIESTA
 
 Gunakan kalkulator ini setelah menjalankan beberapa **single-point SCF** pada struktur, pseudopotential, functional, basis, MeshCutoff, dan pengaturan spin yang sama. Masukkan **energi total dengan satuan eV**, bukan energi per atom. Kalkulator menghitung selisih terhadap grid paling rapat yang Anda masukkan.

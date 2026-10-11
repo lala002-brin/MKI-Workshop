@@ -13,6 +13,18 @@ repo_name: MKI-Workshop
 repo_url: https://github.com/lala002-brin/MKI-Workshop
 
 theme:
+  palette:
+  
+      - scheme: default
+        toggle:
+          icon: material/weather-night
+          name: Dark mode
+  
+  
+      - scheme: slate
+        toggle:
+          icon: material/weather-sunny
+          name: Light mode
   name: material
   custom_dir: overrides
   copyright: ""
@@ -32,18 +44,6 @@ theme:
     - navigation.path  
     - navigation.indexes
 
-palette:
-
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Dark mode
-
-
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Light mode
 markdown_extensions:
 
   - admonition
@@ -79,6 +79,14 @@ plugins:
   - mkdocs-jupyter:
       execute: false
       include_source: true
+  - encryptcontent:
+      password_inventory:
+        research_toolkit: !ENV MKI_TOOLKIT_PASSWORD
+      search_index: encrypted
+      password_button: true
+      password_button_text: Buka Toolkit
+      placeholder: Masukkan password toolkit
+      decryption_failure_message: Password salah.
 nav:
 
   - Home: index.md
@@ -151,6 +159,31 @@ nav:
           - Battery Electrolyte:
               - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
 
+  - Quantum ESPRESSO:
+      - Overview: Modul_QE_Interaktif/index.md
+
+      - "01 · Structure & Geometry":
+          - "Crystal & Bond Analysis": Modul_QE_Interaktif/qe-bond-analysis.md
+          - "Geometry Optimization": Modul_QE_Interaktif/qe-geometry-optimization.md
+
+      - "02 · SCF & Electronic Properties":
+          - "QE Output Explorer": Modul_QE_Interaktif/qe-output-explorer.md
+          - "SCF Convergence": Modul_QE_Interaktif/qe-scf-convergence.md
+          - "Cutoff & K-Point Convergence": Modul_QE_Interaktif/qe-convergence-studio.md
+          - "DOS & PDOS": Modul_QE_Interaktif/qe-dos-pdos.md
+          - "Band Structure": Modul_QE_Interaktif/qe-band-structure.md
+
+      - "03 · Surfaces & Interfaces":
+          - "Surface & Work Function": Modul_QE_Interaktif/qe-surface-workfunction.md
+          - "Heterojunction Band Alignment": Modul_QE_Interaktif/qe-heterojunction.md
+          - "Charge Density Difference": Modul_QE_Interaktif/qe-charge-density.md
+          - "Adsorption Energy": Modul_QE_Interaktif/qe-adsorption-energy.md
+
+      - "04 · Magnetism & Research Tools":
+          - "Magnetic Moment Analyzer": Modul_QE_Interaktif/qe-magnetism.md
+          - "Multi-Run Comparison": Modul_QE_Interaktif/qe-multi-run.md
+          - "DFT Quality Checker": Modul_QE_Interaktif/qe-quality-checker.md
+          - "Research Report Generator": Modul_QE_Interaktif/qe-report-generator.md
   - DFT SIESTA:
       - Overview: Modul_SIESTA_Interaktif/index.md
 
@@ -252,6 +285,7 @@ extra_css:
   - Modul_SIESTA_Interaktif/assets/charge-density-difference.css
   - Modul_SIESTA_Interaktif/assets/adsorption-energy-calculator-pro.css
   - Modul_SIESTA_Interaktif/assets/dft-research-report-generator.css
+  - Modul_QE_Interaktif/assets/qe-toolkit-pro.css
 extra_javascript:
   - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.js
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
@@ -287,3 +321,4 @@ extra_javascript:
   - Modul_SIESTA_Interaktif/assets/charge-density-difference.js
   - Modul_SIESTA_Interaktif/assets/adsorption-energy-calculator-pro.js
   - Modul_SIESTA_Interaktif/assets/dft-research-report-generator.js
+  - Modul_QE_Interaktif/assets/qe-toolkit-pro.js

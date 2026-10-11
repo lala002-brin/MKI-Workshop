@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Charge Density & Difference Analyzer Pro
 
 Analisis **kerapatan elektron volumetrik** dan **charge-density difference (CDD)** untuk sistem permukaan dan heterojunction melalui Gaussian CUBE. Seluruh perhitungan berlangsung di browser; data tidak dikirim ke server.

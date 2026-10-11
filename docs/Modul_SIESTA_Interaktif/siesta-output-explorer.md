@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # SIESTA Output Explorer
 
 Buka **file `.out` dan `.XV` SIESTA** untuk memeriksa informasi perhitungan dan melihat struktur 3D tanpa mengirim data ke server. Untuk data elektronika yang lebih lengkap, gunakan modul DOS/PDOS dan Band Structure yang sudah tersedia.

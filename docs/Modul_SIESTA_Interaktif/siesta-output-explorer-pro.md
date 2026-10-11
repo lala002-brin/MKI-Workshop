@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # SIESTA Output Explorer Pro
 
 **Dashboard analisis hasil SIESTA** untuk praktikum dan penelitian: buka `.out` dan `.XV`, lihat ringkasan yang disertai sumber, struktur 3D, sel periodik, lintasan energi SCF yang *terverifikasi header-nya*, laporan kualitas data, dan ekspor hasil. Seluruh berkas dibaca **lokal di browser**, bukan dikirim ke server.

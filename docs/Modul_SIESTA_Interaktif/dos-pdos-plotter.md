@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # DOS & PDOS Plotter
 
 Analisis interaktif **Density of States (DOS)** dan **Projected Density of States (PDOS)** untuk hasil SIESTA. Data diproses **di browser**, tanpa diunggah ke server.

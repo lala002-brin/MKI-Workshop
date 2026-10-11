@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Part 01. Fondasi DFT dan desain penelitian
 
 > **Sistem penelitian:** Fe₃O₄ / ZIF-67 / Cu₂O untuk adsorpsi dan potensi fotodegradasi tetrasiklin (TC). **Software utama:** SIESTA + ASE + HPC SLURM. Semua angka parameter dalam modul adalah titik awal pengujian, **bukan hasil perhitungan**.

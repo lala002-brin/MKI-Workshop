@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Geometry & Bond Analysis Studio
 
 Analisis geometri atomistik dari struktur **XYZ** dan **VASP POSCAR/CONTCAR** secara lokal di browser. Modul ini menghitung jarak antarat​​om, panjang ikatan menurut cutoff, sudut tiga atom, dan perubahan geometri antara dua struktur. Struktur periodik menggunakan *minimum-image convention* pada sel kisi jika tersedia. Data tidak diunggah ke server.

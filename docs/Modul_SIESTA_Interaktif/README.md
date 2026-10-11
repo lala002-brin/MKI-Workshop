@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Modul teknis DFT SIESTA: Fe₃O₄, ZIF-67, Cu₂O, heterojunction, dan TC
 
 **Enam part:** dirancang untuk mahasiswa dan peneliti pemula hingga menengah. Gunakan urutan Part 01–06. Tiap part memiliki halaman HTML interaktif dan file Markdown yang dapat diedit.

@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Part 06. Tetrasiklin: dari konformer hingga mekanisme reaksi
 
 ## 1. Definisikan endpoint penelitian

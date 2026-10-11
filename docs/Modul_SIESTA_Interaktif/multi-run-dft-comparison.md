@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Multi-Run DFT Comparison Studio
 
 Bandingkan beberapa hasil **SIESTA** tanpa mengunggah data ke server. Analisis ini bersifat diagnostik; selisih energi total hanya bermakna untuk sistem dan pengaturan yang sebanding.

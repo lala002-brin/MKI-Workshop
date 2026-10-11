@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Advanced Band Structure Studio
 
 Visualisasikan satu atau dua file `SystemLabel.bands` dari SIESTA. Pilih gaya **Paper Classic**, **Modern**, **Rainbow**, atau **Spin**, dan ekspor grafik SVG serta data CSV. Data diproses **di browser**, tanpa upload ke server.

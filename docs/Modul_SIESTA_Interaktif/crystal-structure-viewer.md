@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Interactive Crystal Structure Viewer · VESTA Style
 
 Visualisasi struktur tiga dimensi untuk praktikum SIESTA, dengan **unit cell otomatis** dari CIF atau VASP POSCAR/CONTCAR, pilihan supercell, pengaturan warna unsur, dan pengukuran jarak antaratom.

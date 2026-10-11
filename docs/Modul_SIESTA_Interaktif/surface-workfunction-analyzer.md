@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Surface & Work Function Analyzer
 
 Analisis potensial elektrostatik rata-rata bidang (*planar-averaged potential*) pada slab, daerah vakum, dan work function secara interaktif. **Semua perhitungan dijalankan di browser**, tanpa mengirimkan file ke server.

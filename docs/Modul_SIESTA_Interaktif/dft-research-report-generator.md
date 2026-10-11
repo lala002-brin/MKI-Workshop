@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # DFT Research Report Generator Pro
 
 Bangun laporan penelitian DFT/SIESTA dengan **jejak sumber data, pemeriksaan keterbatasan, dan ekspor HTML/JSON/CSV**. Seluruh proses dilakukan di browser Anda; file tidak diunggah ke server. Data hasil impor perlu ditinjau sebelum digunakan sebagai hasil ilmiah.

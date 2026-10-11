@@ -1,0 +1,78 @@
+.mag-root{--mag-fg:var(--md-default-fg-color,#16243c);--mag-bg:var(--md-default-bg-color,#fff);--mag-muted:var(--md-default-fg-color--light,#6b778c);--mag-border:var(--md-default-fg-color--lightest,#dce3ed);font-size:.85rem;color:var(--mag-fg)}.mag-root *{box-sizing:border-box}.mag-hero{background:linear-gradient(120deg,#102452,#215d9c 70%,#348bb5);padding:24px;border-radius:17px;color:white;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin:18px 0}.mag-hero h2{color:white!important;margin:6px 0!important;font-size:clamp(1.15rem,3vw,1.65rem)}.mag-hero p{color:#e6f2ff;margin:0}.mag-kicker{font-size:.67rem;letter-spacing:.11em;font-weight:750;color:#cce5ff}.mag-chip{font-size:.72rem;border-radius:25px;padding:9px;background:#ffffff2c}.mag-actions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.mag-root button,.mag-upload{border:1px solid var(--mag-border);background:var(--mag-bg);color:var(--mag-fg);padding:10px 13px;border-radius:9px;cursor:pointer;font:inherit;font-weight:650;line-height:1.4}.mag-root button:hover,.mag-upload:hover{border-color:#2a68b2}.mag-upload{background:#235eae;color:white;border-color:#235eae}.mag-upload input{display:none}.mag-message{padding:12px 15px;border:1px solid var(--mag-border);border-left:4px solid #2882bf;border-radius:9px;overflow-wrap:anywhere;margin-bottom:16px}.mag-message.error{border-left-color:#cc554f}.mag-panel{background:var(--mag-bg);padding:clamp(15px,2.7vw,24px);border:1px solid var(--mag-border);border-radius:15px;margin:17px 0;box-shadow:0 7px 25px #14385808}.mag-panel h3{font-size:1.07rem;margin:0 0 8px!important}.mag-panel>p{color:var(--mag-muted);font-size:.79rem;margin:0 0 15px}.mag-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.mag-controls label{font-size:.77rem;font-weight:700;min-width:0}.mag-controls select,.mag-controls input{display:block;width:100%;max-width:100%;min-width:0;border:1px solid #abb9c9;border-radius:8px;margin-top:6px;padding:10px 8px;font:inherit;background:var(--mag-bg);color:var(--mag-fg);min-height:40px}.mag-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.mag-kpi{border:1px solid var(--mag-border);border-radius:11px;padding:14px;min-width:0}.mag-kpi small{color:var(--mag-muted);font-size:.71rem;display:block}.mag-kpi strong{font-size:clamp(.93rem,2vw,1.3rem);display:block;overflow-wrap:anywhere;margin:7px 0}.mag-note{font-size:.79rem;line-height:1.62;color:var(--mag-muted);margin-top:12px}.mag-chart{border:1px solid var(--mag-border);border-radius:12px;min-height:290px;background:#fff;overflow:hidden}.mag-chart svg{width:100%;height:auto;display:block}.mag-caption{color:var(--mag-muted);font-size:.76rem;margin-top:10px;line-height:1.55}.mag-scroll{max-height:340px;overflow:auto}.mag-scroll table{min-width:570px;font-size:.77rem;width:100%}.mag-scroll th,.mag-scroll td{padding:8px!important;text-align:right;font-variant-numeric:tabular-nums}.mag-scroll th:first-child,.mag-scroll td:first-child{text-align:left}.mag-root details{margin-top:17px;font-size:.8rem}.mag-root summary{cursor:pointer;font-weight:700}@media(max-width:950px){.mag-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.mag-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.mag-controls{grid-template-columns:1fr}.mag-actions button,.mag-upload{flex:1}.mag-hero{padding:20px}}
+
+/* v2: provenance & searchable atom table */
+.mag-source-badge{display:inline-flex;border:1px solid #b6d3ed;border-radius:22px;padding:5px 12px;background:#edf5ff;color:#174779;font-size:.78rem;font-weight:700;margin-bottom:12px}.mag-source-badge.mag-synthetic{background:#fff3dc;border-color:#edce8e;color:#805200}.mag-source-badge.mag-real{background:#e9f7f2;border-color:#afdcca;color:#1a6350}.mag-filters{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:14px 0}.mag-filters label{display:flex;flex-direction:column;gap:5px;flex:1;min-width:170px;font-weight:650}.mag-filters input,.mag-filters select{width:100%;border:1px solid #cbd7e7;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#122b47);padding:9px;border-radius:8px;font:inherit}.mag-filters button{padding:9px 12px;border:1px solid #cbd7e7;border-radius:8px}.mag-filters span{font-size:.74rem;color:var(--md-default-fg-color--light,#69788e);min-width:95px}
+/* ========================================================
+   MKI Magnetic Moment Analyzer v2.1 — visual refinement
+   Scope all overrides to the module; preserve JS and MkDocs.
+   ======================================================== */
+.md-typeset .mag-root .mag-hero,
+.mag-root .mag-hero {
+  color: #f5faff !important;
+  background: linear-gradient(120deg,#102452 0%,#1b4985 56%,#217ba9 100%);
+  isolation: isolate;
+}
+.md-typeset .mag-root .mag-hero h2,
+.md-typeset .mag-root .mag-hero h2 small,
+.mag-root .mag-hero h2,
+.mag-root .mag-hero h2 small {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.15);
+  line-height: 1.25;
+}
+.md-typeset .mag-root .mag-hero p,
+.mag-root .mag-hero p {
+  color: #e8f4ff !important;
+  -webkit-text-fill-color: #e8f4ff !important;
+  font-size: .85rem;
+  line-height: 1.55;
+}
+.md-typeset .mag-root .mag-hero .mag-kicker,
+.mag-root .mag-hero .mag-kicker {color: #d5eaff !important;}
+.md-typeset .mag-root .mag-hero .mag-chip,
+.mag-root .mag-hero .mag-chip {
+  color: #fff !important;
+  background: rgba(255,255,255,.17);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.mag-root .mag-hero > div {min-width: 0; flex: 1 1 340px;}
+.mag-root .mag-hero h2 small {font-size: .64em; white-space: nowrap;}
+.mag-root .mag-panel {scroll-margin-top: 8rem;}
+.mag-root .mag-panel h3 {line-height:1.4; overflow-wrap:anywhere;}
+.mag-root .mag-scroll {scrollbar-gutter: stable; border-radius: 9px;}
+.md-typeset .mag-root .mag-scroll table {border-collapse:separate; border-spacing:0; width:100%; margin:0;}
+.md-typeset .mag-root .mag-scroll table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #e8f0fa;
+  color: #203c63;
+  border-bottom: 1px solid #c6d5e9;
+  white-space:normal;
+  vertical-align:middle;
+}
+.md-typeset .mag-root .mag-scroll tbody tr:nth-child(even) {background:rgba(126,160,204,.075);}
+.md-typeset .mag-root .mag-scroll tbody tr:hover {background:rgba(54,120,197,.12);}
+.mag-root button:focus-visible,
+.mag-root input:focus-visible,
+.mag-root select:focus-visible,
+.mag-root .mag-upload:focus-within {outline: 3px solid #4c9be9; outline-offset:2px;}
+.mag-root .mag-filters {align-items:flex-end;}
+.mag-root .mag-filters label {line-height:1.45;}
+.mag-root .mag-filters input,
+.mag-root .mag-filters select {min-height: 42px;}
+.mag-root .mag-actions button,
+.mag-root .mag-actions .mag-upload {min-height:42px;}
+@media(max-width:600px){
+  .mag-root .mag-hero {padding:20px 17px; gap:12px;}
+  .mag-root .mag-hero h2 {font-size:1.2rem;}
+  .mag-root .mag-panel {padding:15px;}
+  .mag-root .mag-scroll table {min-width:560px;}
+  .mag-root .mag-filters label {flex:1 1 100%;min-width:0;}
+  .mag-root .mag-filters span {min-width:0;}
+}
+/* Theme-aware table headings in dark MkDocs Material. */
+[data-md-color-scheme="slate"] .md-typeset .mag-root .mag-scroll table th {
+  background:#233a55; color:#e9f3ff; border-color:#476380;
+}

@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # Adsorption Energy Calculator Pro
 
 Analisis energi adsorpsi dari hasil SIESTA, dengan pemeriksaan referensi, koreksi opsional, dan perbandingan konfigurasi. Semua pemrosesan dilakukan di browser Anda.

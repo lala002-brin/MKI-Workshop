@@ -1,3 +1,7 @@
+---
+level: research_toolkit
+---
+
 # DFT Quality Checker Pro
 
 Pemeriksaan konsistensi pengaturan, log perhitungan, dan kesiapan dokumentasi hasil **SIESTA**. Alat ini berjalan lokal di browser; berkas tidak dikirim ke server.
