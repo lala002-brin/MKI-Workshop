@@ -151,6 +151,7 @@ nav:
               - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
   - DFT SIESTA:
       - Overview: Modul_SIESTA_Interaktif/index.md
+      - "Interactive Crystal Structure Viewer": Modul_SIESTA_Interaktif/crystal-structure-viewer.md
       - "Part 1: Fondasi dan Persiapan": Modul_SIESTA_Interaktif/01_Fondasi_dan_Persiapan.md
       - "Part 2: Bulk dan Input FDF": Modul_SIESTA_Interaktif/02_Model_Bulk_dan_Input_FDF.md
       - "Kalkulator Konvergensi K-Point": Modul_SIESTA_Interaktif/kpoint-calculator.md
@@ -215,6 +216,7 @@ extra_css:
   - Modul_SIESTA_Interaktif/assets/advanced-band-studio.css
   - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.css
   - Modul_SIESTA_Interaktif/assets/heterojunction-band-alignment.css
+  - Modul_SIESTA_Interaktif/assets/crystal-structure-viewer.css
 extra_javascript:
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
@@ -236,4 +238,5 @@ extra_javascript:
   - Modul_SIESTA_Interaktif/assets/advanced-band-studio.js
   - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.js
   - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/crystal-structure-viewer.js
   - Modul_SIESTA_Interaktif/assets/heterojunction-band-alignment.js
