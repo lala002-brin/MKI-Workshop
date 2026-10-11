@@ -1,0 +1,91 @@
+/* =========================================
+   MKI WORKSHOP — PROFESSIONAL NAVBAR
+   Compatible with MkDocs Material
+   ========================================= */
+
+/* Main header */
+.md-header {
+  background: linear-gradient(
+    110deg,
+    #112b66 0%,
+    #1846a0 50%,
+    #2563eb 100%
+  ) !important;
+  box-shadow: 0 3px 14px rgba(15, 35, 75, 0.14);
+}
+
+/* Main header text and icons */
+.md-header__title,
+.md-header__button,
+.md-header__topic,
+.md-header .md-icon {
+  color: #ffffff !important;
+}
+
+/* Top navigation tabs */
+.md-tabs {
+  background: #173c88 !important;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+
+.md-tabs__list {
+  gap: 6px;
+  align-items: center;
+}
+
+/* Navigation links */
+.md-tabs__link {
+  color: rgba(255,255,255,.82) !important;
+  opacity: 1 !important;
+  font-weight: 600;
+  font-size: .76rem;
+  padding: 11px 14px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 9px;
+  transition: background .2s ease, color .2s ease;
+}
+
+/* Hover */
+.md-tabs__link:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.13);
+}
+
+/* Active navigation item */
+.md-tabs__item--active .md-tabs__link {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.20) !important;
+  font-weight: 800;
+}
+
+/* Search field */
+.md-search__form {
+  background: rgba(255,255,255,.18) !important;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 12px;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255,255,255,.90) !important;
+}
+
+/* Logo */
+.md-header__button.md-logo img {
+  max-height: 30px;
+  width: auto;
+}
+
+/* Small screens */
+@media screen and (max-width: 76.234375em) {
+  .md-header {
+    background: #1846a0 !important;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .md-tabs__link {
+    transition: none;
+  }
+}
