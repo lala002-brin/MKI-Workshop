@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>03 · Konvergensi, optimasi, SCF dan pita | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="active" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 3 / 6</div><h1>03 · Konvergensi, optimasi, SCF dan pita</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="02_Model_Bulk_dan_Input_FDF.html">← Part sebelumnya</a><a href="04_Surface_Slab_dan_WorkFunction.html">Part berikutnya →</a></div><article class="paper"><h1>Part 03. Dari konvergensi hingga band gap</h1>
+<h2>1. Urutan perhitungan numerik</h2>
+<ol>
+<li><em>Smoke test</em> single-point SCF dengan pseudopotential dan basis awal.</li>
+<li><strong>Konvergensi MeshCutoff</strong> dengan struktur tetap dan k-grid yang sama.</li>
+<li><strong>Konvergensi k-point</strong> pada cutoff terpilih; untuk bulk kecil uji bertahap.</li>
+<li><strong>Basis convergence</strong> dengan orbital SZ/DZP/TZP atau parameter radius bila tersedia. DZP adalah baseline, bukan jaminan.</li>
+<li><strong>Fixed-cell relaxation</strong>, kemudian <strong>variable-cell</strong> jika ingin kisi kesetimbangan teoritis.</li>
+<li><strong>Final SCF</strong> di struktur akhir.</li>
+<li><strong>DOS/PDOS</strong>, lalu <strong>band structure</strong>.</li>
+</ol>
+<h2>2. Matriks convergence yang dapat direproduksi</h2>
+<table>
+<thead>
+<tr>
+  <th>Uji</th>
+  <th>Contoh seri</th>
+  <th>Variabel lain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>MeshCutoff</td>
+  <td>200, 250, 300, 400, 500 Ry</td>
+  <td>Geometri, basis, XC, spin, k-grid tetap</td>
+</tr>
+<tr>
+  <td>k-point Cu₂O</td>
+  <td>2³, 4³, 6³, 8³, 10³</td>
+  <td>Cutoff terpilih, geometri dan basis tetap</td>
+</tr>
+<tr>
+  <td>Basis</td>
+  <td>DZP vs TZP serta radius orbital</td>
+  <td>Geometri/k-point/cutoff tetap</td>
+</tr>
+<tr>
+  <td>Force consistency</td>
+  <td>bandingkan gaya dengan cutoff lebih rapat</td>
+  <td>Posisi tetap</td>
+</tr>
+<tr>
+  <td>Struktur slab</td>
+  <td>ketebalan, luas lateral, vakum</td>
+  <td>Identitas terminasi dan model fisik sama</td>
+</tr>
+</tbody>
+</table>
+<p>Target kerja yang bisa digunakan sebagai <strong>kriteria awal</strong>, bukan hukum universal: perubahan energi relatif sekitar 1 sampai 5 meV/atom; perubahan energi adsorpsi sekitar 0.03 sampai 0.05 eV; gaya akhir sekitar 0.02 eV/Å. Gunakan ambang lebih ketat bila beda energi antar kandidat sangat kecil.</p>
+<p>Energi relatif per atom:</p>
+<p>$<span class="math">\(\Delta E=\frac{|E(p)-E(p_{ref})|}{N_{atom}}\)</span>$</p>
+<p><strong>Jangan</strong> memakai energi akhir dari job yang SCF-nya gagal untuk memilih parameter.</p>
+<h2>3. Template single-point / konvergensi</h2>
+<p>Tambahkan ke struktur FDF yang valid:</p>
+<pre><code class="language-fdf">XC.functional GGA
+XC.authors PBE
+PAO.BasisSize DZP
+MeshCutoff 300 Ry
+%block kgrid_Monkhorst_Pack
+6 0 0 0.0
+0 6 0 0.0
+0 0 6 0.0
+%endblock kgrid_Monkhorst_Pack
+MaxSCFIterations 300
+DM.Tolerance 1.d-5
+DM.MixingWeight 0.10
+DM.NumberPulay 5
+SolutionMethod diagon
+MD.TypeOfRun CG
+MD.Steps 0
+DM.UseSaveDM F
+MD.UseSaveXV F
+</code></pre>
+<p>Nilai untuk Cu₂O, Fe₃O₄ dan ZIF-67 <strong>tidak harus identik</strong>. Untuk Fe₃O₄, sertakan spin site-resolved; untuk ZIF-67 sertakan koreksi dispersi yang benar-benar didukung versi.</p>
+<h2>4. Geometry optimization</h2>
+<pre><code class="language-fdf">MD.TypeOfRun CG
+MD.Steps 200
+MD.VariableCell F
+MD.MaxForceTol 0.02 eV/Ang
+WriteForces T
+WriteMDHistory T
+</code></pre>
+<p>Setelah posisi atom konvergen, jika ingin mengoptimasi sel bulk:</p>
+<pre><code class="language-fdf">MD.TypeOfRun CG
+MD.Steps 250
+MD.VariableCell T
+MD.MaxForceTol 0.02 eV/Ang
+MD.MaxStressTol 0.1 GPa
+MD.TargetPressure 0.0 GPa
+</code></pre>
+<p>Untuk slab adsorpsi, umumnya <strong>pertahankan sel tetap</strong> dan gunakan constraints lapisan bawah bila relevan. Variasi <code>MD.VariableCell T</code> pada slab dapat mengubah vakum secara tidak fisik.</p>
+<h2>5. Final SCF setelah optimasi</h2>
+<ul>
+<li>Salin koordinat <strong>dan vektor sel dari geometri final</strong>, bukan sekadar struktur CIF awal.</li>
+<li>Gunakan pseudopotential/XC/basis yang konsisten.</li>
+<li>Gunakan <code>MD.Steps 0</code>, <code>DM.Tolerance 1.d-5</code> atau hasil pengujian yang lebih ketat.</li>
+<li>Periksa eigenvalue, density matrix, energi total, dan konvergensi. Jangan percaya output yang terpotong.</li>
+</ul>
+<h2>6. DOS / PDOS</h2>
+<p>DOS menyatakan distribusi keadaan elektronik; PDOS memisahkan kontribusi orbital atau atom.</p>
+<pre><code class="language-fdf">%block PDOS.kgrid_Monkhorst_Pack
+12 0 0 0.0
+0 12 0 0.0
+0 0 12 0.0
+%endblock PDOS.kgrid_Monkhorst_Pack
+%block ProjectedDensityOfStates
+-15.0 10.0 0.05 1000 eV
+%endblock ProjectedDensityOfStates
+</code></pre>
+<p>Plot Cu 3d/4s dan O 2p untuk Cu₂O, Fe 3d/O 2p untuk Fe₃O₄, Co 3d/N 2p/C 2p untuk ZIF-67. Untuk material magnetik periksa kanal spin terpisah.</p>
+<h2>7. Band structure dan penentuan gap</h2>
+<pre><code class="language-fdf">BandLinesScale ReciprocalLatticeVectors
+%block BandLines
+ 1  0.0 0.0 0.0 Gamma
+40  0.5 0.0 0.0 X
+40  0.5 0.5 0.0 M
+40  0.0 0.0 0.0 Gamma
+40  0.5 0.5 0.5 R
+%endblock BandLines
+</code></pre>
+<p><strong>Hanya gunakan lintasan ini bila cocok dengan representasi sel dan simetri Brillouin zone Anda.</strong> Untuk sel non-ortogonal/primitive yang berbeda, buat lintasan baru memakai Seekpath.</p>
+<p>$<span class="math">\(E_g=\min_{n\in CB,\mathbf k}E_{n\mathbf k}-\max_{m\in VB,\mathbf k}E_{m\mathbf k}\)</span>$</p>
+<ul>
+<li>Direct: VBM dan CBM berada di titik k yang sama.</li>
+<li>Indirect: berada pada titik berbeda.</li>
+<li>Band gap sepanjang jalur berlabel dapat melewatkan ekstremum di luar lintasan; verifikasi pada k-mesh rapat.</li>
+<li>PBE sering meremehkan gap; bedakan Kohn-Sham, quasiparticle, dan optical gap.</li>
+</ul>
+<h2>8. SLURM: template aman sebagai contoh</h2>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH --job-name=Cu2O_SCF
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --time=04:00:00
+#SBATCH --output=slurm-%j.log
+set -euo pipefail
+# module load &lt;modul-siesta-yang-tersedia&gt;  # sesuaikan HPC
+# cd &quot;$SLURM_SUBMIT_DIR&quot;  # default SLURM biasanya sudah di folder submit
+srun siesta &lt; run.fdf &gt; run.out
+</code></pre>
+<p>Job MPI harus sesuai executable dan konfigurasi cluster. Jika <code>siesta</code> belum ditemukan, jangan menyelesaikan dengan mengasumsikan path executable.</p>
+<h2>9. Perintah memeriksa output</h2>
+<pre><code class="language-bash">squeue -u &quot;$USER&quot;
+tail -n 80 run.out
+grep -Ei 'conver|SCF|force|stress|E_KS|warning|error' run.out | tail -n 50
+ls -lh *.XV *.EIG *.DM *.PDOS* *.bands 2&gt;/dev/null || true
+</code></pre>
+<p>Interpretasi: periksa <strong>(a) pekerjaan selesai</strong>, <strong>(b) SCF terakhir konvergen</strong>, <strong>(c) optimasi berhenti karena toleransi gaya/stress, bukan kehabisan langkah</strong>, dan <strong>(d) hasil tidak berubah berarti saat parameter numerik ditingkatkan</strong>.</p>
+<h2>10. Tabel hasil laporan</h2>
+<table>
+<thead>
+<tr>
+  <th>Model</th>
+  <th style="text-align:right">Mesh Ry</th>
+  <th>Grid k</th>
+  <th>Basis</th>
+  <th>a/b/c (Å)</th>
+  <th style="text-align:right">Fmax (eV/Å)</th>
+  <th>Momen magnetik</th>
+  <th style="text-align:right">Gap KS (eV)</th>
+  <th>Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cu₂O</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>nonmagnetik</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>...</td>
+</tr>
+<tr>
+  <td>Fe₃O₄</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>ferrimagnetik</td>
+  <td style="text-align:right">jika terdefinisi</td>
+  <td>...</td>
+</tr>
+<tr>
+  <td>ZIF-67</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td>isi hasil</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>per Co</td>
+  <td style="text-align:right">isi hasil</td>
+  <td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rujukan:</strong> <a href="https://docs.siesta-project.org/projects/siesta/en/latest/tutorials/basic/structure-optimization/index.html">SIESTA struktur optimasi</a>, <a href="https://docs.siesta-project.org/projects/siesta/en/5.4/reference/siesta.html">Manual SIESTA</a>.</p>
+</article><div class="topnav"><a href="02_Model_Bulk_dan_Input_FDF.html">← Part sebelumnya</a><a href="04_Surface_Slab_dan_WorkFunction.html">Part berikutnya →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>

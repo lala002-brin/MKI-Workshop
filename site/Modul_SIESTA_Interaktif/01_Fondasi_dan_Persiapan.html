@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>01 · Peta penelitian dan persiapan | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="active" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 1 / 6</div><h1>01 · Peta penelitian dan persiapan</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="index.html">← Daftar isi</a><a href="02_Model_Bulk_dan_Input_FDF.html">Part berikutnya →</a></div><article class="paper"><h1>Part 01. Fondasi DFT dan desain penelitian</h1>
+<blockquote>
+<p><strong>Sistem penelitian:</strong> Fe₃O₄ / ZIF-67 / Cu₂O untuk adsorpsi dan potensi fotodegradasi tetrasiklin (TC). <strong>Software utama:</strong> SIESTA + ASE + HPC SLURM. Semua angka parameter dalam modul adalah titik awal pengujian, <strong>bukan hasil perhitungan</strong>.</p>
+</blockquote>
+<h2>1. Pertanyaan ilmiah sebelum memilih model</h2>
+<table>
+<thead>
+<tr>
+  <th>Pertanyaan</th>
+  <th>Model atomistik</th>
+  <th>Analisis</th>
+  <th>Batas kesimpulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Sifat intrinsik Cu₂O, Fe₃O₄, ZIF-67?</td>
+  <td>Bulk periodik</td>
+  <td>Konstruksi kisi, DOS/PDOS, pita, spin</td>
+  <td>Tidak membuktikan transfer elektron antarmuka</td>
+</tr>
+<tr>
+  <td>Permukaan mana yang stabil?</td>
+  <td>Slab dan berbagai terminasi</td>
+  <td>Energi permukaan, struktur, fungsi kerja</td>
+  <td>Permukaan ideal tidak selalu mewakili sampel basah</td>
+</tr>
+<tr>
+  <td>Apa yang terjadi ketika komponen berkontak?</td>
+  <td>Interface dua/tiga komponen</td>
+  <td>Binding, PDOS berlapis, Δρ, potensial</td>
+  <td>Δρ keadaan dasar bukan bukti aliran elektron akibat cahaya</td>
+</tr>
+<tr>
+  <td>Bagaimana TC menempel?</td>
+  <td>Slab/klaster + berbagai konformer TC</td>
+  <td>Energi adsorpsi, jarak, muatan, PDOS</td>
+  <td>E_ads dalam vakum bukan energi bebas adsorpsi air</td>
+</tr>
+<tr>
+  <td>Bagaimana TC terdegradasi?</td>
+  <td>Intermediat reaksi, keadaan transisi</td>
+  <td>Energi reaksi, NEB jika sesuai</td>
+  <td>Butuh data reaksi dan, untuk fotokimia, model tereksitasi/bukti eksperimen</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Pilih bulk, supercell, slab atau klaster?</h2>
+<ul>
+<li><strong>Bulk satu sel</strong>: perhitungan kisi, DOS, band structure, sifat intrinsik. Untuk Cu₂O cuprite gunakan sel kubik 6 atom; bukan 2×2×2 secara otomatis.</li>
+<li><strong>Bulk supercell</strong>: cacat, dopan, tatanan spin yang tidak muat pada sel kecil, atau pengujian interaksi cacat periodik.</li>
+<li><strong>Slab</strong>: situs adsorpsi dan fungsi kerja. Tetapkan indeks Miller, terminasi, ketebalan, luas lateral, vakum dan relaksasi lapisan.</li>
+<li><strong>Interface</strong>: kontak ZIF-67/Cu₂O dan Fe₃O₄/ZIF-67. Pilih geometri dari karakterisasi. MOF berpori tidak otomatis menjadi lapisan kristal datar.</li>
+<li><strong>Klaster</strong>: skrining kimia lokal jika slab ZIF-67/interface periodik terlalu mahal. Jangan gunakan band structure klaster untuk menyimpulkan pita bulk.</li>
+</ul>
+<h2>3. Matriks keputusan material</h2>
+<table>
+<thead>
+<tr>
+  <th>Material</th>
+  <th>Sel awal</th>
+  <th>Metode awal</th>
+  <th>Masalah khusus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cu₂O</td>
+  <td>Cuprite 6 atom, Pn-3m</td>
+  <td>PBE, non-polarized sebagai baseline</td>
+  <td>PBE sering meremehkan gap; cek transisi optik vs gap fundamental</td>
+</tr>
+<tr>
+  <td>Fe₃O₄</td>
+  <td>Inverse spinel, sel konvensional 56 atom yang memungkinkan spin ferrimagnetik</td>
+  <td>Spin-polarized, lalu +U tervalidasi</td>
+  <td>Situs Fe tetrahedral dan oktahedral, keteraturan muatan, rekonstruksi</td>
+</tr>
+<tr>
+  <td>ZIF-67</td>
+  <td>Sel primitive penuh yang benar, Co(2-methylimidazolate)₂</td>
+  <td>Spin-polarized, dispersi yang didukung versi</td>
+  <td>Hidrogen, disorder, spin Co, fleksibilitas MOF, pori</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Struktur proyek yang konsisten</h2>
+<pre><code class="language-text">DFT_TC/
+├── inputs/                         # CIF dan pseudopotential asli
+├── scripts/                        # generator dan analisis
+├── 01_bulk/{Cu2O,Fe3O4,ZIF67}/
+│   ├── convergence/
+│   ├── optimization/
+│   ├── scf/
+│   ├── dos/
+│   └── bands/
+├── 02_surface/{Cu2O,Fe3O4,ZIF67}/
+├── 03_interface/{ZIF67_Cu2O,Fe3O4_ZIF67,triple}/
+├── 04_TC/{conformers,protonation,adsorption}/
+├── 05_reaction/
+└── reports/{tables,figures,logs}/
+</code></pre>
+<h2>5. Persiapan HPC</h2>
+<pre><code class="language-bash"># Aktivasi Python untuk ASE (sesuaikan lokasi conda)
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate base
+python -c 'import ase,numpy; print(&quot;ASE/NumPy OK&quot;)'
+which siesta || module avail siesta
+which sbatch &amp;&amp; which srun
+</code></pre>
+<p><strong>Jangan menyamakan Python dan SIESTA.</strong> Python/ASE membuat struktur serta file input; executable SIESTA menjalankan DFT; SLURM mengelola job.</p>
+<h2>6. Checkpoint sebelum simulasi</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>File CIF mempunyai komposisi benar dan atom H lengkap pada ZIF-67.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Tidak ada okupansi parsial yang belum dimodelkan.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Sel dan koordinat memiliki satuan serta periodic boundary conditions yang benar.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Pseudopotential semua unsur sesuai XC, versi SIESTA, valensi, dan format file.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Parameter k-point, spin, dan dispersi dipilih sesuai model.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Tersedia catatan versi SIESTA, compiler, pseudopotential, parameter U, dan sumber CIF.</li>
+</ul>
+<p><strong>Bacaan utama:</strong> <a href="https://docs.siesta-project.org/projects/siesta/en/5.4/reference/siesta.html">Manual SIESTA 5.4</a>, <a href="https://ase-lib.org/">ASE</a>.</p>
+</article><div class="topnav"><a href="index.html">← Daftar isi</a><a href="02_Model_Bulk_dan_Input_FDF.html">Part berikutnya →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>
