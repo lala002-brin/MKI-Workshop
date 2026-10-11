@@ -1,0 +1,29 @@
+/* QE Toolkit Pro · isolated styles */
+#qet-app,#qet-dashboard{--qet-navy:#122955;--qet-cyan:#117f9b;--qet-border:#dbe6f1;--qet-ink:#193459;font-family:inherit;color:var(--qet-ink);max-width:100%;box-sizing:border-box}
+#qet-app *,#qet-dashboard *{box-sizing:border-box}
+#qet-app .qet-hero,#qet-dashboard .qet-hero{background:linear-gradient(118deg,#102956 0%,#1c518c 57%,#147e9d 100%)!important;color:#fff!important;border-radius:18px;padding:32px 28px;margin:16px 0 22px;overflow:hidden}
+#qet-app .qet-hero *,#qet-dashboard .qet-hero *{color:#fff!important;-webkit-text-fill-color:#fff!important;background:transparent!important}
+#qet-app .qet-hero h2,#qet-dashboard .qet-hero h2{font-weight:800!important;font-size:clamp(1.4rem,3vw,2.1rem)!important;line-height:1.25!important;margin:12px 0!important;border:0!important}
+#qet-app .qet-hero p,#qet-dashboard .qet-hero p{font-size:1.04rem;margin:10px 0!important;opacity:.95}
+#qet-app .qet-eyebrow,#qet-dashboard .qet-eyebrow{letter-spacing:.13em;font-size:.72rem;font-weight:800}
+#qet-app .qet-hero .qet-pill,#qet-dashboard .qet-hero .qet-pill{display:inline-block;background:rgba(255,255,255,.15)!important;border:1px solid rgba(255,255,255,.24);padding:7px 12px;border-radius:99px;font-size:.72rem;margin-top:12px}
+#qet-app .qet-panel,#qet-dashboard .qet-panel{background:#fff;border:1px solid var(--qet-border);border-radius:15px;padding:23px;margin:16px 0;min-width:0;overflow-x:auto}
+#qet-app .qet-panel h3,#qet-dashboard .qet-panel h3{font-weight:800!important;color:#193459!important;margin:0 0 17px!important;background:transparent!important}
+#qet-app .qet-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:14px}
+#qet-app label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:.81rem;min-width:0}
+#qet-app input,#qet-app select,#qet-app textarea,#qet-dashboard input{max-width:100%;width:100%;min-height:42px;padding:9px 11px;border:1px solid #bdcee3;border-radius:9px;background:#fff;color:#193459;font:inherit}
+#qet-app button{background:#245fb2;border:1px solid #245fb2;border-radius:9px;color:#fff;font-weight:700;padding:10px 15px;cursor:pointer;margin:8px 8px 0 0}
+#qet-app button:hover{background:#18488f}#qet-app button.qet-ghost{background:#f2f6fc;color:#183f7a;border-color:#c9d8ec}
+#qet-app .qet-note{margin:14px 0;padding:12px 14px;background:#eef5fc;border-left:3px solid #2679be;border-radius:7px;line-height:1.6;overflow-wrap:anywhere}
+#qet-app .qet-note.warn{background:#fff4e8;border-color:#c57d22}
+#qet-app table{border-collapse:collapse!important;min-width:680px;width:max-content;max-width:none;display:table!important;font-size:.8rem}
+#qet-app th,#qet-app td{white-space:nowrap!important;padding:10px 14px!important;border:1px solid #e0e9f4!important;max-width:none!important}
+#qet-app th{background:#e5effa!important;color:#133764!important}#qet-app .qet-table{overflow-x:auto;max-width:100%}
+#qet-app .qet-graph{max-width:100%;overflow-x:auto}#qet-app .qet-graph svg{min-width:520px;width:100%;height:auto;border:1px solid #e5edf6;border-radius:10px;background:#fff}
+#qet-app .qet-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+#qet-app .qet-metric{padding:14px;background:#f3f7fc;border:1px solid #e5edf5;border-radius:10px}#qet-app .qet-metric small{display:block;color:#587391}#qet-app .qet-metric strong{display:block;font-size:1.1rem;color:#173b73;overflow-wrap:anywhere}
+#qet-dashboard .qet-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+#qet-dashboard .qet-card{padding:17px;border:1px solid #d6e3f2;border-radius:12px;text-decoration:none;background:#f8fbff;display:block;color:#173b73!important}
+#qet-dashboard .qet-card:hover{border-color:#387cc3;box-shadow:0 6px 18px #173b7322}
+#qet-dashboard .qet-card b{display:block;font-size:.96rem}#qet-dashboard .qet-card span{font-size:.75rem;color:#526f92}#qet-dashboard .qet-workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}#qet-dashboard .qet-workflow b{padding:12px;background:#eef5fb;border-radius:9px;font-size:.8rem}
+@media(max-width:650px){#qet-app .qet-panel,#qet-dashboard .qet-panel{padding:14px}#qet-app .qet-hero,#qet-dashboard .qet-hero{padding:22px 17px}}
