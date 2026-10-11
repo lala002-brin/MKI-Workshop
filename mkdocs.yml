@@ -256,6 +256,7 @@ copyright: >
 
 extra_css:
 
+  - assets/css/kitcat-gateway.css
   - assets/css/mki-navbar-pro.css
   - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.css
   - assets/stylesheets/chat.css
