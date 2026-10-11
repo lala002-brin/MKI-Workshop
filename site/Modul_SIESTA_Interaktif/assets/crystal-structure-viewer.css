@@ -1,0 +1,81 @@
+.cv-root{--cv-border:var(--md-default-fg-color--lightest,#d4dce7);--cv-fg:var(--md-default-fg-color,#17243a);--cv-muted:var(--md-default-fg-color--light,#64748b);--cv-card:var(--md-default-bg-color,#fff);font-size:.87rem;color:var(--cv-fg);max-width:100%}.cv-root *{box-sizing:border-box}.cv-hero{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:26px;border-radius:16px;background:linear-gradient(120deg,#163b7a,#2563bb);color:#fff;margin:12px 0 18px}.cv-hero h2{font-size:1.6rem;line-height:1.25;color:#fff;margin:3px 0 7px}.cv-hero p{margin:0;color:#e8f0fd}.cv-eyebrow{letter-spacing:.12em;font-size:.7rem;color:#bedaff;font-weight:800}.cv-tag{font-size:.74rem;padding:8px 12px;background:#ffffff24;border-radius:100px}.cv-card{border:1px solid var(--cv-border);background:var(--cv-card);border-radius:14px;padding:clamp(16px,2.4vw,25px);margin:16px 0;box-shadow:0 5px 22px #1a315010}.cv-card h3{font-size:1.12rem;margin:0 0 16px!important;font-weight:750}.cv-toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.cv-root button,.cv-upload{font:inherit;font-size:.82rem;font-weight:650;border:1px solid #a8bacf;border-radius:9px;background:var(--cv-card);color:var(--cv-fg);cursor:pointer;padding:10px 14px;line-height:1.4;display:inline-flex;align-items:center;justify-content:center}.cv-root button:hover,.cv-upload:hover{border-color:#2563bb}.cv-root button.cv-primary{background:#285fbc;color:#fff;border-color:#285fbc}.cv-upload input{display:none}.cv-meta{font-size:.81rem;color:var(--cv-muted);margin-top:14px;line-height:1.6}.cv-meta.cv-error{color:#b94242}.cv-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}.cv-settings label{font-size:.8rem;font-weight:650;min-width:0}.cv-settings select{display:block;width:100%;max-width:100%;min-width:0;margin-top:6px;border:1px solid #96a9bf;border-radius:8px;padding:10px;color:var(--cv-fg);background:var(--cv-card);font:inherit;min-height:42px}.cv-settings input[type=range]{display:block;width:100%;margin-top:12px;accent-color:#2563bb}.cv-range-val{font-size:.74rem;color:var(--cv-muted)}.cv-settings label.cv-checkbox{display:flex;align-items:center;gap:8px;align-self:center}.cv-checkbox input{width:16px;height:16px;accent-color:#2563bb}.cv-heading{display:flex;align-items:start;justify-content:space-between;gap:10px}.cv-heading h3{margin-bottom:5px!important}.cv-heading p{color:var(--cv-muted);margin:0 0 16px;font-size:.8rem}.cv-note{font-size:.71rem;color:var(--cv-muted)}.cv-viewport{position:relative;border:1px solid var(--cv-border);border-radius:12px;overflow:hidden;background:#fff}.cv-viewport #cv-canvas{width:100%;height:clamp(360px,47vw,610px);position:relative;touch-action:none}.cv-loading{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:#f1f5fa;color:#334b65;font-size:.9rem;pointer-events:none}.cv-loading.cv-hidden{display:none}.cv-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:13px}.cv-detail>div{background:color-mix(in srgb,var(--cv-card) 93%,#2767ba);border:1px solid var(--cv-border);border-radius:10px;padding:14px;min-width:0}.cv-detail b,.cv-detail small{display:block}.cv-detail b{font-size:.89rem;margin-bottom:6px}.cv-detail small{font-size:.77rem;color:var(--cv-muted);overflow-wrap:anywhere}.cv-elements{font-size:.87rem;font-weight:600;margin-bottom:12px}.cv-muted{font-size:.79rem;color:var(--cv-muted);line-height:1.75}.cv-root button:focus-visible,.cv-root select:focus-visible{outline:3px solid #7bb3ff;outline-offset:2px}@media(max-width:680px){.cv-hero{padding:19px}.cv-hero h2{font-size:1.32rem}.cv-settings,.cv-detail{grid-template-columns:1fr}.cv-root button,.cv-upload{flex:1}.cv-viewport #cv-canvas{height:380px}}
+/* Pro additions */
+.cv-root .cv-viewport #cv-canvas{height:clamp(490px,62vw,740px)}
+.cv-root .cv-supercell{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 20px}
+.cv-root .cv-supercell label{min-width:0;font-size:.8rem;font-weight:700}
+.cv-root .cv-supercell select{display:block;width:100%;min-width:0;margin-top:5px;padding:10px;border:1px solid #96a9bf;border-radius:8px;color:var(--cv-fg);background:var(--cv-card)}
+.cv-root .cv-small-heading{font-size:.96rem;margin:9px 0 6px}
+.cv-root .cv-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:10px 0 18px}
+.cv-root .cv-checks .cv-checkbox{min-width:0;display:flex;align-items:center;gap:8px;font-size:.78rem}
+.cv-root .cv-checks input{flex-shrink:0}
+.cv-root .cv-settings input[type=range]{cursor:pointer}
+.cv-root .cv-upload{position:relative}
+.cv-root .cv-viewport{box-shadow:0 8px 25px rgba(22,45,85,.07)}
+@media(max-width:680px){.cv-root .cv-checks{grid-template-columns:1fr}.cv-root .cv-supercell{gap:6px}.cv-root .cv-viewport #cv-canvas{height:460px}}
+
+/* =========================================
+   MKI WORKSHOP - PERBAIKAN HEADER VIEWER
+   ========================================= */
+
+#mki-crystal .cv-hero {
+  background: linear-gradient(
+    135deg,
+    #102e63 0%,
+    #194a98 50%,
+    #2869ca 100%
+  ) !important;
+
+  border-radius: 16px;
+  padding: 30px;
+}
+
+/* Judul utama */
+#mki-crystal .cv-hero h2 {
+  color: #ffffff !important;
+  font-size: clamp(24px, 3vw, 32px) !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  margin: 8px 0 12px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Subjudul */
+#mki-crystal .cv-hero p {
+  color: #f0f6ff !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* Teks kecil bagian atas */
+#mki-crystal .cv-eyebrow {
+  color: #c7e0ff !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px;
+  font-weight: 800 !important;
+}
+
+/* Label 3Dmol.js */
+#mki-crystal .cv-tag {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.18) !important;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-weight: 600 !important;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 680px) {
+  #mki-crystal .cv-hero {
+    padding: 22px;
+  }
+
+  #mki-crystal .cv-hero h2 {
+    font-size: 24px !important;
+  }
+
+  #mki-crystal .cv-hero p {
+    font-size: 14px !important;
+  }
+}
+
