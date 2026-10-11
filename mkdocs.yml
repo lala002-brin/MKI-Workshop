@@ -154,6 +154,8 @@ nav:
       - "Interactive Crystal Structure Viewer": Modul_SIESTA_Interaktif/crystal-structure-viewer.md
       - "SIESTA Output Explorer Pro": Modul_SIESTA_Interaktif/siesta-output-explorer-pro.md
       - "Geometry Optimization Analyzer": Modul_SIESTA_Interaktif/geometry-optimization-analyzer.md
+      - "SCF Convergence Analyzer Pro": Modul_SIESTA_Interaktif/scf-convergence-pro.md
+      - "Magnetic Moment & Spin Polarization Analyzer": Modul_SIESTA_Interaktif/magnetic-moment-analyzer.md
       - "Part 1: Fondasi dan Persiapan": Modul_SIESTA_Interaktif/01_Fondasi_dan_Persiapan.md
       - "Part 2: Bulk dan Input FDF": Modul_SIESTA_Interaktif/02_Model_Bulk_dan_Input_FDF.md
       - "Kalkulator Konvergensi K-Point": Modul_SIESTA_Interaktif/kpoint-calculator.md
@@ -222,6 +224,8 @@ extra_css:
   - Modul_SIESTA_Interaktif/assets/siesta-output-explorer.css
   - Modul_SIESTA_Interaktif/assets/siesta-output-explorer-pro.css
   - Modul_SIESTA_Interaktif/assets/geometry-optimization-analyzer.css
+  - Modul_SIESTA_Interaktif/assets/scf-convergence-pro.css
+  - Modul_SIESTA_Interaktif/assets/magnetic-moment-analyzer.css
 extra_javascript:
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
@@ -247,4 +251,6 @@ extra_javascript:
   - Modul_SIESTA_Interaktif/assets/siesta-output-explorer.js
   - Modul_SIESTA_Interaktif/assets/heterojunction-band-alignment.js
   - Modul_SIESTA_Interaktif/assets/geometry-optimization-analyzer.js
+  - Modul_SIESTA_Interaktif/assets/scf-convergence-pro.js
+  - Modul_SIESTA_Interaktif/assets/magnetic-moment-analyzer.js
   - Modul_SIESTA_Interaktif/assets/siesta-output-explorer-pro.js
