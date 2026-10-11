@@ -1,0 +1,116 @@
+.kp-wrap{--kp-blue:#275bd5;border:1px solid var(--md-default-fg-color--lightest,#ccd3df);border-radius:15px;padding:clamp(14px,3vw,25px);margin:1.4rem 0;background:var(--md-default-bg-color,#fff);box-shadow:0 7px 26px rgba(22,51,95,.07)}
+.kp-header,.kp-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.kp-header strong{font-size:1.1rem}.kp-pill{font-size:.72rem;background:rgba(41,100,218,.12);color:var(--md-typeset-a-color,#275bd5);padding:4px 10px;border-radius:30px}.kp-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 12px}.kp-controls label{font-size:.78rem;font-weight:600}.kp-controls input,.kp-table input{display:block;width:100%;min-width:0;margin-top:5px;border:1px solid #9aaac0;border-radius:7px;padding:9px 8px;background:var(--md-default-bg-color,#fff);color:var(--md-default-fg-color,#111);font:inherit}.kp-help,.kp-foot{font-size:.78rem;opacity:.83}.kp-scroll{overflow-x:auto}.kp-table{width:100%;min-width:540px;font-size:.83rem}.kp-table th,.kp-table td{padding:7px!important;text-align:left}.kp-table input{margin:0;padding:7px}.kp-table .kp-energy{min-width:145px}.kp-table .kp-delta{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}.kp-actions{justify-content:flex-start;margin:17px 0}.kp-actions button,.kp-del{cursor:pointer;border:1px solid var(--md-typeset-a-color,#275bd5);border-radius:7px;padding:8px 11px;color:var(--md-typeset-a-color,#275bd5);font:inherit;font-size:.8rem;background:transparent}.kp-actions .kp-primary{background:var(--md-primary-fg-color,#275bd5);border-color:var(--md-primary-fg-color,#275bd5);color:#fff}.kp-del{border:0;padding:5px}.kp-result{padding:13px;border-radius:9px;background:rgba(70,122,190,.09);font-size:.88rem}.kp-result.kp-error{background:rgba(205,64,64,.1)}.kp-chartbox{margin-top:18px}.kp-chartbox svg{width:100%;height:auto;max-height:290px}.kp-chartbox text{font-family:inherit;font-size:12px;fill:var(--md-default-fg-color,#243248)}.kp-chartbox .kp-gridline{stroke:var(--md-default-fg-color--lightest,#dbe2ea);stroke-width:1}.kp-chartbox .kp-trace{stroke:#2b70d5;stroke-width:3;fill:none}.kp-chartbox circle{fill:#2b70d5}.kp-chartbox .kp-threshold{stroke:#c17b2b;stroke-width:1.5;stroke-dasharray:6 5}@media(max-width:630px){.kp-controls{grid-template-columns:1fr}.kp-wrap{padding:12px}.kp-actions button{flex:1}}
+
+/* Perbaikan tabel kalkulator k-point */
+
+.kp-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.kp-table {
+  width: 100%;
+  min-width: 760px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.kp-table th,
+.kp-table td {
+  box-sizing: border-box;
+  padding: 6px !important;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.kp-table th:nth-child(1),
+.kp-table th:nth-child(2),
+.kp-table th:nth-child(3) {
+  width: 13%;
+}
+
+.kp-table th:nth-child(4) {
+  width: 24%;
+}
+
+.kp-table th:nth-child(5) {
+  width: 29%;
+}
+
+.kp-table th:nth-child(6) {
+  width: 8%;
+}
+
+.kp-table input,
+.kp-table input.kp-energy {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100%;
+  padding: 8px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.kp-table .kp-delta {
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* FIX: Input kalkulator dapat diklik dan diedit */
+#kpoint-calculator {
+  position: relative;
+  isolation: isolate;
+}
+
+#kpoint-calculator .kp-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#kpoint-calculator .kp-table {
+  width: 100%;
+  min-width: 850px;
+  table-layout: fixed;
+}
+
+#kpoint-calculator .kp-table th,
+#kpoint-calculator .kp-table td {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 6px !important;
+}
+
+#kpoint-calculator .kp-table input,
+#kpoint-calculator .kp-controls input {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+#kpoint-calculator .kp-table .kp-energy {
+  min-width: 0 !important;
+}
+
+#kpoint-calculator .kp-table th:nth-child(4) {
+  width: 25%;
+}
+
+#kpoint-calculator .kp-table th:nth-child(5) {
+  width: 19%;
+}
+
+#kpoint-calculator .kp-table th:nth-child(6) {
+  width: 7%;
+}
+

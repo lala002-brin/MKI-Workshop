@@ -154,6 +154,7 @@ nav:
       - "Part 1: Fondasi dan Persiapan": Modul_SIESTA_Interaktif/01_Fondasi_dan_Persiapan.md
       - "Part 2: Bulk dan Input FDF": Modul_SIESTA_Interaktif/02_Model_Bulk_dan_Input_FDF.md
       - "Kalkulator Konvergensi K-Point": Modul_SIESTA_Interaktif/kpoint-calculator.md
+      - "DOS dan PDOS Plotter": Modul_SIESTA_Interaktif/dos-pdos-plotter.md
       - "Part 3: Konvergensi, Optimasi, SCF, DOS, Band": Modul_SIESTA_Interaktif/03_Convergence_OPT_SCF_DOS_Bands.md
       - "Part 4: Surface dan Slab": Modul_SIESTA_Interaktif/04_Surface_Slab_dan_WorkFunction.md
       - "Part 5: Heterojunction dan Charge Transfer": Modul_SIESTA_Interaktif/05_Heterojunction_BandAlignment_Charge.md
@@ -205,6 +206,7 @@ extra_css:
   - stylesheets/dftb-workshop.css
   - stylesheets/style_siesta.css
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.css
+  - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.css
 
 extra_javascript:
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
@@ -223,3 +225,4 @@ extra_javascript:
   - javascripts/md-analysis-worksheet.js
   - javascripts/scipt-library.js 
   - assets/javascripts/chat.js
+  - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.js
