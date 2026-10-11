@@ -1,0 +1,58 @@
+.sie-dos-app{--sie-line:var(--md-default-fg-color--lighter,#c7d4e6);--sie-bg:var(--md-code-bg-color,#f5f7fb);color:var(--md-default-fg-color);max-width:100%;font-size:.78rem}.sie-dos-app .sie-panel{border:1px solid var(--sie-line);border-radius:13px;padding:1rem;margin:1rem 0;background:var(--md-default-bg-color);box-shadow:0 3px 13px #00000009}.sie-dos-app h3{margin:.1rem 0 .8rem;font-size:1rem}.sie-dos-app h4{margin:.8rem 0 .3rem}.sie-dos-app .sie-controls{display:flex;flex-wrap:wrap;align-items:end;gap:.7rem}.sie-dos-app label{font-weight:550;display:flex;flex-direction:column;gap:.25rem;min-width:125px;flex:1}.sie-dos-app label:has(input[type=checkbox]){flex:0 1 240px;flex-direction:row;align-items:center;gap:.5rem;padding-bottom:.35rem}.sie-dos-app input:not([type=checkbox]){font:inherit;width:100%;min-width:0;border:1px solid var(--sie-line);border-radius:7px;padding:.45rem .5rem;color:var(--md-default-fg-color);background:var(--md-default-bg-color);pointer-events:auto;user-select:text}.sie-dos-app input[type=file]{min-width:200px}.sie-dos-app button{background:var(--md-primary-fg-color,#305dc6);color:white;border:0;border-radius:8px;padding:.55rem .85rem;font:inherit;font-weight:600;cursor:pointer;min-height:39px}.sie-dos-app button:hover{filter:brightness(1.12)}.sie-dos-app button.sie-secondary{border:1px solid var(--md-primary-fg-color);background:transparent;color:var(--md-primary-fg-color)}.sie-dos-app .sie-hint{font-size:.68rem;opacity:.8;margin:.55rem 0}.sie-dos-app #sie-status{padding:.5rem .7rem;border-radius:7px;background:var(--sie-bg);margin-top:.7rem}.sie-dos-app .sie-curves{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.4rem;max-height:230px;overflow:auto}.sie-dos-app .sie-curves label{display:flex;flex-direction:row;gap:.45rem;align-items:center;font-size:.7rem;font-weight:450;min-width:0}.sie-dos-app .sie-chart{width:100%;min-height:330px;overflow-x:auto;border-radius:9px;background:var(--md-default-bg-color);border:1px solid var(--sie-line)}.sie-dos-app .sie-chart svg{display:block;width:100%;min-width:520px;height:auto}.sie-dos-app .sie-toolbar{justify-content:flex-end}.sie-dos-app .sie-toolbar h3{margin-right:auto!important}@media(max-width:640px){.sie-dos-app .sie-panel{padding:.7rem}.sie-dos-app label{min-width:130px}.sie-dos-app .sie-toolbar{justify-content:flex-start}} 
+cat >> docs/Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.css <<'EOF'
+
+/* Perapian DOS & PDOS Plotter untuk MkDocs Material */
+
+/* Pastikan elemen form tidak melebihi container */
+#dos-pdos-plotter,
+#dos-pdos-plotter * {
+  box-sizing: border-box;
+}
+
+/* Label tidak terpotong secara tidak wajar */
+#dos-pdos-plotter label {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+/* Perbaikan ukuran input */
+#dos-pdos-plotter input[type="number"],
+#dos-pdos-plotter input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Checkbox tampil sejajar */
+#dos-pdos-plotter label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#dos-pdos-plotter input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Grafik mengikuti lebar halaman */
+#dos-pdos-plotter svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layar kecil */
+@media (max-width: 768px) {
+  #dos-pdos-plotter input,
+  #dos-pdos-plotter select {
+    max-width: 100%;
+  }
+}
+
+EOF
