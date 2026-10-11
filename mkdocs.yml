@@ -157,6 +157,7 @@ nav:
       - "DOS dan PDOS Plotter": Modul_SIESTA_Interaktif/dos-pdos-plotter.md
       - "Band Structure & Gap Analyzer": Modul_SIESTA_Interaktif/band-structure-analyzer.md
       - "Advanced Band Structure Studio": Modul_SIESTA_Interaktif/advanced-band-studio.md
+      - "Surface & Work Function Analyzer": Modul_SIESTA_Interaktif/surface-workfunction-analyzer.md
       - "Part 3: Konvergensi, Optimasi, SCF, DOS, Band": Modul_SIESTA_Interaktif/03_Convergence_OPT_SCF_DOS_Bands.md
       - "Part 4: Surface dan Slab": Modul_SIESTA_Interaktif/04_Surface_Slab_dan_WorkFunction.md
       - "Part 5: Heterojunction dan Charge Transfer": Modul_SIESTA_Interaktif/05_Heterojunction_BandAlignment_Charge.md
@@ -211,7 +212,7 @@ extra_css:
   - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.css
   - Modul_SIESTA_Interaktif/assets/band-structure-analyzer.css
   - Modul_SIESTA_Interaktif/assets/advanced-band-studio.css
-
+  - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.css
 extra_javascript:
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
@@ -232,3 +233,4 @@ extra_javascript:
   - Modul_SIESTA_Interaktif/assets/band-structure-analyzer.js
   - Modul_SIESTA_Interaktif/assets/advanced-band-studio.js
   - Modul_SIESTA_Interaktif/assets/dos-pdos-plotter.js
+  - Modul_SIESTA_Interaktif/assets/surface-workfunction-analyzer.js
