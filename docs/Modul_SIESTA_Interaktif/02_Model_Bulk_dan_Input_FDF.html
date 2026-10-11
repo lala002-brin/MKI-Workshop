@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67 | Modul DFT SIESTA</title><link rel="stylesheet" href="assets/style.css"></head><body><aside class="rail"><div class="brand">SIESTA · DFT LAB<br><small>Fe₃O₄ · ZIF-67 · Cu₂O · TC</small></div><a href="index.html">⌂ Beranda</a><a class="" href="01_Fondasi_dan_Persiapan.html">01 · Peta penelitian dan persiapan</a><a class="active" href="02_Model_Bulk_dan_Input_FDF.html">02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</a><a class="" href="03_Convergence_OPT_SCF_DOS_Bands.html">03 · Konvergensi, optimasi, SCF dan pita</a><a class="" href="04_Surface_Slab_dan_WorkFunction.html">04 · Surface dan slab atomistik</a><a class="" href="05_Heterojunction_BandAlignment_Charge.html">05 · Interface dan heterojunction</a><a class="" href="06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.html">06 · Tetrasiklin, reaksi dan proyek mahasiswa</a><a href="scripts/">⌁ Scripts (folder)</a></aside><main class="main"><section class="hero"><div class="eyebrow">Modul teknis mahasiswa · Bagian 2 / 6</div><h1>02 · Bulk Cu₂O, Fe₃O₄ dan ZIF-67</h1><p>Langkah-langkah, input, uji validasi, dan batas interpretasi hasil SIESTA.</p></section><div class="topnav"><a href="01_Fondasi_dan_Persiapan.html">← Part sebelumnya</a><a href="03_Convergence_OPT_SCF_DOS_Bands.html">Part berikutnya →</a></div><article class="paper"><h1>Part 02. Bulk nyata: Cu₂O, Fe₃O₄, dan ZIF-67</h1>
+<blockquote>
+<p>Tujuan: membuat struktur awal teruji dan file <code>.fdf</code> untuk <strong>single-point SCF</strong> serta optimasi. Jangan menjalankan geometri yang belum lolos pemeriksaan ikatan atau spin.</p>
+</blockquote>
+<h2>1. Cu₂O: sel kubik enam atom</h2>
+<p>Cuprite (struktur ideal) mempunyai 4 Cu dan 2 O dalam sel kubik konvensional. Salah satu representasi fraksional, <strong>sebagai contoh model ideal yang harus diperiksa</strong>, adalah:</p>
+<pre><code class="language-fdf">SystemName Cu2O bulk example
+SystemLabel Cu2O_TEST
+NumberOfSpecies 2
+NumberOfAtoms 6
+%block ChemicalSpeciesLabel
+1 29 Cu
+2  8 O
+%endblock ChemicalSpeciesLabel
+LatticeConstant 1.0 Ang
+%block LatticeVectors
+4.27 0.00 0.00
+0.00 4.27 0.00
+0.00 0.00 4.27
+%endblock LatticeVectors
+AtomicCoordinatesFormat Fractional
+%block AtomicCoordinatesAndAtomicSpecies
+0.25 0.25 0.25 1
+0.25 0.75 0.75 1
+0.75 0.25 0.75 1
+0.75 0.75 0.25 1
+0.00 0.00 0.00 2
+0.50 0.50 0.50 2
+%endblock AtomicCoordinatesAndAtomicSpecies
+XC.functional GGA
+XC.authors PBE
+Spin non-polarized
+PAO.BasisSize DZP
+PAO.EnergyShift 0.02 Ry
+MeshCutoff 300 Ry
+%block kgrid_Monkhorst_Pack
+4 0 0 0.0
+0 4 0 0.0
+0 0 4 0.0
+%endblock kgrid_Monkhorst_Pack
+SolutionMethod diagon
+MaxSCFIterations 200
+DM.Tolerance 1.d-5
+DM.MixingWeight 0.10
+DM.NumberPulay 5
+ElectronicTemperature 25 meV
+MD.TypeOfRun CG
+MD.Steps 0
+DM.UseSaveDM false
+MD.UseSaveXV false
+WriteForces true
+</code></pre>
+<p><strong>Pseudopotential:</strong> sediakan <code>Cu.psml</code> dan <code>O.psml</code> (atau format <code>.psf</code> yang sesuai) dengan label yang tepat. SIESTA tidak membuat pseudopotential dari CIF. File di atas adalah input awal <em>single-point</em>, bukan hasil parameter konvergen.</p>
+<h2>2. Skrip ASE generik untuk memeriksa CIF dan menghasilkan FDF struktur</h2>
+<p>Lihat <code>scripts/cif_to_structure_fdf.py</code>. Script tersebut menyimpan vektor kisi, koordinat Cartesian, jumlah atom, dan species map. Untuk membuat Cu₂O:</p>
+<pre><code class="language-bash">python scripts/cif_to_structure_fdf.py inputs/Cu2O.cif \
+    -o 01_bulk/Cu2O/structure.fdf
+</code></pre>
+<p>Konten dapat dipanggil dari input utama menggunakan <code>%include structure.fdf</code> jika file berada dalam direktori yang sesuai.</p>
+<h2>3. Fe₃O₄: konfigurasi ferrimagnetik lebih penting daripada sekadar CIF</h2>
+<ul>
+<li>Mulai dari struktur inverse spinel (56 atom konvensional sering praktis), bukan sembarang struktur Fe:O = 3:4.</li>
+<li>Identifikasi <strong>Fe(A) tetrahedral</strong> dan <strong>Fe(B) oktahedral</strong> melalui koordinasi terhadap O dan informasi kristalografi.</li>
+<li>Tetapkan spin awal berlawanan pada subkisi Fe(A) dan Fe(B). Uji lebih dari satu susunan awal.</li>
+<li>Periksa momen lokal dan keadaan akhir, jangan mengandalkan total magnetisasi saja.</li>
+<li>Terapkan DFT+U Fe 3d hanya setelah memeriksa implementasi dan sensitivitas nilai U pada metode yang dipakai.</li>
+</ul>
+<p>Contoh fragmen pengaturan (nomor atom <strong>harus diganti</strong> menurut struktur Fe₃O₄ aktual):</p>
+<pre><code class="language-fdf">Spin polarized
+%block DM.InitSpin
+  1  4.0  # hanya ilustrasi: Fe(B)
+  2 -4.0  # hanya ilustrasi: Fe(A)
+%endblock DM.InitSpin
+</code></pre>
+<p><strong>Peringatan:</strong> jangan gunakan dua baris tersebut sebagai konfigurasi Fe₃O₄ 56 atom. Semua Fe harus diklasifikasikan dan dipetakan. Nomor atom dalam FDF mengikuti urutan atom struktur yang dipakai.</p>
+<h2>4. ZIF-67: pilihan sel dan kondisi magnetik</h2>
+<ul>
+<li>Periksa formula Co(2-methylimidazolate)₂ dan hitung Co, C, N, H pada CIF.</li>
+<li>Tentukan apakah CIF mengandung pelarut, okupansi parsial, hidrogen yang tidak dicantumkan, atau disorder.</li>
+<li>Gunakan sel primitive yang valid untuk sifat bulk; jangan langsung membuat 2×2×2 jika sel sudah ratusan atom.</li>
+<li>Uji inisialisasi spin Co, beberapa keadaan magnetik bila masuk akal, dan koreksi dispersi yang didukung SIESTA yang terpasang.</li>
+<li>Jangan menyimpulkan TC dapat masuk ke pori ZIF-67 hanya karena ukuran rongga lebih besar daripada molekul. Jendela pori, fleksibilitas, dan cacat perlu diperiksa.</li>
+</ul>
+<h2>5. Generasi input akhir dari dua bagian</h2>
+<p>Jika Anda menyimpan parameter pada <code>parameters.fdf</code> dan struktur pada <code>structure.fdf</code>, buat <code>run.fdf</code>:</p>
+<pre><code class="language-fdf">%include structure.fdf
+%include parameters.fdf
+</code></pre>
+<p><strong>Periksa direktori eksekusi.</strong> <code>%include</code> harus menemukan file yang benar dan seluruh pseudopotential harus tersedia di job working directory.</p>
+<h2>6. Pengujian struktur menggunakan ASE</h2>
+<pre><code class="language-python">from ase.io import read
+from collections import Counter
+for p in ['Cu2O.cif', 'Fe3O4.cif', 'ZIF67.cif']:
+    atoms = read(p)
+    print(p, len(atoms), Counter(atoms.get_chemical_symbols()))
+    print('cell Å:', atoms.cell.lengths(), 'angles °:', atoms.cell.angles())
+    print('volume Å³:', atoms.get_volume(), 'PBC:', atoms.pbc)
+</code></pre>
+<p><strong>Checkpoint:</strong> masing-masing struktur menunjukkan formula, koordinasi, dan sel yang tepat. Untuk Cu₂O ideal, koordinasi Cu:O mendekati 2:1 secara tetangga pertama (setiap Cu dua O, setiap O empat Cu).</p>
+</article><div class="topnav"><a href="01_Fondasi_dan_Persiapan.html">← Part sebelumnya</a><a href="03_Convergence_OPT_SCF_DOS_Bands.html">Part berikutnya →</a></div><div class="foot">Panduan pendidikan · Angka parameter awal harus diuji pada konfigurasi SIESTA dan HPC yang digunakan.</div></main><script>document.querySelectorAll('pre').forEach(p=>{let b=document.createElement('button');b.className='copy';b.textContent='Salin';b.onclick=()=>navigator.clipboard.writeText(p.innerText.replace(/^Salin\n/,''));p.appendChild(b)})</script></body></html>

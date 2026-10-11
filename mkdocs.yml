@@ -149,7 +149,14 @@ nav:
 
           - Battery Electrolyte:
               - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
-
+  - DFT SIESTA:
+      - Overview: Modul_SIESTA_Interaktif/index.md
+      - "Part 1: Fondasi dan Persiapan": Modul_SIESTA_Interaktif/01_Fondasi_dan_Persiapan.md
+      - "Part 2: Bulk dan Input FDF": Modul_SIESTA_Interaktif/02_Model_Bulk_dan_Input_FDF.md
+      - "Part 3: Konvergensi, Optimasi, SCF, DOS, Band": Modul_SIESTA_Interaktif/03_Convergence_OPT_SCF_DOS_Bands.md
+      - "Part 4: Surface dan Slab": Modul_SIESTA_Interaktif/04_Surface_Slab_dan_WorkFunction.md
+      - "Part 5: Heterojunction dan Charge Transfer": Modul_SIESTA_Interaktif/05_Heterojunction_BandAlignment_Charge.md
+      - "Part 6: Tetrasiklin dan Adsorpsi": Modul_SIESTA_Interaktif/06_Tetrasiklin_Adsorpsi_Reaksi_dan_Reporting.md
 extra:
   generator: false
   social:
@@ -195,7 +202,7 @@ extra_css:
   - stylesheets/script-lib.css
   - stylesheets/w_day2.css
   - stylesheets/dftb-workshop.css
-
+  - stylesheets/style_siesta.css
 extra_javascript:
 
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
