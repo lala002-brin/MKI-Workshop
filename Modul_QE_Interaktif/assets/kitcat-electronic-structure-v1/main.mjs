@@ -1,3 +1,4 @@
+import {scientificAudit,manifest} from './scientific-audit.mjs';
 import {readDOS,readPDOS,readBandsGNU,qeFermi,pdosGroups,sameBandKPath} from './parser.mjs';
 const $=id=>document.getElementById(id);let tab='dos',data=[],svgText='',lastRows=[],combinedDOS=null,combinedPDOS=[],bandDOSBands=null,bandDOSDOS=null,spinUpBands=null,spinDownBands=null,spinError='';const colors=['#1764ad','#df842e','#288472','#a34782','#6b75c4','#bc5148','#5f6d7a'];
 const safe=t=>String(t).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -166,3 +167,13 @@ for(const [id,spin] of [['spinUpBands','up'],['spinDownBands','down']]){
 }
 
 refreshPDOS();plot();
+
+// Reproducibility manifest: observation only; does not modify scientific curves.
+let auditFiles=new Set(), auditDemo=false, auditFermiFromOut=false;
+const auditFileInputs=['files','combinedDOS','combinedPDOS','bandDOSBands','bandDOSDOS','spinUpBands','spinDownBands','qeout'];
+for(const id of auditFileInputs)$(id).addEventListener('change',e=>{for(const f of e.target.files||[])auditFiles.add(f.name);$('auditFiles').textContent='File yang dibaca (nama saja): '+([...auditFiles].join(', ')||'belum ada');if(id==='qeout'){$('auditRef').value='qeout';auditFermiFromOut=true;}auditDemo=false;},{capture:false});
+$('demo').addEventListener('click',()=>{auditDemo=true;});
+function auditInputs(){return {files:[...auditFiles],tab,fermi:$('fermi').value,referenceSource:$('auditRef').value,xmin:$('xmin').value,xmax:$('xmax').value,system:$('auditSystem').value,functional:$('auditFunctional').value,pseudopotentials:$('auditPseudo').value,kmesh:$('auditKmesh').value,cutoffs:$('auditCutoffs').value,smearing:$('auditSmearing').value,spin:$('auditSpin').value,qeVersion:$('auditVersion').value,compatibility:$('auditCompat').value,demo:auditDemo?'yes':'no',style:{title:$('title').value,color:$('color').value,refcolor:$('refcolor').value,layout:$('layout').value,font:$('font').value,lineWidth:$('width').value}};}
+function displayAudit(){const a=scientificAudit(auditInputs());$('auditSummary').textContent=[a.status,...a.blocks.map(v=>'BLOCK: '+v),...a.warnings.map(v=>'REVIEW: '+v),...a.passes.map(v=>'INFO: '+v),a.disclaimer].join('\n');$('auditSummary').className='notice'+(a.blocks.length||a.warnings.length?' warn':'');return a;}
+$('runScientificAudit').onclick=displayAudit;
+$('exportManifest').onclick=()=>{const x=auditInputs();displayAudit();save('kitcat_electronic_structure_manifest.json',new Blob([JSON.stringify(manifest(x),null,2)],{type:'application/json'}));};
