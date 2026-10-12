@@ -1,0 +1,14 @@
+import {createStructure} from '../src/structure-core.mjs';
+import {makeSlabCubic,geometryQE} from './slab-core.mjs';
+const $=id=>document.getElementById(id);let bulk=null,out=null;
+function message(s){$('status').textContent=s}function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+const fcc=[[0,0,0],[0,.5,.5],[.5,0,.5],[.5,.5,0]];
+function demo(){const atoms=[...fcc.map((f,i)=>({id:`Na-${i+1}`,element:'Na',fractional:f})),...fcc.map((f,i)=>({id:`Cl-${i+1}`,element:'Cl',fractional:f.map(x=>(x+.5)%1)}))];bulk=createStructure({lattice:[[5.64,0,0],[0,5.64,0],[0,0,5.64]],atoms,metadata:{source:'synthetic NaCl conventional cell for demonstration'}});$('source').textContent='NaCl · 8 atom · a=5.64 Å (ilustratif)';message('Bulk dimuat. Pilih jumlah lapisan dan vakum.');out=null;toggle(false)}
+function toggle(x){$('save').disabled=!x;$('qe').disabled=!x}
+function render(s){const svg=$('view');svg.replaceChildren();const ns='http://www.w3.org/2000/svg';let background=document.createElementNS(ns,'rect');Object.entries({x:30,y:20,width:540,height:260,fill:'none',stroke:'#8bb6dd','stroke-width':2}).forEach(([k,v])=>background.setAttribute(k,v));svg.append(background);const coords=s.atoms.map(a=>({x:30+540*((a.fractional[0]%1+1)%1),y:280-260*a.fractional[2],element:a.element}));for(const p of coords){const c=document.createElementNS(ns,'circle');Object.entries({cx:p.x,cy:p.y,r:4.5,fill:p.element==='Na'?'#57a9ff':'#86d1a8',opacity:.78}).forEach(([k,v])=>c.setAttribute(k,v));svg.append(c)}}
+$('demo').onclick=demo;
+$('upload').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;const data=JSON.parse(await file.text());bulk=createStructure(data.structure||data);$('source').textContent=`${file.name} · ${bulk.atoms.length} atom`;out=null;toggle(false);message('JSON diimpor; bentuk bulk dan lattice harus diperiksa sebelum membangun slab.')}catch(err){message('Gagal impor: '+err.message)}};
+$('build').onclick=()=>{try{if(!bulk)throw Error('Muat struktur bulk dahulu');out=makeSlabCubic(bulk,{hkl:$('hkl').value,layers:Number($('layers').value),vacuum:Number($('vac').value)});message('Geometri kandidat slab '+$('hkl').value+' berhasil dibuat sebagai DRAFT. Belum diverifikasi polaritas, terminasi, atau konvergensi.');$('metrics').textContent=JSON.stringify(out.diagnostics,null,2);render(out.structure);toggle(true)}catch(err){out=null;toggle(false);message('Tidak dapat membuat slab: '+err.message)}};
+$('save').onclick=()=>{if(out)download(JSON.stringify(out.structure,null,2),'kitcat-slab-'+$('hkl').value+'-draft.json','application/json')};
+$('qe').onclick=()=>{if(out)download(geometryQE(out.structure),'kitcat-slab-'+$('hkl').value+'-geometry-only.in','text/plain')};
+demo();

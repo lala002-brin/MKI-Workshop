@@ -4,8 +4,46 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const num=x=>Number(String(x??'').replace(/[dD]/g,'e'));
 const fmt=(x,d=6)=>Number.isFinite(x)?Number(x).toFixed(d):'—';
 function save(name,txt,mime='text/plain'){let b=new Blob([txt],{type:mime}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-function parseQE(t){let lines=t.split(/\r?\n/),steps=[],cycle=1,current=null,finals=[],mag=null,absmag=null,fermi=null,vol=null,nat=null,done=/JOB DONE\./i.test(t),success=/convergence has been achieved/i.test(t);for(let l of lines){let m;if((m=l.match(/number of atoms\/cell\s*=\s*(\d+)/i)))nat=+m[1];if((m=l.match(/unit-cell volume\s*=\s*([-+\d.eEdD]+)/i)))vol=num(m[1]);if((m=l.match(/the Fermi energy is\s+([-+\d.]+)\s+ev/i)))fermi=+m[1];if((m=l.match(/total magnetization\s*=\s*([-+\d.]+)/i)))mag=+m[1];if((m=l.match(/absolute magnetization\s*=\s*([-+\d.]+)/i)))absmag=+m[1];if((m=l.match(/iteration\s*#\s*(\d+)/i))){let n=+m[1];if(current&&n<=current.i)cycle++;current={i:n,cycle,E:null,res:null};steps.push(current)}if((m=l.match(/estimated scf accuracy\s*[<=]*\s*([-+\d.eEdD]+)\s+Ry/i))&&current)current.res=num(m[1]);if((m=l.match(/^\s*!?\s*total energy\s*=\s*([-+\d.eEdD]+)\s+Ry/i))){let e=num(m[1]);if(current)current.E=e;if(/^\s*!/.test(l))finals.push(e)}}return{steps:steps.filter(p=>Number.isFinite(p.E)),finals,nat,vol,fermi,mag,absmag,done,success,lastE:finals.at(-1)??steps.filter(p=>Number.isFinite(p.E)).at(-1)?.E??null}};
-function parseFDF(s){let get=k=>{let m=s.match(new RegExp('\\b'+k+'\\s*=\\s*([^,\\n!]+)','i'));return m?m[1].trim():null};let kp=s.match(/K_POINTS\s+automatic\s*\n\s*(\d+)\s+(\d+)\s+(\d+)/i);return{ecutwfc:get('ecutwfc'),ecutrho:get('ecutrho'),conv_thr:get('conv_thr'),nspin:get('nspin'),calculation:get('calculation'),occupations:get('occupations'),kmesh:kp?kp.slice(1,4).join('x'):null,nat:get('nat')}};
+function parseQE(t){
+ const lines=t.split(/\r?\n/), steps=[],finals=[];
+ let cycle=0,current=null,mag=null,absmag=null,fermi=null,vol=null,nat=null,energyFinal=null;
+ let done=/JOB DONE\./i.test(t),success=/convergence has been achieved/i.test(t),failed=/convergence NOT achieved/i.test(t);
+ let currentCycleHasEnergy=false, ionicSteps=0;
+ const numeric='([-+]?\\d*\\.?\\d+(?:[eEdD][-+]?\\d+)?)';
+ for(const l of lines){let m;
+  if((m=l.match(/number of atoms\/cell\s*=\s*(\d+)/i)))nat=+m[1];
+  if((m=l.match(/unit-cell volume\s*=\s*([-+\d.eEdD]+)/i)))vol=num(m[1]);
+  if((m=l.match(/the Fermi energy is\s+([-+\d.eEdD]+)\s+ev/i)))fermi=num(m[1]);
+  if((m=l.match(/total magnetization\s*=\s*([-+\d.eEdD]+)/i)))mag=num(m[1]);
+  if((m=l.match(/absolute magnetization\s*=\s*([-+\d.eEdD]+)/i)))absmag=num(m[1]);
+  if((m=l.match(/iteration\s*#\s*(\d+)/i))){
+    const n=+m[1];
+    if(!current || n<=current.i || (/^\s*iteration\s*#\s*1\b/i.test(l)&&currentCycleHasEnergy)){
+      cycle++; currentCycleHasEnergy=false;
+    }
+    current={i:n,cycle,E:null,res:null};steps.push(current);
+  }
+  if((m=l.match(/estimated scf accuracy\s*[<=>]*\s*([-+\d.eEdD]+)\s+Ry/i))&&current)current.res=num(m[1]);
+  if((m=l.match(/^\s*(!?)\s*total energy\s*=\s*([-+\d.eEdD]+)\s+Ry\b/i))){
+    const e=num(m[2]);
+    if(Number.isFinite(e)){
+      if(m[1]==='!'){finals.push(e);energyFinal=e;ionicSteps++;
+        if(current && !Number.isFinite(current.E))current.E=e;
+      }else if(current){current.E=e;currentCycleHasEnergy=true}
+    }
+  }
+ }
+ const valid=steps.filter(p=>Number.isFinite(p.E));
+ return {steps:valid,finals,nat,vol,fermi,mag,absmag,done,success,failed,ionicSteps,
+    lastE: energyFinal??valid.at(-1)?.E??null};
+}
+function parseFDF(s){
+ // QE namelist format: key = value, optional quotes/commas, comments introduced by !.
+ const clean=s.split(/\r?\n/).map(l=>l.replace(/!.*/,'' )).join('\n');
+ const get=k=>{const m=clean.match(new RegExp('(?:^|[\\s,])'+k+'\\s*=\\s*(?:[\\x27\\x22]([^\\x27\\x22]*)[\\x27\\x22]|([^,\\s\\n/]+))','im'));return m?(m[1]??m[2]).trim():null};
+ const kp=clean.match(/(?:^|\n)\s*K_POINTS\s*(?:\{|\s+)\s*automatic\s*\}?\s*\n\s*(\d+)\s+(\d+)\s+(\d+)(?:\s+[-\d]+){0,3}/i);
+ return {ecutwfc:get('ecutwfc'),ecutrho:get('ecutrho'),conv_thr:get('conv_thr'),nspin:get('nspin'),calculation:get('calculation'),occupations:get('occupations'),kmesh:kp?kp.slice(1,4).join('x'):null,nat:get('nat')};
+}
 function rowsCSV(text){let ls=text.trim().split(/\r?\n/).filter(x=>x.trim()&&!x.trim().startsWith('#'));let split=l=>l.includes(',')?l.split(','):l.trim().split(/\s+/);let h=split(ls.shift()||'').map(x=>x.trim().toLowerCase());return ls.map(line=>{let a=split(line),o={};h.forEach((k,i)=>o[k]=a[i]);return o})}
 function table(rows){if(!rows.length)return'<p>Tidak ada data.</p>';let cols=Object.keys(rows[0]);return'<div class="qet-table"><table><thead><tr>'+cols.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+cols.map(k=>'<td>'+esc(r[k])+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'}
 function metrics(arr){return'<div class="qet-metrics">'+arr.map(([a,b])=>'<div class="qet-metric"><small>'+esc(a)+'</small><strong>'+esc(b)+'</strong></div>').join('')+'</div>'}
