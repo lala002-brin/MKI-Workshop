@@ -3,3 +3,15 @@
 .combined-uploads{margin-top:14px;padding:15px;background:#f8fbfe;border:1px solid #d7e5f1;border-radius:10px}.combined-legend{padding:11px 12px;margin-top:8px;background:#f5f8fb;border-radius:8px;font-size:12px;color:#435c73;line-height:1.65}.combined-legend span{display:inline-flex;align-items:center;gap:5px;margin-right:14px}.combined-legend i{display:inline-block;width:18px;height:3px}#combinedUploads[hidden],#combinedLegend[hidden]{display:none}
 
 .audit-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.audit-fields label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#50677e}.audit-fields input,.audit-fields select{width:100%;min-width:0;padding:10px;border:1px solid #cad6e4;border-radius:7px;background:white;color:#172e42}@media(max-width:760px){.audit-fields{grid-template-columns:1fr}}
+
+/* KITCAT 1.5.5: compact, accessible controls */
+.kitcat-quick{display:flex;flex-wrap:wrap;gap:9px;align-items:center;padding:12px;background:#f4f8fd;border:1px solid #dae6f2;border-radius:12px;margin-bottom:10px}
+.kitcat-quick button{margin:0}.kitcat-toggle{display:flex;align-items:center;gap:7px;font-weight:700;font-size:13px}
+.kitcat-toggle input{width:17px;height:17px}
+.controls:not(.show-advanced)>.control-grid label:nth-child(n+5){display:none}
+.controls:not(.show-advanced)>h3,.controls:not(.show-advanced)>#kpath,.controls:not(.show-advanced)>h3~.small{display:none}
+#fermiStatus{font-size:12px;margin-top:10px}
+@media(max-width:750px){.kitcat-quick{flex-direction:column;align-items:stretch}.kitcat-quick button{width:100%}}
+
+/* KITCAT 1.5.6: editor kompak, scoping pada halaman studio */
+.kitcat-curve-editor{padding:14px 0;border-top:1px solid #dbe4ed;margin-top:14px}.kitcat-curve-editor[hidden]{display:none}.curve-editor-row,.curve-editor-head{display:grid;grid-template-columns:minmax(85px,1fr) 48px minmax(110px,1.2fr);gap:9px;align-items:center;margin:7px 0}.curve-editor-head{font-size:11px;color:#58718a;font-weight:700}.curve-editor-row input[type=color]{width:46px;height:36px;padding:3px;border:1px solid #c7d5e1;border-radius:7px}.curve-editor-row input[type=text]{width:100%;min-width:0;padding:8px;border:1px solid #c7d5e1;border-radius:7px}.curve-source{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#3d5670}@media(max-width:550px){.curve-editor-head{display:none}.curve-editor-row{grid-template-columns:minmax(60px,1fr) 43px minmax(100px,1fr);gap:5px}}

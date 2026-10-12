@@ -1,22 +1,122 @@
+// paper-tidy improvements added in 1.5.8
+// paper-frame option added in 1.5.7
 import {scientificAudit,manifest} from './scientific-audit.mjs';
-import {readDOS,readPDOS,readBandsGNU,qeFermi,pdosGroups,sameBandKPath} from './parser.mjs';
+import {readDOS,readPDOS,readBandsGNU,qeFermi,pdosGroups,pdosChannel,sameBandKPath} from './parser.mjs';
 const $=id=>document.getElementById(id);let tab='dos',data=[],svgText='',lastRows=[],combinedDOS=null,combinedPDOS=[],bandDOSBands=null,bandDOSDOS=null,spinUpBands=null,spinDownBands=null,spinError='';const colors=['#1764ad','#df842e','#288472','#a34782','#6b75c4','#bc5148','#5f6d7a'];
 const safe=t=>String(t).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+// KITCAT 1.5.6: metadata presentasi terpisah dari data numerik.
+const figureStyles=new Map();
+const basenameLabel=name=>String(name).replace(/ \(mirror\)$/u,'').replace(/ [↑↓]$/u,'');
+const originalName=name=>basenameLabel(name);
+function displayLabel(name){return figureStyles.get(originalName(name))?.label||originalName(name)}
+function displayColor(name,fallback){return figureStyles.get(originalName(name))?.color||fallback}
+function visibleNames(){
+ if(tab==='pdos')return buildPDOSCurves(data).curves.map(c=>c.name);
+ if(tab==='combined')return combinedData().curves.map(c=>c.name);
+ if(tab==='dos')return data.map(f=>f.name);
+ return [];
+}
+function updateStyleEditor(){
+ const panel=$('curveStylePanel'),list=$('curveStyleList');if(!panel||!list)return;
+ panel.hidden=!['dos','pdos','combined'].includes(tab);
+ if(panel.hidden)return;
+ const names=[...new Set(visibleNames().map(originalName))];
+ const signature=JSON.stringify(names);if(list.dataset.signature===signature)return;
+ list.dataset.signature=signature;list.replaceChildren();
+ names.forEach((name,i)=>{
+  const row=document.createElement('div');row.className='curve-editor-row';
+  const source=document.createElement('span');source.className='curve-source';source.textContent=name;source.title=name;
+  const col=document.createElement('input');col.type='color';col.value=displayColor(name,colors[i%colors.length]);col.title='Warna untuk '+name;
+  const lab=document.createElement('input');lab.type='text';lab.maxLength=100;lab.value=displayLabel(name);lab.setAttribute('aria-label','Label '+name);
+  const apply=()=>{figureStyles.set(name,{color:col.value,label:lab.value.trim()||name});plot()};
+  col.addEventListener('input',apply);lab.addEventListener('change',apply);
+  row.append(source,col,lab);list.append(row);
+ });
+}
 const settings=()=>Object.fromEntries(['fermi','xmin','xmax','column','ylabel','title','color','refcolor','width','font','layout','scale','kpath'].map(id=>[id,$(id).value]));
 const estimate=(a,b,count=5)=>{if(!Number.isFinite(a)||!Number.isFinite(b)||a===b)return[];return Array.from({length:count},(_,i)=>a+(b-a)*i/(count-1))};
-const fmt=v=>!Number.isFinite(v)?'–':(Math.abs(v)<1e-9?'0':Number(v.toPrecision(4)).toString());
+const fmt=v=>{if(!Number.isFinite(v))return '–'; if(Math.abs(v)<1e-9)return '0'; const a=Math.abs(v); if(a>=100)return String(Math.round(v*10)/10).replace(/\.0$/,''); if(a>=10)return String(Math.round(v*100)/100).replace(/0+$/,'').replace(/\.$/,''); if(a>=1)return String(Math.round(v*1000)/1000).replace(/0+$/,'').replace(/\.$/,''); return String(Number(v.toPrecision(3)));};
+const niceNum=(range,round)=>{const exp=Math.floor(Math.log10(range||1)); const frac=(range||1)/10**exp; let nice; if(round){ if(frac<1.5)nice=1; else if(frac<3)nice=2; else if(frac<7)nice=5; else nice=10; } else { if(frac<=1)nice=1; else if(frac<=2)nice=2; else if(frac<=5)nice=5; else nice=10; } return nice*10**exp;};
+function niceTicks(min,max,count=6){ if(!Number.isFinite(min)||!Number.isFinite(max)||min===max)return [min]; const range=niceNum(max-min,false); const step=niceNum(range/Math.max(2,count-1),true); const low=Math.floor(min/step)*step, high=Math.ceil(max/step)*step; const ticks=[]; for(let v=low; v<=high+step*0.5; v+=step){ ticks.push(Number(v.toPrecision(12))); if(ticks.length>20)break; } return ticks; }
+function significantWindow(series,mode){ const pts=series.flat().filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)); if(!pts.length)return null; if(mode==='bands'){ const ys=pts.map(p=>p.y); return {low:Math.min(...ys),high:Math.max(...ys)}; } const maxAbs=Math.max(...pts.map(p=>Math.abs(p.y))); if(!(maxAbs>0))return {low:Math.min(...pts.map(p=>p.x)),high:Math.max(...pts.map(p=>p.x))}; const cutoff=maxAbs*0.03; const sig=pts.filter(p=>Math.abs(p.y)>=cutoff); const use=sig.length?sig:pts; return {low:Math.min(...use.map(p=>p.x)),high:Math.max(...use.map(p=>p.x))}; }
 function strokes(series,xf,yf,c,w){let d='';for(const p of series){if(!Number.isFinite(p.x)||!Number.isFinite(p.y)){d+=' ';continue}d+=`${d?' L':'M'}${xf(p.x).toFixed(2)},${yf(p.y).toFixed(2)}`}return `<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`}
+function framePath(x,y,w,h){return $('frame')?.checked?`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="#283c50" stroke-width="2"/>`:`<path d="M${x} ${y}V${y+h}H${x+w}" stroke="#283c50" stroke-width="2" fill="none"/>`}
+function framePathThin(x,y,w,h){return $('frame')?.checked?`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="#283c50" stroke-width="1.8"/>`:`<path d="M${x} ${y}V${y+h}H${x+w}" stroke="#283c50" stroke-width="1.8" fill="none"/>`}
+// Spin PDOS policy: asli QE uses two independent channels; mirror only duplicates one known ordinate.
+function buildPDOSCurves(files){
+ const mode=$('spinPlotMode').value,aggregate=$('pdosMode').value==='aggregate';
+ const fermi=Number($('fermi').value||0),column=Math.max(1,Math.floor(Number($('column').value||2))-1);
+ const notes=[],curves=[];
+ const add=(name,points,color)=>curves.push({name,points:points.map(p=>({x:p.x-fermi,y:p.y})),color});
+ const colorAt=i=>colors[i%colors.length];
+ if(mode==='mirror')notes.push('MIRROR SIMETRIS: kurva negatif merupakan salinan visual nilai positif. Ini BUKAN bukti spin-down hasil QE.');
+ if(mode==='actual')notes.push('SPIN ASLI QE: kanal spin-up dan spin-down dihitung independen dari data projwfc.x collinear. Spin-down hanya bernilai negatif untuk visualisasi.');
+ if(aggregate&&mode!=='mirror'){
+  if(mode==='actual'){
+   // Reject non-spin files instead of silently drawing zero spin-down.
+   const valid=[];
+   for(const file of files){try{const ch=pdosChannel(file,'total',$('pdosSchema').value);if(!ch.spinful)throw Error('file bukan skema spin-collinear');valid.push(file)}catch(e){notes.push(file.name+': '+e.message)}}
+   const opts={species:$('pdosSpecies').value,orbital:$('pdosOrbital').value,schema:$('pdosSchema').value,groupBy:$('pdosGroup').value};
+   const up=pdosGroups(valid,{...opts,spin:'up'}),down=pdosGroups(valid,{...opts,spin:'down'});
+   notes.push(...up.warnings,...down.warnings);
+   for(let i=0;i<up.groups.length;i++){
+    const u=up.groups[i],d=down.groups.find(g=>g.name===u.name);
+    if(!d||d.points.length!==u.points.length||d.points.some((p,j)=>Math.abs(p.x-u.points[j].x)>1e-6)){notes.push(u.name+': grid spin tidak cocok; dilewati.');continue}
+    add(u.name+' ↑',u.points,colorAt(i));add(u.name+' ↓',d.points.map(p=>({x:p.x,y:-p.y})),colorAt(i));
+   }
+  }else{
+   const agg=pdosGroups(files,{species:$('pdosSpecies').value,orbital:$('pdosOrbital').value,spin:$('pdosSpin').value,schema:$('pdosSchema').value,groupBy:$('pdosGroup').value});
+   notes.push(...agg.warnings);
+   agg.groups.forEach((g,i)=>add(g.name,g.points.map(p=>({x:p.x,y:$('mirror').checked&&$('pdosSpin').value==='down'?-p.y:p.y})),colorAt(i)));
+  }
+ }else{
+  if(aggregate&&mode==='mirror')notes.push('Mode mirror memakai kurva individual, tanpa agregasi otomatis.');
+  for(let i=0;i<files.length;i++){
+   const file=files[i],color=colorAt(i);
+   if(mode==='actual'){
+    try{
+     if(!file.atom||!file.species)throw Error('file tidak memiliki metadata atom projwfc.x');
+     const up=pdosChannel(file,'up',$('pdosSchema').value),down=pdosChannel(file,'down',$('pdosSchema').value);
+     if(!up.spinful||!down.spinful)throw Error('bukan data spin-collinear');
+     add(file.name+' ↑',up.points,color);add(file.name+' ↓',down.points.map(p=>({x:p.x,y:-p.y})),color);
+    }catch(e){notes.push(file.name+': '+e.message+'; tidak dibuat spin-down sintetis.');}
+   }else{
+    if(column>file.columns-1){notes.push(file.name+': kolom '+(column+1)+' tidak tersedia');continue}
+    const points=file.points.map(p=>({x:p.x,y:p.ys[column-1]}));
+    add(file.name,points,color);
+    if(mode==='mirror')add(file.name+' (mirror)',points.map(p=>({x:p.x,y:-p.y})),color);
+   }
+  }
+ }
+ return {curves,notes};
+}
 function chooseSeries(){const s=settings(),fermi=Number(s.fermi||0),column=Math.max(1,Math.floor(Number(s.column||2))-1);let series=[],notes=[],names=[];
- if(tab==='pdos' && $('pdosMode').value==='aggregate'){
-  const ag=pdosGroups(data,{species:$('pdosSpecies').value,orbital:$('pdosOrbital').value,spin:$('pdosSpin').value,schema:$('pdosSchema').value,groupBy:$('pdosGroup').value});notes.push(...ag.warnings);
-  for(const g of ag.groups){series.push(g.points.map(p=>({x:p.x-fermi,y:$('mirror').checked&&$('pdosSpin').value==='down'?-p.y:p.y})));names.push(`${g.name} (${g.files} files)`)}
+ if(tab==='pdos'){const out=buildPDOSCurves(data);notes.push(...out.notes);for(const c of out.curves){series.push(c.points);names.push(c.name)}
  }else if(tab==='bands'){for(const file of activeSpinBands(data)){for(const [i,b] of file.bands.entries()){series.push(b.map(p=>({x:p.x,y:p.y-fermi})));names.push(`${file.spin||file.name} · band ${i+1}`)}}}
  else {for(const file of data){if(column>file.columns-1){notes.push(`${file.name}: kolom ${column+1} tidak tersedia`);continue}let p=file.points.map(r=>({x:r.x-fermi,y:r.ys[column-1]}));if($('mirror').checked && file.columns>=3 && column===2)p=p.map(z=>({...z,y:-z.y}));series.push(p);names.push(file.name);if(file.warning)notes.push(`${file.name}: ${file.warning}`)}}
  return {series,notes,names};}
+function autoFitRanges(series,mode,fermi){
+ const span=significantWindow(series,mode);
+ if(!span)return null;
+ let lo=span.low,hi=span.high;
+ const pad=(hi-lo||1)*(mode==='bands'?0.06:0.10);
+ lo-=pad; hi+=pad;
+ return {low:lo,high:hi};
+}
+function fitDisplayedData(){
+ if(tab==='combined'||tab==='banddos'){$('fitInfo').textContent='Auto Fit tersedia untuk DOS, PDOS dan Band Structure. Panel gabungan tetap menggunakan batas energi manual.';return false;}
+ const {series}=chooseSeries(),bounds=autoFitRanges(series,tab,Number($('fermi').value||0));
+ if(!bounds)return false;
+ $('xmin').value=+bounds.low.toPrecision(10);$('xmax').value=+bounds.high.toPrecision(10);
+ if(tab==='pdos')$('pdosManualY').checked=false;
+ $('fitInfo').textContent=`Rentang energi menyesuaikan bagian data yang signifikan: ${bounds.low.toFixed(3)} hingga ${bounds.high.toFixed(3)} eV. Tidak ada resampling atau normalisasi.`;
+ return true;
+}
 function plot(){if(tab==='combined'){plotCombined();return;}if(tab==='banddos'){plotBandDOS();return;}const s=settings(),f=Number(s.font),{series,notes,names}=chooseSeries();$('count').textContent=`${data.length} file · ${series.length} curve(s)`;
- if(!series.length){$('plot').innerHTML='<p class="small">Upload hasil QE atau muat data demo untuk mulai.</p>';$('audit').textContent=[...notes,spinError].filter(Boolean).join('\n')||'Belum ada data valid.';svgText='';$('gap').hidden=true;return}
+ if(!series.length){$('plot').innerHTML='<p class="small">Upload hasil QE atau muat data demo untuk mulai.</p>';$('audit').textContent=[...notes,spinError].filter(Boolean).join('\n')||'Belum ada data valid.';svgText='';$('gap').hidden=true;updateStyleEditor();return}
  const shape={landscape:[1200,700],column:[900,900],wide:[1500,650]}[s.layout]||[1200,700];const [W,H]=shape;
  const m={left:110,right:52,top:105,bottom:108};const pw=W-m.left-m.right,ph=H-m.top-m.bottom;let xmin,xmax,ymin,ymax;
+ if($('autoFit').checked){const b=autoFitRanges(series,tab,Number(s.fermi||0));if(b){$('xmin').value=+b.low.toPrecision(10);$('xmax').value=+b.high.toPrecision(10);}}
  if(tab==='bands'){xmin=Math.min(...series.flat().map(z=>z.x));xmax=Math.max(...series.flat().map(z=>z.x));}else{xmin=Number(s.xmin);xmax=Number(s.xmax)}
  if(!Number.isFinite(xmin)||!Number.isFinite(xmax)||xmin>=xmax){$('audit').textContent='Rentang X tidak valid (minimum harus lebih kecil dari maksimum).';return}
  const clipped=series.flat().filter(p=>p.x>=xmin&&p.x<=xmax);if(!clipped.length){$('audit').textContent='Tidak ada titik di rentang X; ubah batas energi.';return}
@@ -30,57 +130,98 @@ function plot(){if(tab==='combined'){plotCombined();return;}if(tab==='banddos'){
   }
  }else{
   ymin=Math.min(...clipped.map(p=>p.y));ymax=Math.max(...clipped.map(p=>p.y));
-  let pad=(ymax-ymin||1)*.10;ymin-=pad;ymax+=pad;
+  let pad=(ymax-ymin||1)*.08; ymin-=pad; ymax+=pad;
   if(clipped.every(p=>p.y>=0))ymin=0;
+  if(tab==='pdos'&&$('spinPlotMode').value!=='single'){const maxAbs=Math.max(Math.abs(ymin),Math.abs(ymax)); ymin=-maxAbs; ymax=maxAbs; }
+  if(tab==='pdos'&&$('pdosManualY').checked){const lo=Number($('pdosYmin').value),hi=Number($('pdosYmax').value);if(Number.isFinite(lo)&&Number.isFinite(hi)&&lo<hi){ymin=lo;ymax=hi}else notes.push('Batas Y manual tidak valid; menggunakan batas otomatis.')} 
  }
  const xf=x=>m.left+(x-xmin)/(xmax-xmin)*pw,yf=y=>m.top+ph-(y-ymin)/(ymax-ymin)*ph;
  const grid=$('grid').checked;let v=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="KITCAT scientific figure">`;
  v+=`<rect width="${W}" height="${H}" fill="#ffffff"/><text x="${W/2}" y="48" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="${f+6}" font-weight="bold" fill="#1c2c3f">${safe(s.title)}</text>`;
- for(const x of estimate(xmin,xmax,6)){let px=xf(x);if(grid)v+=`<path d="M ${px} ${m.top} V ${m.top+ph}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${px}" y="${m.top+ph+30}" text-anchor="middle" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(x)}</text>`}
- for(const y of estimate(ymin,ymax,tab==='bands'?7:6)){let py=yf(y);if(grid)v+=`<path d="M ${m.left} ${py} H ${m.left+pw}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${m.left-16}" y="${py+5}" text-anchor="end" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(y)}</text>`}
- v+=`<path d="M${m.left} ${m.top}V${m.top+ph}H${m.left+pw}" stroke="#283c50" stroke-width="2" fill="none"/>`;
- const label=tab==='bands'?'k-path coordinate (a.u.)':'E − E_F (eV)',yl=tab==='bands'?'Energy − E_F (eV)':s.ylabel;
+ for(const x of niceTicks(xmin,xmax,6)){if(x<xmin-1e-9||x>xmax+1e-9)continue;let px=xf(x);if(grid)v+=`<path d="M ${px} ${m.top} V ${m.top+ph}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${px}" y="${m.top+ph+30}" text-anchor="middle" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(x)}</text>`}
+ for(const y of niceTicks(ymin,ymax,tab==='bands'?7:6)){if(y<ymin-1e-9||y>ymax+1e-9)continue;let py=yf(y);if(grid)v+=`<path d="M ${m.left} ${py} H ${m.left+pw}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${m.left-16}" y="${py+5}" text-anchor="end" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(y)}</text>`}
+ v+=framePath(m.left,m.top,pw,ph);
+ const label=$('xlabel').value.trim()||(tab==='bands'?'k-path coordinate (a.u.)':'E − E_F (eV)'),yl=tab==='bands'?'Energy − E_F (eV)':s.ylabel;
  v+=`<text x="${W/2}" y="${H-33}" text-anchor="middle" font-family="Arial" font-size="${f+2}" fill="#20384f">${safe(label)}</text><text x="30" y="${H/2}" transform="rotate(-90 30 ${H/2})" text-anchor="middle" font-family="Arial" font-size="${f+2}" fill="#20384f">${safe(yl)}</text>`;
  v+=`<defs><clipPath id="graphClip"><rect x="${m.left}" y="${m.top}" width="${pw}" height="${ph}"/></clipPath></defs><g clip-path="url(#graphClip)">`;
  if(tab==='bands'&&ymin<=0&&ymax>=0)v+=`<path d="M${m.left} ${yf(0)} H${m.left+pw}" stroke="${s.refcolor}" stroke-width="2" stroke-dasharray="9 6"/>`;
  if(tab!=='bands'&&xmin<=0&&xmax>=0)v+=`<path d="M${xf(0)} ${m.top} V${m.top+ph}" stroke="${s.refcolor}" stroke-width="2" stroke-dasharray="9 6"/>`;
+ if(tab==='pdos'&&ymin<0&&ymax>0)v+=`<path d="M${m.left} ${yf(0)} H${m.left+pw}" stroke="#617183" stroke-width="1.6"/>`; 
  if(tab==='bands'&&s.kpath.trim()){for(const pair of s.kpath.split(',')){const [k,label]=pair.trim().split(':');const x=Number(k);if(!Number.isFinite(x)||x<xmin||x>xmax||!label)continue;v+=`<path d="M${xf(x)} ${m.top}V${m.top+ph}" stroke="#adb9c5" stroke-dasharray="5 7"/><text x="${xf(x)}" y="${m.top-12}" fill="#2e4e68" font-size="${f}" text-anchor="middle">${safe(label)}</text>`}}
  // Warna kurva harus berlaku untuk seluruh pita, bukan hanya pita pertama.
  // Mode spin hanya berlaku bila kanal spin dipilih secara eksplisit.
  const bandColorMode=$('bandColorMode').value;
  series.forEach((a,i)=>{
-  let curveColor=i===0?s.color:colors[i%colors.length];
+  let curveColor=tab==='pdos'&&$('spinPlotMode').value!=='single'?colors[Math.floor(i/2)%colors.length]:(i===0?s.color:colors[i%colors.length]);
   if(tab==='bands'){
    if(bandColorMode==='single')curveColor=s.color;
    else if(bandColorMode==='multi')curveColor=colors[i%colors.length];
    else curveColor=names[i].startsWith('down ·')?$('spinDownColor').value:names[i].startsWith('up ·')?$('spinUpColor').value:s.color;
   }
+  if(tab!=='bands')curveColor=displayColor(names[i],curveColor);
   v+=strokes(a,xf,yf,curveColor,Number(s.width));
  });
  v+='</g>';
- if($('legend').checked&&series.length<=8&&tab!=='bands'){series.forEach((p,i)=>{const x=m.left+14+(i%3)*Math.max(170,pw/3),y=76+Math.floor(i/3)*22;v+=`<path d="M${x} ${y}h27" stroke="${i===0?s.color:colors[i%colors.length]}" stroke-width="3"/><text x="${x+34}" y="${y+5}" font-family="Arial" fill="#475d72" font-size="${Math.max(11,f-3)}">${safe(names[i].slice(0,28))}</text>`})}
+ if($('legend').checked&&tab!=='bands'){
+  // Mirror and genuine spin draw two traces per orbital, one entry per orbital.
+  const paired=tab==='pdos'&&$('spinPlotMode').value!=='single';
+  const entries=paired?series.map((_,i)=>({i,name:names[i]})).filter(e=>e.i%2===0):series.map((_,i)=>({i,name:names[i]}));
+  if(entries.length<=12){entries.forEach((entry,j)=>{const i=entry.i,x=m.left+14+(j%3)*Math.max(170,pw/3),y=76+Math.floor(j/3)*22;
+    const color=displayColor(entry.name,paired?colors[Math.floor(i/2)%colors.length]:(i===0?s.color:colors[i%colors.length]));
+    const label=displayLabel(entry.name);
+    v+=`<path d="M${x} ${y}h27" stroke="${color}" stroke-width="3"/><text x="${x+34}" y="${y+5}" font-family="Arial" fill="#475d72" font-size="${Math.max(11,f-3)}">${safe(label.slice(0,25))}</text>`
+   });}
+  else notes.push('Legenda dibatasi hingga 12 orbital agar teks tidak tumpang tindih.');
+ }
  v+='</svg>';svgText=v;$('plot').innerHTML=v;
  const unique=[...new Set(notes)];$('audit').textContent=(tab==='bands'?'Bands: pastikan filband.gnu berasal dari satu lintasan k terdefinisi; k-path labels harus dimasukkan sesuai input.':'DOS/PDOS: periksa header kolom, spin, satuan, dan E_F. Data dari material berbeda tidak boleh ditafsirkan sebagai satu spektrum.')+(unique.length?'\n'+unique.join('\n'):'')+(spinError&&tab==='bands'?'\n'+spinError:'');$('audit').className='notice'+(unique.length?' warn':'');
  $('gap').hidden=tab!=='bands';if(tab==='bands'){$('gap').textContent='Interpretasi gap: nilai sepanjang lintasan k saja tidak dapat membuktikan fundamental band gap. Metallic crossing di antara titik k juga mungkin terlewat; periksa data pada seluruh BZ, occupation, spin, dan kualitas k-sampling.'}
  lastRows=series.flat().filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y));
+ updateStyleEditor();
 }
 function save(name,blob){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1200)}
 async function exportImage(kind){if(!svgText)return;const base=`kitcat_${tab}${spinUpBands||spinDownBands?'_spin':''}_${$('layout').value}`;if(kind==='svg'){save(base+'.svg',new Blob([svgText],{type:'image/svg+xml;charset=utf-8'}));return}
  const svg=new Blob([svgText],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(svg);const img=new Image();img.onload=()=>{const shape=(tab==='banddos'?{landscape:[1200,800],column:[900,1050],wide:[1500,800]}:tab==='combined'?{landscape:[1200,900],column:[900,1200],wide:[1500,860]}:{landscape:[1200,700],column:[900,900],wide:[1500,650]})[$('layout').value],scale=Number($('scale').value),c=document.createElement('canvas');c.width=shape[0]*scale;c.height=shape[1]*scale;const ctx=c.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(img,0,0,c.width,c.height);c.toBlob(blob=>{if(blob)save(base+'.'+kind,blob);else alert('Gagal ekspor gambar.')},kind==='jpg'?'image/jpeg':'image/png',.95);URL.revokeObjectURL(url)};img.onerror=()=>{URL.revokeObjectURL(url);alert('Browser tidak dapat merender SVG menjadi '+kind)};img.src=url}
-$('files').addEventListener('change',async e=>{const files=[...e.target.files];let next=[],errors=[];for(const file of files){try{const t=await file.text();next.push(tab==='dos'?readDOS(t,file.name):tab==='pdos'?readPDOS(t,file.name):readBandsGNU(t,file.name))}catch(err){errors.push(`${file.name}: ${err.message}`)}}data=next;$('fileInfo').textContent=`${next.length} file valid${errors.length?'\n'+errors.join('\n'):''}`;$('fileInfo').className='notice'+(errors.length?' warn':'');refreshPDOS();plot()});
-$('qeout').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;const f=qeFermi(await file.text());if(f!==null){$('fermi').value=f;$('fileInfo').textContent=`E_F = ${f} eV dibaca dari ${file.name}. Verifikasi bahwa run ini sama dengan data spektrum.`}else $('fileInfo').textContent=`E_F tidak ditemukan dalam ${file.name}. Isi nilai referensi secara manual.`;plot()});
+$('files').addEventListener('change',async e=>{const files=[...e.target.files];let next=[],errors=[];for(const file of files){try{const t=await file.text();next.push(tab==='dos'?readDOS(t,file.name):tab==='pdos'?readPDOS(t,file.name):readBandsGNU(t,file.name))}catch(err){errors.push(`${file.name}: ${err.message}`)}}data=next;
+ const processed=tab==='pdos'&&next.length&&next.every(f=>!f.atom||!f.species);
+ if(processed&&$('pdosMode').value==='aggregate')$('pdosMode').value='single';
+ const info=processed?'\nBerkas tidak memiliki metadata atom projwfc.x. Mode kurva individual dipilih. Pilih kolom Y sesuai header sumber; nama berkas bukan bukti proyeksi orbital atau spin.':'';
+ $('fileInfo').textContent=`${next.length} file valid${errors.length?'\n'+errors.join('\n'):''}${info}`;
+ $('fileInfo').className='notice'+(errors.length||processed?' warn':'');refreshPDOS();plot()});
+$('qeout').addEventListener('change',async e=>{
+ const file=e.target.files[0];if(!file)return;
+ try{const f=qeFermi(await file.text());
+ if(f!==null){$('fermi').value=f;$('fermiStatus').textContent=`E_F = ${f} eV dari ${file.name}. Periksa kesesuaian run dan spektrum. Nilai ini bukan bukti konvergensi.`;$('auditRef').value='qeout';$('fileInfo').textContent=`Referensi energi otomatis: ${file.name}`;}
+ else{$('fermiStatus').textContent=`Tidak ditemukan energi Fermi eksplisit pada ${file.name}. Isi E_F manual setelah memeriksa output QE.`;$('fileInfo').textContent='Referensi energi perlu pemeriksaan manual.';}
+ plot();}catch(err){$('fermiStatus').textContent='Gagal membaca output: '+err.message;}
+});
 for(const btn of document.querySelectorAll('[data-tab]'))btn.onclick=()=>{tab=btn.dataset.tab;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b===btn));data=[];refreshPDOS();$('files').value='' ;$('fileInfo').textContent='Upload file untuk '+tab;const h={dos:'.dos / dos.dat',pdos:'*.pdos_tot / *.pdos_atm#*',bands:'filband.gnu dari bands.x'};$('uploadHint').textContent=h[tab]||'Gunakan upload Total DOS + PDOS di bawah';$('combinedUploads').hidden=tab!=='combined';$('bandDOSUploads').hidden=tab!=='banddos';$('spinBandsUploads').hidden=tab!=='bands'&&tab!=='banddos';$('files').closest('.filebox').hidden=tab==='combined'||tab==='banddos';$('pdosPanel').hidden=tab!=='pdos'&&tab!=='combined';$('title').value={dos:'Total density of states',pdos:'Projected density of states',bands:'Electronic band structure',combined:'Total and projected density of states',banddos:'Electronic bands and density of states'}[tab];$('ylabel').value=tab==='pdos'?'PDOS (states/eV)':'DOS (states/eV)';plot()};
-for(const id of ['pdosMode','pdosSpecies','pdosOrbital','pdosGroup','pdosSpin','pdosSchema','fermi','xmin','xmax','column','ylabel','title','color','refcolor','width','font','layout','kpath','grid','mirror','legend','spinUpColor','spinDownColor','spinDownDash','bandColorMode'])$(id).addEventListener('input',plot);
+$('autoFit').addEventListener('change',()=>{if($('autoFit').checked)$('pdosManualY').checked=false;plot()});
+$('fitNow').addEventListener('click',()=>{if(fitDisplayedData())plot()});
+$('showAdvanced').addEventListener('click',()=>{const root=document.querySelector('.controls');const isOpen=root.classList.toggle('show-advanced');$('showAdvanced').setAttribute('aria-expanded',String(isOpen));$('showAdvanced').textContent=isOpen?'Tutup pengaturan lanjutan':'Pengaturan lanjutan';});
+for(const id of ['xmin','xmax'])$(id).addEventListener('change',()=>{$('autoFit').checked=false;plot()});
+for(const id of ['xlabel','spinPlotMode','pdosManualY','pdosYmin','pdosYmax','pdosMode','pdosSpecies','pdosOrbital','pdosGroup','pdosSpin','pdosSchema','fermi','xmin','xmax','column','ylabel','title','color','refcolor','width','font','layout','kpath','grid','mirror','legend','spinUpColor','spinDownColor','spinDownDash','bandColorMode'])$(id).addEventListener('input',plot);
 $('svg').onclick=()=>exportImage('svg');$('png').onclick=()=>exportImage('png');$('jpg').onclick=()=>exportImage('jpg');$('csv').onclick=()=>{if(tab==='banddos'){if(!lastRows.length)return;const q=x=>'"'+String(x).replaceAll('"','""')+'"';const out=['panel,series,x,y',...lastRows.map(r=>[q(r.panel),q(r.name),r.x,r.y].join(','))];save('kitcat_bands_dos_figure.csv',new Blob([out.join('\n')],{type:'text/csv'}));return;}if(tab==='combined'){if(!lastRows.length)return;const rows=['panel,series,energy_relative_eV,intensity_states_per_eV',...lastRows.map(r=>[r.panel,'"'+r.name.replaceAll('"','""')+'"',r.x,r.y].join(','))];save('kitcat_combined_dos_pdos.csv',new Blob([rows.join('\n')],{type:'text/csv'}));return;}const {series,names}=chooseSeries();if(!series.length)return;const quote=x=>'"'+String(x).replaceAll('"','""')+'"';const body=series.flatMap((points,i)=>points.map(p=>`${quote(names[i])},${p.x},${p.y}`));save(`kitcat_${tab}_plotted.csv`,new Blob(['series,x,y\n'+body.join('\n')],{type:'text/csv'}))};
 function refreshPDOS(){ $('pdosPanel').hidden=tab!=='pdos'&&tab!=='combined'; const sel=$('pdosSpecies'),old=sel.value;sel.replaceChildren(new Option('All species','all'));for(const sp of [...new Set(data.map(f=>f.species).filter(Boolean))].sort())sel.add(new Option(sp,sp));sel.value=[...sel.options].some(o=>o.value===old)?old:'all';}
-$('reset').onclick=()=>{$('color').value='#1764ad';$('bandColorMode').value='single';$('refcolor').value='#c34546';$('font').value=17;$('width').value=2;$('grid').checked=true;$('layout').value='landscape';plot()};$('presets').onclick=()=>{$('color').value='#222222';$('bandColorMode').value='single';$('refcolor').value='#6d6d6d';$('font').value=19;$('width').value=2.5;$('grid').checked=false;plot()};
+$('pdosGnuplotPreset').onclick=()=>{
+  if(tab!=='pdos'){ $('audit').textContent='Preset hanya untuk tab Projected DOS.';return; }
+  $('spinPlotMode').value='mirror';$('pdosMode').value='single';$('autoFit').checked=false;
+  $('fermi').value='4.65';$('xmin').value='-1';$('xmax').value='3';
+  $('pdosManualY').checked=true;$('pdosYmin').value='-70';$('pdosYmax').value='70';
+  $('column').value='2';$('ylabel').value='Density of States (states/eV)';
+  $('plot').dataset.preset='gnuplot-mirror';
+  plot();$('presetNotice').textContent='Preset Gnuplot aktif. E_F = 4,65 eV berasal dari contoh, bukan pembacaan otomatis. Pastikan E_F dan kolom kedua sesuai dengan perhitunganmu.';
+};
+$('reset').onclick=()=>{$('color').value='#1764ad';$('bandColorMode').value='single';$('refcolor').value='#c34546';$('font').value=17;$('width').value=2;$('grid').checked=true;$('frame').checked=true;$('layout').value='landscape';plot()};$('presets').onclick=()=>{$('color').value='#222222';$('bandColorMode').value='single';$('refcolor').value='#6d6d6d';$('font').value=19;$('width').value=2.5;$('grid').checked=false;$('frame').checked=true;plot()};
+
+$('frame').addEventListener('change',plot);
 $('demo').onclick=()=>{if(tab==='combined'){loadCombinedDemo();return;}if(tab==='banddos'){loadBandDOSDemo();return;}const E=Array.from({length:141},(_,i)=>-10+i*.13);data=tab==='bands'?[{kind:'bands',name:'DEMO synthetic bands',bands:Array.from({length:8},(_,i)=>Array.from({length:80},(_,k)=>({x:k/79*2.2,y:i-3.7+Math.sin(k/79*Math.PI*2+i*.4)*.6})))}]:[{kind:tab,name:'DEMO synthetic curve (not QE)',columns:2,points:E.map(x=>({x,ys:[Math.exp(-Math.pow((x+3)/1.9,2))*2+Math.exp(-Math.pow((x-2)/2.3,2))*3]}))}];$('fermi').value=0;if(tab==='pdos'){const curve=(scale,shift)=>E.map(x=>({x,ys:[scale*Math.exp(-(((x-shift)/2)**2)),scale*Math.exp(-(((x-shift)/2)**2))]}));data=[{kind:'pdos',name:'DEMO.pdos_atm#1(O)_wfc#1(s)',atom:1,species:'O',orbital:'s',columns:3,points:curve(1,-3)},{kind:'pdos',name:'DEMO.pdos_atm#2(Fe)_wfc#1(s)',atom:2,species:'Fe',orbital:'s',columns:3,points:curve(2,2)}]}refreshPDOS();$('fileInfo').textContent='DATA DEMO SINTETIS — tidak boleh digunakan sebagai hasil penelitian.';plot()};
 // Combined publication figure: never equate Total DOS magnitude to sum of projected curves.
 const palette=['#df842e','#288472','#a34782','#6b75c4','#bc5148','#5f6d7a','#8b663e'];
 function combinedData(){
  const s=settings(),fermi=Number(s.fermi||0),notes=[];let curves=[];
  if(combinedDOS){let col=Math.max(1,Math.floor(Number(s.column||2))-1);if(col>combinedDOS.columns-1)notes.push('Total DOS: kolom tidak tersedia.');else curves.push({panel:'Total DOS',name:combinedDOS.name,color:s.color,points:combinedDOS.points.map(p=>({x:p.x-fermi,y:p.ys[col-1]}))});}
- if(combinedPDOS.length){const agg=pdosGroups(combinedPDOS,{species:$('pdosSpecies').value,orbital:$('pdosOrbital').value,spin:$('pdosSpin').value,schema:$('pdosSchema').value,groupBy:$('pdosGroup').value});notes.push(...agg.warnings);agg.groups.forEach((g,i)=>curves.push({panel:'Projected DOS',name:g.name,color:palette[i%palette.length],points:g.points.map(p=>({x:p.x-fermi,y:$('mirror').checked&&$('pdosSpin').value==='down'?-p.y:p.y}))}));}
+ if(combinedPDOS.length){const out=buildPDOSCurves(combinedPDOS);notes.push(...out.notes);out.curves.forEach((c,i)=>curves.push({panel:'Projected DOS',name:c.name,color:c.color,points:c.points}));}
  if(!combinedDOS)notes.push('Unggah Total DOS untuk menampilkan panel atas.');if(!combinedPDOS.length)notes.push('Unggah file site-resolved PDOS untuk panel bawah.');
  if(curves.some(c=>c.points.some(p=>!Number.isFinite(p.y))))notes.push('Nilai non-finite terdeteksi.');
  return {curves,notes};
@@ -88,7 +229,7 @@ function combinedData(){
 function plotCombined(){
  const s=settings(),{curves,notes}=combinedData(),f=Number(s.font),font=Math.max(12,Math.min(25,f));
  $('gap').hidden=true;$('count').textContent=`${combinedDOS?1:0} DOS + ${combinedPDOS.length} PDOS file · ${curves.length} curve(s)`;
- if(!curves.length){svgText='';lastRows=[];$('plot').innerHTML='<p class="small">Unggah Total DOS dan PDOS; atau klik Data demo.</p>';$('combinedLegend').hidden=true;$('audit').textContent=notes.join('\n');return;}
+ if(!curves.length){svgText='';lastRows=[];$('plot').innerHTML='<p class="small">Unggah Total DOS dan PDOS; atau klik Data demo.</p>';$('combinedLegend').hidden=true;$('audit').textContent=notes.join('\n');updateStyleEditor();return;}
  const xmin=Number(s.xmin),xmax=Number(s.xmax);if(!(Number.isFinite(xmin)&&Number.isFinite(xmax)&&xmin<xmax)){$('audit').textContent='Rentang energi tidak valid.';return;}
  const shape={landscape:[1200,900],column:[900,1200],wide:[1500,860]}[s.layout]||[1200,800];const [W,H]=shape;
  const m={l:108,r:55,t:106,b:165,gap:65};const panelH=(H-m.t-m.b-m.gap)/2,pw=W-m.l-m.r;
@@ -98,17 +239,17 @@ function plotCombined(){
  const grid=$('grid').checked;let legend=[];lastRows=[];
  for(let pi=0;pi<2;pi++){
   const p=panels[pi],subset=curves.filter(c=>c.panel===p.key),visible=subset.flatMap(c=>c.points.filter(pt=>pt.x>=xmin&&pt.x<=xmax&&Number.isFinite(pt.y)));
-  let ymin=0,ymax=1;if(visible.length){ymin=Math.min(0,...visible.map(pt=>pt.y));ymax=Math.max(...visible.map(pt=>pt.y));const span=ymax-ymin||1;ymax+=span*.09;if(ymin<0)ymin-=span*.09;}
+  let ymin=0,ymax=1;if(visible.length){ymin=Math.min(0,...visible.map(pt=>pt.y));ymax=Math.max(...visible.map(pt=>pt.y));const span=ymax-ymin||1;ymax+=span*.09;if(ymin<0)ymin-=span*.09;}if(pi===1&&$('spinPlotMode').value!=='single'){const abs=Math.max(Math.abs(ymin),Math.abs(ymax));ymin=-abs;ymax=abs;}if(pi===1&&$('pdosManualY').checked){const low=Number($('pdosYmin').value),high=Number($('pdosYmax').value);if(Number.isFinite(low)&&Number.isFinite(high)&&low<high){ymin=low;ymax=high}else notes.push('Batas Y manual tidak valid.');}
   const yf=y=>p.top+panelH-(y-ymin)/(ymax-ymin)*panelH;
   v+=`<text x="${m.l}" y="${p.top-17}" font-family="Arial" font-weight="bold" font-size="${font}" fill="#20384f">${p.title}</text>`;
-  for(const y of estimate(ymin,ymax,5)){let yy=yf(y);if(grid)v+=`<path d="M${m.l} ${yy}H${m.l+pw}" stroke="#e5ebf0"/>`;v+=`<text x="${m.l-15}" y="${yy+4}" text-anchor="end" font-family="Arial" font-size="${font-2}" fill="#42586c">${fmt(y)}</text>`;}
-  for(const x of estimate(xmin,xmax,6)){let xx=xf(x);if(grid)v+=`<path d="M${xx} ${p.top}V${p.top+panelH}" stroke="#edf1f5"/>`;if(pi===1)v+=`<text x="${xx}" y="${p.top+panelH+30}" text-anchor="middle" font-family="Arial" font-size="${font-2}" fill="#42586c">${fmt(x)}</text>`;}
-  v+=`<path d="M${m.l} ${p.top}V${p.top+panelH}H${m.l+pw}" stroke="#283c50" stroke-width="1.8" fill="none"/>`;
+  for(const y of niceTicks(ymin,ymax,5)){if(y<ymin-1e-9||y>ymax+1e-9)continue;let yy=yf(y);if(grid)v+=`<path d="M${m.l} ${yy}H${m.l+pw}" stroke="#e5ebf0"/>`;v+=`<text x="${m.l-15}" y="${yy+4}" text-anchor="end" font-family="Arial" font-size="${font-2}" fill="#42586c">${fmt(y)}</text>`;}
+  for(const x of niceTicks(xmin,xmax,6)){if(x<xmin-1e-9||x>xmax+1e-9)continue;let xx=xf(x);if(grid)v+=`<path d="M${xx} ${p.top}V${p.top+panelH}" stroke="#edf1f5"/>`;if(pi===1)v+=`<text x="${xx}" y="${p.top+panelH+30}" text-anchor="middle" font-family="Arial" font-size="${font-2}" fill="#42586c">${fmt(x)}</text>`;}
+  v+=framePathThin(m.l,p.top,pw,panelH);
   if(xmin<=0&&xmax>=0)v+=`<path d="M${xf(0)} ${p.top}V${p.top+panelH}" stroke="${s.refcolor}" stroke-width="2" stroke-dasharray="8 6"/>`;
   const ylabel=pi===0?'Total DOS (states/eV)':'PDOS (states/eV)';const cy=p.top+panelH/2;
   v+=`<text x="27" y="${cy}" transform="rotate(-90 27 ${cy})" text-anchor="middle" font-family="Arial" font-size="${font}" fill="#20384f">${ylabel}</text>`;
   v+=`<defs><clipPath id="combinedClip${pi}"><rect x="${m.l}" y="${p.top}" width="${pw}" height="${panelH}"/></clipPath></defs><g clip-path="url(#combinedClip${pi})">`;
-  for(const c of subset){v+=strokes(c.points,xf,yf,c.color,Number(s.width));lastRows.push(...c.points.filter(pt=>Number.isFinite(pt.x)&&Number.isFinite(pt.y)).map(pt=>({...pt,panel:c.panel,name:c.name})));legend.push({name:c.name,color:c.color,panel:c.panel})}
+  for(const c of subset){c.color=displayColor(c.name,c.color);v+=strokes(c.points,xf,yf,c.color,Number(s.width));lastRows.push(...c.points.filter(pt=>Number.isFinite(pt.x)&&Number.isFinite(pt.y)).map(pt=>({...pt,panel:c.panel,name:c.name})));legend.push({name:displayLabel(c.name),color:c.color,panel:c.panel})}
   v+='</g>';
  }
  v+=`<text x="${W/2}" y="${H-103}" text-anchor="middle" font-family="Arial" font-size="${font+1}" fill="#20384f">Energy − E_F (eV)</text>`;
@@ -116,6 +257,7 @@ function plotCombined(){
  v+='</svg>';
  svgText=v;$('plot').innerHTML=v;
  // Legend deliberately outside plot so it never overlaps curves; included in screen and report CSV.
+ updateStyleEditor();
  const legendEl=$('combinedLegend');legendEl.hidden=!$('legend').checked||!legend.length;
  legendEl.innerHTML=legendEl.hidden?'':legend.map(l=>`<span><i style="background:${l.color}"></i>${safe(l.panel)}: ${safe(l.name)}</span>`).join('');
  if(combinedDOS&&combinedPDOS.length){const a=combinedDOS.points,b=combinedPDOS[0].points;if(a.length!==b.length||a.some((x,i)=>!b[i]||Math.abs(x.x-b[i].x)>1e-5))notes.push('Grid energi DOS dan PDOS berbeda; figure tetap menampilkan kurva asli tanpa interpolasi. Periksa bahwa energi dan perhitungan kompatibel.');}
@@ -123,7 +265,9 @@ function plotCombined(){
 }
 function refreshCombinedSpecies(){const sel=$('pdosSpecies'),old=sel.value;sel.replaceChildren(new Option('All species','all'));for(const sp of [...new Set(combinedPDOS.map(f=>f.species).filter(Boolean))].sort())sel.add(new Option(sp,sp));sel.value=[...sel.options].some(o=>o.value===old)?old:'all';}
 $('combinedDOS').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{combinedDOS=readDOS(await file.text(),file.name);$('fileInfo').textContent=`Total DOS: ${file.name} parsed`; }catch(err){combinedDOS=null;$('fileInfo').textContent=`Total DOS ERROR: ${err.message}`;}plot()});
-$('combinedPDOS').addEventListener('change',async e=>{let files=[],bad=[];for(const file of e.target.files){try{files.push(readPDOS(await file.text(),file.name))}catch(err){bad.push(`${file.name}: ${err.message}`)}}combinedPDOS=files;refreshCombinedSpecies();$('fileInfo').textContent=`${files.length} file PDOS parsed${bad.length?'\n'+bad.join('\n'):''}`;plot()});
+$('combinedPDOS').addEventListener('change',async e=>{let files=[],bad=[];for(const file of e.target.files){try{files.push(readPDOS(await file.text(),file.name))}catch(err){bad.push(`${file.name}: ${err.message}`)}}combinedPDOS=files;const processed=files.length&&files.every(f=>!f.atom||!f.species);
+ if(processed&&$('pdosMode').value==='aggregate')$('pdosMode').value='single';
+ refreshCombinedSpecies();$('fileInfo').textContent=`${files.length} file PDOS parsed${bad.length?'\n'+bad.join('\n'):''}${processed?'\nMode individual dipilih untuk data olahan tanpa metadata atom. Verifikasi kolom ordinat.':''}`;plot()});
 function loadCombinedDemo(){let en=Array.from({length:201},(_,i)=>-9+i*.08);const gaussian=(x,c,w)=>Math.exp(-(((x-c)/w)**2));
  combinedDOS={kind:'dos',name:'DEMO Total DOS',columns:2,points:en.map(x=>({x,ys:[1.2*gaussian(x,-3,1.5)+2*gaussian(x,2,2)]}))};
  const demo=(sp,orb,at,c,w,k)=>({kind:'pdos',name:`DEMO.pdos_atm#${at}(${sp})_wfc#1(${orb})`,atom:at,species:sp,orbital:orb,columns:k+2,points:en.map(x=>({x,ys:[gaussian(x,c,w),...Array.from({length:k},()=>gaussian(x,c,w)/k)]}))});
@@ -199,3 +343,5 @@ function auditInputs(){return {files:[...auditFiles],tab,fermi:$('fermi').value,
 function displayAudit(){const a=scientificAudit(auditInputs());$('auditSummary').textContent=[a.status,...a.blocks.map(v=>'BLOCK: '+v),...a.warnings.map(v=>'REVIEW: '+v),...a.passes.map(v=>'INFO: '+v),a.disclaimer].join('\n');$('auditSummary').className='notice'+(a.blocks.length||a.warnings.length?' warn':'');return a;}
 $('runScientificAudit').onclick=displayAudit;
 $('exportManifest').onclick=()=>{const x=auditInputs();displayAudit();save('kitcat_electronic_structure_manifest.json',new Blob([JSON.stringify(manifest(x),null,2)],{type:'application/json'}));};
+
+$('resetCurveStyles').addEventListener('click',()=>{figureStyles.clear();$('curveStyleList').dataset.signature='';plot();updateStyleEditor()});
