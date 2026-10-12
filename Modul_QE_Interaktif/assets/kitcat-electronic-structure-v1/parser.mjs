@@ -79,3 +79,9 @@ export function pdosGroups(files,{species='all',orbital='all',spin='total',schem
  }
  return {groups:[...groups.values()],warnings};
 }
+
+export function sameBandKPath(a,b,tol=1e-6){
+ if(!a||!b||!a.bands?.length||!b.bands?.length)return false;
+ const k=a.bands[0].map(p=>p.x),q=b.bands[0].map(p=>p.x);
+ return k.length===q.length&&k.every((x,i)=>Number.isFinite(x)&&Math.abs(x-q[i])<=tol)&&[a,b].every(file=>file.bands.every(b=>b.length===file.bands[0].length&&b.every((p,i)=>Math.abs(p.x-file.bands[0][i].x)<=tol)));
+}
