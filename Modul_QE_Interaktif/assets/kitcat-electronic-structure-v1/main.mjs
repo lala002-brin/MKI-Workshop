@@ -20,13 +20,24 @@ function plot(){if(tab==='combined'){plotCombined();return;}if(tab==='banddos'){
  if(tab==='bands'){xmin=Math.min(...series.flat().map(z=>z.x));xmax=Math.max(...series.flat().map(z=>z.x));}else{xmin=Number(s.xmin);xmax=Number(s.xmax)}
  if(!Number.isFinite(xmin)||!Number.isFinite(xmax)||xmin>=xmax){$('audit').textContent='Rentang X tidak valid (minimum harus lebih kecil dari maksimum).';return}
  const clipped=series.flat().filter(p=>p.x>=xmin&&p.x<=xmax);if(!clipped.length){$('audit').textContent='Tidak ada titik di rentang X; ubah batas energi.';return}
- ymin=Math.min(...clipped.map(p=>p.y));ymax=Math.max(...clipped.map(p=>p.y));let pad=(ymax-ymin||1)*.10;ymin-=pad;ymax+=pad;
- if(tab!=='bands'&&clipped.every(p=>p.y>=0))ymin=0;
+ // K-path is the X axis for bands; the user's energy window controls the Y axis.
+ // DOS/PDOS retain their original X-energy window behavior.
+ if(tab==='bands'){
+  ymin=Number(s.xmin);ymax=Number(s.xmax);
+  if(!Number.isFinite(ymin)||!Number.isFinite(ymax)||ymin>=ymax){
+   $('audit').textContent='Rentang energi Band Structure tidak valid: minimum harus lebih kecil dari maksimum.';
+   svgText='';$('plot').innerHTML='<p class="small">Periksa batas energi minimum dan maksimum.</p>';return;
+  }
+ }else{
+  ymin=Math.min(...clipped.map(p=>p.y));ymax=Math.max(...clipped.map(p=>p.y));
+  let pad=(ymax-ymin||1)*.10;ymin-=pad;ymax+=pad;
+  if(clipped.every(p=>p.y>=0))ymin=0;
+ }
  const xf=x=>m.left+(x-xmin)/(xmax-xmin)*pw,yf=y=>m.top+ph-(y-ymin)/(ymax-ymin)*ph;
  const grid=$('grid').checked;let v=`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="KITCAT scientific figure">`;
  v+=`<rect width="${W}" height="${H}" fill="#ffffff"/><text x="${W/2}" y="48" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="${f+6}" font-weight="bold" fill="#1c2c3f">${safe(s.title)}</text>`;
  for(const x of estimate(xmin,xmax,6)){let px=xf(x);if(grid)v+=`<path d="M ${px} ${m.top} V ${m.top+ph}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${px}" y="${m.top+ph+30}" text-anchor="middle" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(x)}</text>`}
- for(const y of estimate(ymin,ymax,6)){let py=yf(y);if(grid)v+=`<path d="M ${m.left} ${py} H ${m.left+pw}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${m.left-16}" y="${py+5}" text-anchor="end" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(y)}</text>`}
+ for(const y of estimate(ymin,ymax,tab==='bands'?7:6)){let py=yf(y);if(grid)v+=`<path d="M ${m.left} ${py} H ${m.left+pw}" stroke="#dce3e9" stroke-width="1"/>`;v+=`<text x="${m.left-16}" y="${py+5}" text-anchor="end" font-family="Arial" font-size="${f}" fill="#32485d">${fmt(y)}</text>`}
  v+=`<path d="M${m.left} ${m.top}V${m.top+ph}H${m.left+pw}" stroke="#283c50" stroke-width="2" fill="none"/>`;
  const label=tab==='bands'?'k-path coordinate (a.u.)':'E − E_F (eV)',yl=tab==='bands'?'Energy − E_F (eV)':s.ylabel;
  v+=`<text x="${W/2}" y="${H-33}" text-anchor="middle" font-family="Arial" font-size="${f+2}" fill="#20384f">${safe(label)}</text><text x="30" y="${H/2}" transform="rotate(-90 30 ${H/2})" text-anchor="middle" font-family="Arial" font-size="${f+2}" fill="#20384f">${safe(yl)}</text>`;
