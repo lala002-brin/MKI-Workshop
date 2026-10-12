@@ -70,3 +70,35 @@ export function makeSlabCubic(input,{hkl='001',layers=3,vacuum=15,maxAtoms=12000
  const z=atoms.map(x=>x.fractional[2]*cellLen);const span=Math.max(...z)-Math.min(...z);
  return {structure,diagnostics:{hkl,atoms:atoms.length,orientedUnitCellAtoms:oriented.length,orientedCellVolumeFactor:determinant,normalCellVectorAngstrom:normalLen,cellHeightAngstrom:cellLen,coordinateSpanAngstrom:span,emptyCellIntervalAngstrom:cellLen-span,requestedVacuumAngstrom:vacuum,warning:'Model kandidat (hkl) berbasis sel kubik konvensional. Belum memilih/menguji terminasi, polaritas, dipol, ketebalan slab atau konvergensi DFT. Jumlah pengulangan sel BUKAN jumlah lapisan atom.'}};
 }
+
+
+// v0.3: Enumerate geometric cut positions. No formal charge or dipole assignment.
+const circularDist=(a,b)=>{const d=Math.abs(a-b);return Math.min(d,1-d)};
+const fraction=x=>((x%1)+1)%1;
+function layerGroups(values,tol=1e-6){
+ const unique=[];
+ for(const z of [...values].sort((a,b)=>a-b))if(!unique.some(v=>circularDist(v,z)<tol))unique.push(z);
+ return unique;
+}
+export function terminationCandidates(input,{hkl='001',layers=3,vacuum=15,maxCandidates=32}={}){
+ const baseline=makeSlabCubic(input,{hkl,layers,vacuum});
+ const {structure,diagnostics}=baseline;
+ const repeatHeight=diagnostics.normalCellVectorAngstrom*layers;
+ const cellHeight=diagnostics.cellHeightAngstrom;
+ const offset=vacuum/2;
+ // Remove nominal vacuum and recover periodic crystal coordinates.
+ const phase=structure.atoms.map(a=>fraction((a.fractional[2]*cellHeight-offset)/repeatHeight));
+ const groups=layerGroups(phase);
+ const gaps=groups.map((v,i)=>{const next=i===groups.length-1?groups[0]+1:groups[i+1];return {cut:fraction((v+next)/2),width:(next-v)*repeatHeight}});
+ if(gaps.length>maxCandidates)throw Error('Terlalu banyak lapisan unik untuk explorer awal. Pilih sel atau supercell lebih kecil.');
+ return gaps.map((gap,i)=>{
+  const atoms=structure.atoms.map((atom,j)=>({...atom,fractional:[...atom.fractional.slice(0,2),(offset+fraction(phase[j]-gap.cut)*repeatHeight)/cellHeight]}));
+  const s=createStructure({lattice:structure.lattice,atoms,metadata:{...structure.metadata,terminationCutFraction:gap.cut,terminationCandidate:i+1,termination:'GEOMETRIC CUT ONLY',physicalPeriodicAxes:[true,true,false]}});
+  s.periodicAxes=[true,true,false];
+  const height=atoms.map(a=>a.fractional[2]*cellHeight);const low=Math.min(...height),high=Math.max(...height);
+  const tolerance=Math.max(1e-4,repeatHeight*1e-6);
+  const composition=arr=>Object.fromEntries([...new Set(arr.map(a=>a.element))].sort().map(el=>[el,arr.filter(a=>a.element===el).length]));
+  const top=atoms.filter((a,j)=>Math.abs(height[j]-high)<tolerance),bottom=atoms.filter((a,j)=>Math.abs(height[j]-low)<tolerance);
+  return {id:i+1,cutFraction:gap.cut,gapAngstrom:gap.width,structure:s,diagnostics:{...diagnostics,candidate:i+1,topLayer:composition(top),bottomLayer:composition(bottom),totalComposition:composition(atoms),topAtoms:top.length,bottomAtoms:bottom.length,coordinateSpanAngstrom:high-low,emptyCellIntervalAngstrom:cellHeight-(high-low),warning:'Terminasi adalah lapisan terluar geometris untuk pilihan bidang potong. Identifikasi polaritas, energi, rekonstruksi, dan stabilitas memerlukan pemeriksaan terpisah.'}};
+ });
+}
