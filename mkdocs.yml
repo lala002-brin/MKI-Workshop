@@ -167,7 +167,7 @@ nav:
       - Overview: Modul_QE_Interaktif/index.md
       - Bulk Crystal Studio Beta: Modul_QE_Interaktif/bulk-crystal-studio-beta.md
       - Surface & Slab Foundation Beta: Modul_QE_Interaktif/surface-slab-foundation-beta.md
-
+      - Adsorption Studio: Modul_QE_Interaktif/adsorption-foundation-beta.md
       - "01 · Structure & Geometry":
           - "Crystal & Bond Analysis": Modul_QE_Interaktif/qe-bond-analysis.md
           - "Geometry Optimization": Modul_QE_Interaktif/qe-geometry-optimization.md
