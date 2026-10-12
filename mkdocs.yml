@@ -163,7 +163,10 @@ nav:
               - Overview: hands-on-project/research-cases/battery-electrolyte/index.md
 
   - Quantum ESPRESSO:
+      - "QE Core Inspector · v3": Modul_QE_Interaktif/qe-core-inspector.md
       - Overview: Modul_QE_Interaktif/index.md
+      - Bulk Crystal Studio Beta: Modul_QE_Interaktif/bulk-crystal-studio-beta.md
+      - Surface & Slab Foundation Beta: Modul_QE_Interaktif/surface-slab-foundation-beta.md
 
       - "01 · Structure & Geometry":
           - "Crystal & Bond Analysis": Modul_QE_Interaktif/qe-bond-analysis.md
@@ -259,6 +262,7 @@ copyright: >
 
 extra_css:
 
+  - Modul_QE_Interaktif/assets/qe-core-inspector.css
   - assets/css/kitcat-gateway.css
   - assets/css/mki-navbar-pro.css
   - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.css
@@ -291,6 +295,7 @@ extra_css:
   - Modul_SIESTA_Interaktif/assets/dft-research-report-generator.css
   - Modul_QE_Interaktif/assets/qe-toolkit-pro.css
 extra_javascript:
+  - Modul_QE_Interaktif/assets/qe-core-inspector.js
   - Modul_SIESTA_Interaktif/assets/siesta-overview-dashboard.js
   - Modul_SIESTA_Interaktif/assets/kpoint-calculator.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
