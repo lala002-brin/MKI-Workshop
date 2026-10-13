@@ -1,0 +1,21 @@
+/* KITCAT LAB 3.42 — single safe documentation layer, not embedded studio styling */
+:root { --kc-42-navy:#10324e;--kc-42-blue:#2456bf;--kc-42-teal:#238c9a;--kc-42-mint:#bdece1;--kc-42-ink:#163249; }
+.md-header{background:linear-gradient(100deg,#153b83,#205ccc);}
+.md-tabs{background:#143d74;}
+.md-tabs__link--active,.md-tabs__link:hover{color:#bdece1;}
+.md-typeset h1,.md-typeset h2,.md-typeset h3{color:var(--kc-42-navy);letter-spacing:-.018em;}
+.md-typeset a:not(.md-button){color:var(--kc-42-blue);}
+.md-typeset .md-button{border-radius:10px;}
+.md-typeset .md-button--primary{background:var(--kc-42-teal);border-color:var(--kc-42-teal);color:#fff;}
+.md-typeset .admonition,.md-typeset details,.md-typeset .grid.cards>ul>li{border-radius:14px;}
+.md-sidebar--primary .md-nav__link{line-height:1.45;overflow-wrap:break-word;}
+.md-sidebar--primary .md-nav__link--active{color:var(--kc-42-teal);font-weight:700;}
+/* Right TOC: text must not be stacked letter by letter */
+@media(min-width:76.25em){
+ .md-sidebar--secondary{width:12rem;min-width:12rem;}
+ .md-sidebar--secondary .md-sidebar__scrollwrap{width:100%;}
+ .md-sidebar--secondary .md-nav__list{max-width:100%;}
+ .md-sidebar--secondary .md-nav__link{word-break:normal;overflow-wrap:break-word;white-space:normal;line-height:1.5;}
+}
+/* Keep existing module HTML as-is; never hide navigation or content */
+@media(prefers-reduced-motion:reduce){.md-typeset .md-button{transition:none;}}

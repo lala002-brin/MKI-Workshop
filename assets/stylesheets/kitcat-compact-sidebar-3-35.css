@@ -1,0 +1,18 @@
+/* KITCAT LAB 3.35 — presentation only; never hides navigation or content */
+:root { --kitcat-navy:#102f47; --kitcat-ocean:#123b55; --kitcat-teal:#237f8e; --kitcat-mint:#b9eee1; }
+/* Keep existing MkDocs navigation visible and harmonize its chrome. */
+.md-header { background-color:var(--kitcat-navy); }
+.md-tabs { background-color:var(--kitcat-ocean); }
+.md-header__title, .md-header__button, .md-header__topic { color:#fff; }
+.md-tabs__link { color:#e1f2f4; }
+.md-tabs__link--active, .md-tabs__link:hover { color:var(--kitcat-mint); }
+/* Compact sidebar typography without changing its positioning or visibility. */
+.md-sidebar--primary .md-nav__link, .md-sidebar--secondary .md-nav__link { line-height:1.4; overflow-wrap:anywhere; }
+.md-sidebar--primary .md-nav__item > .md-nav__link { padding-top:.25rem; padding-bottom:.25rem; }
+.md-sidebar--primary .md-nav__link--active, .md-sidebar--primary .md-nav__link:hover { color:var(--kitcat-teal); }
+.md-sidebar--primary .md-nav__title { font-weight:700; }
+.md-sidebar--primary .md-nav__list { margin-top:.15rem; }
+/* Existing custom bars remain functional; harmonize background only when matching known classes. */
+.kc-topnav, .kitcat-topnav { background:linear-gradient(90deg,var(--kitcat-navy),var(--kitcat-ocean)); }
+/* No display:none, position overrides, full-width hacks, or generic div/section selectors. */
+@media(max-width:76.25em) { .md-sidebar--primary .md-nav__item > .md-nav__link { padding-top:.35rem; padding-bottom:.35rem; } }

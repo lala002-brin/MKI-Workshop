@@ -1,0 +1,59 @@
+/* KITCAT LAB 3.45 — MkDocs Material header and tab navigation only. */
+:root {
+  --kl45-navy:#102f47;
+  --kl45-navy-deep:#102c43;
+  --kl45-teal:#237f8e;
+  --kl45-mint:#b9eee1;
+}
+/* Brand bar */
+html body .md-header,
+html body .md-header[data-md-state="shadow"] {
+  background:linear-gradient(105deg,#102f47 0%,#16445f 62%,#176979 100%);
+  color:#f5fcff;
+  box-shadow:0 3px 16px rgba(9,37,57,.13);
+}
+html body .md-header__title,
+html body .md-header__title .md-ellipsis,
+html body .md-header__button,
+html body .md-header .md-icon {
+  color:#f5fcff;
+}
+html body .md-header__title { font-weight:750;letter-spacing:.015em; }
+html body .md-header__button:focus-visible { outline:2px solid var(--kl45-mint);outline-offset:2px; }
+/* Legacy navbar and Material's actual nav tabs share the same visual rhythm.
+   These selectors never hide or reposition the whole page. */
+html body .md-tabs {
+  background:#153d5c;
+  border-bottom:1px solid rgba(185,238,225,.16);
+  color:#d7ebf2;
+}
+html body .md-tabs__list { gap:.22rem; align-items:center; }
+html body .md-tabs__item { height:auto;max-width:none; }
+html body .md-tabs__link {
+  color:#d6e7ef;
+  font-weight:600;
+  font-size:.7rem;
+  letter-spacing:0;
+  padding:.64rem .69rem;
+  margin:.06rem 0;
+  border-radius:.42rem;
+  opacity:1;
+  line-height:1.4;
+}
+html body .md-tabs__link:hover,
+html body .md-tabs__link:focus-visible {
+  color:#fff;
+  background:rgba(185,238,225,.13);
+}
+html body .md-tabs__link--active {
+  color:var(--kl45-mint);
+  background:rgba(185,238,225,.17);
+  font-weight:750;
+}
+html body .md-search__form { border-radius:14px; overflow:hidden; }
+@media (max-width:76.24em) {
+  html body .md-header { min-height:2.6rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html body .md-tabs__link { transition:none; }
+}

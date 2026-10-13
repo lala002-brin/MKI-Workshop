@@ -1,0 +1,18 @@
+/* KITCAT LAB 3.37 — Documentation navigation only.
+   No elements are hidden; no iframe/gateway/studio selectors. */
+:root { --kc37-navy:#102f47; --kc37-teal:#237f8e; --kc37-mint:#b9eee1; }
+.md-tabs { background:linear-gradient(90deg,#15344f,#1f4c68); }
+.md-tabs__list { gap:.15rem; }
+.md-tabs__link { font-weight:600; font-size:.68rem; letter-spacing:.005em; opacity:.85; }
+.md-tabs__link:hover,.md-tabs__link--active { color:var(--kc37-mint); opacity:1; }
+.md-sidebar--primary .md-nav__link { border-radius:.35rem; overflow-wrap:anywhere; line-height:1.45; }
+.md-sidebar--primary .md-nav__link--active { color:var(--kc37-teal); font-weight:700; }
+.md-sidebar--primary .md-nav__title { letter-spacing:.025em; }
+.md-sidebar--secondary .md-nav__link--active { color:var(--kc37-teal); }
+.md-content a:focus-visible, .md-nav a:focus-visible { outline:2px solid #379faa; outline-offset:3px; border-radius:3px; }
+@media (min-width:76.25em) {
+ .md-sidebar--primary .md-nav__link { padding-block:.13rem; font-size:.72rem; }
+ .md-sidebar--primary .md-nav__item { padding-block:.035rem; }
+ .md-sidebar--primary .md-nav__title { font-size:.70rem; }
+}
+@media (prefers-reduced-motion:reduce) { .md-nav__link,.md-tabs__link { transition:none!important; } }
