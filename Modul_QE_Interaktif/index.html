@@ -140,6 +140,8 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/kitcat-header-3-45.css">
     
+      <link rel="stylesheet" href="../assets/stylesheets/kitcat-topbar-3-49.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -4825,57 +4827,45 @@
   
 
 
-<!-- KITCAT LAB QE POLISH 3.5 START -->
-<p><span class="kitcat-qe-polish-35" hidden aria-hidden="true"></span></p>
-<style>
-/* Scoped to the QE overview only. Documentation pages and tools are untouched. */
-body:has(.kitcat-qe-polish-35) .md-typeset {
- --kitcat-navy:#123247; --kitcat-ink:#17384d; --kitcat-teal:#087985;
-}
-body:has(.kitcat-qe-polish-35) .md-content__inner {max-width:1160px;}
-body:has(.kitcat-qe-polish-35) .md-typeset h2 {
- color:var(--kitcat-ink); letter-spacing:-.025em; line-height:1.23;
- font-weight:750; margin-top:1.7em;
-}
-body:has(.kitcat-qe-polish-35) .md-typeset h3 {
- color:var(--kitcat-ink); letter-spacing:-.01em;
-}
-body:has(.kitcat-qe-polish-35) .md-typeset p,
-body:has(.kitcat-qe-polish-35) .md-typeset li {line-height:1.75;}
-body:has(.kitcat-qe-polish-35) .md-typeset a {text-underline-offset:3px;}
-body:has(.kitcat-qe-polish-35) .md-typeset a:focus-visible {
- outline:3px solid #8bded4;outline-offset:3px;border-radius:4px;
-}
-body:has(.kitcat-qe-polish-35) .md-typeset table:not([class]) {
- border-radius:12px;overflow:hidden;box-shadow:0 10px 26px rgba(18,50,71,.06);
-}
-body:has(.kitcat-qe-polish-35) .md-typeset table:not([class]) th {
- background:#16445b;color:#fff;
-}
-body:has(.kitcat-qe-polish-35) .md-typeset table:not([class]) td {vertical-align:top;}
-/* Existing KITCAT cards / hero from Overview 2.0 are preserved. */
-@media(max-width:760px){
- body:has(.kitcat-qe-polish-35) .md-content__inner{padding-left:1rem;padding-right:1rem;}
-}
-</style>
-<!-- KITCAT LAB QE POLISH 3.5 END -->
 <hr />
 <p>title: KITCAT | Quantum ESPRESSO Research Workspace
 hide:
   - toc</p>
 <hr />
 <style>
-/* KITCAT QE Overview 2.0: scoped styling; does not change other pages */
-.kq-overview{--kq-navy:#183954;--kq-blue:#176ca4;--kq-teal:#087e83;--kq-ink:#26384a;--kq-muted:#586f81;--kq-line:#dce7ee;color:var(--kq-ink)}
-.kq-overview *{box-sizing:border-box}.kq-overview .kq-hero{padding:clamp(24px,4vw,47px);background:linear-gradient(125deg,#102e4d,#165680 65%,#138188);border-radius:20px;color:#fff;margin:18px 0 24px;position:relative;overflow:hidden}
-.kq-overview .kq-hero:after{content:"";position:absolute;width:290px;height:290px;right:-105px;top:-120px;border:1px solid #ffffff3a;border-radius:50%;box-shadow:0 0 0 40px #ffffff08,0 0 0 85px #ffffff08;pointer-events:none}
-.kq-overview .kq-eyebrow{font-size:.72rem;letter-spacing:.13em;font-weight:800;color:#bcf2f1}.kq-overview .kq-hero h1{font-size:clamp(1.7rem,3.7vw,2.7rem);font-weight:820;color:#fff!important;line-height:1.17;margin:10px 0 16px}.kq-overview .kq-hero p{max-width:810px;color:#ecf6fc;font-size:1rem;line-height:1.75;margin:0}
-.kq-overview .kq-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.kq-overview .kq-tags span{border:1px solid #ffffff53;background:#ffffff18;border-radius:100px;padding:6px 12px;font-size:.75rem;color:#fff}
-.kq-overview .kq-lead{font-size:1rem;line-height:1.8;color:var(--kq-muted);max-width:920px}.kq-overview h2{font-size:1.45rem!important;color:var(--kq-navy)!important;margin:42px 0 11px!important;font-weight:800}.kq-overview h3{font-size:1.02rem!important;color:var(--kq-navy)!important;margin:0 0 7px!important;font-weight:780}.kq-overview h2:before{content:"";display:inline-block;width:5px;height:20px;background:#158b91;border-radius:4px;margin-right:12px;vertical-align:-3px}
-.kq-overview .kq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}.kq-overview .kq-card{border:1px solid var(--kq-line);background:#fff;border-radius:14px;padding:22px;box-shadow:0 5px 20px #113d5410;min-width:0}.kq-overview .kq-card p{color:var(--kq-muted);font-size:.9rem;line-height:1.65;margin:7px 0 14px}.kq-overview .kq-number{font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--kq-teal);margin-bottom:12px}.kq-overview .kq-actions{display:flex;flex-wrap:wrap;gap:9px}.kq-overview .kq-action{display:inline-flex;align-items:center;gap:7px;border-radius:8px;border:1px solid #aecbdc;background:#f3f9fd;color:#145b8c!important;font-weight:750;font-size:.81rem;text-decoration:none!important;padding:9px 12px}.kq-overview .kq-action:hover{border-color:#167aa9;background:#e8f4fb}
-.kq-overview .kq-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:21px 0}.kq-overview .kq-step{padding:16px 14px;background:#f4f9fc;border:1px solid var(--kq-line);border-radius:12px;min-width:0}.kq-overview .kq-step b{color:var(--kq-navy);display:block;font-size:.85rem}.kq-overview .kq-step small{color:var(--kq-muted);display:block;line-height:1.6;margin-top:7px;font-size:.76rem}.kq-overview .kq-step .kq-n{font-size:1.2rem;color:var(--kq-teal);font-weight:850;margin-bottom:10px}
-.kq-overview .kq-note{background:#f2f7fa;border-left:4px solid #17809d;border-radius:0 11px 11px 0;padding:17px 20px;font-size:.9rem;color:#36566b;line-height:1.7;margin:20px 0}.kq-overview .kq-note.warn{background:#fff8ec;border-left-color:#c28529;color:#71532c}.kq-overview .kq-table{overflow-x:auto;border:1px solid var(--kq-line);border-radius:12px;margin:18px 0}.kq-overview .kq-table table{margin:0!important;border:0!important;min-width:660px;width:100%;font-size:.84rem}.kq-overview .kq-table th{background:#eaf3f7;color:#183954;font-weight:780}.kq-overview .kq-table td,.kq-overview .kq-table th{padding:12px 14px!important;vertical-align:top}.kq-overview .kq-card a:not(.kq-action){color:#126b9c}.kq-overview .kq-mini{font-size:.78rem;color:var(--kq-muted)}
-@media(max-width:850px){.kq-overview .kq-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.kq-overview .kq-grid,.kq-overview .kq-steps{grid-template-columns:1fr}.kq-overview .kq-card{padding:18px}.kq-overview .kq-hero{padding:24px 20px}.kq-overview h2{font-size:1.25rem!important}}
+/* KITCAT LAB QE OVERVIEW 3.48 — replacement scoped CSS */
+.kq-overview{--kq-navy:#10354d;--kq-blue:#2469bb;--kq-teal:#268e99;--kq-ink:#16344d;--kq-muted:#50677c;--kq-line:#d6e6ed;color:var(--kq-ink)}
+.kq-overview *{box-sizing:border-box}
+.kq-overview .kq-hero{position:relative;overflow:hidden;padding:clamp(25px,4vw,49px);border-radius:26px;background:linear-gradient(120deg,#112f49 0%,#174d69 51%,#258897 100%);color:#f8fdff;box-shadow:0 18px 42px rgba(12,50,73,.16)}
+.kq-overview .kq-hero:after{content:"";position:absolute;width:275px;height:275px;right:-95px;top:-145px;border:1px solid #ffffff30;border-radius:50%;box-shadow:0 0 0 44px #ffffff09,0 0 0 88px #ffffff07;pointer-events:none}
+.kq-overview .kq-eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.15em;color:#baf2e8}
+.kq-overview .kq-hero h1{color:#fff!important;font-size:clamp(1.8rem,3vw,2.75rem)!important;font-weight:800;line-height:1.16;margin:12px 0 17px}
+.kq-overview .kq-hero p{max-width:850px;color:#e7f6fa!important;font-size:1.03rem;line-height:1.75}
+.kq-overview .kq-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.kq-overview .kq-tags span{border:1px solid #dcf8f85e;background:#efffff14;color:#f7ffff;border-radius:999px;padding:7px 13px;font-size:.79rem}
+.kq-overview .kq-lead{font-size:1.05rem;line-height:1.8;color:var(--kq-muted);max-width:900px}
+.kq-overview h2{font-size:1.42rem!important;color:var(--kq-navy)!important;line-height:1.3!important;margin:38px 0 13px!important;font-weight:780}
+.kq-overview h2:before{content:"";display:inline-block;width:5px;height:19px;background:#29a3a3;border-radius:3px;margin-right:12px;vertical-align:-3px}
+.kq-overview .kq-grid,.kq-overview .kq-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin:20px 0}
+.kq-overview .kq-card{border:1px solid var(--kq-line);background:#fff;border-radius:19px;padding:22px;box-shadow:0 10px 30px #163d5710;min-width:0}
+.kq-overview .kq-card p{color:var(--kq-muted);font-size:.91rem;line-height:1.7;margin:7px 0 14px}
+.kq-overview .kq-number{font-size:.72rem;font-weight:850;letter-spacing:.12em;color:var(--kq-teal);margin-bottom:10px}
+.kq-overview .kq-actions{display:flex;gap:10px;flex-wrap:wrap}
+.kq-overview .kq-action{display:inline-flex;align-items:center;gap:7px;border-radius:11px;border:1px solid #a7d1db;background:#eff9fb;color:#16516a!important;font-size:.83rem!important;font-weight:780;text-decoration:none!important;padding:10px 13px}
+.kq-overview .kq-action:hover{background:#d9eff2;border-color:#5eb7c0}
+.kq-overview .kq-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kq-overview .kq-step{min-width:0;padding:17px 14px;border:1px solid var(--kq-line);border-radius:14px;background:#f5fafc}
+.kq-overview .kq-step b{display:block;color:var(--kq-navy);font-size:.86rem}
+.kq-overview .kq-step small{color:var(--kq-muted);line-height:1.65;display:block;margin-top:6px}
+.kq-overview .kq-n{font-size:1.1rem;color:var(--kq-teal);font-weight:830;margin-bottom:10px}
+.kq-overview .kq-note{padding:18px 21px;border-left:4px solid #249ca4;border-radius:0 12px 12px 0;background:#edf7f8;color:#365d68;line-height:1.75}
+.kq-overview .kq-note.warn{background:#fff8ee;border-left-color:#cf9437;color:#735123}
+.kq-overview .kq-table{overflow-x:auto;border:1px solid var(--kq-line);border-radius:14px}
+.kq-overview .kq-table table{border:0!important;width:100%;min-width:600px;box-shadow:none!important}
+.kq-overview .kq-table th{background:#e9f4f8!important;color:#10354d!important;font-weight:760}
+.kq-overview .kq-card a:not(.kq-action){color:#176f92}
+@media(max-width:900px){.kq-overview .kq-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.kq-overview .kq-grid,.kq-overview .kq-steps{grid-template-columns:1fr}.kq-overview .kq-hero{padding:25px 20px}.kq-overview .kq-card{padding:18px}}
 </style>
 
 <div class="kq-overview">
