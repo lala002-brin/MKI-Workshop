@@ -1,0 +1,39 @@
+/* KITCAT LAB 3.29 — cross-module design tokens, conservative selectors. */
+:root {
+  --kl-navy:#123b55; --kl-deep:#102f47; --kl-teal:#237f8e;
+  --kl-mint:#b9eee1; --kl-paper:#f5f8fb; --kl-ink:#19334b;
+  --kl-muted:#61778b; --kl-line:#dce7ef;
+}
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:var(--kl-navy);
+  --md-primary-fg-color--light:#26627c;
+  --md-primary-fg-color--dark:var(--kl-deep);
+  --md-accent-fg-color:var(--kl-teal);
+  --md-typeset-a-color:#08788b;
+}
+/* Site chrome: no changes to tab visibility or positioning. */
+.md-header {background:var(--kl-navy); box-shadow:0 2px 10px rgba(9,34,53,.12)}
+.md-tabs {background:var(--kl-deep)}
+.md-tabs__link--active,.md-tabs__link:hover {color:var(--kl-mint)}
+.md-search__input {border-radius:10px}
+.md-sidebar__scrollwrap {scrollbar-color:#b9cfdc transparent}
+.md-nav__link--active {color:var(--kl-teal);font-weight:700}
+/* Conventional documentation pages. Custom full-width kc-page and embedded studio UI excluded. */
+.md-typeset > h1 {color:var(--kl-deep);letter-spacing:-.025em;font-weight:750}
+.md-typeset > h2 {color:var(--kl-navy);letter-spacing:-.012em;font-weight:700}
+.md-typeset > h3 {color:#22526d}
+.md-typeset > blockquote {border-left-color:var(--kl-teal)}
+.md-typeset > .admonition,
+.md-typeset > details {border-radius:12px;overflow:hidden}
+.md-typeset > table:not([class]) {border-radius:12px;overflow:hidden}
+.md-typeset > hr {border-bottom-color:var(--kl-line)}
+.md-typeset > p > a:not(.md-button) {text-underline-offset:3px}
+/* Primary Markdown buttons only; don't target custom UI buttons or tool controls. */
+.md-typeset > p > a.md-button,
+.md-typeset > .md-button {border-radius:12px;font-weight:650}
+.md-typeset > p > a.md-button--primary,
+.md-typeset > .md-button--primary {background:var(--kl-teal);border-color:var(--kl-teal);color:white}
+/* Respect existing component and chart designs in interactive studios. */
+@media(prefers-reduced-motion:reduce){
+ .md-typeset > p > a.md-button {transition:none}
+}

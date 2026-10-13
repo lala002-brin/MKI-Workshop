@@ -1,0 +1,33 @@
+/* KITCAT LAB 3.30: purely visual layer for Electronic Structure Studio.
+   Figure SVG and all scientific input values stay under the existing application. */
+:root{--kitcat-navy:#102f47;--kitcat-ocean:#123b55;--kitcat-teal:#237f8e;--kitcat-mint:#b9eee1;--kitcat-paper:#f5f8fb;--kitcat-ink:#19364b;--kitcat-line:#d5e2e9}
+body{background:var(--kitcat-paper);color:var(--kitcat-ink)}
+header{background:linear-gradient(112deg,#102f47 5%,#123b55 65%,#237f8e 130%);border-bottom:1px solid #184c62}
+header .brand{color:white;letter-spacing:.09em}
+header .brand span{color:var(--kitcat-mint);opacity:1}
+header .eyebrow{color:var(--kitcat-mint)}
+header h1{color:#fff;letter-spacing:-.025em}
+header p{color:#e0f0f4}
+main{max-width:1370px}
+.card{border:1px solid var(--kitcat-line);border-radius:17px;box-shadow:0 10px 28px rgba(16,47,71,.055)}
+.card h2,.card h3{color:var(--kitcat-navy)}
+.tabs{gap:8px}
+.tabs button{background:#f2f7f9;color:#29485a;border:1px solid #c9dce3;border-radius:10px}
+.tabs button:hover{background:#e7f4f3}
+.tabs button.active{background:var(--kitcat-ocean);border-color:var(--kitcat-ocean);color:#fff}
+button{border-radius:10px;border-color:#bed1d9;color:var(--kitcat-ocean)}
+button.primary{background:var(--kitcat-teal);border-color:var(--kitcat-teal);color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #56a6ad;outline-offset:3px}
+button:disabled{cursor:not-allowed;opacity:.55}
+.filebox{background:#eef7f8;border:1px dashed #9ac6cb;border-radius:11px}
+.filebox.subtle{background:#f6fafb}
+.notice{background:#eef7f8;border-left-color:#5b9eab;color:#365468}
+.notice.warn{background:#fff7ea;border-left-color:#bf8842;color:#604b34}
+.kitcat-quick{background:#eff7f8;border-color:#d1e8e9}
+.control-grid input:not([type=color]):not([type=range]),.control-grid select,.audit-fields input,.audit-fields select{border-color:#b9d2dc;border-radius:9px}
+.pill{background:#e5f4f3;color:#236471}
+.guide>div{background:#f1f7f8;border:1px solid #e2ebee;border-radius:11px}
+footer{color:#5c7581}
+/* Intentionally no rules for SVG paths, plot colors, canvases, data, or hidden attributes. */
+@media(max-width:850px){main{padding:0 14px}.card{border-radius:13px}.tabs{gap:6px}.tabs button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){button,.tabs button{transition:none!important}}

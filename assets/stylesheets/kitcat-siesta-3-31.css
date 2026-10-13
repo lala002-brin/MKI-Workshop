@@ -1,0 +1,45 @@
+/* KITCAT LAB 3.31 – only SIESTA documentation, opt-in body class */
+body.kitcat-siesta-docs {
+  --md-primary-fg-color:#102f47;
+  --md-accent-fg-color:#237f8e;
+}
+body.kitcat-siesta-docs .md-content__inner {
+  color: #18354b;
+}
+body.kitcat-siesta-docs .md-content__inner > h1,
+body.kitcat-siesta-docs .md-content__inner > h2,
+body.kitcat-siesta-docs .md-content__inner > h3 {
+  color:#123b55;
+  letter-spacing:-.018em;
+}
+body.kitcat-siesta-docs .md-content__inner > h1 {
+  border-bottom:3px solid #a7ddd7;
+  padding-bottom:.42em;
+}
+body.kitcat-siesta-docs .md-content__inner a:not(.md-button) {
+  text-underline-offset:3px;
+}
+body.kitcat-siesta-docs .md-content__inner .md-button--primary {
+  background:#237f8e;
+  border-color:#237f8e;
+  color:#fff;
+}
+body.kitcat-siesta-docs .md-content__inner .md-button:not(.md-button--primary) {
+  border-color:#237f8e;
+  color:#14546b;
+}
+body.kitcat-siesta-docs .md-content__inner .admonition,
+body.kitcat-siesta-docs .md-content__inner details {
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(16,47,71,.06);
+}
+body.kitcat-siesta-docs .md-content__inner table:not([class]) {
+  border-radius:10px;
+}
+body.kitcat-siesta-docs .md-content__inner pre {
+  border-radius:12px;
+}
+body.kitcat-siesta-docs .md-nav__link--active {color:#237f8e; font-weight:700;}
+@media(max-width:760px){
+ body.kitcat-siesta-docs .md-content__inner > h1 {font-size:1.65rem;}
+}
