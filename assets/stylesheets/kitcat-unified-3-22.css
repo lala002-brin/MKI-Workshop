@@ -1,6 +1,6 @@
 /* KITCAT LAB 3.22 — applies only to pages with .kc-page (Explore/Learning/Software). */
 @supports selector(body:has(.kc-page)) {
-  body:has(.kc-page) .md-tabs { display: none; }
+  /* KITCAT 3.61: removed obsolete rule that hid global .md-tabs */
   body:has(.kc-page) .md-main__inner {
     max-width: none; width: 100%; margin: 0; padding: 0;
   }
@@ -75,3 +75,7 @@
 @media (prefers-reduced-motion: reduce) {
   .md-typeset .kc-page * { transition: none !important; animation: none !important; }
 }
+
+/* KITCAT 3.61: local page navigation removed; global MkDocs tabs remain visible. */
+body:has(.kc-page) .md-content .kc-page .kc-topnav,
+body:has(.kc-page) .md-content .kc-page .kitcat-topnav { display: none !important; }

@@ -1,0 +1,59 @@
+/* KITCAT LAB 3.57 • ONE PLATFORM DESIGN LAYER
+   Always loaded last; does not hide content or touch iframe internals. */
+:root{--kx-navy:#102f47;--kx-blue:#195a7a;--kx-teal:#238e97;--kx-mint:#b6eee4;--kx-ink:#153950;--kx-muted:#587086;--kx-paper:#f3f8fb;--kx-border:#d8e6ee;--kx-radius:20px;--kx-shadow:0 14px 32px rgba(12,43,67,.08)}
+[data-md-color-scheme=default]{--md-default-bg-color:#f4f8fb;--md-default-fg-color:#163b54;--md-primary-fg-color:#102f47;--md-accent-fg-color:#238e97}
+[data-md-color-scheme=slate]{--md-primary-fg-color:#102f47;--md-accent-fg-color:#a2ece1}
+.md-header{background:#102f47!important;box-shadow:0 3px 16px rgba(5,24,41,.12)!important}
+.md-header__title{font-weight:780;letter-spacing:-.02em}
+.md-header__button.md-logo img{max-height:1.75rem}
+.md-tabs{background:#123b57!important;border-bottom:1px solid rgba(178,234,236,.18)}
+.md-tabs__list{gap:.18rem;scrollbar-width:thin}
+.md-tabs__item{height:2.45rem}
+.md-tabs__link{color:#e4f3f8!important;font-size:.73rem;font-weight:600;line-height:1.2;padding:.52rem .75rem;border-radius:10px;transition:background .16s}
+.md-tabs__link:hover{background:rgba(178,238,228,.12)!important}
+.md-tabs__link--active{color:#eafffc!important;background:rgba(105,202,197,.23)!important;font-weight:800!important}
+.md-search__form{background:rgba(232,246,250,.19);border-radius:12px}
+/* Docs pages: coherent reading canvas */
+.md-main{background:var(--md-default-bg-color)}
+.md-content{min-width:0}
+.md-content__inner{padding-top:1.1rem;padding-bottom:2.5rem}
+.md-typeset{line-height:1.75}
+.md-typeset h1{font-weight:850;letter-spacing:-.038em;line-height:1.19;color:#153b54}
+.md-typeset h2{font-weight:790;letter-spacing:-.025em;line-height:1.27;color:#16425b}
+.md-typeset h3{font-weight:750;letter-spacing:-.02em;color:#1a526b}
+.md-typeset p,.md-typeset li{overflow-wrap:break-word}
+.md-typeset a{color:#196982;text-underline-offset:3px}
+.md-typeset a:hover{color:#167f87}
+.md-typeset a:focus-visible,.md-nav__link:focus-visible,.md-tabs__link:focus-visible{outline:3px solid #70d5cb;outline-offset:3px;border-radius:6px}
+.md-typeset .md-button{border-radius:12px;font-weight:750;transition:transform .16s,box-shadow .16s}
+.md-typeset .md-button--primary{background:#b6eee4;color:#103348;border-color:#b6eee4}
+.md-typeset .md-button:hover{transform:translateY(-1px)}
+.md-typeset .grid.cards>ul>li,.md-typeset .admonition,.md-typeset details{border:1px solid var(--kx-border);border-radius:16px;box-shadow:var(--kx-shadow)}
+.md-typeset .admonition-title,.md-typeset summary{border-radius:15px 15px 0 0}
+.md-typeset table:not([class]){overflow:hidden;border-radius:12px;box-shadow:0 5px 17px rgba(12,43,67,.05)}
+.md-typeset img:not(.emojione):not(.twemoji){max-width:100%;height:auto}
+/* Sidebar: exact descendants only, NOT app controls */
+.md-sidebar{min-width:0}
+.md-sidebar--primary .md-nav__title{color:var(--kx-muted);font-size:.70rem;letter-spacing:.045em;font-weight:850}
+.md-sidebar .md-nav__link{line-height:1.42;overflow-wrap:normal;word-break:normal;hyphens:none}
+.md-sidebar .md-nav__item{min-width:0}
+.md-sidebar .md-nav__link--active{color:#187d8b!important;font-weight:800}
+.md-sidebar--secondary .md-nav__link{font-size:.69rem;line-height:1.52;word-break:normal;overflow-wrap:break-word}
+.md-sidebar--secondary .md-nav__list{max-width:100%;min-width:0}
+.md-sidebar--secondary .md-nav__item{margin-bottom:.25rem}
+@media(min-width:76.25em){.md-sidebar--primary{width:12.2rem}.md-sidebar--secondary{width:10.4rem}.md-main__inner{gap:1.0rem}.md-content__inner{margin:0 .5rem}.md-typeset{font-size:.82rem}}
+/* Explicit landing design hooks: never force wide layout on app iframes */
+.md-typeset .kc-page .kc-hero,.md-typeset .kq-overview .kq-hero,.md-typeset .kl-hero,.md-typeset .learning-hub-hero,.md-typeset .lh-hero{border-radius:24px!important;box-shadow:0 18px 40px rgba(12,43,67,.13)!important}
+.md-typeset .kc-page .kc-hero a,.md-typeset .kq-overview .kq-hero a{color:#d3fff5}
+.md-typeset .kc-page .kc-hero p,.md-typeset .kq-overview .kq-hero p{color:#e5f5f9}
+.md-typeset .kc-page .kc-hero h1,.md-typeset .kc-page .kc-hero h2,.md-typeset .kq-overview .kq-hero h1{color:#fff!important}
+/* Homepage remains its own full-bleed composition; no forced MD background overlays */
+body:has(.kl-hero) .md-content__inner{padding-top:0}
+/* Scroll location for headings under sticky header */
+.md-typeset :is(h1,h2,h3,h4,h5,h6)[id]{scroll-margin-top:6.4rem}
+/* Read progress line is decorative, never blocks clicks */
+#kitcat-read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#b6eee4,#30a2b4);z-index:1000;pointer-events:none;transition:width .08s linear}
+/* Consistent calls to action only within content, never force app styles */
+.md-typeset .kc-card,.md-typeset .kq-card,.md-typeset .lh-card{border-radius:18px!important}
+@media(max-width:76.24em){.md-content__inner{padding-top:.6rem}.md-typeset h1{font-size:1.7rem}.md-sidebar--secondary{display:none}}
+@media(prefers-reduced-motion:reduce){.md-typeset .md-button,.md-tabs__link,#kitcat-read-progress{transition:none!important}}

@@ -1,0 +1,31 @@
+/* KITCAT LAB 3.58 — one shared Material toolbar on every page. */
+:root { --kc-bar:#102f47; --kc-tabs:#173d58; --kc-active:#286776; --kc-mint:#b8f0e6; }
+.md-header { background:var(--kc-bar)!important; color:#f5fbff!important; box-shadow:none!important; }
+.md-header__inner { min-height:3.15rem; }
+.md-header__title { font-weight:750; letter-spacing:-.015em; }
+/* Material injects a second topic containing the page title on scroll. Keep the brand constant. */
+.md-header__topic[data-md-component="header-topic"] { display:none!important; }
+.md-header__topic[data-md-component="header-title"] { opacity:1!important; transform:none!important; }
+.md-header__button, .md-header__title, .md-header__button:hover {color:#f5fbff!important}
+.md-header .md-search__input { border-radius:12px; background:rgba(255,255,255,.19); }
+.md-tabs { background:var(--kc-tabs)!important; color:#edf8f9!important; }
+.md-tabs__list { display:flex; justify-content:center; gap:.22rem; }
+.md-tabs__item { flex:none; height:2.55rem; }
+.md-tabs__link { display:flex; align-items:center; white-space:nowrap; padding:.48rem .82rem; margin:0; border-radius:11px 11px 0 0; font-size:.69rem; font-weight:600; color:#e3f2f6!important; opacity:1!important; }
+.md-tabs__link:hover { background:rgba(184,240,230,.12); color:#fff!important; }
+.md-tabs__link--active { background:var(--kc-active)!important; color:#fff!important; font-weight:800; }
+/* Remove only the duplicate navigation authored inside Explore's page content.
+   Standard MkDocs .md-tabs navigation always remains visible. */
+.md-content .kc-page .kc-topnav { display:none!important; }
+/* Prevent old page-specific header tweaks overriding the shared tabs. */
+@media screen and (min-width:76.25em) {
+ .md-header { position:sticky; top:0; }
+ .md-tabs { position:sticky; top:3.15rem; z-index:3; }
+}
+@media screen and (max-width:76.249em) {
+ .md-header__topic[data-md-component="header-topic"] {display:none!important}
+ .md-header__title {max-width:48vw}
+}
+@media (prefers-reduced-motion:reduce) {
+ .md-header__topic, .md-tabs__link {transition:none!important}
+}
