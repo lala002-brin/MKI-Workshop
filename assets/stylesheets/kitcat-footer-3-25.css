@@ -1,0 +1,27 @@
+/* KITCAT LAB 3.25 — limited footer polish. No element hiding. */
+@supports selector(body:has(.kc-page)) {
+  body:has(.kc-page) :is(.md-footer, .kitcat-footer, .kl-footer, #kitcat-footer) {
+    font-size: .94rem;
+    line-height: 1.55;
+  }
+  body:has(.kc-page) :is(.md-footer, .kitcat-footer, .kl-footer, #kitcat-footer) :is(h2,h3,h4) {
+    font-size: clamp(1rem,1.3vw,1.2rem);
+    line-height: 1.4;
+    margin-block: .5rem .85rem;
+  }
+  body:has(.kc-page) :is(.md-footer, .kitcat-footer, .kl-footer, #kitcat-footer) p {
+    line-height: 1.65;
+    margin-block: .35rem .75rem;
+  }
+  body:has(.kc-page) :is(.md-footer, .kitcat-footer, .kl-footer, #kitcat-footer) a:focus-visible {
+    outline: 2px solid #b9f4e5;
+    outline-offset: 3px;
+  }
+  body:has(.kc-page) .md-footer__inner {
+    padding-block: 1.8rem;
+    gap: clamp(1rem,2vw,2rem);
+  }
+  @media (max-width: 700px) {
+    body:has(.kc-page) .md-footer__inner { padding-block: 1.15rem; }
+  }
+}

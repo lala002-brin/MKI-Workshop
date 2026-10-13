@@ -1,0 +1,51 @@
+/* KITCAT LAB 3.24 — scoped landing-page navigation polish. */
+@supports selector(body:has(.kc-page)) {
+  body:has(.kc-page) .kc-page .kc-topnav { position: relative; z-index: 2; }
+  body:has(.kc-page) .kc-page .kc-topnav-inner {
+    min-height: 74px;
+    gap: 16px;
+    align-items: center;
+  }
+  body:has(.kc-page) .kc-page .kc-brand {
+    display: inline-flex; flex-wrap: wrap; min-width: 0;
+    align-items: center; column-gap: 10px; line-height: 1.35;
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+  }
+  body:has(.kc-page) .kc-page .kc-brand small {
+    font-size: .83em; opacity: .88;
+  }
+  body:has(.kc-page) .kc-page .kc-links {
+    flex: 1 1 auto; justify-content: flex-end;
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  body:has(.kc-page) .kc-page .kc-links a {
+    font-size: .88rem; line-height: 1.3;
+    white-space: normal; text-align: center;
+    min-height: 40px; display: inline-flex;
+    align-items: center; justify-content: center;
+    padding: 9px 13px;
+  }
+  body:has(.kc-page) .kc-page .kc-hero-inner { padding-block: clamp(36px, 5vw, 64px); }
+  body:has(.kc-page) .kc-page .kc-hero p { max-width: 64ch; }
+  body:has(.kc-page) .kc-page .kc-section { padding-top: clamp(32px, 4vw, 64px); }
+  body:has(.kc-page) .kc-page .kc-card {
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  body:has(.kc-page) .kc-page .kc-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(14,43,69,.09);
+  }
+}
+@media(max-width: 760px) {
+  body:has(.kc-page) .kc-page .kc-topnav-inner {
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+  body:has(.kc-page) .kc-page .kc-links {
+    width: 100%; justify-content: flex-start; gap: 7px;
+  }
+  body:has(.kc-page) .kc-page .kc-links a { flex: 1 1 auto; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body:has(.kc-page) .kc-page .kc-card { transition:none; }
+  body:has(.kc-page) .kc-page .kc-card:hover { transform:none; }
+}

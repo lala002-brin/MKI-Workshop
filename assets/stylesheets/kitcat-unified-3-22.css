@@ -1,0 +1,77 @@
+/* KITCAT LAB 3.22 — applies only to pages with .kc-page (Explore/Learning/Software). */
+@supports selector(body:has(.kc-page)) {
+  body:has(.kc-page) .md-tabs { display: none; }
+  body:has(.kc-page) .md-main__inner {
+    max-width: none; width: 100%; margin: 0; padding: 0;
+  }
+  body:has(.kc-page) .md-sidebar { display: none; }
+  body:has(.kc-page) .md-content { width: 100%; min-width: 0; margin: 0; }
+  body:has(.kc-page) .md-content__inner {
+    max-width: none; width: 100%; margin: 0; padding: 0;
+  }
+  body:has(.kc-page) .md-content__inner > .md-typeset { max-width: none; }
+  body:has(.kc-page) .md-content__inner::before { display: none; }
+}
+/* All page elements share the same full-width coordinate system. */
+.md-typeset .kc-page, .md-typeset .kc-page.kc-bleed {
+  box-sizing: border-box; width: 100%; max-width: 100%;
+  margin-left: 0; margin-right: 0;
+}
+.md-typeset .kc-page *, .md-typeset .kc-page *::before,
+.md-typeset .kc-page *::after { box-sizing: border-box; }
+.md-typeset .kc-page .kc-container {
+  width: min(1180px, calc(100% - 48px)); max-width: 100%;
+  margin-inline: auto; padding: 0;
+}
+.md-typeset .kc-page .kc-topnav { position: relative; z-index: 1; }
+.md-typeset .kc-page .kc-brand,
+.md-typeset .kc-page .kc-brand:visited { color: #f5fcff !important; }
+.md-typeset .kc-page .kc-brand small { color: #b7e7e2 !important; }
+.md-typeset .kc-page .kc-links a,
+.md-typeset .kc-page .kc-links a:visited { color: #e8f5ff !important; }
+.md-typeset .kc-page .kc-links a.active { color: #ccfff2 !important; }
+.md-typeset .kc-page .kc-links a:hover,
+.md-typeset .kc-page .kc-links a:focus-visible { background: rgba(255,255,255,.14); }
+.md-typeset .kc-page .kc-hero { overflow: hidden; }
+.md-typeset .kc-page .kc-hero h1 { color: #fff !important; }
+.md-typeset .kc-page .kc-hero p,
+.md-typeset .kc-page .kc-pill { color: #eaf8ff !important; }
+.md-typeset .kc-page .kc-eyebrow { color: #b7f1e9 !important; }
+.md-typeset .kc-page .kc-btn.primary,
+.md-typeset .kc-page .kc-btn.primary:visited { color: #10344d !important; }
+.md-typeset .kc-page .kc-btn.secondary,
+.md-typeset .kc-page .kc-btn.secondary:visited {
+  color: #fff !important; background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.52);
+}
+.md-typeset .kc-page .kc-btn:focus-visible,
+.md-typeset .kc-page .kc-links a:focus-visible,
+.md-typeset .kc-page .kc-link:focus-visible { outline: 3px solid #b7f1e9; outline-offset: 3px; }
+.md-typeset .kc-page .kc-grid {
+  display: grid; width: 100%; min-width: 0;
+  grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px;
+}
+.md-typeset .kc-page .kc-card {
+  min-width: 0; width: auto; overflow-wrap: anywhere; overflow: hidden;
+}
+.md-typeset .kc-page .kc-card h3 { color:#18324f !important; }
+.md-typeset .kc-page .kc-card p,
+.md-typeset .kc-page .kc-intro { color:#415773 !important; }
+.md-typeset .kc-page .kc-link,
+.md-typeset .kc-page .kc-link:visited { color:#126282 !important; }
+.md-typeset .kc-page .kc-hero-inner { min-width:0; }
+.md-typeset .kc-page .kc-hero-inner > * { min-width:0; }
+.md-typeset .kc-page .kc-visual { min-width:0; }
+@media (max-width: 980px) {
+  .md-typeset .kc-page .kc-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .md-typeset .kc-page .kc-hero-inner { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width: 680px) {
+  .md-typeset .kc-page .kc-container { width: calc(100% - 28px); }
+  .md-typeset .kc-page .kc-grid { grid-template-columns: minmax(0,1fr); }
+  .md-typeset .kc-page .kc-links { gap:6px; }
+  .md-typeset .kc-page .kc-links a { padding: 8px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .kc-page * { transition: none !important; animation: none !important; }
+}
