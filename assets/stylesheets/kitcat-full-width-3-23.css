@@ -61,3 +61,23 @@
   .md-typeset .kc-page .kc-container { width: calc(100% - 28px) !important; }
   .md-typeset .kc-page .kc-grid { grid-template-columns: minmax(0,1fr) !important; }
 }
+/* KITCAT SIDEBAR SCROLL FIX */
+
+.md-sidebar--primary {
+    height: calc(100vh - 4rem);
+}
+
+.md-sidebar--primary .md-sidebar__inner {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.md-sidebar--secondary {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}

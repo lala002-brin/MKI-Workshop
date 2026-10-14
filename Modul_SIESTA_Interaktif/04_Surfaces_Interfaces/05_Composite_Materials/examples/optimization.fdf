@@ -1,0 +1,6 @@
+
+SystemName ZIF67_Fe3O4_Cu2O_TC
+XC.functional GGA
+XC.authors PBE
+SpinPolarized T
+MeshCutoff 250 Ry

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400">
+<rect width="1000" height="1400" fill="white"/>
+<text x="500" y="70" text-anchor="middle" font-size="38" font-family="Arial" font-weight="bold">ASE Interface Construction Workflow</text>
+<g font-family="Arial" font-size="26" text-anchor="middle">
+<rect x="250" y="150" width="500" height="120" rx="20" fill="#e8f1ff" stroke="#2563eb" stroke-width="3"/><text x="500" y="220">CIF Crystal Data</text>
+<rect x="250" y="360" width="500" height="120" rx="20" fill="#e8f1ff" stroke="#2563eb" stroke-width="3"/><text x="500" y="430">Structure Validation</text>
+<rect x="250" y="570" width="500" height="120" rx="20" fill="#eafbf0" stroke="#16a34a" stroke-width="3"/><text x="500" y="640">Surface & Supercell</text>
+<rect x="250" y="780" width="500" height="120" rx="20" fill="#fff4e6" stroke="#ea580c" stroke-width="3"/><text x="500" y="850">Interface Assembly</text>
+<rect x="250" y="990" width="500" height="120" rx="20" fill="#fff4e6" stroke="#ea580c" stroke-width="3"/><text x="500" y="1060">Optimization Preparation</text>
+<rect x="250" y="1200" width="500" height="120" rx="20" fill="#f3e8ff" stroke="#9333ea" stroke-width="3"/><text x="500" y="1270">SIESTA Workflow</text>
+</g>
+</svg>

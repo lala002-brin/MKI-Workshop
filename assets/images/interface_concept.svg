@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700">
+<rect width="1200" height="700" fill="white"/>
+<text x="600" y="70" text-anchor="middle" font-size="36" font-family="Arial" font-weight="bold">Interface Engineering Concept</text>
+<rect x="120" y="220" width="300" height="180" rx="20" fill="#e8f1ff" stroke="#2563eb" stroke-width="4"/>
+<text x="270" y="290" text-anchor="middle" font-size="32" font-family="Arial">ZIF-67</text>
+<text x="270" y="335" text-anchor="middle" font-size="22" font-family="Arial">Porous Framework</text>
+<rect x="780" y="220" width="300" height="180" rx="20" fill="#eafbf0" stroke="#16a34a" stroke-width="4"/>
+<text x="930" y="290" text-anchor="middle" font-size="32" font-family="Arial">Fe3O4</text>
+<text x="930" y="335" text-anchor="middle" font-size="22" font-family="Arial">Magnetic Oxide</text>
+<rect x="470" y="250" width="260" height="120" rx="20" fill="#fff4e6" stroke="#ea580c" stroke-width="4"/>
+<text x="600" y="305" text-anchor="middle" font-size="26" font-family="Arial">Interface</text>
+<text x="600" y="345" text-anchor="middle" font-size="20" font-family="Arial">Charge Transfer</text>
+</svg>

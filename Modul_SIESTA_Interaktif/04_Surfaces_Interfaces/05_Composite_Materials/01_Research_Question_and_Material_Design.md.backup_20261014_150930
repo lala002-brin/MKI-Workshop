@@ -1,0 +1,262 @@
+
+# 01 · Research Question & Material Design
+
+# First-Principles Design of ZIF-67/Fe3O4/Cu2O Composite Materials for Tetracycline Adsorption
+
+## Tujuan Modul
+
+Modul ini menjelaskan bagaimana peneliti merancang sistem komposit untuk simulasi DFT menggunakan SIESTA.
+
+Sistem yang dipelajari:
+
+- ZIF-67
+- Fe3O4
+- Cu2O
+- Tetracycline (TC)
+
+Pendekatan:
+
+- Density Functional Theory (DFT)
+- Atomic Simulation Environment (ASE)
+- SIESTA
+
+---
+
+# 1. Scientific Problem
+
+Dalam penelitian material, model atomik tidak dibuat secara acak.
+
+Setiap komponen harus memiliki fungsi ilmiah.
+
+Pertanyaan utama:
+
+1. Bagaimana interface komposit mempengaruhi adsorpsi tetracycline?
+2. Bagaimana distribusi elektron berubah setelah pembentukan heterostruktur?
+3. Bagaimana situs aktif berinteraksi dengan molekul target?
+
+---
+
+# 2. Material Design Strategy
+
+Komposit:
+
+ZIF-67 / Fe3O4 / Cu2O
+
+memiliki fungsi berbeda.
+
+| Material | Fungsi |
+|---|---|
+| ZIF-67 | adsorption framework |
+| Fe3O4 | magnetic support |
+| Cu2O | semiconductor component |
+| Tetracycline | target adsorbate |
+
+---
+
+# 3. Role of ZIF-67
+
+ZIF-67 merupakan Metal Organic Framework berbasis cobalt.
+
+Karakteristik:
+
+- porous structure
+- high surface area
+- Co active site
+
+Fungsi:
+
+Sebagai tempat interaksi molekul tetracycline.
+
+Keterbatasan:
+
+- electronic conductivity rendah
+- transfer elektron terbatas
+
+Karena itu dikombinasikan dengan oxide material.
+
+---
+
+# 4. Role of Fe3O4
+
+Fe3O4 digunakan sebagai magnetic oxide.
+
+Fungsi:
+
+## Magnetic separation
+
+Memudahkan recovery material setelah adsorpsi.
+
+## Electron mediator
+
+Mendukung perpindahan muatan pada interface.
+
+Analisis:
+
+- DOS
+- PDOS
+- charge density difference
+
+---
+
+# 5. Role of Cu2O
+
+Cu2O merupakan semiconductor oxide.
+
+Fungsi:
+
+- electronic active component
+- charge transfer pathway
+- active adsorption site
+
+---
+
+# 6. Composite Design Concept
+
+Model konseptual:
+
+```
+          Tetracycline
+
+               |
+
+          ZIF-67 framework
+
+               |
+
+             Fe3O4
+
+               |
+
+              Cu2O
+```
+
+---
+
+# 7. Research Hypothesis
+
+Hipotesis:
+
+Interface ZIF-67/Fe3O4/Cu2O dapat meningkatkan interaksi tetracycline melalui kombinasi:
+
+- struktur berpori ZIF-67
+- sifat magnetik Fe3O4
+- karakter elektronik Cu2O
+
+---
+
+# 8. Research Workflow
+
+```
+Research Question
+
+↓
+
+Material Selection
+
+↓
+
+Crystal Structure Preparation
+
+↓
+
+Interface Construction
+
+↓
+
+Geometry Optimization
+
+↓
+
+SCF Calculation
+
+↓
+
+DOS / PDOS
+
+↓
+
+Charge Analysis
+
+↓
+
+Adsorption Energy
+
+↓
+
+Mechanism Interpretation
+```
+
+---
+
+# 9. Preparation Checklist
+
+Sebelum membuat model:
+
+✓ Menentukan tujuan simulasi
+
+✓ Menentukan fungsi setiap material
+
+✓ Menentukan parameter analisis
+
+✓ Menentukan konfigurasi adsorpsi
+
+✓ Menyiapkan struktur kristal
+
+---
+
+## Next Step
+
+Lanjut ke:
+
+02 · Crystal Structure Preparation
+
+Pembahasan:
+
+- CIF preparation
+- primitive cell
+- supercell
+- bulk vs surface
+- struktur ZIF-67
+- persiapan ASE
+
+
+---
+
+# Research Question & Material Design Strategy
+
+## Research Motivation
+
+Sistem komposit ZIF-67/Fe3O4/Cu2O dikaji menggunakan pendekatan Density Functional Theory (DFT) untuk memahami hubungan struktur atom, sifat elektronik, dan mekanisme adsorpsi tetracycline.
+
+## Research Questions
+
+### Interface Stability
+Analisis kestabilan interface setelah optimasi geometri melalui energi total, relaksasi atom, dan perubahan struktur.
+
+### Electronic Interaction
+Analisis DOS, PDOS, band structure, dan charge density difference.
+
+### Adsorption Mechanism
+Analisis adsorption energy, konfigurasi adsorpsi, transfer muatan, dan lokasi interaksi.
+
+## Material Design Logic
+
+| Material | Function |
+|---|---|
+| ZIF-67 | Porous adsorption framework |
+| Fe3O4 | Magnetic support |
+| Cu2O | Semiconductor component |
+
+## Research Workflow
+
+Material selection
+↓
+Crystal preparation
+↓
+Interface construction
+↓
+DFT optimization
+↓
+Electronic analysis
+↓
+Adsorption mechanism

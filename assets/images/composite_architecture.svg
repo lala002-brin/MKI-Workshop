@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000">
+<rect width="900" height="1000" fill="white"/>
+<text x="450" y="70" text-anchor="middle" font-size="34" font-family="Arial" font-weight="bold">ZIF-67/Fe3O4/Cu2O Composite Architecture</text>
+<rect x="200" y="170" width="500" height="150" rx="20" fill="#e8f1ff" stroke="#2563eb" stroke-width="4"/>
+<text x="450" y="240" text-anchor="middle" font-size="34" font-family="Arial">ZIF-67</text>
+<text x="450" y="280" text-anchor="middle" font-size="22" font-family="Arial">Adsorption Framework</text>
+<rect x="200" y="400" width="500" height="150" rx="20" fill="#eafbf0" stroke="#16a34a" stroke-width="4"/>
+<text x="450" y="470" text-anchor="middle" font-size="34" font-family="Arial">Fe3O4</text>
+<text x="450" y="510" text-anchor="middle" font-size="22" font-family="Arial">Magnetic Interface</text>
+<rect x="200" y="630" width="500" height="150" rx="20" fill="#fff4e6" stroke="#ea580c" stroke-width="4"/>
+<text x="450" y="700" text-anchor="middle" font-size="34" font-family="Arial">Cu2O</text>
+<text x="450" y="740" text-anchor="middle" font-size="22" font-family="Arial">Electronic Tuning</text>
+</svg>
